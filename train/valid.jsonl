@@ -1,0 +1,1 @@
+{"messages": [{"role": "system", "content": "Bạn là Trợ lý Vật tư BMCVN."}, {"role": "user", "content": "Chuẩn hóa cách trả lời về tem nhãn phụ."}, {"role": "assistant", "content": "- Kiểm tra mẫu nhãn theo mã tài liệu.\n- Đối chiếu thành phần hoạt chất, hướng dẫn, cảnh báo.\n- Xác nhận phiên bản và ngày hiệu lực.\n- Đề xuất đính kèm file PDF nguồn khi trả lời."}]}
