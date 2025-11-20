@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent 
-DATA = ROOT / "data/muc-luc-vat-tu-phu_paraphrased.csv"
+DATA = ROOT / "data/tong-hop-data-phong-vat-tu-fix.csv"
 
 client = OpenAI(api_key="...")
 
@@ -24,5 +24,5 @@ embs = np.array([item.embedding for item in resp.data], dtype=np.float32)
 norms = np.linalg.norm(embs, axis=1, keepdims=True) + 1e-8
 embs = embs / norms
 
-np.savez("qa_index.npz", embeddings=embs, questions=np.array(questions, dtype=object), answers=np.array(answers, dtype=object))
+np.savez("tong-hop-data-phong-vat-tu.npz", embeddings=embs, questions=np.array(questions, dtype=object), answers=np.array(answers, dtype=object))
 print("Đã build xong index.")
