@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent 
-DATA = ROOT / "data/tong-hop-data-phong-vat-tu-fix.csv"
+DATA = ROOT / "data/data-vat-tu-full-done.csv"
 
 client = OpenAI(api_key="...")
 
