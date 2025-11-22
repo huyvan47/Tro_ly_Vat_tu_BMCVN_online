@@ -17,7 +17,7 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("tong-hop-data-phong-vat-tu.npz", allow_pickle=True)
+data = np.load("tong-hop-data-phong-vat-tu-fix-22-11.npz", allow_pickle=True)
 EMBS = data["embeddings"]      # (N, d)
 QUESTIONS = data["questions"]  # (N,)
 ANSWERS = data["answers"]      # (N,)
@@ -90,7 +90,7 @@ def search(query: str, top_k: int = 10):
 
 def call_finetune_with_context(user_query: str, context: str, suggestions_text: str):
     print("user_query: ", user_query)
-    # print("context: ", context)
+    print("context: ", context)
     # print("suggestions_text: ", suggestions_text)
     system_prompt = (
         "Bạn là Trợ lý Vật tư BMCVN. Giọng chuyên nghiệp, rõ ràng, "
@@ -189,7 +189,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "thay đổi trên nhãn chai"
+    q = "đặt vật tư dự phòng"
     ans = answer_with_suggestions(q)
     print("\n===== KẾT QUẢ CUỐI CÙNG =====\n")
     print(ans)

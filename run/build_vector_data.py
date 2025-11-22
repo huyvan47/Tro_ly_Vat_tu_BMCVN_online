@@ -24,5 +24,5 @@ embs = np.array([item.embedding for item in resp.data], dtype=np.float32)
 norms = np.linalg.norm(embs, axis=1, keepdims=True) + 1e-8
 embs = embs / norms
 
-np.savez("tong-hop-data-phong-vat-tu.npz", embeddings=embs, questions=np.array(questions, dtype=object), answers=np.array(answers, dtype=object))
+np.savez("tong-hop-data-phong-vat-tu-fix-22-11.npz", embeddings=embs, questions=np.array(questions, dtype=object), answers=np.array(answers, dtype=object))
 print("Đã build xong index.")
