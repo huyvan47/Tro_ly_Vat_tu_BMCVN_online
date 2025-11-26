@@ -7,12 +7,12 @@ from openai import OpenAI
 #       CONFIG
 # ==============================
 
-MIN_SCORE_MAIN = 0.5
+MIN_SCORE_MAIN = 0.35
 MIN_SCORE_SUGGEST = 0.4
 MAX_SUGGEST = 3
 
 USE_LLM_RERANK = True     # Bật/tắt rerank bằng LLM
-TOP_K_RERANK = 10         # Số doc tối đa đưa vào LLM để rerank
+TOP_K_RERANK = 40        # Số doc tối đa đưa vào LLM để rerank
 
 client = OpenAI(api_key="...")
 
@@ -156,6 +156,7 @@ def llm_rerank(norm_query: str, results: list, top_k_rerank: int = TOP_K_RERANK)
         doc_texts.append(block)
 
     docs_block = "\n\n------------------------\n\n".join(doc_texts)
+    print('docs_block: ', docs_block)
 
     # ===============================
     # 2) Build prompts
@@ -190,7 +191,7 @@ YÊU CẦU:
     # ===============================
     try:
         resp = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             temperature=0.0,
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -226,6 +227,18 @@ YÊU CẦU:
     # 6) Build mapping
     # ===============================
     idx_to_result = {i: candidates[i] for i in range(len(candidates))}
+    # Gán rerank_score cho từng doc nếu có
+    for item in ranking:
+        di = int(item.get("doc_index", -1))
+        score = float(item.get("score", 0))
+        if di in idx_to_result:
+            idx_to_result[di]["rerank_score"] = score
+
+    # Những doc không có trong JSON → rerank_score = 0
+    for i in range(len(candidates)):
+        if "rerank_score" not in candidates[i]:
+            candidates[i]["rerank_score"] = 0.0
+
     used = set()
     reranked = []
 
@@ -259,7 +272,7 @@ YÊU CẦU:
 #        SEARCH ENGINE
 # ==============================
 
-def search(norm_query: str, top_k=10):
+def search(norm_query: str, top_k=40):
     print("norm_query:", norm_query)
 
     vq = embed_query(norm_query)
@@ -315,7 +328,7 @@ YÊU CẦU:
 """
 
     resp = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         temperature=0.0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -325,15 +338,65 @@ YÊU CẦU:
 
     return resp.choices[0].message.content.strip()
 
+def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
+    """
+    Quyết định số lượng DOC đưa vào context trả lời dựa trên LLM rerank score (0–1).
+    Nếu is_listing=True → cho phép trả về nhiều DOC hơn (tối đa 20).
+    """
+    print('is_listing: ', is_listing)
+    scores = [h.get("rerank_score", 0) for h in hits_reranked[:4]]
+    scores += [0] * (4 - len(scores))
+
+    s1, s2, s3, s4 = scores
+
+    # Nếu là câu hỏi dạng LIỆT KÊ → scale lên nhiều hơn
+    if is_listing:
+        # Liên quan mạnh → cho đọc tối đa 20 DOC
+        if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
+            return 20
+        # Liên quan vừa → 15 DOC
+        if s1 >= 0.65 and s2 >= 0.55:
+            return 15
+        # Liên quan hơi yếu → 10 DOC
+        return 10
+
+    # Ngược lại: câu hỏi thường → dùng ngưỡng cũ, context nhỏ để tránh nhiễu
+    # Liên quan cực mạnh → cho LLM đọc nhiều doc
+    if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
+        return 10
+    # Liên quan mạnh
+    if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
+        return 7
+    # Liên quan vừa
+    if s1 >= 0.80 and s2 >= 0.65:
+        return 5
+
+    # Yếu → chỉ 3 doc
+    return 3
+
+
 
 # ==============================
 #   MAIN PIPELINE
 # ==============================
 
+def is_listing_query(q):
+    t = q.lower()
+    return any(x in t for x in [
+        "các loại", "những loại", "bao nhiêu loại", "tất cả", "liệt kê", "kể tên", "bao nhiêu", "tổng", "có bao nhiêu", "gồm"
+    ])
+
 def answer_with_suggestions(user_query: str):
     norm_query = normalize_query(user_query)
 
-    hits = search(norm_query, top_k=20)
+    is_list = is_listing_query(norm_query)
+    # Nếu là câu hỏi dạng LIỆT KÊ -> cho search rộng hơn
+    if is_list:
+        hits = search(norm_query, top_k=50)
+    else:
+        hits = search(norm_query, top_k=20)
+
+    # print('hits: ', hits)
 
     if not hits:
         return {"text": "Không tìm thấy dữ liệu phù hợp.", "img_keys": []}
@@ -363,10 +426,13 @@ def answer_with_suggestions(user_query: str):
         primary_doc = filtered_for_main[0]
 
     # Tạo context
-    MAX_CTX = 5
+    # Tạo context
+    max_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
+
+    # 2) Build context
     main_hits = [primary_doc]
     for h in filtered_for_main:
-        if h is not primary_doc and len(main_hits) < MAX_CTX:
+        if h is not primary_doc and len(main_hits) < max_ctx:
             main_hits.append(h)
 
     # Tạo context blocks
@@ -403,7 +469,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "chai pet vuông"
+    q = "các bước mua hàng nhập khẩu qua kho và không qua kho giống nhau thế nào"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")
