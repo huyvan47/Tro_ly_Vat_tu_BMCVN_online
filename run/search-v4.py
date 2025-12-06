@@ -20,13 +20,13 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("tong-hop-data-phong-vat-tu-fix-25-11-QAAL.npz", allow_pickle=True)
+data = np.load("data-kinh-doanh-nam-benh.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
 ANSWERS = data["answers"]
 ALT_QUESTIONS = data["alt_questions"]
-TEXTS_FOR_EMBEDDING = data["texts_for_embedding"]
+# TEXTS_FOR_EMBEDDING = data["texts_for_embedding"]
 
 CATEGORY = data.get("category", None)
 TAGS = data.get("tags", None)
@@ -191,7 +191,7 @@ YÊU CẦU:
     # ===============================
     try:
         resp = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             temperature=0.0,
             messages=[
                 {"role": "system", "content": system_prompt},
@@ -320,6 +320,7 @@ CÂU HỎI:
 
 YÊU CẦU:
 - Trả lời dựa 100% vào NGỮ CẢNH.
+- Có thể hợp nhất các câu trả lời nếu cảm thấy nó cần thiết.
 - Không bịa.
 - Ưu tiên bullet.
 - Nếu thiếu thông tin → nói rõ.
@@ -328,7 +329,7 @@ YÊU CẦU:
 """
 
     resp = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         temperature=0.0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -469,7 +470,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "các bước mua hàng nhập khẩu qua kho và không qua kho giống nhau thế nào"
+    q = "bệnh phấn trắng trên cây hoa hồng"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")
