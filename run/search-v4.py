@@ -308,7 +308,9 @@ def search(norm_query: str, top_k=40):
 
 def call_finetune_with_context(user_query, context, suggestions_text):
     system_prompt = (
-        "Bạn là Trợ lý Vật tư BMCVN. Trả lời dựa hoàn toàn trên NGỮ CẢNH."
+        "Bạn là Trợ lý Vật tư BMCVN. Trả lời dựa hoàn toàn trên NGỮ CẢNH.\n"
+        "- Luôn cố gắng tổng hợp đầy đủ các ý liên quan trong NGỮ CẢNH.\n"
+        "- Viết dễ hiểu cho bà con nông dân hoặc nhân viên vật tư.\n"
     )
 
     user_prompt = f"""
@@ -319,17 +321,16 @@ CÂU HỎI:
 \"\"\"{user_query}\"\"\"
 
 YÊU CẦU:
-- Trả lời dựa 100% vào NGỮ CẢNH.
-- Có thể hợp nhất các câu trả lời nếu cảm thấy nó cần thiết.
-- Không bịa.
-- Ưu tiên bullet.
-- Nếu thiếu thông tin → nói rõ.
+- Trả lời chi tiết, rõ ràng, có thể chia mục (Khái quát / Cơ chế / Triệu chứng / Tác hại / Cách phòng-trị) nếu phù hợp.
+- Sử dụng TẤT CẢ các thông tin liên quan trong NGỮ CẢNH, không chỉ dựa trên một DOC.
+- Không bịa. Nếu NGỮ CẢNH không nói tới phần nào thì nói rõ là tài liệu không đề cập.
+- Ưu tiên dùng bullet cho từng ý chính.
 - Gợi ý thêm 1–3 câu hỏi từ danh sách:
 {suggestions_text}
 """
 
     resp = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4o",
         temperature=0.0,
         messages=[
             {"role": "system", "content": system_prompt},
@@ -373,7 +374,7 @@ def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
         return 5
 
     # Yếu → chỉ 3 doc
-    return 3
+    return 5
 
 
 
@@ -470,7 +471,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "bệnh phấn trắng trên cây hoa hồng"
+    q = "Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")
