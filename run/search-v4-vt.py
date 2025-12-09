@@ -471,7 +471,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?"
+    q = "làm sao để trị bệnh ghẻ"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

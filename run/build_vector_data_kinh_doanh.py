@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh.csv"
 
 # 👉 Tên file vector xuất ra
-OUT_FILE = "data-kinh-doanh-nam-benh.npz"
+OUT_FILE = "data-kinh-doanh-nam-benh-full.npz"
 
 # 👉 API KEY
 client = OpenAI(api_key="...")
