@@ -20,13 +20,12 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("data-kinh-doanh-nam-benh.npz", allow_pickle=True)
+data = np.load("data-kinh-doanh-nam-benh-full.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
 ANSWERS = data["answers"]
 ALT_QUESTIONS = data["alt_questions"]
-# TEXTS_FOR_EMBEDDING = data["texts_for_embedding"]
 
 CATEGORY = data.get("category", None)
 TAGS = data.get("tags", None)
@@ -71,7 +70,7 @@ def normalize_query(q: str) -> str:
                 "role": "system",
                 "content": """
 Bạn là Query Normalizer.
-Không thay đổi các mã như cha240-06, 450-02, cha240-asmil...
+Không thay đổi các mã sản phẩm hoặc hoạt chất như Kenbast 15SL, glufosinate_amonium, ...
 Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
 """
             },
@@ -80,31 +79,6 @@ Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
     )
     return resp.choices[0].message.content.strip()
 
-
-# ==============================
-#   CATEGORY / TAG BOOSTING
-# ==============================
-
-def detect_query_category(text: str):
-    """Trả về category ưu tiên dựa trên từ khoá xuất hiện trong query."""
-    t = text.lower()
-
-    if any(k in t for k in ["misa", "mua hàng", "nhập kho", "hóa đơn"]):
-        return "quy_trinh_mua_hang_misa"
-
-    if any(k in t for k in ["kế hoạch", "dự trù", "vật tư", "kế hoạch sử dụng"]):
-        return "ke_hoach_vat_tu"
-
-    if any(k in t for k in ["chai", "pet", "hdpe", "nhôm", "nhom"]):
-        return "chai"
-
-    if any(k in t for k in ["thùng", "carton", "thung"]):
-        return "thung"
-
-    if any(k in t for k in ["tem", "nhãn", "màng", "túi"]):
-        return "nhan_mang_tui"
-
-    return None
 
 def route_query(user_query: str) -> str:
     """
@@ -135,27 +109,6 @@ Chỉ trả lời RAG hoặc GLOBAL, không thêm chữ nào khác.
     )
     ans = resp.choices[0].message.content.strip().upper()
     return "GLOBAL" if "GLOBAL" in ans else "RAG"
-
-def boost_similarity_scores(raw_sims, query_text):
-    """Tăng điểm cho doc thuộc category hoặc tags phù hợp."""
-    sims = raw_sims.copy()
-    N = len(sims)
-    qcat = detect_query_category(query_text)
-    qtext = query_text.lower()
-
-    for i in range(N):
-
-        # 1) BOOST CATEGORY
-        if CATEGORY is not None and qcat is not None and CATEGORY[i] == qcat:
-            sims[i] += 0.12   # boost mạnh
-
-        # 2) BOOST TAGS
-        if TAGS is not None:
-            taglist = str(TAGS[i]).lower().split("|")
-            if any(t in qtext for t in taglist if t.strip()):
-                sims[i] += 0.05   # boost nhẹ
-
-    return sims
 
 
 # ==============================
@@ -343,20 +296,23 @@ def search(norm_query: str, top_k=40):
     vq = embed_query(norm_query)
     raw_sims = EMBS @ vq
 
-    # Boost theo category/tags
-    sims = boost_similarity_scores(raw_sims, norm_query)
-
-    # Chọn top-k
+    sims = raw_sims
     idx = np.argsort(sims)[::-1][:top_k]
 
     results = []
     for i in idx:
-        results.append({
+        item = {
             "question": str(QUESTIONS[i]),
             "alt_question": str(ALT_QUESTIONS[i]),
             "answer": str(ANSWERS[i]),
             "score": float(sims[i]),
-        })
+        }
+        # gắn thêm category, tags nếu có để dùng sau này (nếu muốn)
+        if CATEGORY is not None:
+            item["category"] = str(CATEGORY[i])
+        if TAGS is not None:
+            item["tags"] = str(TAGS[i])
+        results.append(item)
 
     # ==========================
     #   RERANK BẰNG LLM MINI
@@ -368,57 +324,94 @@ def search(norm_query: str, top_k=40):
 
 
 # ==============================
-#   CALL FINE-TUNE FOR ANSWER
+#   MODE TRẢ LỜI LINH HOẠT
 # ==============================
 
-def call_finetune_with_context(user_query, context, suggestions_text):
+def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> str:
+    """
+    Xác định kiểu câu trả lời mong muốn:
+    - 'listing'   : liệt kê / tổng hợp
+    - 'disease'   : nói về bệnh, triệu chứng, phòng trị
+    - 'product'   : nói về thuốc/sản phẩm
+    - 'procedure' : nói về quy trình, thao tác
+    - 'general'   : kiến thức chung
+    """
+    if is_listing:
+        return "listing"
+
+    text = (user_query + " " + primary_doc.get("question", "")).lower()
+    cat = primary_doc.get("category", "").lower()
+
+    # 1) Bệnh / triệu chứng / phòng trị
+    if any(kw in text for kw in [
+        "bệnh", "triệu chứng", "dấu hiệu", "phòng trị", "phòng trừ",
+        "nứt thân", "xì mủ", "thối rễ", "cháy lá", "thán thư", "ghẻ"
+    ]) or "benh" in cat:
+        return "disease"
+
+    # 2) Thuốc / sản phẩm
+    if any(kw in text for kw in [
+        "thuốc", "đặc trị", "sc", "wp", "ec", "sl",
+        "dùng để làm gì", "tác dụng", "hoạt chất"
+    ]) or "san_pham" in cat or "thuoc" in cat:
+        return "product"
+
+    # 3) Quy trình / thao tác / hướng dẫn
+    if any(kw in text for kw in [
+        "quy trình", "quy trinh", "cách làm", "hướng dẫn",
+        "các bước", "làm thế nào để", "phương pháp", "thí nghiệm",
+        "phân lập", "giám định", "lây bệnh trong phòng thí nghiệm"
+    ]) or "quy_trinh" in cat:
+        return "procedure"
+
+    return "general"
+
+
+def call_finetune_with_context(user_query, context, suggestions_text, answer_mode: str = "general"):
+    # Hướng dẫn riêng theo mode
+    if answer_mode == "disease":
+        mode_requirements = """
+- Trình bày chi tiết, dễ hiểu cho người trồng. Không trả lời kiểu 1–2 câu là xong.
+- Nếu NGỮ CẢNH không mô tả chi tiết triệu chứng cho một bệnh phụ, có thể bỏ qua phần đó, KHÔNG cần viết câu "không có mô tả" trừ khi thật sự cần nhấn mạnh.
+- Nếu NGỮ CẢNH cho phép, nên chia thành: Tổng quan bệnh / Nguyên nhân & điều kiện phát sinh / Triệu chứng / Hậu quả / Hướng xử lý & phòng ngừa.
+- Mỗi mục nên có mô tả rõ ràng, có thể đưa thêm ví dụ thực tế nếu NGỮ CẢNH có thông tin.
+- Chỉ tạo mục khi NGỮ CẢNH có dữ liệu; nếu không có thì bỏ qua mục đó.
+"""
+    elif answer_mode == "product":
+        mode_requirements = """
+- Trình bày chi tiết, không trả lời quá ngắn gọn.
+- Làm rõ đặc tính sản phẩm, cơ chế (nếu NGỮ CẢNH có), phạm vi tác động, bộ phận cây bị bệnh mà thuốc có hiệu lực.
+- Nếu NGỮ CẢNH cho phép, mô tả bối cảnh sử dụng thực tế: thời điểm, điều kiện, loại bệnh liên quan.
+- Mỗi ý chính nên có 1–2 câu giải thích để người dùng hiểu vì sao sản phẩm có tác dụng như vậy.
+- CHỈ sử dụng dữ liệu trong NGỮ CẢNH, không được tự bịa thêm liều lượng, cách pha, thời gian cách ly.
+"""
+    elif answer_mode == "procedure":
+        mode_requirements = """
+- Diễn giải chi tiết từng bước, mô tả rõ mục đích của mỗi bước nếu NGỮ CẢNH có thông tin.
+- Không trả lời kiểu liệt kê ngắn; mỗi bước hoặc nhóm bước nên có thêm 1–2 câu giải thích.
+- Nếu NGỮ CẢNH có cảnh báo, điều kiện môi trường, hoặc lưu ý an toàn, phải đưa vào đầy đủ.
+- Tuyệt đối không tự suy diễn quy trình mới ngoài những gì NGỮ CẢNH cung cấp.
+"""
+    elif answer_mode == "listing":
+        mode_requirements = """
+- Tổng hợp đầy đủ các mục xuất hiện trong NGỮ CẢNH, không bỏ sót.
+- Với mỗi mục, cung cấp mô tả ngắn 1–2 câu để giải thích ý nghĩa hoặc đặc điểm chính (nếu NGỮ CẢNH có).
+- Không trả lời quá ngắn theo kiểu “1. A, 2. B, 3. C”; cần mô tả rõ ràng nhưng không bịa thêm thông tin ngoài NGỮ CẢNH.
+- Nếu có sự khác biệt giữa các mục (ví dụ: nhóm tác nhân, mức độ nguy hiểm, vị trí gây hại), cần chỉ rõ để người dùng hiểu sâu hơn.
+"""
+    else:  # general
+        mode_requirements = """
+- Trình bày tự nhiên nhưng chi tiết, không trả lời quá ngắn.
+- Khi có nhiều ý liên quan trong NGỮ CẢNH, hãy nhóm theo chủ đề và giải thích từng ý rõ ràng.
+- Mỗi ý quan trọng nên có 1–2 câu bổ sung để làm rõ cơ chế, bối cảnh hoặc ví dụ trong NGỮ CẢNH.
+- Không bắt buộc theo một khung cố định, nhưng phải đảm bảo người đọc hiểu sâu vấn đề.
+"""
+
     system_prompt = (
-        """
-        Bạn là Trợ lý Kỹ thuật Nông nghiệp & Sản phẩm của BMCVN.
-
-        NGUYÊN TẮC SỬ DỤNG THÔNG TIN:
-        - ƯU TIÊN cao nhất: NGỮ CẢNH (các DOC được cung cấp). Nếu NGỮ CẢNH có thông tin, phải dùng đúng theo đó.
-        - ĐƯỢC PHÉP dùng thêm kiến thức nền nông nghiệp / bảo vệ thực vật phổ biến, nếu:
-        • Không mâu thuẫn với NGỮ CẢNH.
-        • Mang tính khái quát, không đi vào chi tiết nhạy cảm (liều phun, thời gian cách ly, tên nhãn thương mại ngoài NGỮ CẢNH).
-        • Phù hợp với câu hỏi và logic chuyên môn (ví dụ: phân loại hoạt chất theo nhóm FRAC, cơ chế tác động chung, nguyên tắc canh tác cơ bản).
-
-        - KHÔNG ĐƯỢC:
-        • Bịa thêm số liệu cụ thể (liều lượng, nồng độ, số lần phun, thời gian cách ly…) khi NGỮ CẢNH không có.
-        • Suy diễn ra khuyến cáo quá chi tiết hoặc trái với nhãn thuốc thông thường.
-        • Nói điều gì đi ngược hoặc phủ nhận thông tin trong NGỮ CẢNH.
-
-        Quy trình trả lời (bạn làm thầm, KHÔNG in ra):
-
-        BƯỚC 1 – Nhận diện LOẠI THÔNG TIN có trong NGỮ CẢNH (có thể có nhiều loại cùng lúc):
-        - Thông tin bệnh hại (tác nhân, triệu chứng, lây lan, phòng trị)
-        - Thông tin sản phẩm / thuốc / phân
-        - Thông tin quy trình / hướng dẫn sử dụng
-        - Thông tin cảnh báo / an toàn
-        - Thông tin lý thuyết / cơ chế / khái niệm
-        - Thông tin canh tác thực hành
-
-        BƯỚC 2 – Với mỗi LOẠI THÔNG TIN phát hiện được:
-        - Nếu có đủ dữ liệu → trình bày thành 1 mục riêng, có tiêu đề rõ ràng.
-        - Nếu không có → KHÔNG tự suy diễn.
-
-        BƯỚC 3 – Cấu trúc câu trả lời:
-        - Không dùng một sườn cố định cứng nhắc.
-        - Mỗi mục chỉ xuất hiện nếu NGỮ CẢNH thật sự có dữ liệu cho mục đó.
-        - Ưu tiên trình bày theo nhóm:
-        • Tổng quan
-        • Bệnh hại & triệu chứng (nếu có)
-        • Thuốc / hoạt chất / nhóm FRAC (nếu có)
-        • Cách sử dụng / phác đồ (nếu có)
-        • Canh tác & quản lý (nếu có)
-        • Cảnh báo & an toàn (nếu có)
-
-        YÊU CẦU BẮT BUỘC:
-        - Không được trả lời “Tài liệu không đề cập” nếu trong bất kỳ DOC nào có thông tin liên quan.
-        - Chỉ được viết những mục mà NGỮ CẢNH có dữ liệu.
-        - Không suy diễn ngoài dữ liệu.
-        - Viết ưu tiên cho nông dân & kỹ thuật hiện trường: rõ ràng – hành động được.
-        """
+        "Bạn là Trợ lý Kỹ thuật Nông nghiệp & Sản phẩm của BMCVN. "
+        "Luôn ưu tiên sử dụng NGỮ CẢNH được cung cấp, chỉ bổ sung kiến thức nền nông nghiệp phổ biến "
+        "khi phù hợp và không mâu thuẫn với NGỮ CẢNH. "
+        "Không bịa số liệu, liều lượng, khuyến cáo chi tiết nếu NGỮ CẢNH không nêu."
     )
 
     user_prompt = f"""
@@ -430,19 +423,23 @@ CÂU HỎI:
 \"\"\"{user_query}\"\"\"
 
 
-YÊU CẦU:
-- Trả lời theo đúng định hướng trong SYSTEM PROMPT (tập trung vào phác đồ xử lý thực tế, SOP ngoài vườn).
-- Chỉ sử dụng thông tin có trong NGỮ CẢNH. KHÔNG tự bịa thêm.
-- Tuyệt đối KHÔNG được trả lời "Tài liệu không đề cập" nếu trong NGỮ CẢNH có bất kỳ mô tả triệu chứng, dấu hiệu bệnh, hay biểu hiện nào dù chỉ ở 1 DOC phụ.
-- Nếu NGỮ CẢNH không cung cấp thông tin cho một mục nào đó (ví dụ: nhóm FRAC, thời điểm phun, cảnh báo nhà kính...), hãy ghi rõ "Tài liệu không đề cập phần này" thay vì tự suy diễn.
-- Ưu tiên trình bày theo các mục: (1) Tóm tắt, (2) Nguyên nhân & lây lan, (3) Triệu chứng, (4) Nguyên tắc xử lý, (5) Phác đồ thuốc, (6) Biện pháp canh tác, (7) Cảnh báo, (8) Checklist hành động — nhưng chỉ điền những mục mà NGỮ CẢNH có dữ liệu.
-- Cuối câu trả lời, gợi ý thêm 1–3 câu hỏi liên quan, ưu tiên lấy ý từ danh sách:
+HƯỚNG DẪN TRẢ LỜI THEO KIỂU CÂU HỎI ({answer_mode}):
+{mode_requirements}
+
+NGUYÊN TẮC CHUNG:
+- Chỉ dựa vào thông tin có trong NGỮ CẢNH, có thể gom/tổng hợp/ngắn gọn lại cho dễ hiểu.
+- Không cố nhét đủ mọi mục nếu không phù hợp với câu hỏi.
+- Không cần viết những câu như "Tài liệu không đề cập" trừ khi thật sự cần nhấn mạnh thiếu dữ liệu.
+- Trình bày ngắn gọn, rõ ràng, có thể dùng bullet hoặc tiêu đề phụ nếu thấy cần.
+
+Nếu phù hợp, ở cuối câu trả lời, gợi ý thêm 1–3 câu hỏi liên quan, ưu tiên lấy ý từ danh sách:
 {suggestions_text}
 """
 
     resp = client.chat.completions.create(
         model="gpt-4o",
-        temperature=0.0,
+        temperature=0.2,
+        max_completion_tokens=800,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
@@ -457,71 +454,69 @@ YÊU CẦU:
 # ==============================
 
 def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
-    """
-    Quyết định số lượng DOC đưa vào context trả lời dựa trên LLM rerank score (0–1).
-    Nếu is_listing=True → cho phép trả về nhiều DOC hơn (tối đa 20).
-    """
     print('is_listing: ', is_listing)
     scores = [h.get("rerank_score", 0) for h in hits_reranked[:4]]
     scores += [0] * (4 - len(scores))
 
     s1, s2, s3, s4 = scores
 
-    # Nếu là câu hỏi dạng LIỆT KÊ → scale lên nhiều hơn
     if is_listing:
-        # Liên quan mạnh → cho đọc tối đa 20 DOC
+        # mạnh → 25, vừa → 20, còn lại 15
         if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
-            return 20
-        # Liên quan vừa → 15 DOC
+            return 25
         if s1 >= 0.65 and s2 >= 0.55:
-            return 15
-        # Liên quan hơi yếu → 10 DOC
-        return 10
+            return 20
+        return 15
 
-    # Ngược lại: câu hỏi thường → dùng ngưỡng cũ, context nhỏ để tránh nhiễu
-    # Liên quan cực mạnh → cho LLM đọc nhiều doc
+    # câu hỏi thường nhưng vẫn cho nhiều hơn chút
     if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
-        return 10
-    # Liên quan mạnh
+        return 12
     if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
-        return 7
-    # Liên quan vừa
+        return 9
     if s1 >= 0.80 and s2 >= 0.65:
-        return 5
+        return 7
 
-    # Yếu → chỉ 5 doc (an toàn)
-    return 5
+    return 6
+
 
 
 # ==============================
 #   MAIN PIPELINE
 # ==============================
 
-def is_listing_query(q):
+def is_listing_query(q: str) -> bool:
     t = q.lower()
     return any(x in t for x in [
         "các loại", "những loại", "bao nhiêu loại", "tất cả", "liệt kê",
-        "kể tên", "bao nhiêu", "tổng", "có bao nhiêu", "gồm"
+        "kể tên", "bao nhiêu", "tổng", "có bao nhiêu", "gồm",
+        "các bệnh", "những bệnh", "bệnh nào", "gồm những bệnh nào"
     ])
 
 
 def answer_with_suggestions(user_query: str):
-    # 0. Router LLM + rule
+    # 0. Phân luồng GLOBAL / RAG
     route = route_query(user_query)
     if route == "GLOBAL":
         resp = client.chat.completions.create(
             model="gpt-4o",
             temperature=0,
             messages=[
-                {"role": "system", "content": "Bạn là chuyên gia BVTV, giải thích khái niệm, viết tắt, định nghĩa một cách ngắn gọn, chuẩn sách giáo trình."},
+                {
+                    "role": "system",
+                    "content": "Bạn là chuyên gia BVTV, giải thích khái niệm, viết tắt, định nghĩa một cách ngắn gọn, chuẩn sách giáo trình."
+                },
                 {"role": "user", "content": user_query},
             ],
         )
         return {"text": resp.choices[0].message.content.strip(), "img_keys": []}
+
+    # 1. Chuẩn hóa query
     norm_query = normalize_query(user_query)
 
+    # 2. Xác định dạng câu hỏi liệt kê
     is_list = is_listing_query(norm_query)
-    # Nếu là câu hỏi dạng LIỆT KÊ -> cho search rộng hơn
+
+    # 3. Search
     if is_list:
         hits = search(norm_query, top_k=50)
     else:
@@ -530,11 +525,10 @@ def answer_with_suggestions(user_query: str):
     if not hits:
         return {"text": "Không tìm thấy dữ liệu phù hợp.", "img_keys": []}
 
-    # Bước 1: dùng MIN_SCORE_MAIN chỉ để detect “không liên quan”
+    # 4. Lọc doc đủ score
     filtered_for_main = [h for h in hits if h["score"] >= MIN_SCORE_MAIN]
 
     if not filtered_for_main:
-        # Không có doc nào đủ gần → trả lời "không đủ dữ liệu"
         suggestions_text = "\n".join(
             f"- {h['question']} (score={h['score']:.2f})"
             for h in hits[:10]
@@ -544,17 +538,15 @@ def answer_with_suggestions(user_query: str):
             "img_keys": []
         }
 
-    # Quyết định số doc tối đa cho context (dựa trên rerank_score)
+    # 5. Quyết định số doc tối đa cho context
     max_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
 
-    # Ưu tiên những doc include_in_context == True
+    # Ưu tiên doc include_in_context
     context_candidates = [h for h in filtered_for_main if h.get("include_in_context", False)]
-
-    # Nếu LLM không chọn doc nào (toàn False) → fallback dùng filtered_for_main
     if not context_candidates:
         context_candidates = filtered_for_main
 
-    # Xác định primary_doc trong context_candidates (ưu tiên code, nếu có)
+    # 6. Xác định primary_doc (ưu tiên theo mã nếu có)
     code_candidates = extract_codes_from_query(norm_query)
     primary_doc = None
 
@@ -568,13 +560,13 @@ def answer_with_suggestions(user_query: str):
     if primary_doc is None:
         primary_doc = context_candidates[0]
 
-    # Build main_hits từ context_candidates
+    # 7. Build danh sách main_hits cho context
     main_hits = [primary_doc]
     for h in context_candidates:
         if h is not primary_doc and len(main_hits) < max_ctx:
             main_hits.append(h)
 
-    # Tạo context blocks
+    # 8. Tạo context blocks
     blocks = []
     for i, h in enumerate(main_hits, 1):
         clean_ans = remove_img_keys(h["answer"])
@@ -588,7 +580,7 @@ def answer_with_suggestions(user_query: str):
 
     context = "\n\n--------------------\n\n".join(blocks)
 
-    # Gợi ý câu hỏi liên quan
+    # 9. Gợi ý câu hỏi liên quan
     used = {h["question"] for h in main_hits}
     suggest = [
         h for h in hits
@@ -597,10 +589,11 @@ def answer_with_suggestions(user_query: str):
 
     suggestions_text = "\n".join(f"- {h['question']}" for h in suggest) if suggest else "- (không có)"
 
-    # Gọi LLM sinh ANSWER
-    final_answer = call_finetune_with_context(user_query, context, suggestions_text)
+    # 10. Chọn answer_mode và gọi LLM sinh câu trả lời
+    answer_mode = detect_answer_mode(user_query, primary_doc, is_list)
+    final_answer = call_finetune_with_context(user_query, context, suggestions_text, answer_mode)
 
-    # IMG_KEY
+    # 11. IMG_KEY (nếu có)
     img_keys = extract_img_keys(primary_doc["answer"])
 
     return {"text": final_answer, "img_keys": img_keys}
@@ -611,7 +604,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "nói về cơ chế vị độc của thuốc"
+    q = "trị bệnh đốm là sầu riêng đo nấm"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

@@ -10,12 +10,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 
 # 👉 Sửa đúng file CSV bạn đang dùng
-DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh.csv"
+DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_FIXED-3.csv"
 
 # 👉 Tên file vector xuất ra
 OUT_FILE = "data-kinh-doanh-nam-benh-full.npz"
 
 # 👉 API KEY
+# Nên để trong biến môi trường OPENAI_API_KEY thay vì ghi cứng
 client = OpenAI(api_key="...")
 
 # ==============================
@@ -68,25 +69,45 @@ for _, row in df.iterrows():
         parts.append(f"Trả lời: {a}")
 
     text = ". ".join(parts) + "."
-
     inputs.append(text)
 
+print(f"🔢 Tổng số dòng cần embed: {len(inputs)}")
+
 # ==============================
-#       EMBEDDING
+#       EMBEDDING (BATCH)
 # ==============================
 
-print("🚀 Bắt đầu embedding ...")
+print("🚀 Bắt đầu embedding theo batch ...")
 
-resp = client.embeddings.create(
-    model="text-embedding-3-small",
-    input=inputs,
-)
+BATCH_SIZE = 200  # có thể chỉnh 100–300 tùy ý
 
-embs = np.array([item.embedding for item in resp.data], dtype=np.float32)
+all_embs = []
+
+for start in range(0, len(inputs), BATCH_SIZE):
+    end = min(start + BATCH_SIZE, len(inputs))
+    batch = inputs[start:end]
+
+    print(f"➡ Embedding batch {start} → {end - 1} (số lượng: {len(batch)})")
+
+    resp = client.embeddings.create(
+        model="text-embedding-3-small",
+        input=batch,
+    )
+
+    batch_embs = [item.embedding for item in resp.data]
+    all_embs.extend(batch_embs)
+
+# Chuyển sang numpy
+embs = np.array(all_embs, dtype=np.float32)
+
+# Kiểm tra an toàn: số vector == số dòng
+assert embs.shape[0] == len(df), f"Mismatch: {embs.shape[0]} embeddings nhưng {len(df)} dòng CSV"
 
 # ✅ Chuẩn hoá vector đơn vị (cosine similarity chuẩn)
 norms = np.linalg.norm(embs, axis=1, keepdims=True) + 1e-8
 embs = embs / norms
+
+print("🔥 Embedding xong. Tổng số vector:", len(embs))
 
 # ==============================
 #        SAVE NPZ
