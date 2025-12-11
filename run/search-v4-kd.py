@@ -12,7 +12,7 @@ MIN_SCORE_SUGGEST = 0.4
 MAX_SUGGEST = 3
 
 USE_LLM_RERANK = True      # Bật/tắt rerank bằng LLM
-TOP_K_RERANK = 40          # Số doc tối đa đưa vào LLM để rerank
+TOP_K_RERANK = 60          # Số doc tối đa đưa vào LLM để rerank
 
 client = OpenAI(api_key="...")
 
@@ -47,15 +47,9 @@ def embed_query(text: str):
 def extract_img_keys(text: str):
     return re.findall(r'\(IMG_KEY:\s*([^)]+)\)', text)
 
-
-def remove_img_keys(text: str):
-    return re.sub(r'-?\s*\(IMG_KEY:[^)]+\)\s*', '', text).strip()
-
-
 def extract_codes_from_query(text: str):
     # ví dụ: cha240-06, 450-02, cha240-asmil-01...
     return re.findall(r'\b[\w]*\d[\w-]*-\d[\w-]*\b', text)
-
 
 # ==============================
 #   NORMALIZE QUERY (LLM)
@@ -69,10 +63,10 @@ def normalize_query(q: str) -> str:
             {
                 "role": "system",
                 "content": """
-Bạn là Query Normalizer.
-Không thay đổi các mã sản phẩm hoặc hoạt chất như Kenbast 15SL, glufosinate_amonium, ...
-Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
-"""
+                Bạn là Query Normalizer.
+                Không thay đổi các mã sản phẩm hoặc hoạt chất như Kenbast 15SL, glufosinate_amonium, ...
+                Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
+                """
             },
             {"role": "user", "content": q}
         ],
@@ -453,32 +447,36 @@ Nếu phù hợp, ở cuối câu trả lời, gợi ý thêm 1–3 câu hỏi l
 #   CHỌN SỐ DOC CHO CONTEXT
 # ==============================
 
-def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
+def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False): 
     print('is_listing: ', is_listing)
+
     scores = [h.get("rerank_score", 0) for h in hits_reranked[:4]]
     scores += [0] * (4 - len(scores))
-
     s1, s2, s3, s4 = scores
 
+    # LISTING MODE (trả về danh sách)
     if is_listing:
-        # mạnh → 25, vừa → 20, còn lại 15
         if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
             return 25
         if s1 >= 0.65 and s2 >= 0.55:
             return 20
         return 15
 
-    # câu hỏi thường nhưng vẫn cho nhiều hơn chút
+    # QA MODE (không listing) – tăng mạnh lên 10
+    # Query mạnh → 14 DOC
     if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
-        return 12
+        return 14
+
+    # Query khá mạnh → 12 DOC
     if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
-        return 9
+        return 12
+
+    # Query trung bình → 10 DOC
     if s1 >= 0.80 and s2 >= 0.65:
-        return 7
+        return 10
 
-    return 6
-
-
+    # Mặc định (yếu) → cũng lấy 10 DOC (thay vì 6)
+    return 10
 
 # ==============================
 #   MAIN PIPELINE
@@ -569,12 +567,11 @@ def answer_with_suggestions(user_query: str):
     # 8. Tạo context blocks
     blocks = []
     for i, h in enumerate(main_hits, 1):
-        clean_ans = remove_img_keys(h["answer"])
         block = (
             f"[DOC {i}]\n"
             f"CÂU HỎI: {h['question']}\n"
             f"HỎI KHÁC: {h['alt_question']}\n"
-            f"NỘI DUNG:\n{clean_ans}"
+            f"NỘI DUNG:\n{h['answer']}"
         )
         blocks.append(block)
 
@@ -604,7 +601,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "trị bệnh đốm là sầu riêng đo nấm"
+    q = "phân bón lá không được trộn chung với sản phẩm nào"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

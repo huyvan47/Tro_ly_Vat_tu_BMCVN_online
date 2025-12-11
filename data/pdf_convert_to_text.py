@@ -5,7 +5,7 @@ import pandas as pd
 # ========================
 # CONFIG
 # ========================
-PDF_PATH = r"\\192.168.0.171\Public\hcns\drive server\BMC LONG AN\5. IT\data-training-ai\8. Kinh doanh\1. Sản phẩm, cây trồng, nấm bệnh.I\1. Tài liệu cây trồng\ĐỘI LONG AN- CÂY LÚA .pdf"
+PDF_PATH = r"\\192.168.0.171\Public\hcns\drive server\BMC LONG AN\5. IT\data-training-ai\8. Kinh doanh\1. Sản phẩm, cây trồng, nấm bệnh.I\1. Tài liệu cây trồng\ĐỘI TÂY NGUYÊN- HÀNH TRÌNH CÂY CÀ PHÊ pptx.pdf"
 OUTPUT_XLSX = r"output.xlsx"
 
 # ========================

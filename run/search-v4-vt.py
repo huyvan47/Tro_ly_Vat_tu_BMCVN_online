@@ -11,8 +11,8 @@ MIN_SCORE_MAIN = 0.35
 MIN_SCORE_SUGGEST = 0.4
 MAX_SUGGEST = 3
 
-USE_LLM_RERANK = True     # Bật/tắt rerank bằng LLM
-TOP_K_RERANK = 40        # Số doc tối đa đưa vào LLM để rerank
+USE_LLM_RERANK = True      # Bật/tắt rerank bằng LLM
+TOP_K_RERANK = 60         # Số doc tối đa đưa vào LLM để rerank
 
 client = OpenAI(api_key="...")
 
@@ -20,7 +20,7 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("data-kinh-doanh-nam-benh.npz", allow_pickle=True)
+data = np.load("tong-hop-data-phong-vat-tu-fix-25-11-QAAL.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
@@ -69,10 +69,10 @@ def normalize_query(q: str) -> str:
             {
                 "role": "system",
                 "content": """
-Bạn là Query Normalizer.
-Không thay đổi các mã như cha240-06, 450-02, cha240-asmil...
-Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
-"""
+                Bạn là Query Normalizer.
+                Không thay đổi các mã như cha240-06, 450-02, cha240-asmil...
+                Chỉ sửa lỗi chính tả và chuẩn hoá văn bản.
+                """
             },
             {"role": "user", "content": q}
         ],
@@ -321,9 +321,10 @@ CÂU HỎI:
 \"\"\"{user_query}\"\"\"
 
 YÊU CẦU:
-- Trả lời chi tiết, rõ ràng, có thể chia mục (Khái quát / Cơ chế / Triệu chứng / Tác hại / Cách phòng-trị) nếu phù hợp.
+- Trả lời chi tiết, rõ ràng.
 - Sử dụng TẤT CẢ các thông tin liên quan trong NGỮ CẢNH, không chỉ dựa trên một DOC.
 - Không bịa. Nếu NGỮ CẢNH không nói tới phần nào thì nói rõ là tài liệu không đề cập.
+- Không được trả lời sai mã chai, ví dụ: Chai 240-ASMIL, ...
 - Ưu tiên dùng bullet cho từng ý chính.
 - Gợi ý thêm 1–3 câu hỏi từ danh sách:
 {suggestions_text}
@@ -332,6 +333,7 @@ YÊU CẦU:
     resp = client.chat.completions.create(
         model="gpt-4o",
         temperature=0.0,
+        max_completion_tokens=800,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
@@ -340,41 +342,36 @@ YÊU CẦU:
 
     return resp.choices[0].message.content.strip()
 
-def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
-    """
-    Quyết định số lượng DOC đưa vào context trả lời dựa trên LLM rerank score (0–1).
-    Nếu is_listing=True → cho phép trả về nhiều DOC hơn (tối đa 20).
-    """
+def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False): 
     print('is_listing: ', is_listing)
+
     scores = [h.get("rerank_score", 0) for h in hits_reranked[:4]]
     scores += [0] * (4 - len(scores))
-
     s1, s2, s3, s4 = scores
 
-    # Nếu là câu hỏi dạng LIỆT KÊ → scale lên nhiều hơn
+    # LISTING MODE (trả về danh sách)
     if is_listing:
-        # Liên quan mạnh → cho đọc tối đa 20 DOC
         if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
-            return 20
-        # Liên quan vừa → 15 DOC
+            return 25
         if s1 >= 0.65 and s2 >= 0.55:
-            return 15
-        # Liên quan hơi yếu → 10 DOC
-        return 10
+            return 20
+        return 15
 
-    # Ngược lại: câu hỏi thường → dùng ngưỡng cũ, context nhỏ để tránh nhiễu
-    # Liên quan cực mạnh → cho LLM đọc nhiều doc
+    # QA MODE (không listing) – tăng mạnh lên 10
+    # Query mạnh → 14 DOC
     if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
-        return 10
-    # Liên quan mạnh
-    if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
-        return 7
-    # Liên quan vừa
-    if s1 >= 0.80 and s2 >= 0.65:
-        return 5
+        return 14
 
-    # Yếu → chỉ 3 doc
-    return 5
+    # Query khá mạnh → 12 DOC
+    if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
+        return 12
+
+    # Query trung bình → 10 DOC
+    if s1 >= 0.80 and s2 >= 0.65:
+        return 10
+
+    # Mặc định (yếu) → cũng lấy 10 DOC (thay vì 6)
+    return 10
 
 
 
@@ -471,7 +468,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "làm sao để trị bệnh ghẻ"
+    q = "các đầu mục cần kiểm tra trong 1 thiết kế nhãn"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")
