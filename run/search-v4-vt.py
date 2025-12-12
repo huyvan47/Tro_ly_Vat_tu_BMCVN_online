@@ -20,7 +20,7 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("tong-hop-data-phong-vat-tu-fix-25-11-QAAL.npz", allow_pickle=True)
+data = np.load("tong-hop-data-phong-vat-tu-fix-12-12.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
@@ -333,7 +333,7 @@ YÊU CẦU:
     resp = client.chat.completions.create(
         model="gpt-4o",
         temperature=0.0,
-        max_completion_tokens=800,
+        max_completion_tokens=1500,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}
@@ -468,7 +468,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "các đầu mục cần kiểm tra trong 1 thiết kế nhãn"
+    q = "cho tôi biết các mục check nhãn"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

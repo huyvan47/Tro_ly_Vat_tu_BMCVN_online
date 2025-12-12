@@ -9,12 +9,10 @@ import re
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/data-vat-tu-full-done-enriched-25-11-PARA-CLEAN.csv"
-OUT_FILE = "tong-hop-data-phong-vat-tu-fix-25-11-PARA-CLEAN-QAAL.npz"
+DATA = ROOT / "data/data-vat-tu/data-vat-tu-full-fixed.csv"  # đổi đúng tên file mới của bạn
+OUT_FILE = "tong-hop-data-phong-vat-tu-fix-12-12-1.npz"
 
-client = OpenAI(
-    api_key="..."   # hoặc bỏ dòng này nếu bạn dùng biến môi trường
-)
+client = OpenAI(api_key="...")
 
 # ==============================
 #        LOAD CSV
@@ -22,11 +20,19 @@ client = OpenAI(
 
 df = pd.read_csv(DATA, encoding="utf-8")
 
+# Đảm bảo các cột tồn tại đúng tên
+required_cols = ["id", "question", "answer", "category", "tags", "alt_questions", "img_keys"]
+missing = [c for c in required_cols if c not in df.columns]
+if missing:
+    raise ValueError(f"Thiếu cột trong CSV: {missing}")
+
+# Ép kiểu về string để tránh NaN gây lỗi
 df["question"] = df["question"].astype(str)
 df["answer"] = df["answer"].astype(str)
-
-if "alt_questions_clean" not in df.columns:
-    df["alt_questions_clean"] = ""
+df["category"] = df["category"].astype(str)
+df["tags"] = df["tags"].fillna("").astype(str)
+df["alt_questions"] = df["alt_questions"].fillna("").astype(str)
+df["img_keys"] = df["img_keys"].fillna("").astype(str)
 
 # ==============================
 #   BUILD INPUT TEXTS FOR EMBED
@@ -36,8 +42,10 @@ inputs = []
 for _, row in df.iterrows():
     q = row["question"]
     a = row["answer"]
-    alt = row["alt_questions_clean"]
+    alt = row["alt_questions"]
 
+    # Làm sạch alt cho chắc (tránh 'nan', khoảng trắng)
+    alt = alt.strip()
     if alt:
         text = f"Hỏi: {q}. Cách hỏi khác: {alt}. Trả lời: {a}."
     else:
@@ -69,10 +77,11 @@ np.savez(
     embeddings=embs,
     questions=df["question"].to_numpy(dtype=object),
     answers=df["answer"].to_numpy(dtype=object),
-    alt_questions=df["alt_questions_clean"].to_numpy(dtype=object),
+    alt_questions=df["alt_questions"].to_numpy(dtype=object),
     category=df["category"].to_numpy(dtype=object),
     tags=df["tags"].to_numpy(dtype=object),
-    ids=df["id"].to_numpy(dtype=int),
+    img_keys=df["img_keys"].to_numpy(dtype=object),
+    ids=df["id"].astype(str).to_numpy(dtype=object),  # dùng string cho an toàn
 )
 
 print(f"ĐÃ BUILD XONG VECTOR FILE → {OUT_FILE}")
