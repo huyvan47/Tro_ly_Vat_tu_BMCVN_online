@@ -20,7 +20,7 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("data-kinh-doanh-nam-benh-full.npz", allow_pickle=True)
+data = np.load("data-kinh-doanh-nam-benh-full-fix.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
@@ -601,7 +601,12 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "phân bón lá không được trộn chung với sản phẩm nào"
+    # q = "phân bón lá không được trộn chung với sản phẩm nào"
+    import sys
+    q = " ".join(sys.argv[1:]).strip() if len(sys.argv) > 1 else ""
+    if not q:
+        print("Usage: python rag_v6_merged.py <your question>")
+        raise SystemExit(1)
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

@@ -9,8 +9,8 @@ import re
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/data-vat-tu/data-vat-tu-full-fixed.csv"  # đổi đúng tên file mới của bạn
-OUT_FILE = "tong-hop-data-phong-vat-tu-fix-12-12-1.npz"
+DATA = ROOT / "data/data-kinh-doanh/data-vat-tu-full-merge-overlap.csv"  # đổi đúng tên file mới của bạn
+OUT_FILE = "data-vat-tu-full-merge-overlap.npz"
 
 client = OpenAI(api_key="...")
 
@@ -38,18 +38,48 @@ df["img_keys"] = df["img_keys"].fillna("").astype(str)
 #   BUILD INPUT TEXTS FOR EMBED
 # ==============================
 
+EMBED_MODE = "Q_PLUS_A_FULL"   # chọn: "Q_ONLY", "Q_PLUS_A_BRIEF", "Q_PLUS_A_FULL"
+ANSWER_HEAD_CHARS = 800        # chỉ dùng cho Q_PLUS_A_BRIEF (600–1200 là hợp lý)
+
+def clean_text(s: str) -> str:
+    s = (s or "").strip()
+    s = re.sub(r"\s+", " ", s)
+    return s
+
 inputs = []
 for _, row in df.iterrows():
-    q = row["question"]
-    a = row["answer"]
-    alt = row["alt_questions"]
+    q = clean_text(row["question"])
+    a = clean_text(row["answer"])
+    alt = clean_text(row["alt_questions"])
 
-    # Làm sạch alt cho chắc (tránh 'nan', khoảng trắng)
-    alt = alt.strip()
-    if alt:
-        text = f"Hỏi: {q}. Cách hỏi khác: {alt}. Trả lời: {a}."
+    # Nếu alt_questions của bạn là nhiều câu, có thể giữ nguyên hoặc rút gọn
+    # alt = alt[:800]  # tùy chọn
+
+    if EMBED_MODE == "Q_ONLY":
+        # Neo vào câu hỏi để tăng recall theo question/alt
+        text = f"Q: {q}"
+        if alt:
+            text += f"\nALT: {alt}"
+
+    elif EMBED_MODE == "Q_PLUS_A_BRIEF":
+        # Neo vào Q nhưng vẫn có tín hiệu nội dung
+        a_brief = a[:ANSWER_HEAD_CHARS]
+        text = f"Q: {q}"
+        if alt:
+            text += f"\nALT: {alt}"
+        if a_brief:
+            text += f"\nA_BRIEF: {a_brief}"
+
+    elif EMBED_MODE == "Q_PLUS_A_FULL":
+        # Dùng full answer như hiện tại, nhưng format rõ ràng hơn
+        text = f"Q: {q}"
+        if alt:
+            text += f"\nALT: {alt}"
+        if a:
+            text += f"\nA: {a}"
+
     else:
-        text = f"Hỏi: {q}. Trả lời: {a}."
+        raise ValueError(f"EMBED_MODE không hợp lệ: {EMBED_MODE}")
 
     inputs.append(text)
 

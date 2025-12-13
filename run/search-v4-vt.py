@@ -20,7 +20,7 @@ client = OpenAI(api_key="...")
 #       LOAD DATA
 # ==============================
 
-data = np.load("tong-hop-data-phong-vat-tu-fix-12-12.npz", allow_pickle=True)
+data = np.load("data-vat-tu-full-merge-overlap.npz", allow_pickle=True)
 
 EMBS = data["embeddings"]
 QUESTIONS = data["questions"]
@@ -468,7 +468,7 @@ def answer_with_suggestions(user_query: str):
 # ==============================
 
 if __name__ == "__main__":
-    q = "cho tôi biết các mục check nhãn"
+    q = "các chai không đóng được Gardona"
     res = answer_with_suggestions(q)
 
     print("\n===== KẾT QUẢ =====\n")

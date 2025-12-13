@@ -5,7 +5,8 @@ from pathlib import Path
 # ==========================
 # CONFIG
 # ==========================
-INPUT_CSV = "data-vat-tu-full-done-enriched-25-11.csv"          # file CSV gốc
+ROOT = Path(__file__).resolve().parent
+INPUT_CSV = ROOT / "data-vat-tu/data-vat-tu-full-done-enriched-25-11.csv"          # file CSV gốc
 OUTPUT_CSV = "output_with_img.csv"   # file CSV sau khi xử lý
 ANSWER_COL = "answer"            # tên cột chứa nội dung
 IMG_KEYS_COL = "img_keys"        # tên cột mới
