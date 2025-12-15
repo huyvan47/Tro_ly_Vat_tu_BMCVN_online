@@ -1,0 +1,92 @@
+﻿timestamp,route,user_query,norm_query,strategy,top1,top2,gap,mean5,n,conf,answer_text,img_keys
+2025-12-15 13:27:18,RAG,thuốc hoặc công thức trị sâu hành tốt nhất,Thuốc hoặc công thức trị sâu hành tốt nhất.,RAG_SOFT,0.6014066934585571,0.599155604839325,0.0022510886192321777,0.5904589891433716,20,0.009025465087830753,"Trong ngữ cảnh hiện tại, không có thông tin cụ thể về thuốc hoặc công thức trị sâu hành. Tuy nhiên, dựa trên các tài liệu liên quan đến việc xử lý sâu hại khác, có thể tham khảo một số phương pháp chung như sau:
+
+1. **Sử dụng thuốc xông hơi và tiếp xúc mạnh**: Các tài liệu đề cập đến việc sử dụng thuốc xông hơi và tiếp xúc mạnh để tiêu diệt sâu hại. Ví dụ, Ohayo 240SC và Koto Gold đã được chứng minh hiệu quả trong việc tiêu diệt sâu đục cành với tỷ lệ chết từ 80-100%.
+
+2. **Phối hợp thuốc tiếp xúc-lưu dẫn**: Đối với nhóm sâu miệng nhai, công thức phối hợp thuốc tiếp xúc-lưu dẫn mạnh được khuyến nghị để phát huy tác dụng nhanh và kéo dài hiệu quả.
+
+3. **Xử lý sâu kháng thuốc**: Trong trường hợp sâu có khả năng kháng thuốc, như sâu cuốn lá và sâu đục thân trên lúa, việc sử dụng các sản phẩm như Zigen Xpro hoặc Oxatin với liều lượng phù hợp đã cho thấy hiệu quả cao.
+
+Để có giải pháp cụ thể cho sâu hành, cần xác định rõ loại sâu và điều kiện thực tế của cây trồng. Có thể tham khảo thêm các câu hỏi liên quan như:
+- Các công thức trị sâu đục thân sầu riêng là gì?
+- Nhóm sâu miệng nhai nên dùng công thức phối hợp thuốc nào để phòng trừ hiệu quả?
+- Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?",[]
+2025-12-15 13:28:43,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh.,RAG_SOFT,0.6710926294326782,0.6550623178482056,0.016030311584472656,0.6208783268928528,20,0.07171882634565918,"Để phòng trị rầy chổng cánh, có thể áp dụng các công thức phối trộn sau đây:
+
+1. **Công thức 1 (CT1):** Sử dụng thuốc tiếp xúc nhẹ kết hợp với thuốc lưu dẫn. Các sản phẩm có thể dùng bao gồm:
+   - Tiếp xúc nhẹ: Aba, Ema, Igro, Chlorfenapyr với liều lượng 20–25 ml.
+   - Lưu dẫn: Tosi, Nofara, Inmanda với liều lượng 25 gr/25 L nước.
+
+2. **Công thức 2 (CT2):** Kết hợp thuốc xông hơi hoặc Bipimai với thuốc lưu dẫn:
+   - Xông hơi: Binhfos, Uchong, Forsan hoặc Bipimai với liều lượng 25–30 ml.
+   - Lưu dẫn: 25 gr/25 L nước.
+
+3. **Công thức 3 (CT3):** Sử dụng thuốc tiếp xúc mạnh kết hợp với thuốc lưu dẫn, có thể kèm theo thuốc xông hơi:
+   - Tiếp xúc mạnh: Ohayo, Hosu, Ledan 95 với liều lượng 24–30 ml.
+   - Lưu dẫn: 25 gr/25 L nước.
+
+**Đặc điểm và cơ chế tác động:**
+- **Thuốc tiếp xúc:** Tác động trực tiếp lên rầy khi tiếp xúc, giúp tiêu diệt nhanh chóng.
+- **Thuốc lưu dẫn:** Thẩm thấu vào cây, diệt rầy khi chúng hút nhựa cây.
+- **Thuốc xông hơi:** Tạo hơi độc trong không khí, tiêu diệt rầy ở các vị trí khó tiếp cận.
+
+**Lưu ý:** Rầy chổng cánh là tác nhân truyền bệnh vàng lá gân xanh, gây hại cho lá non và làm cây còi cọc. Việc sử dụng các công thức trên cần tuân thủ liều lượng và hướng dẫn để đạt hiệu quả cao nhất.
+
+**Gợi ý thêm câu hỏi liên quan:**
+- Các công thức phối trộn trị rầy phấn được khuyến cáo là gì?
+- Công thức phối trộn trị bọ trĩ trên sầu riêng là gì?
+- Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?",[]
+2025-12-15 13:53:11,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh.,RAG_SOFT,0.6710926294326782,0.6550623178482056,0.016030311584472656,0.6208783268928528,20,0.07171882634565918,"Để phòng trị rầy chổng cánh, bạn có thể áp dụng các công thức phối trộn sau đây:
+
+1. **Công thức 1 (CT1):** Sử dụng thuốc tiếp xúc nhẹ kết hợp với thuốc lưu dẫn. Các sản phẩm có thể sử dụng bao gồm:
+   - **Tiếp xúc nhẹ:** Aba, Ema, Igro, Chlorfenapyr với liều lượng 20–25ml.
+   - **Lưu dẫn:** Tosi, Nofara, Inmanda với liều lượng 25gr/25L nước.
+
+2. **Công thức 2 (CT2):** Kết hợp thuốc xông hơi với thuốc lưu dẫn. Các sản phẩm có thể sử dụng bao gồm:
+   - **Xông hơi:** Binhfos, Uchong, Forsan hoặc Bipimai với liều lượng 25–30ml.
+   - **Lưu dẫn:** Sử dụng 25gr/25L nước.
+
+3. **Công thức 3 (CT3):** Sử dụng thuốc tiếp xúc mạnh kết hợp với thuốc lưu dẫn, có thể kèm theo thuốc xông hơi. Các sản phẩm có thể sử dụng bao gồm:
+   - **Tiếp xúc mạnh:** Ohayo, Hosu, Ledan 95 với liều lượng 24–30ml.
+   - **Lưu dẫn:** Sử dụng 25gr/25L nước.
+
+**Lưu ý:** Rầy chổng cánh là tác nhân truyền bệnh vàng lá gân xanh, gây hại cho lá non và làm cây còi cọc. Việc sử dụng các công thức trên giúp kiểm soát hiệu quả rầy chổng cánh, bảo vệ cây trồng khỏi các tác động tiêu cực.
+
+**Gợi ý câu hỏi liên quan:**
+- Các công thức phối trộn trị rầy phấn được khuyến cáo là gì?
+- Công thức phối trộn trị bọ trĩ trên sầu riêng là gì?
+- Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?",[]
+2025-12-15 13:54:15,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh.,DIRECT_DOC,0.8663277888298033,0.5775784850120544,0.2887493038177489,0.628099196434021,40,0.8663277888298033,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Cách phòng trị rầy chổng cánh?
+
+Triệu chứng: Rầy chổng cánh truyền bệnh vàng lá gân xanh, gây hại lá non, làm cây còi cọc.Phòng trừ:CT1: Tiếp xúc nhẹ (Aba, Ema, Igro, Chlorfenapyr…) 20–25ml + Lưu dẫn (Tosi, Nofara, Inmanda…) 25gr/25L.CT2: Xông hơi (Binhfos, Uchong, Forsan…) / Bipimai 25–30ml + Lưu dẫn 25gr/25L.CT3: Tiếp xúc mạnh (Ohayo, Hosu, Ledan 95…) 24–30ml + Lưu dẫn (25gr), có thể kèm xông hơi.
+
+Câu hỏi liên quan:
+- Các công thức phối trộn trị sâu đục trái được khuyến cáo là gì?
+- Các công thức trị rầy xanh, rầy phấn (rầy nhảy) là gì?
+- Các công thức phối trộn trị bệnh thán thư được khuyến cáo?",[]
+2025-12-15 14:06:41,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh.,DIRECT_DOC,0.9013277888298035,0.6550623178482056,0.2462654709815979,0.6669253587722779,20,0.9013277888298035,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Cách phòng trị rầy chổng cánh?
+
+Triệu chứng: Rầy chổng cánh truyền bệnh vàng lá gân xanh, gây hại lá non, làm cây còi cọc.Phòng trừ:CT1: Tiếp xúc nhẹ (Aba, Ema, Igro, Chlorfenapyr…) 20–25ml + Lưu dẫn (Tosi, Nofara, Inmanda…) 25gr/25L.CT2: Xông hơi (Binhfos, Uchong, Forsan…) / Bipimai 25–30ml + Lưu dẫn 25gr/25L.CT3: Tiếp xúc mạnh (Ohayo, Hosu, Ledan 95…) 24–30ml + Lưu dẫn (25gr), có thể kèm xông hơi.
+
+Câu hỏi liên quan:
+- Các công thức phối trộn trị rầy phấn được khuyến cáo là gì?
+- Công thức phối trộn trị bọ trĩ trên sầu riêng là gì?
+- Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?",[]
+2025-12-15 17:21:33,RAG,thuốc trị bọ nhảy hiệu quả,Thuốc trị bọ nhảy hiệu quả.,RAG_SOFT,0.832078000307083,0.7907528150081634,0.0413251852989196,0.7650890016555785,40,0.2292385169722979,"Để trị bọ nhảy hiệu quả, có một số công thức và sản phẩm được đề xuất trong ngữ cảnh như sau:
+
+1. **Tiếp xúc mạnh + Lưu dẫn**: Đây là phương pháp kết hợp giữa thuốc có tác dụng tiếp xúc mạnh để tiêu diệt nhanh các cá thể trưởng thành của bọ nhảy và thuốc lưu dẫn để thấm sâu vào lá, tiêu diệt các cá thể ẩn nấp và ấu trùng. Khi mật độ bọ nhảy cao, có thể phối thêm dòng xông hơi để tăng hiệu quả xuyên tán và triệt tiêu ấu trùng.
+
+2. **Sử dụng Abamectin 3.6**: Abamectin có thể được thêm vào các công thức trên để tăng cường hiệu quả diệt trừ bọ nhảy. Abamectin là một loại thuốc trừ sâu sinh học có tác dụng mạnh đối với nhiều loại côn trùng.
+
+3. **Bipimai + Lưu dẫn**: Đây là một lựa chọn khác, có thể kết hợp với Abamectin 3.6 để tăng cường hiệu quả.
+
+4. **Thiosultap sodium + Lưu dẫn**: Tương tự như các công thức trên, Thiosultap sodium có thể được kết hợp với lưu dẫn và Abamectin 3.6 để đạt hiệu quả tối ưu.
+
+Các sản phẩm và công thức này đều nhấn mạnh sự kết hợp giữa các cơ chế tác động khác nhau (tiếp xúc, lưu dẫn, xông hơi) để đảm bảo tiêu diệt bọ nhảy ở mọi giai đoạn phát triển và vị trí ẩn nấp.
+
+**Gợi ý câu hỏi liên quan:**
+- Các nguyên tắc chung trong phòng trị bọ nhảy là gì?
+- Khi nào nên sử dụng Abamectin trong trị bọ nhảy?
+- Có cần thiết phải phối thêm dòng xông hơi khi trị bọ nhảy không?",[]

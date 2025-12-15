@@ -1,0 +1,244 @@
+﻿timestamp,route,user_query,norm_query,strategy,top1,top2,gap,mean5,n,conf,answer_text,img_keys
+2025-12-15 10:05:30,RAG,cách tôi trị rầy chổng cánh và rầy xanh,Cách trị rầy chổng cánh và rầy xanh.,RAG_STRICT,0.8899630033969879,0.8050138521194458,0.0849491512775421,0.808895790052414,20,0.5040106787132429,"### Tổng quan về rầy chổng cánh và rầy xanh
+
+Rầy chổng cánh và rầy xanh là hai loại côn trùng gây hại phổ biến trên cây trồng. Rầy chổng cánh chủ yếu truyền bệnh vàng lá gân xanh, gây hại cho lá non và làm cây còi cọc. Trong khi đó, rầy xanh thường gây hại trên lá non và đọt non của cây sầu riêng, làm lá xuất hiện các chấm nhỏ màu vàng, khô dần và rụng.
+
+### Nguyên nhân & điều kiện phát sinh
+
+- **Rầy chổng cánh**: Phát triển mạnh trong điều kiện thời tiết ẩm ướt, đặc biệt là khi có nhiều lá non.
+- **Rầy xanh**: Thường xuất hiện nhiều khi cây đang ra lá non, đặc biệt trong điều kiện khí hậu ấm áp và ẩm ướt.
+
+### Triệu chứng
+
+- **Rầy chổng cánh**: Gây bệnh vàng lá gân xanh, lá non bị hại, cây còi cọc.
+- **Rầy xanh**: Lá xuất hiện chấm vàng nhỏ, khô mép và rụng, đọt non ngừng phát triển.
+
+### Hậu quả
+
+- **Rầy chổng cánh**: Cây còi cọc, giảm năng suất do bệnh vàng lá gân xanh.
+- **Rầy xanh**: Cây suy yếu, giảm năng suất do lá và đọt non bị hại.
+
+### Hướng xử lý & phòng ngừa
+
+#### Rầy chổng cánh
+
+1. **Phòng trừ**:
+   - **CT1**: Sử dụng thuốc tiếp xúc nhẹ như Aba, Ema, Igro, Chlorfenapyr (20–25ml) kết hợp với thuốc lưu dẫn như Tosi, Nofara, Inmanda (25gr/25L).
+   - **CT2**: Sử dụng thuốc xông hơi như Binhfos, Uchong, Forsan hoặc Bipimai (25–30ml) kết hợp với thuốc lưu dẫn (25gr/25L).
+   - **CT3**: Sử dụng thuốc tiếp xúc mạnh như Ohayo, Hosu, Ledan 95 (24–30ml) kết hợp với thuốc lưu dẫn (25gr), có thể kèm xông hơi.
+
+#### Rầy xanh
+
+1. **Phòng trừ**:
+   - Sử dụng kết hợp thuốc lưu dẫn như Tois, Vuaches, Dinotop, Exami, Inmanda (200g/phuy 200L) với thuốc xông hơi – tiếp xúc như Santoso, Koto, Betaxu, Binhfos, Forsan (240ml/phuy 200L).
+
+### Gợi ý câu hỏi liên quan
+
+- Rầy xanh và rầy phấn gây hại trên sầu riêng như thế nào?
+- Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ bình thường như thế nào?
+- Rầy tập trung ở đâu và tại sao cây dễ bị rụng lá khi bị rầy tấn công?",[]
+2025-12-15 10:07:23,RAG,cách tôi trị bọ phấn trắng hiệu quả nhất,Cách trị bọ phấn trắng hiệu quả nhất.,RAG_SOFT,0.7704812717437743,0.7256448960304259,0.04483637571334842,0.6858607711791991,20,0.23030391853334914,"### Tổng quan về bọ phấn trắng
+
+Bọ phấn trắng là một loại côn trùng gây hại phổ biến trên nhiều loại cây trồng, đặc biệt là cây ăn quả và cây cảnh. Chúng có khả năng sinh sản nhanh và gây hại nghiêm trọng nếu không được kiểm soát kịp thời.
+
+### Nguyên nhân & điều kiện phát sinh
+
+Bọ phấn trắng thường phát triển mạnh trong điều kiện thời tiết ấm áp và ẩm ướt. Chúng thường xuất hiện nhiều vào mùa xuân và mùa hè khi nhiệt độ và độ ẩm cao.
+
+### Triệu chứng
+
+- Lá cây bị bọ phấn trắng tấn công thường có những đốm vàng hoặc bạc.
+- Mặt dưới của lá có thể xuất hiện lớp bột trắng, là dấu hiệu của sự hiện diện của bọ phấn.
+- Cây bị suy yếu, lá rụng sớm và có thể dẫn đến giảm năng suất.
+
+### Hậu quả
+
+Nếu không được kiểm soát, bọ phấn trắng có thể gây ra thiệt hại lớn cho cây trồng, làm giảm năng suất và chất lượng sản phẩm. Chúng cũng có thể truyền bệnh virus cho cây.
+
+### Hướng xử lý & phòng ngừa
+
+1. **Sử dụng thuốc trừ sâu**: 
+   - Sử dụng các loại thuốc tiếp xúc-lưu dẫn mạnh như Zigen super, Ohayo 100sc, Ohayo 240sc, Oxatin, Hosu để kiểm soát bọ phấn trắng khi mật độ cao.
+   - Đảm bảo phun thuốc đều trên toàn bộ cây, đặc biệt là mặt dưới của lá nơi bọ phấn thường ẩn náu.
+
+2. **Biện pháp sinh học**:
+   - Khuyến khích sự hiện diện của thiên địch tự nhiên như bọ rùa và ong ký sinh để kiểm soát bọ phấn một cách tự nhiên.
+
+3. **Biện pháp canh tác**:
+   - Thường xuyên kiểm tra và loại bỏ lá bị nhiễm bệnh để giảm nguồn lây nhiễm.
+   - Giữ cho vườn cây thông thoáng, tránh tạo điều kiện ẩm ướt quá mức.
+
+4. **Phòng ngừa**:
+   - Lên kế hoạch phun thuốc phòng ngừa vào đầu mùa xuân để ngăn chặn sự phát triển của bọ phấn trắng.
+
+### Gợi ý câu hỏi liên quan
+
+- Những biện pháp quản lý tổng hợp bệnh phấn trắng trên hoa hồng gồm những gì?
+- Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ cao hơn như thế nào?
+- Cần xử lý gì trước khi phun/quét thuốc trị nấm hồng?",[]
+2025-12-15 10:13:01,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh và rầy xanh hiệu quả,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh và rầy xanh hiệu quả.,RAG_SOFT,0.8280076611042022,0.7968914282321929,0.031116232872009264,0.7635809042453765,20,0.17176319468484055,"### Tổng quan về Rầy Chổng Cánh và Rầy Xanh
+
+**Rầy Chổng Cánh:**
+- **Nguyên nhân & Điều kiện phát sinh:** Rầy chổng cánh là tác nhân truyền bệnh vàng lá gân xanh, thường xuất hiện khi điều kiện thời tiết ẩm ướt, nhiệt độ cao.
+- **Triệu chứng:** Rầy chổng cánh gây hại chủ yếu trên lá non, làm cây còi cọc, lá bị xoăn và vàng.
+- **Hậu quả:** Nếu không kiểm soát, rầy chổng cánh có thể làm giảm năng suất cây trồng đáng kể.
+
+**Rầy Xanh:**
+- **Nguyên nhân & Điều kiện phát sinh:** Rầy xanh thường phát triển mạnh trong điều kiện khí hậu ấm áp và ẩm ướt.
+- **Triệu chứng:** Rầy xanh gây hại trên lá non và già, làm lá bị xoăn, mất màu xanh tự nhiên.
+- **Hậu quả:** Tương tự như rầy chổng cánh, rầy xanh có thể làm giảm năng suất và chất lượng cây trồng.
+
+### Hướng xử lý & Phòng ngừa
+
+**Phối trộn thuốc trị Rầy Chổng Cánh:**
+1. **Công thức 1 (CT1):** Sử dụng thuốc tiếp xúc nhẹ như Aba, Ema, Igro, Chlorfenapyr với liều lượng 20–25ml kết hợp với thuốc lưu dẫn như Tosi, Nofara, Inmanda với liều lượng 25gr/25L nước.
+2. **Công thức 2 (CT2):** Sử dụng thuốc xông hơi như Binhfos, Uchong, Forsan hoặc Bipimai với liều lượng 25–30ml kết hợp với thuốc lưu dẫn 25gr/25L nước.
+3. **Công thức 3 (CT3):** Sử dụng thuốc tiếp xúc mạnh như Ohayo, Hosu, Ledan 95 với liều lượng 24–30ml kết hợp với thuốc lưu dẫn 25gr/25L nước, có thể kèm thêm thuốc xông hơi.
+
+**Phối trộn thuốc trị Rầy Xanh:**
+1. **Công thức 1 (CT1):** Sử dụng thuốc tiếp xúc hoặc xông hơi như Binhfos 240ml, Ohayo 240SC 240ml/phuy 200L.
+2. **Công thức 2 (CT2):** Sử dụng thuốc tiếp xúc kết hợp với lưu dẫn như Ohayo 240SC 240ml + Tosi 100gr/phuy 200L.
+3. **Công thức 3 (CT3):** Sử dụng thuốc xông hơi kết hợp với lưu dẫn như Binhfos 240ml + Dinotop 100gr/phuy 200L.
+
+### Gợi ý thêm
+
+- **Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?**
+- **Các công thức trị rầy xanh, rầy phấn (rầy nhảy) là gì?**
+- **Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ cao hơn như thế nào?**
+
+Việc luân phiên sử dụng các nhóm thuốc khác nhau và kết hợp các phương pháp tiếp xúc, xông hơi và lưu dẫn là cần thiết để tránh hiện tượng kháng thuốc và bảo vệ cây trồng hiệu quả.",[]
+2025-12-15 10:15:53,RAG,cho tôi thuốc và công thức phối trộn trị rệp sáp,Cho tôi thuốc và công thức phối trộn trị rệp sáp.,RAG_SOFT,0.8223725366592407,0.791138733625412,0.031233803033828722,0.6528186810016632,20,0.17123881220296544,"### Tổng quan về rệp sáp
+
+Rệp sáp là một loại côn trùng gây hại phổ biến trên nhiều loại cây trồng, đặc biệt là cây ăn trái như sầu riêng. Chúng thường gây ra thiệt hại lớn cho cây trồng nếu không được kiểm soát kịp thời.
+
+### Nguyên nhân & điều kiện phát sinh
+
+Rệp sáp phát triển mạnh trong điều kiện ẩm ướt và nhiệt độ cao. Chúng thường trú ẩn dưới rễ cây và trên các bộ phận non của cây, nơi chúng có thể dễ dàng hút nhựa cây.
+
+### Triệu chứng
+
+- Rệp sáp chích hút nhựa từ đọt non và lá non, làm cho các bộ phận này bị biến dạng và còi cọc.
+- Chúng tiết ra mật ngọt, tạo điều kiện cho nấm bồ hóng phát triển, làm giảm khả năng quang hợp của cây.
+
+### Hậu quả
+
+- Cây bị còi cọc, phát triển kém.
+- Giảm năng suất và chất lượng trái.
+- Tăng nguy cơ nhiễm các loại bệnh khác do nấm bồ hóng.
+
+### Hướng xử lý & phòng ngừa
+
+#### Công thức phối trộn trị rệp sáp
+
+1. **Công thức 1 (CT1 - Xông hơi):**
+   - Sử dụng các sản phẩm BMC dạng xông hơi như Santoso, Binhfos, Ongcha.
+
+2. **Công thức 2 (CT2 - Xông hơi + Lưu dẫn):**
+   - Forsan 240 ml + 200 g Osacer/phuy 200 L.
+
+3. **Công thức khác:**
+   - Exami 100gr + Hosu 240ml + 100ml bám dính / 200L.
+   - Ecudor/Suparep 240ml + Dinotop 100gr + 100ml bám dính / 200L.
+   - Santoso 480ml + lưu dẫn (Tosi trở xuống) / 200L.
+   - Koto 240ml + 100ml bám dính / 200L.
+
+#### Lưu ý khi sử dụng
+
+- Ngoài việc phun lá, cần pha thuốc tưới gốc để diệt ấu trùng dưới rễ.
+- Tránh sử dụng thuốc EC nóng trong giai đoạn xổ nhụy và trái non; nên luân phiên sử dụng phương pháp xông hơi và lưu dẫn.
+
+### Gợi ý câu hỏi liên quan
+
+- Công thức phối trộn để trị rệp sáp trên sầu riêng là gì?
+- Các công thức phối trộn trị bệnh thán thư được khuyến cáo?
+- Các công thức phối trộn trị sâu đục trái được khuyến cáo là gì?",[]
+2025-12-15 10:20:15,RAG,cho tôi thuốc và công thức phối trộn trị rệp sáp,Cho tôi thuốc và công thức phối trộn trị rệp sáp.,RAG_SOFT,0.8223686385154724,0.7911533069610596,0.031215331554412806,0.6528681898117066,20,0.17113673140807684,"### Tổng quan về rệp sáp
+
+Rệp sáp là một loại côn trùng gây hại phổ biến trên nhiều loại cây trồng, đặc biệt là cây ăn quả như sầu riêng. Chúng gây hại bằng cách chích hút nhựa từ đọt non và lá non, làm cây còi cọc và biến dạng. Ngoài ra, rệp sáp còn tiết ra mật ngọt, tạo điều kiện cho nấm bồ hóng phát triển, ảnh hưởng đến quang hợp của cây.
+
+### Nguyên nhân & điều kiện phát sinh
+
+Rệp sáp thường phát triển mạnh trong điều kiện thời tiết ấm áp và ẩm ướt. Chúng thường trú ẩn dưới rễ cây, nơi khó tiếp cận và tiêu diệt.
+
+### Triệu chứng
+
+- Chích hút nhựa từ đọt non và lá non, làm cây còi cọc, biến dạng.
+- Tiết mật ngọt, tạo điều kiện cho nấm bồ hóng phát triển trên bề mặt lá.
+
+### Hậu quả
+
+- Giảm khả năng quang hợp của cây do nấm bồ hóng.
+- Làm cây còi cọc, giảm năng suất và chất lượng trái.
+
+### Hướng xử lý & phòng ngừa
+
+#### Công thức phối trộn
+
+1. **Công thức 1 (CT1 – Xông hơi):**
+   - Sử dụng các sản phẩm BMC dạng xông hơi như Santoso, Binhfos, Ongcha.
+
+2. **Công thức 2 (CT2 – Xông hơi + lưu dẫn):**
+   - Forsan 240 ml + 200 g Osacer/phuy 200 L.
+
+3. **Công thức khác:**
+   - Exami 100gr + Hosu 240ml + 100ml bám dính / 200L.
+   - Ecudor/Suparep 240ml + Dinotop 100gr + 100ml bám dính / 200L.
+   - Santoso 480ml + lưu dẫn (Tosi trở xuống) / 200L.
+   - Koto 240ml + 100ml bám dính / 200L.
+
+#### Lưu ý khi sử dụng
+
+- Ngoài phun lá, cần pha thuốc tưới gốc để diệt ấu trùng dưới rễ.
+- Tránh sử dụng thuốc EC nóng trong giai đoạn xổ nhụy và trái non; nên luân phiên sử dụng xông hơi và lưu dẫn.
+
+### Gợi ý câu hỏi liên quan
+
+- Công thức phối trộn để trị rệp sáp trên sầu riêng là gì?
+- Các công thức phối trộn trị bệnh thán thư được khuyến cáo?
+- Các công thức phối trộn trị sâu đục trái được khuyến cáo là gì?",[]
+2025-12-15 10:24:11,RAG,cho tôi thuốc và công thức phối trộn trị rệp sáp,Cho tôi thuốc và công thức phối trộn trị rệp sáp.,RAG_SOFT,0.8223686385154724,0.7911533069610596,0.031215331554412806,0.6924772806167602,20,0.17113673140807684,"Để trị rệp sáp, có một số công thức phối trộn và sản phẩm được đề xuất trong ngữ cảnh như sau:
+
+1. **Công thức 1:**
+   - **Exami**: 100g
+   - **Hosu**: 240ml
+   - **Chất bám dính**: 100ml
+   - **Dung dịch**: Pha trong 200L nước
+
+2. **Công thức 2:**
+   - **Ecudor/Suparep**: 240ml
+   - **Dinotop**: 100g
+   - **Chất bám dính**: 100ml
+   - **Dung dịch**: Pha trong 200L nước
+
+3. **Công thức 3:**
+   - **Santoso**: 480ml
+   - **Lưu dẫn**: Sử dụng sản phẩm như Tosi hoặc tương đương
+   - **Dung dịch**: Pha trong 200L nước
+
+4. **Công thức 4:**
+   - **Koto**: 240ml
+   - **Chất bám dính**: 100ml
+   - **Dung dịch**: Pha trong 200L nước
+
+Ngoài ra, có hai phương pháp phổ biến khác để trị rệp sáp trên sầu riêng:
+
+- **CT1 – Xông hơi**: Sử dụng các sản phẩm BMC dạng xông hơi như Santoso, Binhfos, Ongcha.
+- **CT2 – Xông hơi + lưu dẫn**: Ví dụ, Forsan 240ml kết hợp với 200g Osacer trong 200L nước.
+
+Lưu ý quan trọng:
+- Ngoài việc phun lá, cần pha thuốc tưới gốc để diệt ấu trùng dưới rễ, nơi rệp thường trú ẩn.
+- Tránh sử dụng thuốc EC nóng trong giai đoạn xổ nhụy và trái non; nên luân phiên giữa xông hơi và lưu dẫn.
+
+Gợi ý thêm câu hỏi liên quan:
+- Công thức phối trộn để trị rệp sáp trên sầu riêng là gì?
+- Các hoạt chất đặc trị và sản phẩm dùng cho rệp sáp là gì?
+- Các biện pháp xử lý rệp sáp hiệu quả hiện nay?",[]
+2025-12-15 10:25:54,RAG,cho tôi thuốc và công thức phối trộn trị rầy chổng cánh,Cho tôi thuốc và công thức phối trộn trị rầy chổng cánh.,DIRECT_DOC,0.9013277888298035,0.6550623178482056,0.2462654709815979,0.6669253587722779,20,0.9013277888298035,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Cách phòng trị rầy chổng cánh?
+
+Triệu chứng: Rầy chổng cánh truyền bệnh vàng lá gân xanh, gây hại lá non, làm cây còi cọc.Phòng trừ:CT1: Tiếp xúc nhẹ (Aba, Ema, Igro, Chlorfenapyr…) 20–25ml + Lưu dẫn (Tosi, Nofara, Inmanda…) 25gr/25L.CT2: Xông hơi (Binhfos, Uchong, Forsan…) / Bipimai 25–30ml + Lưu dẫn 25gr/25L.CT3: Tiếp xúc mạnh (Ohayo, Hosu, Ledan 95…) 24–30ml + Lưu dẫn (25gr), có thể kèm xông hơi.
+
+Câu hỏi liên quan:
+- Các công thức phối trộn trị rầy phấn được khuyến cáo là gì?
+- Công thức phối trộn trị bọ trĩ trên sầu riêng là gì?
+- Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?",[]
