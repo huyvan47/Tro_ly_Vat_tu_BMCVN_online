@@ -90,3 +90,377 @@ Các sản phẩm và công thức này đều nhấn mạnh sự kết hợp gi
 - Các nguyên tắc chung trong phòng trị bọ nhảy là gì?
 - Khi nào nên sử dụng Abamectin trong trị bọ nhảy?
 - Có cần thiết phải phối thêm dòng xông hơi khi trị bọ nhảy không?",[]
+2025-12-16 08:11:43,RAG,cách tôi trị rầy chổng cánh và rầy xanh,Cách trị rầy chổng cánh và rầy xanh.,RAG_STRICT,0.8899630033969879,0.8004582834243774,0.08950471997261045,0.7603247351646422,40,0.5310392627002051,"Để trị rầy chổng cánh và rầy xanh, bạn có thể áp dụng các phương pháp sau:
+
+1. **Rầy chổng cánh**:
+   - **Triệu chứng**: Rầy chổng cánh truyền bệnh vàng lá gân xanh, gây hại lá non, làm cây còi cọc.
+   - **Phòng trừ**:
+     - **Công thức 1 (CT1)**: Sử dụng thuốc tiếp xúc nhẹ như Aba, Ema, Igro, Chlorfenapyr với liều lượng 20–25ml kết hợp với thuốc lưu dẫn như Tosi, Nofara, Inmanda với liều lượng 25gr/25L nước.
+     - **Công thức 2 (CT2)**: Sử dụng thuốc xông hơi như Binhfos, Uchong, Forsan hoặc Bipimai với liều lượng 25–30ml kết hợp với thuốc lưu dẫn 25gr/25L nước.
+     - **Công thức 3 (CT3)**: Sử dụng thuốc tiếp xúc mạnh như Ohayo, Hosu, Ledan 95 với liều lượng 24–30ml kết hợp với thuốc lưu dẫn 25gr, có thể kèm thêm thuốc xông hơi.
+
+2. **Rầy xanh**:
+   - **Triệu chứng**: Rầy xanh gây hại mạnh trên lá non và đọt non, làm lá xuất hiện các chấm nhỏ màu vàng, sau đó khô dần và rụng. Khi mật số cao, cây suy yếu, đọt non ngừng phát triển và giảm năng suất.
+   - **Phòng trừ**:
+     - **Phối hợp thuốc**: Sử dụng thuốc lưu dẫn như Tois, Vuaches, Dinotop, Exami, Inmanda với liều 200g/phuy 200L kết hợp với thuốc xông hơi – tiếp xúc như Santoso, Koto, Betaxu, Binhfos, Forsan với liều 240ml/phuy 200L. Phối hợp này giúp tiêu diệt rầy trên cả lá non, lá già và mặt dưới lá, đồng thời hạn chế kháng thuốc.
+
+Ngoài ra, bạn có thể tham khảo thêm về cách xử lý rầy xanh, rầy chổng cánh, rầy phấn, rầy mềm, bọ phấn khi mật độ bình thường hoặc tìm hiểu về các công thức trị rầy xanh, rầy phấn (rầy nhảy).",[]
+2025-12-16 08:15:58,RAG,thông tin về thuốc trừ cỏ maruka,Thông tin về thuốc trừ cỏ Maruka.,RAG_SOFT,0.8793557941913605,0.8770635604858398,0.0022922337055206743,0.8108031561374665,40,0.013437926603935585,"Maruka 5EC là một loại thuốc trừ cỏ chọn lọc với hoạt chất chính là Quizalofop-P-Ethyl, có nồng độ 50g/l. Sản phẩm này được thiết kế để trừ cỏ lá hẹp hậu nảy mầm sớm, đặc biệt hiệu quả khi cỏ ở giai đoạn 2-4 lá. Thuốc được sử dụng trên các cây trồng lá rộng như đậu tương (đậu nành), lạc (đậu phộng), sắn (mì), vừng (mè), khoai lang, gừng, nghệ và các cây trồng lá rộng khác. Maruka 5EC không phù hợp để sử dụng trên cây lá hẹp như bắp, mía, lúa, và không nên phun trên ruộng bầu, bí, dưa khi cây còn dưới 7 lá thật.
+
+Sản phẩm được đóng gói với các quy cách khác nhau như 100ml, 450ml, 480ml, và 900ml tùy theo nhà phân phối. Để đạt hiệu quả tốt nhất, nên phun thuốc trong khoảng 5-20 ngày sau khi trồng.
+
+Một số lưu ý quan trọng khi sử dụng Maruka 5EC bao gồm:
+- Không phun thuốc lên các cây trồng lá hẹp như bắp, mía, lúa vì có thể gây hại.
+- Tránh phun trên ruộng bầu, bí, dưa khi cây còn dưới 7 lá thật.
+- Đảm bảo phun thuốc khi cỏ ở giai đoạn 2-4 lá để đạt hiệu quả cao nhất.
+
+Maruka 5EC có thể thay thế cho các sản phẩm đối thủ như Targa Super (Nissei Nhật) và Cariza (Nicotex), và được xem là sản phẩm dẫn đầu tại Việt Nam trong nhóm thuốc trừ cỏ có hoạt chất Quizalofop-P-Ethyl.
+
+Bạn có thể quan tâm đến các câu hỏi liên quan như:
+- Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+- Maruka 5EC có những lưu ý quan trọng nào khi sử dụng?
+- Modusa 960EC là thuốc gì và có công dụng như thế nào?",[]
+2025-12-16 08:36:58,RAG,nấm Colletotrichum gây ra bệnh gì,"Nấm Colletotrichum gây ra bệnh thán thư (bệnh thán thư trái cây) trên nhiều loại cây trồng, bao gồm cả cây ăn trái và cây lương thực.",DIRECT_DOC,0.8828942179679871,0.7738558840751648,0.10903833389282225,0.7493882312774658,50,0.6417954302055704,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Bệnh thán thư trên quả ớt do nấm nào gây ra và biểu hiện bệnh ra sao?
+
+Bệnh thán thư trên quả ớt do nấm Colletotrichum sp. gây ra. Nấm gây ra các vết thâm đen trên quả, làm quả bị thối và giảm chất lượng. Bệnh phát triển mạnh trong điều kiện ẩm ướt và nhiệt độ cao. Phòng trừ bệnh bằng cách thu hoạch đúng thời điểm, loại bỏ quả bệnh và sử dụng thuốc bảo vệ thực vật phù hợp.
+
+Câu hỏi liên quan:
+- Bệnh thán thư do nấm Colletotrichum gloeosporioides xuất hiện trong điều kiện nào và dấu hiệu nhận biết ban đầu là gì?
+- Bệnh thán thư trên sầu riêng là gì và do tác nhân nào gây ra?
+- Vì sao bệnh thán thư lây lan nhanh trên lá sầu riêng?",[]
+2025-12-16 08:38:04,RAG,đối tượng gây hại của nấm Colletotrichum,Đối tượng gây hại của nấm Colletotrichum.,DIRECT_DOC,0.8462958693504333,0.7351081472635269,0.11118772208690642,0.6234233363866806,40,0.627318066164219,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Bệnh rụng trái sau nở hoa (Post-bloom Fruit Drop – PFD) trên cam quýt là gì?
+
+Bệnh rụng trái sau nở hoa (PFD) do nấm Colletotrichum acutatum gây ra. Bệnh làm rụng trái non nghiêm trọng sau khi hoa đã nở.
+
+Câu hỏi liên quan:
+- Bệnh thán thư do nấm Colletotrichum gloeosporioides xuất hiện trong điều kiện nào và dấu hiệu nhận biết ban đầu là gì?
+- Nhóm nấm Ascomycota gây hại trên cây trồng bao gồm những chi nấm chính nào?
+- Bệnh loét thân (stem canker) trên hoa hồng do những tác nhân nào gây ra?",[]
+2025-12-16 08:41:39,RAG,tất cả thông tin về nấm Colletotrichum,Tất cả thông tin về nấm Colletotrichum.,RAG_SOFT,0.8031432235240935,0.7851375544071196,0.018005669116973877,0.7512114237546921,50,0.09640754090876412,"- **Nấm Colletotrichum gloeosporioides**: 
+  - Xuất hiện từ đầu mùa khô, đặc biệt khi trời mát và sáng có nhiều sương mù.
+  - Gây bệnh thán thư trên lá, bông và trái non, với dấu hiệu trên lá là vết lõm có viền nâu sẫm, thường bắt đầu từ mép hoặc đuôi lá.
+  - Lá non và đọt non dễ nhiễm bệnh nhất.
+  - Bào tử nấm lan qua gió, nước tưới hoặc rơi xuống đất rồi truyền sang cây khác.
+
+- **Nấm Colletotrichum sp.**:
+  - Gây bệnh thán thư trên quả ớt, với triệu chứng là các vết thâm đen trên quả, làm quả bị thối và giảm chất lượng.
+  - Phát triển mạnh trong điều kiện ẩm ướt và nhiệt độ cao.
+
+- **Nấm Colletotrichum acutatum**:
+  - Gây bệnh rụng trái sau nở hoa (PFD) trên cam quýt, làm rụng trái non nghiêm trọng sau khi hoa đã nở.
+
+Gợi ý câu hỏi liên quan:
+- Bệnh thán thư trên quả ớt do nấm nào gây ra và biểu hiện bệnh ra sao?
+- Bệnh rụng trái sau nở hoa (Post-bloom Fruit Drop – PFD) trên cam quýt là gì?
+- Sản phẩm Trinong 50WP có những đặc điểm nổi bật và đối thủ cạnh tranh nào?",[]
+2025-12-16 08:43:12,RAG,tất cả thông tin về Fusarium,Tất cả thông tin về Fusarium.,RAG_SOFT,0.837096413373947,0.7989323723316193,0.038164041042327734,0.7569358927011491,50,0.21297987917592442,"1. **Các loại bệnh do Fusarium gây ra:**
+   - Héo rũ, thối rễ, thối thân, chết cây con trên nhiều loại cây trồng như hoa hồng, cà chua, sầu riêng, khoai tây, khoai lang, thanh long, hồ tiêu, hành, tỏi, cà phê.
+   - Héo do tắc bó mạch, thối bắp, thối cổ rễ cây con và thối củ.
+   - Thối lõi, rễ và thân ngô, bạc ngọn trên lúa mì và kê.
+
+2. **Nguyên nhân và cơ chế gây bệnh:**
+   - Fusarium spp. tấn công hệ rễ và mạch dẫn, gây tắc nghẽn mạch xylem, làm giảm lượng nước vận chuyển, dẫn đến vàng lá, héo và chết cây.
+   - Fusarium oxysporum xâm nhập vào hệ mạch dẫn của cây, gây tắc nghẽn mạch xylem.
+   - Fusarium graminearum sinh bào tử túi trong túi bào tử nằm bên trong quả thể, giúp phát tán và lây lan bệnh.
+
+3. **Độc tố do Fusarium sản sinh:**
+   - Fusarium graminearum sản sinh các độc tố trichothecenes như deoxynivalenol (DON) và nivalenol, gây biếng ăn hoặc ói mửa ở lợn.
+   - Zearalenone, một độc tố gây động dục và vô sinh, ảnh hưởng đến lợn, trâu bò và các động vật khác.
+
+4. **Triệu chứng nhận biết bệnh héo Fusarium:**
+   - Vàng lá, héo nhẹ vào ban ngày, cây còi cọc.
+   - Hóa nâu mạch dẫn bên trong thân cây, dễ nhận biết khi cắt ngang thân cây.
+
+5. **Phòng trừ và lưu ý an toàn:**
+   - Sử dụng thuốc bảo vệ thực vật đúng liều lượng, đúng thời điểm.
+   - Áp dụng biện pháp canh tác như luân canh, sử dụng giống kháng và quản lý đất tốt.
+   - Đảm bảo an toàn cho người lao động và môi trường khi sử dụng thuốc.
+
+**Câu hỏi liên quan:**
+- Chi Fusarium gây bệnh gì cho cây trồng?
+- Bệnh héo Fusarium là gì và nguyên nhân gây bệnh?
+- Triệu chứng nhận biết bệnh héo Fusarium trên cây trồng như thế nào?",[]
+2025-12-16 08:44:44,RAG,"thuốc phòng trừ nấm ""Fusarium""","Thuốc phòng trừ nấm ""Fusarium"".",RAG_SOFT,0.8505443477630614,0.8144932770729064,0.03605107069015501,0.680427605986595,40,0.20442022937545276,"### Tổng quan bệnh Fusarium
+
+Bệnh héo Fusarium là một trong những bệnh nấm nguy hiểm và phổ biến trên nhiều loại cây trồng. Nấm Fusarium spp. gây ra các triệu chứng như héo rũ, thối rễ, thối thân, và có thể dẫn đến chết cây con. Bệnh này ảnh hưởng đến nhiều loại cây trồng như hoa hồng, cà chua, sầu riêng, khoai tây, khoai lang, thanh long, hồ tiêu, hành, tỏi, và cà phê.
+
+### Nguyên nhân & Điều kiện phát sinh
+
+Nấm Fusarium tồn tại lâu dài trong đất dưới dạng bào tử hậu, khiến việc phòng trừ trở nên khó khăn. Chúng tấn công hệ rễ và mạch dẫn của cây, làm cây héo nhanh và có thể chết từng phần hoặc toàn bộ. Điều kiện ẩm ướt và nhiệt độ cao thường tạo điều kiện thuận lợi cho nấm phát triển mạnh.
+
+### Triệu chứng
+
+- **Héo rũ**: Cây bị nhiễm bệnh thường có biểu hiện héo rũ, lá vàng úa, và có thể chết từ từ.
+- **Thối rễ và thân**: Rễ và thân cây có thể bị thối, làm giảm khả năng hút nước và dinh dưỡng, dẫn đến suy yếu toàn cây.
+- **Chết cây con**: Cây con dễ bị tấn công và chết nhanh chóng khi nhiễm bệnh.
+
+### Hậu quả
+
+Bệnh héo Fusarium có thể gây thiệt hại nghiêm trọng cho năng suất và chất lượng cây trồng. Nếu không được kiểm soát kịp thời, bệnh có thể lan rộng và ảnh hưởng đến toàn bộ vườn trồng.
+
+### Hướng xử lý & Phòng ngừa
+
+1. **Luân canh cây trồng**: Luân canh với các cây kháng bệnh ít nhất 2 năm trước khi trồng lại cây mẫn cảm.
+2. **Sử dụng giống kháng bệnh**: Chọn giống cây có khả năng kháng Fusarium để giảm nguy cơ nhiễm bệnh.
+3. **Ghép gốc kháng bệnh**: Áp dụng kỹ thuật ghép gốc kháng bệnh, như trên cây dưa hấu, để tăng cường khả năng chống chịu.
+4. **Kiểm dịch chặt chẽ**: Hạn chế sự lây lan của bệnh từ các nguồn ngoại lai.
+5. **Sử dụng thuốc trừ nấm**: Mặc dù hiện chưa có thuốc trừ nấm hữu hiệu đặc trị Fusarium, Scortlan 80WP có thể được sử dụng để phòng trừ các bệnh do nấm Fusarium gây ra. Tuy nhiên, cần lưu ý không phun khi cây còn nhỏ, đang ra hoa, ra trái non hoặc lộc non.
+
+### Câu hỏi liên quan
+
+- Bệnh do Fusarium gây ra nguy hiểm như thế nào trên cây trồng?
+- Triệu chứng và cách phòng trị bệnh Thối Nứt Thân (Fusarium sp.) trên cà phê?
+- Các loại độc tố do nấm Fusarium sản sinh và cây trồng bị ảnh hưởng là gì?",[]
+2025-12-16 09:22:47,RAG,"tất cả thông tin về sùng, bọ hà","Tất cả thông tin về sùng, bọ hà.",RAG_SOFT,0.7876561510562896,0.7541378569602966,0.03351829409599305,0.7000137943029403,50,0.17600593678415094,"1. **Phương pháp xử lý sùng, bọ hà:**
+   - **Xông hơi và tưới:** Pha thuốc xông hơi với nước và tưới dưới gốc cây để diệt ấu trùng non. Đảm bảo lượng nước tưới đủ thấm tới phần củ hoặc rễ của cây trồng. Tưới định kỳ 4-5 ngày một lần.
+   - **Dạng hạt GR:** Sử dụng dạng hạt GR rải đầu vụ để phòng trừ.
+   - **Dòng Kyodo 250sc:** Đặc biệt hiệu quả với sùng khoai và sâu ăn lá khoai trên cây khoai lang.
+
+2. **Tác động của sâu sùng trắng trên cây ngô:**
+   - Sâu sùng trắng gây hại chủ yếu ở phần rễ của cây ngô, làm tổn thương rễ, giảm khả năng hấp thụ nước và dinh dưỡng, dẫn đến cây yếu và chết dần.
+
+3. **Sử dụng BASUZIN 1GB:**
+   - BASUZIN 1GB được sử dụng trên nhiều loại cây trồng như lúa, ngô, khoai lang, cam, xoài, nhãn, cà phê, hồ tiêu, cà chua, dưa leo, đậu, bắp cải, hành. Nó có tác dụng trừ các loại sâu bệnh như sâu cuốn lá, sâu đục thân, bọ xít muỗi, sâu phao, sâu keo, bọ hà, sùng, sâu đất, rệp sáp, mọt, mối, bọ nhảy, tuyến trùng.
+
+**Câu hỏi gợi ý:**
+- Sâu sùng trắng gây hại như thế nào đối với cây ngô?
+- BASUZIN 1GB được sử dụng cho những loại cây trồng và sâu bệnh nào?",[]
+2025-12-16 09:46:00,RAG,"những loại thuốc trị được ""Bipolaris""","Những loại thuốc trị được ""Bipolaris"".",RAG_SOFT,0.7885324084758758,0.753415258526802,0.03511714994907378,0.6125129389762879,50,0.18460673885434417,"- Benzimidazole
+- Thiabendazole
+- Benomyl
+- Carbendazim
+- Imazalil
+- Prochloraz
+- Propiconazole
+- Azoxystrobin
+- Chlorothalonil
+- Đồng sunfat
+- Mancozeb + Metalaxyl
+- Difenoconazole
+- Propineb
+- Flusilazole
+- Thiophanate–methyl
+
+Gợi ý câu hỏi liên quan:
+- Những sản phẩm BMC và thị trường nào điều trị thán thư hiệu quả?
+- Tại sao cần dùng kết hợp nhiều loại thuốc trong phác đồ trị thán thư?",[]
+2025-12-16 09:47:18,RAG,"những loại thuốc trừ được nấm ""Diaporthe""","Những loại thuốc trừ nấm ""Diaporthe""",RAG_SOFT,0.5435096621513367,0.5255873799324036,0.017922282218933105,0.5223217368125915,50,0.06493955702528828,"Dựa trên NGỮ CẢNH, các loại thuốc trừ nấm có thể có hiệu quả đối với nấm ""Diaporthe"" bao gồm:
+
+1. **Azoxystrobin** (Abound, Heritage – FRAC 11)
+2. **Hỗn hợp Azoxystrobin + Difenoconazole** (Quadris Top – FRAC 11+3)
+3. **Azoxystrobin + Fludioxonil** (Graduate A+ – FRAC 11+12)
+4. **Azoxystrobin + Propiconazole** (Quilt – FRAC 11+3)
+5. **Imazalil** (Deccozil EC-289, Magnate 500 EC, FRAC 3)
+6. **Thiabendazole** (Decco Salt No. 19, FRAC 1)
+7. **Các thuốc gốc đồng** như Copper Hydroxide, Copper Oxychloride và Copper Sulfate (FRAC M1)
+
+Gợi ý thêm các câu hỏi liên quan:
+- Thuốc trừ nấm được sử dụng như thế nào trong quản lý bệnh hại tổng hợp?
+- Những loại thuốc trừ nấm nào được sử dụng sau thu hoạch cho cây có múi?
+- Cần lưu ý gì khi sử dụng thuốc trừ nấm để phòng trừ Pythium?",[]
+2025-12-16 09:53:35,RAG,"thuốc trị nấm ""Peronospora""","Thuốc trị nấm ""Peronospora"".",DIRECT_DOC,0.8270026952028274,0.7233056765794754,0.10369701862335201,0.6366723353862762,40,0.5717180925733993,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Bệnh sương mai giả (downy mildew) trên hoa hồng do tác nhân nào gây ra?
+
+Bệnh sương mai giả trên hoa hồng do Peronospora sparsa gây ra. Mặc dù có hình thức và cách lây nhiễm giống nấm, nhưng sinh vật này không phải là nấm mà có họ hàng gần với tảo nâu và tảo cát. Vì vậy, nhiều thuốc trừ nấm thông thường không có hiệu quả với bệnh này.
+
+Câu hỏi liên quan:
+- Đặc điểm và tác hại của họ Peronosporaceae trong nấm giống Oomycota là gì?
+- Hoạt chất nào đặc trị bệnh Phytophthora và các sản phẩm BMC tương ứng?
+- Các công thức điều trị bệnh nấm trái trên sầu riêng là gì?",[]
+2025-12-16 09:55:48,RAG,"tất cả thuốc trị nấm ""Rhizoctonia""","Tất cả thuốc trị nấm ""Rhizoctonia"".",RAG_SOFT,0.8327998542785644,0.8023365223407745,0.03046333193778994,0.783310271024704,50,0.16913238932420668,"Các thuốc trị nấm Rhizoctonia được đề cập trong ngữ cảnh bao gồm:
+
+1. **Quintozene (Pentachloronitrobenzene)** - Dùng để xử lý hạt giống nhằm phòng trừ bệnh chết rạp cây con (lở cổ rễ).
+2. **IC Top, Byphan, Tatsu, Fortazate, Niko** - Các thuốc gốc đồng dùng để phòng bệnh cháy lá, chết ngọn.
+3. **Mistop, Probicol, Bisomin, Kasu 3SL, Gone Super 350EC** - Dùng trong các công thức trị bệnh cháy lá, chết ngọn.
+4. **Hariwon (Hymexazol 30%), Tatsu (Metalaxyl 25%)** - Dùng trong công thức tưới gốc đặc trị nấm trong đất cho cây cà phê.
+
+Gợi ý câu hỏi liên quan:
+- Triệu chứng điển hình của bệnh do Rhizoctonia trên các cây trồng phổ biến là gì?
+- Phác đồ phòng và trị bệnh cháy lá, chết ngọn do Rhizoctonia như thế nào?
+- Bệnh cháy lá, chết ngọn do nấm Rhizoctonia là gì?",[]
+2025-12-16 10:13:32,RAG,bệnh tuyến tùng,Bệnh tuyến tùng.,RAG_SOFT,0.7861768770217895,0.7635406982898711,0.022636178731918366,0.7277312955856323,40,0.11864026868777756,"**Tổng quan bệnh**
+
+Bệnh tuyến trùng rễ sầu riêng là một vấn đề phổ biến trong nông nghiệp, đặc biệt ảnh hưởng đến cây sầu riêng. Tuyến trùng là những giun tròn nhỏ, ký sinh trên thực vật, gây tổn thương cho hệ rễ của cây. Chúng xâm nhập vào rễ, phá hủy mô rễ, làm giảm khả năng hấp thu nước và dinh dưỡng của cây.
+
+**Nguyên nhân & điều kiện phát sinh**
+
+Tuyến trùng thường phát triển mạnh trong môi trường ẩm ướt, đặc biệt là vào mùa mưa. Chúng xâm nhập qua các vết thương trên rễ hoặc các tổn thương do sâu và côn trùng gây ra. Điều kiện đất kém thoát nước và không được xử lý tốt cũng tạo điều kiện thuận lợi cho tuyến trùng phát triển.
+
+**Triệu chứng**
+
+Cây bị nhiễm tuyến trùng thường có các triệu chứng như sinh trưởng chậm, lá vàng, cơi đọt không ra được, và trái kém phát triển. Trên rễ, có thể xuất hiện các nốt sưng hoặc vết loét, là dấu hiệu đặc trưng của sự xâm nhập và gây hại của tuyến trùng.
+
+**Hậu quả**
+
+Tuyến trùng gây ra các tổn thương nghiêm trọng cho cây trồng, làm giảm năng suất và chất lượng trái. Nếu không được xử lý kịp thời, cây có thể bị suy yếu, còi cọc, và trong điều kiện khắc nghiệt, có thể dẫn đến héo và chết cây.
+
+**Hướng xử lý & phòng ngừa**
+
+Quy trình xử lý bệnh tuyến trùng rễ sầu riêng gồm hai bước chính:
+
+- **Bước 1:** Ngưng bón phân và đổ gốc hỗn hợp gồm Cythrin 240ml + 500g Byphan hoặc Tatsu/phuy 200L nước.
+- **Bước 2:** Sau 7–10 ngày, kiểm tra lại cây và đổ gốc lần 2. Kết hợp phun lên lá Fortazate hoặc Tatsu 500g/phuy 200L cùng phân bón lá để dưỡng và phục hồi bộ lá. Sau khi cây ổn định, tiến hành bón phân gốc trở lại với công thức: lân cao, đạm ít, kali ít.
+
+Ngoài ra, cần kiểm tra thường xuyên để phát hiện sớm các dấu hiệu của bệnh và thực hiện các biện pháp phòng ngừa như cải thiện điều kiện đất, quản lý nước tưới hợp lý, và sử dụng giống cây kháng bệnh.
+
+**Gợi ý câu hỏi liên quan:**
+
+- Bệnh tuyến trùng rễ sầu riêng là gì và biểu hiện ra sao?
+- Làm thế nào để kiểm tra và xác định bệnh tuyến trùng trên rễ cây?
+- Tuyến trùng ký sinh thực vật là gì và tại sao chúng gây hại cho cây trồng?",[]
+2025-12-16 10:46:57,RAG,"thông tin ""Corticium""","Thông tin ""Corticium"".",LOW_SIM,0.3188510239124298,0.3077891170978546,0.011061906814575195,0.3028585433959961,40,0.02351400209500791,"Không có tài liệu đủ độ tương đồng.
+
+Gợi ý:
+- Vai trò của sổ tay và kính lúp trong quá trình điều tra bệnh cây là gì? (score=0.32)
+- Triệu chứng và cách phòng trị Mọt đục cành? (score=0.31)
+- Danh sách các dụng cụ cần thiết để điều tra bệnh cây trên đồng ruộng gồm những gì? (score=0.30)
+- Những dấu hiệu nhận biết trái bị sâu đục là gì? (score=0.30)
+- Nhóm cỏ lác (cỏ năng – Sedges) có đặc điểm chung là gì? (score=0.29)
+- Cuốn cẩmg này bao gồm những nội dung chính nào liên quan đến sức khỏe thực vật và bệnh cây? (score=0.29)
+- Làm thế nào để nhận biết cây bị stress do rễ còi cọc và tầng đế cày? (score=0.28)
+- Những nhóm thuốc trừ nấm nào được đăng ký sử dụng trên cây có múi (Citrus)? (score=0.28)
+- Ic top 28.1SC (BOOC DOR) dùng cho cây trồng nào và phòng trừ bệnh gì? (score=0.28)
+- Các loại túi và phong bì dùng để đựng mẫu bệnh cây có đặc điểm gì? (score=0.28)",[]
+2025-12-16 10:47:49,RAG,thông tin về nấm Corticium,Thông tin về nấm Corticium.,RAG_SOFT,0.7898693913221358,0.751379542350769,0.03848984897136687,0.7177576917409896,40,0.2026796905272966,"Nấm Corticium là một nhóm nấm thuộc họ Corticiaceae, thường được biết đến với khả năng gây bệnh trên cây trồng. Tuy nhiên, thông tin chi tiết về nấm Corticium không được đề cập trong ngữ cảnh hiện tại. Thông thường, các nấm thuộc nhóm này có thể gây ra các bệnh như thối rễ, lở cổ rễ và các bệnh khác trên cây trồng, tương tự như nấm Rhizoctonia.
+
+Nếu bạn quan tâm đến nấm Rhizoctonia, đây là một nhóm nấm đa dạng, phổ biến ở Việt Nam, gây bệnh trên nhiều loại cây trồng. Chúng phát triển mạnh trong điều kiện thời tiết ấm, mưa hoặc độ ẩm cao, và có thể gây ra các triệu chứng như thối rễ, lở cổ rễ, khô vằn trên lá ngô và lúa, thối bắp cải. Nấm này xâm nhiễm vào các bộ phận của cây như rễ, thân, và lá, gây ra các tổn thương nghiêm trọng.
+
+Bạn có thể quan tâm đến các câu hỏi như: Rhizoctonia là gì và nó gây bệnh như thế nào trên cây trồng? Điều kiện thời tiết nào thuận lợi cho sự phát triển của bệnh do Rhizoctonia? Cơ chế xâm nhiễm và phát triển của Rhizoctonia trên cây trồng như thế nào?",[]
+2025-12-16 12:50:02,RAG,cho tôi thông tin thuốc nhên kim cương,Cho tôi thông tin thuốc Nhện Kim Cương.,DIRECT_DOC,0.8233174115419387,0.7122024041414261,0.11111500740051261,0.6399382741451263,40,0.6098861351763561,"Nội dung phù hợp nhất trong tài liệu:
+- Mục liên quan: Sản phẩm SAM SAN 2.5SC (Nhện Kim Cương) có thành phần và công dụng chính là gì?
+
+SAM SAN 2.5SC (Nhện Kim Cương) chứa hoạt chất Deltamethrin 2,5% w/v, đóng gói dạng chai 240ml. Đây là thuốc diệt côn trùng chuyên trị các loại nhện như nhện đỏ, nhện trắng, nhện lông nhung, nhện vàng trên nhiều loại cây trồng như hoa hồng, cam, bưởi, chanh, dâu tây, các loại đậu, hoa cúc. Sản phẩm có thể phun ở mọi giai đoạn cây, kể cả khi cây đang ra hoa hoặc có trái non. Đặc biệt, thuốc có hiệu quả cao với nhện kháng, tốt hơn so với nhện Tàu. Khi sử dụng cần phun ướt đều, đặc biệt là mặt dưới lá nơi nhện tập trung.
+
+Câu hỏi liên quan:
+- Hướng dẫn cách sử dụng và lưu ý khi dùng thuốc Buti 43SC (Anh Hùng Nhện) như thế nào?
+- King Kha 1EC là thuốc gì và công dụng chính của nó?
+- Sản phẩm Abinsec 1.8EC là thuốc gì và có công dụng ra sao?",[]
+2025-12-16 12:53:05,RAG,thuốc trị rỉ sắt trên cây cà phê,Thuốc trị rỉ sắt trên cây cà phê.,RAG_STRICT,0.8732356214523315,0.8181380393505097,0.05509758210182181,0.8185446126461029,40,0.32075447564803483,"**Tổng quan bệnh Rỉ Sắt trên cây cà phê**
+
+Bệnh Rỉ Sắt, do nấm Hemileia vastatrix gây ra, là một trong những bệnh nguy hiểm nhất trên cây cà phê. Nếu không được kiểm soát kịp thời, bệnh có thể gây giảm năng suất nghiêm trọng.
+
+**Triệu chứng**
+
+- Ở mặt dưới lá cà phê, xuất hiện các chấm nhỏ màu vàng lợt.
+- Các chấm này phát triển thành lớp bột màu vàng cam sáng, đặc trưng của bào tử nấm rỉ sắt.
+- Nấm làm cháy khô tế bào lá, khiến lá mất diệp lục.
+- Các vết cháy lan rộng, liên kết nhau làm lá khô và rụng hàng loạt.
+- Cây nhiễm nặng bị suy yếu, giảm khả năng ra hoa và đậu quả.
+
+**Hậu quả**
+
+- Giảm năng suất do lá rụng và cây suy yếu.
+- Ảnh hưởng đến khả năng ra hoa và đậu quả của cây cà phê.
+
+**Hướng xử lý & phòng ngừa**
+
+- **Sử dụng thuốc đặc trị nấm:** Phun định kỳ các hoạt chất có hiệu lực cao đối với nấm rỉ sắt như Hoanganhvil 5SC, Afenzole 325SC, Gone Super 350EC, Bretil 300EC, Sanbang 30SC, Pyrolax 250EC.
+- **Cách sử dụng:** Phun 2–3 lần/năm, đặc biệt vào đầu mùa mưa và sau thu hoạch. Luân phiên hoạt chất để hạn chế kháng thuốc và phun đều mặt dưới lá nơi nấm hình thành bào tử.
+- **Kết hợp vệ sinh vườn:** Cắt tỉa thông thoáng để nâng cao hiệu quả phòng trị.
+
+**Gợi ý câu hỏi liên quan:**
+
+- Thuốc Cocosieu 15.5WP dùng để phòng trừ bệnh gì trên cây cà phê?
+- Mekongvil 5SC có thể dùng để trị bệnh gì trên cây cà phê?
+- Bretil Super 300EC có thể dùng để trị bệnh gì trên cây cà phê?",[]
+2025-12-16 12:57:14,RAG,thông tin về nhện vàng,Thông tin về nhện vàng.,RAG_STRICT,0.8149532222747802,0.7661795604228974,0.04877366185188281,0.7234317940473556,40,0.2649883525888828,"Trong ngữ cảnh hiện tại, không có thông tin cụ thể về nhện vàng. Tuy nhiên, có nhiều thông tin chi tiết về nhện đỏ và nhện trắng, đặc biệt là cách chúng gây hại cho cây trồng. Nhện đỏ và nhện trắng thường gây hại bằng cách hút dịch từ tế bào lá, làm giảm lượng diệp lục, khiến lá cây chuyển vàng, khô và rụng. Điều này ảnh hưởng nghiêm trọng đến khả năng quang hợp của cây, dẫn đến giảm năng suất và sức khỏe cây trồng.
+
+Nếu bạn quan tâm đến cách nhện đỏ và nhện trắng gây hại cho cây, bạn có thể tìm hiểu thêm về:
+- Nhện đỏ – nhện trắng gây hại cây như thế nào?
+- Nhện đỏ gây hại trên sầu riêng bằng cách nào?
+- Nhện đỏ gây hại trên sầu riêng như thế nào và thường xuất hiện vào thời điểm nào?",[]
+2025-12-16 12:57:54,RAG,có thuốc nào trị được nhện vàng không,Có thuốc nào trị được nhện vàng không?,RAG_SOFT,0.8647136509418487,0.8524163484573364,0.012297302484512329,0.8098620007038116,40,0.07089096885412616,"Để trị nhện vàng, bạn có thể sử dụng thuốc BVTV Kyodo 25SC Gold. Sản phẩm này chứa hoạt chất Diafenthiuron với nồng độ 250g/lít, và được thiết kế để phòng trừ nhiều loại nhện, bao gồm nhện lông nhung, nhện đỏ, và nhện vàng. Kyodo 25SC Gold có khả năng trừ được cả trứng nhện và mang lại hiệu quả cao hơn so với sản phẩm Kyodo thông thường. Thuốc này có thể được sử dụng trên nhiều loại cây trồng như vải, cam, chè, nhãn, bắp cải, hoa hồng, lạc, rau cải, cà tím, và su hào. Tuy nhiên, lưu ý rằng sản phẩm không được phun trên lúa.
+
+Ngoài ra, nếu bạn đang tìm kiếm các sản phẩm khác để trị nhện, có thể tham khảo thêm các sản phẩm như Buti 43SC (Anh Hùng Nhện) chứa hoạt chất Bifenazate 43% w/w, đặc trị nhện đỏ và nhện trắng, và có thể sử dụng trên hoa hồng, cam, chanh, dâu tây, cà chua, và bơ.
+
+Nếu bạn cần thêm thông tin về hoạt chất đặc trị và sản phẩm trị nhện đỏ, hoặc cách xử lý nhện kháng cao, nhiều nhện, hãy tham khảo thêm các câu hỏi liên quan như:
+- Hoạt chất đặc trị và sản phẩm trị nhện đỏ gồm những gì?
+- Xử lý Nhện kháng cao; nhiều nhện như thế nào?",[]
+2025-12-16 12:58:42,RAG,cho tôi thông tin tất cả thuốc trị được nhện vàng,Cho tôi thông tin về tất cả các thuốc trị được nhện vàng.,RAG_SOFT,0.8462457656860352,0.8420077145099639,0.004238051176071234,0.803964564204216,50,0.023909552416740018,"Dưới đây là thông tin về các thuốc có thể trị được nhện vàng theo NGỮ CẢNH:
+
+1. **Kyodo 25SC Gold**: Chứa hoạt chất Diafenthiuron, dùng để phòng trừ nhện vàng trên các cây trồng như vải, cam, chè, nhãn, bắp cải, hoa hồng, lạc, rau cải, cà tím, su hào.
+
+2. **SAM SAN 2.5SC**: Chuyên trị nhện vàng trên nhiều loại cây trồng.
+
+3. **Buti 43SC (Anh Hùng Nhện)**: Chứa hoạt chất Bifenazate, diệt nhện vàng trên cây trồng như hoa hồng, cam, chanh, dâu tây, cà chua, bơ.
+
+Gợi ý câu hỏi liên quan:
+- Hoạt chất đặc trị và sản phẩm trị nhện đỏ gồm những gì?
+- SAM SAN 2.5SC dùng để diệt loại sâu bệnh nào?
+- Buti 43SC (Anh Hùng Nhện) là thuốc BVTV có thành phần gì và công dụng ra sao?",[]
+2025-12-16 13:00:19,RAG,cho tôi tất cả thông tin về sâu đục thân,"Sâu đục thân là một loại sâu hại thường gặp trong nông nghiệp, đặc biệt là trên các loại cây trồng như lúa, ngô, mía, và một số loại cây ăn quả. Dưới đây là một số thông tin cơ bản về sâu đục thân:
+
+1. **Đặc điểm sinh học**:
+   - Sâu đục thân thường có hình dạng dài, màu sắc thay đổi tùy loại, và có khả năng đục vào thân cây để sinh sống và phát triển.
+   - Chúng thường trải qua các giai đoạn phát triển từ trứng, ấu trùng, nhộng đến trưởng thành.
+
+2. **Tác hại**:
+   - Sâu đục thân gây hại bằng cách đục vào thân cây, làm giảm khả năng quang hợp, hút dinh dưỡng và nước từ cây.
+   - Cây bị nhiễm sâu thường có dấu hiệu như lá vàng, héo úa, và có thể dẫn đến chết cây nếu không được kiểm soát kịp thời.
+
+3. **Phương pháp phòng trừ**:
+   - Sử dụng biện pháp canh tác hợp lý như luân canh, vệ sinh đồng ruộng để giảm thiểu sự phát sinh của sâu hại.
+   - Sử dụng các loại thuốc bảo vệ thực vật phù hợp, như Kenbast 15SL, glufosinate_ammonium, theo hướng dẫn của chuyên gia nông nghiệp.
+
+4. **Thời điểm xuất hiện**:
+   - Sâu đục thân thường xuất hiện vào mùa mưa hoặc khi thời tiết ẩm ướt, vì điều kiện này thuận lợi cho sự phát triển của chúng.
+
+Nếu bạn cần thêm thông tin chi tiết hoặc có câu hỏi cụ thể hơn, hãy cho tôi biết!",RAG_SOFT,0.8464488673210144,0.8145575296878814,0.03189133763313301,0.8121022725582124,50,0.17996257744611652,"1. **Tác hại của sâu đục thân:**
+   - **Cây ớt:** Sâu đục thân khoan lỗ và ăn bên trong thân cây ớt, gây gãy đổ và làm cây bị héo do mạch dẫn nước bị phá hủy. Triệu chứng bao gồm thân cây có lỗ khoan, cây yếu dần và có thể chết nếu sâu phá hại nặng.
+   - **Cây lúa:** Ấu trùng non ăn lá và bẹ lá, còn sâu lớn đục vào thân ở phần dưới gốc, làm tổn thương cây lúa, ảnh hưởng đến sinh trưởng và năng suất.
+   - **Cây sầu riêng:** Xuất hiện mùn cưa quanh gốc, lỗ nhỏ trên thân/cành với mùn cưa khô xung quanh, cây chậm lớn, lá héo đồng loạt, cành suy yếu.
+
+2. **Vì sao sâu đục thân nguy hiểm và khó trị:**
+   - Ấu trùng nằm sâu bên trong mô gỗ, khiến thuốc tiếp xúc thông thường khó đạt hiệu quả.
+   - Chúng phá hoại đường dẫn nhựa, khiến cây chậm lớn, héo lá và có thể chết cành.
+   - Khi không phát hiện sớm, sâu trú ẩn an toàn, cần phối hợp xông hơi và lưu dẫn để tiêu diệt.
+
+3. **Phương pháp phòng trừ sâu đục thân:**
+   - Rải thuốc sâu dạng rải như Kajio 1GR, Ledan 4GR, Miriphos 1GB, Basuzin 1GB.
+   - Sử dụng thuốc tiếp xúc mạnh như Ohayo 100SC, Igro 240SC, Topxapy 30SC.
+   - Dùng thuốc xông hơi như Forsan 60EC, Binhfos 50EC, Arriphos 40EC, Fullkill 50EC, Phonix Dragon 20EC.
+   - Kết hợp thuốc tiếp xúc mạnh và xông hơi ở vùng mật độ sâu cao.
+   - Sử dụng tiếp xúc nhẹ kết hợp xông hơi với thuốc sha chong jing 95wp và Ongcha 40EC.
+
+4. **Giai đoạn xuất hiện của sâu đục thân trên cây lúa:**
+   - Giai đoạn mạ, đẻ nhánh (18-35 ngày).
+   - Giai đoạn làm đòng - trổ bông (40-60 ngày).
+   - Giai đoạn chín sữa.
+
+**Gợi ý câu hỏi liên quan:**
+- Sâu đục thân gây hại cho cây ớt như thế nào?
+- Những phương pháp phòng trừ sâu đục thân được đề xuất trong đoạn là gì?
+- Những loại thuốc và phương pháp nào được sử dụng để phòng trừ sâu đục thân?",[]
+2025-12-16 18:22:42,RAG,công thức trừ sâu cuốn là tốt nhất,Công thức trừ sâu cuốn là tốt nhất.,RAG_STRICT,0.8389275038242339,0.790757839679718,0.048169664144515845,0.7457819788455963,40,0.26940570733873587,"Để phòng trừ sâu cuốn lá hiệu quả, có 5 phương pháp được đề xuất trong ngữ cảnh:
+
+1. **Dùng thuốc tiếp xúc mạnh**: Sử dụng Ohayo 100SC hoặc Igro Ohayo 240SC kết hợp với Kajio 5EC/5WG để phun xịt. Phương pháp này giúp tiêu diệt sâu cuốn lá nhờ vào khả năng tiếp xúc mạnh của thuốc.
+
+2. **Kết hợp thuốc tiếp xúc mạnh và nhẹ**: Ví dụ, sử dụng Oxatin kết hợp với Kajio 5EC/5WG. Sự kết hợp này giúp tăng cường hiệu quả diệt sâu bằng cách tận dụng ưu điểm của cả hai loại thuốc.
+
+3. **Dùng thuốc lưu dẫn mạnh**: Sử dụng Koto Gold để xịt, với hiệu quả diệt sâu đạt 80-90% ngay cả ở những vùng có mức độ kháng cao. Thuốc lưu dẫn mạnh có khả năng thấm sâu và tiêu diệt sâu từ bên trong.
+
+4. **Kết hợp thuốc tiếp xúc nhẹ và xông hơi**: Sử dụng hỗn hợp Sha chong jing 95WP, Ongcha 40EC và Igro 240SC. Phương pháp này giúp tiêu diệt sâu cuốn lá thông qua cả tiếp xúc và xông hơi, tạo ra một môi trường không thuận lợi cho sâu phát triển.
+
+5. **Rải thuốc gốc sau khi sạ lúa 15-20 ngày**: Phương pháp này không chỉ trừ ấu trùng sâu cuốn lá mà còn hiệu quả với các loại sâu khác như sâu đục thân và bọ trĩ.
+
+Mỗi phương pháp có đặc điểm và cơ chế tác động riêng, cho phép người nông dân lựa chọn tùy theo điều kiện cụ thể của ruộng lúa và mức độ kháng thuốc của sâu.
+
+Gợi ý thêm câu hỏi liên quan:
+- Nhóm sâu miệng nhai nên dùng công thức phối hợp thuốc nào để phòng trừ?
+- Nhóm sâu miệng nhai nên dùng công thức thuốc nào để phòng trừ hiệu quả?
+- Nhóm sâu miệng nhai nên dùng công thức phối hợp thuốc nào để phòng trừ hiệu quả?",[]
+2025-12-16 18:24:11,RAG,sâu tơ trên rau thì dùng thuốc nào tốt,Sâu tơ trên rau thì dùng thuốc nào tốt?,RAG_STRICT,0.8417477571964262,0.7707761716842652,0.0709715855121611,0.7320424718856812,40,0.3982678195302399,"Để xử lý sâu tơ trên rau màu, có một số sản phẩm thuốc bảo vệ thực vật hiệu quả mà bạn có thể sử dụng. Dưới đây là một số lựa chọn từ NGỮ CẢNH:
+
+1. **Voi Thai 3.6EC Gold**: Đây là một loại thuốc bảo vệ thực vật chứa hoạt chất Abamectin với nồng độ 36g/lít, được sản xuất bởi công ty Tỷ Phúc Thịnh. Sản phẩm này đặc trị sâu tơ và sâu xanh trên rau màu, cũng như sâu hành trên hành lá, bọ trĩ, bọ phấn trắng, và rầy mềm. Tuy nhiên, nó không hiệu quả với sâu cuốn lá. Voi Thai 3.6EC Gold có thể được sử dụng với liều lượng 25–30ml/20L nước.
+
+2. **Binhtox Gold và Oxatin**: Cả hai sản phẩm này có thể được sử dụng để xử lý sâu tơ. Khi kết hợp với Bacillus, chúng tạo ra một giải pháp hiệu quả để kiểm soát sâu tơ. Liều lượng khuyến cáo là 25-50ml Binhtox Gold hoặc Oxatin cộng với 50g Bacillus trong 20L nước.
+
+3. **Kajio 5WG hoặc Kajio 5EC**: Trong trường hợp sâu tơ có mật độ cao, Kajio 5WG có thể được sử dụng với liều lượng 15–30g kết hợp với 24–30ml Igro Ohayo 24SC trong 20L nước. Kajio 5EC có thể thay thế Kajio 5WG nếu cần thiết.
+
+4. **Abinsec Emaben 1.8EC và Abinsec Oxatin**: Đối với mật độ sâu tơ thấp, Abinsec Emaben 1.8EC và Abinsec Oxatin có thể được sử dụng với liều lượng 30ml/20L nước.
+
+Các sản phẩm này đều có đặc tính tiếp xúc mạnh hoặc kết hợp giữa tiếp xúc nhẹ và xông hơi, giúp kiểm soát sâu tơ hiệu quả trên rau màu.
+
+Bạn có thể quan tâm đến các câu hỏi liên quan như: ""Xử lý Sâu tơ như thế nào?"" hoặc ""Cách xử lý sâu tơ mật độ cao như thế nào?"" để có thêm thông tin chi tiết về cách sử dụng các sản phẩm này.",[]

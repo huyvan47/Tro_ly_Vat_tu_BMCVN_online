@@ -5,6 +5,64 @@ from rag.kb_loader import load_npz
 from rag.logger_csv import append_log_to_csv
 from rag.pipeline import answer_with_suggestions
 from policies.v7_policy import PolicyV7 as policy
+from pathlib import Path
+
+QUESTIONS_TXT = r"questions.txt"   # file txt: 1 câu hỏi / 1 dòng
+CSV_PATH = "rag_logs.csv"
+
+def iter_questions(txt_path: str):
+    """
+    Đọc file txt, yield từng câu hỏi:
+    - bỏ dòng trống
+    - bỏ comment nếu dòng bắt đầu bằng '#'
+    - strip khoảng trắng
+    """
+    p = Path(txt_path)
+    if not p.exists():
+        raise FileNotFoundError(f"Không tìm thấy file: {p.resolve()}")
+
+    for line in p.read_text(encoding="utf-8").splitlines():
+        q = line.strip()
+        if not q:
+            continue
+        if q.startswith("#"):
+            continue
+        yield q
+
+
+def run_batch_questions():
+    # 1) đọc query từ CLI
+
+    # 2) init OpenAI client (đặt key theo env là tốt nhất)
+    client = OpenAI(api_key="...")
+
+    # 3) load KB (1 lần)
+    kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
+
+    cfg = RAGConfig()
+
+    for i, q in enumerate(iter_questions(QUESTIONS_TXT), start=1):
+        print(f"[{i}] Q: {q}")
+
+        res = answer_with_suggestions(
+            user_query=q,
+            kb=kb,
+            client=client,
+            cfg=cfg,
+            policy=policy,
+        )
+
+        append_log_to_csv(
+            csv_path=CSV_PATH,
+            user_query=q,
+            norm_query=res.get("norm_query", ""),
+            strategy=res.get("strategy", ""),
+            prof=res.get("profile", {}) or {},
+            res=res,
+            route=res.get("route", "RAG"),
+        )
+
+    print(f"\nHoàn tất. Log đã ghi vào: {CSV_PATH}")
 
 def main():
     # 1) đọc query từ CLI
@@ -52,4 +110,9 @@ def main():
 
 
 if __name__ == "__main__":
+    ## Test nhiều câu hỏi
+    # run_batch_questions()
+
+    ## Test một câu hỏi
     main()
+

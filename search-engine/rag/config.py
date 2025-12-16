@@ -11,7 +11,7 @@ class RAGConfig:
     rerank_snippet_chars: int = 500
     debug_rerank: bool = False
 
-    max_ctx_strict: int = 12
-    max_ctx_soft: int = 8
+    max_ctx_strict: int = 16
+    max_ctx_soft: int = 12
 
     code_boost_direct: bool = True
