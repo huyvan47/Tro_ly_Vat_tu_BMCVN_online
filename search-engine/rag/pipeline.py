@@ -10,6 +10,7 @@ from rag.context_builder import choose_adaptive_max_ctx, build_context_from_hits
 from rag.answer_modes import detect_answer_mode
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
+from rag.verbatim import verbatim_export
 
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None):
     # 0) Route GLOBAL / RAG
@@ -71,7 +72,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
             "route": "RAG",
             "norm_query": norm_query,
             "strategy": "LOW_SIM",
-            "profile": analyze_hits_fused(hits) if "analyze_hits_fused" in globals() else analyze_hits(hits),
+            "profile": analyze_hits_fused(hits),
         }
     # 5) Decide strategy (DIRECT_DOC / RAG_STRICT / RAG_SOFT)
     has_main = len(filtered_for_main) > 0
@@ -112,6 +113,23 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     ][:policy.max_suggest]
     suggestions_text = "\n".join(f"- {h['question']}" for h in suggest) if suggest else "- (không có)"
 
+    # 10) Build context and call GPT answer (STRICT/SOFT)
+    answer_mode = detect_answer_mode(user_query, primary_doc, is_list)
+    # === VERBATIM short-circuit ===
+    if answer_mode == "verbatim":
+        vb = verbatim_export(
+            kb=kb,
+            hits_router=hits,        # dùng hits hiện có (đã sorted/reranked), khỏi retrieve lại
+        )
+        return {
+            "text": vb.get("text", ""),
+            "img_keys": vb.get("img_keys", []),
+            "route": "RAG",
+            "norm_query": norm_query,
+            "strategy": "VERBATIM",
+            "profile": prof,
+        }
+
     # 9) DIRECT_DOC: KB đủ mạnh -> trả trực tiếp doc (không ép QA)
     if strategy == "DIRECT_DOC":
         img_keys = extract_img_keys(primary_doc.get("answer", ""))
@@ -124,9 +142,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
             "strategy": strategy,
             "profile": prof,
         }
-
-    # 10) Build context and call GPT answer (STRICT/SOFT)
-    answer_mode = detect_answer_mode(user_query, primary_doc, is_list)
 
     # adaptive ctx, nhưng giới hạn theo mode
     base_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)

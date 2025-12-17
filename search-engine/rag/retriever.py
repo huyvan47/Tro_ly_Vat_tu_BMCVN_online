@@ -12,7 +12,7 @@ def embed_query(client, text: str):
     return v
 
 def search(client, kb, norm_query: str, top_k):
-    EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS = kb
+    EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS = kb
 
     vq = embed_query(client, norm_query)
     sims = EMBS @ vq
@@ -22,6 +22,7 @@ def search(client, kb, norm_query: str, top_k):
     results = []
     for i in idx:
         item = {
+            "id": str(IDS[i]),
             "question": str(QUESTIONS[i]),
             "alt_question": str(ALT_QUESTIONS[i]),
             "answer": str(ANSWERS[i]),

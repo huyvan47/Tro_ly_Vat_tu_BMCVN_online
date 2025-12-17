@@ -7,7 +7,8 @@ from rag.pipeline import answer_with_suggestions
 from policies.v7_policy import PolicyV7 as policy
 from pathlib import Path
 
-QUESTIONS_TXT = r"questions.txt"   # file txt: 1 câu hỏi / 1 dòng
+BASE_DIR = Path(__file__).resolve().parent
+QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
 
 def iter_questions(txt_path: str):
@@ -17,6 +18,7 @@ def iter_questions(txt_path: str):
     - bỏ comment nếu dòng bắt đầu bằng '#'
     - strip khoảng trắng
     """
+    print('txt_path:', txt_path)
     p = Path(txt_path)
     if not p.exists():
         raise FileNotFoundError(f"Không tìm thấy file: {p.resolve()}")
@@ -37,7 +39,8 @@ def run_batch_questions():
     client = OpenAI(api_key="...")
 
     # 3) load KB (1 lần)
-    kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
+    # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
+    kb = load_npz("data-kinh-doanh_remove_pdf.npz")
 
     cfg = RAGConfig()
 
@@ -71,7 +74,8 @@ def main():
     client = OpenAI(api_key="...")
 
     # 3) load KB (1 lần)
-    kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
+    # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
+    kb = load_npz("data-kinh-doanh_Muc-2-3.npz")
 
     cfg = RAGConfig()
 
@@ -110,9 +114,9 @@ def main():
 
 
 if __name__ == "__main__":
-    ## Test nhiều câu hỏi
-    # run_batch_questions()
+    # Test nhiều câu hỏi
+    run_batch_questions()
 
-    ## Test một câu hỏi
-    main()
+    # ## Test một câu hỏi
+    # main()
 

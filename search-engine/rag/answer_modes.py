@@ -6,6 +6,11 @@ def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> 
     cat = primary_doc.get("category", "").lower()
 
     if any(kw in text for kw in [
+        "quy trình", "quy trinh", "các bước"
+    ]) or "quy_trinh" in cat:
+        return "verbatim"
+
+    if any(kw in text for kw in [
         "bệnh", "triệu chứng", "dấu hiệu","nứt thân", "xì mủ", "thối rễ", "cháy lá", "thán thư", "ghẻ"
     ]) or "benh" in cat:
         return "disease"
@@ -16,10 +21,10 @@ def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> 
         return "product"
 
     if any(kw in text for kw in [
-        "quy trình", "quy trinh", "cách làm", "hướng dẫn",
-        "các bước", "làm thế nào để", "phương pháp", "thí nghiệm",
+        "cách làm", "hướng dẫn", "chính sách", "thương phẩm", "tên thương phẩm"
+        "làm thế nào để", "phương pháp", "thí nghiệm",
         "phân lập", "giám định", "lây bệnh trong phòng thí nghiệm"
     ]) or "quy_trinh" in cat:
         return "procedure"
-
+    
     return "general"

@@ -36,7 +36,7 @@ from openai import OpenAI
 # CONFIG
 # =========================
 
-NPZ_PATH = "data-vat-tu-full-merge-overlap.npz"
+NPZ_PATH = "data-kinh-doanh_Muc-2-3.npz"
 
 EMBED_MODEL = "text-embedding-3-small"
 RERANK_MODEL = "gpt-4o-mini"
@@ -114,7 +114,7 @@ def is_listing_query(q: str) -> bool:
     t = (q or "").lower()
     return any(x in t for x in [
         "các loại", "những loại", "bao nhiêu loại", "tất cả", "liệt kê", "kể tên",
-        "bao nhiêu", "tổng", "có bao nhiêu", "gồm"
+        "bao nhiêu", "tổng", "có bao nhiêu", "gồm", "các bước", "quy trình"
     ])
 
 

@@ -1,16 +1,17 @@
 import numpy as np
 
-def load_npz(path: str):
-    data = np.load(path, allow_pickle=True)
-    embs = data["embeddings"]
-    questions = data["questions"]
-    answers = data["answers"]
-    alt_questions = data["alt_questions"]
-    category = data.get("category", None)
-    tags = data.get("tags", None)
+def load_npz(npz_path: str):
+    data = np.load(npz_path, allow_pickle=True)
 
-    # validate tối thiểu
-    n = len(questions)
-    assert len(answers) == n and len(alt_questions) == n and embs.shape[0] == n
+    EMBS = data["embeddings"]
+    QUESTIONS = data.get("questions", None)
+    ANSWERS = data["answers"]
+    ALT_QUESTIONS = data.get("alt_questions", None)
+    CATEGORY = data.get("category", None)
+    TAGS = data.get("tags", None)
 
-    return embs, questions, answers, alt_questions, category, tags
+    IDS = data.get("ids", data.get("id", None))
+    if IDS is None:
+        raise ValueError("NPZ missing 'ids' (or 'id') - required for VERBATIM mode.")
+
+    return (EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS)

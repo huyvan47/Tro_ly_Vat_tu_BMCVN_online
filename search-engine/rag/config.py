@@ -11,6 +11,9 @@ class RAGConfig:
     rerank_snippet_chars: int = 500
     debug_rerank: bool = False
 
+    topk_router = 10
+    max_source_chars_per_call = 12000
+    
     max_ctx_strict: int = 16
     max_ctx_soft: int = 12
 

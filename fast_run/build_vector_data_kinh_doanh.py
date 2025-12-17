@@ -9,8 +9,8 @@ import re
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_FIXED-3.csv"  # đổi đúng tên file mới của bạn
-OUT_FILE = "data-kd-nam-benh-full-fix-noise.npz"
+DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_remove_pdf.csv"  # đổi đúng tên file mới của bạn
+OUT_FILE = "data-kinh-doanh_remove_pdf.npz"
 
 client = OpenAI(api_key="...")
 

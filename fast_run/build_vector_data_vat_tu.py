@@ -9,8 +9,8 @@ import re
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/data-kinh-doanh/data-vat-tu-full-merge-overlap.csv"  # đổi đúng tên file mới của bạn
-OUT_FILE = "data-vat-tu-full-merge-overlap.npz"
+DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_Muc-2-3.csv"  # đổi đúng tên file mới của bạn
+OUT_FILE = "data-kinh-doanh_Muc-2-3.npz"
 
 client = OpenAI(api_key="...")
 
