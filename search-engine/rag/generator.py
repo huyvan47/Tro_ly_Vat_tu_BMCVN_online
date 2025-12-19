@@ -62,7 +62,7 @@ HƯỚNG DẪN TRẢ LỜI THEO KIỂU CÂU HỎI ({answer_mode}):
 
 NGUYÊN TẮC CHUNG:
 - Ưu tiên thông tin trong NGỮ CẢNH, có thể gom/tổng hợp cho dễ hiểu.
-- Không cần viết câu "Tài liệu không đề cập" trừ khi thật sự cần nhấn mạnh.
+- Không cần viết câu "Tài liệu không đề cập" trừ khi thật sự cần nhấn mạnh. Đặc biệt nếu câu hỏi có liên quan đến vấn đề thủy sinh như cá, tôm, vật nuôi, ... thì phải dứt khoát nhấn mạnh "Tài liệu không đề cập".
 - Cuối câu trả lời, nếu phù hợp, gợi ý thêm 1–3 câu hỏi liên quan, ưu tiên lấy ý từ danh sách:
 {suggestions_text}
 """.strip()

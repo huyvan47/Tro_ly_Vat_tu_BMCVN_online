@@ -5,8 +5,8 @@ import pandas as pd
 # ========================
 # CONFIG
 # ========================
-PDF_PATH = r"\\192.168.0.171\Public\hcns\drive server\BMC LONG AN\5. IT\data-training-ai\8. Kinh doanh\4. Catelogue BMC, PT\BMC 10.2025 Phan dau.pdf"
-OUTPUT_XLSX = r"output.xlsx"
+PDF_PATH = r"Catologue-BMC-1-2.pdf"
+OUTPUT_XLSX = r"Catologue-BMC-1-2.xlsx"
 
 # ========================
 # PROCESS PDF

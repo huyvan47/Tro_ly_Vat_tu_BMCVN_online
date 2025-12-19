@@ -75,7 +75,7 @@ def main():
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kinh-doanh_Muc-2-3.npz")
+    kb = load_npz("data-kinh-doanh_remove_pdf-test-merge-p4.npz")
 
     cfg = RAGConfig()
 
@@ -114,9 +114,9 @@ def main():
 
 
 if __name__ == "__main__":
-    # Test nhiều câu hỏi
-    run_batch_questions()
+    # # Test nhiều câu hỏi
+    # run_batch_questions()
 
-    # ## Test một câu hỏi
-    # main()
+    ## Test một câu hỏi
+    main()
 

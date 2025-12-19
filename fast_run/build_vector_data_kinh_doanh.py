@@ -10,7 +10,7 @@ import re
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_remove_pdf.csv"  # đổi đúng tên file mới của bạn
-OUT_FILE = "data-kinh-doanh_remove_pdf.npz"
+OUT_FILE = "data-kinh-doanh_remove_pdf-test-merge-p4.npz"
 
 client = OpenAI(api_key="...")
 
