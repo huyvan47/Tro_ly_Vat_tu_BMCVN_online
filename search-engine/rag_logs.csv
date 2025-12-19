@@ -3695,3 +3695,183 @@ Gợi ý câu hỏi liên quan:
 - Kenbast 15SL Long (Lạc Đà) là thuốc gì và có thành phần hoạt chất nào?
 - LẠC ĐÀ có diệt được cỏ tranh không?
 - Hướng dẫn pha thuốc LẠC ĐÀ.",[]
+2025-12-19 18:01:50,RAG,thuốc trừ cỏ đuôi phụng tốt,Thuốc trừ cỏ đuôi phụng tốt?,RAG_STRICT,0.8166132571697235,0.762623883485794,0.05398937368392953,0.7110276446819306,40,0.293922921977247,"Trong ngữ cảnh được cung cấp, không có thông tin cụ thể về thuốc trừ cỏ đuôi phụng. Tuy nhiên, có một số sản phẩm thuốc trừ cỏ có thể có hiệu quả đối với các loại cỏ lá rộng và cỏ lá hẹp, bao gồm cả cỏ đuôi phụng, như:
+
+1. **Vua Cỏ Ngô**:
+   - **Hoạt chất**: Tembotrione 8%w/w (80g/kg).
+   - **Đặc tính – công dụng**: Là thuốc trừ cỏ thế hệ mới, an toàn cho ngô và mía, diệt trừ hiệu quả các loại cỏ lá rộng và lá hẹp như cỏ lồng vực, cỏ mần trầu, cỏ chỉ, cỏ lác, cỏ cứt lợn.
+   - **Liều dùng**: Pha 35-40ml/20L nước, phun vào sáng sớm hoặc chiều mát.
+   - **Lưu ý**: Không xịt vào nõn và lá non của ngô/mía, không xịt khi trời nắng nóng.
+
+2. **YOSKY Trương dôi kỵ, khai hoang p7, trâu rừng 2.0 GLU-P, khai hoang g63**:
+   - **Hoạt chất**: Glufosinate-P 10%w/w.
+   - **Đặc tính – công dụng**: Thuốc trừ cỏ tiếp xúc, nội hấp, không chọn lọc, diệt tất cả các loại cỏ hàng niên và đa niên.
+   - **Liều dùng**: Pha 120-150 ml/bình 20 lít, phun ướt đều từ gốc tới ngọn.
+   - **Lưu ý**: Không phun lên đất ngập nước hoặc đất quá khô, không phun lên phần xanh của cây trồng.
+
+3. **KENBAST 15SL, TRÂU ĐEN 150SL, TRÂU VÀNG 280, BÒ RỪNG, ĐP.AVO, LYRHOXINI 41SL, GLY 888, SƯ TỬ ĐỎ**:
+   - **Hoạt chất**: Glufosinate ammonium 150g/lít.
+   - **Đặc tính – công dụng**: Thuốc trừ cỏ không chọn lọc, diệt trừ các loại cỏ lá hẹp, lá rộng khó trị.
+   - **Liều dùng**: Pha 150 - 200 ml/bình 20 lít, phun ướt đều từ gốc tới ngọn.
+   - **Lưu ý**: Không phun khi trời sắp mưa, không phun lên phần xanh của cây trồng.
+
+Nếu bạn cần thêm thông tin về cách sử dụng các sản phẩm này hoặc các loại cỏ cụ thể mà chúng có thể diệt trừ, bạn có thể tham khảo các câu hỏi liên quan như: ""Cách sử dụng khai hoang p7"", ""Cỏ nào bị diệt bởi trâu rừng 2.0 GLU-P?"", hoặc ""Cách diệt cỏ bằng LYRHOXINI 41SL"".",[]
+2025-12-19 18:03:38,RAG,thuốc trừ cỏ đuôi phụng trên cây khoai lang,Thuốc trừ cỏ đuôi phụng trên cây khoai lang.,RAG_SOFT,0.8365160727500914,0.7984172809123993,0.03809879183769216,0.48290838766098015,40,0.21246834483059657,"Trong ngữ cảnh hiện tại, không có thông tin cụ thể về thuốc trừ cỏ đuôi phụng trên cây khoai lang. Tuy nhiên, để quản lý cỏ dại như cỏ đuôi phụng, người trồng thường cần sử dụng các loại thuốc trừ cỏ chuyên dụng phù hợp với cây trồng và điều kiện canh tác cụ thể. Khi chọn thuốc trừ cỏ, cần lưu ý:
+
+1. **Chọn thuốc trừ cỏ phù hợp**: Đảm bảo thuốc có hiệu quả đối với loại cỏ dại cần xử lý mà không gây hại cho cây khoai lang.
+
+2. **Liều lượng và cách sử dụng**: Tuân thủ hướng dẫn của nhà sản xuất về liều lượng và cách sử dụng để đảm bảo an toàn và hiệu quả.
+
+3. **Thời điểm phun thuốc**: Thời điểm phun thuốc cũng rất quan trọng, thường là khi cỏ dại đang trong giai đoạn sinh trưởng mạnh để đạt hiệu quả cao nhất.
+
+4. **Biện pháp an toàn**: Sử dụng đồ bảo hộ khi phun thuốc và tuân thủ các biện pháp an toàn để bảo vệ sức khỏe người lao động và môi trường.
+
+Nếu bạn cần thông tin chi tiết hơn về thuốc trừ cỏ cụ thể, bạn nên tham khảo thêm từ các nguồn chuyên ngành hoặc nhà cung cấp sản phẩm nông nghiệp.
+
+Gợi ý câu hỏi liên quan:
+- Nhóm sâu đất nào thường gây hại trên khoai lang và cách phòng trừ?
+- Làm sao để phòng trừ sùng khoai trên khoai lang?",[]
+2025-12-19 18:06:09,RAG,SUPAREP 22.4SC diệt được những loại sâu nào?,SUPAREP 22.4SC diệt được những loại sâu nào?,RAG_SOFT,0.8338380100727081,0.812771748304367,0.021066261768341032,0.6633691695213317,50,0.11710566528389504,"Suparep 22.4SC diệt được các loại sâu sau:
+
+- Bọ phấn
+- Sâu đục quả
+- Bọ trĩ
+- Sâu tơ
+- Nhện
+- Rệp sáp
+- Rệp muội
+- Rầy chổng cánh
+- Nhện đỏ
+
+Gợi ý câu hỏi liên quan:
+- Suparep 22.4SC dùng cho những loại cây trồng và sâu bệnh nào?
+- Suparep 22.4SC có đặc điểm gì nổi bật trong việc diệt sâu bệnh?",[]
+2025-12-19 18:08:22,RAG,thuốc hoặc công thức phối trộn trị rầy phấn trên cây cà chua,Thuốc hoặc công thức phối trộn trị rầy phấn trên cây cà chua?,RAG_STRICT,0.8648944520950317,0.8164427268505097,0.048451725244522015,0.6945561156272888,40,0.27937085572279924,"Để trị rầy phấn trên cây cà chua, có thể áp dụng các công thức phối trộn thuốc sau đây:
+
+1. **CT1 – Tiếp xúc hoặc xông hơi:** Sử dụng Binhfos 240ml và Ohayo 240SC 240ml cho mỗi phuy 200L. Công thức này giúp tiêu diệt rầy phấn thông qua tiếp xúc trực tiếp hoặc xông hơi.
+
+2. **CT2 – Tiếp xúc + lưu dẫn:** Kết hợp Ohayo 240SC 240ml với Tosi 100gr cho mỗi phuy 200L. Sự phối hợp này giúp thuốc thấm sâu vào cây, tiêu diệt rầy phấn từ bên trong.
+
+3. **CT3 – Xông hơi + lưu dẫn:** Sử dụng Binhfos 240ml kết hợp với Dinotop 100gr cho mỗi phuy 200L. Công thức này kết hợp cả hai cơ chế xông hơi và lưu dẫn, giúp tiêu diệt rầy phấn hiệu quả trên cả lá non, lá già và mặt dưới lá.
+
+**Lưu ý quan trọng:** 
+- Tránh sử dụng thuốc dạng EC nóng trong giai đoạn cây đang xổ nhụy hoặc có trái non để không gây hại cho cây.
+- Nên luân phiên sử dụng các nhóm thuốc xông hơi và lưu dẫn để hạn chế tình trạng kháng thuốc của rầy phấn.
+
+Ngoài ra, các hoạt chất đặc trị rầy phấn bao gồm Abamectin, Emamectin benzoate, Buprofezin, và các hỗn hợp như Nitenpyram + Pymetrozine + Imidacloprid. Việc luân phiên sử dụng các hoạt chất này cũng rất quan trọng để duy trì hiệu quả kiểm soát rầy phấn.
+
+**Gợi ý thêm các câu hỏi liên quan:**
+- Các công thức trị rầy xanh, rầy phấn (rầy nhảy) là gì?
+- Các công thức phối trộn thuốc trị rầy xanh phổ biến là gì?
+- Các hoạt chất đặc trị rầy phấn là gì?",[]
+2025-12-19 18:10:48,RAG,Nứt thân xì mủ dưa hấu dùng nhóm thuốc nào để sử dụng?,Nứt thân xì mủ dưa hấu dùng nhóm thuốc nào để điều trị?,RAG_STRICT,0.812417515516281,0.7368072485923767,0.07561026692390438,0.6707796787023543,40,0.4095140346789416,"**Nứt thân xì mủ dưa hấu: Hướng dẫn sử dụng thuốc**
+
+**Tổng quan bệnh:**
+Nứt thân xì mủ là một bệnh phổ biến trên cây dưa hấu, gây ra bởi nấm Phytophthora. Bệnh này có thể dẫn đến thiệt hại nghiêm trọng nếu không được kiểm soát kịp thời.
+
+**Nguyên nhân & điều kiện phát sinh:**
+Bệnh do nấm Phytophthora gây ra, thường phát triển mạnh trong điều kiện ẩm ướt, đặc biệt là khi cây trồng bị ngập úng hoặc đất thoát nước kém. Nhiệt độ ấm áp cũng tạo điều kiện thuận lợi cho nấm phát triển.
+
+**Triệu chứng:**
+- Xuất hiện các vết nứt trên thân cây, từ đó chảy ra chất nhựa màu nâu (xì mủ).
+- Lá có thể bị vàng và héo rũ do hệ thống mạch dẫn bị ảnh hưởng.
+- Rễ có thể bị thối, làm cây suy yếu và chết dần.
+
+**Hậu quả:**
+Bệnh làm giảm năng suất và chất lượng quả, thậm chí có thể dẫn đến chết cây nếu không được xử lý kịp thời.
+
+**Hướng xử lý & phòng ngừa:**
+- **Xịt thuốc:** Sử dụng Agrifos (phosphonate 400 g/L) kết hợp với Mancozeb. Pha 1 lít Agrifos và 1 kg Mancozeb với 400 lít nước để phun xịt lên cây.
+- **Quét thân:** Trộn đặc 1 lít Agrifos với 1 kg Mancozeb mà không hòa nước, sau đó quét lên thân cây bị bệnh.
+- **Đổ gốc:** Pha 1 lít Agrifos và 1 kg Mancozeb với 200 lít nước để đổ vào gốc cây, giúp kháng nấm và phục hồi mô cây.
+
+**Gợi ý câu hỏi liên quan:**
+- Công thức trị bệnh nứt thân, xì mủ trên sầu riêng gồm những bước nào?
+- Bác Sĩ Nấm Bệnh - Nekko 69WP
+- Forthane 80WP dùng để phòng trừ bệnh gì trên các loại cây trồng nào?",[]
+2025-12-19 18:14:24,RAG,sản phẩm nào trị cỏ trên cây khoai môn tốt nhất,Sản phẩm nào trị cỏ trên cây khoai môn tốt nhất?,RAG_SOFT,0.8255411171913146,0.7850536572933197,0.04048745989799496,0.7154361484050751,40,0.22282708584286207,"Trong ngữ cảnh hiện tại, không có thông tin cụ thể về sản phẩm nào được khuyến nghị để trị cỏ trên cây khoai môn. Tuy nhiên, có một số sản phẩm trừ cỏ được đề cập có thể cân nhắc sử dụng trên các cây trồng khác, như:
+
+1. **Gorop 500EC**: Sản phẩm này dùng để trừ cỏ tiền nảy mầm, đặc trị các loại cỏ lá rộng và lá hẹp trên cây khoai mì, đậu phộng, bắp, hành, tỏi và các rau màu khác. Thuốc được phun trong giai đoạn từ 2 ngày trước khi trồng đến 3 ngày sau khi trồng để đạt hiệu quả cao nhất.
+
+2. **Bpsaco 500EC**: Cũng được sử dụng trên các cây khoai mì, đậu phộng, bắp, hành, tỏi và các loại rau màu khác để trừ cỏ tiền nảy mầm hiệu quả.
+
+3. **Dusan 240EC**: Đây là thuốc trừ cỏ thế hệ mới, hấp thu nhanh qua lá, thân, rễ cỏ, làm mất diệp lục và phá hủy màng tế bào khiến cỏ bị héo và chết. Sản phẩm này diệt trừ hữu hiệu các loại cỏ lá rộng như cỏ hôi, mắc cỡ, rau sam, chua me, dền gai, cỏ cúc, chó đẻ, tầm bóp. Được sử dụng trên cây đậu nành, đậu phộng, củ đậu, khoai mì. Liều dùng là 0.3 - 0.4 lít/ha, pha 15-20ml/bình 20 lít, với lượng nước phun 400-600 lít/ha. Phun sau khi gieo, trồng 10-15 ngày, khi cỏ từ 2 - 3 lá.
+
+Nếu bạn đang tìm kiếm sản phẩm cụ thể cho cây khoai môn, có thể cần tham khảo thêm từ các nguồn khác hoặc chuyên gia nông nghiệp để có lựa chọn phù hợp nhất.
+
+Gợi ý thêm câu hỏi liên quan:
+- Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+- Dusan 240EC có tác dụng gì?
+- Cách sử dụng Dusan 240EC như thế nào?",[]
+2025-12-19 18:21:50,RAG,thuốc trừ cỏ có chọn lọc,Thuốc trừ cỏ có chọn lọc.,RAG_STRICT,0.8396186912059783,0.761666692495346,0.0779519987106323,0.7257732052803039,40,0.43633303422874137,"Thuốc trừ cỏ có chọn lọc là loại thuốc được thiết kế để tiêu diệt hoặc kiểm soát các loại cỏ dại cụ thể mà không gây hại cho cây trồng chính. Trong ngữ cảnh được cung cấp, có hai sản phẩm thuốc trừ cỏ có chọn lọc là GIÁO SƯ CỎ và Laoton 108EC.
+
+1. **GIÁO SƯ CỎ**:
+   - **Hoạt chất**: Mesotrione 15% w/w.
+   - **Đặc tính - Công dụng**: Đây là thuốc trừ cỏ chọn lọc, hậu nảy mầm sớm, có tác động tiếp xúc và nội hấp, giúp trừ cỏ phổ rộng. Thuốc ức chế quá trình quang hợp của cây cỏ, khiến cây cỏ có triệu chứng bạch tạng sau 3-5 ngày và chết gục sau 10 ngày. Hiệu quả cao với cỏ hàng niên và một số cỏ đa niên lá hẹp, lá rộng như cỏ chỉ, mần trầu, cỏ gấu, cỏ tức.
+   - **Phạm vi tác động**: Đặc biệt hiệu quả trong ruộng ngô, mía, đối với các loại cỏ hòa bản và lá rộng.
+   - **Liều dùng - Cách pha**: 0.8 lít/ha, pha 50 - 60 ml/bình 20 lít, phun 3 bình cho 1.000 m². Lượng nước phun từ 500 - 600 lít/ha.
+   - **Thời điểm phun**: Khi cỏ đã mọc nhưng còn nhỏ (1 - 5 lá), tốt nhất khi cây ngô từ 8 lá trở lên.
+   - **Lưu ý an toàn**: Với bắp nếp, ngọt, nên xịt dưới gốc, hạn chế xịt vào lá, nõn.
+
+2. **Laoton 108EC**:
+   - **Hoạt chất**: Haloxyfop-p-methyl 108g/l.
+   - **Đặc tính - Công dụng**: Là thuốc trừ cỏ chọn lọc, hấp thụ qua lá và rễ, thủy phân thành haloxyfop-P chuyển đến các mô phân sinh, gây ức chế sự phát triển của chúng. Sử dụng trừ cỏ hằng năm và lâu năm trên lạc, sắn, đậu nành.
+   - **Phạm vi tác động**: Hiệu quả với cỏ hòa thảo, cỏ gạo, mần trầu, cỏ bông, cỏ chỉ, cỏ đuôi phụng.
+   - **Liều dùng - Cách pha**: 0.8 lít/ha, pha từ 50 - 70 ml/bình 20 lít, phun 3 bình cho 1.000 m². Lượng nước phun từ 400-600 lít/ha.
+   - **Thời điểm phun**: Sau khi gieo từ 5-10 ngày, khi cây từ 1-3 lá.
+   - **Lưu ý an toàn**: Hành lá bền rễ tốt mới cho xịt, không phun cho các cây trồng khác.
+
+Gợi ý thêm câu hỏi liên quan:
+- Thông tin về Laoton 108EC.
+- Shina 18SL dùng để trừ loại cỏ nào và có những ưu điểm gì?
+- Kenbast 15SL Long dùng để trừ loại cỏ nào và có đặc điểm gì nổi bật?",[]
+2025-12-19 18:24:38,RAG,Thông tin về Laoton 108EC.,Thông tin về Laoton 108EC.,RAG_STRICT,0.8081013741493225,0.711374328136444,0.09672704601287851,0.603861664700508,40,0.5211017253360792,"Laoton 108EC là một sản phẩm thuốc trừ cỏ chọn lọc, thuộc nhóm thuốc trừ cỏ. Sản phẩm này chứa hoạt chất Haloxyfop-P-Methyl với nồng độ 108g/l và các phụ gia đặc biệt với nồng độ 892g/l. Laoton 108EC được sản xuất bởi Hailir Pesticides and Chemicals Group Co., Ltd.
+
+**Đặc tính và công dụng:**
+- Laoton 108EC là thuốc trừ cỏ chọn lọc, có khả năng hấp thụ qua lá và rễ của cây cỏ. Sau khi hấp thụ, thuốc sẽ thủy phân thành haloxyfop-P, di chuyển đến các mô phân sinh và ức chế sự phát triển của chúng.
+- Sản phẩm này đặc biệt hiệu quả trong việc trừ cỏ lá hẹp, bao gồm cả cỏ hằng năm và lâu năm, trên các cây trồng lá rộng như đậu tương (đậu nành), lạc (đậu phộng), sắn (khoai mì), khoai lang và hành lá.
+
+**Phạm vi tác động:**
+- Laoton 108EC có thể trừ các loại cỏ như cỏ hòa thảo, cỏ gạo, mần trầu, cỏ bông, cỏ chỉ, và cỏ đuôi phụng.
+
+**Liều lượng và cách sử dụng:**
+- Liều lượng khuyến cáo là 0,8 lít/ha. Pha từ 50 - 70ml thuốc cho mỗi bình 20 lít nước và phun 3 bình cho 1000m².
+- Lượng nước phun từ 400-600 lít/ha.
+- Thời điểm phun là sau khi gieo từ 5-10 ngày, khi cây cỏ từ 1-3 lá. Cây trồng sẽ phục hồi sau khi phun một thời gian ngắn.
+
+**Lưu ý an toàn:**
+- Hành lá cần có bộ rễ bền tốt mới nên phun thuốc.
+- Chỉ phun khi cỏ còn nhỏ, từ 1-3 lá, và không phun cho các cây trồng khác.
+- Thời gian cách ly không được xác định trong tài liệu.
+
+Nếu bạn quan tâm, có thể tìm hiểu thêm về ""Laoton 108EC dùng để trừ cỏ trên những cây trồng nào?"" hoặc ""Liều lượng và thời điểm phun Laoton 108EC như thế nào?"".",[]
+2025-12-19 18:25:53,RAG,tất cả sản phẩm có thể trừ được cỏ đuôi phụng,Tất cả sản phẩm có thể trừ được cỏ đuôi phụng?,RAG_SOFT,0.8264990034103393,0.7884125518798828,0.03808645153045653,0.7754063358306885,50,0.2098560948890568,"- PHƯỢNG HOÀNG LỬA: Diệt được cỏ đuôi phụng.
+- YOSKY Trương dôi kỵ, khai hoang p7, trâu rừng 2.0 GLU-P, khai hoang g63: Không có thông tin cụ thể về cỏ đuôi phụng trong ngữ cảnh.
+
+Gợi ý thêm câu hỏi liên quan:
+- PHƯỢNG HOÀNG LỬA diệt được các loại cỏ nào?
+- LẠC ĐÀ có diệt được cỏ tranh không?
+- YOSKY Trương dôi kỵ, khai hoang p7, trâu rừng 2.0 GLU-P, khai hoang g63 có tác dụng gì?",[]
+2025-12-19 18:38:53,RAG,thuốc nào trừ được cỏ mần trầu,Thuốc nào trừ được cỏ mần trầu?,RAG_STRICT,0.8411324763298034,0.7916243004798889,0.049508175849914515,0.7284054505825042,40,0.2776195636747331,"Có ba loại thuốc trừ cỏ có khả năng diệt trừ cỏ mần trầu được đề cập trong ngữ cảnh:
+
+1. **VOI RỪNG**:
+   - **Hoạt chất**: Glufosinate ammonium 200g/l.
+   - **Đặc tính – công dụng**: Đây là thuốc trừ cỏ tiếp xúc, nội hấp, không chọn lọc, có khả năng diệt trừ nhiều loại cỏ lá rộng và lá hẹp, bao gồm cỏ mần trầu. Thuốc này thích hợp sử dụng trên đất trồng cây công nghiệp, vườn cây ăn trái và đất không trồng trọt.
+   - **Liều dùng – cách pha – lượng nước**: Sử dụng 2.0 lít/ha, pha 100 - 150 ml/bình 20 lít và phun ướt đều từ gốc tới ngọn khi cỏ đang phát triển.
+   - **Thời điểm – hiệu lực**: Phun tốt nhất khi cỏ đang phát triển xanh tốt, sau 3 - 5 ngày cỏ sẽ vàng và chết nhanh.
+   - **Lưu ý an toàn**: Không phun thuốc khi trời sắp mưa và tránh phun lên phần xanh của cây trồng.
+
+2. **Kenbast 15SL Gold**:
+   - **Đặc tính – công dụng**: Thuốc này đặc biệt hiệu quả trong việc trừ các loại cỏ khó trị như cỏ mần trầu, cỏ tranh và các loại cỏ đã kháng lại Glyphosate.
+   - **Phạm vi tác động**: Kiểm soát cỏ dại hiệu quả trong nhiều điều kiện khác nhau.
+
+3. **Many 800WP**:
+   - **Hoạt chất**: Atrazine 800g/kg - Phụ gia đặc biệt 200g/kg.
+   - **Đặc tính – công dụng**: Đây là thuốc trừ cỏ hậu nảy mầm, tác động trên mầm cỏ, lá cỏ và rễ cỏ, làm cho cây cỏ không tổng hợp được acid amin. Thuốc có thể trừ được nhiều nhóm cỏ hòa bản và cỏ lá rộng, bao gồm cỏ mần trầu.
+   - **Liều dùng – cách pha – lượng nước**: Sử dụng 1 - 2 kg/ha, pha 50 - 100g/bình 16 - 20 lít và phun khi cỏ chưa mọc hoặc đang mọc.
+   - **Thời điểm – hiệu lực**: Phun sau khi gieo trồng được 5 – 15 ngày.
+
+Gợi ý thêm câu hỏi liên quan:
+- Kenbast 15SL Gold có thể trừ cỏ nào mà các thuốc khác khó xử lý?
+- Many 800WP có tác dụng gì?
+- LẠC ĐÀ có diệt được cỏ tranh không?",[]

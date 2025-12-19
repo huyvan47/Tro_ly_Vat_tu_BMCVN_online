@@ -6,10 +6,10 @@ from pathlib import Path
 from openai import OpenAI
 
 # ========= CONFIG =========
-EXCEL_PATH = "input-product-catologue.xlsx"
+EXCEL_PATH = "input-product-catologue-p6.xlsx"
 SHEET_NAME = 0               # hoặc "Sheet1"
 TEXT_COL = "product_text"    # đổi theo file bạn
-OUT_CSV = "input-product-catologue.csv"
+OUT_CSV = "input-product-catologue-p6.csv"
 
 MODEL = "gpt-4o-mini"
 TEMPERATURE = 0

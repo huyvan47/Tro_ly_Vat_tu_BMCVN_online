@@ -70,7 +70,7 @@ NGUYÊN TẮC CHUNG:
     resp = client.chat.completions.create(
         model="gpt-4o",
         temperature=0.2,
-        max_completion_tokens=1200,
+        max_completion_tokens=2000,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}

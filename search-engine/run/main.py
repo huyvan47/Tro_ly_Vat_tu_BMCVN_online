@@ -75,7 +75,7 @@ def main():
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kinh-doanh_remove_pdf-test-merge-p4.npz")
+    kb = load_npz("data-kinh-doanh_remove_pdf-test-merge-p4-full.npz")
 
     cfg = RAGConfig()
 
