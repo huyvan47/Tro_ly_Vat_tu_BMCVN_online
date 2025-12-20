@@ -1,0 +1,24 @@
+- Bỏ data từ các slide của các nhóm để tránh gây nhiễu với file excel của sếp
+
+
+Kinh doanh:
+1. Sản phẩm, cây trồng, nấm bệnh ->
+ 1. Thái Bình Gia Lai -> 1 - 53
+ 2. 
+  a. ICTOP -> 206 - 306
+ 3. Bộ sản phẩm
+   FILE SẢN PHẨM 11.11.xlsx – sheet 1 -> 1461 – 1479
+   FILE SẢN PHẨM 11.11.xlsx - sheet 2 -> 1480 – 1497
+   FILE SẢN PHẨM 11.11.xlsx - sheet 4 -> 1498 – 2182
+   FILE SẢN PHẨM 11.11.xlsx - sheet 5 -> 2183 – 2691
+2. 8 bài kỹ năng Kinh doanh
+ 1. GIÁ BÁN- CHÍNH SÁCH.xlsx -> 2692 – 2698
+ 2. Mở mới- Tăng Doanh số    -> 2699 – 2705
+ 3. Giải quyết ý kiến KH    -> 2706 – 2716
+ 4. Quy trình xuất nhập hàng -> 2717 – 2723
+ 5. Tư vấn nhãn riêng 2724 – 2727
+ 6. Hàng bán trả lại 2728 – 2731
+ 7. Quản lý công nợ 2732 – 2739
+ 8. Lập Kế hoạch đi Thị trường, thanh quyết toán -> 2740 – 2745
+ 9. Thiết lập mục tiêu, kế hoạch, giao việc -> 2746 – 2757
+3. Danh mục thuốc bảo vệ thực vật -> 2717 - 8391

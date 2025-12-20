@@ -68,7 +68,7 @@ NGUYÊN TẮC CHUNG:
 """.strip()
 
     resp = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4.1-mini",
         temperature=0.2,
         max_completion_tokens=2000,
         messages=[

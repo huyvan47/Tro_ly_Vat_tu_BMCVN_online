@@ -17,7 +17,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     route = route_query(client, user_query)
     if route == "GLOBAL":
         resp = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4.1-mini",
             temperature=0,
             messages=[
                 {
