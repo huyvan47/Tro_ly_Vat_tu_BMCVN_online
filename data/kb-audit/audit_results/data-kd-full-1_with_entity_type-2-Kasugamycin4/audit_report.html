@@ -1,0 +1,116 @@
+<html><head><meta charset='utf-8'><title>RAG KB Audit Report</title></head><body>
+<h1>RAG KB Audit Report</h1>
+<h2>Summary</h2>
+<pre>{
+  "rows": 23,
+  "columns": [
+    "id",
+    "question",
+    "answer",
+    "category",
+    "tags",
+    "alt_questions",
+    "img_keys",
+    "entity_type"
+  ],
+  "nulls": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 23,
+    "entity_type": 0
+  },
+  "empties": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 23,
+    "entity_type": 0
+  },
+  "duplicate_id_rows": 0,
+  "invalid_entity_type_rows": 0
+}</pre>
+<h2>Entity type stats</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>entity_type</th>
+      <th>rows</th>
+      <th>missing_tags</th>
+      <th>missing_category</th>
+      <th>missing_img</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product</td>
+      <td>23</td>
+      <td>0</td>
+      <td>0</td>
+      <td>23</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Top issues (first 300)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row_index</th>
+      <th>id</th>
+      <th>issue_type</th>
+      <th>severity</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>bilu_chunk_02</td>
+      <td>TAG_HAS_SPACE</td>
+      <td>MED</td>
+      <td>tags có token chứa space: ['bilu', 'dua_leo', 'Kasugamycin 4%', 'vi_khuan_chay_la', '500_750_ml_ha']</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>bilu_chunk_02</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>bilu_chunk_03</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>bilu_chunk_07</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>bilu_advantage_chunk_03</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>bilu_mechanism_qa_01</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>

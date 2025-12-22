@@ -1,0 +1,130 @@
+<html><head><meta charset='utf-8'><title>RAG KB Audit Report</title></head><body>
+<h1>RAG KB Audit Report</h1>
+<h2>Summary</h2>
+<pre>{
+  "rows": 239,
+  "columns": [
+    "id",
+    "question",
+    "answer",
+    "category",
+    "tags",
+    "alt_questions",
+    "img_keys",
+    "entity_type"
+  ],
+  "nulls": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 239,
+    "entity_type": 0
+  },
+  "empties": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 239,
+    "entity_type": 0
+  },
+  "duplicate_id_rows": 0,
+  "invalid_entity_type_rows": 0
+}</pre>
+<h2>Entity type stats</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>entity_type</th>
+      <th>rows</th>
+      <th>missing_tags</th>
+      <th>missing_category</th>
+      <th>missing_img</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>procedure</td>
+      <td>239</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Top issues (first 300)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row_index</th>
+      <th>id</th>
+      <th>issue_type</th>
+      <th>severity</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>57</td>
+      <td>nh_m_ch_ch_h_t_qa_03__000057</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>132</td>
+      <td>nh_m_mi_ng_nhai_qa_03__000132</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>149</td>
+      <td>nh_m_nh_n_chunk_01__000149</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>150</td>
+      <td>nh_m_nh_n_qa_01__000150</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>152</td>
+      <td>nh_m_nh_n_qa_03__000152</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>219</td>
+      <td>phong_tri_da_nam_dat_chunk_01__000219</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>234</td>
+      <td>san_pham_chuoi_chunk_01__000234</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+    <tr>
+      <td>235</td>
+      <td>san_pham_chuoi_chunk_02__000235</td>
+      <td>PROCEDURE_LOOKS_LIKE_REGISTRY</td>
+      <td>MED</td>
+      <td>procedure nhưng nội dung giống dữ liệu đăng ký</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>

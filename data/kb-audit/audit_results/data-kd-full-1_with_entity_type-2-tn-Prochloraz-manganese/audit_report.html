@@ -1,0 +1,102 @@
+<html><head><meta charset='utf-8'><title>RAG KB Audit Report</title></head><body>
+<h1>RAG KB Audit Report</h1>
+<h2>Summary</h2>
+<pre>{
+  "rows": 12,
+  "columns": [
+    "id",
+    "question",
+    "answer",
+    "category",
+    "tags",
+    "alt_questions",
+    "img_keys",
+    "entity_type"
+  ],
+  "nulls": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 12,
+    "entity_type": 0
+  },
+  "empties": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 12,
+    "entity_type": 0
+  },
+  "duplicate_id_rows": 0,
+  "invalid_entity_type_rows": 0
+}</pre>
+<h2>Entity type stats</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>entity_type</th>
+      <th>rows</th>
+      <th>missing_tags</th>
+      <th>missing_category</th>
+      <th>missing_img</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>product</td>
+      <td>12</td>
+      <td>0</td>
+      <td>0</td>
+      <td>12</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Top issues (first 300)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row_index</th>
+      <th>id</th>
+      <th>issue_type</th>
+      <th>severity</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>pmc50_fact_02</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>pmc50_fact_03</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>pmc50_fact_04</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>pmc50_fact_06</td>
+      <td>ET_MISMATCH_Q</td>
+      <td>HIGH</td>
+      <td>entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>

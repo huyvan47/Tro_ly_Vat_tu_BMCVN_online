@@ -1,0 +1,5 @@
+﻿row_index,id,issue_type,severity,detail
+1,pmc50_fact_02,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+2,pmc50_fact_03,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+3,pmc50_fact_04,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+5,pmc50_fact_06,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ

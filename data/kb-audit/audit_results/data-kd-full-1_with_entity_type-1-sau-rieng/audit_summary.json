@@ -1,0 +1,35 @@
+{
+  "rows": 25,
+  "columns": [
+    "id",
+    "question",
+    "answer",
+    "category",
+    "tags",
+    "alt_questions",
+    "img_keys",
+    "entity_type"
+  ],
+  "nulls": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 25,
+    "entity_type": 0
+  },
+  "empties": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 25,
+    "entity_type": 0
+  },
+  "duplicate_id_rows": 0,
+  "invalid_entity_type_rows": 0
+}

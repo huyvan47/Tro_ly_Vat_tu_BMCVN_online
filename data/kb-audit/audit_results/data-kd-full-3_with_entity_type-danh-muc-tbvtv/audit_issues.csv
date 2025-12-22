@@ -1,0 +1,12 @@
+﻿row_index,id,issue_type,severity,detail
+234,danh_muc_thuoc_bao_ve_thuc_vat_row_0235,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+239,danh_muc_thuoc_bao_ve_thuc_vat_row_0240,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+321,danh_muc_thuoc_bao_ve_thuc_vat_row_0322,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+751,danh_muc_thuoc_bao_ve_thuc_vat_row_0752,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+1028,danh_muc_thuoc_bao_ve_thuc_vat_row_1029,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+1046,danh_muc_thuoc_bao_ve_thuc_vat_row_1047,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+1381,danh_muc_thuoc_bao_ve_thuc_vat_row_1382,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+1553,danh_muc_thuoc_bao_ve_thuc_vat_row_1554,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+2068,danh_muc_thuoc_bao_ve_thuc_vat_row_2069,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+3968,danh_muc_thuoc_bao_ve_thuc_vat_row_3969,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ
+5110,danh_muc_thuoc_bao_ve_thuc_vat_row_5111,ET_MISMATCH_Q,HIGH,entity_type=registry nhưng question có dấu hiệu bệnh/sâu/cỏ

@@ -1,0 +1,11 @@
+﻿row_index,id,issue_type,severity,detail
+0,rose_dis_chunk_01,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+16,rose_downy_chunk_02,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+42,rose_ghost_chunk_03,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+45,rose_rust_chunk_02,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+50,rose_canker_chunk_03,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+52,rose_canker_chunk_05,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+70,rose_mosaic_chunk_02,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+75,rose_mosaic_chunk_07,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+82,rose_rrd_chunk_02,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product
+98,rose_rrd_manage_chunk_07,ET_MISMATCH_A,HIGH,entity_type=disease nhưng answer giống registry/product

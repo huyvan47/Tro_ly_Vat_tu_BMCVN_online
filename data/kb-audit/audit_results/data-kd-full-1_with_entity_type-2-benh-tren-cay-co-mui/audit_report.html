@@ -1,0 +1,284 @@
+<html><head><meta charset='utf-8'><title>RAG KB Audit Report</title></head><body>
+<h1>RAG KB Audit Report</h1>
+<h2>Summary</h2>
+<pre>{
+  "rows": 80,
+  "columns": [
+    "id",
+    "question",
+    "answer",
+    "category",
+    "tags",
+    "alt_questions",
+    "img_keys",
+    "entity_type"
+  ],
+  "nulls": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 80,
+    "entity_type": 0
+  },
+  "empties": {
+    "id": 0,
+    "question": 0,
+    "answer": 0,
+    "category": 0,
+    "tags": 0,
+    "alt_questions": 0,
+    "img_keys": 80,
+    "entity_type": 0
+  },
+  "duplicate_id_rows": 0,
+  "invalid_entity_type_rows": 0
+}</pre>
+<h2>Entity type stats</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>entity_type</th>
+      <th>rows</th>
+      <th>missing_tags</th>
+      <th>missing_category</th>
+      <th>missing_img</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>disease</td>
+      <td>80</td>
+      <td>0</td>
+      <td>0</td>
+      <td>80</td>
+    </tr>
+  </tbody>
+</table>
+<h2>Top issues (first 300)</h2>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>row_index</th>
+      <th>id</th>
+      <th>issue_type</th>
+      <th>severity</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td>citrus_melanose_chunk_03</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>citrus_scab_chunk_02</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>citrus_sweet_scab_chunk_02</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>citrus_brown_rot_chunk_02</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>citrus_green_blue_mold_chunk_02</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>scab_fungicide_chunk_04</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>scab_fungicide_chunk_06</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>citrus_fungicide_chunk_01</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>citrus_fungicide_chunk_02</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>citrus_fungicide_chunk_03</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>citrus_fungicide_chunk_04</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>citrus_fungicide_chunk_05</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>citrus_fungicide_chunk_06</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>citrus_fungicide_chunk_07</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>citrus_fungicide_chunk_08</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>citrus_fungicide_chunk_09</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>citrus_fungicide_chunk_10</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>66</td>
+      <td>citrus_fungicide_chunk_11</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>67</td>
+      <td>citrus_fungicide_chunk_12</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>68</td>
+      <td>citrus_fungicide_chunk_13</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>69</td>
+      <td>citrus_fungicide_chunk_14</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>70</td>
+      <td>citrus_fungicide_chunk_15</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>71</td>
+      <td>citrus_fungicide_chunk_16</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>72</td>
+      <td>citrus_fungicide_chunk_17</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>74</td>
+      <td>citrus_fungicide_chunk_18</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>75</td>
+      <td>citrus_fungicide_chunk_19</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>76</td>
+      <td>citrus_fungicide_chunk_20</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td>citrus_fungicide_chunk_21</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>78</td>
+      <td>citrus_fungicide_chunk_22</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+    <tr>
+      <td>79</td>
+      <td>citrus_fungicide_chunk_23</td>
+      <td>ET_MISMATCH_A</td>
+      <td>HIGH</td>
+      <td>entity_type=disease nhưng answer giống registry/product</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>

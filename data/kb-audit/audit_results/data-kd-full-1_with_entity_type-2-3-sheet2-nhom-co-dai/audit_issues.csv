@@ -1,0 +1,3 @@
+﻿row_index,id,issue_type,severity,detail
+4,co_hoa_ban_qa_01,ET_MISMATCH_A,HIGH,entity_type=weed nhưng answer giống registry/product
+8,co_la_rong_chunk_03,ET_MISMATCH_A,HIGH,entity_type=weed nhưng answer giống registry/product

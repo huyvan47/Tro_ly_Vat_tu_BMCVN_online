@@ -1,0 +1,7 @@
+﻿row_index,id,issue_type,severity,detail
+1,bilu_chunk_02,TAG_HAS_SPACE,MED,"tags có token chứa space: ['bilu', 'dua_leo', 'Kasugamycin 4%', 'vi_khuan_chay_la', '500_750_ml_ha']"
+1,bilu_chunk_02,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+2,bilu_chunk_03,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+6,bilu_chunk_07,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+17,bilu_advantage_chunk_03,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ
+21,bilu_mechanism_qa_01,ET_MISMATCH_Q,HIGH,entity_type=product nhưng question có dấu hiệu bệnh/sâu/cỏ

@@ -1,0 +1,9 @@
+﻿row_index,id,issue_type,severity,detail
+57,nh_m_ch_ch_h_t_qa_03__000057,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+132,nh_m_mi_ng_nhai_qa_03__000132,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+149,nh_m_nh_n_chunk_01__000149,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+150,nh_m_nh_n_qa_01__000150,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+152,nh_m_nh_n_qa_03__000152,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+219,phong_tri_da_nam_dat_chunk_01__000219,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+234,san_pham_chuoi_chunk_01__000234,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
+235,san_pham_chuoi_chunk_02__000235,PROCEDURE_LOOKS_LIKE_REGISTRY,MED,procedure nhưng nội dung giống dữ liệu đăng ký
