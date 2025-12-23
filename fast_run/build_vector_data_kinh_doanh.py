@@ -3,14 +3,15 @@ import numpy as np
 from openai import OpenAI
 from pathlib import Path
 import re
+import json
 
 # ==============================
 #        CONFIG
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/data-kinh-doanh/data-kinh-doanh_remove_pdf.csv"  # đổi đúng tên file mới của bạn
-OUT_FILE = "data-kinh-doanh_remove_pdf-test-merge-p4-full.npz"
+DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-tags-v2-entity-type.csv"
+OUT_FILE = "data-kd-1-4-tags-v2-entity-type.npz"
 
 client = OpenAI(api_key="...")
 
@@ -20,13 +21,11 @@ client = OpenAI(api_key="...")
 
 df = pd.read_csv(DATA, encoding="utf-8")
 
-# Đảm bảo các cột tồn tại đúng tên
-required_cols = ["id", "question", "answer", "category", "tags", "alt_questions", "img_keys"]
+required_cols = ["id", "question", "answer", "category", "tags", "alt_questions", "img_keys", "entity_type", "tags_v2"]
 missing = [c for c in required_cols if c not in df.columns]
 if missing:
     raise ValueError(f"Thiếu cột trong CSV: {missing}")
 
-# Ép kiểu về string để tránh NaN gây lỗi
 df["question"] = df["question"].astype(str)
 df["answer"] = df["answer"].astype(str)
 df["category"] = df["category"].astype(str)
@@ -34,12 +33,34 @@ df["tags"] = df["tags"].fillna("").astype(str)
 df["alt_questions"] = df["alt_questions"].fillna("").astype(str)
 df["img_keys"] = df["img_keys"].fillna("").astype(str)
 
+# NEW
+df["entity_type"] = df["entity_type"].fillna("").astype(str)
+df["tags_v2"] = df["tags_v2"].fillna("").astype(str)
+
+def tags_v2_to_pipe(s: str) -> str:
+    s = (s or "").strip()
+    if not s:
+        return ""
+    if s.startswith("[") and s.endswith("]"):
+        try:
+            arr = json.loads(s)
+            if isinstance(arr, list):
+                arr = [str(x).strip() for x in arr if str(x).strip()]
+                return "|".join(arr)
+        except Exception:
+            pass
+    if "|" in s:
+        return "|".join([p.strip() for p in s.split("|") if p.strip()])
+    return s
+
+df["tags_v2"] = df["tags_v2"].apply(tags_v2_to_pipe)
+
 # ==============================
 #   BUILD INPUT TEXTS FOR EMBED
 # ==============================
 
-EMBED_MODE = "Q_PLUS_A_FULL"   # chọn: "Q_ONLY", "Q_PLUS_A_BRIEF", "Q_PLUS_A_FULL"
-ANSWER_HEAD_CHARS = 800        # chỉ dùng cho Q_PLUS_A_BRIEF (600–1200 là hợp lý)
+EMBED_MODE = "Q_PLUS_A_FULL"
+ANSWER_HEAD_CHARS = 800
 
 def clean_text(s: str) -> str:
     s = (s or "").strip()
@@ -85,7 +106,7 @@ print(f"🔢 Tổng số dòng cần embed: {len(inputs)}")
 
 print("🚀 Bắt đầu embedding theo batch ...")
 
-BATCH_SIZE = 200   # chỉnh 100–300 tùy dữ liệu / rate limit
+BATCH_SIZE = 200
 all_embs = []
 
 for start in range(0, len(inputs), BATCH_SIZE):
@@ -99,16 +120,11 @@ for start in range(0, len(inputs), BATCH_SIZE):
         input=batch,
     )
 
-    # resp.data trả theo thứ tự input; append theo batch để giữ đúng thứ tự
     all_embs.extend([item.embedding for item in resp.data])
 
-# Chuyển sang numpy
 embs = np.array(all_embs, dtype=np.float32)
-
-# Kiểm tra an toàn: số vector == số dòng
 assert embs.shape[0] == len(df), f"Mismatch: {embs.shape[0]} embeddings nhưng {len(df)} dòng CSV"
 
-# Chuẩn hoá vector đơn vị
 norms = np.linalg.norm(embs, axis=1, keepdims=True) + 1e-8
 embs = embs / norms
 
@@ -117,6 +133,10 @@ print("🔥 Embedding xong. Tổng số vector:", len(embs))
 # ==============================
 #        SAVE NPZ
 # ==============================
+
+
+OUT_PATH = Path(OUT_FILE)
+OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 np.savez(
     OUT_FILE,
@@ -128,6 +148,10 @@ np.savez(
     tags=df["tags"].to_numpy(dtype=object),
     img_keys=df["img_keys"].to_numpy(dtype=object),
     ids=df["id"].astype(str).to_numpy(dtype=object),
+
+    # NEW for filter
+    entity_type=df["entity_type"].to_numpy(dtype=object),
+    tags_v2=df["tags_v2"].to_numpy(dtype=object),
 )
 
 print(f"✅ ĐÃ BUILD XONG VECTOR FILE → {OUT_FILE}")

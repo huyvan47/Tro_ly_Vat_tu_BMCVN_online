@@ -11,6 +11,7 @@ from rag.answer_modes import detect_answer_mode
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
+from rag.tag_filter import infer_filters_from_query
 
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None):
     # 0) Route GLOBAL / RAG
@@ -42,8 +43,19 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     # 2) Listing?
     is_list = is_listing_query(norm_query)
 
-    top_k = 50 if is_list else 40   # giống “tinh thần” bản cũ
-    hits = retrieve_search(client=client, kb=kb, norm_query=norm_query, top_k=top_k)
+    top_k = 80 if is_list else 50   # giống “tinh thần” bản cũ
+    must_tags, any_tags = infer_filters_from_query(norm_query)
+    print("must_tags: ", must_tags)
+    print("any_tags: ", any_tags)
+    hits, docs_for_log = retrieve_search(
+    client=client,
+    kb=kb,
+    norm_query=norm_query,
+    top_k=top_k,
+    must_tags=must_tags,
+    any_tags=any_tags,
+    
+)
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -176,4 +188,5 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
         "norm_query": norm_query,
         "strategy": strategy,
         "profile": prof,
+        "docs": docs_for_log,
     }

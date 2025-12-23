@@ -29,7 +29,7 @@ def choose_parent_by_weighted_vote(hits: List[Dict[str, Any]]) -> str:
     return max(s.items(), key=lambda x: x[1])[0] if s else ""
 
 def fetch_all_chunks_by_parent(kb, parent_id: str):
-    EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS = kb
+    EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS, TAGS_V2, ENTITY_TYPE = kb
 
     prefix = str(parent_id) + "_chunk_"
     items = []

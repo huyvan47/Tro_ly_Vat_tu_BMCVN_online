@@ -126,6 +126,21 @@ YÊU CẦU:
     if len(results) > len(candidates):
         reranked.extend(results[len(candidates):])
 
+    docs_for_log = []
+
+    # CHỈ log phần đầu: top_k_rerank
+    docs_to_log = reranked[:top_k_rerank]
+
+    # for i, doc in enumerate(docs_to_log, start=1):
+    #     docs_for_log.append({
+    #         "rank": i,
+    #         "score": float(doc.get("score", 0.0)),
+    #         "id": doc.get("id", ""),
+    #         "entity_type": doc.get("entity_type", ""),
+    #         "tags_v2": doc.get("tags_v2", ""),
+    #         "source": doc.get("source", ""),
+    #         "snippet": (doc.get("text", "")[:400]).replace("\n", " ").strip(),
+    #     })
     # QUAN TRỌNG: không “selected + others” ở đây
     # include_in_context sẽ được dùng ở pipeline để chọn context_candidates
-    return reranked
+    return reranked, docs_for_log

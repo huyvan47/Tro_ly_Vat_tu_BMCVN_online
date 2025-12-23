@@ -31,6 +31,8 @@ def append_log_to_csv(
         "conf": float(prof.get("conf", 0.0)),
         "answer_text": res.get("text", ""),
         "img_keys": json.dumps(res.get("img_keys", []), ensure_ascii=False),
+
+        # "docs_json": json.dumps(res.get("docs", []), ensure_ascii=False),
     }
 
     df = pd.DataFrame([row])

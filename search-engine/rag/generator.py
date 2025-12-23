@@ -1,6 +1,16 @@
 def call_finetune_with_context(client, user_query, context, suggestions_text, answer_mode: str = "general", rag_mode: str = "STRICT"):
     print('answer_mode:', answer_mode)
     # Mode requirements (giữ nguyên tinh thần code v4 của anh)
+
+    BASE_REASONING_PROMPT = """
+    You may take as much space as needed to provide the highest-quality answer.
+    Do not optimize for brevity.
+    Optimize for factual correctness, completeness, internal consistency, and real-world applicability.
+    Use careful reasoning and domain knowledge to infer missing but necessary details when appropriate,
+    and clearly state assumptions when you do so.
+    The goal is to equip customer support staff with the most reliable and comprehensive information possible.
+    """.strip()
+
     if answer_mode == "disease":
         mode_requirements = """
 - Trình bày chi tiết, dễ hiểu cho người trồng. Không trả lời kiểu 1–2 câu là xong.
@@ -36,16 +46,17 @@ def call_finetune_with_context(client, user_query, context, suggestions_text, an
     if rag_mode == "SOFT":
         system_prompt = (
             "Bạn là Trợ lý Kỹ thuật Nông nghiệp & Sản phẩm của BMCVN. "
-            "Ưu tiên dùng NGỮ CẢNH, nhưng được phép bổ sung kiến thức nông nghiệp phổ biến "
-            "khi NGỮ CẢNH thiếu hoặc phân tán để trả lời mạch lạc. "
+            "Ưu tiên dùng NGỮ CẢNH, nhưng được phép bổ sung kiến thức nông nghiệp phổ biến từ INTERNET khi NGỮ CẢNH thiếu hoặc phân tán để trả lời mạch lạc. "
             "Tuyệt đối không bịa liều lượng, cách pha, thời gian cách ly nếu NGỮ CẢNH không nêu. "
             "Nếu thiếu dữ liệu, hãy trả lời theo hướng khuyến nghị chung và nêu điều kiện/cần xác nhận."
+            + BASE_REASONING_PROMPT
         )
     else:
         system_prompt = (
             "Bạn là Trợ lý Kỹ thuật Nông nghiệp & Sản phẩm của BMCVN. "
-            "Luôn ưu tiên sử dụng NGỮ CẢNH được cung cấp. "
+            "Luôn ưu tiên sử dụng NGỮ CẢNH được cung cấp nhưng được phép bổ sung kiến thức nông nghiệp phổ biến từ INTERNET khi NGỮ CẢNH thiếu hoặc phân tán để trả lời mạch lạc. "
             "Không bịa số liệu, liều lượng, khuyến cáo chi tiết nếu NGỮ CẢNH không nêu."
+            + BASE_REASONING_PROMPT
         )
 
     user_prompt = f"""
@@ -63,14 +74,12 @@ HƯỚNG DẪN TRẢ LỜI THEO KIỂU CÂU HỎI ({answer_mode}):
 NGUYÊN TẮC CHUNG:
 - Ưu tiên thông tin trong NGỮ CẢNH, có thể gom/tổng hợp cho dễ hiểu.
 - Không cần viết câu "Tài liệu không đề cập" trừ khi thật sự cần nhấn mạnh. Đặc biệt nếu câu hỏi có liên quan đến vấn đề thủy sinh như cá, tôm, vật nuôi, ... thì phải dứt khoát nhấn mạnh "Tài liệu không đề cập".
-- Cuối câu trả lời, nếu phù hợp, gợi ý thêm 1–3 câu hỏi liên quan, ưu tiên lấy ý từ danh sách:
-{suggestions_text}
 """.strip()
 
     resp = client.chat.completions.create(
         model="gpt-4.1-mini",
-        temperature=0.2,
-        max_completion_tokens=2000,
+        temperature=0.4,
+        max_completion_tokens=3500,
         messages=[
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt}

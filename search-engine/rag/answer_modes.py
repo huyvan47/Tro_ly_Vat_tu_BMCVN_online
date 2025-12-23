@@ -21,7 +21,7 @@ def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> 
         return "product"
 
     if any(kw in text for kw in [
-        "cách làm", "hướng dẫn", "chính sách", "thương phẩm", "tên thương phẩm"
+        "cách làm", "hướng dẫn", "chính sách", "thương phẩm", "tên thương phẩm",
         "làm thế nào để", "phương pháp", "thí nghiệm",
         "phân lập", "giám định", "lây bệnh trong phòng thí nghiệm"
     ]) or "quy_trinh" in cat:
