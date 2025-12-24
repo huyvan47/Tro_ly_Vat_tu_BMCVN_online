@@ -12,6 +12,53 @@ from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
 from rag.tag_filter import infer_filters_from_query
+import re
+from typing import List, Tuple
+def choose_top_k(
+    is_list: bool,
+    must_tags: List[str],
+    any_tags: List[str],
+    norm_query: str,
+    base_list: int = 80,
+    base_normal: int = 50,
+) -> int:
+    """
+    Quy tắc tăng top_k:
+    - Nếu có entity:product => tăng mạnh (truy vấn về sản phẩm)
+    - Nếu có pest:/disease: => tăng mạnh (truy vấn điều trị sâu/bệnh cần recall cao)
+    - Nếu có crop: => tăng vừa (narrow theo cây trồng)
+    - Nếu query có ý hỏi "thuốc gì/phun gì/trị gì" => tăng thêm
+    """
+    top_k = base_list if is_list else base_normal
+
+    tags_all = (must_tags or []) + (any_tags or [])
+
+    has_product = any(t == "entity:product" or t.startswith("entity:") or t.startswith("product:") for t in tags_all)
+    has_pest = any(t.startswith("pest:") for t in tags_all)
+    has_disease = any(t.startswith("disease:") for t in tags_all)
+    has_crop = any(t.startswith("crop:") for t in tags_all)
+
+    # Heuristic theo intent ngôn ngữ
+    ask_recommend = bool(re.search(r"\b(thuoc|phun|tri|phong|xu ly|dung gi|nen dung|loai nao)\b", norm_query.lower()))
+
+    # Tăng mạnh cho bài toán "tìm sản phẩm / tư vấn sâu bệnh"
+    if has_product:
+        top_k = max(top_k, 160 if not is_list else 220)
+
+    if has_pest or has_disease:
+        top_k = max(top_k, 220 if not is_list else 300)
+
+    # Crop giúp thu hẹp, nhưng vẫn cần recall nếu kèm pest/disease
+    if has_crop and not (has_pest or has_disease):
+        top_k = max(top_k, 120 if not is_list else 160)
+
+    if ask_recommend:
+        top_k = int(top_k * 1.2)
+
+    # Giới hạn trên để tránh quá tải
+    top_k = min(top_k, 400)
+
+    return top_k
 
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None):
     # 0) Route GLOBAL / RAG
@@ -43,8 +90,16 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     # 2) Listing?
     is_list = is_listing_query(norm_query)
 
-    top_k = 80 if is_list else 50   # giống “tinh thần” bản cũ
     must_tags, any_tags = infer_filters_from_query(norm_query)
+
+    top_k = choose_top_k(
+        is_list=is_list,
+        must_tags=must_tags,
+        any_tags=any_tags,
+        norm_query=norm_query,
+        base_list=80,
+        base_normal=50,
+    )
     print("must_tags: ", must_tags)
     print("any_tags: ", any_tags)
     hits, docs_for_log = retrieve_search(
@@ -73,19 +128,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     hits = sorted(hits, key=lambda x: x["fused_score"], reverse=True)
     filtered_for_main = [h for h in hits if h["fused_score"] >= policy.min_score_main]
 
-    if not filtered_for_main:
-        suggestions_text = "\n".join(
-            f"- {h['question']} (score={h['score']:.2f})"
-            for h in hits[:10]
-        )
-        return {
-            "text": "Không có tài liệu đủ độ tương đồng.\n\nGợi ý:\n" + suggestions_text,
-            "img_keys": [],
-            "route": "RAG",
-            "norm_query": norm_query,
-            "strategy": "LOW_SIM",
-            "profile": analyze_hits_fused(hits),
-        }
     # 5) Decide strategy (DIRECT_DOC / RAG_STRICT / RAG_SOFT)
     has_main = len(filtered_for_main) > 0
     prof = analyze_hits_fused(hits)
@@ -96,8 +138,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
         policy=policy,
         code_boost_direct=cfg.code_boost_direct,
     )
-    print("norm_query:", norm_query)
-    print("strategy:", strategy, "| profile:", prof)
 
     # 6) Prefer include_in_context if available
     context_candidates = [h for h in filtered_for_main if h.get("include_in_context", False)]
@@ -115,15 +155,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
                 break
     if primary_doc is None:
         primary_doc = context_candidates[0]
-
-    # 8) Suggestions
-    used_q = {primary_doc["question"]}
-    suggest = [
-        h for h in hits
-        if h["question"] not in used_q
-        and h["fused_score"] >= policy.min_suggest_score
-    ][:policy.max_suggest]
-    suggestions_text = "\n".join(f"- {h['question']}" for h in suggest) if suggest else "- (không có)"
 
     # 10) Build context and call GPT answer (STRICT/SOFT)
     answer_mode = detect_answer_mode(user_query, primary_doc, is_list)
@@ -145,7 +176,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     # 9) DIRECT_DOC: KB đủ mạnh -> trả trực tiếp doc (không ép QA)
     if strategy == "DIRECT_DOC":
         img_keys = extract_img_keys(primary_doc.get("answer", ""))
-        text = format_direct_doc_answer(user_query, primary_doc, suggestions_text)
+        text = format_direct_doc_answer(user_query, primary_doc)
         return {
             "text": text,
             "img_keys": img_keys,
@@ -175,7 +206,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
         client=client,
         user_query=user_query,
         context=context,
-        suggestions_text=suggestions_text,
         answer_mode=answer_mode,
         rag_mode=rag_mode,  
     )

@@ -1,4 +1,4 @@
-def call_finetune_with_context(client, user_query, context, suggestions_text, answer_mode: str = "general", rag_mode: str = "STRICT"):
+def call_finetune_with_context(client, user_query, context, answer_mode: str = "general", rag_mode: str = "STRICT"):
     print('answer_mode:', answer_mode)
     # Mode requirements (giữ nguyên tinh thần code v4 của anh)
 

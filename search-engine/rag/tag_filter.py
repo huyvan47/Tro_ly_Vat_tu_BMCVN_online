@@ -21,7 +21,8 @@ CHEMICAL_ALIASES = {
 }
 
 PEST_ALIASES = {
-    "ant": ["kien", "con kien", "ant", "ants"]
+    "ant":   ["kien", "con kien", "dan kien", "kien vang", "kien den", "ant", "ants"],
+    "snail": ["oc", "oc buou", "oc buou vang", "buou vang", "snail", "snails"],
 }
 
 def extract_pests(q: str) -> List[str]:

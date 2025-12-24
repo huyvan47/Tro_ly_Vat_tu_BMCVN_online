@@ -1,4 +1,4 @@
-def format_direct_doc_answer(user_query: str, primary_doc: dict, suggestions_text: str) -> str:
+def format_direct_doc_answer(user_query: str, primary_doc: dict) -> str:
     """
     Trả lời trực tiếp bằng nội dung tài liệu (extractive) + gợi ý.
     """
@@ -14,10 +14,5 @@ def format_direct_doc_answer(user_query: str, primary_doc: dict, suggestions_tex
     if a:
         out.append("")
         out.append(a)
-
-    if suggestions_text and suggestions_text.strip() and "(không có)" not in suggestions_text:
-        out.append("")
-        out.append("Câu hỏi liên quan:")
-        out.append(suggestions_text)
 
     return "\n".join(out).strip()
