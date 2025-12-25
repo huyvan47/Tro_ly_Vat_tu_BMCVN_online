@@ -100,8 +100,9 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
         base_list=80,
         base_normal=50,
     )
-    print("must_tags: ", must_tags)
-    print("any_tags: ", any_tags)
+    print("QUERY      :", norm_query)
+    print("MUST TAGS  :", must_tags)
+    print("ANY TAGS   :", any_tags)
     hits, docs_for_log = retrieve_search(
     client=client,
     kb=kb,
@@ -111,6 +112,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     any_tags=any_tags,
     
 )
+    print("hits:", hits)
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",

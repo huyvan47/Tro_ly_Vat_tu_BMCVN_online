@@ -75,7 +75,7 @@ def main():
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kd-1-4-tags-v2-entity-type.npz")
+    kb = load_npz("data-kd-1-4-tags-v2-entity-type_fixed_tags_v2_no_accent.npz")
 
     cfg = RAGConfig()
 

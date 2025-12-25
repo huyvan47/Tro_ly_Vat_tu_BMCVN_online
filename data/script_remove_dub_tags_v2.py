@@ -2,7 +2,7 @@ import pandas as pd
 import ast
 
 # ====== CONFIG ======
-INPUT_CSV = "data-kd-1-4-tags-v2-entity-type.csv"
+INPUT_CSV = "data-kd-1-4-tags-v2-entity-type_fixed_tags_v2_no_accent.csv"
 COL_NAME = "tags_v2"          # đổi thành tên cột của anh
 OUTPUT_TXT = "unique_tags_v2.txt"
 # ====================
