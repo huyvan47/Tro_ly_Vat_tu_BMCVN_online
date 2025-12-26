@@ -2,6 +2,7 @@ import json
 import numpy as np
 from rag.config import RAGConfig
 from rag.reranker import llm_rerank
+from rag.debug_log import debug_log
 
 
 def embed_query(client, text: str):
@@ -107,14 +108,6 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
     def pick_indices(must_local, any_local, stage_name: str):
         picked_local = []
 
-        # if debug:
-        #     print(f"\n=== PICK STAGE: {stage_name} ===")
-        #     print("must_local:", must_local)
-        #     print("any_local :", any_local)
-        #     print("top_k     :", top_k)
-        #     if TAGS_V2 is None:
-        #         print("NOTE: TAGS_V2 is None => tag filtering DISABLED\n")
-
         # Nếu không có tag filter, đừng bonus để tránh "cộng bừa"
         has_tag_filter = bool(must_local or any_local)
 
@@ -151,18 +144,18 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
                     sim
                 )
 
-                print(
-                    f"[{stage_name}] cand#{inspected:03d} idx={j} "
-                    f"sim={sim:.4f} ok={ok} matches={int(num_matches)} key={key}"
-                )
-                print("  entity_type:", et)
-                print("  question   :", qtxt[:120])
-                print("  tags_v2_raw:", tv2[:200])
-                if tagset:
-                    ts = sorted(tagset)
-                    print("  tagset     :", ts[:40], ("...(+%d)" % (len(ts)-40) if len(ts) > 40 else ""))
-                print("  reason     :", reason)
-                print("-" * 60)
+                # print(
+                #     f"[{stage_name}] cand#{inspected:03d} idx={j} "
+                #     f"sim={sim:.4f} ok={ok} matches={int(num_matches)} key={key}"
+                # )
+                # print("  entity_type:", et)
+                # print("  question   :", qtxt[:120])
+                # print("  tags_v2_raw:", tv2[:200])
+                # if tagset:
+                #     ts = sorted(tagset)
+                #     print("  tagset     :", ts[:40], ("...(+%d)" % (len(ts)-40) if len(ts) > 40 else ""))
+                # print("  reason     :", reason)
+                # print("-" * 60)
 
             inspected += 1
 
@@ -190,37 +183,62 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
                 break
 
         if debug:
-            print(f"=== PICKED {len(picked_local)}/{top_k} in stage {stage_name} ===")
+            debug_log(f"=== PICKED {len(picked_local)}/{top_k} in stage {stage_name} ===")
+
             for r, idx in enumerate(picked_local[:min(len(picked_local), 30)], 1):
                 tv2 = str(TAGS_V2[idx]) if TAGS_V2 is not None else ""
-                # in cả sim + matches để nhìn thấy lý do đứng top
-                ok, reason, tagset, bonus_ok, num_matches = explain_doc_tags(idx, must_local, any_local)
-                print(f"  #{r:02d} idx={idx} sim={float(sims[idx]):.4f} matches={int(num_matches)} id={IDS[idx] if IDS is not None else ''}")
-                print(f"      Q: {str(QUESTIONS[idx])[:140] if QUESTIONS is not None else ''}")
-                print(f"      tags_v2: {tv2[:200]}")
-            print()
+                ok, reason, tagset, bonus_ok, num_matches = explain_doc_tags(
+                    idx, must_local, any_local
+                )
+
+                debug_log(
+                    f"  #{r:02d} idx={idx} sim={float(sims[idx]):.4f} matches={int(num_matches)} id={IDS[idx] if IDS is not None else ''}",
+                    f"      Q: {str(QUESTIONS[idx])[:140] if QUESTIONS is not None else ''}",
+                    f"      tags_v2: {tv2[:200]}"
+                )
+
+            debug_log("")
 
         return picked_local
 
+    def merge_fill(primary, secondary, top_k):
+        seen = set(primary)
+        out = list(primary)
+        for j in secondary:
+            if j in seen:
+                continue
+            out.append(j)
+            seen.add(j)
+            if len(out) >= top_k:
+                break
+        return out
+
+    picked_strict = pick_indices(must_tags, any_tags, "STRICT")
+    picked = picked_strict
+    final_stage = "STRICT"
 
     final_stage = None
     # --- Strict first ---
     picked = pick_indices(must_tags, any_tags, "STRICT")
     final_stage = "STRICT"
-    # --- Fallback 1: drop any_tags only ---
     if len(picked) < top_k and any_tags:
-        picked = pick_indices(must_tags, [], "FALLBACK1_DROP_ANY")
-        final_stage = "FALLBACK1_DROP_ANY"
-    # --- Fallback 2: drop must_tags (full recall) ---
+        picked_fb1 = pick_indices(must_tags, [], "FALLBACK1_DROP_ANY")
+        picked = merge_fill(picked, picked_fb1, top_k)
+        final_stage = "STRICT+FALLBACK1"
+
     if len(picked) < top_k and must_tags:
-        picked = pick_indices([], [], "FALLBACK2_DROP_MUST_FULL_RECALL")
-        final_stage = "FALLBACK2_DROP_MUST_FULL_RECALL"
+        picked_fb2 = pick_indices([], [], "FALLBACK2_DROP_MUST_FULL_RECALL")
+        picked = merge_fill(picked, picked_fb2, top_k)
+        final_stage = "STRICT+FALLBACK1+FALLBACK2"
+
     if debug:
-        print("\n=== FINAL PICK STAGE ===")
-        print("final_stage :", final_stage)
-        print("picked_count:", len(picked))
-        print("top_k       :", top_k)
-        print("========================\n")
+        debug_log(
+            "=== FINAL PICK STAGE ===",
+            f"final_stage : {final_stage}",
+            f"picked_count: {len(picked)}",
+            f"top_k       : {top_k}",
+            "========================"
+        )
     # --- Build results ---
     results = []
     for i in picked:

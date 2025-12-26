@@ -1,5 +1,6 @@
 import re
 import unicodedata
+from rag.debug_log import debug_log
 from typing import Dict, List, Tuple, Set, Any, Union, Optional
 
 # ======================
@@ -399,6 +400,7 @@ CROP_ALIASES = {
     "cabbage": ["bap cai", "cai bap"],
     "cacao": ["ca cao"],
     "cam": ["cam"],
+    "cay-an-qua": ["cam", "quyt", "buoi", "xoai", "cafe", "ca phe"],
     "cam-quyt": ["cam quyt"],
     "cao-su": ["cao su"],
     "carrot": ["ca rot"],
@@ -487,6 +489,7 @@ CROP_ALIASES = {
     "gung": ["gung"],
     "hanh": ["hanh"],
     "hanh-la": ["hanh la"],
+    "hoa": ["hoa cuc", "hoa dong tien", "hoa hong"],
     "harvest-stage": ["giai doan thu hoach"],
     "healthy-crop-area": ["dien tich cay trong khoe manh"],
     "healthy-seedlings": ["moc giong khoe manh"],
@@ -565,7 +568,7 @@ CROP_ALIASES = {
     "quyt": ["cay quyt", "quyt"],
     "quyt-satsuma": ["quyt satsuma", "quyt satsuma nhat"],
     "ra-hoa": ["ra hoa", "thoi ky ra hoa"],
-    "rau": ["rau", "rau an"],
+    "rau": ["rau", "rau an","bap cai", "dau tuong", "cai thia", "bap", "ngo", "sup lo", "xu hao", "ca chua", "hanh", "muop"],
     "rau-cai": ["rau cai", "rau cai la"],
     "rau-mau": ["rau mau", "rau mau an"],
     "resistant-variety": ["giong chong benh", "giong khang benh"],
@@ -614,7 +617,7 @@ CROP_ALIASES = {
     "vegetables": ["rau an"],
     "vuon-cay-an-trai": ["vuon cay an trai"],
     "watermelon": ["dua hau", "qua dua hau"],
-    "weed": ["co dai"],
+    "weed": ["co dai", "mac-co", "rau sam", "co cuc", "cho de", "den gai", "co chan vit", "co long vuc", "co man trau"],
     "weed-control": ["diet co dai", "kiem soat co dai"],
     "wheat": ["lua mi"],
     "woody-plants": ["cay go"],
@@ -687,7 +690,7 @@ DISEASE_ALIASES = {
     "benh-heo-vi-khuan": ["benh heo vi khuan", "benh heo vi khuan cay trong"],
     "benh-kho-van": ["benh kho van", "benh kho van cay trong"],
     "benh-loet-than-nau": ["benh loet than nau", "benh loet than nau cay trong"],
-    "benh-nam": ["benh nam", "benh nam cay trong"],
+    "benh-nam": ["benh nam", "benh nam cay trong", "tru nam", "nam hai", "nam moc"],
     "benh-phan-trang": ["benh phan trang", "benh phan trang cay trong"],
     "benh-seo": ["benh seo", "benh seo cay trong"],
     "benh-than-thu": ["benh than thu", "benh than thu cay trong"],
@@ -1042,7 +1045,7 @@ DISEASE_ALIASES = {
     "respiratory-infection": ["benh duong ho hap", "benh nhiem trung ho hap"],
     "rhizoctonia": ["benh nhen", "benh nhen cay", "benh nhen goc"],
     "rhizoctonia-spp": ["benh nhen cac loai", "benh nhen goc"],
-    "ri-sat": ["benh ri sat", "benh ri sat cay"],
+    "ri-sat": ["benh ri sat", "benh ri sat cay", "ri sat"],
     "rice-blast": ["benh cham lua", "benh lua chay"],
     "rice-smut": ["benh den lua", "benh lua den"],
     "rice-yellow-stunt": ["benh vang lua", "benh vang vang lua"],
@@ -1083,7 +1086,7 @@ DISEASE_ALIASES = {
     "sau-hanh-bao-chet": ["benh sau hanh bao chet", "sau hanh bao chet"],
     "sau-sung-trang": ["benh sau sung trang", "sau sung trang"],
     "sau-to": ["benh sau to", "sau to"],
-    "sau-ve-bua": ["benh sau ve bua", "sau ve bua"],
+    "sau-ve-bua": ["benh sau ve bua", "sau ve bua", "ve bua"],
     "scab": ["benh vet sat", "benh vet sat tren la"],
     "sclerospora": ["benh nam sclerospora", "nam sclerospora"],
     "sclerotinia": ["benh nam sclerotinia", "nam sclerotinia"],
@@ -1243,7 +1246,7 @@ PEST_ALIASES = {
     "bo-phan": ["bo phan", "bo phan tren cay"],
     "bo-phan-trang": ["bo phan trang", "bo phan trang tren cay"],
     "bo-tri": ["bo tri", "bo hut" "bo tri tren cay"],
-    "bo-xit": ["bo xit", "bo xit tren cay"],
+    "bo-xit": ["bo xit", "bo xit tren cay", "bo xit muoi"],
     "borer": ["sau duc than", "sau duc trong"],
     "borers": ["sau duc than", "sau duc trong"],
     "boron-deficiency": ["thieu bo", "thieu bo tren cay"],
@@ -1282,7 +1285,7 @@ PEST_ALIASES = {
     "co-la-hep": ["co la hep", "co la nho"],
     "co-la-rong": ["co la rong", "co la to"],
     "co-long-vuc": ["co long vuc", "co long vuc la"],
-    "co-man-trau": ["co man trau", "co man trau la"],
+    "co-man-trau": ["co man trau", "co man trau la", "man-trau"],
     "co-tranh": ["co tranh", "co tranh la"],
     "coffee-mealybug": ["bo trung ban ca phe", "ruoi ban ca phe"],
     "cold-humid-climate": ["dieu kien lanh am", "khi hau lanh am"],
@@ -1433,7 +1436,7 @@ PEST_ALIASES = {
     "narrowleaf-weeds": ["co hep la", "co hep la cay trong"],
     "nematode": ["rut gon", "rut gon cay trong"],
     "nematodes": ["rut gon", "rut gon cay trong"],
-    "nhen": ["con nhen", "ruoi nhen"],
+    "nhen": ["con nhen", "ruoi nhen", "nhen"],
     "nhen-do": ["nhen do", "ruoi nhen do"],
     "nhen-khang-thuoc": ["nhen khang thuoc", "ruoi nhen khang thuoc"],
     "nhen-long-nhung": ["nhen long nhung", "ruoi nhen long nhung"],
@@ -1502,7 +1505,7 @@ PEST_ALIASES = {
     "ray-phan": ["ray phan", "ray phan tren cay"],
     "ray-xanh": ["ray xanh", "ray xanh tren cay"],
     "red-mite": ["ruoi do", "ruoi do tren cay"],
-    "red-spider-mite": ["ruoi do", "ruoi do tren cay"],
+    "red-spider-mite": ["nhen gie", "nhen do", "nhen long nhung", "nhen trang"],
     "rep": ["re p", "re p tren cay"],
     "rep-bong-xo": ["re bong xo", "re bong xo tren cay"],
     "rep-mem": ["re mem", "re mem tren cay"],
@@ -2232,9 +2235,10 @@ def infer_filters_from_query(q: str):
 
     # entity chỉ để log/debug
     et, _score = infer_entity_type(q0)
-    print("ENTITY TYPE :", et)
-    print("ENTITY SCORE:", _score)
-
+    debug_log(
+        f"ENTITY TYPE : {et}",
+        f"ENTITY SCORE: {_score}"
+    )
     def strip_entity(tags):
         return [t for t in tags if not str(t).startswith("entity:")]
 
@@ -2253,7 +2257,9 @@ def infer_filters_from_query(q: str):
             anyt2.append(t)
             seen.add(t)
 
-    print("FINAL MUST :", must)
-    print("FINAL ANY  :", anyt2)
+    debug_log(
+        f"FINAL MUST : {must}",
+        f"FINAL ANY  : {anyt2}"
+    )
     return must, anyt2
 

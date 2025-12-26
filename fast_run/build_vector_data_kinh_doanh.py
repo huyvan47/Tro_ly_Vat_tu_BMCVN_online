@@ -10,8 +10,8 @@ import json
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-tags-v2-entity-type_fixed_tags_v2_no_accent.csv"
-OUT_FILE = "data-kd-1-4-tags-v2-entity-type_fixed_tags_v2_no_accent.npz"
+DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-tags-v2-chuan.csv"
+OUT_FILE = "data-kd-1-4-tags-v2-chuan.npz"
 
 client = OpenAI(api_key="...")
 

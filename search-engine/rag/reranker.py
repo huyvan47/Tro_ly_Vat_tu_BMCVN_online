@@ -126,5 +126,4 @@ YÊU CẦU:
     if len(results) > len(candidates):
         reranked.extend(results[len(candidates):])
 
-    docs_for_log = []
-    return reranked, docs_for_log
+    return reranked

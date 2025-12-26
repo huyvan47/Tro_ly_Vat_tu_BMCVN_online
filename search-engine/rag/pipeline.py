@@ -60,7 +60,7 @@ def choose_top_k(
 
     return top_k
 
-def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None):
+def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 0) Route GLOBAL / RAG
     route = route_query(client, user_query)
     if route == "GLOBAL":
@@ -103,7 +103,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
     print("ANY TAGS   :", any_tags)
-    hits, docs_for_log = retrieve_search(
+    hits = retrieve_search(
     client=client,
     kb=kb,
     norm_query=norm_query,
@@ -112,7 +112,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
     any_tags=any_tags,
     
 )
-    print("hits:", hits)
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -220,5 +219,4 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy, logger=None)
         "norm_query": norm_query,
         "strategy": strategy,
         "profile": prof,
-        "docs": docs_for_log,
     }
