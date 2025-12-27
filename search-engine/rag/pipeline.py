@@ -3,7 +3,7 @@ from rag.router import route_query
 from rag.normalize import normalize_query
 from rag.text_utils import is_listing_query, extract_img_keys
 from rag.retriever import search as retrieve_search
-from rag.scoring import fused_score, analyze_hits_fused, analyze_hits
+from rag.scoring import fused_score, analyze_hits_fused
 from rag.strategy import decide_strategy
 from rag.text_utils import extract_codes_from_query
 from rag.context_builder import choose_adaptive_max_ctx, build_context_from_hits
@@ -66,11 +66,12 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     if route == "GLOBAL":
         resp = client.chat.completions.create(
             model="gpt-4.1-mini",
-            temperature=0,
+            temperature=0.4,
+            max_completion_tokens=2500,
             messages=[
                 {
                     "role": "system",
-                    "content": "Bạn là chuyên gia BVTV, giải thích khái niệm, viết tắt, định nghĩa ngắn gọn, chuẩn giáo trình."
+                    "content": "Bạn là chuyên gia BVTV, giải thích khái niệm, viết tắt, định nghĩa đầy đủ, chuẩn giáo trình."
                 },
                 {"role": "user", "content": user_query},
             ],

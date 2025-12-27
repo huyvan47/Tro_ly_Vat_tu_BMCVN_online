@@ -7,9 +7,10 @@ def call_finetune_with_context(client, user_query, context, answer_mode: str = "
     1) Ưu tiên NGỮ CẢNH. Chỉ dùng thông tin có trong NGỮ CẢNH cho các dữ liệu định lượng/chỉ định chi tiết như:
     - liều lượng, cách pha, lượng nước, thời gian cách ly, tần suất phun, nồng độ, khuyến cáo kỹ thuật cụ thể.
     2) Nếu cần bổ sung kiến thức phổ biến để giải thích mạch lạc (không phải số liệu/khuyến cáo định lượng), có thể bổ sung ở mức "kiến thức chung"
-    và phải dùng các cụm: "Thông tin chung:", "Thông lệ kỹ thuật:".
+    và phải dùng các cụm: "Thông tin chung:", "Thông lệ kỹ thuật:". Hoặc các câu hỏi liên quan đến thông tin khoa về sâu hại, bệnh hại, vụ mùa.
     3) Tuyệt đối không bịa. Nếu NGỮ CẢNH không có, hãy để trống/ghi "Không thấy trong ngữ cảnh" thay vì suy đoán.
     4) Mục tiêu: câu trả lời hữu ích cho nhân viên/khách hàng, có cấu trúc, đầy đủ, dễ so sánh.
+    5) Nếu câu hỏi liên quan thủy sinh (cá/tôm/vật nuôi...), mà NGỮ CẢNH không đề cập: phải nhấn mạnh "Tài liệu không đề cập".
     YÊU CẦU TRÌNH BÀY:
     - Không tối ưu cho ngắn gọn.
     - Ưu tiên tính đúng, đầy đủ, nhất quán.

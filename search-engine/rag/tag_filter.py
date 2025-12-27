@@ -11,6 +11,7 @@ _space_re = re.compile(r"\s+")
 
 def _norm(s: str) -> str:
     s = (s or "").lower().strip()
+    s = s.replace("đ", "d") 
     s = unicodedata.normalize("NFD", s)
     s = "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
     s = _space_re.sub(" ", s)
@@ -570,6 +571,7 @@ CROP_ALIASES = {
     "ra-hoa": ["ra hoa", "thoi ky ra hoa"],
     "rau": ["rau", "rau an","bap cai", "dau tuong", "cai thia", "bap", "ngo", "sup lo", "xu hao", "ca chua", "hanh", "muop"],
     "rau-cai": ["rau cai", "rau cai la"],
+    "rau-muong": ["rau muong"],
     "rau-mau": ["rau mau", "rau mau an"],
     "resistant-variety": ["giong chong benh", "giong khang benh"],
     "rice": ["cay lua", "lua"],
@@ -1422,7 +1424,7 @@ PEST_ALIASES = {
     "mold-spores": ["bao tu nam moc", "bao tu nam moc cay trong"],
     "mosquito": ["muoi", "muoi cay trong"],
     "mosquito-bug": ["muoi", "muoi cay trong"],
-    "mot-duc-canh": ["mot duc canh", "mot duc canh cay trong"],
+    "mot-duc-canh": ["mot duc canh", "duc canh", "mot duc canh cay trong"],
     "motile-spores": ["bao tu co dong", "bao tu co dong cay trong"],
     "muoi-hanh": ["muoi hanh", "muoi hanh cay trong"],
     "mycotoxin": ["doc to nam", "doc to nam moc"],
