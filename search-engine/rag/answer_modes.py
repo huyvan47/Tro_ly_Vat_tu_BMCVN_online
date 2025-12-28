@@ -11,6 +11,11 @@ def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> 
         return "verbatim"
 
     if any(kw in text for kw in [
+        "thương phẩm", "tên thương phẩm", "nhãn hiệu đăng ký", "đăng ký", "tổ chức", "tổ chức đăng ký"
+    ]) or "dang_ky" in cat:
+        return "registry"
+
+    if any(kw in text for kw in [
         "bệnh", "triệu chứng", "dấu hiệu","nứt thân", "xì mủ", "thối rễ", "cháy lá", "thán thư", "ghẻ"
     ]) or "benh" in cat:
         return "disease"
@@ -21,9 +26,8 @@ def detect_answer_mode(user_query: str, primary_doc: dict, is_listing: bool) -> 
         return "product"
 
     if any(kw in text for kw in [
-        "cách làm", "hướng dẫn", "chính sách", "thương phẩm", "tên thương phẩm",
-        "làm thế nào để", "phương pháp", "thí nghiệm",
-        "phân lập", "giám định", "lây bệnh trong phòng thí nghiệm"
+        "cách làm", "hướng dẫn", "chính sách", "làm thế nào để", "phương pháp", 
+        "thí nghiệm", "phân lập", "giám định", "lây bệnh trong phòng thí nghiệm"
     ]) or "quy_trinh" in cat:
         return "procedure"
     
