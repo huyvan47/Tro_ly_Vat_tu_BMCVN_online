@@ -7,7 +7,7 @@ from rag.scoring import fused_score, analyze_hits_fused
 from rag.strategy import decide_strategy
 from rag.text_utils import extract_codes_from_query
 from rag.context_builder import choose_adaptive_max_ctx, build_context_from_hits
-from rag.answer_modes import detect_answer_mode
+from rag.answer_modes import decide_answer_policy
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
@@ -159,7 +159,8 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         primary_doc = context_candidates[0]
 
     # 10) Build context and call GPT answer (STRICT/SOFT)
-    answer_mode = detect_answer_mode(user_query, primary_doc, is_list)
+    policy = decide_answer_policy(user_query, primary_doc, force_listing=is_list)
+    answer_mode = "listing" if policy.format == "listing" else policy.intent
     # === VERBATIM short-circuit ===
     if answer_mode == "verbatim":
         vb = verbatim_export(

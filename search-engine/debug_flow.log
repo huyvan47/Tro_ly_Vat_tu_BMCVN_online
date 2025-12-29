@@ -33490,3 +33490,387 @@ picked_count: 220
 top_k       : 220
 ========================
 
+ENTITY TYPE : ('product', 'disease')
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 2, 'procedure': 0, 'pest': 0, 'weed': 0, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:disease', 'crop:cassava', 'crop:fruit', 'crop:plant', 'crop:plants', 'crop:san']
+
+=== PICKED 100/300 in stage STRICT ===
+
+  #01 idx=1701 sim=0.6069 matches=1 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #02 idx=1555 sim=0.5740 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #03 idx=1948 sim=0.5545 matches=1 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #04 idx=1982 sim=0.5503 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #05 idx=76 sim=0.5499 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #06 idx=1506 sim=0.5310 matches=1 id=bilu_advantage_chunk_05
+      Q: BILU ảnh hưởng như thế nào đến chất lượng quả và quang hợp của cây?
+      tags_v2: product:oxine-copper|process:photosynthesis|disease:leaf-disease|crop:fruit|action:disease-control
+
+  #07 idx=1636 sim=0.5205 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #08 idx=1426 sim=0.5176 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #09 idx=1885 sim=0.5141 matches=1 id=fungi_classification_qa_04__000375
+      Q: Cơ chế gây bệnh của nấm Uredinales (gỉ sắt) trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:uredinales|disease:rust-fungus|pest:fungus|crop:plant|process:infection
+
+  #10 idx=494 sim=0.5090 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #11 idx=1627 sim=0.5077 matches=1 id=plant_disease_diag_qa_03__000117
+      Q: Lưu ý gì khi quan sát và ghi chép triệu chứng bệnh trên cây trồng?
+      tags_v2: entity:disease|process:observation|process:recording|disease:symptom|action:photographing|crop:plant
+
+  #12 idx=490 sim=0.5057 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #13 idx=2240 sim=0.5055 matches=1 id=aspergillus_ochraceus_chunk_02__000730
+      Q: Aspergillus ochraceus có gây bệnh trên cây trồng không?
+      tags_v2: entity:disease|disease:aspergillus-ochraceus|disease:ochratoxin-a|process:post-harvest|pest:fungus|crop:plant
+
+  #14 idx=1547 sim=0.5021 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #15 idx=1481 sim=0.5012 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #16 idx=320 sim=0.5007 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #17 idx=496 sim=0.5000 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #18 idx=481 sim=0.4959 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #19 idx=120 sim=0.4913 matches=1 id=kenbast_15sl_gly_888_qa_04
+      Q: Có thể phun Gly 888 lên cây trồng không?
+      tags_v2: product:gly-888|chemical:glufosinate-amonium|action:spray|crop:plant|process:growth
+
+  #20 idx=326 sim=0.4881 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=1622 sim=0.4877 matches=1 id=plant_disease_diag_chunk_02__000112
+      Q: Tại sao việc xác định tác nhân gây bệnh trên cây trồng lại khó khăn?
+      tags_v2: entity:disease|entity:pathogen|disease:plant-disease|crop:plant|process:disease-diagnosis
+
+  #22 idx=2407 sim=0.4867 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #23 idx=430 sim=0.4771 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #24 idx=682 sim=0.4760 matches=1 id=maruka_5ec_qa_01
+      Q: Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+      tags_v2: chemical:quizalofop-p-ethyl|product:maruka-5ec|pest:co-la-hep|crop:dau-tuong|crop:lac|crop:san
+
+  #25 idx=2081 sim=0.4738 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #26 idx=2132 sim=0.4696 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #27 idx=1580 sim=0.4662 matches=1 id=crop_disease_history_chunk_03__000070
+      Q: Vai trò của vectơ môi giới trong việc lây truyền virus trên cây trồng là gì?
+      tags_v2: entity:disease|disease:plant-virus|entity:vector|pest:insect-vector|process:virus-transmission|crop:plant
+
+  #28 idx=712 sim=0.4648 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #29 idx=489 sim=0.4638 matches=1 id=ledan_4gr_panda_4gr_t_i_qa_03
+      Q: Khi sử dụng Ledan 4GR (Panda 4GR - Túi đỏ) cần lưu ý gì để đảm bảo an toàn và hiệu quả?
+      tags_v2: product:ledan-4gr|chemical:cartap-hydrochloride|action:apply-pesticide|crop:plant|process:safety-guidelines|pest:plant-pest
+
+  #30 idx=467 sim=0.4629 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+
+
+=== PICKED 100/300 in stage STRICT ===
+
+  #01 idx=1701 sim=0.6069 matches=1 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #02 idx=1555 sim=0.5740 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #03 idx=1948 sim=0.5545 matches=1 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #04 idx=1982 sim=0.5503 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #05 idx=76 sim=0.5499 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #06 idx=1506 sim=0.5310 matches=1 id=bilu_advantage_chunk_05
+      Q: BILU ảnh hưởng như thế nào đến chất lượng quả và quang hợp của cây?
+      tags_v2: product:oxine-copper|process:photosynthesis|disease:leaf-disease|crop:fruit|action:disease-control
+
+  #07 idx=1636 sim=0.5205 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #08 idx=1426 sim=0.5176 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #09 idx=1885 sim=0.5141 matches=1 id=fungi_classification_qa_04__000375
+      Q: Cơ chế gây bệnh của nấm Uredinales (gỉ sắt) trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:uredinales|disease:rust-fungus|pest:fungus|crop:plant|process:infection
+
+  #10 idx=494 sim=0.5090 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #11 idx=1627 sim=0.5077 matches=1 id=plant_disease_diag_qa_03__000117
+      Q: Lưu ý gì khi quan sát và ghi chép triệu chứng bệnh trên cây trồng?
+      tags_v2: entity:disease|process:observation|process:recording|disease:symptom|action:photographing|crop:plant
+
+  #12 idx=490 sim=0.5057 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #13 idx=2240 sim=0.5055 matches=1 id=aspergillus_ochraceus_chunk_02__000730
+      Q: Aspergillus ochraceus có gây bệnh trên cây trồng không?
+      tags_v2: entity:disease|disease:aspergillus-ochraceus|disease:ochratoxin-a|process:post-harvest|pest:fungus|crop:plant
+
+  #14 idx=1547 sim=0.5021 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #15 idx=1481 sim=0.5012 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #16 idx=320 sim=0.5007 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #17 idx=496 sim=0.5000 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #18 idx=481 sim=0.4959 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #19 idx=120 sim=0.4913 matches=1 id=kenbast_15sl_gly_888_qa_04
+      Q: Có thể phun Gly 888 lên cây trồng không?
+      tags_v2: product:gly-888|chemical:glufosinate-amonium|action:spray|crop:plant|process:growth
+
+  #20 idx=326 sim=0.4881 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=1622 sim=0.4877 matches=1 id=plant_disease_diag_chunk_02__000112
+      Q: Tại sao việc xác định tác nhân gây bệnh trên cây trồng lại khó khăn?
+      tags_v2: entity:disease|entity:pathogen|disease:plant-disease|crop:plant|process:disease-diagnosis
+
+  #22 idx=2407 sim=0.4867 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #23 idx=430 sim=0.4771 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #24 idx=682 sim=0.4760 matches=1 id=maruka_5ec_qa_01
+      Q: Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+      tags_v2: chemical:quizalofop-p-ethyl|product:maruka-5ec|pest:co-la-hep|crop:dau-tuong|crop:lac|crop:san
+
+  #25 idx=2081 sim=0.4738 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #26 idx=2132 sim=0.4696 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #27 idx=1580 sim=0.4662 matches=1 id=crop_disease_history_chunk_03__000070
+      Q: Vai trò của vectơ môi giới trong việc lây truyền virus trên cây trồng là gì?
+      tags_v2: entity:disease|disease:plant-virus|entity:vector|pest:insect-vector|process:virus-transmission|crop:plant
+
+  #28 idx=712 sim=0.4648 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #29 idx=489 sim=0.4638 matches=1 id=ledan_4gr_panda_4gr_t_i_qa_03
+      Q: Khi sử dụng Ledan 4GR (Panda 4GR - Túi đỏ) cần lưu ý gì để đảm bảo an toàn và hiệu quả?
+      tags_v2: product:ledan-4gr|chemical:cartap-hydrochloride|action:apply-pesticide|crop:plant|process:safety-guidelines|pest:plant-pest
+
+  #30 idx=467 sim=0.4629 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+
+
+=== PICKED 300/300 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=2482 sim=0.6461 matches=0 id=Trinong
+      Q: Trinong 50WP
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganese-complex|pest:fungal-disease|disease:blast|disease:leaf-spot
+
+  #02 idx=899 sim=0.6309 matches=0 id=trinong_50wp_carbendazim_chunk_01
+      Q: Trinong 50WP là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganesse-complex|disease:blast|disease:leaf-spot|disease:anthracnose|disease:powdery-mildew
+
+  #03 idx=1701 sim=0.6069 matches=0 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #04 idx=1659 sim=0.6035 matches=0 id=fungal_disease_plant_qa_01__000149
+      Q: Bệnh sương mai, phấn trắng và gỉ sắt là gì và chúng gây hại như thế nào cho cây trồng?
+      tags_v2: entity:disease|disease:downy-mildew|disease:powdery-mildew|disease:rust|pest:fungi|process:infection
+
+  #05 idx=1524 sim=0.5920 matches=0 id=plant_disease_impact_chunk_01__000014
+      Q: Bệnh hại cây trồng ảnh hưởng như thế nào đến thu nhập của nông dân Việt Nam?
+      tags_v2: entity:disease|pest:plant-disease|crop:crop|action:disease-control
+
+  #06 idx=2484 sim=0.5879 matches=0 id=Haruko
+      Q: Haruko 5SC, Zeroanvil
+      tags_v2: product:hexa|alias:haruko-5sc|alias:zeroanvil|chemical:hexaconazole|pest:fungal-diseases|pest:benh-nam
+
+  #07 idx=2202 sim=0.5859 matches=0 id=maize_disease_chunk_01__000692
+      Q:  Tại sao nên trồng luân canh ngô với cây rau?
+      tags_v2: entity:disease|process:luan-canh|crop:ngo|crop:rau|pest:vi-khuan|pest:nam
+
+  #08 idx=1561 sim=0.5814 matches=0 id=disease_damage_chunk_01__000051
+      Q: Sâu sùng trắng gây hại như thế nào đối với cây ngô?
+      tags_v2: entity:disease|disease:sau-sung-trang|crop:ngo|pest:sau-sung-trang|process:gay-hai|action:phong-tru
+
+  #09 idx=2485 sim=0.5811 matches=0 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+  #10 idx=1980 sim=0.5788 matches=0 id=disease_resistance_qa_01__000470
+      Q: Tại sao nên sử dụng giống kháng bệnh trong trồng trọt?
+      tags_v2: entity:disease|entity:disease-resistance|process:plant-breeding|action:disease-prevention|crop:crop-protection
+
+  #11 idx=227 sim=0.5772 matches=0 id=fullkill_50ec_i_h_n_chunk_02
+      Q: FullKill 50EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:fullkill-50ec|chemical:permethrin|crop:cotton|crop:coffee|crop:mung-bean|crop:rice
+
+  #12 idx=1670 sim=0.5751 matches=0 id=root_fungal_disease_chunk_01__000160
+      Q: Nấm bệnh ảnh hưởng như thế nào đến rễ, cổ rễ và thân cây?
+      tags_v2: entity:disease|disease:fungal-disease|disease:root-rot|disease:stem-rot|disease:sclerotinia-sclerotiorum|disease:sclerotium-rolfsii
+
+  #13 idx=884 sim=0.5741 matches=0 id=hoanganhvil_50sc_anhvil_th_y_s_chunk_02
+      Q: Hoanganhvil 50SC dùng cho những loại cây trồng và bệnh nào?
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|crop:ca-phe|crop:cam|crop:cao-su|crop:hoa-hong
+
+  #14 idx=1555 sim=0.5740 matches=0 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #15 idx=2206 sim=0.5738 matches=0 id=maize_disease_qa_01__000696
+      Q:  Vì sao ngô nên được trồng luân canh với cây rau?
+      tags_v2: entity:disease|process:crop-rotation|crop:maize|crop:vegetables|pest:bacteria|pest:fungi
+
+  #16 idx=1673 sim=0.5680 matches=0 id=root_fungal_disease_qa_01__000163
+      Q: Vì sao nấm bệnh có thể làm cây trồng bị chết?
+      tags_v2: entity:disease|disease:fungal-disease|process:water-transport-disruption|process:nutrient-transport-disruption|entity:pathogen
+
+  #17 idx=2113 sim=0.5655 matches=0 id=plant_nematode_chunk_02__000603
+      Q: Tuyến trùng ký sinh thực vật gây hại như thế nào trên cây trồng?
+      tags_v2: entity:disease|disease:plant-parasitic-nematodes
+
+  #18 idx=527 sim=0.5636 matches=0 id=khongray_54wp_chunk_02
+      Q: Khongray 54WP dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:khongray-54wp|chemical:buprofezin|chemical:Dinotefuran|crop:rice|crop:soybean|crop:peanut|crop:vegetables
+
+  #19 idx=2223 sim=0.5635 matches=0 id=fungi_toxin_vn_chunk_02__000713
+      Q: Các loại độc tố do nấm Fusarium sản sinh và cây trồng bị ảnh hưởng là gì?
+      tags_v2: entity:disease|disease:fusarium-verticillioides|disease:fusarium-graminearum|chemical:fumonisins|chemical:deoxynivalenol|chemical:nivalenol
+
+  #20 idx=1958 sim=0.5624 matches=0 id=disease_management_chunk_03__000448
+      Q: Làm thế nào để quản lý cây trồng giúp giảm thiểu bệnh hại?
+      tags_v2: entity:disease|process:crop-management|action:pruning|action:watering|action:fertilizing|disease:disease-prevention
+
+  #21 idx=2116 sim=0.5601 matches=0 id=plant_nematode_qa_01__000606
+      Q: Tuyến trùng ký sinh thực vật là gì và tại sao chúng gây hại cho cây trồng?
+      tags_v2: entity:disease|disease:plant-parasitic-nematodes|pest:nematodes|crop:general|process:root-damage|process:nutrient-absorption-impairment
+
+  #22 idx=1623 sim=0.5600 matches=0 id=plant_disease_diag_chunk_03__000113
+      Q: Triệu chứng bệnh trên cây trồng có thể do những nguyên nhân nào?
+      tags_v2: entity:disease|disease:plant-symptoms|process:physiological-disorder|process:tissue-damage|process:nutrient-absorption
+
+  #23 idx=1988 sim=0.5582 matches=0 id=fungicide_usage_chunk_01__000478
+      Q: Thuốc trừ nấm thường được sử dụng như thế nào trong phòng trừ bệnh trên cây?
+      tags_v2: entity:disease|chemical:thuoc-tru-nam|action:phun|action:xu-ly-hat-giong|action:tuoi-dat|disease:benh-tren-la
+
+  #24 idx=1631 sim=0.5577 matches=0 id=symptom_pathogen_chunk_01__000121
+      Q: Các tác nhân gây héo và còi cọc ở cây trồng là gì và cơ chế gây bệnh?
+      tags_v2: entity:disease|disease:wilt|disease:stunting|pest:fungi|pest:bacteria|pest:virus
+
+  #25 idx=790 sim=0.5564 matches=0 id=raynanusa_400wp_si_u_r_y_r_p_thay_th_dino_top_chunk_02
+      Q: Raynanusa 400WP được sử dụng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:raynanusa-400wp|chemical:buprofezin|chemical:dinotefuran|crop:rice|crop:vegetables|crop:fruit-trees|crop:industrial-crops
+
+  #26 idx=222 sim=0.5559 matches=0 id=cymkill_25ec_h_nh_con_i_b_ng_chunk_02
+      Q: Cymkill 25EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|crop:cotton|crop:rice|crop:green-mung-bean|crop:vegetables
+
+  #27 idx=1948 sim=0.5545 matches=0 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #28 idx=1661 sim=0.5544 matches=0 id=fungal_disease_plant_qa_03__000151
+      Q: Bệnh gỉ sắt có tính đặc hiệu như thế nào đối với cây trồng?
+      tags_v2: entity:disease|disease:rust-disease|disease:specificity|crop:peanut
+
+  #29 idx=2001 sim=0.5540 matches=0 id=organic_capsicum_chunk_01__000491
+      Q: Ảnh hưởng của việc sử dụng phân hữu cơ và phủ lớp phủ lên bệnh hại cây ớt như thế nào?
+      tags_v2: entity:disease|crop:chili|pest:root-knot-nematode|disease:pythium-root-rot|chemical:organic-fertilizer|process:mulching
+
+  #30 idx=902 sim=0.5539 matches=0 id=trinong_50wp_carbendazim_qa_02
+      Q: Liều lượng và cách dùng Trinong 50WP cho cây trồng như thế nào?
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganesse-complex|chemical:trinong-50wp|action:apply|process:dilution|process:spraying
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 300
+top_k       : 300
+========================
+

@@ -157,9 +157,9 @@ def main():
     #         continue
 
 if __name__ == "__main__":
-    # Test nhiều câu hỏi
-    run_batch_questions()
+    # # Test nhiều câu hỏi
+    # run_batch_questions()
 
-    # # Test một câu hỏi
-    # main()
+    # Test một câu hỏi
+    main()
 
