@@ -1,9 +1,10 @@
 import json
 import numpy as np
 from rag.config import RAGConfig
-from rag.reranker import llm_rerank
 from rag.debug_log import debug_log
+from rag.logger import get_logger, new_trace_id
 
+logger = get_logger()
 
 def embed_query(client, text: str):
     resp = client.embeddings.create(
@@ -56,6 +57,13 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
     """
     must_tags = list(must_tags or [])
     any_tags = list(any_tags or [])
+
+    trace_id = new_trace_id()
+    logger.debug(
+        f"Tag filter: must={must_tags}, any={any_tags}",
+        extra={"trace_id": trace_id}
+    )
+
 
     # Backward compatibility:
     # old: (EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS)
@@ -263,11 +271,5 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
             item["tags"] = str(TAGS[i])
 
         results.append(item)
-
-    # --- Optional rerank ---
-    # NOTE: Nếu query dạng "liệt kê theo hoạt chất", rerank LLM có thể làm giảm độ đầy đủ.
-    # Bạn có thể cân nhắc disable rerank khi must_tags có "chemical:*".
-    if RAGConfig.use_llm_rerank and len(results) > 1:
-        results = llm_rerank(client, norm_query, results, RAGConfig.top_k_rerank)
 
     return results

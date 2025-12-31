@@ -106,8 +106,6 @@ def main():
     # 6) in kết quả
     print("\n===== KẾT QUẢ =====\n")
     print(res["text"])
-    print("\nIMG_KEY:")
-    print(res["img_keys"])
     print("\nSaved log to:", csv_path)
 
     # while True:
@@ -147,8 +145,6 @@ def main():
     #         # 6) in kết quả
     #         print("\n===== KẾT QUẢ =====\n")
     #         print(res["text"])
-    #         print("\nIMG_KEY:")
-    #         print(res["img_keys"])
     #         print("\nSaved log to:", csv_path)
 
     #     except Exception:
@@ -157,7 +153,7 @@ def main():
     #         continue
 
 if __name__ == "__main__":
-    # # Test nhiều câu hỏi
+    # Test nhiều câu hỏi
     # run_batch_questions()
 
     # Test một câu hỏi

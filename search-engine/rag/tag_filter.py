@@ -2,10 +2,13 @@ import re
 import unicodedata
 from rag.debug_log import debug_log
 from typing import Dict, List, Tuple, Set, Any, Union, Optional
+from rag.logger import get_logger, new_trace_id
 
 # ======================
 # 1) NORMALIZE
 # ======================
+
+logger = get_logger()
 
 _space_re = re.compile(r"\s+")
 
@@ -2234,6 +2237,12 @@ def infer_filters_from_query(q: str):
 
     must, anyt = apply_group_rules(q0, found)
     must, anyt = finalize_filters(must, anyt)
+
+    trace_id = new_trace_id()
+    logger.debug(
+        f"Tag filter: must={must}, any={anyt}",
+        extra={"trace_id": trace_id}
+    )
 
     # entity chỉ để log/debug
     et, _score = infer_entity_type(q0)

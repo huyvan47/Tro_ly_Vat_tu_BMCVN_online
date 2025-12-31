@@ -104,7 +104,6 @@ def decide_answer_policy(
     primary_doc: Dict,
     *,
     parsed_intent: Optional[str] = None,   # nếu bạn đã phân tích intent từ query
-    force_listing: Optional[bool] = None,  # bạn có thể truyền is_listing ở ngoài
 ) -> AnswerPolicy:
     """
     Quyết định intent + format dựa trên:
@@ -119,12 +118,6 @@ def decide_answer_policy(
     ent = norm(primary_doc.get("entity_type"))
 
     text = join_text(q, doc_q, doc_a)
-
-    # 0) Listing override
-    is_listing = force_listing if force_listing is not None else detect_listing(q)
-    if is_listing:
-        # listing thường cần nhiều nguồn hơn một chút, nhưng vẫn phải khống chế
-        return AnswerPolicy(intent="general", format="listing", require_grounding=True, max_sources=15)
 
     # 1) Parsed intent override (nếu có)
     if parsed_intent:

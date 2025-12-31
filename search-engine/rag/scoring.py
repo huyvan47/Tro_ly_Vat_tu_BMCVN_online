@@ -20,20 +20,6 @@ def analyze_hits_fused(hits: list) -> dict:
 
     return {"top1": top1, "top2": top2, "gap": gap, "mean5": mean5, "n": len(hits), "conf": conf}
 
-def analyze_hits(hits: list) -> dict:
-    """
-    Trả profile để quyết định chiến lược trả lời.
-    """
-    if not hits:
-        return {"top1": 0.0, "top2": 0.0, "gap": 0.0, "mean5": 0.0, "n": 0}
-
-    scores = [float(h.get("score", 0.0)) for h in hits]
-    top1 = scores[0]
-    top2 = scores[1] if len(scores) > 1 else 0.0
-    gap = top1 - top2
-    mean5 = float(np.mean(scores[:5])) if len(scores) >= 5 else float(np.mean(scores))
-    return {"top1": top1, "top2": top2, "gap": gap, "mean5": mean5, "n": len(hits)}
-
 def fused_score(h: dict, w_r: float = 0.70, w_e: float = 0.30) -> float:
     """
     Score hợp nhất cho 1 doc.

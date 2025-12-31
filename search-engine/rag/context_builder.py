@@ -16,18 +16,10 @@ def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
     scores += [0] * (4 - len(scores))
     s1, s2, s3, s4 = scores
 
-    if is_listing:
-        if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
-            return 30
-        if s1 >= 0.65 and s2 >= 0.55:
-            return 25
-        return 20
-
     if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
-        return 16
+        return 30
     if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
-        return 14
+        return 25
     if s1 >= 0.80 and s2 >= 0.65:
-        return 12
-
-    return 12
+        return 20
+    return 15

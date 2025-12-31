@@ -33874,3 +33874,2421 @@ picked_count: 300
 top_k       : 300
 ========================
 
+[1] Q: Sản phẩm Phonix Gragon xịt cuốn lá lúa, đục thân lúa có hiệu quả cao không? liều dùng cho bình 25 lít sử dụng như thế nào
+
+ENTITY TYPE : ('procedure', 'product')
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 3, 'pest': 0, 'weed': 2, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['crop:cassava', 'crop:cereal', 'crop:fruit', 'crop:grass', 'crop:lua', 'crop:rice', 'crop:san', 'disease:leaf-rolling', 'pest:grass']
+
+=== PICKED 220/220 in stage STRICT ===
+
+  #01 idx=490 sim=0.4864 matches=2 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #02 idx=494 sim=0.4264 matches=2 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #03 idx=531 sim=0.4112 matches=2 id=chessin_600wp_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Chessin 600WP trên cây trồng?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee|crop:black-pepper
+
+  #04 idx=496 sim=0.3948 matches=2 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #05 idx=530 sim=0.3495 matches=2 id=chessin_600wp_chunk_01
+      Q: Thuốc Chessin 600WP có thành phần và công dụng chính là gì?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee
+
+  #06 idx=2517 sim=0.5970 matches=1 id=PHONIX_DRAGON
+      Q: PHONIX DRAGON 20EC
+      tags_v2: product:phonix-dragon-20ec|chemical:phoxim|chemical:beta-cypermethrin|crop:rice
+
+  #07 idx=939 sim=0.5762 matches=1 id=phonix_dragon_20ec_vua_r_ng_qa_03
+      Q: Phonix Dragon 20EC có thể dùng để trừ sâu cuốn lá trên lúa không?
+      tags_v2: product:phonix-dragon-20ec|chemical:phoxim|chemical:beta-cypermethrin|pest:sau-cuon-la|crop:lua
+
+  #08 idx=1149 sim=0.5695 matches=1 id=sau_hai_05_sau_cuon_la_23__000191
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-management|pest:leaf-folder|pest:stem-borer|crop:rice
+
+  #09 idx=1147 sim=0.5514 matches=1 id=sau_hai_05_sau_cuon_la_23__000189
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-control|action:chemical-application|object:oxatin|crop:rice|pest:leaf-folder
+
+  #10 idx=2521 sim=0.5421 matches=1 id=ATOMIN
+      Q: ATOMIN 15WP, BONGRA SAI 150
+      tags_v2: product:atomin|alias:atomin-15wp|alias:bong-ra-sai-150|chemical:Paclobutrazol|crop:rice|crop:peanut|crop:durian
+
+  #11 idx=1148 sim=0.5381 matches=1 id=sau_hai_05_sau_cuon_la_23__000190
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-control|action:chemical-application|crop:rice|disease:leaf-folder|disease:stem-borer
+
+  #12 idx=1150 sim=0.5257 matches=1 id=sau_hai_05_sau_cuon_la_24__000192
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ cao như thế nào?
+      tags_v2: process:seed-treatment|action:apply-granules|object:granules|crop:rice|pest:leaf-folder
+
+  #13 idx=953 sim=0.5243 matches=1 id=igro_240sc_ohayo_qa_02
+      Q: Cách sử dụng Igro 240SC cho cây lúa như thế nào?
+      tags_v2: product:igro-240sc-ohayo|chemical:chlorfenapyr|crop:rice|pest:spider-mite|pest:leaf-folder|pest:white-backed-planthopper
+
+  #14 idx=493 sim=0.5242 matches=1 id=million_50wg_vua_r_y_qa_02
+      Q: Liều lượng và cách dùng thuốc Million 50WG cho cây lúa như thế nào?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|pest:brown-planthopper|pest:white-backed-planthopper|pest:stink-bug
+
+  #15 idx=2502 sim=0.5124 matches=1 id=ACO_ONE400
+      Q: ACO ONE400EC
+      tags_v2: product:aco-one400ec|chemical:isoprothiolane|disease:rice-blast|crop:rice
+
+  #16 idx=2501 sim=0.5088 matches=1 id=DOWNY
+      Q: DOWNY 650WP, ĐÙM XPRO 650WP
+      tags_v2: product:downy|alias:downy-650wp|alias:dum-xpro-650wp|chemical:isoprothiolane|chemical:tricyclazole|disease:rice-blast|crop:rice
+
+  #17 idx=2407 sim=0.5079 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #18 idx=830 sim=0.5049 matches=1 id=c_15gr_con_v_t_anh_h_ng_c_chunk_02
+      Q: Quy cách đóng gói và cách sử dụng thuốc Ốc 15GR như thế nào?
+      tags_v2: product:oc-15gr|chemical:metaldehyde|pest:oc-buu-vang|crop:lua|crop:vuon-cay-an-trai|crop:rau-mau
+
+  #19 idx=2526 sim=0.5010 matches=1 id=Bacillus
+      Q: Bacillus SUV
+      tags_v2: product:bacillus-suv|chemical:bacillus-subtilis|crop:rice|crop:chili
+
+  #20 idx=2529 sim=0.4989 matches=1 id=Oosaka
+      Q: Oosaka 700WP, Snoil Delta Thụy Sĩ
+      tags_v2: product:Oosaka|alias:oosaka-700wp|alias:snoil-delta-thuy-si|chemical:niclosamide|disease:oc-buou-vang|crop:lua
+
+  #21 idx=1163 sim=0.4960 matches=1 id=sau_hai_05_oc_buu_vang_37__000205
+      Q: Xử lý Ốc bưu vàng / Lúa  như thế nào?
+      tags_v2: action:spraying|action:spreading|crop:rice|pest:golden-apple-snail|chemical:abamectin
+
+  #22 idx=2400 sim=0.4923 matches=1 id=GANGSTER300EC
+      Q: GANGSTER300EC
+      tags_v2: product:gangter-300ec|chemical:pretilachlor|crop:rice
+
+  #23 idx=734 sim=0.4916 matches=1 id=kyodo_25sc_i_b_ng_kydo_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Kyodo 25SC là gì?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|crop:rice|action:spraying|process:safety-measures|process:protective-equipment
+
+  #24 idx=2524 sim=0.4913 matches=1 id=CHOWON
+      Q: CHOWON 550SL THẦN DƯỢC
+      tags_v2: product:chowon-550sl-than-duoc|chemical:chlormequat|chemical:solvent|action:growth-regulation|crop:rice
+
+  #25 idx=733 sim=0.4909 matches=1 id=kyodo_25sc_i_b_ng_kydo_qa_01
+      Q: Liều lượng và cách dùng Kyodo 25SC như thế nào?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|pest:thrips|pest:red-spider-mite|pest:green-rice-bug|crop:rice
+
+  #26 idx=2439 sim=0.4899 matches=1 id=FAPTANK
+      Q: FAPTANK
+      tags_v2: chemical:alpha-cypermethrin|product:faptank|crop:rice
+
+  #27 idx=336 sim=0.4875 matches=1 id=toshiro_10ec_qa_02
+      Q: Liều lượng và cách dùng Toshiro 10EC cho cây lúa như thế nào?
+      tags_v2: chemical:penconazole|product:toshiro-10ec|crop:rice|disease:blast|disease:bacterial-leaf-blight|disease:stem-rot
+
+  #28 idx=679 sim=0.4862 matches=1 id=kyodo_25sc_gold_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Kyodo 25SC Gold là gì?
+      tags_v2: chemical:diafenthiuron|product:kyodo-25sc-gold|crop:rice|pest:spider-mite|action:spraying|process:dose-management
+
+  #29 idx=723 sim=0.4859 matches=1 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_02
+      Q: Liều lượng và cách dùng Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) trên cây lúa như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|crop:rice|pest:mosquito|pest:stem-borer|pest:leaf-folder
+
+  #30 idx=2485 sim=0.4857 matches=1 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+
+
+=== PICKED 220/220 in stage STRICT ===
+
+  #01 idx=490 sim=0.4864 matches=2 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #02 idx=494 sim=0.4264 matches=2 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #03 idx=531 sim=0.4112 matches=2 id=chessin_600wp_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Chessin 600WP trên cây trồng?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee|crop:black-pepper
+
+  #04 idx=496 sim=0.3948 matches=2 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #05 idx=530 sim=0.3495 matches=2 id=chessin_600wp_chunk_01
+      Q: Thuốc Chessin 600WP có thành phần và công dụng chính là gì?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee
+
+  #06 idx=2517 sim=0.5970 matches=1 id=PHONIX_DRAGON
+      Q: PHONIX DRAGON 20EC
+      tags_v2: product:phonix-dragon-20ec|chemical:phoxim|chemical:beta-cypermethrin|crop:rice
+
+  #07 idx=939 sim=0.5762 matches=1 id=phonix_dragon_20ec_vua_r_ng_qa_03
+      Q: Phonix Dragon 20EC có thể dùng để trừ sâu cuốn lá trên lúa không?
+      tags_v2: product:phonix-dragon-20ec|chemical:phoxim|chemical:beta-cypermethrin|pest:sau-cuon-la|crop:lua
+
+  #08 idx=1149 sim=0.5695 matches=1 id=sau_hai_05_sau_cuon_la_23__000191
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-management|pest:leaf-folder|pest:stem-borer|crop:rice
+
+  #09 idx=1147 sim=0.5514 matches=1 id=sau_hai_05_sau_cuon_la_23__000189
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-control|action:chemical-application|object:oxatin|crop:rice|pest:leaf-folder
+
+  #10 idx=2521 sim=0.5421 matches=1 id=ATOMIN
+      Q: ATOMIN 15WP, BONGRA SAI 150
+      tags_v2: product:atomin|alias:atomin-15wp|alias:bong-ra-sai-150|chemical:Paclobutrazol|crop:rice|crop:peanut|crop:durian
+
+  #11 idx=1148 sim=0.5381 matches=1 id=sau_hai_05_sau_cuon_la_23__000190
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: process:pest-control|action:chemical-application|crop:rice|disease:leaf-folder|disease:stem-borer
+
+  #12 idx=1150 sim=0.5257 matches=1 id=sau_hai_05_sau_cuon_la_24__000192
+      Q: Xử lý Sâu cuốn lá; sâu đục thân/ lúa - Rất hay kháng thuốc khi mật độ cao như thế nào?
+      tags_v2: process:seed-treatment|action:apply-granules|object:granules|crop:rice|pest:leaf-folder
+
+  #13 idx=953 sim=0.5243 matches=1 id=igro_240sc_ohayo_qa_02
+      Q: Cách sử dụng Igro 240SC cho cây lúa như thế nào?
+      tags_v2: product:igro-240sc-ohayo|chemical:chlorfenapyr|crop:rice|pest:spider-mite|pest:leaf-folder|pest:white-backed-planthopper
+
+  #14 idx=493 sim=0.5242 matches=1 id=million_50wg_vua_r_y_qa_02
+      Q: Liều lượng và cách dùng thuốc Million 50WG cho cây lúa như thế nào?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|pest:brown-planthopper|pest:white-backed-planthopper|pest:stink-bug
+
+  #15 idx=2502 sim=0.5124 matches=1 id=ACO_ONE400
+      Q: ACO ONE400EC
+      tags_v2: product:aco-one400ec|chemical:isoprothiolane|disease:rice-blast|crop:rice
+
+  #16 idx=2501 sim=0.5088 matches=1 id=DOWNY
+      Q: DOWNY 650WP, ĐÙM XPRO 650WP
+      tags_v2: product:downy|alias:downy-650wp|alias:dum-xpro-650wp|chemical:isoprothiolane|chemical:tricyclazole|disease:rice-blast|crop:rice
+
+  #17 idx=2407 sim=0.5079 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #18 idx=830 sim=0.5049 matches=1 id=c_15gr_con_v_t_anh_h_ng_c_chunk_02
+      Q: Quy cách đóng gói và cách sử dụng thuốc Ốc 15GR như thế nào?
+      tags_v2: product:oc-15gr|chemical:metaldehyde|pest:oc-buu-vang|crop:lua|crop:vuon-cay-an-trai|crop:rau-mau
+
+  #19 idx=2526 sim=0.5010 matches=1 id=Bacillus
+      Q: Bacillus SUV
+      tags_v2: product:bacillus-suv|chemical:bacillus-subtilis|crop:rice|crop:chili
+
+  #20 idx=2529 sim=0.4989 matches=1 id=Oosaka
+      Q: Oosaka 700WP, Snoil Delta Thụy Sĩ
+      tags_v2: product:Oosaka|alias:oosaka-700wp|alias:snoil-delta-thuy-si|chemical:niclosamide|disease:oc-buou-vang|crop:lua
+
+  #21 idx=1163 sim=0.4960 matches=1 id=sau_hai_05_oc_buu_vang_37__000205
+      Q: Xử lý Ốc bưu vàng / Lúa  như thế nào?
+      tags_v2: action:spraying|action:spreading|crop:rice|pest:golden-apple-snail|chemical:abamectin
+
+  #22 idx=2400 sim=0.4923 matches=1 id=GANGSTER300EC
+      Q: GANGSTER300EC
+      tags_v2: product:gangter-300ec|chemical:pretilachlor|crop:rice
+
+  #23 idx=734 sim=0.4916 matches=1 id=kyodo_25sc_i_b_ng_kydo_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Kyodo 25SC là gì?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|crop:rice|action:spraying|process:safety-measures|process:protective-equipment
+
+  #24 idx=2524 sim=0.4913 matches=1 id=CHOWON
+      Q: CHOWON 550SL THẦN DƯỢC
+      tags_v2: product:chowon-550sl-than-duoc|chemical:chlormequat|chemical:solvent|action:growth-regulation|crop:rice
+
+  #25 idx=733 sim=0.4909 matches=1 id=kyodo_25sc_i_b_ng_kydo_qa_01
+      Q: Liều lượng và cách dùng Kyodo 25SC như thế nào?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|pest:thrips|pest:red-spider-mite|pest:green-rice-bug|crop:rice
+
+  #26 idx=2439 sim=0.4899 matches=1 id=FAPTANK
+      Q: FAPTANK
+      tags_v2: chemical:alpha-cypermethrin|product:faptank|crop:rice
+
+  #27 idx=336 sim=0.4875 matches=1 id=toshiro_10ec_qa_02
+      Q: Liều lượng và cách dùng Toshiro 10EC cho cây lúa như thế nào?
+      tags_v2: chemical:penconazole|product:toshiro-10ec|crop:rice|disease:blast|disease:bacterial-leaf-blight|disease:stem-rot
+
+  #28 idx=679 sim=0.4862 matches=1 id=kyodo_25sc_gold_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Kyodo 25SC Gold là gì?
+      tags_v2: chemical:diafenthiuron|product:kyodo-25sc-gold|crop:rice|pest:spider-mite|action:spraying|process:dose-management
+
+  #29 idx=723 sim=0.4859 matches=1 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_02
+      Q: Liều lượng và cách dùng Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) trên cây lúa như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|crop:rice|pest:mosquito|pest:stem-borer|pest:leaf-folder
+
+  #30 idx=2485 sim=0.4857 matches=1 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT
+picked_count: 220
+top_k       : 220
+========================
+
+[2] Q: sản phẩm Amotin có sử dụng cho cây lúa được không? lên dùng ở giai đoạn nào? cách sử dụng như thế nào thì hiệu quả
+
+ENTITY TYPE : ('product', 'procedure')
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 2, 'pest': 0, 'weed': 2, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['crop:cassava', 'crop:cereal', 'crop:cereal-crops', 'crop:fruit', 'crop:grass', 'crop:lua', 'crop:plant', 'crop:plants', 'crop:rice', 'crop:san', 'pest:grass']
+
+=== PICKED 220/220 in stage STRICT ===
+
+  #01 idx=490 sim=0.5823 matches=2 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #02 idx=494 sim=0.5335 matches=2 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #03 idx=496 sim=0.4831 matches=2 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #04 idx=531 sim=0.4774 matches=2 id=chessin_600wp_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Chessin 600WP trên cây trồng?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee|crop:black-pepper
+
+  #05 idx=530 sim=0.3994 matches=2 id=chessin_600wp_chunk_01
+      Q: Thuốc Chessin 600WP có thành phần và công dụng chính là gì?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee
+
+  #06 idx=555 sim=0.5963 matches=1 id=atomin_15wp_b_ngra_sai_chunk_02
+      Q: Atomin 15WP dùng cho những loại cây trồng nào và có tác dụng gì?
+      tags_v2: product:atomin-15wp|chemical:paclobutrazol|crop:mango|crop:durian|crop:rice|crop:corn
+
+  #07 idx=2521 sim=0.5803 matches=1 id=ATOMIN
+      Q: ATOMIN 15WP, BONGRA SAI 150
+      tags_v2: product:atomin|alias:atomin-15wp|alias:bong-ra-sai-150|chemical:Paclobutrazol|crop:rice|crop:peanut|crop:durian
+
+  #08 idx=311 sim=0.5750 matches=1 id=afenzole_325sc_asmika_top_qa_01
+      Q: Afenzole 325SC (Anh Hùng Nấm Bệnh) dùng cho cây lúa để phòng trừ bệnh gì?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|disease:lem-lep-hat|disease:kho-van|disease:dao-on
+
+  #09 idx=493 sim=0.5744 matches=1 id=million_50wg_vua_r_y_qa_02
+      Q: Liều lượng và cách dùng thuốc Million 50WG cho cây lúa như thế nào?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|pest:brown-planthopper|pest:white-backed-planthopper|pest:stink-bug
+
+  #10 idx=2485 sim=0.5698 matches=1 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+  #11 idx=306 sim=0.5677 matches=1 id=afenzole_325sc_asmika_top_qa_01
+      Q: Afenzole 325SC (Asmika top) dùng cho cây lúa để phòng trừ bệnh gì?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|disease:lem-lep-hat|disease:kho-van|disease:dao-on
+
+  #12 idx=2502 sim=0.5657 matches=1 id=ACO_ONE400
+      Q: ACO ONE400EC
+      tags_v2: product:aco-one400ec|chemical:isoprothiolane|disease:rice-blast|crop:rice
+
+  #13 idx=643 sim=0.5613 matches=1 id=aco_one_40ec_thay_th_cho_t_n_c_isoone_qa_03
+      Q: Aco one 40EC dùng cho cây trồng nào và có lưu ý gì khi sử dụng?
+      tags_v2: product:aco-one-40ec|chemical:isoprothiolane|disease:dao-on|crop:lua|action:phun|process:tuan-thu-lieu-luong
+
+  #14 idx=2504 sim=0.5595 matches=1 id=Bisomin_25SL
+      Q: Bisomin 2SL, KASU ẤN 2SL
+      tags_v2: product:bisomin-2sl|chemical:kasugamycin|crop:rice
+
+  #15 idx=436 sim=0.5516 matches=1 id=dktazole_480sl_vamco_qa_01
+      Q: Dktazole 480SL (Vamco) dùng để trừ loại cỏ nào trên cây lúa và đậu tương?
+      tags_v2: chemical:bentazone|product:vam-co-dktazole-480sl|crop:rice|crop:soybean|pest:broadleaf-weeds|pest:grass-weeds
+
+  #16 idx=301 sim=0.5512 matches=1 id=dolping_40ec_chunk_02
+      Q: Dolping 40EC dùng cho cây trồng nào và cách sử dụng ra sao?
+      tags_v2: product:dolping-40ec|chemical:gibberellic-acid|crop:rice|action:growth-stimulation|action:flower-induction|action:fruit-induction
+
+  #17 idx=2486 sim=0.5510 matches=1 id=MEKONGVIL
+      Q: MEKONGVIL 5SC
+      tags_v2: product:mekongvil-5sc|chemical:hexaconazole|disease:fungal-diseases|crop:rice
+
+  #18 idx=330 sim=0.5494 matches=1 id=hariwon_30sl_qa_01
+      Q: Hariwon 30SL dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: product:hariwon-30sl|chemical:hymexazol|crop:rice|disease:rice-blast|disease:root-rot|disease:seedling-blight
+
+  #19 idx=308 sim=0.5481 matches=1 id=afenzole_325sc_asmika_top_qa_03
+      Q: Afenzole 325SC (Asmika top) có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|crop:peanut|crop:tobacco|crop:cabbage
+
+  #20 idx=2439 sim=0.5478 matches=1 id=FAPTANK
+      Q: FAPTANK
+      tags_v2: chemical:alpha-cypermethrin|product:faptank|crop:rice
+
+  #21 idx=582 sim=0.5440 matches=1 id=mitop_one_390sc_hello_fungi_400_qa_01
+      Q: Mitop one 390SC dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: produtct:mitop-one-390sc|chemical:azoxystrobin|chemical:hexaconazole|chemical:difenoconazole|crop:lua
+
+  #22 idx=2497 sim=0.5411 matches=1 id=HELLO_FUNGI
+      Q: HELLO FUNGI 400
+      tags_v2: product:hello-fungi-400|chemical:azoxystrobin|chemical:hexaconazole|chemical:difenoconazole|crop:rice
+
+  #23 idx=905 sim=0.5397 matches=1 id=bisomin_2sl_kasu_nh_t_chunk_02
+      Q: Bisomin 2SL dùng cho những loại cây trồng và bệnh nào?
+      tags_v2: chemical:kasugamycin|product:bisomin-2sl|crop:rice|crop:orange|crop:tangerine|crop:longan
+
+  #24 idx=848 sim=0.5364 matches=1 id=gone_super_350ec_til350_chunk_02
+      Q: Sản phẩm Gone Super 350EC (Til350) dùng cho cây trồng nào và phòng trừ bệnh gì?
+      tags_v2: product:gone-super-350ec|chemical:difenoconazole|chemical:probiconazole|chemical:tebuconazole|crop:rice|crop:coffee|disease:kho-van|disease:dom-van
+
+  #25 idx=346 sim=0.5343 matches=1 id=shonam_500sc_qa_01
+      Q: Shonam 500SC dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: product:shonam-500sc|chemical:fluazinam|disease:dao-on|disease:kho-van|crop:lua|action:phong-tru
+
+  #26 idx=2407 sim=0.5335 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #27 idx=1495 sim=0.5284 matches=1 id=bilu_chunk_09
+      Q: Thuốc BILU dùng cho lúa (rice) như thế nào?
+      tags_v2: entity:bilu|crop:rice|disease:thin-strip-disease|disease:bacterial-leaf-blight
+
+  #28 idx=659 sim=0.5278 matches=1 id=lama_50ec_chunk_01
+      Q: Sản phẩm Lama 50EC có thành phần và công dụng chính là gì?
+      tags_v2: chemical:hexythiazox|product:lama-50ec|pest:spider-mite|crop:rice|crop:orange
+
+  #29 idx=2524 sim=0.5266 matches=1 id=CHOWON
+      Q: CHOWON 550SL THẦN DƯỢC
+      tags_v2: product:chowon-550sl-than-duoc|chemical:chlormequat|chemical:solvent|action:growth-regulation|crop:rice
+
+  #30 idx=869 sim=0.5256 matches=1 id=fortazeb_72wp_rinhdothuysi_c_2_m_u_xanh_v_ng_qa_02
+      Q: Liều lượng và cách dùng Fortazeb 72WP (Rinhdothuysi) cho cây lúa như thế nào?
+      tags_v2: product:fortazeb-72wp|chemical:mancozeb|chemical:metalaxyl|crop:rice|disease:lem-lep-hat|disease:vang-la|action:phun-thuoc
+
+
+
+=== PICKED 220/220 in stage STRICT ===
+
+  #01 idx=490 sim=0.5823 matches=2 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #02 idx=494 sim=0.5335 matches=2 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #03 idx=496 sim=0.4831 matches=2 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #04 idx=531 sim=0.4774 matches=2 id=chessin_600wp_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Chessin 600WP trên cây trồng?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee|crop:black-pepper
+
+  #05 idx=530 sim=0.3994 matches=2 id=chessin_600wp_chunk_01
+      Q: Thuốc Chessin 600WP có thành phần và công dụng chính là gì?
+      tags_v2: product:chessin-600wp|chemical:Dinotefuran|chemical:pymetrozine|crop:rice|crop:cassava|crop:coffee
+
+  #06 idx=555 sim=0.5963 matches=1 id=atomin_15wp_b_ngra_sai_chunk_02
+      Q: Atomin 15WP dùng cho những loại cây trồng nào và có tác dụng gì?
+      tags_v2: product:atomin-15wp|chemical:paclobutrazol|crop:mango|crop:durian|crop:rice|crop:corn
+
+  #07 idx=2521 sim=0.5803 matches=1 id=ATOMIN
+      Q: ATOMIN 15WP, BONGRA SAI 150
+      tags_v2: product:atomin|alias:atomin-15wp|alias:bong-ra-sai-150|chemical:Paclobutrazol|crop:rice|crop:peanut|crop:durian
+
+  #08 idx=311 sim=0.5750 matches=1 id=afenzole_325sc_asmika_top_qa_01
+      Q: Afenzole 325SC (Anh Hùng Nấm Bệnh) dùng cho cây lúa để phòng trừ bệnh gì?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|disease:lem-lep-hat|disease:kho-van|disease:dao-on
+
+  #09 idx=493 sim=0.5744 matches=1 id=million_50wg_vua_r_y_qa_02
+      Q: Liều lượng và cách dùng thuốc Million 50WG cho cây lúa như thế nào?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|pest:brown-planthopper|pest:white-backed-planthopper|pest:stink-bug
+
+  #10 idx=2485 sim=0.5698 matches=1 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+  #11 idx=306 sim=0.5677 matches=1 id=afenzole_325sc_asmika_top_qa_01
+      Q: Afenzole 325SC (Asmika top) dùng cho cây lúa để phòng trừ bệnh gì?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|disease:lem-lep-hat|disease:kho-van|disease:dao-on
+
+  #12 idx=2502 sim=0.5657 matches=1 id=ACO_ONE400
+      Q: ACO ONE400EC
+      tags_v2: product:aco-one400ec|chemical:isoprothiolane|disease:rice-blast|crop:rice
+
+  #13 idx=643 sim=0.5613 matches=1 id=aco_one_40ec_thay_th_cho_t_n_c_isoone_qa_03
+      Q: Aco one 40EC dùng cho cây trồng nào và có lưu ý gì khi sử dụng?
+      tags_v2: product:aco-one-40ec|chemical:isoprothiolane|disease:dao-on|crop:lua|action:phun|process:tuan-thu-lieu-luong
+
+  #14 idx=2504 sim=0.5595 matches=1 id=Bisomin_25SL
+      Q: Bisomin 2SL, KASU ẤN 2SL
+      tags_v2: product:bisomin-2sl|chemical:kasugamycin|crop:rice
+
+  #15 idx=436 sim=0.5516 matches=1 id=dktazole_480sl_vamco_qa_01
+      Q: Dktazole 480SL (Vamco) dùng để trừ loại cỏ nào trên cây lúa và đậu tương?
+      tags_v2: chemical:bentazone|product:vam-co-dktazole-480sl|crop:rice|crop:soybean|pest:broadleaf-weeds|pest:grass-weeds
+
+  #16 idx=301 sim=0.5512 matches=1 id=dolping_40ec_chunk_02
+      Q: Dolping 40EC dùng cho cây trồng nào và cách sử dụng ra sao?
+      tags_v2: product:dolping-40ec|chemical:gibberellic-acid|crop:rice|action:growth-stimulation|action:flower-induction|action:fruit-induction
+
+  #17 idx=2486 sim=0.5510 matches=1 id=MEKONGVIL
+      Q: MEKONGVIL 5SC
+      tags_v2: product:mekongvil-5sc|chemical:hexaconazole|disease:fungal-diseases|crop:rice
+
+  #18 idx=330 sim=0.5494 matches=1 id=hariwon_30sl_qa_01
+      Q: Hariwon 30SL dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: product:hariwon-30sl|chemical:hymexazol|crop:rice|disease:rice-blast|disease:root-rot|disease:seedling-blight
+
+  #19 idx=308 sim=0.5481 matches=1 id=afenzole_325sc_asmika_top_qa_03
+      Q: Afenzole 325SC (Asmika top) có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: chemical:azoxytrobin|chemical:difenoconazole|product:afenzole-325sc|crop:rice|crop:peanut|crop:tobacco|crop:cabbage
+
+  #20 idx=2439 sim=0.5478 matches=1 id=FAPTANK
+      Q: FAPTANK
+      tags_v2: chemical:alpha-cypermethrin|product:faptank|crop:rice
+
+  #21 idx=582 sim=0.5440 matches=1 id=mitop_one_390sc_hello_fungi_400_qa_01
+      Q: Mitop one 390SC dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: produtct:mitop-one-390sc|chemical:azoxystrobin|chemical:hexaconazole|chemical:difenoconazole|crop:lua
+
+  #22 idx=2497 sim=0.5411 matches=1 id=HELLO_FUNGI
+      Q: HELLO FUNGI 400
+      tags_v2: product:hello-fungi-400|chemical:azoxystrobin|chemical:hexaconazole|chemical:difenoconazole|crop:rice
+
+  #23 idx=905 sim=0.5397 matches=1 id=bisomin_2sl_kasu_nh_t_chunk_02
+      Q: Bisomin 2SL dùng cho những loại cây trồng và bệnh nào?
+      tags_v2: chemical:kasugamycin|product:bisomin-2sl|crop:rice|crop:orange|crop:tangerine|crop:longan
+
+  #24 idx=848 sim=0.5364 matches=1 id=gone_super_350ec_til350_chunk_02
+      Q: Sản phẩm Gone Super 350EC (Til350) dùng cho cây trồng nào và phòng trừ bệnh gì?
+      tags_v2: product:gone-super-350ec|chemical:difenoconazole|chemical:probiconazole|chemical:tebuconazole|crop:rice|crop:coffee|disease:kho-van|disease:dom-van
+
+  #25 idx=346 sim=0.5343 matches=1 id=shonam_500sc_qa_01
+      Q: Shonam 500SC dùng để phòng trừ bệnh gì trên cây lúa?
+      tags_v2: product:shonam-500sc|chemical:fluazinam|disease:dao-on|disease:kho-van|crop:lua|action:phong-tru
+
+  #26 idx=2407 sim=0.5335 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #27 idx=1495 sim=0.5284 matches=1 id=bilu_chunk_09
+      Q: Thuốc BILU dùng cho lúa (rice) như thế nào?
+      tags_v2: entity:bilu|crop:rice|disease:thin-strip-disease|disease:bacterial-leaf-blight
+
+  #28 idx=659 sim=0.5278 matches=1 id=lama_50ec_chunk_01
+      Q: Sản phẩm Lama 50EC có thành phần và công dụng chính là gì?
+      tags_v2: chemical:hexythiazox|product:lama-50ec|pest:spider-mite|crop:rice|crop:orange
+
+  #29 idx=2524 sim=0.5266 matches=1 id=CHOWON
+      Q: CHOWON 550SL THẦN DƯỢC
+      tags_v2: product:chowon-550sl-than-duoc|chemical:chlormequat|chemical:solvent|action:growth-regulation|crop:rice
+
+  #30 idx=869 sim=0.5256 matches=1 id=fortazeb_72wp_rinhdothuysi_c_2_m_u_xanh_v_ng_qa_02
+      Q: Liều lượng và cách dùng Fortazeb 72WP (Rinhdothuysi) cho cây lúa như thế nào?
+      tags_v2: product:fortazeb-72wp|chemical:mancozeb|chemical:metalaxyl|crop:rice|disease:lem-lep-hat|disease:vang-la|action:phun-thuoc
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT
+picked_count: 220
+top_k       : 220
+========================
+
+[3] Q: sản phẩm trinong gây ảnh hưởng xấu cho những loại cây nào? sản phẩm này trừ hiệu quả nhất cho bệnh gì
+
+ENTITY TYPE : ('product', 'disease')
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 2, 'procedure': 0, 'pest': 0, 'weed': 0, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:disease', 'crop:cassava', 'crop:fruit', 'crop:plant', 'crop:plants', 'crop:san']
+
+=== PICKED 100/300 in stage STRICT ===
+
+  #01 idx=1701 sim=0.6070 matches=1 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #02 idx=1555 sim=0.5741 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #03 idx=1948 sim=0.5545 matches=1 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #04 idx=1982 sim=0.5504 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #05 idx=76 sim=0.5499 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #06 idx=1506 sim=0.5311 matches=1 id=bilu_advantage_chunk_05
+      Q: BILU ảnh hưởng như thế nào đến chất lượng quả và quang hợp của cây?
+      tags_v2: product:oxine-copper|process:photosynthesis|disease:leaf-disease|crop:fruit|action:disease-control
+
+  #07 idx=1636 sim=0.5206 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #08 idx=1426 sim=0.5176 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #09 idx=1885 sim=0.5142 matches=1 id=fungi_classification_qa_04__000375
+      Q: Cơ chế gây bệnh của nấm Uredinales (gỉ sắt) trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:uredinales|disease:rust-fungus|pest:fungus|crop:plant|process:infection
+
+  #10 idx=494 sim=0.5090 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #11 idx=1627 sim=0.5077 matches=1 id=plant_disease_diag_qa_03__000117
+      Q: Lưu ý gì khi quan sát và ghi chép triệu chứng bệnh trên cây trồng?
+      tags_v2: entity:disease|process:observation|process:recording|disease:symptom|action:photographing|crop:plant
+
+  #12 idx=490 sim=0.5057 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #13 idx=2240 sim=0.5056 matches=1 id=aspergillus_ochraceus_chunk_02__000730
+      Q: Aspergillus ochraceus có gây bệnh trên cây trồng không?
+      tags_v2: entity:disease|disease:aspergillus-ochraceus|disease:ochratoxin-a|process:post-harvest|pest:fungus|crop:plant
+
+  #14 idx=1547 sim=0.5021 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #15 idx=1481 sim=0.5012 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #16 idx=320 sim=0.5008 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #17 idx=496 sim=0.5000 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #18 idx=481 sim=0.4960 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #19 idx=120 sim=0.4913 matches=1 id=kenbast_15sl_gly_888_qa_04
+      Q: Có thể phun Gly 888 lên cây trồng không?
+      tags_v2: product:gly-888|chemical:glufosinate-amonium|action:spray|crop:plant|process:growth
+
+  #20 idx=326 sim=0.4880 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=1622 sim=0.4878 matches=1 id=plant_disease_diag_chunk_02__000112
+      Q: Tại sao việc xác định tác nhân gây bệnh trên cây trồng lại khó khăn?
+      tags_v2: entity:disease|entity:pathogen|disease:plant-disease|crop:plant|process:disease-diagnosis
+
+  #22 idx=2407 sim=0.4867 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #23 idx=430 sim=0.4771 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #24 idx=682 sim=0.4760 matches=1 id=maruka_5ec_qa_01
+      Q: Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+      tags_v2: chemical:quizalofop-p-ethyl|product:maruka-5ec|pest:co-la-hep|crop:dau-tuong|crop:lac|crop:san
+
+  #25 idx=2081 sim=0.4738 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #26 idx=2132 sim=0.4696 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #27 idx=1580 sim=0.4662 matches=1 id=crop_disease_history_chunk_03__000070
+      Q: Vai trò của vectơ môi giới trong việc lây truyền virus trên cây trồng là gì?
+      tags_v2: entity:disease|disease:plant-virus|entity:vector|pest:insect-vector|process:virus-transmission|crop:plant
+
+  #28 idx=712 sim=0.4648 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #29 idx=489 sim=0.4638 matches=1 id=ledan_4gr_panda_4gr_t_i_qa_03
+      Q: Khi sử dụng Ledan 4GR (Panda 4GR - Túi đỏ) cần lưu ý gì để đảm bảo an toàn và hiệu quả?
+      tags_v2: product:ledan-4gr|chemical:cartap-hydrochloride|action:apply-pesticide|crop:plant|process:safety-guidelines|pest:plant-pest
+
+  #30 idx=467 sim=0.4630 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+
+
+=== PICKED 100/300 in stage STRICT ===
+
+  #01 idx=1701 sim=0.6070 matches=1 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #02 idx=1555 sim=0.5741 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #03 idx=1948 sim=0.5545 matches=1 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #04 idx=1982 sim=0.5504 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #05 idx=76 sim=0.5499 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #06 idx=1506 sim=0.5311 matches=1 id=bilu_advantage_chunk_05
+      Q: BILU ảnh hưởng như thế nào đến chất lượng quả và quang hợp của cây?
+      tags_v2: product:oxine-copper|process:photosynthesis|disease:leaf-disease|crop:fruit|action:disease-control
+
+  #07 idx=1636 sim=0.5206 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #08 idx=1426 sim=0.5176 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #09 idx=1885 sim=0.5142 matches=1 id=fungi_classification_qa_04__000375
+      Q: Cơ chế gây bệnh của nấm Uredinales (gỉ sắt) trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:uredinales|disease:rust-fungus|pest:fungus|crop:plant|process:infection
+
+  #10 idx=494 sim=0.5090 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #11 idx=1627 sim=0.5077 matches=1 id=plant_disease_diag_qa_03__000117
+      Q: Lưu ý gì khi quan sát và ghi chép triệu chứng bệnh trên cây trồng?
+      tags_v2: entity:disease|process:observation|process:recording|disease:symptom|action:photographing|crop:plant
+
+  #12 idx=490 sim=0.5057 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #13 idx=2240 sim=0.5056 matches=1 id=aspergillus_ochraceus_chunk_02__000730
+      Q: Aspergillus ochraceus có gây bệnh trên cây trồng không?
+      tags_v2: entity:disease|disease:aspergillus-ochraceus|disease:ochratoxin-a|process:post-harvest|pest:fungus|crop:plant
+
+  #14 idx=1547 sim=0.5021 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #15 idx=1481 sim=0.5012 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #16 idx=320 sim=0.5008 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #17 idx=496 sim=0.5000 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #18 idx=481 sim=0.4960 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #19 idx=120 sim=0.4913 matches=1 id=kenbast_15sl_gly_888_qa_04
+      Q: Có thể phun Gly 888 lên cây trồng không?
+      tags_v2: product:gly-888|chemical:glufosinate-amonium|action:spray|crop:plant|process:growth
+
+  #20 idx=326 sim=0.4880 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=1622 sim=0.4878 matches=1 id=plant_disease_diag_chunk_02__000112
+      Q: Tại sao việc xác định tác nhân gây bệnh trên cây trồng lại khó khăn?
+      tags_v2: entity:disease|entity:pathogen|disease:plant-disease|crop:plant|process:disease-diagnosis
+
+  #22 idx=2407 sim=0.4867 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #23 idx=430 sim=0.4771 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #24 idx=682 sim=0.4760 matches=1 id=maruka_5ec_qa_01
+      Q: Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+      tags_v2: chemical:quizalofop-p-ethyl|product:maruka-5ec|pest:co-la-hep|crop:dau-tuong|crop:lac|crop:san
+
+  #25 idx=2081 sim=0.4738 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #26 idx=2132 sim=0.4696 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #27 idx=1580 sim=0.4662 matches=1 id=crop_disease_history_chunk_03__000070
+      Q: Vai trò của vectơ môi giới trong việc lây truyền virus trên cây trồng là gì?
+      tags_v2: entity:disease|disease:plant-virus|entity:vector|pest:insect-vector|process:virus-transmission|crop:plant
+
+  #28 idx=712 sim=0.4648 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #29 idx=489 sim=0.4638 matches=1 id=ledan_4gr_panda_4gr_t_i_qa_03
+      Q: Khi sử dụng Ledan 4GR (Panda 4GR - Túi đỏ) cần lưu ý gì để đảm bảo an toàn và hiệu quả?
+      tags_v2: product:ledan-4gr|chemical:cartap-hydrochloride|action:apply-pesticide|crop:plant|process:safety-guidelines|pest:plant-pest
+
+  #30 idx=467 sim=0.4630 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+
+
+=== PICKED 300/300 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=2482 sim=0.6461 matches=0 id=Trinong
+      Q: Trinong 50WP
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganese-complex|pest:fungal-disease|disease:blast|disease:leaf-spot
+
+  #02 idx=899 sim=0.6309 matches=0 id=trinong_50wp_carbendazim_chunk_01
+      Q: Trinong 50WP là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganesse-complex|disease:blast|disease:leaf-spot|disease:anthracnose|disease:powdery-mildew
+
+  #03 idx=1701 sim=0.6070 matches=0 id=plant_disease_nematode_chunk_01__000191
+      Q: Tuyến trùng gây hại cây trồng như thế nào?
+      tags_v2: entity:disease|disease:nematode-infestation|pest:nematode|crop:plant|process:nutrient-absorption|process:root-damage
+
+  #04 idx=1659 sim=0.6036 matches=0 id=fungal_disease_plant_qa_01__000149
+      Q: Bệnh sương mai, phấn trắng và gỉ sắt là gì và chúng gây hại như thế nào cho cây trồng?
+      tags_v2: entity:disease|disease:downy-mildew|disease:powdery-mildew|disease:rust|pest:fungi|process:infection
+
+  #05 idx=1524 sim=0.5920 matches=0 id=plant_disease_impact_chunk_01__000014
+      Q: Bệnh hại cây trồng ảnh hưởng như thế nào đến thu nhập của nông dân Việt Nam?
+      tags_v2: entity:disease|pest:plant-disease|crop:crop|action:disease-control
+
+  #06 idx=2484 sim=0.5879 matches=0 id=Haruko
+      Q: Haruko 5SC, Zeroanvil
+      tags_v2: product:hexa|alias:haruko-5sc|alias:zeroanvil|chemical:hexaconazole|pest:fungal-diseases|pest:benh-nam
+
+  #07 idx=2202 sim=0.5859 matches=0 id=maize_disease_chunk_01__000692
+      Q:  Tại sao nên trồng luân canh ngô với cây rau?
+      tags_v2: entity:disease|process:luan-canh|crop:ngo|crop:rau|pest:vi-khuan|pest:nam
+
+  #08 idx=1561 sim=0.5815 matches=0 id=disease_damage_chunk_01__000051
+      Q: Sâu sùng trắng gây hại như thế nào đối với cây ngô?
+      tags_v2: entity:disease|disease:sau-sung-trang|crop:ngo|pest:sau-sung-trang|process:gay-hai|action:phong-tru
+
+  #09 idx=2485 sim=0.5811 matches=0 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+  #10 idx=1980 sim=0.5788 matches=0 id=disease_resistance_qa_01__000470
+      Q: Tại sao nên sử dụng giống kháng bệnh trong trồng trọt?
+      tags_v2: entity:disease|entity:disease-resistance|process:plant-breeding|action:disease-prevention|crop:crop-protection
+
+  #11 idx=227 sim=0.5772 matches=0 id=fullkill_50ec_i_h_n_chunk_02
+      Q: FullKill 50EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:fullkill-50ec|chemical:permethrin|crop:cotton|crop:coffee|crop:mung-bean|crop:rice
+
+  #12 idx=1670 sim=0.5752 matches=0 id=root_fungal_disease_chunk_01__000160
+      Q: Nấm bệnh ảnh hưởng như thế nào đến rễ, cổ rễ và thân cây?
+      tags_v2: entity:disease|disease:fungal-disease|disease:root-rot|disease:stem-rot|disease:sclerotinia-sclerotiorum|disease:sclerotium-rolfsii
+
+  #13 idx=884 sim=0.5741 matches=0 id=hoanganhvil_50sc_anhvil_th_y_s_chunk_02
+      Q: Hoanganhvil 50SC dùng cho những loại cây trồng và bệnh nào?
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|crop:ca-phe|crop:cam|crop:cao-su|crop:hoa-hong
+
+  #14 idx=1555 sim=0.5741 matches=0 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #15 idx=2206 sim=0.5738 matches=0 id=maize_disease_qa_01__000696
+      Q:  Vì sao ngô nên được trồng luân canh với cây rau?
+      tags_v2: entity:disease|process:crop-rotation|crop:maize|crop:vegetables|pest:bacteria|pest:fungi
+
+  #16 idx=1673 sim=0.5681 matches=0 id=root_fungal_disease_qa_01__000163
+      Q: Vì sao nấm bệnh có thể làm cây trồng bị chết?
+      tags_v2: entity:disease|disease:fungal-disease|process:water-transport-disruption|process:nutrient-transport-disruption|entity:pathogen
+
+  #17 idx=2113 sim=0.5655 matches=0 id=plant_nematode_chunk_02__000603
+      Q: Tuyến trùng ký sinh thực vật gây hại như thế nào trên cây trồng?
+      tags_v2: entity:disease|disease:plant-parasitic-nematodes
+
+  #18 idx=527 sim=0.5637 matches=0 id=khongray_54wp_chunk_02
+      Q: Khongray 54WP dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:khongray-54wp|chemical:buprofezin|chemical:Dinotefuran|crop:rice|crop:soybean|crop:peanut|crop:vegetables
+
+  #19 idx=2223 sim=0.5636 matches=0 id=fungi_toxin_vn_chunk_02__000713
+      Q: Các loại độc tố do nấm Fusarium sản sinh và cây trồng bị ảnh hưởng là gì?
+      tags_v2: entity:disease|disease:fusarium-verticillioides|disease:fusarium-graminearum|chemical:fumonisins|chemical:deoxynivalenol|chemical:nivalenol
+
+  #20 idx=1958 sim=0.5625 matches=0 id=disease_management_chunk_03__000448
+      Q: Làm thế nào để quản lý cây trồng giúp giảm thiểu bệnh hại?
+      tags_v2: entity:disease|process:crop-management|action:pruning|action:watering|action:fertilizing|disease:disease-prevention
+
+  #21 idx=2116 sim=0.5601 matches=0 id=plant_nematode_qa_01__000606
+      Q: Tuyến trùng ký sinh thực vật là gì và tại sao chúng gây hại cho cây trồng?
+      tags_v2: entity:disease|disease:plant-parasitic-nematodes|pest:nematodes|crop:general|process:root-damage|process:nutrient-absorption-impairment
+
+  #22 idx=1623 sim=0.5601 matches=0 id=plant_disease_diag_chunk_03__000113
+      Q: Triệu chứng bệnh trên cây trồng có thể do những nguyên nhân nào?
+      tags_v2: entity:disease|disease:plant-symptoms|process:physiological-disorder|process:tissue-damage|process:nutrient-absorption
+
+  #23 idx=1988 sim=0.5582 matches=0 id=fungicide_usage_chunk_01__000478
+      Q: Thuốc trừ nấm thường được sử dụng như thế nào trong phòng trừ bệnh trên cây?
+      tags_v2: entity:disease|chemical:thuoc-tru-nam|action:phun|action:xu-ly-hat-giong|action:tuoi-dat|disease:benh-tren-la
+
+  #24 idx=1631 sim=0.5577 matches=0 id=symptom_pathogen_chunk_01__000121
+      Q: Các tác nhân gây héo và còi cọc ở cây trồng là gì và cơ chế gây bệnh?
+      tags_v2: entity:disease|disease:wilt|disease:stunting|pest:fungi|pest:bacteria|pest:virus
+
+  #25 idx=790 sim=0.5563 matches=0 id=raynanusa_400wp_si_u_r_y_r_p_thay_th_dino_top_chunk_02
+      Q: Raynanusa 400WP được sử dụng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:raynanusa-400wp|chemical:buprofezin|chemical:dinotefuran|crop:rice|crop:vegetables|crop:fruit-trees|crop:industrial-crops
+
+  #26 idx=222 sim=0.5560 matches=0 id=cymkill_25ec_h_nh_con_i_b_ng_chunk_02
+      Q: Cymkill 25EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|crop:cotton|crop:rice|crop:green-mung-bean|crop:vegetables
+
+  #27 idx=1948 sim=0.5545 matches=0 id=crop_mgmt_disease_chunk_04__000438
+      Q: Tại sao dinh dưỡng cây trồng lại quan trọng trong việc phòng bệnh?
+      tags_v2: entity:disease|entity:nutrition|entity:disease-prevention|crop:plants|chemical:organic-fertilizer
+
+  #28 idx=1661 sim=0.5545 matches=0 id=fungal_disease_plant_qa_03__000151
+      Q: Bệnh gỉ sắt có tính đặc hiệu như thế nào đối với cây trồng?
+      tags_v2: entity:disease|disease:rust-disease|disease:specificity|crop:peanut
+
+  #29 idx=2001 sim=0.5541 matches=0 id=organic_capsicum_chunk_01__000491
+      Q: Ảnh hưởng của việc sử dụng phân hữu cơ và phủ lớp phủ lên bệnh hại cây ớt như thế nào?
+      tags_v2: entity:disease|crop:chili|pest:root-knot-nematode|disease:pythium-root-rot|chemical:organic-fertilizer|process:mulching
+
+  #30 idx=902 sim=0.5539 matches=0 id=trinong_50wp_carbendazim_qa_02
+      Q: Liều lượng và cách dùng Trinong 50WP cho cây trồng như thế nào?
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganesse-complex|chemical:trinong-50wp|action:apply|process:dilution|process:spraying
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 300
+top_k       : 300
+========================
+
+[4] Q: Rầy xanh trên cây chè xịt rất nhiều loại  thuốc nhưng không hiệu quả. Tư vấn sản phẩm hiệu quả nhất hiện nay.
+
+ENTITY TYPE : ('product', 'pest')
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 1, 'pest': 2, 'weed': 0, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:ray', 'pest:ray-xanh', 'crop:cassava', 'crop:che', 'crop:fruit', 'crop:plant', 'crop:plants', 'crop:san']
+
+=== PICKED 111/220 in stage STRICT ===
+
+  #01 idx=722 sim=0.5416 matches=1 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_01
+      Q: Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) dùng để phòng trừ sâu bệnh nào trên cây chè và cà phê?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|pest:bo-canh-to|pest:ray-xanh|pest:rep-sap|pest:mot-duc-canh
+
+  #02 idx=490 sim=0.5392 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #03 idx=1426 sim=0.5332 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #04 idx=732 sim=0.5268 matches=1 id=kyodo_25sc_i_b_ng_kydo_chunk_02
+      Q: Kyodo 25SC dùng để phòng trừ sâu bệnh trên những cây trồng nào và sâu bệnh nào?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|pest:bo-tri|pest:nhen-do|pest:nhen-trang|pest:ray-xanh
+
+  #05 idx=2416 sim=0.5227 matches=1 id=Abamectin
+      Q: HAIHAMEC 3.6E, Ankamec 3.6EC, Dapharnec 3.6EC
+      tags_v2: product:haihamec-3-6e|alias:ankamec-3.6ec|alias:dapharnec-3.6ec|alias:haihamec|chemical:abamectin|pest:ray-xanh|pest:nhen-do|crop:hoa
+
+  #06 idx=983 sim=0.5098 matches=1 id=nh_m_ch_ch_h_t_qa_01__000025
+      Q: Nhóm sâu chích hút nên dùng loại thuốc nào để phòng trừ hiệu quả?
+      tags_v2: action:phong-tru|process:kiem-soat-sau-hai|pest:sau-chich-hut|crop:che|product:igro-xpro
+
+  #07 idx=496 sim=0.5029 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #08 idx=492 sim=0.4988 matches=1 id=million_50wg_vua_r_y_qa_01
+      Q: Million 50WG dùng để trừ sâu bệnh nào trên cây xoài và thanh long?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:rep-sap|pest:bo-ngau|pest:ray-xanh|pest:ray-bong
+
+  #09 idx=2407 sim=0.4969 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #10 idx=546 sim=0.4954 matches=1 id=emoil_99ec_spray_qa_01
+      Q: Emoil 99EC Spray dùng để trừ sâu bệnh nào trên cây trồng?
+      tags_v2: chemical:petroleum-oil|product:emoil-99ec-spray|pest:rep-sap|pest:rep-mem|pest:ray|pest:bo-tri
+
+  #11 idx=655 sim=0.4939 matches=1 id=kyodo_50wp_chunk_02
+      Q: Kyodo 50WP dùng để phòng trừ sâu bệnh trên những loại cây nào?
+      tags_v2: chemical:diafenthiuron|product:kyodo-50wp|pest:bo-tri|pest:nhen-do|pest:nhen-trang|pest:ray-xanh
+
+  #12 idx=280 sim=0.4858 matches=1 id=tamatras_si_u_di_t_s_u_qa_01
+      Q: Thuốc Tamatras (Siêu Diệt Sâu) dùng để diệt loại sâu nào?
+      tags_v2: product:tamatras|chemical:tolfenpyrad|pest:sau-chich-hut|pest:ray|pest:bo-tri
+
+  #13 idx=430 sim=0.4818 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #14 idx=76 sim=0.4774 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #15 idx=481 sim=0.4773 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #16 idx=494 sim=0.4744 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #17 idx=96 sim=0.4693 matches=1 id=kenbast_15sl_tir_u_eni_150_qa_03
+      Q: Có lưu ý gì khi sử dụng Trâu đen 150?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:weed|action:spraying|process:application|crop:plant
+
+  #18 idx=736 sim=0.4692 matches=1 id=oscare_600wg_ram_th_i_chunk_02
+      Q: Oscare 600WG (Ram Thái) được sử dụng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:oscare-600wg|chemical:pymetrozine|pest:bo-phan|pest:bo-tri|pest:ray-mem|pest:ray-xanh
+
+  #19 idx=712 sim=0.4668 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #20 idx=326 sim=0.4662 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=703 sim=0.4659 matches=1 id=kenbast_15sl_khai_hoang_q7_qa_03
+      Q: Có thể phun Khai hoang Q7 trên cây trồng được không?
+      tags_v2: product:khai-hoang-q7|chemical:glufosinate-amonium|action:spraying|crop:plants|pest:weeds
+
+  #22 idx=379 sim=0.4644 matches=1 id=sam_san_2_5sc_nh_n_kim_c_ng_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc SAM SAN 2.5SC?
+      tags_v2: product:sam-san-2-5sc|chemical:deltamethrin|action:spray|process:growth-stage|pest:mite|crop:plant
+
+  #23 idx=467 sim=0.4526 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+  #24 idx=271 sim=0.4515 matches=1 id=zigen_super_gi_o_s_tr_15sc_delta_24ml_g_i_100ml_v_ng_240ml_chai_t_m_chunk_02
+      Q: Zigen Super 15SC dùng cho cây trồng và sâu bệnh nào?
+      tags_v2: product:zigen-super-15sc|chemical:tolfenpyrad|pest:triz|pest:rep-sap|pest:ray-xanh|pest:ray-phan
+
+  #25 idx=711 sim=0.4509 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_01
+      Q: Bpsaco 500EC dùng để trừ loại cỏ nào trên cây trồng?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #26 idx=1982 sim=0.4507 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #27 idx=429 sim=0.4505 matches=1 id=gorop_500ec_chunk_01
+      Q: Gorop 500EC là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|action:weed-control|crop:cassava|crop:peanut
+
+  #28 idx=1547 sim=0.4501 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #29 idx=484 sim=0.4494 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_qa_03
+      Q: Những lưu ý quan trọng khi sử dụng thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:application|crop:plant|process:safety-measures|pest:phytotoxicity
+
+  #30 idx=710 sim=0.4474 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Bpsaco 500EC (Trùm cỏ mầu Gold) như thế nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|action:spray|pest:weed|crop:cassava|crop:peanut
+
+
+
+=== PICKED 111/220 in stage STRICT ===
+
+  #01 idx=722 sim=0.5416 matches=1 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_01
+      Q: Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) dùng để phòng trừ sâu bệnh nào trên cây chè và cà phê?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|pest:bo-canh-to|pest:ray-xanh|pest:rep-sap|pest:mot-duc-canh
+
+  #02 idx=490 sim=0.5392 matches=1 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #03 idx=1426 sim=0.5332 matches=1 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #04 idx=732 sim=0.5268 matches=1 id=kyodo_25sc_i_b_ng_kydo_chunk_02
+      Q: Kyodo 25SC dùng để phòng trừ sâu bệnh trên những cây trồng nào và sâu bệnh nào?
+      tags_v2: product:kyodo-25sc|chemical:diafenthiuron|pest:bo-tri|pest:nhen-do|pest:nhen-trang|pest:ray-xanh
+
+  #05 idx=2416 sim=0.5227 matches=1 id=Abamectin
+      Q: HAIHAMEC 3.6E, Ankamec 3.6EC, Dapharnec 3.6EC
+      tags_v2: product:haihamec-3-6e|alias:ankamec-3.6ec|alias:dapharnec-3.6ec|alias:haihamec|chemical:abamectin|pest:ray-xanh|pest:nhen-do|crop:hoa
+
+  #06 idx=983 sim=0.5098 matches=1 id=nh_m_ch_ch_h_t_qa_01__000025
+      Q: Nhóm sâu chích hút nên dùng loại thuốc nào để phòng trừ hiệu quả?
+      tags_v2: action:phong-tru|process:kiem-soat-sau-hai|pest:sau-chich-hut|crop:che|product:igro-xpro
+
+  #07 idx=496 sim=0.5029 matches=1 id=million_50wg_tepenyaki_vua_ch_ch_h_t_chunk_02
+      Q: Million 50WG (Tepenyaki Vua chích hút) dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: chemical:flonicamid|product:million-50wg|crop:rice|crop:cassava|crop:corn|crop:mango
+
+  #08 idx=492 sim=0.4988 matches=1 id=million_50wg_vua_r_y_qa_01
+      Q: Million 50WG dùng để trừ sâu bệnh nào trên cây xoài và thanh long?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:rep-sap|pest:bo-ngau|pest:ray-xanh|pest:ray-bong
+
+  #09 idx=2407 sim=0.4969 matches=1 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #10 idx=546 sim=0.4954 matches=1 id=emoil_99ec_spray_qa_01
+      Q: Emoil 99EC Spray dùng để trừ sâu bệnh nào trên cây trồng?
+      tags_v2: chemical:petroleum-oil|product:emoil-99ec-spray|pest:rep-sap|pest:rep-mem|pest:ray|pest:bo-tri
+
+  #11 idx=655 sim=0.4939 matches=1 id=kyodo_50wp_chunk_02
+      Q: Kyodo 50WP dùng để phòng trừ sâu bệnh trên những loại cây nào?
+      tags_v2: chemical:diafenthiuron|product:kyodo-50wp|pest:bo-tri|pest:nhen-do|pest:nhen-trang|pest:ray-xanh
+
+  #12 idx=280 sim=0.4858 matches=1 id=tamatras_si_u_di_t_s_u_qa_01
+      Q: Thuốc Tamatras (Siêu Diệt Sâu) dùng để diệt loại sâu nào?
+      tags_v2: product:tamatras|chemical:tolfenpyrad|pest:sau-chich-hut|pest:ray|pest:bo-tri
+
+  #13 idx=430 sim=0.4818 matches=1 id=gorop_500ec_chunk_02
+      Q: Gorop 500EC dùng để trừ cỏ như thế nào và trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #14 idx=76 sim=0.4774 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #15 idx=481 sim=0.4773 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #16 idx=494 sim=0.4744 matches=1 id=million_50wg_vua_r_y_qa_03
+      Q: Million 50WG có thể dùng cho những loại cây trồng nào khác ngoài lúa?
+      tags_v2: product:million-50wg|chemical:flonicamid|crop:rice|crop:cassava|crop:maize|crop:mango
+
+  #17 idx=96 sim=0.4693 matches=1 id=kenbast_15sl_tir_u_eni_150_qa_03
+      Q: Có lưu ý gì khi sử dụng Trâu đen 150?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:weed|action:spraying|process:application|crop:plant
+
+  #18 idx=736 sim=0.4692 matches=1 id=oscare_600wg_ram_th_i_chunk_02
+      Q: Oscare 600WG (Ram Thái) được sử dụng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:oscare-600wg|chemical:pymetrozine|pest:bo-phan|pest:bo-tri|pest:ray-mem|pest:ray-xanh
+
+  #19 idx=712 sim=0.4668 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_02
+      Q: Sản phẩm Bpsaco 500EC có thể sử dụng trên cây trồng nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|crop:cassava|crop:peanut|crop:maize|crop:onion
+
+  #20 idx=326 sim=0.4662 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #21 idx=703 sim=0.4659 matches=1 id=kenbast_15sl_khai_hoang_q7_qa_03
+      Q: Có thể phun Khai hoang Q7 trên cây trồng được không?
+      tags_v2: product:khai-hoang-q7|chemical:glufosinate-amonium|action:spraying|crop:plants|pest:weeds
+
+  #22 idx=379 sim=0.4644 matches=1 id=sam_san_2_5sc_nh_n_kim_c_ng_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc SAM SAN 2.5SC?
+      tags_v2: product:sam-san-2-5sc|chemical:deltamethrin|action:spray|process:growth-stage|pest:mite|crop:plant
+
+  #23 idx=467 sim=0.4526 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+  #24 idx=271 sim=0.4515 matches=1 id=zigen_super_gi_o_s_tr_15sc_delta_24ml_g_i_100ml_v_ng_240ml_chai_t_m_chunk_02
+      Q: Zigen Super 15SC dùng cho cây trồng và sâu bệnh nào?
+      tags_v2: product:zigen-super-15sc|chemical:tolfenpyrad|pest:triz|pest:rep-sap|pest:ray-xanh|pest:ray-phan
+
+  #25 idx=711 sim=0.4509 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_qa_01
+      Q: Bpsaco 500EC dùng để trừ loại cỏ nào trên cây trồng?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|crop:cassava
+
+  #26 idx=1982 sim=0.4507 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #27 idx=429 sim=0.4505 matches=1 id=gorop_500ec_chunk_01
+      Q: Gorop 500EC là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: chemical:acetochlor|product:gorop-500ec|action:weed-control|crop:cassava|crop:peanut
+
+  #28 idx=1547 sim=0.4501 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #29 idx=484 sim=0.4494 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_qa_03
+      Q: Những lưu ý quan trọng khi sử dụng thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:application|crop:plant|process:safety-measures|pest:phytotoxicity
+
+  #30 idx=710 sim=0.4474 matches=1 id=bpsaco_500ec_tr_m_c_m_u_gold_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Bpsaco 500EC (Trùm cỏ mầu Gold) như thế nào?
+      tags_v2: chemical:acetochlor|product:bpsaco-500ec|action:spray|pest:weed|crop:cassava|crop:peanut
+
+
+
+=== PICKED 220/220 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=1134 sim=0.5885 matches=0 id=sau_hai_05_ray_chong_canh_06__000176
+      Q: Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ cao hơn như thế nào?
+      tags_v2: process:pest-control|action:insecticide-application|object:insecticide|pest:green-rice-bug|pest:leafhopper
+
+  #02 idx=1131 sim=0.5817 matches=0 id=sau_hai_05_ray_lung_trang_03__000173
+      Q: Xử lý Rầy nâu; rầy lưng trắng - Rất hay kháng thuốc khi mật độ cao như thế nào?
+      tags_v2: process:pest-control|action:apply-chemical|object:sinapyram|object:binhfos|pest:brown-planthopper
+
+  #03 idx=1136 sim=0.5758 matches=0 id=sau_hai_05_ray_chong_canh_08__000178
+      Q: Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ cao hơn như thế nào?
+      tags_v2: process:pest-control|action:apply-chemical|object:lekima|pest:green-rice-bug|pest:leafhopper
+
+  #04 idx=1130 sim=0.5669 matches=0 id=sau_hai_05_ray_lung_trang_02__000172
+      Q: Xử lý Rầy nâu; rầy lưng trắng - Rất hay kháng thuốc khi mật độ cao như thế nào?
+      tags_v2: process:pest-control|action:insecticide-application|object:exami|object:binhfos|pest:brown-planthopper
+
+  #05 idx=1025 sim=0.5648 matches=0 id=nh_m_ch_ch_h_t_qa_03__000067
+      Q: Có thể thay đổi công thức thuốc khi phòng trừ sâu chích hút trên cây chè không?
+      tags_v2: process:pest-control|action:apply-chemical|object:pesticide-formulation|crop:tea|pest:sucking-insect
+
+  #06 idx=2459 sim=0.5626 matches=0 id=MILLION
+      Q: MILLION 50WGM, TEPENYAKI 50WG
+      tags_v2: [product:million-50wg", "chemical:flonicamid", "pest:planthopper", "pest:whitefly", "crop:rice"]
+
+  #07 idx=2491 sim=0.5590 matches=0 id=TOPXIM
+      Q: TOPXIM PRO 30SC
+      tags_v2: product:topxim-pro-30sc|chemical:kresoxim-methyl|pest:suong-mai|pest:dao-on|pest:phan-trang
+
+  #08 idx=2397 sim=0.5565 matches=0 id=voi_rung
+      Q: VOI RỪNG
+      tags_v2: chemical:glufosinate-amonium|product:voi-rung|crop:rubber|crop:coffee
+
+  #09 idx=84 sim=0.5531 matches=0 id=kenbast_15sl_v_t_xanh_qa_01
+      Q: Vẹt xanh dùng để trừ loại cỏ nào?
+      tags_v2: product:vet-xanh|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #10 idx=105 sim=0.5522 matches=0 id=kenbast_15sl_b_r_ng_qa_03
+      Q: Có lưu ý gì khi sử dụng thuốc Bò Rừng?
+      tags_v2: product:bo-rung|chemical:glufosinate-amonium|pest:weed|action:spray|process:application|crop:non-selective
+
+  #11 idx=2455 sim=0.5473 matches=0 id=KHONGRAY
+      Q: KHONGRAY 54WP
+      tags_v2: product:khongray-54wp|chemical:buprofezin|chemical:dinotefuran|pest:thrips
+
+  #12 idx=2485 sim=0.5469 matches=0 id=HoangANHVIL
+      Q: HoangANHVIL 50SC
+      tags_v2: product:hoanganhvil-50sc|chemical:hexaconazole|disease:fungal-infections|crop:rice
+
+  #13 idx=1366 sim=0.5467 matches=0 id=rose_rrd_qa_01
+      Q: Vì sao bệnh RRD được xem là bệnh nguy hiểm nhất hiện nay trên hoa hồng?
+      tags_v2: entity:disease|disease:rrd|disease:rose-rose-rosette-disease|crop:rose|disease:fast-spreading|disease:no-treatment
+
+  #14 idx=2392 sim=0.5467 matches=0 id=KENBAST_15SL
+      Q: KENBAST 15SL, TRÂU ĐEN 150SL, TRÂU VÀNG 280, BÒ RỪNG, ĐP.AVO, LYRHOXINI 41SL, GLY 888, SƯ TỬ ĐỎ
+      tags_v2: product:kenbast-15sl|alias:trau-den-150sl|alias:trau-vang-280|alias:bo-rung|alias:dp-avo|alias:lyrhoxini|alias:gly-888|alias:su-tu-do|product-group:thuoc-tru-co|chemical:glufosinate-amonium|formulatio
+
+  #15 idx=86 sim=0.5440 matches=0 id=kenbast_15sl_v_t_xanh_qa_03
+      Q: Có lưu ý gì khi sử dụng Vẹt xanh không?
+      tags_v2: product:vet-xanh|chemical:glufosinate-amonium|action:application|process:phytotoxicity|pest:weed
+
+  #16 idx=1129 sim=0.5429 matches=0 id=sau_hai_05_ray_lung_trang_01__000171
+      Q: Xử lý Rầy nâu; rầy lưng trắng - Rất hay kháng thuốc khi mật độ bình thường như thế nào?
+      tags_v2: action:xu-ly|process:luu-dan-manh|pest:ray-nau|pest:ray-lung-trang
+
+  #17 idx=227 sim=0.5429 matches=0 id=fullkill_50ec_i_h_n_chunk_02
+      Q: FullKill 50EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:fullkill-50ec|chemical:permethrin|crop:cotton|crop:coffee|crop:mung-bean|crop:rice
+
+  #18 idx=722 sim=0.5416 matches=0 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_01
+      Q: Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) dùng để phòng trừ sâu bệnh nào trên cây chè và cà phê?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|pest:bo-canh-to|pest:ray-xanh|pest:rep-sap|pest:mot-duc-canh
+
+  #19 idx=1133 sim=0.5399 matches=0 id=sau_hai_05_ray_chong_canh_05__000175
+      Q: Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ cao hơn như thế nào?
+      tags_v2: process:fumigation|action:apply-insecticide|object:insecticide|pest:green-rice-bug|chemical:profenofos
+
+  #20 idx=490 sim=0.5392 matches=0 id=million_50wg_vua_r_y_chunk_01
+      Q: Sản phẩm Million 50WG (Vua Rầy) có thành phần và công dụng chính là gì?
+      tags_v2: product:million-50wg|chemical:flonicamid|pest:sucking-insects|crop:rice|crop:cassava
+
+  #21 idx=2486 sim=0.5391 matches=0 id=MEKONGVIL
+      Q: MEKONGVIL 5SC
+      tags_v2: product:mekongvil-5sc|chemical:hexaconazole|disease:fungal-diseases|crop:rice
+
+  #22 idx=2499 sim=0.5363 matches=0 id=GONE_SUPER
+      Q: GONE SUPER 350EC, TEEN SUPER 350EC
+      tags_v2: product:gone-super|alias:gone-super-350ec|alias:teen-super-350ec|chemical:difenoconazole|chemical:propiconazole|chemical:tebuconazole|pest:dom-den|pest:ri-sat
+
+  #23 idx=83 sim=0.5359 matches=0 id=kenbast_15sl_v_t_xanh_chunk_01
+      Q: Vẹt xanh là thuốc gì và có công dụng ra sao?
+      tags_v2: product:vet-xanh|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #24 idx=2468 sim=0.5356 matches=0 id=KYODO_25SC_50WP
+      Q: KYODO 25SC, KYODO 50WP
+      tags_v2: product:kyodo|alias:kyodo-25sc|alias:kyodo-50wp|chemical:diafenthiuron|pest:red-spider-mite|crop:cay-an-qua|crop:rau
+
+  #25 idx=102 sim=0.5345 matches=0 id=kenbast_15sl_b_r_ng_chunk_02
+      Q: Bò Rừng (Bò rừng) có đặc điểm nổi bật và cách sử dụng như thế nào?
+      tags_v2: product:bo-rung|chemical:glufosinate-amonium|pest:weed|pest:glyphosate-resistant-weed|action:spraying
+
+  #26 idx=587 sim=0.5334 matches=0 id=xie_xie_200wp_anh_h_ng_khu_n_chunk_02
+      Q: Xie Xie 200WP được sử dụng cho những loại cây trồng và bệnh nào?
+      tags_v2: chemical:bismerthiazole|product:xie-xie-200wp|disease:bacterial-rot|disease:bacterial-spot|disease:bacterial-wilt|crop:rice
+
+  #27 idx=1426 sim=0.5332 matches=0 id=ic_origin_chunk_02
+      Q: Vì sao thuốc đồng xanh không bền và dễ gây hại cho cây trồng?
+      tags_v2: process:production|action:application|object:lime|pest:phytotoxicity|crop:plant
+
+  #28 idx=98 sim=0.5325 matches=0 id=kenbast_15sl_tr_u_v_ng_chunk_02
+      Q: Trâu Vàng (Trâu vàng) được sử dụng như thế nào để diệt cỏ hiệu quả?
+      tags_v2: product:trau-vang|chemical:glufosinate-amonium|pest:weed|action:spray|process:absorption
+
+  #29 idx=2484 sim=0.5324 matches=0 id=Haruko
+      Q: Haruko 5SC, Zeroanvil
+      tags_v2: product:hexa|alias:haruko-5sc|alias:zeroanvil|chemical:hexaconazole|pest:fungal-diseases|pest:benh-nam
+
+  #30 idx=2458 sim=0.5312 matches=0 id=EXAMI
+      Q: EXAMI 20WG
+      tags_v2: product:exami-20wg|chemical:flonicamid|pest:bo-nhay|pest:nhen-long-nhung|crop:cay-an-qua
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 220
+top_k       : 220
+========================
+
+[5] Q: sản phẩm oosaka và abamectin hỗn hợp với nhau như thế nào để trừ ốc hiệu quả
+
+ENTITY TYPE : product
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 0, 'pest': 0, 'weed': 0, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['chemical:Abamectin', 'chemical:abamectin', 'chemical:lime', 'crop:cassava', 'crop:fruit', 'crop:san']
+
+=== PICKED 110/120 in stage STRICT ===
+
+  #01 idx=1126 sim=0.6923 matches=1 id=c_qa_01__000168
+      Q: Ốc xuất hiện thì nên dùng công thức thuốc nào để phòng trừ?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #02 idx=1125 sim=0.6132 matches=1 id=c_chunk_01__000167
+      Q: Phác đồ phòng trừ ốc bằng thuốc Abamectin và Bipimai như thế nào?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #03 idx=1127 sim=0.6110 matches=1 id=c_qa_02__000169
+      Q: Liều lượng Abamectin dùng để trừ ốc là bao nhiêu?
+      tags_v2: action:pest-control|process:application|object:diluted-solution|pest:snail|chemical:abamectin
+
+  #04 idx=1119 sim=0.6009 matches=1 id=c_qa_03__000161
+      Q: Có thể thay thế thuốc nào trong phác đồ trừ ốc không?
+      tags_v2: process:snail-control|action:chemical-application|object:pesticide|chemical:abamectin|product:abinsec
+
+  #05 idx=1116 sim=0.5983 matches=1 id=c_chunk_01__000158
+      Q: Phác đồ phòng trừ ốc bao gồm những thuốc nào và cách sử dụng ra sao?
+      tags_v2: action:spraying|action:applying|pest:snail|chemical:abamectin|product:abinsec
+
+  #06 idx=2415 sim=0.5875 matches=1 id=Abinsec
+      Q: Abinsec 1.8EC, OxaTIr1 1.8EC
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:sau-duc-than|pest:sau-to|crop:vegetable
+
+  #07 idx=412 sim=0.5790 matches=1 id=abinsec_oxatin_1_8ec_qa_01
+      Q: Liều lượng và cách dùng Abinsec Oxatin 1.8EC như thế nào?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|chemical:abinsec-oxatin-1-8ec|action:spray|pest:leaf-folder|pest:thrips
+
+  #08 idx=410 sim=0.5755 matches=1 id=abinsec_oxatin_1_8ec_chunk_01
+      Q: Abinsec Oxatin 1.8EC là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la
+
+  #09 idx=745 sim=0.5209 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_02
+      Q: Abinsec 1.8EC có đặc điểm nổi bật và lưu ý an toàn khi sử dụng như thế nào?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:insect-pests|pest:golden-apple-snail|action:pest-control
+
+  #10 idx=411 sim=0.5193 matches=1 id=abinsec_oxatin_1_8ec_chunk_02
+      Q: Abinsec Oxatin 1.8EC dùng để phòng trừ sâu bệnh nào trên cây trồng?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la|pest:sau-hanh
+
+  #11 idx=413 sim=0.5170 matches=1 id=abinsec_oxatin_1_8ec_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Abinsec Oxatin 1.8EC là gì?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|action:spraying|process:dosage-compliance|process:safety-measures|process:environmental-protection
+
+  #12 idx=1113 sim=0.5084 matches=1 id=nh_m_nh_n_qa_01__000155
+      Q: Khi mật độ nhện kháng cao và nhiều, nên dùng công thức phối hợp thuốc nào?
+      tags_v2: process:pest-control|action:chemical-application|object:pesticide-mixture|pest:spider-mite|chemical:abamectin
+
+  #13 idx=1057 sim=0.5075 matches=1 id=nh_m_mi_ng_nhai_qa_02__000099
+      Q: Có thể thay thế thuốc nào trong công thức Bipimai + Lưu dẫn + Abamectin 3.6 không?
+      tags_v2: process:pest-control|action:chemical-substitution|pest:chewing-insects|product:bipimai|chemical:abamectin
+
+  #14 idx=744 sim=0.5058 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_01
+      Q: Abinsec 1.8EC là thuốc bảo vệ thực vật có thành phần và công dụng gì?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:red-spider-mite
+
+  #15 idx=2438 sim=0.4999 matches=1 id=BINHTOX
+      Q: BINHTOX 3.8EC GOLD
+      tags_v2: product:binhtox-3-8ec-gold|chemical:abamectin|pest:sau-to|pest:bo-nhay
+
+  #16 idx=246 sim=0.4990 matches=1 id=binhtox_3_8ec_b_o_en_n_c_trong_n_c_c_chunk_01
+      Q: Thuốc BVTV Binhtox 3.8EC có thành phần và công dụng chính là gì?
+      tags_v2: product:binhtox-3-8ec|chemical:abamectin|crop:cabbage|crop:soybean|crop:pak-choi
+
+  #17 idx=748 sim=0.4987 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_qa_03
+      Q: Làm thế nào để sử dụng Abinsec 1.8EC an toàn và hiệu quả?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|action:safe-usage|action:dosage-control|action:protective-clothing|action:hand-washing
+
+  #18 idx=747 sim=0.4938 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_qa_02
+      Q: Abinsec 1.8EC có hoạt chất chính là gì và nồng độ bao nhiêu?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|action:insect-control|pest:insects
+
+  #19 idx=810 sim=0.4929 matches=1 id=abinsec_1_8ec_tr_m_nh_n_qa_01
+      Q: Liều lượng và cách dùng Abinsec 1.8EC như thế nào?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:red-spider-mite|pest:white-spider-mite|action:spray|process:dilution
+
+  #20 idx=419 sim=0.4920 matches=1 id=abinsec_emaben_s_u_1_8ec_si_u_di_t_s_u_chunk_01
+      Q: Thuốc Abinsec Emaben Sâu 1.8EC có thành phần và công dụng chính là gì?
+      tags_v2: product:abinsec-emaben-sau-1-8ec|chemical:abamectin|crop:rice|crop:vegetables|crop:tea
+
+  #21 idx=422 sim=0.4886 matches=1 id=abinsec_emaben_s_u_1_8ec_si_u_di_t_s_u_qa_02
+      Q: Liều lượng và cách dùng Abinsec Emaben Sâu 1.8EC như thế nào?
+      tags_v2: product:abinsec-emaben-sau-1-8ec|chemical:abamectin|action:dosage|action:application|process:spraying
+
+  #22 idx=808 sim=0.4875 matches=1 id=abinsec_1_8ec_tr_m_nh_n_chunk_01
+      Q: Sản phẩm Abinsec 1.8EC là thuốc gì và có công dụng ra sao?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:red-spider-mite|pest:white-spider-mite|crop:orange
+
+  #23 idx=1163 sim=0.4875 matches=1 id=sau_hai_05_oc_buu_vang_37__000205
+      Q: Xử lý Ốc bưu vàng / Lúa  như thế nào?
+      tags_v2: action:spraying|action:spreading|crop:rice|pest:golden-apple-snail|chemical:abamectin
+
+  #24 idx=753 sim=0.4834 matches=1 id=haihamec_3_6ec_abalion_n_c_trong_n_c_chunk_01
+      Q: Sản phẩm Haihamec 3.6EC có thành phần và công dụng chính là gì?
+      tags_v2: product:haihamec-3-6ec|chemical:abamectin|pest:leaf-folder|pest:green-bug|pest:thrips
+
+  #25 idx=2471 sim=0.4800 matches=1 id=sieu_diet_nhen
+      Q: Siêu Diệt Nhện
+      tags_v2: product:sieu-diet-nhen|chemical:abamectin|pest:nhen-long-nhung|pest:nhen-do|crop:rau|crop:cay-an-qua
+
+  #26 idx=1108 sim=0.4744 matches=1 id=nh_m_nh_n_qa_01__000150
+      Q: Khi nhóm nhện xuất hiện với mật độ thấp và vùng ít kháng, nên dùng công thức thuốc nào?
+      tags_v2: process:pest-control|action:apply-chemical|object:pesticide|pest:spider-mite|chemical:abamectin
+
+  #27 idx=756 sim=0.4734 matches=1 id=ankamec_3_6ec_resankamec_n_c_trong_n_c_chunk_01
+      Q: Ankamec 3.6EC là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: product:amkamec-3-6-ec|chemical:Abamectin|pest:leaf-folder|pest:thrips|pest:red-spider-mite|pest:stem-borer
+
+  #28 idx=1109 sim=0.4734 matches=1 id=nh_m_nh_n_qa_02__000151
+      Q: Có thể phối hợp các loại thuốc nào để phòng trừ nhóm nhện mật độ thấp?
+      tags_v2: process:pest-control|action:combine-chemicals|object:pesticides|pest:mites|chemical:abamectin
+
+  #29 idx=414 sim=0.4707 matches=1 id=binhtox_3_8ec_gold_chunk_01
+      Q: Thuốc BVTV Binhtox 3.8EC Gold có thành phần và công dụng chính là gì?
+      tags_v2: product:binhtox-3-8ec-gold|chemical:Abamectin|pest:sau-to|pest:sau-hanh|crop:bap-cai
+
+  #30 idx=249 sim=0.4675 matches=1 id=binhtox_3_8ec_b_o_en_n_c_trong_n_c_c_qa_02
+      Q: Hoạt chất chính trong Binhtox 3.8EC là gì và nồng độ bao nhiêu?
+      tags_v2: product:binhtox-3-8ec|chemical:abamectin|pest:insect-pest|crop:plant
+
+
+
+=== PICKED 110/120 in stage STRICT ===
+
+  #01 idx=1126 sim=0.6923 matches=1 id=c_qa_01__000168
+      Q: Ốc xuất hiện thì nên dùng công thức thuốc nào để phòng trừ?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #02 idx=1125 sim=0.6132 matches=1 id=c_chunk_01__000167
+      Q: Phác đồ phòng trừ ốc bằng thuốc Abamectin và Bipimai như thế nào?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #03 idx=1127 sim=0.6110 matches=1 id=c_qa_02__000169
+      Q: Liều lượng Abamectin dùng để trừ ốc là bao nhiêu?
+      tags_v2: action:pest-control|process:application|object:diluted-solution|pest:snail|chemical:abamectin
+
+  #04 idx=1119 sim=0.6009 matches=1 id=c_qa_03__000161
+      Q: Có thể thay thế thuốc nào trong phác đồ trừ ốc không?
+      tags_v2: process:snail-control|action:chemical-application|object:pesticide|chemical:abamectin|product:abinsec
+
+  #05 idx=1116 sim=0.5983 matches=1 id=c_chunk_01__000158
+      Q: Phác đồ phòng trừ ốc bao gồm những thuốc nào và cách sử dụng ra sao?
+      tags_v2: action:spraying|action:applying|pest:snail|chemical:abamectin|product:abinsec
+
+  #06 idx=2415 sim=0.5875 matches=1 id=Abinsec
+      Q: Abinsec 1.8EC, OxaTIr1 1.8EC
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:sau-duc-than|pest:sau-to|crop:vegetable
+
+  #07 idx=412 sim=0.5790 matches=1 id=abinsec_oxatin_1_8ec_qa_01
+      Q: Liều lượng và cách dùng Abinsec Oxatin 1.8EC như thế nào?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|chemical:abinsec-oxatin-1-8ec|action:spray|pest:leaf-folder|pest:thrips
+
+  #08 idx=410 sim=0.5755 matches=1 id=abinsec_oxatin_1_8ec_chunk_01
+      Q: Abinsec Oxatin 1.8EC là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la
+
+  #09 idx=745 sim=0.5209 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_02
+      Q: Abinsec 1.8EC có đặc điểm nổi bật và lưu ý an toàn khi sử dụng như thế nào?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:insect-pests|pest:golden-apple-snail|action:pest-control
+
+  #10 idx=411 sim=0.5193 matches=1 id=abinsec_oxatin_1_8ec_chunk_02
+      Q: Abinsec Oxatin 1.8EC dùng để phòng trừ sâu bệnh nào trên cây trồng?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la|pest:sau-hanh
+
+  #11 idx=413 sim=0.5170 matches=1 id=abinsec_oxatin_1_8ec_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Abinsec Oxatin 1.8EC là gì?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|action:spraying|process:dosage-compliance|process:safety-measures|process:environmental-protection
+
+  #12 idx=1113 sim=0.5084 matches=1 id=nh_m_nh_n_qa_01__000155
+      Q: Khi mật độ nhện kháng cao và nhiều, nên dùng công thức phối hợp thuốc nào?
+      tags_v2: process:pest-control|action:chemical-application|object:pesticide-mixture|pest:spider-mite|chemical:abamectin
+
+  #13 idx=1057 sim=0.5075 matches=1 id=nh_m_mi_ng_nhai_qa_02__000099
+      Q: Có thể thay thế thuốc nào trong công thức Bipimai + Lưu dẫn + Abamectin 3.6 không?
+      tags_v2: process:pest-control|action:chemical-substitution|pest:chewing-insects|product:bipimai|chemical:abamectin
+
+  #14 idx=744 sim=0.5058 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_01
+      Q: Abinsec 1.8EC là thuốc bảo vệ thực vật có thành phần và công dụng gì?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:red-spider-mite
+
+  #15 idx=2438 sim=0.4999 matches=1 id=BINHTOX
+      Q: BINHTOX 3.8EC GOLD
+      tags_v2: product:binhtox-3-8ec-gold|chemical:abamectin|pest:sau-to|pest:bo-nhay
+
+  #16 idx=246 sim=0.4990 matches=1 id=binhtox_3_8ec_b_o_en_n_c_trong_n_c_c_chunk_01
+      Q: Thuốc BVTV Binhtox 3.8EC có thành phần và công dụng chính là gì?
+      tags_v2: product:binhtox-3-8ec|chemical:abamectin|crop:cabbage|crop:soybean|crop:pak-choi
+
+  #17 idx=748 sim=0.4987 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_qa_03
+      Q: Làm thế nào để sử dụng Abinsec 1.8EC an toàn và hiệu quả?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|action:safe-usage|action:dosage-control|action:protective-clothing|action:hand-washing
+
+  #18 idx=747 sim=0.4938 matches=1 id=abinsec_1_8ec_resquansuper_n_c_c_qa_02
+      Q: Abinsec 1.8EC có hoạt chất chính là gì và nồng độ bao nhiêu?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|action:insect-control|pest:insects
+
+  #19 idx=810 sim=0.4929 matches=1 id=abinsec_1_8ec_tr_m_nh_n_qa_01
+      Q: Liều lượng và cách dùng Abinsec 1.8EC như thế nào?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:red-spider-mite|pest:white-spider-mite|action:spray|process:dilution
+
+  #20 idx=419 sim=0.4920 matches=1 id=abinsec_emaben_s_u_1_8ec_si_u_di_t_s_u_chunk_01
+      Q: Thuốc Abinsec Emaben Sâu 1.8EC có thành phần và công dụng chính là gì?
+      tags_v2: product:abinsec-emaben-sau-1-8ec|chemical:abamectin|crop:rice|crop:vegetables|crop:tea
+
+  #21 idx=422 sim=0.4886 matches=1 id=abinsec_emaben_s_u_1_8ec_si_u_di_t_s_u_qa_02
+      Q: Liều lượng và cách dùng Abinsec Emaben Sâu 1.8EC như thế nào?
+      tags_v2: product:abinsec-emaben-sau-1-8ec|chemical:abamectin|action:dosage|action:application|process:spraying
+
+  #22 idx=808 sim=0.4875 matches=1 id=abinsec_1_8ec_tr_m_nh_n_chunk_01
+      Q: Sản phẩm Abinsec 1.8EC là thuốc gì và có công dụng ra sao?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:red-spider-mite|pest:white-spider-mite|crop:orange
+
+  #23 idx=1163 sim=0.4875 matches=1 id=sau_hai_05_oc_buu_vang_37__000205
+      Q: Xử lý Ốc bưu vàng / Lúa  như thế nào?
+      tags_v2: action:spraying|action:spreading|crop:rice|pest:golden-apple-snail|chemical:abamectin
+
+  #24 idx=753 sim=0.4834 matches=1 id=haihamec_3_6ec_abalion_n_c_trong_n_c_chunk_01
+      Q: Sản phẩm Haihamec 3.6EC có thành phần và công dụng chính là gì?
+      tags_v2: product:haihamec-3-6ec|chemical:abamectin|pest:leaf-folder|pest:green-bug|pest:thrips
+
+  #25 idx=2471 sim=0.4800 matches=1 id=sieu_diet_nhen
+      Q: Siêu Diệt Nhện
+      tags_v2: product:sieu-diet-nhen|chemical:abamectin|pest:nhen-long-nhung|pest:nhen-do|crop:rau|crop:cay-an-qua
+
+  #26 idx=1108 sim=0.4744 matches=1 id=nh_m_nh_n_qa_01__000150
+      Q: Khi nhóm nhện xuất hiện với mật độ thấp và vùng ít kháng, nên dùng công thức thuốc nào?
+      tags_v2: process:pest-control|action:apply-chemical|object:pesticide|pest:spider-mite|chemical:abamectin
+
+  #27 idx=756 sim=0.4734 matches=1 id=ankamec_3_6ec_resankamec_n_c_trong_n_c_chunk_01
+      Q: Ankamec 3.6EC là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: product:amkamec-3-6-ec|chemical:Abamectin|pest:leaf-folder|pest:thrips|pest:red-spider-mite|pest:stem-borer
+
+  #28 idx=1109 sim=0.4734 matches=1 id=nh_m_nh_n_qa_02__000151
+      Q: Có thể phối hợp các loại thuốc nào để phòng trừ nhóm nhện mật độ thấp?
+      tags_v2: process:pest-control|action:combine-chemicals|object:pesticides|pest:mites|chemical:abamectin
+
+  #29 idx=414 sim=0.4707 matches=1 id=binhtox_3_8ec_gold_chunk_01
+      Q: Thuốc BVTV Binhtox 3.8EC Gold có thành phần và công dụng chính là gì?
+      tags_v2: product:binhtox-3-8ec-gold|chemical:Abamectin|pest:sau-to|pest:sau-hanh|crop:bap-cai
+
+  #30 idx=249 sim=0.4675 matches=1 id=binhtox_3_8ec_b_o_en_n_c_trong_n_c_c_qa_02
+      Q: Hoạt chất chính trong Binhtox 3.8EC là gì và nồng độ bao nhiêu?
+      tags_v2: product:binhtox-3-8ec|chemical:abamectin|pest:insect-pest|crop:plant
+
+
+
+=== PICKED 120/120 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=1126 sim=0.6923 matches=0 id=c_qa_01__000168
+      Q: Ốc xuất hiện thì nên dùng công thức thuốc nào để phòng trừ?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #02 idx=1125 sim=0.6132 matches=0 id=c_chunk_01__000167
+      Q: Phác đồ phòng trừ ốc bằng thuốc Abamectin và Bipimai như thế nào?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #03 idx=1127 sim=0.6110 matches=0 id=c_qa_02__000169
+      Q: Liều lượng Abamectin dùng để trừ ốc là bao nhiêu?
+      tags_v2: action:pest-control|process:application|object:diluted-solution|pest:snail|chemical:abamectin
+
+  #04 idx=1119 sim=0.6009 matches=0 id=c_qa_03__000161
+      Q: Có thể thay thế thuốc nào trong phác đồ trừ ốc không?
+      tags_v2: process:snail-control|action:chemical-application|object:pesticide|chemical:abamectin|product:abinsec
+
+  #05 idx=1116 sim=0.5983 matches=0 id=c_chunk_01__000158
+      Q: Phác đồ phòng trừ ốc bao gồm những thuốc nào và cách sử dụng ra sao?
+      tags_v2: action:spraying|action:applying|pest:snail|chemical:abamectin|product:abinsec
+
+  #06 idx=2415 sim=0.5875 matches=0 id=Abinsec
+      Q: Abinsec 1.8EC, OxaTIr1 1.8EC
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:sau-duc-than|pest:sau-to|crop:vegetable
+
+  #07 idx=412 sim=0.5790 matches=0 id=abinsec_oxatin_1_8ec_qa_01
+      Q: Liều lượng và cách dùng Abinsec Oxatin 1.8EC như thế nào?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|chemical:abinsec-oxatin-1-8ec|action:spray|pest:leaf-folder|pest:thrips
+
+  #08 idx=410 sim=0.5755 matches=0 id=abinsec_oxatin_1_8ec_chunk_01
+      Q: Abinsec Oxatin 1.8EC là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la
+
+  #09 idx=1024 sim=0.5751 matches=0 id=nh_m_ch_ch_h_t_qa_02__000066
+      Q: Oxatin phối hợp với Nofara và bám dính có hiệu quả diệt trĩ như thế nào?
+      tags_v2: action:mixing|process:pest-control|pest:thrips|product:oxatin|product:nofara
+
+  #10 idx=1114 sim=0.5703 matches=0 id=nh_m_nh_n_qa_02__000156
+      Q: Công thức phối hợp Abinsec Siêu Diệt Nhện và Abamectin 3.6 đục pha như thế nào?
+      tags_v2: action:phoi-hop|process:pha-che|object:nuoc|product:abinsec-sieu-diet-nhen|product:abamectin-3-6-duc
+
+  #11 idx=2530 sim=0.5641 matches=0 id=PILOT
+      Q: PILOT 15AB
+      tags_v2: product:pilot-15ab|chemical:metaldehyde|pest:snail|pest:slug
+
+  #12 idx=1128 sim=0.5494 matches=0 id=c_qa_03__000170
+      Q: Có thể thay thuốc Bipimai bằng thuốc nào khác khi trừ ốc không?
+      tags_v2: action:snail-control|process:pest-management|crop:rice|pest:snail|product:bipimai
+
+  #13 idx=1111 sim=0.5452 matches=0 id=nh_m_nh_n_qa_04__000153
+      Q: Có thể thay thế Abamectin bằng thuốc nào trong phác đồ phòng trừ nhóm nhện?
+      tags_v2: process:pest-control|action:replace-chemical|object:abamectin|product:kyodo|product:buti
+
+  #14 idx=1056 sim=0.5435 matches=0 id=nh_m_mi_ng_nhai_qa_01__000098
+      Q: Nhóm sâu miệng nhai nên dùng công thức phối hợp thuốc nào để phòng trừ hiệu quả?
+      tags_v2: action:phong-tru|process:phoi-hop-thuoc|pest:sau-mieng-nhai|pest:sau-duc-trong|product:bipimai
+
+  #15 idx=1118 sim=0.5368 matches=0 id=c_qa_02__000160
+      Q: Liều lượng và cách dùng Oosaka để phòng trừ ốc như thế nào?
+      tags_v2: action:spray|process:pest-control|object:water|pest:snail|crop:plant
+
+  #16 idx=2493 sim=0.5327 matches=0 id=Afenzole_top
+      Q: Afenzole Top 325SC, Asmilka Top 325SC
+      tags_v2: product:Afenzole|alias:afenzole-top-325sc|alias:asmilka-top-325sc|chemical:azoxystrobin|chemical:difenoconazole|disease:lem-lep-hat|disease:dao-on
+
+  #17 idx=1117 sim=0.5312 matches=0 id=c_qa_01__000159
+      Q: Khi nào nên dùng Abinsec 1.8 để phòng trừ ốc?
+      tags_v2: action:apply|process:pest-control|object:pesticide|pest:snail|crop:rice
+
+  #18 idx=663 sim=0.5292 matches=0 id=lama_50ec_qa_03
+      Q: Tại sao nên kết hợp Lama 50EC với các thuốc khác như Abamectin hoặc King Kha?
+      tags_v2: [["chemical:hexythiazox", "product:lama-50ec", "pest:mite", "action:combine-chemicals"]
+
+  #19 idx=825 sim=0.5276 matches=0 id=bn_meta_18gr_obama_con_v_t_chunk_02
+      Q: Cách sử dụng và liều lượng của Bn-Meta 18GR để phòng trừ ốc bưu vàng?
+      tags_v2: product:bn-meta-18gr|chemical:metaldehyde|pest:oc-buu-vang|crop:lua|crop:vuon-cay-an-trai|crop:rau-mau
+
+  #20 idx=1055 sim=0.5224 matches=0 id=nh_m_mi_ng_nhai_chunk_01__000097
+      Q: Phác đồ phối hợp thuốc phòng trừ nhóm sâu miệng nhai như thế nào?
+      tags_v2: action:apply-chemical|process:pest-control|object:pesticide|pest:chewing-mouth-insects|product:bipimai
+
+  #21 idx=1031 sim=0.5222 matches=0 id=nh_m_mi_ng_nhai_qa_01__000073
+      Q: Nhóm sâu miệng nhai nên dùng công thức phối hợp thuốc nào để phòng trừ?
+      tags_v2: action:phong-tru|process:phoi-hop-thuoc|pest:sau-mieng-nhai|product:binhtox-gold|product:oxatin
+
+  #22 idx=2496 sim=0.5213 matches=0 id=KING-CIDE
+      Q: KING-CIDE JAPAN 460SC
+      tags_v2: ["product:king-cide-japan-460sc", "chemical:azoxystrobin", "chemical:hexaconazole", "chemical:tricyclazole", ]
+
+  #23 idx=745 sim=0.5209 matches=0 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_02
+      Q: Abinsec 1.8EC có đặc điểm nổi bật và lưu ý an toàn khi sử dụng như thế nào?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:insect-pests|pest:golden-apple-snail|action:pest-control
+
+  #24 idx=411 sim=0.5193 matches=0 id=abinsec_oxatin_1_8ec_chunk_02
+      Q: Abinsec Oxatin 1.8EC dùng để phòng trừ sâu bệnh nào trên cây trồng?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la|pest:sau-hanh
+
+  #25 idx=413 sim=0.5170 matches=0 id=abinsec_oxatin_1_8ec_qa_02
+      Q: Những lưu ý quan trọng khi sử dụng Abinsec Oxatin 1.8EC là gì?
+      tags_v2: product:abinsec-oxatin-1-8ec|chemical:abamectin|action:spraying|process:dosage-compliance|process:safety-measures|process:environmental-protection
+
+  #26 idx=444 sim=0.5122 matches=0 id=amesip_80wp_voi_r_ng_qa_04
+      Q: Có thể pha trộn Amesip 80WP với thuốc nào để tăng hiệu quả trừ cỏ?
+      tags_v2: product:amesip-80wp|chemical:ametryn|action:mixing|action:weed-control|crop:fruit-orchard
+
+  #27 idx=1113 sim=0.5084 matches=0 id=nh_m_nh_n_qa_01__000155
+      Q: Khi mật độ nhện kháng cao và nhiều, nên dùng công thức phối hợp thuốc nào?
+      tags_v2: process:pest-control|action:chemical-application|object:pesticide-mixture|pest:spider-mite|chemical:abamectin
+
+  #28 idx=1057 sim=0.5075 matches=0 id=nh_m_mi_ng_nhai_qa_02__000099
+      Q: Có thể thay thế thuốc nào trong công thức Bipimai + Lưu dẫn + Abamectin 3.6 không?
+      tags_v2: process:pest-control|action:chemical-substitution|pest:chewing-insects|product:bipimai|chemical:abamectin
+
+  #29 idx=744 sim=0.5058 matches=0 id=abinsec_1_8ec_resquansuper_n_c_c_chunk_01
+      Q: Abinsec 1.8EC là thuốc bảo vệ thực vật có thành phần và công dụng gì?
+      tags_v2: product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:red-spider-mite
+
+  #30 idx=345 sim=0.5049 matches=0 id=shonam_500sc_chunk_02
+      Q: Shonam 500SC có những đặc điểm nổi bật nào và sản phẩm đối thủ là gì?
+      tags_v2: product:shonam-500sc|chemical:fluazinam|disease:botrytis|disease:alternaria|disease:sclerotinia|disease:pythium
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 120
+top_k       : 120
+========================
+
+ENTITY TYPE : weed
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 0, 'pest': 0, 'weed': 4, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:grass', 'crop:grass']
+
+=== PICKED 4/300 in stage STRICT ===
+
+  #01 idx=91 sim=0.4413 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #02 idx=2390 sim=0.4262 matches=1 id=herb_phoanglua_0008
+      Q: Nếu cỏ đã lớn thì dùng PHƯỢNG HOÀNG LỬA thế nào? Chiều cao cỏ khuyến nghị?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spray|crop:grass
+
+  #03 idx=1335 sim=0.3993 matches=1 id=rose_arr_chunk_05
+      Q: Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?
+      tags_v2: entity:disease|disease:arr|crop:rose|action:remove-crop|action:replace-crop|crop:grass
+
+  #04 idx=178 sim=0.2985 matches=1 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_02
+      Q: Liều lượng và cách phun Phượng Hoàng Lửa như thế nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spraying|process:application|pest:weed|crop:grass
+
+
+
+=== PICKED 4/300 in stage STRICT ===
+
+  #01 idx=91 sim=0.4413 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #02 idx=2390 sim=0.4262 matches=1 id=herb_phoanglua_0008
+      Q: Nếu cỏ đã lớn thì dùng PHƯỢNG HOÀNG LỬA thế nào? Chiều cao cỏ khuyến nghị?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spray|crop:grass
+
+  #03 idx=1335 sim=0.3993 matches=1 id=rose_arr_chunk_05
+      Q: Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?
+      tags_v2: entity:disease|disease:arr|crop:rose|action:remove-crop|action:replace-crop|crop:grass
+
+  #04 idx=178 sim=0.2985 matches=1 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_02
+      Q: Liều lượng và cách phun Phượng Hoàng Lửa như thế nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spraying|process:application|pest:weed|crop:grass
+
+
+
+=== PICKED 300/300 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=2397 sim=0.6083 matches=0 id=voi_rung
+      Q: VOI RỪNG
+      tags_v2: chemical:glufosinate-amonium|product:voi-rung|crop:rubber|crop:coffee
+
+  #02 idx=2413 sim=0.5973 matches=0 id=vua_co_ngo
+      Q: Vua Cỏ Ngô
+      tags_v2: product:vua-co-ngo|chemical:tembotrione|pest:weed|crop:corn
+
+  #03 idx=2402 sim=0.5888 matches=0 id=giao-su-co
+      Q: GIÁO SƯ CỎ
+      tags_v2: product:giaosu-co|chemical:mesotrione|pest:weed|crop:corn
+
+  #04 idx=2392 sim=0.5878 matches=0 id=KENBAST_15SL
+      Q: KENBAST 15SL, TRÂU ĐEN 150SL, TRÂU VÀNG 280, BÒ RỪNG, ĐP.AVO, LYRHOXINI 41SL, GLY 888, SƯ TỬ ĐỎ
+      tags_v2: product:kenbast-15sl|alias:trau-den-150sl|alias:trau-vang-280|alias:bo-rung|alias:dp-avo|alias:lyrhoxini|alias:gly-888|alias:su-tu-do|product-group:thuoc-tru-co|chemical:glufosinate-amonium|formulatio
+
+  #05 idx=1126 sim=0.5719 matches=0 id=c_qa_01__000168
+      Q: Ốc xuất hiện thì nên dùng công thức thuốc nào để phòng trừ?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #06 idx=2398 sim=0.5665 matches=0 id=yosky
+      Q: YOSKY Trương dôi kỵ, khai hoang p7, trâu rừng 2.0 GLU-P, khai hoang g63
+      tags_v2: product:yosky|alias:truong-doi-ky|alias:khai-hoang-p7|alias:trau-rung-2-0|alias:khai-hoang-g63|product-group:thuoc-tru-co|chemical:glufosinate-p|pest:weed|crop:coffee
+
+  #07 idx=1116 sim=0.5648 matches=0 id=c_chunk_01__000158
+      Q: Phác đồ phòng trừ ốc bao gồm những thuốc nào và cách sử dụng ra sao?
+      tags_v2: action:spraying|action:applying|pest:snail|chemical:abamectin|product:abinsec
+
+  #08 idx=84 sim=0.5607 matches=0 id=kenbast_15sl_v_t_xanh_qa_01
+      Q: Vẹt xanh dùng để trừ loại cỏ nào?
+      tags_v2: product:vet-xanh|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #09 idx=2407 sim=0.5593 matches=0 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #10 idx=2405 sim=0.5581 matches=0 id=modusa-960ec
+      Q: Modusa 960EC, MoDusa960ECGold
+      tags_v2: product:modusa-960ec|chemical:s-metolachlor|pest:weed|crop:corn|crop:sweet-potato
+
+  #11 idx=1194 sim=0.5576 matches=0 id=san_pham_chuoi_chunk_03__000236
+      Q: Những sản phẩm nào trừ sâu hại và tuyến trùng trên cây chuối?
+      tags_v2: crop:banana|pest:leaf-eating-insects|pest:nematodes|chemical:chlorpyrifos-methyl|chemical:fosthiazate
+
+  #12 idx=94 sim=0.5547 matches=0 id=kenbast_15sl_tir_u_eni_150_qa_01
+      Q: Trâu đen 150 dùng để trừ loại cỏ nào?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:co-dai-la-rong|pest:co-dai-la-hep|pest:co-man-trau|pest:co-tranh
+
+  #13 idx=2507 sim=0.5518 matches=0 id=FUJI_BOSS
+      Q: FUJI BOSS 30SC
+      tags_v2: product:fuji-boss-30sc|chemical:boscalid|chemical:pyraclostrobin|disease:powdery-mildew
+
+  #14 idx=1988 sim=0.5502 matches=0 id=fungicide_usage_chunk_01__000478
+      Q: Thuốc trừ nấm thường được sử dụng như thế nào trong phòng trừ bệnh trên cây?
+      tags_v2: entity:disease|chemical:thuoc-tru-nam|action:phun|action:xu-ly-hat-giong|action:tuoi-dat|disease:benh-tren-la
+
+  #15 idx=1555 sim=0.5487 matches=0 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #16 idx=2452 sim=0.5478 matches=0 id=RECXONA
+      Q: RECXONA 35WG, VUA TRĨ
+      tags_v2: alias:recxona-350SC|alias:vua-tri|product:nofara-350sc|chemical:thiamethoxam|pest:leaf-eating-insects|pest:sucking-insects
+
+  #17 idx=1250 sim=0.5459 matches=0 id=postharvest_fungicide_chunk_02
+      Q: Vai trò của thuốc trừ nấm sau thu hoạch đối với cam quýt là gì?
+      tags_v2: entity:disease|disease:moc-xanh|disease:moc-xanh-lam|disease:thoi-chua|crop:cam-quyt
+
+  #18 idx=2396 sim=0.5442 matches=0 id=lac_da
+      Q: LẠC ĐÀ
+      tags_v2: product:lac-da|chemical:glufosinate-amonium|crop:rubber|crop:coffee|crop:corn
+
+  #19 idx=2393 sim=0.5403 matches=0 id=Shina_18SL
+      Q: Shina 18SL
+      tags_v2: product:shina-18sl|chemical:glufosinate-amonium|pest:weed|pest:glyphosate-resistant-weed
+
+  #20 idx=1143 sim=0.5403 matches=0 id=sau_hai_05_tri_15__000185
+      Q: Xử lý Trĩ - Rất hay kháng thuốc  như thế nào?
+      tags_v2: process:pesticide-application|pest:bo-tri|product:zigen-super|product:nofara
+
+  #21 idx=1125 sim=0.5402 matches=0 id=c_chunk_01__000167
+      Q: Phác đồ phòng trừ ốc bằng thuốc Abamectin và Bipimai như thế nào?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #22 idx=2450 sim=0.5401 matches=0 id=trum_chich_hut
+      Q: TRÙM CHÍCH HÚT - TRĨ
+      tags_v2: product:trum-chich-hut-tri|chemical:pymetrozine|pest:thrips|pest:aphids|crop:cay-an-qua
+
+  #23 idx=1119 sim=0.5394 matches=0 id=c_qa_03__000161
+      Q: Có thể thay thế thuốc nào trong phác đồ trừ ốc không?
+      tags_v2: process:snail-control|action:chemical-application|object:pesticide|chemical:abamectin|product:abinsec
+
+  #24 idx=177 sim=0.5377 matches=0 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_01
+      Q: Phượng Hoàng Lửa dùng để trừ loại cỏ nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|pest:glyphosate-resistant-weed
+
+  #25 idx=2401 sim=0.5369 matches=0 id=Vamco_480SL
+      Q: Vamco 480SL
+      tags_v2: product:vamco-480sl|chemical:bentazone|pest:weed
+
+  #26 idx=2513 sim=0.5364 matches=0 id=Cocosieu
+      Q: Cocosieu 15.5WP
+      tags_v2: product:cocosieu-15-5wp|chemical:triadimefon|chemical:jingangmycin|disease:powdery-mildew
+
+  #27 idx=2400 sim=0.5325 matches=0 id=GANGSTER300EC
+      Q: GANGSTER300EC
+      tags_v2: product:gangter-300ec|chemical:pretilachlor|crop:rice
+
+  #28 idx=2499 sim=0.5325 matches=0 id=GONE_SUPER
+      Q: GONE SUPER 350EC, TEEN SUPER 350EC
+      tags_v2: product:gone-super|alias:gone-super-350ec|alias:teen-super-350ec|chemical:difenoconazole|chemical:propiconazole|chemical:tebuconazole|pest:dom-den|pest:ri-sat
+
+  #29 idx=2411 sim=0.5320 matches=0 id=DURONG
+      Q: DURONG 800WP
+      tags_v2: product:durong-800wp|chemical:diuron|crop:sugarcane|crop:maize
+
+  #30 idx=2404 sim=0.5315 matches=0 id=gorop500ec
+      Q: Gorop500EC
+      tags_v2: product:gorop-500ec|chemical:acetochlor|pest:weed|crop:soybean
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 300
+top_k       : 300
+========================
+
+ENTITY TYPE : weed
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 0, 'pest': 0, 'weed': 4, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:grass', 'crop:grass']
+
+=== PICKED 4/300 in stage STRICT ===
+
+  #01 idx=91 sim=0.4603 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #02 idx=2390 sim=0.4255 matches=1 id=herb_phoanglua_0008
+      Q: Nếu cỏ đã lớn thì dùng PHƯỢNG HOÀNG LỬA thế nào? Chiều cao cỏ khuyến nghị?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spray|crop:grass
+
+  #03 idx=1335 sim=0.3771 matches=1 id=rose_arr_chunk_05
+      Q: Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?
+      tags_v2: entity:disease|disease:arr|crop:rose|action:remove-crop|action:replace-crop|crop:grass
+
+  #04 idx=178 sim=0.3013 matches=1 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_02
+      Q: Liều lượng và cách phun Phượng Hoàng Lửa như thế nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spraying|process:application|pest:weed|crop:grass
+
+
+
+=== PICKED 4/300 in stage STRICT ===
+
+  #01 idx=91 sim=0.4603 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #02 idx=2390 sim=0.4255 matches=1 id=herb_phoanglua_0008
+      Q: Nếu cỏ đã lớn thì dùng PHƯỢNG HOÀNG LỬA thế nào? Chiều cao cỏ khuyến nghị?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spray|crop:grass
+
+  #03 idx=1335 sim=0.3771 matches=1 id=rose_arr_chunk_05
+      Q: Khi luống hoa hồng bị nhiễm ARR nặng thì nên xử lý thế nào?
+      tags_v2: entity:disease|disease:arr|crop:rose|action:remove-crop|action:replace-crop|crop:grass
+
+  #04 idx=178 sim=0.3013 matches=1 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_02
+      Q: Liều lượng và cách phun Phượng Hoàng Lửa như thế nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|action:spraying|process:application|pest:weed|crop:grass
+
+
+
+=== PICKED 300/300 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=2397 sim=0.6485 matches=0 id=voi_rung
+      Q: VOI RỪNG
+      tags_v2: chemical:glufosinate-amonium|product:voi-rung|crop:rubber|crop:coffee
+
+  #02 idx=2392 sim=0.6380 matches=0 id=KENBAST_15SL
+      Q: KENBAST 15SL, TRÂU ĐEN 150SL, TRÂU VÀNG 280, BÒ RỪNG, ĐP.AVO, LYRHOXINI 41SL, GLY 888, SƯ TỬ ĐỎ
+      tags_v2: product:kenbast-15sl|alias:trau-den-150sl|alias:trau-vang-280|alias:bo-rung|alias:dp-avo|alias:lyrhoxini|alias:gly-888|alias:su-tu-do|product-group:thuoc-tru-co|chemical:glufosinate-amonium|formulatio
+
+  #03 idx=2402 sim=0.6116 matches=0 id=giao-su-co
+      Q: GIÁO SƯ CỎ
+      tags_v2: product:giaosu-co|chemical:mesotrione|pest:weed|crop:corn
+
+  #04 idx=2398 sim=0.6005 matches=0 id=yosky
+      Q: YOSKY Trương dôi kỵ, khai hoang p7, trâu rừng 2.0 GLU-P, khai hoang g63
+      tags_v2: product:yosky|alias:truong-doi-ky|alias:khai-hoang-p7|alias:trau-rung-2-0|alias:khai-hoang-g63|product-group:thuoc-tru-co|chemical:glufosinate-p|pest:weed|crop:coffee
+
+  #05 idx=2407 sim=0.5981 matches=0 id=Laoton
+      Q: Laoton 108EC
+      tags_v2: product:lao-ton-108ec|pest:weed|chemical:haloxyfop-p-methyl|crop:peanut|crop:cassava|pest:co-duoi-phung|pest:co-man-trau
+
+  #06 idx=84 sim=0.5964 matches=0 id=kenbast_15sl_v_t_xanh_qa_01
+      Q: Vẹt xanh dùng để trừ loại cỏ nào?
+      tags_v2: product:vet-xanh|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #07 idx=1116 sim=0.5929 matches=0 id=c_chunk_01__000158
+      Q: Phác đồ phòng trừ ốc bao gồm những thuốc nào và cách sử dụng ra sao?
+      tags_v2: action:spraying|action:applying|pest:snail|chemical:abamectin|product:abinsec
+
+  #08 idx=2405 sim=0.5922 matches=0 id=modusa-960ec
+      Q: Modusa 960EC, MoDusa960ECGold
+      tags_v2: product:modusa-960ec|chemical:s-metolachlor|pest:weed|crop:corn|crop:sweet-potato
+
+  #09 idx=2396 sim=0.5892 matches=0 id=lac_da
+      Q: LẠC ĐÀ
+      tags_v2: product:lac-da|chemical:glufosinate-amonium|crop:rubber|crop:coffee|crop:corn
+
+  #10 idx=103 sim=0.5890 matches=0 id=kenbast_15sl_b_r_ng_qa_01
+      Q: Bò Rừng dùng để trừ loại cỏ nào?
+      tags_v2: product:bo-rung|chemical:glufosinate-amonium|pest:co-dai-la-rong|pest:co-dai-la-hep|pest:co-man-trau|pest:co-tranh
+
+  #11 idx=155 sim=0.5883 matches=0 id=yosky_10sl_tr_ng_v_k_qa_03
+      Q: Trương Vô Kỵ có thể trừ được những loại cỏ nào đã kháng thuốc Glyphosate?
+      tags_v2: product:truong-vo-ky|chemical:glufosinate-p|pest:resistant-weeds|pest:eleusine-indica
+
+  #12 idx=1252 sim=0.5879 matches=0 id=citrus_fungicide_chunk_01
+      Q: Những nhóm thuốc trừ nấm nào được đăng ký sử dụng trên cây có múi (Citrus)?
+      tags_v2: entity:disease|crop:citrus|chemical:azoxystrobin|chemical:difenoconazole|chemical:fludioxonil
+
+  #13 idx=2413 sim=0.5875 matches=0 id=vua_co_ngo
+      Q: Vua Cỏ Ngô
+      tags_v2: product:vua-co-ngo|chemical:tembotrione|pest:weed|crop:corn
+
+  #14 idx=1126 sim=0.5842 matches=0 id=c_qa_01__000168
+      Q: Ốc xuất hiện thì nên dùng công thức thuốc nào để phòng trừ?
+      tags_v2: action:spray|process:pest-control|object:pesticide|pest:snail|chemical:abamectin
+
+  #15 idx=99 sim=0.5840 matches=0 id=kenbast_15sl_tr_u_v_ng_qa_01
+      Q: Trâu Vàng có thể trừ loại cỏ nào?
+      tags_v2: product:trau-vang|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|pest:eleusine-indica
+
+  #16 idx=1194 sim=0.5798 matches=0 id=san_pham_chuoi_chunk_03__000236
+      Q: Những sản phẩm nào trừ sâu hại và tuyến trùng trên cây chuối?
+      tags_v2: crop:banana|pest:leaf-eating-insects|pest:nematodes|chemical:chlorpyrifos-methyl|chemical:fosthiazate
+
+  #17 idx=2393 sim=0.5775 matches=0 id=Shina_18SL
+      Q: Shina 18SL
+      tags_v2: product:shina-18sl|chemical:glufosinate-amonium|pest:weed|pest:glyphosate-resistant-weed
+
+  #18 idx=177 sim=0.5764 matches=0 id=wyncafos_10sl_ph_ng_ho_ng_l_a_qa_01
+      Q: Phượng Hoàng Lửa dùng để trừ loại cỏ nào?
+      tags_v2: product:phuong-hoang-lua|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed|pest:glyphosate-resistant-weed
+
+  #19 idx=2400 sim=0.5746 matches=0 id=GANGSTER300EC
+      Q: GANGSTER300EC
+      tags_v2: product:gangter-300ec|chemical:pretilachlor|crop:rice
+
+  #20 idx=695 sim=0.5737 matches=0 id=faquatrio_20sl_vua_l_a_ch_y_chunk_02
+      Q: Faquatrio 20SL dùng để diệt loại cỏ nào và có hiệu quả ra sao?
+      tags_v2: product:faquatrio-20sl|chemical:diquat-dibromide|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #21 idx=94 sim=0.5721 matches=0 id=kenbast_15sl_tir_u_eni_150_qa_01
+      Q: Trâu đen 150 dùng để trừ loại cỏ nào?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:co-dai-la-rong|pest:co-dai-la-hep|pest:co-man-trau|pest:co-tranh
+
+  #22 idx=2401 sim=0.5702 matches=0 id=Vamco_480SL
+      Q: Vamco 480SL
+      tags_v2: product:vamco-480sl|chemical:bentazone|pest:weed
+
+  #23 idx=152 sim=0.5689 matches=0 id=yosky_10sl_tr_ng_v_k_chunk_02
+      Q: Trương Vô Kỵ dùng để trừ loại cỏ nào và có đặc điểm gì nổi bật?
+      tags_v2: product:truong-vo-ky|chemical:glufosinate-p|pest:co-dai-la-rong|pest:co-dai-la-hep|pest:co-man-trau|pest:co-tranh
+
+  #24 idx=2507 sim=0.5672 matches=0 id=FUJI_BOSS
+      Q: FUJI BOSS 30SC
+      tags_v2: product:fuji-boss-30sc|chemical:boscalid|chemical:pyraclostrobin|disease:powdery-mildew
+
+  #25 idx=158 sim=0.5663 matches=0 id=yosky_10sl_tr_u_r_ng_2_0_qa_01
+      Q: Trâu rừng 2.0 có trừ được những loại cỏ nào khó trị và cỏ kháng thuốc không?
+      tags_v2: product:trau-rung-2.0|chemical:glufosinate-p|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #26 idx=1119 sim=0.5629 matches=0 id=c_qa_03__000161
+      Q: Có thể thay thế thuốc nào trong phác đồ trừ ốc không?
+      tags_v2: process:snail-control|action:chemical-application|object:pesticide|chemical:abamectin|product:abinsec
+
+  #27 idx=1555 sim=0.5603 matches=0 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #28 idx=2452 sim=0.5582 matches=0 id=RECXONA
+      Q: RECXONA 35WG, VUA TRĨ
+      tags_v2: alias:recxona-350SC|alias:vua-tri|product:nofara-350sc|chemical:thiamethoxam|pest:leaf-eating-insects|pest:sucking-insects
+
+  #29 idx=81 sim=0.5578 matches=0 id=kenbast_15sl_tr_u_r_ng_m_i_qa_02
+      Q: Trâu Rừng Mới có thể trừ được những loại cỏ nào?
+      tags_v2: chemical:glufosinate-amonium|product:trau-rung-moi|pest:co-dai-la-rong|pest:co-dai-la-hep|pest:co-man-trau|pest:co-tranh
+
+  #30 idx=2482 sim=0.5572 matches=0 id=Trinong
+      Q: Trinong 50WP
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganese-complex|pest:fungal-disease|disease:blast|disease:leaf-spot
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 300
+top_k       : 300
+========================
+
+ENTITY TYPE : weed
+ENTITY SCORE: {'registry': 0, 'product': 2, 'disease': 0, 'procedure': 0, 'pest': 0, 'weed': 4, 'general': 0}
+
+FINAL MUST : []
+FINAL ANY  : ['pest:grass', 'crop:grass', 'crop:plant', 'crop:plants', 'crop:potato']
+
+=== PICKED 97/300 in stage STRICT ===
+
+  #01 idx=1555 sim=0.5879 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #02 idx=1547 sim=0.5075 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #03 idx=1982 sim=0.5068 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #04 idx=2406 sim=0.4935 matches=1 id=Maruka
+      Q: Maruka 5EC
+      tags_v2: product:maruka-5ec|chemical:quizalofop-p-ethyl|pest:narrow-leaf-weeds|crop:potato
+
+  #05 idx=2081 sim=0.4908 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #06 idx=76 sim=0.4853 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #07 idx=2449 sim=0.4827 matches=1 id=vua_imida
+      Q: VUA IMIDA, PHƯỢNG HOÀNG LỬA
+      tags_v2: product:vua-mida-phuong-hoang-lua|alias:vua-imida|alias:phuong-hoang-lua|chemical:imidacloprid|pest:bo-nhay|crop:potato|crop:cay-an-qua
+
+  #08 idx=320 sim=0.4812 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #09 idx=1118 sim=0.4764 matches=1 id=c_qa_02__000160
+      Q: Liều lượng và cách dùng Oosaka để phòng trừ ốc như thế nào?
+      tags_v2: action:spray|process:pest-control|object:water|pest:snail|crop:plant
+
+  #10 idx=1699 sim=0.4692 matches=1 id=plant_disease_bacteria_qa_01__000189
+      Q: Cách nhận biết bệnh do vi khuẩn gây ra trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:bacterial-disease|entity:bacteria|crop:plants|process:diagnosis|action:cutting
+
+  #11 idx=703 sim=0.4660 matches=1 id=kenbast_15sl_khai_hoang_q7_qa_03
+      Q: Có thể phun Khai hoang Q7 trên cây trồng được không?
+      tags_v2: product:khai-hoang-q7|chemical:glufosinate-amonium|action:spraying|crop:plants|pest:weeds
+
+  #12 idx=707 sim=0.4599 matches=1 id=kenbast_15sl_vua_ch_y_khai_hoang_malaysia_qa_02
+      Q: Kenbast 15SL có lưu ý gì khi sử dụng trên cây trồng?
+      tags_v2: product:vua-lua-chay-khai-hoang-malaysia|chemical:glufosinate-amonium|action:spraying|pest:weed|crop:plants
+
+  #13 idx=372 sim=0.4594 matches=1 id=basuzin_1gb_qa_01
+      Q: Cách sử dụng thuốc BASUZIN 1GB để trừ sâu bệnh trên cây trồng?
+      tags_v2: product:basuzin-1gb|chemical:propoxur|action:spray|pest:insect-pest|crop:plant|process:application
+
+  #14 idx=1481 sim=0.4590 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #15 idx=467 sim=0.4573 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+  #16 idx=818 sim=0.4527 matches=1 id=bipimai_150ec_c_o_9_u_i_150ec_qa_04
+      Q: Bipimai 150EC có lưu ý gì khi sử dụng trên cây trồng?
+      tags_v2: chemical:pyridaben|product:bipimai-150ec|crop:plant|action:spray|process:application|pest:plant-pest
+
+  #17 idx=2134 sim=0.4515 matches=1 id=bacterial_plant_disease_qa_04__000624
+      Q: An toàn và biện pháp phòng chống bệnh vi khuẩn trên cây trồng là gì?
+      tags_v2: entity:disease|disease:bacterial-disease|crop:plants|action:disease-prevention|action:seed-treatment|action:field-sanitation
+
+  #18 idx=224 sim=0.4513 matches=1 id=cymkill_25ec_h_nh_con_i_b_ng_qa_02
+      Q: Cách dùng và liều lượng của Cymkill 25EC như thế nào?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|action:spray|process:fumigation|pest:insect-pest|crop:plant
+
+  #19 idx=225 sim=0.4495 matches=1 id=cymkill_25ec_h_nh_con_i_b_ng_qa_03
+      Q: Có những lưu ý quan trọng nào khi sử dụng thuốc Cymkill 25EC?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|action:spraying|process:fumigation|pest:insect-pest|crop:plant
+
+  #20 idx=626 sim=0.4463 matches=1 id=nakano_50wp_chunk_02
+      Q: Nakano 50WP được sử dụng cho những loại cây trồng và bệnh nào?
+      tags_v2: chemical:dithianon|product:nakano-50wp|crop:peanut|crop:potato|crop:orange|crop:tangerine
+
+  #21 idx=96 sim=0.4453 matches=1 id=kenbast_15sl_tir_u_eni_150_qa_03
+      Q: Có lưu ý gì khi sử dụng Trâu đen 150?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:weed|action:spraying|process:application|crop:plant
+
+  #22 idx=379 sim=0.4449 matches=1 id=sam_san_2_5sc_nh_n_kim_c_ng_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc SAM SAN 2.5SC?
+      tags_v2: product:sam-san-2-5sc|chemical:deltamethrin|action:spray|process:growth-stage|pest:mite|crop:plant
+
+  #23 idx=481 sim=0.4418 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #24 idx=91 sim=0.4330 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #25 idx=638 sim=0.4329 matches=1 id=cocosieu_15_5wp_qa_03
+      Q: Những lưu ý quan trọng khi sử dụng thuốc Cocosieu 15.5WP là gì?
+      tags_v2: product:cocosieu-15-5-wp|chemical:triadimefon|chemical:jingangmycin|action:spray|crop:plant|process:flowering-stage|pest:disease-o
+
+  #26 idx=326 sim=0.4285 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #27 idx=1636 sim=0.4267 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #28 idx=298 sim=0.4185 matches=1 id=setis_34sc_gi_o_s_nh_n_qa_02
+      Q: Liều lượng và cách dùng Setis 34SC (Giáo Sư Nhện) như thế nào?
+      tags_v2: product:setis-34sc|chemical:spirodiclofen|pest:mite|action:spray|crop:plant
+
+  #29 idx=2132 sim=0.4179 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #30 idx=1906 sim=0.4158 matches=1 id=plant_pathogen_inoculation_qa_03__000396
+      Q: Phương pháp lây bệnh lên các bộ phận khác của cây ngoài lá và thân là gì?
+      tags_v2: entity:disease|process:disease-transmission|action:inoculation|object:spore-suspension|object:wound|crop:plant
+
+
+
+=== PICKED 97/300 in stage STRICT ===
+
+  #01 idx=1555 sim=0.5879 matches=1 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #02 idx=1547 sim=0.5075 matches=1 id=disease_idm_qa_02__000037
+      Q: Lưu ý gì khi thực hiện phòng trừ cỏ dại để không gây hại cho cây trồng?
+      tags_v2: entity:disease|pest:weed|action:weed-control|process:integrated-pest-management|crop:plant
+
+  #03 idx=1982 sim=0.5068 matches=1 id=disease_resistance_chunk_01__000472
+      Q: Sử dụng giống kháng bệnh là biện pháp phòng trừ bệnh hiệu quả.
+      tags_v2: entity:disease|process:disease-prevention|action:use-resistant-varieties|crop:plant
+
+  #04 idx=2406 sim=0.4935 matches=1 id=Maruka
+      Q: Maruka 5EC
+      tags_v2: product:maruka-5ec|chemical:quizalofop-p-ethyl|pest:narrow-leaf-weeds|crop:potato
+
+  #05 idx=2081 sim=0.4908 matches=1 id=phytophthora_qa_03__000571
+      Q: Lưu ý gì khi phòng trừ bệnh do Phytophthora trên cây trồng?
+      tags_v2: entity:disease|disease:phytophthora|crop:plant|action:water-drainage|action:disease-prevention|action:use-clean-seeds
+
+  #06 idx=76 sim=0.4853 matches=1 id=gussi_bastar_200sl_c_h_ng_h_nhi_qa_02
+      Q: Có lưu ý gì khi sử dụng Gussi Bastar Hồng Hà Nhi để tránh ảnh hưởng đến cây trồng?
+      tags_v2: product:hong-ha-nhi|chemical:glufosinate-amonium|action:spraying|crop:plants|process:weed-control
+
+  #07 idx=2449 sim=0.4827 matches=1 id=vua_imida
+      Q: VUA IMIDA, PHƯỢNG HOÀNG LỬA
+      tags_v2: product:vua-mida-phuong-hoang-lua|alias:vua-imida|alias:phuong-hoang-lua|chemical:imidacloprid|pest:bo-nhay|crop:potato|crop:cay-an-qua
+
+  #08 idx=320 sim=0.4812 matches=1 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_qa_01
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) có thể sử dụng cho cây trồng ở giai đoạn nào?
+      tags_v2: product:scortlan-80wp|chemical:thiram|crop:plant|process:spraying|action:application-timing|pest:plant-disease-prevention
+
+  #09 idx=1118 sim=0.4764 matches=1 id=c_qa_02__000160
+      Q: Liều lượng và cách dùng Oosaka để phòng trừ ốc như thế nào?
+      tags_v2: action:spray|process:pest-control|object:water|pest:snail|crop:plant
+
+  #10 idx=1699 sim=0.4692 matches=1 id=plant_disease_bacteria_qa_01__000189
+      Q: Cách nhận biết bệnh do vi khuẩn gây ra trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:bacterial-disease|entity:bacteria|crop:plants|process:diagnosis|action:cutting
+
+  #11 idx=703 sim=0.4660 matches=1 id=kenbast_15sl_khai_hoang_q7_qa_03
+      Q: Có thể phun Khai hoang Q7 trên cây trồng được không?
+      tags_v2: product:khai-hoang-q7|chemical:glufosinate-amonium|action:spraying|crop:plants|pest:weeds
+
+  #12 idx=707 sim=0.4599 matches=1 id=kenbast_15sl_vua_ch_y_khai_hoang_malaysia_qa_02
+      Q: Kenbast 15SL có lưu ý gì khi sử dụng trên cây trồng?
+      tags_v2: product:vua-lua-chay-khai-hoang-malaysia|chemical:glufosinate-amonium|action:spraying|pest:weed|crop:plants
+
+  #13 idx=372 sim=0.4594 matches=1 id=basuzin_1gb_qa_01
+      Q: Cách sử dụng thuốc BASUZIN 1GB để trừ sâu bệnh trên cây trồng?
+      tags_v2: product:basuzin-1gb|chemical:propoxur|action:spray|pest:insect-pest|crop:plant|process:application
+
+  #14 idx=1481 sim=0.4590 matches=1 id=ic_use_chunk_02
+      Q: Vò trộn đúng kỹ thuật giúp IC Top bám dính lên cây trồng như thế nào?
+      tags_v2: process:mixing|action:activating|object:ic-top|crop:plant
+
+  #15 idx=467 sim=0.4573 matches=1 id=kajio_5wg_h_tr_ng_ho_ng_t_s_u_qa_01
+      Q: Liều lượng và cách dùng thuốc Kajio 5WG (Hổ trắng - Hoàng tử sâu) như thế nào?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|action:application|crop:plant|pest:insect|process:dose-calculation
+
+  #16 idx=818 sim=0.4527 matches=1 id=bipimai_150ec_c_o_9_u_i_150ec_qa_04
+      Q: Bipimai 150EC có lưu ý gì khi sử dụng trên cây trồng?
+      tags_v2: chemical:pyridaben|product:bipimai-150ec|crop:plant|action:spray|process:application|pest:plant-pest
+
+  #17 idx=2134 sim=0.4515 matches=1 id=bacterial_plant_disease_qa_04__000624
+      Q: An toàn và biện pháp phòng chống bệnh vi khuẩn trên cây trồng là gì?
+      tags_v2: entity:disease|disease:bacterial-disease|crop:plants|action:disease-prevention|action:seed-treatment|action:field-sanitation
+
+  #18 idx=224 sim=0.4513 matches=1 id=cymkill_25ec_h_nh_con_i_b_ng_qa_02
+      Q: Cách dùng và liều lượng của Cymkill 25EC như thế nào?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|action:spray|process:fumigation|pest:insect-pest|crop:plant
+
+  #19 idx=225 sim=0.4495 matches=1 id=cymkill_25ec_h_nh_con_i_b_ng_qa_03
+      Q: Có những lưu ý quan trọng nào khi sử dụng thuốc Cymkill 25EC?
+      tags_v2: product:cymkill-25ec|chemical:Cypermethrin|action:spraying|process:fumigation|pest:insect-pest|crop:plant
+
+  #20 idx=626 sim=0.4463 matches=1 id=nakano_50wp_chunk_02
+      Q: Nakano 50WP được sử dụng cho những loại cây trồng và bệnh nào?
+      tags_v2: chemical:dithianon|product:nakano-50wp|crop:peanut|crop:potato|crop:orange|crop:tangerine
+
+  #21 idx=96 sim=0.4453 matches=1 id=kenbast_15sl_tir_u_eni_150_qa_03
+      Q: Có lưu ý gì khi sử dụng Trâu đen 150?
+      tags_v2: product:trau-den-150|chemical:glufosinate-amonium|pest:weed|action:spraying|process:application|crop:plant
+
+  #22 idx=379 sim=0.4449 matches=1 id=sam_san_2_5sc_nh_n_kim_c_ng_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc SAM SAN 2.5SC?
+      tags_v2: product:sam-san-2-5sc|chemical:deltamethrin|action:spray|process:growth-stage|pest:mite|crop:plant
+
+  #23 idx=481 sim=0.4418 matches=1 id=ledan_95sp_panda_nh_t_t_i_tr_ng_chunk_02
+      Q: Cách sử dụng và liều lượng khuyến cáo của thuốc (Panda Nhật - Túi trắng)?
+      tags_v2: chemical:cartap-hydrochloride|product:ledan-95sp|action:spray|pest:insect-pest|crop:plant
+
+  #24 idx=91 sim=0.4330 matches=1 id=kenbast_15sl_khai_hoang_q10_qa_03
+      Q: Khai hoang Q10 có diệt được cỏ kháng Glyphosate không?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:grass|pest:glyphosate-resistant-weeds|pest:co-man-trau
+
+  #25 idx=638 sim=0.4329 matches=1 id=cocosieu_15_5wp_qa_03
+      Q: Những lưu ý quan trọng khi sử dụng thuốc Cocosieu 15.5WP là gì?
+      tags_v2: product:cocosieu-15-5-wp|chemical:triadimefon|chemical:jingangmycin|action:spray|crop:plant|process:flowering-stage|pest:disease-o
+
+  #26 idx=326 sim=0.4285 matches=1 id=scortlan_80wp_gi_o_s_b_nh_c_2_m_u_xanh_v_ng_qa_02
+      Q: Khi nào không nên phun thuốc Scortlan 80WP (Giáo sư bệnh) để tránh gây hại cho cây?
+      tags_v2: product:scortlan-80wp|chemical:thiram|action:spraying|crop:plant|process:growth|process:flowering
+
+  #27 idx=1636 sim=0.4267 matches=1 id=fungal_leaf_disease_chunk_01__000126
+      Q: Nấm bệnh gây bệnh trên cây trồng như thế nào?
+      tags_v2: entity:disease|disease:fungal-disease|process:spore-production|process:spore-dispersal|pest:pathogen|crop:plant
+
+  #28 idx=298 sim=0.4185 matches=1 id=setis_34sc_gi_o_s_nh_n_qa_02
+      Q: Liều lượng và cách dùng Setis 34SC (Giáo Sư Nhện) như thế nào?
+      tags_v2: product:setis-34sc|chemical:spirodiclofen|pest:mite|action:spray|crop:plant
+
+  #29 idx=2132 sim=0.4179 matches=1 id=bacterial_plant_disease_qa_02__000622
+      Q: Khi nào bệnh do vi khuẩn thường xuất hiện trên cây trồng?
+      tags_v2: entity:disease|disease:bacterial-disease|pest:bacteria|crop:plants|process:bacterial-infection|process:spread
+
+  #30 idx=1906 sim=0.4158 matches=1 id=plant_pathogen_inoculation_qa_03__000396
+      Q: Phương pháp lây bệnh lên các bộ phận khác của cây ngoài lá và thân là gì?
+      tags_v2: entity:disease|process:disease-transmission|action:inoculation|object:spore-suspension|object:wound|crop:plant
+
+
+
+=== PICKED 300/300 in stage FALLBACK1_DROP_ANY ===
+
+  #01 idx=1988 sim=0.6410 matches=0 id=fungicide_usage_chunk_01__000478
+      Q: Thuốc trừ nấm thường được sử dụng như thế nào trong phòng trừ bệnh trên cây?
+      tags_v2: entity:disease|chemical:thuoc-tru-nam|action:phun|action:xu-ly-hat-giong|action:tuoi-dat|disease:benh-tren-la
+
+  #02 idx=1555 sim=0.5879 matches=0 id=plant_protection_damage_qa_01__000045
+      Q: Tác động của thuốc trừ cỏ lên cây trồng như thế nào?
+      tags_v2: entity:disease|entity:herbicide-impact|pest:weed|crop:plant
+
+  #03 idx=2397 sim=0.5785 matches=0 id=voi_rung
+      Q: VOI RỪNG
+      tags_v2: chemical:glufosinate-amonium|product:voi-rung|crop:rubber|crop:coffee
+
+  #04 idx=132 sim=0.5661 matches=0 id=azin_rio_45sc_anh_h_ng_c_qa_01
+      Q: Azin Rio 45SC dùng để trừ loại cỏ nào trên cây ngô và mía?
+      tags_v2: chemical:atrazine|chemical:mesotrione|product:azin-rio-45sc|crop:sugarcane|pest:broadleaf-weeds|pest:grass-weeds
+
+  #05 idx=2402 sim=0.5660 matches=0 id=giao-su-co
+      Q: GIÁO SƯ CỎ
+      tags_v2: product:giaosu-co|chemical:mesotrione|pest:weed|crop:corn
+
+  #06 idx=878 sim=0.5574 matches=0 id=mekongvil_5sc_vic_thuy_si_5sc_chunk_02
+      Q: Cách sử dụng và lưu ý khi dùng thuốc Mekongvil 5SC trên cây trồng?
+      tags_v2: chemical:hexaconazole|product:mekongvil-5sc|disease:fungal-disease|crop:multiple-crops|action:application|process:disease-prevention
+
+  #07 idx=199 sim=0.5553 matches=0 id=binhfos_50ec_vua_s_u_qa_04
+      Q: Có thể sử dụng Binhfos 50EC (Vua sâu) để trừ rệp sáp trên cây nào?
+      tags_v2: product:binhfos-50ec-vua-sau|chemical:Profenofos|pest:rep-sap|crop:ca-phe|crop:mang-cau|crop:du-du
+
+  #08 idx=2413 sim=0.5552 matches=0 id=vua_co_ngo
+      Q: Vua Cỏ Ngô
+      tags_v2: product:vua-co-ngo|chemical:tembotrione|pest:weed|crop:corn
+
+  #09 idx=921 sim=0.5506 matches=0 id=mi_stop_350sc_chunk_02
+      Q: Mi Stop 350SC dùng cho những cây trồng và bệnh nào?
+      tags_v2: product:mi-stop-350sc|chemical:difenoconazole|chemical:azoxystrobincrop|crop:peanut|crop:rose|crop:strawberry
+
+  #10 idx=253 sim=0.5505 matches=0 id=nofara_35wg_vua_tr_qa_01
+      Q: Nofara 35WG (Vua Trĩ) dùng để trừ sâu bệnh trên những cây trồng nào?
+      tags_v2: product:nofara-35wg|chemical:thiamethoxam|pest:bo-tri|pest:ray-nau|pest:bo-xit|pest:rep-bong-xo
+
+  #11 idx=227 sim=0.5502 matches=0 id=fullkill_50ec_i_h_n_chunk_02
+      Q: FullKill 50EC dùng cho những loại cây trồng và sâu bệnh nào?
+      tags_v2: product:fullkill-50ec|chemical:permethrin|crop:cotton|crop:coffee|crop:mung-bean|crop:rice
+
+  #12 idx=2487 sim=0.5494 matches=0 id=HARIWON
+      Q: HARIWON 30SL
+      tags_v2: product:hariwon-30sl|chemical:hymexazol|pest:phytophthora|pest:phytum|pest:fusarium
+
+  #13 idx=88 sim=0.5489 matches=0 id=kenbast_15sl_khai_hoang_q10_chunk_02
+      Q: Khai hoang Q10 dùng cho cây trồng hay đối tượng nào?
+      tags_v2: product:khai-hoang-q10|chemical:glufosinate-amonium|pest:weed|pest:broadleaf-weed|pest:narrowleaf-weed
+
+  #14 idx=2507 sim=0.5489 matches=0 id=FUJI_BOSS
+      Q: FUJI BOSS 30SC
+      tags_v2: product:fuji-boss-30sc|chemical:boscalid|chemical:pyraclostrobin|disease:powdery-mildew
+
+  #15 idx=1252 sim=0.5476 matches=0 id=citrus_fungicide_chunk_01
+      Q: Những nhóm thuốc trừ nấm nào được đăng ký sử dụng trên cây có múi (Citrus)?
+      tags_v2: entity:disease|crop:citrus|chemical:azoxystrobin|chemical:difenoconazole|chemical:fludioxonil
+
+  #16 idx=1194 sim=0.5468 matches=0 id=san_pham_chuoi_chunk_03__000236
+      Q: Những sản phẩm nào trừ sâu hại và tuyến trùng trên cây chuối?
+      tags_v2: crop:banana|pest:leaf-eating-insects|pest:nematodes|chemical:chlorpyrifos-methyl|chemical:fosthiazate
+
+  #17 idx=2190 sim=0.5452 matches=0 id=peanut_disease_qa_03__000680
+      Q: Lưu ý gì khi sử dụng thuốc trừ nấm để phòng bệnh thối rễ trên cây lạc?
+      tags_v2: entity:disease|disease:rot-root|crop:peanut|action:apply-chemical|process:irrigation
+
+  #18 idx=637 sim=0.5449 matches=0 id=cocosieu_15_5wp_qa_02
+      Q: Sản phẩm Cocosieu 15.5WP có thể dùng cho cây trồng nào khác ngoài cà phê?
+      tags_v2: product:cocosieu-15-5-wp|chemical:triadimefon|chemical:jingangmycin|crop:coffee|crop:rose|disease:powdery-mildew|crop:rice
+
+  #19 idx=682 sim=0.5435 matches=0 id=maruka_5ec_qa_01
+      Q: Maruka 5EC dùng để trừ cỏ trên những loại cây trồng nào?
+      tags_v2: chemical:quizalofop-p-ethyl|product:maruka-5ec|pest:co-la-hep|crop:dau-tuong|crop:lac|crop:san
+
+  #20 idx=2513 sim=0.5427 matches=0 id=Cocosieu
+      Q: Cocosieu 15.5WP
+      tags_v2: product:cocosieu-15-5wp|chemical:triadimefon|chemical:jingangmycin|disease:powdery-mildew
+
+  #21 idx=857 sim=0.5427 matches=0 id=forthane_80wp_si_u_n_m_b_nh_c_2_m_u_xanh_v_ng_chunk_02
+      Q: Forthane 80WP dùng để phòng trừ bệnh gì trên các loại cây trồng nào?
+      tags_v2: product:forthane-80wp|chemical:mancozeb|disease:fungal-diseases|disease:bacterial-diseases|crop:watermelon|crop:mango
+
+  #22 idx=139 sim=0.5421 matches=0 id=misung_15sc_gi_o_s_c_qa_02
+      Q: Misung 15SC dùng để trừ loại cỏ nào trên ruộng ngô và mía?
+      tags_v2: product:misung-15sc|chemical:mesotrione|crop:corn|crop:sugarcane|pest:broadleaf-weeds|pest:grass-weeds
+
+  #23 idx=319 sim=0.5420 matches=0 id=scortlan_80wp_tr_m_n_m_b_nh_m45_n_c_2_m_u_xanh_v_ng_chunk_02
+      Q: Scortlan 80WP (Trùm Nấm bệnh M45Ấn) dùng để phòng trừ bệnh gì trên cây trồng?
+      tags_v2: product:scortlan-80wp|chemical:thiram|disease:powdery-mildew|disease:gray-mold|disease:brown-rot|disease:leaf-spot
+
+  #24 idx=472 sim=0.5410 matches=0 id=sha_chong_jing_100gr_padan_nh_t_qa_01
+      Q: Thuốc Sha Chong Jing 100gr dùng để trừ sâu bệnh trên cây trồng nào?
+      tags_v2: product:sha-chong-jing|chemical:thiosultap-sodium|pest:leaf-roller|pest:stem-borer|pest:thrips|pest:onion-mosquito
+
+  #25 idx=1128 sim=0.5403 matches=0 id=c_qa_03__000170
+      Q: Có thể thay thuốc Bipimai bằng thuốc nào khác khi trừ ốc không?
+      tags_v2: action:snail-control|process:pest-management|crop:rice|pest:snail|product:bipimai
+
+  #26 idx=315 sim=0.5387 matches=0 id=probicol_200wp_khu_n_v_ng_chunk_02
+      Q: Probicol 200WP (Khuẩn Vương) dùng để phòng trừ bệnh gì trên cây trồng nào?
+      tags_v2: product:probicol-200wp|chemical:bismerthiazol|chemical:kasugamycin|disease:bacterial-rot|disease:bacterial-blight|disease:bacterial-spot|crop:rice
+
+  #27 idx=357 sim=0.5386 matches=0 id=topxim_pro_30sc_nh_n_carbendazim_qa_01
+      Q: Topxim pro 30SC (nhãn Carbendazim) dùng để phòng trừ bệnh gì trên cây trồng?
+      tags_v2: product:topxim-pro-30sc|chemical:kresoxim-methyl|disease:downy-mildew|disease:rice-blast|disease:rust|disease:leaf-spot
+
+  #28 idx=461 sim=0.5371 matches=0 id=topmesi_40sc_chunk_02
+      Q: Topmesi 40SC dùng cho cây trồng và đối tượng cỏ nào?
+      tags_v2: product:topmesi-40sc|chemical:topramezone|chemical:terbuthylazine|crop:sugarcane|crop:corn|pest:narrow-leaf-weeds|pest:broad-leaf-weeds
+
+  #29 idx=722 sim=0.5370 matches=0 id=kajio_5wg_anh_h_ng_di_t_s_u_qa_01
+      Q: Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) dùng để phòng trừ sâu bệnh nào trên cây chè và cà phê?
+      tags_v2: product:kajio-5wg|chemical:emamectin-benzoate|pest:bo-canh-to|pest:ray-xanh|pest:rep-sap|pest:mot-duc-canh
+
+  #30 idx=899 sim=0.5359 matches=0 id=trinong_50wp_carbendazim_chunk_01
+      Q: Trinong 50WP là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?
+      tags_v2: product:trinong-50wp|chemical:prochloraz-manganesse-complex|disease:blast|disease:leaf-spot|disease:anthracnose|disease:powdery-mildew
+
+
+
+=== FINAL PICK STAGE ===
+final_stage : STRICT+FALLBACK1
+picked_count: 300
+top_k       : 300
+========================
+

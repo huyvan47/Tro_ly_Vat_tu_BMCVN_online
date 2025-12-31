@@ -1,7 +1,6 @@
 from rag.config import RAGConfig
 from rag.router import route_query
 from rag.normalize import normalize_query
-from rag.text_utils import is_listing_query, extract_img_keys
 from rag.retriever import search as retrieve_search
 from rag.scoring import fused_score, analyze_hits_fused
 from rag.strategy import decide_strategy
@@ -12,15 +11,17 @@ from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
 from rag.tag_filter import infer_filters_from_query
-import re
+from rag.logger import get_logger, new_trace_id
 from typing import List, Tuple
+import re
+
+
+logger = get_logger()
+
 def choose_top_k(
-    is_list: bool,
     must_tags: List[str],
     any_tags: List[str],
     norm_query: str,
-    base_list: int = 80,
-    base_normal: int = 50,
 ) -> int:
     """
     Quy tắc tăng top_k:
@@ -29,7 +30,6 @@ def choose_top_k(
     - Nếu có crop: => tăng vừa (narrow theo cây trồng)
     - Nếu query có ý hỏi "thuốc gì/phun gì/trị gì" => tăng thêm
     """
-    top_k = base_list if is_list else base_normal
 
     tags_all = (must_tags or []) + (any_tags or [])
 
@@ -43,14 +43,14 @@ def choose_top_k(
 
     # Tăng mạnh cho bài toán "tìm sản phẩm / tư vấn sâu bệnh"
     if has_product:
-        top_k = max(top_k, 160 if not is_list else 220)
+        top_k = 220
 
     if has_pest or has_disease:
-        top_k = max(top_k, 220 if not is_list else 300)
+        top_k = 300
 
     # Crop giúp thu hẹp, nhưng vẫn cần recall nếu kèm pest/disease
     if has_crop and not (has_pest or has_disease):
-        top_k = max(top_k, 120 if not is_list else 160)
+        top_k = 160
 
     if ask_recommend:
         top_k = int(top_k * 1.2)
@@ -89,17 +89,13 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     norm_query = normalize_query(client, user_query)
 
     # 2) Listing?
-    is_list = is_listing_query(norm_query)
 
     must_tags, any_tags = infer_filters_from_query(norm_query)
 
     top_k = choose_top_k(
-        is_list=is_list,
         must_tags=must_tags,
         any_tags=any_tags,
         norm_query=norm_query,
-        base_list=80,
-        base_normal=50,
     )
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
@@ -159,7 +155,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         primary_doc = context_candidates[0]
 
     # 10) Build context and call GPT answer (STRICT/SOFT)
-    policy = decide_answer_policy(user_query, primary_doc, force_listing=is_list)
+    policy = decide_answer_policy(user_query, primary_doc)
     answer_mode = "listing" if policy.format == "listing" else policy.intent
     # === VERBATIM short-circuit ===
     if answer_mode == "verbatim":
@@ -178,11 +174,9 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
 
     # 9) DIRECT_DOC: KB đủ mạnh -> trả trực tiếp doc (không ép QA)
     if strategy == "DIRECT_DOC":
-        img_keys = extract_img_keys(primary_doc.get("answer", ""))
         text = format_direct_doc_answer(user_query, primary_doc)
         return {
             "text": text,
-            "img_keys": img_keys,
             "route": "RAG",
             "norm_query": norm_query,
             "strategy": strategy,
@@ -190,7 +184,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         }
 
     # adaptive ctx, nhưng giới hạn theo mode
-    base_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
+    base_ctx = choose_adaptive_max_ctx(hits)
     if strategy == "RAG_SOFT":
         max_ctx = min(RAGConfig.max_ctx_soft, base_ctx)
         rag_mode = "SOFT"
@@ -213,10 +207,8 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         rag_mode=rag_mode,  
     )
 
-    img_keys = extract_img_keys(primary_doc.get("answer", ""))
     return {
         "text": final_answer,
-        "img_keys": img_keys,
         "route": "RAG",
         "norm_query": norm_query,
         "strategy": strategy,
