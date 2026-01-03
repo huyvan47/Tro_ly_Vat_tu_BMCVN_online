@@ -1,3 +1,4 @@
+import re
 import json
 import numpy as np
 from rag.config import RAGConfig
@@ -22,7 +23,9 @@ def _parse_tags_any_format(x):
     - None
     - "a|b|c"
     - '["a","b"]' (JSON array string)
-    - python list/np array
+    - '[""a"", ""b""]' (CSV-escaped quotes)
+    - "a,b,c" (comma separated)
+    - python list/tuple/set/np array
     Return: set(str)
     """
     if x is None:
@@ -35,16 +38,51 @@ def _parse_tags_any_format(x):
     if not s or s.lower() in {"nan", "none"}:
         return set()
 
+    # Remove wrapping quotes if the whole cell is quoted
+    # e.g. '"[""a"", ""b""]"' -> '[""a"", ""b""]'
+    if len(s) >= 2 and ((s[0] == s[-1] == '"') or (s[0] == s[-1] == "'")):
+        s = s[1:-1].strip()
+
+    # If looks like an array, try JSON (with fix for CSV-escaped quotes)
     if s.startswith("[") and s.endswith("]"):
+        s_json = s
+
+        # Fix CSV-escaped quotes:  [""a"", ""b""]  -> ["a", "b"]
+        # (only apply when we detect the "" pattern)
+        if '""' in s_json:
+            s_json = s_json.replace('""', '"')
+
         try:
-            arr = json.loads(s)
+            arr = json.loads(s_json)
             if isinstance(arr, list):
                 return set(str(t).strip() for t in arr if str(t).strip())
         except Exception:
             pass
 
+        # Fallback: extract tokens inside quotes even if JSON parse fails
+        # e.g. ["a", "b"] or [""a"", ""b""] or ['a','b']
+        tokens = re.findall(r'["\']([^"\']+)["\']', s)
+        if tokens:
+            return set(t.strip() for t in tokens if t.strip())
+
+        # Last fallback for bracketed but weird format: split by comma
+        inner = s[1:-1].strip()
+        if inner:
+            parts = [p.strip().strip('"').strip("'") for p in inner.split(",")]
+            return set(p for p in parts if p)
+
+        return set()
+
+    # Pipe format
     if "|" in s:
         return set(p.strip() for p in s.split("|") if p.strip())
+
+    # Comma format (optional)
+    if "," in s:
+        parts = [p.strip().strip('"').strip("'") for p in s.split(",")]
+        parts = [p for p in parts if p]
+        if parts:
+            return set(parts)
 
     return {s}
 

@@ -712,7 +712,6 @@ DISEASE_ALIASES = {
     "blight": ["benh cham", "benh cham cay trong"],
     "blue-green-mold": ["benh nam xanh la", "nam xanh la"],
     "blue-mold": ["benh nam xanh", "nam xanh"],
-    "bo-tri": ["benh bo tri", "benh bo tri cay trong"],
     "boron-deficiency": ["thieu bo", "thieu bo tren cay"],
     "botrytis": ["benh botrytis", "benh nam botrytis"],
     "botrytis-blight": ["benh botrytis", "benh nam botrytis"],
@@ -945,9 +944,9 @@ DISEASE_ALIASES = {
     "nematode-root-disease": ["benh ruot khoang gay benh re", "benh ruot khoang re"],
     "nematode-root-knot": ["benh ruot khoang gay u re", "benh u re ruot khoang"],
     "nguon-benh": ["nguon benh", "nguon goc benh"],
-    "nhom-a": ["nhom benh a"],
-    "nhom-b": ["nhom benh b"],
-    "nhom-o": ["nhom benh o"],
+    "nhom-a": ["nhom benh a", "nhom a", "nam nhom a", "benh nhom a"],
+    "nhom-b": ["nhom benh b", "nhom b", "nam nhom b", "benh nhom b"],
+    "nhom-o": ["nhom benh o", "nhom o", "nam nhom o", "benh nhom o"],
     "no-treatment": ["khong dieu tri", "khong xu ly benh"],
     "nodules-on-legume-roots": ["u tren re dau", "u tren re ho dau"],
     "non-parasitic-nematode": ["ruot khoang khong ky sinh"],
@@ -1090,8 +1089,6 @@ DISEASE_ALIASES = {
     "sau-hanh": ["benh sau hanh", "sau hanh"],
     "sau-hanh-bao-chet": ["benh sau hanh bao chet", "sau hanh bao chet"],
     "sau-sung-trang": ["benh sau sung trang", "sau sung trang"],
-    "sau-to": ["benh sau to", "sau to"],
-    "sau-ve-bua": ["benh sau ve bua", "sau ve bua", "ve bua"],
     "scab": ["benh vet sat", "benh vet sat tren la"],
     "sclerospora": ["benh nam sclerospora", "nam sclerospora"],
     "sclerotinia": ["benh nam sclerotinia", "nam sclerotinia"],
@@ -1250,8 +1247,9 @@ PEST_ALIASES = {
     "bo-nhay": ["bo nhay", "bo nhay tren cay"],
     "bo-phan": ["bo phan", "bo phan tren cay"],
     "bo-phan-trang": ["bo phan trang", "bo phan trang tren cay"],
-    "bo-tri": ["bo tri", "bo hut" "bo tri tren cay"],
+    "bo-tri": ["bo tri", "xu ly tri", "xu ly bo tri", "bo hut" "bo tri tren cay"],
     "bo-xit": ["bo xit", "bo xit tren cay", "bo xit muoi"],
+    "bo-ha": ["bo ha", "sung dat", "sung"],
     "borer": ["sau duc than", "sau duc trong"],
     "borers": ["sau duc than", "sau duc trong"],
     "boron-deficiency": ["thieu bo", "thieu bo tren cay"],
@@ -1452,7 +1450,7 @@ PEST_ALIASES = {
     "non-target-organisms": ["doi tuong khong muc tieu", "sinh vat khong muc tieu"],
     "nutrient-deficiency": ["thieu chat dinh duong", "thieu dinh duong"],
     "nutrient-level": ["muc chat dinh duong", "muc dinh duong"],
-    "oc-buu-vang": ["oc buu vang", "oc vang"],
+    "oc-buu-vang": ["oc buu vang", "oc vang","oc"],
     "olpidium-brassicae": ["nam olpidium", "nam olpidium brassicae"],
     "onion-maggot": ["sau cu hanh", "sau hanh"],
     "onion-mosquito": ["con muoi hanh", "muoi hanh"],
@@ -1506,17 +1504,17 @@ PEST_ALIASES = {
     "ray-bong": ["ray bong", "ray bong tren cay"],
     "ray-lung-trang": ["ray lung trang", "ray lung trang tren cay"],
     "ray-mem": ["ray mem", "ray mem tren cay"],
-    "ray-nau": ["ray nau", "ray nau tren cay"],
+    "ray-nau": ["ray nau", "ray lung trang", "ray nau tren cay"],
     "ray-phan": ["ray phan", "ray phan tren cay"],
-    "ray-xanh": ["ray xanh", "ray xanh tren cay"],
+    "ray-xanh": ["ray xanh", "ray-chong-canh", "ray phan", "ray mem", "bo phan trang", "bo xit"],
     "red-mite": ["ruoi do", "ruoi do tren cay"],
     "red-spider-mite": ["nhen gie", "nhen do", "nhen long nhung", "nhen trang"],
-    "rep": ["re p", "re p tren cay"],
-    "rep-bong-xo": ["re bong xo", "re bong xo tren cay"],
-    "rep-mem": ["re mem", "re mem tren cay"],
-    "rep-muoi": ["re muoi", "re muoi tren cay"],
-    "rep-sap": ["re sap", "re sap tren cay"],
-    "rep-vay": ["re vay", "re vay tren cay"],
+    "rep": ["rep", "rep tren cay"],
+    "rep-bong-xo": ["rep bong xo", "rep bong xo tren cay"],
+    "rep-mem": ["rep mem", "rep mem tren cay"],
+    "rep-muoi": ["rep muoi", "rep muoi tren cay"],
+    "rep-sap": ["rep sap", "rep vay", "rep sap tren cay"],
+    "rep-vay": ["rep vay", "rep sap", "rep vay tren cay"],
     "residue": ["con lai", "con lai tren dat"],
     "resistance-management": ["quan ly kha nang khang thuoc", "quan ly khang thuoc"],
     "resistant-mite": ["ruoi khang thuoc", "ruoi khang thuoc tru sau"],
@@ -1544,7 +1542,6 @@ PEST_ALIASES = {
     "sau-bo": ["sau bo", "sau bo la"],
     "sau-chich-hut": ["sau chich hut", "sau hut mau"],
     "sau-cuon-la": ["sau cuon la", "sau cuon la lua"],
-    "sau-cuon-la-nho": ["sau cuon la con", "sau cuon la nho"],
     "sau-dat": ["sau dat", "sau dat lua"],
     "sau-duc-be": ["sau duc be", "sau duc than be"],
     "sau-duc-canh": ["sau duc canh", "sau duc canh lua"],
@@ -1558,7 +1555,7 @@ PEST_ALIASES = {
     "sau-nan": ["sau nan", "sau nan lua"],
     "sau-rieng-fruit-borer": ["sau khoan qua rieng", "sau rieng"],
     "sau-sung-trang": ["sau sung trang", "sau sung trang lua"],
-    "sau-to": ["sau to", "sau to lua"],
+    "sau-to": ["sau to", "sau to tren bap cai", "sau to tren bap su"],
     "sau-tong-hop": ["cac loai sau tong hop", "sau tong hop"],
     "sau-ve-bua": ["sau ve bua", "sau ve bua lua"],
     "sau-xam": ["sau xam", "sau xam la"],
@@ -1938,6 +1935,341 @@ PRODUCT_ALIASES = {
     "zigen-xpro": ["thuoc zigen xpro"],
 }
 
+BRAND_ALIASES ={
+    "bmc": ["san pham bmc", "cong ty bmc", "cua bmc"],
+    "phuc-thinh": ["san pham phuc thinh", "cong ty phuc thinh", "cua phuc thinh"],
+    "agrishop": ["san pham agrishop", "cong ty agrishop", "cua agrishop"],
+    "delta": ["san pham delta", "cong ty delta", "cua delta"],
+}
+
+FORMULA_ALIASES = {
+    "cong-thuc-ray-nau": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray nau",
+        "cong thuc diet ray nau",
+        "cong thuc phong tru ray nau",
+        "cong thuc tri ray nau",
+        "cong thuc thuoc tru ray nau",
+        "cong thuc thuoc diet ray nau",
+        "cong thuc thuoc phong tru ray nau",
+        "cong thuc thuoc tri ray nau",
+    ],
+    "cong-thuc-ray-lung-trang": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray lung trang",
+        "cong thuc diet ray lung trang",
+        "cong thuc phong tru ray lung trang",
+        "cong thuc tri ray lung trang",
+        "cong thuc thuoc tru ray lung trang",
+        "cong thuc thuoc diet ray lung trang",
+        "cong thuc thuoc phong tru ray lung trang",
+        "cong thuc thuoc tri ray lung trang",
+    ],
+    "cong-thuc-ray-xanh": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray xanh",
+        "cong thuc diet ray xanh",
+        "cong thuc phong tru ray xanh",
+        "cong thuc tri ray xanh",
+        "cong thuc thuoc tru ray xanh",
+        "cong thuc thuoc diet ray xanh",
+        "cong thuc thuoc phong tru ray xanh",
+        "cong thuc thuoc tri ray xanh",
+    ],
+    "cong-thuc-ray-chong-canh": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray chong canh",
+        "cong thuc diet ray chong canh",
+        "cong thuc phong tru ray chong canh",
+        "cong thuc tri ray chong canh",
+        "cong thuc thuoc tru ray chong canh",
+        "cong thuc thuoc diet ray chong canh",
+        "cong thuc thuoc phong tru ray chong canh",
+        "cong thuc thuoc tri ray chong canh",
+    ],
+    "cong-thuc-ray-phan": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray phan",
+        "cong thuc diet ray phan",
+        "cong thuc phong tru ray phan",
+        "cong thuc tri ray phan",
+        "cong thuc thuoc tru ray phan",
+        "cong thuc thuoc diet ray phan",
+        "cong thuc thuoc phong tru ray phan",
+        "cong thuc thuoc tri ray phan",
+    ],
+    "cong-thuc-ray-mem": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru ray mem",
+        "cong thuc diet ray mem",
+        "cong thuc phong tru ray mem",
+        "cong thuc tri ray mem",
+        "cong thuc thuoc tru ray mem",
+        "cong thuc thuoc diet ray mem",
+        "cong thuc thuoc phong tru ray mem",
+        "cong thuc thuoc tri ray mem",
+    ],
+    "cong-thuc-bo-phan-trang": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru bo phan trang",
+        "cong thuc diet bo phan trang",
+        "cong thuc phong tru bo phan trang",
+        "cong thuc tri bo phan trang",
+        "cong thuc thuoc tru bo phan trang",
+        "cong thuc thuoc diet bo phan trang",
+        "cong thuc thuoc phong tru bo phan trang",
+        "cong thuc thuoc tri bo phan trang",
+    ],
+    "cong-thuc-bo-xit": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru bo xit",
+        "cong thuc diet bo xit",
+        "cong thuc phong tru bo xit",
+        "cong thuc tri bo xit",
+        "cong thuc thuoc tru bo xit",
+        "cong thuc thuoc diet bo xit",
+        "cong thuc thuoc phong tru bo xit",
+        "cong thuc thuoc tri bo xit",
+    ],
+    "cong-thuc-rep-sap": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru rep sap",
+        "cong thuc diet rep sap",
+        "cong thuc phong tru rep sap",
+        "cong thuc tri rep sap",
+        "cong thuc thuoc tru rep sap",
+        "cong thuc thuoc diet rep sap",
+        "cong thuc thuoc phong tru rep sap",
+        "cong thuc thuoc tri rep sap",
+    ],
+    "cong-thuc-rep-vay": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru rep vay",
+        "cong thuc diet rep vay",
+        "cong thuc phong tru rep vay",
+        "cong thuc tri rep vay",
+        "cong thuc thuoc tru rep vay",
+        "cong thuc thuoc diet rep vay",
+        "cong thuc thuoc phong tru rep vay",
+        "cong thuc thuoc tri rep vay",
+    ],
+    "cong-thuc-bo-tri": [ 
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru bo tri", 
+        "cong thuc diet bo tri", 
+        "cong thuc phong tru bo tri", 
+        "cong thuc tri bo tri", 
+        "cong thuc thuoc tru bo tri", 
+        "cong thuc thuoc diet bo tri", 
+        "cong thuc thuoc phong tru bo tri", 
+        "cong thuc thuoc tri bo tri", 
+    ],
+    "cong-thuc-sau-to": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau to",
+        "cong thuc diet sau to",
+        "cong thuc phong tru sau to",
+        "cong thuc tri sau to",
+        "cong thuc thuoc tru sau to",
+        "cong thuc thuoc diet sau to",
+        "cong thuc thuoc phong tru sau to",
+        "cong thuc thuoc tri sau to",
+    ],
+    "cong-thuc-sau-hanh": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau hanh",
+        "cong thuc diet sau hanh",
+        "cong thuc phong tru sau hanh",
+        "cong thuc tri sau hanh",
+        "cong thuc thuoc tru sau hanh",
+        "cong thuc thuoc diet sau hanh",
+        "cong thuc thuoc phong tru sau hanh",
+        "cong thuc thuoc tri sau hanh",
+    ],
+    "cong-thuc-bo-nhay": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru bo nhay",
+        "cong thuc diet bo nhay",
+        "cong thuc phong tru bo nhay",
+        "cong thuc tri bo nhay",
+        "cong thuc thuoc tru bo nhay",
+        "cong thuc thuoc diet bo nhay",
+        "cong thuc thuoc phong tru bo nhay",
+        "cong thuc thuoc tri bo nhay",
+    ],
+    "cong-thuc-sau-cuon-la": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau cuon la",
+        "cong thuc diet sau cuon la",
+        "cong thuc phong tru sau cuon la",
+        "cong thuc tri sau cuon la",
+        "cong thuc thuoc tru sau cuon la",
+        "cong thuc thuoc diet sau cuon la",
+        "cong thuc thuoc phong tru sau cuon la",
+        "cong thuc thuoc tri sau cuon la",
+    ],
+    "cong-thuc-sau-duc-than": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau duc than",
+        "cong thuc diet sau duc than",
+        "cong thuc phong tru sau duc than",
+        "cong thuc tri sau duc than",
+        "cong thuc thuoc tru sau duc than",
+        "cong thuc thuoc diet sau duc than",
+        "cong thuc thuoc phong tru sau duc than",
+        "cong thuc thuoc tri sau duc than",
+    ],
+    "cong-thuc-sau-duc-than": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau duc than",
+        "cong thuc diet sau duc than",
+        "cong thuc phong tru sau duc than",
+        "cong thuc tri sau duc than",
+        "cong thuc thuoc tru sau duc than",
+        "cong thuc thuoc diet sau duc than",
+        "cong thuc thuoc phong tru sau duc than",
+        "cong thuc thuoc tri sau duc than",
+    ],
+    "cong-thuc-sau-duc-qua": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau duc qua",
+        "cong thuc diet sau duc qua",
+        "cong thuc phong tru sau duc qua",
+        "cong thuc tri sau duc qua",
+        "cong thuc thuoc tru sau duc qua",
+        "cong thuc thuoc diet sau duc qua",
+        "cong thuc thuoc phong tru sau duc qua",
+        "cong thuc thuoc tri sau duc qua",
+    ],
+    "cong-thuc-sau-ve-bua": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sau ve bua",
+        "cong thuc diet sau ve bua",
+        "cong thuc phong tru sau ve bua",
+        "cong thuc tri sau ve bua",
+        "cong thuc thuoc tru sau ve bua",
+        "cong thuc thuoc diet sau ve bua",
+        "cong thuc thuoc phong tru sau ve bua",
+        "cong thuc thuoc tri sau ve bua",
+    ],
+    "cong-thuc-sung": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru sung",
+        "cong thuc diet sung",
+        "cong thuc phong tru sung",
+        "cong thuc tri sung",
+        "cong thuc thuoc tru sung",
+        "cong thuc thuoc diet sung",
+        "cong thuc thuoc phong tru sung",
+        "cong thuc thuoc tri sung",
+    ],
+    "cong-thuc-bo-ha": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru bo ha",
+        "cong thuc diet bo ha",
+        "cong thuc phong tru bo ha",
+        "cong thuc tri bo ha",
+        "cong thuc thuoc tru bo ha",
+        "cong thuc thuoc diet bo ha",
+        "cong thuc thuoc phong tru bo ha",
+        "cong thuc thuoc tri bo ha",
+    ],
+    "cong-thuc-nhen": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru nhen",
+        "cong thuc diet nhen",
+        "cong thuc phong tru nhen",
+        "cong thuc tri nhen",
+        "cong thuc thuoc tru nhen",
+        "cong thuc thuoc diet nhen",
+        "cong thuc thuoc phong tru nhen",
+        "cong thuc thuoc tri nhen",
+    ],
+    "cong-thuc-nhen-khang-cao": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru nhen khang cao",
+        "cong thuc diet nhen khang cao",
+        "cong thuc phong tru nhen khang cao",
+        "cong thuc tri nhen khang cao",
+        "cong thuc thuoc tru nhen khang cao",
+        "cong thuc thuoc diet nhen khang cao",
+        "cong thuc thuoc phong tru nhen khang cao",
+        "cong thuc thuoc tri nhen khang cao",
+    ],
+    "cong-thuc-oc-buu-vang": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru oc buu vang",
+        "cong thuc diet oc buu vang",
+        "cong thuc phong tru oc buu vang",
+        "cong thuc tri oc buu vang",
+        "cong thuc thuoc tru oc buu vang",
+        "cong thuc thuoc diet oc buu vang",
+        "cong thuc thuoc phong tru oc buu vang",
+        "cong thuc thuoc tri oc buu vang",
+    ],
+    "cong-thuc-oc-sen": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru oc sen",
+        "cong thuc diet oc sen",
+        "cong thuc phong tru oc sen",
+        "cong thuc tri oc sen",
+        "cong thuc thuoc tru oc sen",
+        "cong thuc thuoc diet oc sen",
+        "cong thuc thuoc phong tru oc sen",
+        "cong thuc thuoc tri oc sen",
+    ],
+    "cong-thuc-oc-ma": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru oc ma",
+        "cong thuc diet oc ma",
+        "cong thuc phong tru oc ma",
+        "cong thuc tri oc ma",
+        "cong thuc thuoc tru oc ma",
+        "cong thuc thuoc diet oc ma",
+        "cong thuc thuoc phong tru oc ma",
+        "cong thuc thuoc tri oc ma",
+    ],
+    "cong-thuc-oc-nhot": [
+        "cong thuc",
+        "cong thuc phoi tron"
+        "cong thuc tru oc nhot",
+        "cong thuc diet oc nhot",
+        "cong thuc phong tru oc nhot",
+        "cong thuc tri oc nhot",
+        "cong thuc thuoc tru oc nhot",
+        "cong thuc thuoc diet oc nhot",
+        "cong thuc thuoc phong tru oc nhot",
+        "cong thuc thuoc tri oc nhot",
+    ],
+}
+
+
 # ======================
 # 3) GENERIC EXTRACTOR (rút gọn – thay cho extract_chemicals/extract_pests/...)
 #    - Không tối ưu AC ở đây để tập trung vào "không lặp rules"
@@ -1946,28 +2278,56 @@ PRODUCT_ALIASES = {
 
 def extract_by_aliases(q: str, aliases_map: Dict[str, List[str]]) -> List[str]:
     """
+    Match alias theo cụm dài trước (longest-first) và tránh match chồng lấp.
     aliases_map: {canonical: [alias1, alias2, ...]}
-    return: [canonical...] dedup giữ thứ tự
+    return: [canonical...] dedup giữ thứ tự (theo thứ tự match được)
     """
     qn = _norm(q)
-    found: List[str] = []
 
+    # 1) Flatten + normalize alias
+    items: List[Tuple[str, str]] = []  # (alias_norm, canonical)
     for canonical, aliases in aliases_map.items():
         for a in aliases:
             a_n = _norm(a)
-            if not a_n:
+            if a_n:
+                items.append((a_n, canonical))
+
+    # 2) Sort alias theo độ dài giảm dần để match cụm dài trước
+    #    (tie-break: alias text để ổn định)
+    items.sort(key=lambda x: (-len(x[0]), x[0]))
+
+    taken_spans: List[Tuple[int, int]] = []   # các đoạn đã “chiếm” trong qn
+    picked: List[str] = []
+    picked_set = set()
+
+    def overlaps(s: int, e: int) -> bool:
+        for s2, e2 in taken_spans:
+            if not (e <= s2 or s >= e2):  # có giao nhau
+                return True
+        return False
+
+    for alias_n, canonical in items:
+        # \b... \b để match theo cụm từ (sau khi normalize còn ASCII + space)
+        pat = re.compile(rf"\b{re.escape(alias_n)}\b")
+
+        for m in pat.finditer(qn):
+            s, e = m.start(), m.end()
+            if overlaps(s, e):
                 continue
-            if re.search(rf"\b{re.escape(a_n)}\b", qn):
-                found.append(canonical)
-                break
 
-    out, seen = [], set()
-    for x in found:
-        if x not in seen:
-            out.append(x)
-            seen.add(x)
-    return out
+            # Nhận match này
+            taken_spans.append((s, e))
 
+            # Chỉ add canonical 1 lần, giữ thứ tự theo lần đầu match được
+            if canonical not in picked_set:
+                picked.append(canonical)
+                picked_set.add(canonical)
+
+            # Không break ở đây nếu bạn muốn 1 alias “chiếm” nhiều đoạn,
+            # nhưng thường 1 lần là đủ để chặn các alias ngắn hơn.
+            break
+
+    return picked
 
 def extract_all_groups(q: str, aliases_by_group: Dict[str, Dict[str, List[str]]]) -> Dict[str, List[str]]:
     """
@@ -1990,6 +2350,8 @@ ALIASES_BY_GROUP = {
     "pest": PEST_ALIASES,
     "product_group": PRODUCT_GROUP_ALIASES,
     "product": PRODUCT_ALIASES,
+    "formula": FORMULA_ALIASES,   # NEW
+    "brand": BRAND_ALIASES,   # NEW
 }
 
 GROUP_TAG_PREFIX = {
@@ -2000,6 +2362,8 @@ GROUP_TAG_PREFIX = {
     "pest": "pest",
     "product_group": "product-group",
     "product": "product",
+    "formula": "formula",         # NEW
+    "brand": "brand",         # NEW
 }
 
 # ======================
@@ -2060,13 +2424,13 @@ def apply_group_rules(q0: str, found: Dict[str, List[str]]) -> Tuple[List[str], 
         "product": {"default": "any"},
         "product_group": {"default": "any"},
         "alias": {"default": "any"},
+        "formula": {"default": "any"},
     }
 
     for group, values in found.items():
         cfg = RULES.get(group, {"default": "any"})
         prefix = GROUP_TAG_PREFIX.get(group, group)
 
-        # Case 1: rule có điều kiện if(...)
         if "if" in cfg:
             cond = bool(cfg["if"]())
             target = cfg["on_true"] if cond else cfg["on_false"]
@@ -2075,13 +2439,14 @@ def apply_group_rules(q0: str, found: Dict[str, List[str]]) -> Tuple[List[str], 
                 must.append("entity:product")
 
             for v in values:
-                (must if target == "must" else anyt).append(f"{prefix}:{v}")
+                tag = f"{prefix}:{v}"
+                (must if target == "must" else anyt).append(tag)
 
-        # Case 2: default
         else:
             target = cfg.get("default", "any")
             for v in values:
-                (must if target == "must" else anyt).append(f"{prefix}:{v}")
+                tag = f"{prefix}:{v}"
+                (must if target == "must" else anyt).append(tag)
 
     return _dedup(must), _dedup(anyt)
 
@@ -2184,6 +2549,8 @@ def enforce_backbone_without_entity(must, anyt):
 
     # Thứ tự ưu tiên "xương sống"
     priority_prefixes = (
+        "formula:",
+        "brand:",
         "pest:",
         "disease:",
         "weed:",
@@ -2230,6 +2597,21 @@ def relax_must_same_group(must, anyt, prefixes=("pest:", "disease:", "weed:", "c
 
     return new_must, anyt
 
+def reorder_any_by_priority(anyt: List[str], priority_prefixes=("formula:", "brand:")) -> List[str]:
+    """
+    Đưa các tag có prefix ưu tiên lên đầu (giữ thứ tự tương đối).
+    Mặc định: formula:* trước, rồi brand:*, rồi các tag khác.
+    """
+    hi = []
+    lo = []
+    for t in anyt:
+        if any(str(t).startswith(p) for p in priority_prefixes):
+            hi.append(t)
+        else:
+            lo.append(t)
+    return hi + lo
+
+
 def infer_filters_from_query(q: str):
     q0 = _norm(q)
 
@@ -2250,15 +2632,22 @@ def infer_filters_from_query(q: str):
         f"ENTITY TYPE : {et}",
         f"ENTITY SCORE: {_score}"
     )
+
     def strip_entity(tags):
         return [t for t in tags if not str(t).startswith("entity:")]
 
     must = strip_entity(must)
     anyt = strip_entity(anyt)
 
-    # DỨT ĐIỂM: không dùng MUST -> gom hết sang ANY
-    anyt = must + anyt
-    must = []
+    # giữ brand:* trong MUST, còn lại gom sang ANY (giữ như code bạn)
+    brand_must = [t for t in must if str(t).startswith("brand:")]
+    other_must = [t for t in must if not str(t).startswith("brand:")]
+
+    anyt = other_must + anyt
+    must = brand_must
+
+    # (NEW) Ưu tiên formula trước mọi thứ trong ANY (và brand nếu bạn muốn)
+    anyt = reorder_any_by_priority(anyt, priority_prefixes=("formula:", "brand:"))
 
     # dedupe giữ thứ tự
     seen = set()
@@ -2273,4 +2662,5 @@ def infer_filters_from_query(q: str):
         f"FINAL ANY  : {anyt2}"
     )
     return must, anyt2
+
 

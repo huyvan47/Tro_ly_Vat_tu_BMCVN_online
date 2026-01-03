@@ -11,7 +11,7 @@ import json
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-tags-v2-chuan.csv"
-OUT_FILE = "data-kd-1-4-tags-v2-chuan.npz"
+OUT_FILE = "01012026-data-kd-1-4-chuan-fix-brand.npz"
 
 client = OpenAI(api_key="...")
 

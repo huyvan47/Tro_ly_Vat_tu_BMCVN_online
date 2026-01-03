@@ -14,54 +14,57 @@ def call_finetune_with_context(client, user_query, context, answer_mode: str = "
     YÊU CẦU TRÌNH BÀY:
     - Không tối ưu cho ngắn gọn.
     - Ưu tiên tính đúng, đầy đủ, nhất quán.
+    - Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
+    - Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
     """.strip()
 
     if answer_mode == "disease":
         mode_requirements = """
-- Cấu trúc ưu tiên:
-  (1) Tổng quan
-  (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong NGỮ CẢNH; SOFT có thể bổ sung kiến thức chung)
-  (3) Triệu chứng (chỉ khi có)
-  (4) Hậu quả (chỉ khi có)
-  (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong NGỮ CẢNH)
-- Không tạo mục nếu NGỮ CẢNH không có dữ liệu cho mục đó.
-- Không bịa thuốc/liều/TGCL.
-""".strip()
+    - Cấu trúc ưu tiên:
+    (1) Tổng quan
+    (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong NGỮ CẢNH; SOFT có thể bổ sung kiến thức chung)
+    (3) Triệu chứng (chỉ khi có)
+    (4) Hậu quả (chỉ khi có)
+    (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong NGỮ CẢNH)
+    - Không tạo mục nếu NGỮ CẢNH không có dữ liệu cho mục đó.
+    - Không bịa thuốc/liều/TGCL.
+    - Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
+    - Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
+    """.strip()
     elif answer_mode == "product":
         mode_requirements = """
-- Trình bày chi tiết, không trả lời quá ngắn gọn.
-- Cố gắn trình bày đầy đủ thông tin sản phẩm, lưu ý, công thức từ các DOC được đề xuất (mục tiêu từ 3 - 5  sản phẩm nếu có).
-- Làm rõ đặc tính sản phẩm, cơ chế (nếu NGỮ CẢNH có), phạm vi tác động.
-- CHỈ sử dụng dữ liệu trong NGỮ CẢNH, không được tự bịa thêm liều lượng, cách pha, thời gian cách ly.
-""".strip()
+    - Trình bày chi tiết, không trả lời quá ngắn gọn.
+    - Cố gắn trình bày đầy đủ thông tin sản phẩm, lưu ý, công thức từ các DOC được đề xuất. 
+    - Chỉ đề xuất các sản phẩm liên quan, không đề xuất các sản phẩm không có tác dụng đối với nhu cầu trừ cỏ, sâu, bệnh mà người dùng đang quan tâm.
+    - Làm rõ đặc tính sản phẩm, cơ chế (nếu NGỮ CẢNH có), phạm vi tác động.
+    - CHỈ sử dụng dữ liệu trong NGỮ CẢNH, không được tự bịa thêm liều lượng, cách pha, thời gian cách ly.
+    """.strip()
     elif answer_mode == "procedure":
         mode_requirements = """
-- Trình bày theo checklist từng bước.
-- Mỗi bước: (Việc cần làm) + (Mục đích) nếu NGỮ CẢNH có.
-- Không tự phát minh quy trình mới ngoài NGỮ CẢNH (STRICT).
-- Nếu thiếu bước quan trọng, chỉ được bổ sung dưới dạng "Kiến thức chung" (SOFT) và không kèm số liệu định lượng.
-""".strip()
+    - Trình bày theo checklist từng bước.
+    - Mỗi bước: (Việc cần làm) + (Mục đích) nếu NGỮ CẢNH có.
+    - Không tự phát minh quy trình mới ngoài NGỮ CẢNH (STRICT).
+    - Nếu thiếu bước quan trọng, chỉ được bổ sung dưới dạng "Kiến thức chung" (SOFT) và không kèm số liệu định lượng.
+    """.strip()
     elif answer_mode == "listing":
         mode_requirements = """
-- Mục tiêu: tổng hợp đầy đủ các mục xuất hiện trong NGỮ CẢNH, không bỏ sót.
-- Trình bày theo nhóm nếu có thể (theo chủ đề/tags/đối tượng).
-- Không bịa thêm ngoài NGỮ CẢNH.
-""".strip()
+    - Mục tiêu: tổng hợp đầy đủ các mục xuất hiện trong NGỮ CẢNH, không bỏ sót.
+    - Trình bày theo nhóm nếu có thể (theo chủ đề/tags/đối tượng).
+    - Không bịa thêm ngoài NGỮ CẢNH.
+    """.strip()
     else:
         mode_requirements = """
-- Trình bày có cấu trúc theo ý chính.
-- Ưu tiên tổng hợp từ nhiều đoạn NGỮ CẢNH.
-- Không bịa số liệu/liều lượng nếu NGỮ CẢNH không có.
-- Nếu câu hỏi liên quan thủy sinh (cá/tôm/vật nuôi...), mà NGỮ CẢNH không đề cập: phải nhấn mạnh "Tài liệu không đề cập".
-""".strip()
+    - Trình bày có cấu trúc theo ý chính.
+    - Ưu tiên tổng hợp từ nhiều đoạn NGỮ CẢNH.
+    - Không bịa số liệu/liều lượng nếu NGỮ CẢNH không có.
+    - Nếu câu hỏi liên quan thủy sinh (cá/tôm/vật nuôi...), mà NGỮ CẢNH không đề cập: phải nhấn mạnh "Tài liệu không đề cập".
+    """.strip()
 
     # RAG STRICT vs SOFT
     if rag_mode == "SOFT":
         system_prompt = ( BASE_REASONING_PROMPT + "\nSOFT MODE: được phép bổ sung 'kiến thức chung' để giải thích mạch lạc, nhưng không đưa số liệu/liều/TGCL nếu NGỮ CẢNH không có.")
     else:
         system_prompt = (BASE_REASONING_PROMPT + "\nSTRICT MODE: chỉ dùng NGỮ CẢNH. Không thêm kiến thức ngoài, trừ diễn giải lại cho dễ hiểu.")
-
-
 
     user_prompt = f"""
     NGỮ CẢNH (chỉ được dùng các dữ kiện định lượng từ đây):
