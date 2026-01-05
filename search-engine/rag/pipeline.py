@@ -111,8 +111,16 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     top_k=top_k,
     must_tags=must_tags,
     any_tags=any_tags,
-    
 )
+    
+    print("[DEBUG] after search: len(results)=", len(hits))
+    if hits:
+        print("[DEBUG] first id=", hits[0].get("id"), "score=", hits[0].get("score"))
+
+    # Nếu có bước lọc/rerank sau đó, log tiếp ngay sau mỗi bước:
+    # results = ...
+    print("[DEBUG] after post-filter: len(results)=", len(hits))
+
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -126,9 +134,14 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 4) Filter by MIN_SCORE_MAIN
     for h in hits:
         h["fused_score"] = fused_score(h)
-    # sort hits by fused_score desc to make profile stable
     hits = sorted(hits, key=lambda x: x["fused_score"], reverse=True)
+
     filtered_for_main = [h for h in hits if h["fused_score"] >= policy.min_score_main]
+
+    # NEW: fallback nếu threshold lọc sạch (đặc biệt listing/brand)
+    if not filtered_for_main:
+        fallback_n = min(len(hits), 10 if is_list else 5)
+        filtered_for_main = hits[:fallback_n]
 
     # 5) Decide strategy (DIRECT_DOC / RAG_STRICT / RAG_SOFT)
     has_main = len(filtered_for_main) > 0
@@ -145,6 +158,17 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     context_candidates = [h for h in filtered_for_main if h.get("include_in_context", False)]
     if not context_candidates:
         context_candidates = filtered_for_main
+
+    # NEW: guard cuối
+    if not context_candidates:
+        return {
+            "text": "Không tìm thấy ngữ cảnh phù hợp theo tiêu chí hiện tại.",
+            "img_keys": [],
+            "route": "RAG",
+            "norm_query": norm_query,
+            "strategy": "EMPTY_CONTEXT",
+            "profile": analyze_hits_fused(hits),
+        }
 
     # 7) Pick primary_doc (prefer code match)
     code_candidates = extract_codes_from_query(norm_query)

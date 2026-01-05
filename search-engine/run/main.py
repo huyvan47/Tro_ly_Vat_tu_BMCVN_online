@@ -1,5 +1,4 @@
 from openai import OpenAI
-
 from rag.config import RAGConfig
 from rag.kb_loader import load_npz
 from rag.logger_csv import append_log_to_csv
@@ -7,6 +6,7 @@ from rag.pipeline import answer_with_suggestions
 from policies.v7_policy import PolicyV7 as policy
 from pathlib import Path
 from rag.debug_log import debug_log
+import traceback
 
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
@@ -76,85 +76,85 @@ def main():
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kd-1-4-tags-v2-chuan.npz")
+    kb = load_npz("data-kd-1-4-chuan.npz")
 
     cfg = RAGConfig()
 
-    q = input("Query: ").strip()
+    # q = input("Query: ").strip()
       
-    res = answer_with_suggestions(
-        user_query=q,
-        kb=kb,
-        client=client,
-        cfg=cfg,
-        policy=policy,
-    )
+    # res = answer_with_suggestions(
+    #     user_query=q,
+    #     kb=kb,
+    #     client=client,
+    #     cfg=cfg,
+    #     policy=policy,
+    # )
 
-    # 5) log CSV
-    csv_path = "rag_logs.csv"
-    append_log_to_csv(
-        csv_path=csv_path,
-        user_query=q,
-        norm_query=res.get("norm_query", ""),
-        strategy=res.get("strategy", ""),
-        prof=res.get("profile", {}) or {},
-        res=res,
-        route=res.get("route", "RAG"),
-        # bạn có thể thêm policy_version nếu có
-    )
+    # # 5) log CSV
+    # csv_path = "rag_logs.csv"
+    # append_log_to_csv(
+    #     csv_path=csv_path,
+    #     user_query=q,
+    #     norm_query=res.get("norm_query", ""),
+    #     strategy=res.get("strategy", ""),
+    #     prof=res.get("profile", {}) or {},
+    #     res=res,
+    #     route=res.get("route", "RAG"),
+    #     # bạn có thể thêm policy_version nếu có
+    # )
 
-    # 6) in kết quả
-    print("\n===== KẾT QUẢ =====\n")
-    print(res["text"])
-    print("\nIMG_KEY:")
-    print(res["img_keys"])
-    print("\nSaved log to:", csv_path)
+    # # 6) in kết quả
+    # print("\n===== KẾT QUẢ =====\n")
+    # print(res["text"])
+    # print("\nIMG_KEY:")
+    # print(res["img_keys"])
+    # print("\nSaved log to:", csv_path)
 
-    # while True:
-    #     try:
-    #         q = input("Query: ").strip()
-    #         if not q:
-    #             break
-    #     except EOFError:
-    #         print("EOF (stdin closed).")
-    #         break
-    #     except KeyboardInterrupt:
-    #         print("KeyboardInterrupt.")
-    #         break
+    while True:
+        try:
+            q = input("Query: ").strip()
+            if not q:
+                break
+        except EOFError:
+            print("EOF (stdin closed).")
+            break
+        except KeyboardInterrupt:
+            print("KeyboardInterrupt.")
+            break
 
-    #     try:            
-    #         res = answer_with_suggestions(
-    #             user_query=q,
-    #             kb=kb,
-    #             client=client,
-    #             cfg=cfg,
-    #             policy=policy,
-    #         )
+        try:            
+            res = answer_with_suggestions(
+                user_query=q,
+                kb=kb,
+                client=client,
+                cfg=cfg,
+                policy=policy,
+            )
 
-    #         # 5) log CSV
-    #         csv_path = "rag_logs.csv"
-    #         append_log_to_csv(
-    #             csv_path=csv_path,
-    #             user_query=q,
-    #             norm_query=res.get("norm_query", ""),
-    #             strategy=res.get("strategy", ""),
-    #             prof=res.get("profile", {}) or {},
-    #             res=res,
-    #             route=res.get("route", "RAG"),
-    #             # bạn có thể thêm policy_version nếu có
-    #         )
+            # 5) log CSV
+            csv_path = "rag_logs.csv"
+            append_log_to_csv(
+                csv_path=csv_path,
+                user_query=q,
+                norm_query=res.get("norm_query", ""),
+                strategy=res.get("strategy", ""),
+                prof=res.get("profile", {}) or {},
+                res=res,
+                route=res.get("route", "RAG"),
+                # bạn có thể thêm policy_version nếu có
+            )
 
-    #         # 6) in kết quả
-    #         print("\n===== KẾT QUẢ =====\n")
-    #         print(res["text"])
-    #         print("\nIMG_KEY:")
-    #         print(res["img_keys"])
-    #         print("\nSaved log to:", csv_path)
+            # 6) in kết quả
+            print("\n===== KẾT QUẢ =====\n")
+            print(res["text"])
+            print("\nIMG_KEY:")
+            print(res["img_keys"])
+            print("\nSaved log to:", csv_path)
 
-    #     except Exception:
-    #         print("Unhandled exception in loop:")
-    #         traceback.print_exc()
-    #         continue
+        except Exception as e:
+            print("Unhandled exception in loop: ", e)
+            traceback.print_exc()
+            continue
 
 if __name__ == "__main__":
     # # Test nhiều câu hỏi

@@ -49,13 +49,11 @@ def _parse_tags_any_format(x):
 
 
 def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=None):
-    """
-    must_tags: list[str] -> AND condition (must include all)
-    any_tags : list[str] -> OR condition (must include at least one)
-    If TAGS_V2 is missing in KB, filtering is skipped (backward compatible).
-    """
     must_tags = list(must_tags or [])
-    any_tags = list(any_tags or [])
+    any_tags  = list(any_tags or [])
+
+    # NEW: filter gốc của query
+    base_has_filter = bool(must_tags or any_tags)
 
     # Backward compatibility:
     # old: (EMBS, QUESTIONS, ANSWERS, ALT_QUESTIONS, CATEGORY, TAGS, IDS)
@@ -107,76 +105,35 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
 
     def pick_indices(must_local, any_local, stage_name: str):
         picked_local = []
-
-        # Nếu không có tag filter, đừng bonus để tránh "cộng bừa"
         has_tag_filter = bool(must_local or any_local)
 
-        # Nếu KB nhỏ thì cứ xét all; nếu KB lớn, vẫn có thể dùng WINDOW nhưng nên lớn hơn nhiều
-        # Khuyến nghị: ưu tiên xét ALL các doc ok=True (lọc theo tag) thay vì cắt theo sim trước.
-        # Ta sẽ:
-        # 1) duyệt all idx_sorted nhưng chỉ collect doc ok=True (và stop sớm khi đủ "pool")
-        # 2) rank pool theo (ok, matches, sim)
-        #
-        # pool_size nên lớn hơn top_k nhiều để ổn định.
-        pool_size = max(top_k * 200, 3000)  # tăng mạnh so với 40 để tag-match có cửa
+        pool_size = max(top_k * 200, 3000)
 
         scored = []
         inspected = 0
         collected_ok = 0
 
-        # Duyệt theo sim giảm dần để lấy pool các doc "ok"
         for j in idx_sorted:
             j = int(j)
             ok, reason, tagset, bonus_ok, num_matches = explain_doc_tags(j, must_local, any_local)
             sim = float(sims[j])
 
-            if debug and inspected < debug_limit:
-                qtxt = str(QUESTIONS[j]) if QUESTIONS is not None else ""
-                et   = str(ENTITY_TYPE[j]) if ENTITY_TYPE is not None else ""
-                tv2  = str(TAGS_V2[j]) if TAGS_V2 is not None else ""
-
-                # Key dùng để sort (ưu tiên match, rồi sim)
-                # - Nếu có tag filter: ưu tiên num_matches
-                # - Nếu không có tag filter: num_matches=0 cho tất cả
-                key = (
-                    1 if ok else 0,
-                    int(num_matches) if has_tag_filter else 0,
-                    sim
-                )
-
-                # print(
-                #     f"[{stage_name}] cand#{inspected:03d} idx={j} "
-                #     f"sim={sim:.4f} ok={ok} matches={int(num_matches)} key={key}"
-                # )
-                # print("  entity_type:", et)
-                # print("  question   :", qtxt[:120])
-                # print("  tags_v2_raw:", tv2[:200])
-                # if tagset:
-                #     ts = sorted(tagset)
-                #     print("  tagset     :", ts[:40], ("...(+%d)" % (len(ts)-40) if len(ts) > 40 else ""))
-                # print("  reason     :", reason)
-                # print("-" * 60)
-
             inspected += 1
 
             if ok:
-                # Lưu (key, idx) để sort lại
-                key = (
-                    1,
-                    int(num_matches) if has_tag_filter else 0,
-                    sim
-                )
+                # NEW: nếu query có filter thì cấm doc matches=0
+                if base_has_filter and int(num_matches) <= 0:
+                    continue
+
+                key = (1, int(num_matches), sim)
                 scored.append((key, j, sim, int(num_matches), reason, tagset))
                 collected_ok += 1
 
-                # đủ pool thì dừng (để tiết kiệm)
                 if collected_ok >= pool_size:
                     break
 
-        # Sort: match trước, rồi sim
         scored.sort(key=lambda x: x[0], reverse=True)
 
-        # Lấy top_k
         for key, j, sim, nm, reason, tagset in scored:
             picked_local.append(int(j))
             if len(picked_local) >= top_k:
@@ -184,19 +141,17 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
 
         if debug:
             debug_log(f"=== PICKED {len(picked_local)}/{top_k} in stage {stage_name} ===")
-
             for r, idx in enumerate(picked_local[:min(len(picked_local), 30)], 1):
                 tv2 = str(TAGS_V2[idx]) if TAGS_V2 is not None else ""
-                ok, reason, tagset, bonus_ok, num_matches = explain_doc_tags(
-                    idx, must_local, any_local
-                )
+
+                # NEW: in matches theo filter gốc của query để log không gây hiểu nhầm
+                ok0, reason0, tagset0, bonus_ok0, num_matches0 = explain_doc_tags(idx, must_tags, any_tags)
 
                 debug_log(
-                    f"  #{r:02d} idx={idx} sim={float(sims[idx]):.4f} matches={int(num_matches)} id={IDS[idx] if IDS is not None else ''}",
+                    f"  #{r:02d} idx={idx} sim={float(sims[idx]):.4f} matches={int(num_matches0)} id={IDS[idx] if IDS is not None else ''}",
                     f"      Q: {str(QUESTIONS[idx])[:140] if QUESTIONS is not None else ''}",
                     f"      tags_v2: {tv2[:200]}"
                 )
-
             debug_log("")
 
         return picked_local
