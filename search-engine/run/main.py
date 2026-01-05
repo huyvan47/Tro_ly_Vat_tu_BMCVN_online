@@ -53,7 +53,7 @@ def run_batch_questions():
             kb=kb,
             client=client,
             cfg=cfg,
-            policy=policy,
+            retrieval_policy=policy,
         )
 
         append_log_to_csv(
@@ -123,7 +123,7 @@ def main():
                 kb=kb,
                 client=client,
                 cfg=cfg,
-                policy=policy,
+                retrieval_policy=policy,
             )
             # 5) log CSV
             csv_path = "rag_logs.csv"
@@ -141,8 +141,8 @@ def main():
             print("\n===== KẾT QUẢ =====\n")
             print(res["text"])
             print("\nSaved log to:", csv_path)
-        except Exception:
-            print("Unhandled exception in loop:")
+        except Exception as e:
+            print("Unhandled exception in loop: ", e)
             continue
 
 if __name__ == "__main__":

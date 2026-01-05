@@ -13,6 +13,7 @@ from rag.verbatim import verbatim_export
 from rag.tag_filter import infer_filters_from_query
 from rag.logger import get_logger, new_trace_id
 from typing import List, Tuple
+from rag.multi_query import build_query_variants, retrieve_multi_query
 import re
 
 
@@ -82,7 +83,7 @@ def choose_top_k(
 
     return top_k
 
-def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
+def answer_with_suggestions(*, user_query, kb, client, cfg, retrieval_policy):
     # 0) Route GLOBAL / RAG
     route = route_query(client, user_query)
     if route == "GLOBAL":
@@ -141,6 +142,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
     print("ANY TAGS   :", any_tags)
+
     hits = retrieve_search(
     client=client,
     kb=kb,
@@ -148,8 +150,8 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     top_k=top_k,
     must_tags=must_tags,
     any_tags=any_tags,
-    
 )
+    
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -165,7 +167,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         h["fused_score"] = fused_score(h)
     # sort hits by fused_score desc to make profile stable
     hits = sorted(hits, key=lambda x: x["fused_score"], reverse=True)
-    filtered_for_main = [h for h in hits if h["fused_score"] >= policy.min_score_main]
+    filtered_for_main = [h for h in hits if h["fused_score"] >= retrieval_policy.min_score_main]
 
     # 5) Decide strategy (DIRECT_DOC / RAG_STRICT / RAG_SOFT)
     has_main = len(filtered_for_main) > 0
@@ -174,7 +176,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         norm_query=norm_query,
         prof=prof,
         has_main=has_main,
-        policy=policy,
+        policy=retrieval_policy,
         code_boost_direct=cfg.code_boost_direct,
     )
 
