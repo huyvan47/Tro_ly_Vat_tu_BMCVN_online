@@ -46,8 +46,7 @@ KW_REGISTRY = [
     "tổ chức", "tổ chức đăng ký", "chủ sở hữu", "số đăng ký"
 ]
 KW_DISEASE = [
-    "bệnh", "triệu chứng", "dấu hiệu", "xì mủ", "thối rễ", "cháy lá",
-    "thán thư", "ghẻ", "nứt thân", "đốm lá", "thối trái", "tảo đỏ", "rong rêu"
+    "bệnh", "triệu chứng", "dấu hiệu", "xì mủ", "thối rễ", "cháy lá", "nhóm a", "nhóm b", "nhóm o", "thán thư", "ghẻ", "nứt thân", "đốm lá", "thối trái", "tảo đỏ", "rong rêu"
 ]
 KW_PRODUCT = [
     "thuốc", "đặc trị", "tác dụng", "hoạt chất", "thành phần", "công dụng",

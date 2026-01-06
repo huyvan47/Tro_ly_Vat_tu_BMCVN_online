@@ -1,3 +1,5 @@
+import hashlib
+
 def call_finetune_with_context(client, user_query, context, answer_mode: str = "general", rag_mode: str = "STRICT"):
     print('answer_mode:', answer_mode)
     # Mode requirements (giữ nguyên tinh thần code v4 của anh)
@@ -18,19 +20,22 @@ def call_finetune_with_context(client, user_query, context, answer_mode: str = "
 
     if answer_mode == "disease":
         mode_requirements = """
-- Cấu trúc ưu tiên:
-  (1) Tổng quan
-  (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong NGỮ CẢNH; SOFT có thể bổ sung kiến thức chung)
-  (3) Triệu chứng (chỉ khi có)
-  (4) Hậu quả (chỉ khi có)
-  (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong NGỮ CẢNH)
-- Không tạo mục nếu NGỮ CẢNH không có dữ liệu cho mục đó.
-- Không bịa thuốc/liều/TGCL.
-""".strip()
+    - Cấu trúc ưu tiên:
+    (1) Tổng quan
+    (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong NGỮ CẢNH; SOFT có thể bổ sung kiến thức chung)
+    (3) Triệu chứng (chỉ khi có)
+    (4) Hậu quả (chỉ khi có)
+    (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong NGỮ CẢNH)
+    - Không tạo mục nếu NGỮ CẢNH không có dữ liệu cho mục đó.
+    - Không bịa thuốc/liều/TGCL.
+    - Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
+    - Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
+    """.strip()
     elif answer_mode == "product":
         mode_requirements = """
 - Trình bày chi tiết, không trả lời quá ngắn gọn.
-- Cố gắn trình bày đầy đủ thông tin sản phẩm, lưu ý, công thức từ các DOC được đề xuất (mục tiêu từ 3 - 5  sản phẩm nếu có).
+- Cố gắng trình bày đầy đủ thông tin sản phẩm, lưu ý, công thức từ các DOC được đề xuất (mục tiêu từ 3 - 5  sản phẩm nếu có).
+- Chỉ đề xuất các sản phẩm liên quan, không đề xuất các sản phẩm không có tác dụng đối với nhu cầu trừ cỏ, sâu, bệnh mà người dùng đang quan tâm.
 - Làm rõ đặc tính sản phẩm, cơ chế (nếu NGỮ CẢNH có), phạm vi tác động.
 - CHỈ sử dụng dữ liệu trong NGỮ CẢNH, không được tự bịa thêm liều lượng, cách pha, thời gian cách ly.
 """.strip()

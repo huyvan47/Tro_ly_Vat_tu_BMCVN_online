@@ -1,3 +1,4 @@
+import re
 import json
 import numpy as np
 from rag.config import RAGConfig
@@ -14,39 +15,54 @@ def embed_query(client, text: str):
     v = v / (np.linalg.norm(v) + 1e-8)
     return v
 
-
-def _parse_tags_any_format(x):
+def parse_doc_tags(doc):
     """
-    Accept tags stored as:
-    - None
-    - "a|b|c"
-    - '["a","b"]' (JSON array string)
-    - python list/np array
-    Return: set(str)
+    Normalize tags from document into a SET[str].
+
+    Supported formats:
+    - doc["tags_v2"] as list[str]
+    - doc["tags_v2"] as comma-separated string
+    - doc["tags_v2"] as dict (keys are tags)
+    - fallback: try doc["tags"]
+
+    Output:
+    - set of lowercase tag strings
     """
-    if x is None:
-        return set()
 
-    if isinstance(x, (list, tuple, set)):
-        return set(str(t).strip() for t in x if str(t).strip())
+    tags = set()
 
-    s = str(x).strip()
-    if not s or s.lower() in {"nan", "none"}:
-        return set()
+    if not doc:
+        return tags
 
-    if s.startswith("[") and s.endswith("]"):
-        try:
-            arr = json.loads(s)
-            if isinstance(arr, list):
-                return set(str(t).strip() for t in arr if str(t).strip())
-        except Exception:
-            pass
+    raw = None
 
-    if "|" in s:
-        return set(p.strip() for p in s.split("|") if p.strip())
+    if isinstance(doc, dict):
+        if "tags_v2" in doc:
+            raw = doc.get("tags_v2")
+        elif "tags" in doc:
+            raw = doc.get("tags")
 
-    return {s}
+    # Case 1: list of tags
+    if isinstance(raw, list):
+        for t in raw:
+            if isinstance(t, str):
+                tags.add(t.strip().lower())
 
+    # Case 2: dict of tags
+    elif isinstance(raw, dict):
+        for k in raw.keys():
+            if isinstance(k, str):
+                tags.add(k.strip().lower())
+
+    # Case 3: string "a|b|c" or "a,b,c"
+    elif isinstance(raw, str):
+        s = raw.replace("|", ",")
+        for part in s.split(","):
+            t = part.strip().lower()
+            if t:
+                tags.add(t)
+
+    return tags
 
 def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=None):
     must_tags = list(must_tags or [])
@@ -74,87 +90,135 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
     idx_sorted = np.argsort(-sims)
 
     debug = True
-    debug_limit = 120  # tăng nếu top_k lớn
 
-    def explain_doc_tags(i: int, must_local, any_local):
-        if TAGS_V2 is None:
-            # không filter => không bonus
-            return True, "PASS: TAGS_V2 is None -> skip filtering", set(), False, 0
+    def _parse_tags_any_format(x):
+        if x is None:
+            return set()
 
-        tagset = _parse_tags_any_format(TAGS_V2[i])
+        if isinstance(x, (list, tuple, set)):
+            return {str(t).strip().lower() for t in x if str(t).strip()}
 
-        # Không có must/any => full recall => PASS nhưng KHÔNG bonus
-        if not must_local and not any_local:
-            return True, "PASS: no must/any provided", tagset, False, 0
+        s = str(x).strip()
+        if not s or s.lower() in {"nan", "none"}:
+            return set()
 
-        # must
-        missing_must = [t for t in must_local if t not in tagset]
+        # unwrap if the whole cell is quoted
+        if len(s) >= 2 and ((s[0] == s[-1] == '"') or (s[0] == s[-1] == "'")):
+            s = s[1:-1].strip()
+
+        # JSON-like list
+        if s.startswith("[") and s.endswith("]"):
+            s_json = s.replace('""', '"')
+            try:
+                arr = json.loads(s_json)
+                if isinstance(arr, list):
+                    return {str(t).strip().lower() for t in arr if str(t).strip()}
+            except Exception:
+                pass
+
+            tokens = re.findall(r'["\']([^"\']+)["\']', s)
+            if tokens:
+                return {t.strip().lower() for t in tokens if t.strip()}
+
+            inner = s[1:-1].strip()
+            if inner:
+                parts = [p.strip().strip('"').strip("'").lower() for p in inner.split(",")]
+                return {p for p in parts if p}
+
+            return set()
+
+        # pipe
+        if "|" in s:
+            return {p.strip().lower() for p in s.split("|") if p.strip()}
+
+        # comma
+        if "," in s:
+            parts = [p.strip().strip('"').strip("'").lower() for p in s.split(",")]
+            return {p for p in parts if p}
+
+        return {s.lower()}
+
+
+    def explain_doc_tags(doc_tags, must_tags, any_tags):
+        # No filters => PASS, no bonus notion here (bonus handled by compute_tag_score)
+        if not must_tags and not any_tags:
+            return True, "PASS: no must/any provided"
+
+        missing_must = [t for t in must_tags if t not in doc_tags]
         if missing_must:
-            return False, f"FAIL: missing must_tags={missing_must}", tagset, False, 0
+            return False, f"FAIL: missing must_tags={missing_must}"
 
-        # any
-        if any_local:
-            hit_any = [t for t in any_local if t in tagset]
+        if any_tags:
+            hit_any = [t for t in any_tags if t in doc_tags]
             if not hit_any:
-                return False, f"FAIL: none of any_tags matched (need one of {any_local})", tagset, False, 0
-            # pass do match any => được bonus
-            return True, f"PASS: matched any_tags={hit_any}", tagset, True, len(hit_any)
+                return False, f"FAIL: none of any_tags matched (need one of {any_tags})"
+            return True, f"PASS: matched any_tags={hit_any}"
 
-        # pass do match must => được bonus
-        return True, "PASS: matched all must_tags", tagset, True, len(must_local)
+        return True, "PASS: matched all must_tags"
 
-    def pick_indices(must_local, any_local, stage_name: str):
-        picked_local = []
-        has_tag_filter = bool(must_local or any_local)
 
-        pool_size = max(top_k * 200, 3000)
+    def compute_tag_score(doc_tags, must_tags, any_tags):
+        score = 0
+        for t in must_tags:
+            if t in doc_tags:
+                score += 3
+        for t in any_tags:
+            if t in doc_tags:
+                score += 1
+        return score
 
+    def log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2):
+        debug_log("=== PICKED {} in stage {} ===".format(len(picked_rows), stage_name))
+
+        for rank, row in enumerate(picked_rows, 1):
+            _, i, sim, tag_score, reason = row
+
+            did = str(IDS[i]) if IDS is not None else ""
+            q = str(QUESTIONS[i]) if QUESTIONS is not None else ""
+            tags = str(TAGS_V2[i]) if TAGS_V2 is not None else ""
+
+            debug_log(
+                "#{:02d} idx={} sim={:.4f} tag_score={} id={}".format(
+                    rank, i, float(sim), int(tag_score), did
+                ),
+                "    Q: " + q,
+                "    reason: " + str(reason),
+                "    tags_v2: " + tags,
+            )
+
+
+    def pick_indices(stage_name, must_local, any_local, top_k):
         scored = []
-        inspected = 0
-        collected_ok = 0
 
-        for j in idx_sorted:
-            j = int(j)
-            ok, reason, tagset, bonus_ok, num_matches = explain_doc_tags(j, must_local, any_local)
-            sim = float(sims[j])
+        for idx in idx_sorted:
+            i = int(idx)  # ensure python int index
 
-            inspected += 1
+            sim = float(sims[i])
 
-            if ok:
-                # NEW: nếu query có filter thì cấm doc matches=0
-                if base_has_filter and int(num_matches) <= 0:
-                    continue
+            if TAGS_V2 is None:
+                doc_tags = set()
+            else:
+                doc_tags = _parse_tags_any_format(TAGS_V2[i])
 
-                key = (1, int(num_matches), sim)
-                scored.append((key, j, sim, int(num_matches), reason, tagset))
-                collected_ok += 1
+            if stage_name == "FALLBACK1_DROP_ANY":
+                ok, reason = explain_doc_tags(doc_tags, must_local, [])
+                # ranking still uses original any_tags to reward relevant docs
+                tag_score = compute_tag_score(doc_tags, must_local, any_tags)
+            else:
+                ok, reason = explain_doc_tags(doc_tags, must_local, any_local)
+                tag_score = compute_tag_score(doc_tags, must_local, any_local)
 
-                if collected_ok >= pool_size:
-                    break
+            key = (1 if ok else 0, int(tag_score), sim)
+            scored.append((key, i, sim, int(tag_score), reason))
 
         scored.sort(key=lambda x: x[0], reverse=True)
-
-        for key, j, sim, nm, reason, tagset in scored:
-            picked_local.append(int(j))
-            if len(picked_local) >= top_k:
-                break
+        picked_rows = scored[:top_k]
 
         if debug:
-            debug_log(f"=== PICKED {len(picked_local)}/{top_k} in stage {stage_name} ===")
-            for r, idx in enumerate(picked_local[:min(len(picked_local), 30)], 1):
-                tv2 = str(TAGS_V2[idx]) if TAGS_V2 is not None else ""
+            log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2)
 
-                # NEW: in matches theo filter gốc của query để log không gây hiểu nhầm
-                ok0, reason0, tagset0, bonus_ok0, num_matches0 = explain_doc_tags(idx, must_tags, any_tags)
+        return [i for _, i, _, _, _ in picked_rows]
 
-                debug_log(
-                    f"  #{r:02d} idx={idx} sim={float(sims[idx]):.4f} matches={int(num_matches0)} id={IDS[idx] if IDS is not None else ''}",
-                    f"      Q: {str(QUESTIONS[idx])[:140] if QUESTIONS is not None else ''}",
-                    f"      tags_v2: {tv2[:200]}"
-                )
-            debug_log("")
-
-        return picked_local
 
     def merge_fill(primary, secondary, top_k):
         seen = set(primary)
@@ -168,23 +232,26 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
                 break
         return out
 
-    picked_strict = pick_indices(must_tags, any_tags, "STRICT")
-    picked = picked_strict
-    final_stage = "STRICT"
 
-    final_stage = None
     # --- Strict first ---
-    picked = pick_indices(must_tags, any_tags, "STRICT")
+    picked = pick_indices("STRICT", must_tags, any_tags, top_k)
     final_stage = "STRICT"
-    if len(picked) < top_k and any_tags:
-        picked_fb1 = pick_indices(must_tags, [], "FALLBACK1_DROP_ANY")
-        picked = merge_fill(picked, picked_fb1, top_k)
-        final_stage = "STRICT+FALLBACK1"
 
-    if len(picked) < top_k and must_tags:
-        picked_fb2 = pick_indices([], [], "FALLBACK2_DROP_MUST_FULL_RECALL")
+    # Fallback 1: drop any (do not fail on any)
+    if len(picked) < top_k and any_tags:
+        picked_fb1 = pick_indices("FALLBACK1_DROP_ANY", must_tags, [], top_k)
+        before = len(picked)
+        picked = merge_fill(picked, picked_fb1, top_k)
+        if len(picked) > before:
+            final_stage = "STRICT+FALLBACK1"
+
+    # Fallback 2: full recall by sim
+    if len(picked) < top_k:
+        picked_fb2 = pick_indices("FALLBACK2_SIM_FULL_RECALL", [], [], top_k)
+        before = len(picked)
         picked = merge_fill(picked, picked_fb2, top_k)
-        final_stage = "STRICT+FALLBACK1+FALLBACK2"
+        if len(picked) > before:
+            final_stage = (final_stage + "+FALLBACK2") if final_stage else "FALLBACK2"
 
     if debug:
         debug_log(

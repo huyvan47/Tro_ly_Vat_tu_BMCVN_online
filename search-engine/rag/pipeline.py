@@ -12,8 +12,32 @@ from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
 from rag.tag_filter import infer_filters_from_query
-import re
 from typing import List, Tuple
+from pathlib import Path
+import re
+import json, hashlib
+
+def _is_hard_global(q: str) -> bool:
+    q = (q or "").lower()
+    # Các câu dạng taxonomy/liệt kê/so sánh thường cần model mạnh hơn và output dài hơn
+    return any(k in q for k in [
+        "bao gồm", "gồm những", "gồm các", "phân loại", "nhóm nào",
+        "khác gì", "so sánh", "phân biệt", "triệu chứng", "cơ chế"
+    ])
+
+def _global_system_prompt() -> str:
+    return """
+Bạn là chuyên gia BVTV/nông học.
+Trả lời theo kiểu giáo trình, dùng thuật ngữ phổ biến tại Việt Nam.
+
+Quy tắc:
+- Trả lời theo cấu trúc rõ ràng, có tiêu đề.
+- Bắt buộc có: (1) Định nghĩa ngắn gọn, (2) Tiêu chí nhận biết/đặc điểm chính.
+- Nếu câu hỏi hỏi “bao gồm/gồm những loại nào/phân loại” thì bắt buộc có mục: (3) Phân loại + (4) Ví dụ đại diện (ưu tiên nhóm/loài thường gặp trong canh tác).
+- Nếu không chắc một tên loài/thuật ngữ: ghi “thường gặp” và mô tả theo nhóm, không bịa.
+- Ưu tiên trả lời đúng trọng tâm, không lan man sang công dụng phủ đất/chống xói mòn nếu không liên quan câu hỏi.
+""".strip()
+
 def choose_top_k(
     is_list: bool,
     must_tags: List[str],
@@ -64,24 +88,40 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 0) Route GLOBAL / RAG
     route = route_query(client, user_query)
     if route == "GLOBAL":
+        hard = _is_hard_global(user_query)
+        model = "gpt-4.1" if hard else "gpt-4.1-mini"
         resp = client.chat.completions.create(
-            model="gpt-4.1-mini",
-            temperature=0.4,
-            max_completion_tokens=2500,
+            model=model,
+            temperature=0.25 if hard else 0.35,
+            max_completion_tokens=3500 if hard else 2500,
             messages=[
-                {
-                    "role": "system",
-                    "content": "Bạn là chuyên gia BVTV, giải thích khái niệm, viết tắt, định nghĩa đầy đủ, chuẩn giáo trình."
-                },
+                {"role": "system", "content": _global_system_prompt()},
                 {"role": "user", "content": user_query},
             ],
         )
+        text = resp.choices[0].message.content.strip()
+
+        # (Tuỳ chọn) Escalate lần 2 nếu dùng mini nhưng output thiếu cấu trúc/liệt kê
+        if (not hard) and _is_hard_global(user_query):
+            # nếu router vẫn GLOBAL nhưng mini trả lời quá ngắn/thiếu ý
+            if len(text) < 900 or ("Định nghĩa" not in text and "Phân loại" not in text):
+                resp2 = client.chat.completions.create(
+                    model="gpt-4.1",
+                    temperature=0.2,
+                    max_completion_tokens=3800,
+                    messages=[
+                        {"role": "system", "content": _global_system_prompt()},
+                        {"role": "user", "content": user_query},
+                        {"role": "user", "content": "Hãy mở rộng theo đúng cấu trúc, bổ sung phân loại và ví dụ đại diện nếu câu hỏi yêu cầu liệt kê."},
+                    ],
+                )
+                text = resp2.choices[0].message.content.strip()
         return {
-            "text": resp.choices[0].message.content.strip(),
+            "text": text,
             "img_keys": [],
             "route": "GLOBAL",
             "norm_query": "",
-            "strategy": "GLOBAL",
+            "strategy": f"GLOBAL/{model}",
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
 
@@ -132,9 +172,24 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         }
 
     # 4) Filter by MIN_SCORE_MAIN
+    def _count_tag_hits(h, any_tags, must_tags):
+        tv2 = str(h.get("tags_v2") or "")
+        score = 0
+        # must: ưu tiên cao hơn any
+        for t in (must_tags or []):
+            if t and t in tv2:
+                score += 3
+        for t in (any_tags or []):
+            if t and t in tv2:
+                score += 1
+        return score
+
     for h in hits:
         h["fused_score"] = fused_score(h)
-    hits = sorted(hits, key=lambda x: x["fused_score"], reverse=True)
+        h["tag_hits"] = _count_tag_hits(h, any_tags, must_tags)
+
+    # re-rank: tag_hits trước, rồi fused_score
+    hits = sorted(hits, key=lambda x: (x.get("tag_hits", 0), x.get("fused_score", 0.0)), reverse=True)
 
     filtered_for_main = [h for h in hits if h["fused_score"] >= policy.min_score_main]
 
@@ -227,7 +282,16 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         if h is not primary_doc and len(main_hits) < max_ctx:
             main_hits.append(h)
 
+    def _short(x, n=160):
+        x = "" if x is None else str(x)
+        return x if len(x) <= n else x[:n] + "..."
+    
+    # Sau đó build context như bình thường
     context = build_context_from_hits(main_hits)
+
+    Path("debug_ctx").mkdir(exist_ok=True)
+    with open("debug_ctx/context_last.txt", "w", encoding="utf-8") as f:
+        f.write(context)
 
     final_answer = call_finetune_with_context(
         client=client,

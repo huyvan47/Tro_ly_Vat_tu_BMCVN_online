@@ -1,390 +1,1673 @@
-﻿2026-01-05 18:17:20,RAG,tư vấn các sản phẩm trừ nhện gié trên lúa,Tư vấn các sản phẩm trừ nhện gié trên lúa.,RAG_SOFT,0.4897611439228058,0.4880971610546112,0.00166398286819458,0.48595563173294065,220,0.00543302768663286,"Dựa trên ngữ cảnh tài liệu đã cung cấp, dưới đây là tư vấn các sản phẩm thuốc trừ nhện gié trên cây lúa:
+﻿2026-01-06 16:17:14,RAG,thuốc trừ bọ trĩ hiệu quả,Thuốc trừ bọ trĩ hiệu quả?,RAG_SOFT,0.5950948596000671,0.5433166027069092,0.05177825689315796,0.5483394742012024,220,0.2054198301078003,"Dưới đây là quy trình sử dụng thuốc trừ bọ trĩ hiệu quả tổng hợp từ NGỮ CẢNH:
 
-1. **Exami 20WG**  
-   - **Nhóm thuốc:** Thuốc trừ sâu, trừ nhện và sâu bệnh trên lúa và rau.  
-   - **Hoạt chất:** Không nêu cụ thể trong ngữ cảnh, nhưng có tác dụng trừ các loại sâu bệnh như rầy phấn, rầy mềm, rệp sáp, bọ trĩ, bọ xít, bọ nhảy và **nhện lông nhung** trên cây lúa và rau.  
-   - **Đặc tính – công dụng:** Trừ hiệu quả nhiều loại sâu bệnh, trong đó có nhện lông nhung (một loại nhện gây hại phổ biến trên lúa).  
-   - **Phạm vi:** Cây lúa và rau như xà lách, rau cải thìa.  
-   - **Lưu ý:** Không có thông tin chi tiết về liều lượng, cách pha, thời gian cách ly trong ngữ cảnh.  
+1. Xác định mật độ bọ trĩ và mức độ gây hại trên cây trồng  
+   - Mục đích: Đánh giá mức độ cần thiết và lựa chọn phác đồ thuốc phù hợp (tham khảo DOC 1, DOC 4, DOC 8).
 
-2. **TRÙM CHÍCH HÚT - TRĨ (Hoạt chất Pymetrozine)**  
-   - **Nhóm thuốc:** Thuốc trừ sâu, cơ chế tiếp xúc, vị độc, lưu dẫn nhanh, tác động đến tế bào thần kinh làm côn trùng không thể chích hút và chết.  
-   - **Phạm vi tác dụng:** Phòng trừ nhiều loại sâu chích hút như rầy nâu, rầy xanh, rầy mềm, bọ trĩ (bọ cánh tơ), bọ xít, bọ nhảy, rệp sáp, rệp bông xơ, bọ ngâu...  
-   - **Tác dụng với nhện gié:** Ngữ cảnh không nêu trực tiếp hiệu quả trên nhện gié, nhưng có tác dụng trên bọ trĩ và các loại sâu chích hút khác.  
-   - **Liều dùng và cách pha:** 0.5 - 1.0 kg/ha; pha 10-15g/bình 20 lít phun cho 1 sào Bắc bộ (360m2); lượng nước phun 400 - 500 lít/ha.  
-   - **Thời gian cách ly:** 14 ngày.  
+2. Chọn thuốc trừ bọ trĩ hiệu quả:  
+   - Zigen Super (DOC 1, DOC 4, DOC 8)  
+   - Oxatin (DOC 1, DOC 4)  
+   - Nofara (kết hợp với Zigen hoặc Oxatin để tăng hiệu quả diệt trĩ, DOC 1)  
+   - Biperin 100EC (có tác dụng trừ bọ trĩ hại lúa và cây ăn quả, DOC 7)  
+   - Binhfos 50EC (Anh Hùng Sâu) có hiệu quả trên bọ trĩ (DOC 2, DOC 10)  
+   - Emoil 99EC Spray (trừ bọ trĩ và các sâu bệnh khác, DOC 12)
 
-3. **RECXONA 35WG (VUA TRĨ) - Hoạt chất Thiamethoxam 35%**  
-   - **Nhóm thuốc:** Insecticide có tác động tiếp xúc, vị độc và nội hấp mạnh, ít bị rửa trôi, hiệu lực diệt côn trùng chích hút mạnh và kéo dài.  
-   - **Phạm vi tác dụng:** Rầy nâu, rầy lưng trắng, bọ xít, rệp bông xơ, rệp sáp, rệp muỗi, sâu đục cành, bọ trĩ, rệp đào.  
-   - **Tác dụng với nhện gié:** Ngữ cảnh không nêu rõ tác dụng trên nhện gié, nhưng có tác dụng trên bọ trĩ và các loại sâu chích hút.  
-   - **Liều dùng và cách pha:** 0.3 lít/ha; pha 10-15g/20 lít; lượng nước phun 320 - 500 lít/ha.  
-   - **Thời gian cách ly:** 14 ngày.  
-   - **Lưu ý:** Không phun khi có gió lớn hoặc trời sắp mưa to.  
+3. Pha thuốc theo liều lượng và tỷ lệ nước phù hợp:  
+   - Zigen Super 240ml + Nofara 240ml + bám dính 100ml/200 lít nước (hiệu quả 80-90%, DOC 1)  
+   - Oxatin 240ml + Nofara 240ml + bám dính 100ml/200 lít nước (hiệu quả 90%, DOC 1)  
+   - Biperin 100EC: 20-40ml/bình 20 lít nước, phun ướt đều lá khi sâu mới nở (DOC 7)  
+   - Binhfos 50EC: 24ml/bình 20 lít nước, lượng nước phun 400-600 lít/ha (DOC 2)  
+   - Lưu ý: Không có số liệu liều lượng cụ thể cho Emoil 99EC Spray trong ngữ cảnh.
 
-**Tổng hợp và lưu ý chung:**  
-- Trong các sản phẩm trên, chỉ có **Exami 20WG** được nêu rõ có tác dụng trừ nhện lông nhung (một loại nhện gây hại trên lúa), do đó đây là lựa chọn ưu tiên khi cần phòng trừ nhện gié trên lúa.  
-- Các sản phẩm TRÙM CHÍCH HÚT - TRĨ và RECXONA 35WG có phổ tác dụng rộng trên nhiều loại sâu chích hút, bao gồm bọ trĩ, nhưng không được nêu rõ hiệu quả trên nhện gié trong ngữ cảnh. Tuy nhiên, chúng vẫn có thể được xem xét sử dụng trong chiến lược tổng hợp phòng trừ sâu hại đa dạng trên lúa.  
-- Liều lượng, cách pha và lượng nước phun đã được nêu cụ thể cho TRÙM CHÍCH HÚT - TRĨ và RECXONA 35WG, giúp người sử dụng dễ dàng áp dụng đúng kỹ thuật.  
-- Thời gian cách ly của hai sản phẩm này là 14 ngày, cần lưu ý để đảm bảo an toàn cho người sử dụng và thu hoạch.  
-- Đối với Exami 20WG, ngữ cảnh không cung cấp liều lượng, cách pha và thời gian cách ly, do đó cần tham khảo thêm hướng dẫn từ nhà sản xuất hoặc tài liệu kỹ thuật đi kèm sản phẩm.  
+4. Phun thuốc đúng thời điểm và kỹ thuật:  
+   - Phun thuốc khi bọ trĩ mới nở, sâu còn nhỏ (tuổi 1-2) để đạt hiệu quả cao (DOC 2, DOC 7)  
+   - Không phun khi có gió lớn hoặc trời sắp mưa (DOC 2, DOC 7)  
+   - Với thuốc Binhfos 50EC, có thể tưới gốc để diệt rệp sáp, sùng, ve sầu hiệu quả hơn (DOC 2)  
+   - Phun thuốc đều khắp lá, đảm bảo tiếp xúc tốt với bọ trĩ (DOC 2, DOC 7)
+
+5. Kết hợp thuốc hoặc sử dụng phác đồ phù hợp khi bọ trĩ kháng thuốc:  
+   - Kết hợp Lekima để trừ trứng và con non (DOC 3)  
+   - Dùng Zigen, Tamatras kết hợp lưu dẫn để xử lý bọ trĩ khi mật độ bình thường (DOC 8)  
+   - Dùng Oxatin và Zigen Super là 2 sản phẩm trừ trĩ xuất sắc nhóm tiếp xúc-lưu dẫn mạnh (DOC 4)
+
+6. Tuân thủ thời gian cách ly và an toàn:  
+   - Thời gian cách ly Binhfos 50EC và Biperin 100EC là 14 ngày sau khi phun (DOC 2, DOC 7)  
+   - Không phun thuốc khi cây đang có gió lớn hoặc trời sắp mưa (DOC 2, DOC 7)
+
+---
+
+**Kiến thức chung:**  
+- Việc phun thuốc đúng thời điểm và đều khắp cây giúp thuốc tiếp xúc hiệu quả với bọ trĩ, tăng hiệu quả diệt trừ.  
+- Kết hợp nhiều thuốc hoặc sử dụng thuốc có cơ chế tiếp xúc và lưu dẫn giúp xử lý bọ trĩ kháng thuốc tốt hơn.  
+- Lựa chọn thuốc phù hợp với loại cây trồng và sâu hại cụ thể để tránh gây hại cây và tăng hiệu quả.
+
+---
+
+Tóm lại, để trừ bọ trĩ hiệu quả, nên ưu tiên sử dụng các thuốc Zigen Super, Oxatin, Nofara, Biperin 100EC, Binhfos 50EC, Emoil 99EC Spray theo liều lượng và cách pha đã nêu, phun đúng kỹ thuật và thời điểm, kết hợp thuốc khi cần thiết, đồng thời tuân thủ an toàn và thời gian cách ly.",[]
+2026-01-06 16:50:02,RAG,thuốc trừ bọ trĩ hiệu quả,Thuốc trừ bọ trĩ hiệu quả?,RAG_SOFT,0.5950948596000671,0.5433166027069092,0.05177825689315796,0.5483394742012024,220,0.2054198301078003,"Checklist xử lý bọ trĩ hiệu quả theo NGỮ CẢNH:
+
+1. Chọn thuốc trừ bọ trĩ phù hợp:
+   - Zigen Super (DOC 1, DOC 4, DOC 8): Thuốc có tác dụng trừ trĩ hiệu quả 80-90%.
+   - Oxatin (DOC 1, DOC 4): Thuốc trừ trĩ hiệu quả đến 90%, thuộc nhóm tiếp xúc - lưu dẫn mạnh.
+   - Nofara (DOC 1): Kết hợp với Zigen Super hoặc Oxatin để tăng hiệu quả diệt trĩ.
+   - Biperin 100EC (DOC 7, DOC 12): Có tác dụng trừ bọ trĩ trên nhiều loại cây ăn trái, rau màu và cây ăn quả.
+   - Binhfos 50EC (Anh Hùng Sâu) (DOC 2, DOC 10, DOC 12): Có hiệu quả diệt bọ trĩ và nhiều loại sâu chích hút khác.
+   - Emoil 99EC Spray (DOC 12): Trừ bọ trĩ và các loại sâu bệnh khác như rệp sáp, rầy, nhện đỏ.
+
+2. Pha thuốc và lượng nước:
+   - Zigen Super 240ml + Nofara 240ml + bám dính 100ml pha trong 200 lít nước (DOC 1).
+   - Oxatin 240ml + Nofara 240ml + bám dính 100ml pha trong 200 lít nước (DOC 1).
+   - Biperin 100EC pha 20-40ml/bình 20 lít nước, lượng nước phun 500 lít/ha (DOC 7).
+   - Binhfos 50EC pha 24ml/bình 20 lít nước, lượng nước phun 400-600 lít/ha (DOC 2).
+   - Lưu ý: Có thể pha kết hợp Biperin 100EC với Tosi 30WG để tăng hiệu quả trên bọ trĩ (DOC 7).
+
+3. Thời điểm và cách phun:
+   - Phun thuốc khi bọ trĩ mới nở, sâu còn nhỏ (tuổi 1-2) để đạt hiệu quả cao (DOC 2, DOC 7).
+   - Phun thuốc đều ướt lá, tránh phun khi có gió lớn hoặc trời sắp mưa (DOC 2, DOC 7).
+   - Có thể phun lặp lại sau 5-7 ngày nếu bệnh nặng (đối với thuốc trừ nấm BYPHAN 800WP có thể tham khảo về thời gian phun lặp lại, DOC 6).
+
+4. Xử lý bọ trĩ kháng thuốc:
+   - Dùng kết hợp Lekima để trừ toàn bộ trứng và con non (DOC 3).
+   - Ưu tiên sử dụng các thuốc nhóm tiếp xúc - lưu dẫn mạnh như Oxatin và Zigen Super (DOC 4).
+   - Kết hợp với thuốc có lưu dẫn để tăng hiệu quả (DOC 8).
+
+5. Lưu ý an toàn:
+   - Thời gian cách ly: Zigen Super, Oxatin, Biperin 100EC, Binhfos 50EC đều có thời gian cách ly 14 ngày (DOC 2, DOC 7).
+   - Không phun thuốc khi trời mưa hoặc gió lớn để tránh thuốc bị trôi hoặc bay mất (DOC 2, DOC 7).
+   - Giảm liều khi phun cho cây non hoặc cây trồng nhà kính (DOC 2, DOC 7).
+
+Kiến thức chung:
+- Việc phun thuốc đúng thời điểm khi bọ trĩ còn nhỏ giúp thuốc tiếp xúc và diệt sâu hiệu quả hơn.
+- Kết hợp nhiều loại thuốc có cơ chế khác nhau giúp hạn chế hiện tượng kháng thuốc.
+- Phun thuốc đều ướt lá và đủ liều lượng giúp tăng hiệu quả diệt trừ bọ trĩ.
+
+Tóm lại, để trừ bọ trĩ hiệu quả, nên chọn các thuốc như Zigen Super, Oxatin, Nofara, Biperin 100EC, Binhfos 50EC, kết hợp với Lekima để xử lý trứng và con non, pha đúng liều lượng, phun đúng thời điểm, và tuân thủ các lưu ý về an toàn và thời gian cách ly.",[]
+2026-01-06 16:56:06,RAG,công thức trừ bọ trĩ,Công thức trừ bọ trĩ.,RAG_SOFT,0.48274457454681396,0.463575154542923,0.01916942000389099,0.44538405537605286,220,0.06169289002725028,"Checklist công thức trừ bọ trĩ theo NGỮ CẢNH:
+
+1. Chọn thuốc phù hợp:
+   - Nofara 35WG (Vua Trĩ): dùng để trừ bọ trĩ trên nhiều cây trồng như lúa, mía, cà phê, thuốc lá, điều, khoai tây, hoa cúc (DOC 7).
+   - Zigen Super hoặc Oxatin kết hợp Nofara và bám dính: có hiệu quả diệt trĩ 80-90% đến 90% (DOC 2).
+   - Exami 20WG: trừ các loại sâu bệnh như bọ trĩ trên cây lúa và rau (DOC 11).
+   - Emoil 99EC Spray: trừ bọ trĩ, rệp sáp, rầy, nhện đỏ, bọ phấn (DOC 9).
+
+2. Pha thuốc:
+   - Ví dụ công thức hiệu quả: Zigen Super 240ml + Nofara 240ml + bám dính 100ml pha với 200L nước (DOC 2).
+   - Hoặc Oxatin 240ml + Nofara 240ml + bám dính 100ml pha với 200L nước (DOC 2).
+   - Với chè, có thể dùng Igro Xpro liều 20ml/20L nước (DOC 2).
+   - Exami 20WG dùng theo hướng dẫn riêng (DOC 11), không có số liệu pha cụ thể trong ngữ cảnh.
+   - Emoil 99EC Spray có thể phun sau thu hoạch hoặc trước khi cây ra hoa, đậu trái (DOC 9).
+
+3. Phun thuốc:
+   - Phun đều lên cây trồng, đảm bảo thuốc tiếp xúc trực tiếp với bọ trĩ và các giai đoạn phát triển của chúng (DOC 2, DOC 7).
+   - Có thể kết hợp Lekima để trừ toàn bộ trứng và con non bọ trĩ (DOC 1).
+
+4. Lưu ý kỹ thuật:
+   - Đối với trường hợp trĩ rất hay kháng thuốc, nên dùng các thuốc có tính tiếp xúc và lưu dẫn mạnh như Oxatin, Zigen Super (DOC 4).
+   - Khi mật độ trĩ bình thường, có thể dùng Zigen, Tamatras kết hợp lưu dẫn (DOC 5).
+   - Không có thông tin cụ thể về thời gian cách ly hoặc tần suất phun trong ngữ cảnh.
+   - Không phun thuốc khi trời có gió lớn hoặc sắp mưa (tham khảo chung từ DOC 3 về an toàn phun thuốc).
+
+Kiến thức chung (không có số liệu trong ngữ cảnh):
+- Việc phun thuốc đúng lúc sâu non mới nở sẽ tăng hiệu quả diệt trừ.
+- Kết hợp các biện pháp sinh học và hóa học giúp hạn chế hiện tượng kháng thuốc.
+- Đảm bảo phun thuốc đều, phủ kín lá để thuốc tiếp xúc tối đa với bọ trĩ.
+
+Tóm lại, công thức trừ bọ trĩ hiệu quả theo ngữ cảnh là phối hợp các thuốc như Zigen Super hoặc Oxatin với Nofara và bám dính, pha theo liều lượng đã nêu, phun đều lên cây, có thể kết hợp Lekima để diệt trứng và con non, ưu tiên thuốc có tính tiếp xúc và lưu dẫn mạnh khi trĩ kháng thuốc.",[]
+2026-01-06 17:14:10,GLOBAL,bọ trĩ là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Bọ trĩ**
+
+1. **Định nghĩa ngắn gọn:**  
+Bọ trĩ là côn trùng nhỏ thuộc bộ Thysanoptera, có kích thước rất nhỏ (khoảng 1-2 mm), thường gây hại cho nhiều loại cây trồng bằng cách chích hút nhựa cây, làm tổn thương mô lá và hoa.
+
+2. **Tiêu chí nhận biết/đặc điểm chính:**  
+- Thân nhỏ, thon dài, có cánh dạng tua (cánh mềm, mép có tua lông nhỏ).  
+- Màu sắc thường từ vàng nhạt đến nâu hoặc đen.  
+- Di chuyển nhanh, thường tập trung ở mặt dưới lá, nụ hoa, hoặc chồi non.  
+- Gây hại bằng cách chích hút tế bào mô lá, làm lá có vết bạc, biến dạng, hoa bị hư hại, ảnh hưởng đến năng suất và chất lượng cây trồng.
+
+3. **Phân loại (thường gặp trong canh tác):**  
+- **Bọ trĩ hoa (Frankliniella occidentalis):** Gây hại chủ yếu trên hoa, làm hoa biến dạng, rụng sớm.  
+- **Bọ trĩ đuôi dài (Thrips palmi):** Gây hại trên nhiều loại cây trồng như cà chua, dưa hấu, khoai lang.  
+- **Bọ trĩ đen (Scirtothrips dorsalis):** Gây hại trên nhiều loại cây ăn quả và rau màu.
+
+4. **Ví dụ đại diện:**  
+- Bọ trĩ hoa (Frankliniella occidentalis) thường gặp trên hoa hồng, hoa lan, hoa cúc.  
+- Bọ trĩ đuôi dài (Thrips palmi) phổ biến trên cà chua, dưa hấu, khoai lang.  
+- Bọ trĩ đen (Scirtothrips dorsalis) thường gây hại trên cây có múi, xoài, cà phê.
+
+---
+
+**Tóm lại:** Bọ trĩ là côn trùng chích hút nhỏ, gây hại trên nhiều loại cây trồng, nhận biết qua kích thước nhỏ, cánh tua và vết hại bạc trên lá, hoa. Các loài bọ trĩ phổ biến như Frankliniella occidentalis, Thrips palmi thường gây thiệt hại đáng kể trong nông nghiệp.",[]
+2026-01-06 17:15:10,GLOBAL,bệnh nứt thân xì mủ trên cây sầu riêng là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Bệnh nứt thân xì mủ trên cây sầu riêng**
+
+1. **Định nghĩa ngắn gọn:**  
+Bệnh nứt thân xì mủ trên cây sầu riêng là bệnh hại gây tổn thương trên thân cây dưới dạng các vết nứt kèm theo chảy nhựa hoặc mủ, làm ảnh hưởng đến sự phát triển và năng suất của cây.
+
+2. **Tiêu chí nhận biết/đặc điểm chính:**  
+- Trên thân cây xuất hiện các vết nứt dọc hoặc ngang, có thể lan rộng theo thời gian.  
+- Tại các vết nứt thường có hiện tượng chảy nhựa (xì mủ), nhựa cây có màu nâu hoặc đen.  
+- Vết nứt có thể làm chết mô vỏ, gây thối hoặc hoại tử phần vỏ và gỗ bên trong.  
+- Cây bị bệnh thường còi cọc, lá vàng, rụng sớm, năng suất giảm.  
+- Bệnh thường phát triển mạnh khi cây bị tổn thương cơ học hoặc điều kiện môi trường bất lợi như mưa nhiều, độ ẩm cao.
+
+3. **Phân loại:**  
+Bệnh nứt thân xì mủ trên sầu riêng thường do các nguyên nhân chính sau:  
+- **Bệnh do vi khuẩn:** Ví dụ như vi khuẩn thuộc nhóm *Ralstonia* hoặc *Erwinia* gây thối nhũn và xì mủ.  
+- **Bệnh do nấm:** Một số loại nấm gây thối thân, nứt thân và xì mủ như *Phytophthora palmivora* (nấm gây thối rễ và thân), *Lasiodiplodia theobromae* (gây thối thân).  
+- **Bệnh do điều kiện môi trường và tổn thương cơ học:** Nứt thân không do tác nhân gây bệnh mà do thời tiết (nắng nóng, thay đổi nhiệt độ đột ngột) hoặc do tác động vật lý.
+
+4. **Ví dụ đại diện thường gặp:**  
+- *Phytophthora palmivora*: Nấm gây bệnh thối thân, nứt thân và xì mủ trên sầu riêng, phổ biến trong điều kiện ẩm ướt.  
+- *Lasiodiplodia theobromae*: Gây thối thân, nứt thân và chảy nhựa, thường gặp ở cây sầu riêng bị tổn thương.  
+- Vi khuẩn thuộc nhóm *Ralstonia* gây thối rễ và thân, có thể kèm theo hiện tượng xì mủ.
+
+---
+
+**Tóm lại:** Bệnh nứt thân xì mủ trên cây sầu riêng là tổn thương trên thân cây dưới dạng các vết nứt kèm chảy nhựa, do nhiều nguyên nhân gây ra như nấm, vi khuẩn hoặc điều kiện môi trường. Việc nhận biết sớm và xử lý kịp thời giúp hạn chế thiệt hại cho cây trồng.",[]
+2026-01-06 17:15:42,GLOBAL,nấm bệnh nhóm ô là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Nấm bệnh nhóm Ô**
+
+1. **Định nghĩa ngắn gọn**  
+Nấm bệnh nhóm Ô là nhóm nấm gây bệnh thực vật thuộc lớp Oomycetes, thường được gọi là nấm giả, có đặc điểm sinh học khác với nấm thật (Fungi). Chúng là tác nhân gây ra các bệnh thối nhũn, thối rễ, héo rũ trên nhiều loại cây trồng.
+
+2. **Tiêu chí nhận biết/đặc điểm chính**  
+- Cấu tạo tế bào có thành tế bào chứa cellulose, không phải kitin như nấm thật.  
+- Phân bào bằng cách tạo vách ngăn ngang.  
+- Tạo bào tử bơi (zoospore) có roi, giúp di chuyển trong nước, nên thường phát triển mạnh trong điều kiện ẩm ướt, ngập úng.  
+- Gây bệnh chủ yếu trên bộ phận rễ, cổ rễ, thân cây, làm thối nhũn, héo rũ.  
+- Chu kỳ phát triển gồm bào tử sinh dưỡng, bào tử bơi và bào tử sinh sản hữu tính (oospore).
+
+3. **Phân loại**  
+Nấm nhóm Ô được chia thành các chi phổ biến gây bệnh thực vật như:  
+- **Phytophthora**: Gây bệnh thối nhũn, héo rũ trên nhiều loại cây trồng.  
+- **Pythium**: Gây bệnh thối rễ, thối gốc, chết mầm, chết cây con.  
+- **Peronospora**: Gây bệnh mốc sương trên lá (thuộc nhóm nấm Ô nhưng thường được gọi là mốc sương).  
+
+4. **Ví dụ đại diện thường gặp**  
+- *Phytophthora infestans*: Gây bệnh sương mai trên cây khoai tây, cà chua.  
+- *Phytophthora palmivora*: Gây thối nhũn trên cây ca cao, cây ăn quả.  
+- *Pythium ultimum*: Gây thối rễ, chết cây con trên nhiều loại rau màu.  
+- *Peronospora destructor*: Gây mốc sương trên cây hành, tỏi.  
+
+---
+
+**Tóm lại**, nấm bệnh nhóm Ô là nhóm nấm giả (Oomycetes) gây nhiều bệnh thối rữa, héo rũ trên cây trồng, phát triển mạnh trong điều kiện ẩm ướt, với các chi phổ biến như Phytophthora, Pythium và Peronospora.",[]
+2026-01-06 17:16:48,GLOBAL,nấm bệnh nhóm a là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Nấm bệnh nhóm A trong bảo vệ thực vật**
+
+1. **Định nghĩa ngắn gọn**  
+Nấm bệnh nhóm A là nhóm nấm gây bệnh có mức độ nguy hiểm cao, có khả năng lây lan nhanh và gây thiệt hại nặng nề cho cây trồng. Các loại nấm này thường được xếp vào nhóm kiểm dịch thực vật hoặc nhóm bệnh cần kiểm soát nghiêm ngặt trong sản xuất nông nghiệp.
+
+2. **Tiêu chí nhận biết/đặc điểm chính**  
+- Gây bệnh nghiêm trọng, làm giảm năng suất và chất lượng cây trồng rõ rệt.  
+- Khả năng lây lan nhanh qua nhiều con đường như gió, nước, dụng cụ, vật tư nông nghiệp.  
+- Thường có khả năng tồn tại lâu dài trong đất hoặc tàn dư cây trồng.  
+- Được quy định kiểm soát chặt chẽ trong các văn bản pháp luật về bảo vệ thực vật.  
+
+3. **Phân loại**  
+Nấm bệnh nhóm A thường được phân loại dựa trên cây trồng chủ yếu bị nhiễm và mức độ nguy hiểm:  
+- Nấm bệnh nhóm A trên cây lúa (ví dụ: nấm gây bệnh đạo ôn, rầy nâu)  
+- Nấm bệnh nhóm A trên cây rau màu (ví dụ: nấm gây bệnh sương mai, thán thư)  
+- Nấm bệnh nhóm A trên cây ăn quả (ví dụ: nấm gây bệnh thối rễ, nấm gây bệnh héo xanh)  
+
+4. **Ví dụ đại diện thường gặp**  
+- *Magnaporthe oryzae* (gây bệnh đạo ôn trên lúa)  
+- *Phytophthora infestans* (gây bệnh sương mai trên khoai tây, cà chua)  
+- *Fusarium oxysporum* (gây bệnh héo xanh trên nhiều loại cây trồng)  
+
+**Tóm lại**, nấm bệnh nhóm A là nhóm nấm gây bệnh nguy hiểm, cần được kiểm soát nghiêm ngặt để hạn chế thiệt hại trong sản xuất nông nghiệp.",[]
+2026-01-06 17:17:46,GLOBAL,các hoạt chất chữa được bệnh cháy lá trên cây sầu riêng là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Các hoạt chất chữa bệnh cháy lá trên cây sầu riêng**
+
+1. **Định nghĩa ngắn gọn**  
+Bệnh cháy lá trên cây sầu riêng là bệnh do vi khuẩn hoặc nấm gây ra, làm lá cây bị khô, cháy mép hoặc toàn bộ phiến lá, ảnh hưởng đến khả năng quang hợp và năng suất cây trồng.
+
+2. **Tiêu chí nhận biết/đặc điểm chính của bệnh cháy lá**  
+- Lá xuất hiện các vết cháy, khô, màu nâu hoặc đen, thường bắt đầu từ mép lá rồi lan dần vào trong.  
+- Lá có thể bị rụng sớm, làm giảm diện tích quang hợp.  
+- Trên lá có thể thấy các vết đốm nâu hoặc đen, viền vàng hoặc không rõ ràng tùy loại tác nhân gây bệnh.  
+- Bệnh phát triển mạnh trong điều kiện thời tiết nóng ẩm hoặc mưa nhiều.
+
+3. **Phân loại hoạt chất chữa bệnh cháy lá trên cây sầu riêng**  
+- **Thuốc trừ nấm (Fungicides):** Dùng khi nguyên nhân gây bệnh do nấm.  
+- **Thuốc trừ vi khuẩn (Bactericides):** Dùng khi nguyên nhân do vi khuẩn.  
+- **Thuốc hỗn hợp (Kết hợp trừ nấm và vi khuẩn):** Dùng khi chưa xác định rõ tác nhân hoặc bệnh do cả nấm và vi khuẩn.
+
+4. **Ví dụ đại diện các hoạt chất thường dùng**  
+- **Hoạt chất trừ nấm:**  
+  - *Mancozeb* (thuốc gốc đồng kết hợp với dithiocarbamate)  
+  - *Chlorothalonil*  
+  - *Copper oxychloride* (đồng oxyclorua)  
+  - *Azoxystrobin*  
+  - *Tebuconazole*  
+- **Hoạt chất trừ vi khuẩn:**  
+  - *Copper hydroxide* (đồng hydroxyd)  
+  - *Kasugamycin* (thuốc sinh học, kháng sinh tự nhiên)  
+  - *Streptomycin* (ít dùng do nguy cơ kháng thuốc)  
+- **Thuốc hỗn hợp:**  
+  - Sản phẩm chứa đồng kết hợp với hoạt chất trừ nấm khác như *Copper oxychloride + Mancozeb*.
+
+**Lưu ý:**  
+- Trước khi sử dụng thuốc, cần xác định chính xác tác nhân gây bệnh để lựa chọn thuốc phù hợp.  
+- Tuân thủ liều lượng và hướng dẫn sử dụng trên nhãn thuốc để tránh gây hại cho cây và môi trường.  
+- Kết hợp biện pháp canh tác như cắt tỉa cành, vệ sinh vườn, thông thoáng để hạn chế bệnh phát triển.",[]
+2026-01-06 17:19:38,RAG,sản phẩm thuốc chứa hoạt chất Kasugamycin,Sản phẩm thuốc chứa hoạt chất Kasugamycin.,RAG_SOFT,0.5179450511932373,0.5113319158554077,0.00661313533782959,0.4905014932155609,50,0.02283493814066636,"Dưới đây là tổng hợp các sản phẩm thuốc bảo vệ thực vật chứa hoạt chất Kasugamycin dựa trên NGỮ CẢNH đã cung cấp:
+
+1. **BILU (Kasugamycin 4% + Oxine-copper 36% SC)**  
+   - **Thành phần:** Kasugamycin 4% kết hợp Oxine-copper 36% dạng SC.  
+   - **Đặc tính, cơ chế:** Kasugamycin là kháng sinh nông nghiệp ức chế hệ enzyme tham gia chuyển hóa axit amin, làm gián đoạn tổng hợp protein của nấm, kìm hãm sinh trưởng và gây ngưng tụ tế bào. Có tác dụng phòng ngừa, điều trị và tính lưu dẫn. Oxine-copper là thuốc trừ nấm tiếp xúc đa điểm, không có tính lưu dẫn, chỉ có tác dụng phòng bệnh.  
+   - **Phạm vi tác động:** Phòng trừ hiệu quả các bệnh do vi khuẩn và nấm trên nhiều loại cây trồng khác nhau.  
+   - **Lợi ích phối hợp:** Mở rộng phổ phòng trừ cả bệnh vi khuẩn và nấm, giảm chi phí sử dụng thuốc, giảm nguy cơ hình thành tính kháng thuốc.  
+
+2. **Bisomin 2SL (Kasu Nhật)**  
+   - **Thành phần:** Kasugamycin 20g/l dạng dung dịch (SL).  
+   - **Đặc tính, cơ chế:** Thuốc trừ nấm bệnh và vi khuẩn phổ rộng, có cơ chế lưu dẫn giúp thuốc nhanh dịch chuyển vào cây. Kasugamycin làm ức chế sự hình thành acid amin trong vi khuẩn, ngăn tổng hợp protein trong nấm, không gây phản ứng hóa học.  
+   - **Phạm vi tác động:** Đặc trị các bệnh do vi khuẩn trên nhiều loại cây trồng như lúa (bạc lá, đạo ôn), cam, quýt (thán thư, sẹo), vải, nhãn, xoài (thán thư, thối quả), cà chua, bắp cải (héo rũ, lở cổ rễ), nho (thối quả, phấn trắng), và nhiều cây khác.  
+   - **Quy cách đóng gói:** Chai 20ml và 450ml.  
+   - **Lưu ý:** Không phun khi cây có hoa, không phun khi trời sắp mưa to hoặc gió lớn; có thể phun lại sau 5-7 ngày nếu bệnh nặng.  
+
+3. **Kasuhan 4WP**  
+   - **Thành phần:** Kasugamycin 40g/kg dạng bột (WP).  
+   - **Đặc tính, công dụng:** Đặc trị các bệnh do vi khuẩn trên nhiều loại cây như lúa, cam, quýt, nhãn, xoài, hành, cà chua, bắp cải, nho, hoa hồng. Phòng trừ các bệnh như bạc lá, đạo ôn, phấn trắng, vàng lá, thán thư, héo rũ, thối quả, thối nhũn, lở cổ rễ, thối gốc do vi khuẩn.  
+   - **Quy cách đóng gói:** 100gr, 500gr, 1kg.  
+
+4. **KASUHAN 4WP TRÙM KHUẨN**  
+   - **Thành phần:** Kasugamycin 4% w/w + phụ gia đặc biệt 96% w/w dạng bột (WP).  
+   - **Đặc tính, công dụng:** Thuốc trừ nấm bệnh vi khuẩn phổ rộng, có cơ chế lưu dẫn, thuốc dịch chuyển nhanh vào cây. Phòng trừ các bệnh như bạc lá, vàng lá, thối gốc vi khuẩn, thán thư, đốm nâu, đốm đen, phấn trắng, rỉ sắt, sương mai, thối quả, héo rũ trên nhiều loại cây (lúa, cam, quýt, vải, xoài, nhãn, hành, cà chua, bắp cải, nho, hoa hồng).  
+   - **Liều dùng và cách pha:** 1.0 kg/ha; pha 20-30g/bình 20 lít; lượng nước phun 500 lít/ha.  
+   - **Thời điểm phun:** Khi bệnh mới xuất hiện (khoảng 5-7% bệnh).  
+   - **Thời gian cách ly:** 7 ngày.  
+   - **Lưu ý an toàn:** Không phun khi trời sắp mưa hoặc có gió lớn.  
+
+5. **Bisomin 6WP**  
+   - **Thành phần:** Kasugamycin 60g/kg dạng bột (WP).  
+   - **Đặc tính, công dụng:** Chuyên dùng phòng trừ các bệnh do vi khuẩn như bạc lá, vàng lá, loét vi khuẩn, thán thư, đốm nâu, đốm đen, phấn trắng, rỉ sắt, sương mai, héo rũ trên cây lúa, nho, hành, cam, quýt, hoa hồng, bắp cải.  
+   - **Quy cách đóng gói:** 100g, 500g, 1kg.  
+
+---
+
+**Tóm lại:**  
+Các sản phẩm chứa Kasugamycin có dạng bột (WP) hoặc dung dịch (SL/SC), có tác dụng đặc trị bệnh do vi khuẩn và một số bệnh do nấm (kết hợp với Oxine-copper trong BILU). Kasugamycin có cơ chế ức chế enzyme chuyển hóa axit amin, làm gián đoạn tổng hợp protein của nấm và vi khuẩn, có tính lưu dẫn giúp thuốc nhanh thấm vào cây. Các sản phẩm phổ biến gồm BILU, Bisomin 2SL, Kasuhan 4WP, KASUHAN 4WP TRÙM KHUẨN và Bisomin 6WP, được sử dụng trên nhiều loại cây trồng như lúa, cam, quýt, nhãn, xoài, cà chua, bắp cải, nho, hoa hồng... với các bệnh như bạc lá, đạo ôn, thán thư, héo rũ, thối quả, phấn trắng, vàng lá, thối gốc vi khuẩn...  
+
+Thông tin chi tiết về liều lượng, cách pha, thời gian cách ly chỉ có đối với KASUHAN 4WP TRÙM KHUẨN (1.0 kg/ha, pha 20-30g/20 lít nước, cách ly 7 ngày) và Bisomin 2SL (pha 20-30ml/20 lít nước, cách ly 14 ngày).  
+
+Không thấy trong ngữ cảnh thông tin về các sản phẩm khác chứa Kasugamycin ngoài các sản phẩm trên.",[]
+2026-01-06 17:26:58,RAG,sản phẩm thuốc chứa hoạt chất glufosinate,Sản phẩm thuốc chứa hoạt chất Glufosinate.,RAG_SOFT,0.580440878868103,0.5790804028511047,0.001360476016998291,0.5660704374313354,50,0.005264505966569763,"Dưới đây là tổng hợp các sản phẩm thuốc bảo vệ thực vật chứa hoạt chất Glufosinate (Glufosinate amonium hoặc Glufosinate P) theo thông tin từ NGỮ CẢNH:
+
+1. **Yosky 10SL (Khai hoang G63, Khai hoang P7)**  
+   - **Hoạt chất:** Glufosinate P, nồng độ 10% w/w (tương đương 109g/l)  
+   - **Quy cách đóng gói:** chai 800ml  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, tác dụng nội hấp và cháy chậm.  
+   - **Phạm vi tác động:** Diệt trừ các loại cỏ dại lá rộng và lá hẹp, bao gồm cả cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+   - **Cơ chế tác động:** Sau khi phun ướt đẫm từ gốc đến ngọn, lá cỏ bắt đầu vàng sau 3 ngày và chết hoàn toàn sau 6-7 ngày.  
+   - **Nổi bật:** Hiệu lực cao hơn 1.5-2 lần so với Glufosinate thường.  
+
+2. **Shina 18SL**  
+   - **Hoạt chất:** Glufosinate amonium 200g/l (18% w/w)  
+   - **Quy cách đóng gói:** 100ml, 450ml, 900ml, 4.5L  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, có tác dụng nội hấp và cháy chậm.  
+   - **Phạm vi tác động:** Diệt trừ các loại cỏ dại lá rộng và lá hẹp, kể cả cỏ kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+   - **Cơ chế tác động:** Phun ướt đẫm từ gốc đến ngọn, lá cỏ vàng sau 3 ngày, chết hoàn toàn sau 6-7 ngày.  
+   - **Nổi bật:** Là đối thủ cạnh tranh lớn của BMC trên thị trường Glufosinate tại Việt Nam.  
+
+3. **Gussi Bastar 200SL Đặc (Nhãn xanh và Nhãn đỏ)**  
+   - **Hoạt chất:** Glufosinate amonium 200g/l  
+   - **Quy cách đóng gói:** 100ml, 450ml, 900ml, 4.5L (Nhãn đỏ); 900ml, 4.5L (Nhãn xanh)  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, nội hấp, cháy chậm.  
+   - **Phạm vi tác động:** Diệt trừ các loại cỏ dại lá rộng và lá hẹp, kể cả cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+   - **Cơ chế tác động:** Sau khi phun ướt đẫm từ gốc đến ngọn, lá cỏ vàng sau 3 ngày, cỏ chết hoàn toàn sau 6-7 ngày.  
+   - **Nổi bật:** Khả năng diệt cỏ không chọn lọc hiệu quả.  
+
+4. **Kenbast 15SL (Vua cháy khai hoang Malaysia)**  
+   - **Hoạt chất:** Glufosinate amonium 150g/l  
+   - **Quy cách đóng gói:** chai 900ml, can 4.5L  
+   - **Đặc tính:** Thuốc bảo vệ thực vật trừ cỏ, không chọn lọc, nội hấp, cháy chậm (theo ngữ cảnh tổng quát về Glufosinate).  
+   - **Nhà sản xuất:** Công ty Tỷ Phúc Thịnh.  
+
+5. **Khai hoang Q10**  
+   - **Hoạt chất:** Glufosinate amonium 150g/l  
+   - **Đặc tính:** Có khả năng diệt các loại cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh rất hiệu quả.  
+   - **Phạm vi tác động:** Diệt trừ cỏ kháng Glyphosate là ưu điểm nổi bật.  
+
+6. **Trâu Vàng**  
+   - **Hoạt chất:** Glufosinate amonium 150g/l  
+   - **Quy cách đóng gói:** chai 800ml, 900ml  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, nội hấp, cháy chậm.  
+   - **Phạm vi tác động:** Diệt trừ các loại cỏ dại lá rộng và lá hẹp, kể cả cỏ kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+   - **Cơ chế tác động:** Lá cỏ vàng sau 3 ngày, chết hoàn toàn sau 6-7 ngày.  
+
+7. **Gussi Bastar Hồng Hà Nhi**  
+   - **Hoạt chất:** Glufosinate amonium 200g/l  
+   - **Quy cách đóng gói:** chai 800ml, 900ml  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, có tác dụng nội hấp và cháy chậm.  
+
+8. **PHƯỢNG HOÀNG LỬA**  
+   - **Hoạt chất:** Glufosinate amonium 10% w/w  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, phổ rộng; tác động nội hấp và tiếp xúc; diệt cỏ giai đoạn hậu nảy mầm (từ cỏ nhỏ đến lớn).  
+   - **Nhà sản xuất:** Ningxia Wynca Technology Co., Ltd.  
+
+9. **Gly 888**  
+   - **Hoạt chất:** Glufosinate amonium 150g/l  
+   - **Quy cách đóng gói:** chai 900ml  
+   - **Đặc tính:** Thuốc trừ cỏ không chọn lọc, nội hấp, cháy chậm.  
+   - **Phạm vi tác động:** Hiệu quả với nhiều loại cỏ dại lá rộng và lá hẹp, kể cả cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+   - **Cơ chế tác động:** Lá cỏ vàng sau 3 ngày, chết hoàn toàn sau 6-7 ngày.  
+
+---
+
+**Tổng quan chung về các sản phẩm chứa Glufosinate:**  
+- Hầu hết các sản phẩm là thuốc trừ cỏ không chọn lọc, tác động nội hấp và cháy chậm.  
+- Phạm vi tác động rộng, hiệu quả trên các loại cỏ dại lá rộng, lá hẹp, đặc biệt cả các loại cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh.  
+- Thời gian hiệu quả thường thấy là lá cỏ vàng sau khoảng 3 ngày và chết hoàn toàn sau 6-7 ngày kể từ khi phun ướt đẫm từ gốc đến ngọn.  
+- Các sản phẩm có nhiều quy cách đóng gói khác nhau, từ chai nhỏ (100ml) đến can lớn (4.5L), thuận tiện cho nhiều quy mô sử dụng.  
+- Một số sản phẩm nổi bật với hiệu lực cao hơn Glufosinate thường (ví dụ Yosky 10SL với hiệu lực cao hơn 1.5-2 lần).  
+
+Nếu cần thông tin chi tiết về liều lượng, cách pha hoặc thời gian cách ly, vui lòng cung cấp thêm ngữ cảnh cụ thể vì NGỮ CẢNH hiện tại không đề cập.",[]
+2026-01-06 17:27:37,RAG,thông tin thuốc ohayo,Thông tin thuốc Ohayo.,RAG_SOFT,0.5489354133605957,0.5418193340301514,0.007116079330444336,0.5083945393562317,50,0.026041786325095018,"Dưới đây là tổng hợp chi tiết thông tin về thuốc Ohayo dựa trên các dữ liệu trong ngữ cảnh:
+
+1. **Ohayo 100SC**
+
+- **Thành phần và quy cách đóng gói:**
+  - Hoạt chất chính: Chlorfenapyr 100g/lít.
+  - Phụ gia đặc biệt: 900g/lít.
+  - Quy cách đóng gói: chai 22ml trục, 100ml và 240ml.
+  - Hãng sản xuất: Fertiagro Pte., Ltd (Singapore).
+
+- **Nhóm thuốc và cơ chế tác dụng:**
+  - Nhóm thuốc: Thuốc trừ sâu thế hệ mới, nhóm pyrazole.
+  - Cơ chế: Thuốc có khả năng diệt trừ sâu và nhện hại đã kháng các loại thuốc khác, đặc trị bọ trĩ, nhện trắng, sâu tơ, sâu xanh da láng, sâu cuốn lá.
+  - Thuốc an toàn cho cây trồng, hiệu quả kéo dài.
+  - Thuốc có khả năng tiếp xúc và lưu dẫn mạnh trong cây.
+
+- **Đối tượng sử dụng:**
+  - Cây trồng: Bầu bí, chè, dưa các loại, hoa các loại, rau các loại, lúa, hành lá.
+  - Sâu bệnh hại: Sâu tơ trên rau màu, sâu hành trên hành lá, sâu cuốn lá trên lúa, bọ trĩ trên chè, nhện trắng trên cây có múi, sâu xanh da láng.
+
+- **Liều lượng và cách dùng:**
+  - Liều dùng: 15-20ml/bình 16-18 lít nước.
+  - Lượng nước phun: 400 - 500 lít/ha.
+  - Cách phun: Phun vào mặt sau của lá, nơi nhện đỏ trú ngụ, phun ướt đẫm cây trồng.
+  - Thời điểm phun: Khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2).
+  - Thời gian cách ly: 14 ngày sau khi phun.
+
+- **Lưu ý an toàn:**
+  - Không phun thuốc khi có gió lớn hoặc trời sắp mưa to.
+  - Người dùng phải mặc đồ bảo hộ, tránh tiếp xúc trực tiếp với thuốc.
+  - Không phun thuốc vào giai đoạn cây trồng đang ra hoa hoặc khi có ong mật hoạt động để tránh ảnh hưởng đến môi trường và các loài có ích.
+
+- **Phối hợp thuốc:**
+  - Đối với nhóm sâu miệng nhai, có thể phối hợp Ohayo 100SC với Igro Ohayo 240SC.
+  - Liều lượng phối hợp: 24-50ml trên 25L nước, điều chỉnh theo mật độ sâu và mức độ kháng thuốc.
+  - Hiệu quả phòng trừ đạt 80-90%.
+
+2. **Ohayo 240SC**
+
+- **Thành phần và quy cách đóng gói:**
+  - Hoạt chất chính: Chlorfenapyr 24% w/v.
+  - Phụ gia đặc biệt: 76% w/v.
+  - Hãng sản xuất: Shanghai E-Tong Chemical Co., Ltd.
+
+- **Nhóm thuốc và cơ chế tác dụng:**
+  - Nhóm thuốc: Thuốc trừ sâu (Insecticide).
+  - Cơ chế: Chlorfenapyr là hoạt chất thế hệ mới có vị độc, tiếp xúc mạnh, thấm sâu nhanh, ức chế thần kinh làm côn trùng ngạt thở và chết nhanh.
+
+- **Đối tượng sử dụng:**
+  - Cây trồng: Lúa, đậu tương, điều, lạc, ngô, rau màu.
+  - Sâu hại: Nhện gié, sâu cuốn lá, rầy lưng trắng, sâu đục thân, rầy nâu, sâu năn, sâu đục bẹ, bọ trĩ, sâu xanh da láng, sâu khoang, sâu keo mùa thu, sâu tơ.
+
+- **Liều lượng và cách dùng:**
+  - Liều dùng: Pha 25-30ml thuốc với 18-25 lít nước để phun xịt.
+  - Thời điểm phun: Không phun khi trời sắp mưa to hoặc có gió lớn.
+
+- **Lưu ý an toàn:**
+  - Không phun khi trời sắp mưa to hoặc có gió lớn.
+
+- **Phối hợp thuốc:**
+  - Được phối hợp với Ohayo 100SC để phòng trừ nhóm sâu miệng nhai, liều lượng phối hợp 24-50ml/25L nước tùy theo mật độ sâu và mức độ kháng thuốc.
+
+---
+
+**Tóm lại**, thuốc Ohayo gồm các sản phẩm chính là Ohayo 100SC và Ohayo 240SC đều chứa hoạt chất Chlorfenapyr với nồng độ khác nhau, có tác dụng diệt trừ nhiều loại sâu hại và nhện trên các loại cây trồng như rau màu, lúa, chè, cây ăn quả và ngô. Các sản phẩm này có đặc tính tiếp xúc mạnh, thấm sâu, ức chế thần kinh côn trùng gây chết nhanh. Liều lượng và cách dùng cụ thể tùy theo từng loại sản phẩm, với lưu ý quan trọng về an toàn khi phun thuốc như không phun khi trời mưa hoặc có gió lớn, không phun khi cây ra hoa hoặc ong mật hoạt động, và người dùng phải mặc đồ bảo hộ để tránh tiếp xúc trực tiếp với thuốc. Ngoài ra, có thể phối hợp Ohayo 100SC và Ohayo 240SC để tăng hiệu quả phòng trừ sâu miệng nhai với tỷ lệ pha trộn và liều lượng điều chỉnh theo mật độ sâu bệnh.",[]
+2026-01-06 17:29:38,GLOBAL,thuốc trừ được sâu miệng nhai,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Thuốc trừ sâu miệng nhai**
+
+1. **Định nghĩa ngắn gọn**  
+Thuốc trừ sâu miệng nhai là các loại thuốc bảo vệ thực vật có tác dụng diệt hoặc kiểm soát các loại sâu hại có cơ chế phá hại bằng cách cắn, nhai lá, thân cây, gây hại trực tiếp lên mô thực vật.
+
+2. **Tiêu chí nhận biết/đặc điểm chính**  
+- Tác động chủ yếu lên sâu hại có cơ quan miệng dạng nhai (như sâu xanh, sâu cuốn lá, sâu đục thân).  
+- Thuốc thường có khả năng tiếp xúc hoặc lưu dẫn, giúp diệt sâu khi sâu ăn phải hoặc tiếp xúc với thuốc.  
+- Thường có hoạt chất thuộc nhóm hóa học như organophosphat, carbamat, pyrethroid, hoặc nhóm sinh học (Bt, spinosad).
+
+3. **Phân loại thuốc trừ sâu miệng nhai**  
+- **Nhóm hóa học**:  
+  + **Organophosphat**: Diazinon, Chlorpyrifos  
+  + **Carbamat**: Carbaryl, Methomyl  
+  + **Pyrethroid**: Cypermethrin, Lambda-cyhalothrin  
+- **Nhóm sinh học**:  
+  + **Vi khuẩn Bacillus thuringiensis (Bt)**: Bt kurstaki, Bt aizawai  
+  + **Chất chiết xuất từ thiên nhiên**: Spinosad (từ vi khuẩn Saccharopolyspora spinosa)  
+- **Thuốc trừ sâu sinh học khác**: Neem (chiết xuất từ cây neem)
+
+4. **Ví dụ đại diện thường gặp trong canh tác**  
+- **Sâu xanh (Spodoptera litura)**: thường dùng Bt kurstaki, spinosad, hoặc pyrethroid.  
+- **Sâu cuốn lá (Cnaphalocrocis medinalis)**: thường dùng các nhóm pyrethroid hoặc Bt.  
+- **Sâu đục thân (Chilo suppressalis)**: thường dùng nhóm organophosphat hoặc carbamat.  
+
+---
+
+**Tóm lại:** Thuốc trừ sâu miệng nhai là các loại thuốc có tác dụng diệt sâu hại cắn, nhai lá, thân cây, gồm các nhóm hóa học và sinh học phổ biến như organophosphat, carbamat, pyrethroid và Bt. Việc lựa chọn thuốc phù hợp tùy thuộc vào loại sâu hại và giai đoạn phát triển của sâu.",[]
+2026-01-06 17:33:19,GLOBAL,thuốc trừ được sâu miệng nhai,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Thuốc trừ sâu miệng nhai**
+
+1. **Định nghĩa ngắn gọn**  
+Thuốc trừ sâu miệng nhai là nhóm thuốc bảo vệ thực vật có tác dụng diệt hoặc kiểm soát các loại sâu có cơ quan miệng dạng nhai, gây hại bằng cách cắn, nhai lá, thân cây.
+
+2. **Tiêu chí nhận biết/đặc điểm chính**  
+- Tác động chủ yếu lên sâu có miệng dạng nhai (ví dụ: sâu xanh, sâu đục thân, sâu khoang).  
+- Thuốc thường có cơ chế tiếp xúc hoặc vị độc, khiến sâu ngừng ăn và chết.  
+- Hiệu quả nhanh, giảm tổn thương cơ học trên cây trồng do sâu gây ra.  
+
+3. **Phân loại thuốc trừ sâu miệng nhai**  
+- **Thuốc tiếp xúc:** Thuốc bám trên bề mặt lá, khi sâu ăn hoặc tiếp xúc sẽ bị nhiễm độc.  
+- **Thuốc vị độc:** Thuốc được cây hấp thụ hoặc bám trên lá, sâu ăn vào sẽ bị ngộ độc.  
+- **Thuốc sinh học:** Sử dụng vi khuẩn, nấm hoặc các chế phẩm sinh học có tác dụng gây bệnh hoặc ức chế sâu miệng nhai.  
+
+4. **Ví dụ đại diện thường gặp**  
+- **Nhóm thuốc tiếp xúc:**  
+  + **Pyrethroid** (ví dụ: Lambdacyhalothrin, Cypermethrin)  
+  + **Organophosphat** (ví dụ: Chlorpyrifos)  
+- **Nhóm thuốc vị độc:**  
+  + **Neonicotinoid** (ví dụ: Imidacloprid)  
+  + **Spinosad** (thuốc sinh học có tác dụng vị độc)  
+- **Thuốc sinh học:**  
+  + **Bacillus thuringiensis (Bt):** Vi khuẩn sản sinh độc tố tiêu hóa sâu miệng nhai, thường dùng trong cây trồng rau màu và cây ăn quả.  
+
+---
+
+**Tóm lại:** Thuốc trừ sâu miệng nhai là các loại thuốc có tác dụng tiêu diệt sâu có miệng dạng nhai, gồm các nhóm thuốc tiếp xúc, vị độc và sinh học, thường dùng để phòng trừ sâu xanh, sâu đục thân, sâu khoang trong nhiều loại cây trồng.",[]
+2026-01-06 17:36:41,RAG,thuốc trừ được sâu miệng nhai,Thuốc trừ sâu miệng nhai.,RAG_SOFT,0.5620008111000061,0.5554791688919067,0.006521642208099365,0.5323330223560333,220,0.024434454737705856,"Checklist thuốc trừ sâu miệng nhai theo ngữ cảnh:
+
+1. Xác định đối tượng sâu miệng nhai cần phòng trừ.
+   - Mục đích: Để lựa chọn công thức thuốc phù hợp, hiệu quả cao.
+
+2. Lựa chọn công thức phối hợp thuốc phòng trừ sâu miệng nhai:
+   - Công thức 1: Binhtox Gold, Oxatin, Voi Thai Gold với liều 25-50ml kết hợp Kajio 5WG 25g pha trong 20L nước.
+     + Mục đích: Phòng trừ hiệu quả sâu miệng nhai (DOC 1).
+   - Công thức 2: Zigen Xpro liều 24-50ml/25L nước, tùy mật độ sâu và mức độ kháng thuốc.
+     + Mục đích: Diệt trừ sâu miệng nhai và sâu đục thân hiệu quả 80-90% (DOC 2, DOC 4).
+   - Công thức 3: Bipimai + thuốc lưu dẫn + Abamectin 3.6.
+     + Mục đích: Phòng trừ sâu đục/trong hiệu quả; Abamectin 3.6 dùng riêng cho bọ nhảy (DOC 3).
+   - Công thức 4: Binhtox Gold, Oxatin, Voi Thai Gold liều 25-50ml kết hợp Bacillus 50g pha trong 20L nước.
+     + Mục đích: Kiểm soát sâu miệng nhai hiệu quả, tăng cường phòng trừ sinh học (DOC 5).
+   - Công thức 5: Công thức giống sâu tơ phối hợp với thuốc lưu dẫn để diệt cả sâu tơ và bọ nhảy.
+     + Mục đích: Kiểm soát đồng thời các đối tượng sâu hại nhóm miệng nhai (DOC 12).
+
+3. Lưu ý liều lượng và cách pha:
+   - Điều chỉnh liều lượng phù hợp với mật độ sâu và điều kiện thực tế (DOC 5).
+   - Liều lượng cụ thể theo từng công thức như đã nêu (ví dụ: Binhtox Gold, Oxatin, Voi Thai Gold 25-50ml; Zigen Xpro 24-50ml/25L nước).
+
+4. Áp dụng phác đồ thuốc có tác động tiếp xúc mạnh khi cần thiết.
+   - Mục đích: Phòng trừ sâu miệng nhai hiệu quả, hạn chế sâu phát triển (DOC 8).
+
+5. Tham khảo khuyến cáo khi thay thế thuốc:
+   - Oxatin dùng liều 30-40ml/25L nước, việc thay thế cần tham khảo hướng dẫn chuyên môn (DOC 6).
+
+6. Sử dụng thuốc riêng biệt khi cần diệt đối tượng cụ thể:
+   - Abamectin 3.6 dùng riêng cho bọ nhảy (DOC 3).
+
+Kiến thức chung:
+- Việc phối hợp nhiều thuốc giúp tăng hiệu quả diệt trừ sâu miệng nhai và giảm thiểu khả năng kháng thuốc.
+- Sử dụng đúng liều lượng, thời điểm phun và cách pha thuốc là yếu tố quan trọng để đạt hiệu quả tối ưu.
+- Kết hợp thuốc sinh học (như Bacillus) giúp tăng cường phòng trừ sinh học, giảm tác động môi trường.
+
+Tóm lại, các thuốc trừ sâu miệng nhai được khuyến cáo gồm: Binhtox Gold, Oxatin, Voi Thai Gold, Kajio 5WG, Zigen Xpro, Bipimai, Abamectin 3.6 và phối hợp Bacillus. Các công thức phối hợp và liều lượng pha nước cụ thể theo từng công thức đã nêu ở trên.",[]
+2026-01-06 17:41:32,RAG,"Gửi các mẫu thuốc trị sâu đục thân, mọt đục cành cho anh/chị xem?","Gửi các mẫu thuốc trị sâu đục thân, mọt đục cành cho anh/chị xem?",RAG_SOFT,0.531742513179779,0.5231034755706787,0.008639037609100342,0.4895695626735687,220,0.03062495713145097,"Dưới đây là checklist các mẫu thuốc trị sâu đục thân, mọt đục cành theo NGỮ CẢNH đã cung cấp:
+
+1. Xác định loại sâu cần phòng trừ: sâu đục thân, mọt đục cành trên cây trồng (ví dụ: cà phê, cây ăn trái, cây công nghiệp).
+   - Mục đích: Để chọn thuốc phù hợp có tác dụng đặc hiệu với đối tượng sâu hại.
+
+2. Lựa chọn thuốc có thành phần và công dụng phù hợp:
+   - Forgon 40EC (Dime58): chứa Dimethoate 400g/lít, phòng trừ sâu đục thân, mọt đục cành trên nhiều loại cây như cà phê, hồ tiêu, ngô, lạc, điều, bông vải, lúa, cây ăn trái.
+   - Kajio 5EC (Emasieu): dùng để phòng trừ mọt đục cành trên cây cà phê.
+   - Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu): phòng trừ mọt đục cành trên cây chè và cà phê.
+   - (Panda Nhật - Túi trắng): diệt sâu đục cành trên cây cà phê.
+   - CYMKILL 25EC: chứa Cypermethrin 250g/lít, diệt sâu đục thân, sâu đục cành, sâu đục quả trên nhiều loại cây như lúa, cà phê, điều, cây ăn trái.
+   - Zigen Xpro: ví dụ dùng cho sâu đục quả sầu riêng (liều 24ml/20L nước).
+
+3. Chuẩn bị thuốc theo hướng dẫn:
+   - CYMKILL 25EC: pha 25-30ml/bình 20 lít nước, phun 300-500 lít/ha.
+   - Zigen Xpro: pha 24ml/20L nước.
+   - Forgon 40EC và các thuốc khác: theo hướng dẫn trên nhãn (không có số liệu cụ thể trong ngữ cảnh).
+
+4. Thực hiện phun thuốc:
+   - Phun khi sâu mới xuất hiện hoặc khi mật độ sâu cao để đạt hiệu quả.
+   - Thời điểm phun lý tưởng: sáng sớm hoặc chiều mát (đối với CYMKILL 25EC).
+   - Lưu ý an toàn: tránh phun khi có gió lớn hoặc trời sắp mưa to (đối với CYMKILL 25EC).
+   - Với sâu đục thân, sâu đục quả cây ăn trái mật độ cao, cần dùng thuốc có cơ chế tiếp xúc-lưu dẫn mạnh.
+
+5. Thực hiện các biện pháp bổ trợ:
+   - Xông hơi mạnh hoặc tiếp xúc mạnh (đối với sâu cuốn lá, sâu đục thân lúa rất hay kháng thuốc).
+   - Kiểm tra và theo dõi mật độ sâu sau phun để có điều chỉnh phù hợp.
+
+Kiến thức chung:
+- Việc lựa chọn thuốc cần phù hợp với loại cây trồng và đối tượng sâu hại cụ thể.
+- Phun thuốc đúng liều lượng và đúng thời điểm giúp tăng hiệu quả phòng trừ và giảm nguy cơ sâu kháng thuốc.
+- Kết hợp biện pháp kỹ thuật như xông hơi, tiếp xúc mạnh giúp tăng hiệu quả xử lý sâu đục thân, mọt đục cành.
+
+Tóm lại, các mẫu thuốc tiêu biểu trị sâu đục thân, mọt đục cành gồm có: Forgon 40EC (Dimethoate), Kajio 5EC/5WG, (Panda Nhật - Túi trắng), CYMKILL 25EC, Zigen Xpro. Mỗi thuốc có cách pha và sử dụng cụ thể theo hướng dẫn trong ngữ cảnh.",[]
+2026-01-06 17:51:01,RAG,Thuốc Binhfos (Profenofos) bên em phối với cái gì trừ rệp sáp hiệu quả?,Thuốc Binhfos (Profenofos) bên em phối với cái gì để trừ rệp sáp hiệu quả?,RAG_SOFT,0.5725988745689392,0.5605933666229248,0.012005507946014404,0.5440550804138183,220,0.045828935590108706,"Dựa trên ngữ cảnh cung cấp, thuốc Binhfos 50EC (chứa hoạt chất Profenofos 500g/lít) có tác dụng trừ rệp sáp hiệu quả trên nhiều loại cây trồng như cà phê, mãng cầu, đu đủ, sầu riêng, chè, ổi và nhiều cây khác (xem DOC 1, DOC 2, DOC 3, DOC 9). Thuốc có cơ chế xông hơi và tiếp xúc với vị độc, giúp kiểm soát sâu miệng nhai, sâu chích hút và rệp sáp.
+
+Về phối trộn để tăng hiệu quả trừ rệp sáp, trong ngữ cảnh không có thông tin trực tiếp về phối trộn Binhfos 50EC với thuốc khác để trừ rệp sáp. Tuy nhiên, có thông tin về thuốc Biperin 100EC (hoạt chất Cypermethrin) có tác dụng trừ các loại sâu, rầy mềm (rệp muội), sâu vẽ bùa, sâu tơ, bọ trĩ, bọ xít trên cây ăn trái như cam, quýt, na, vải thiều, rau màu, cây ăn quả (DOC 7). Đặc biệt, Biperin 100EC có thể phối trộn với thuốc Tosi 30WG (hoạt chất Acetamiprid 30%) để trừ bọ trĩ, rầy mềm (rệp muội), rầy xanh, sâu đục trái trên cây ăn trái, với liều dùng cụ thể (DOC 7).
+
+Ngoài ra, để xử lý rệp sáp và rệp vảy, có thể dùng phương pháp xông hơi kết hợp thuốc lưu dẫn như Santoso, Dinotop, hoặc pha thêm 4-5ml chất bám dính hoặc nước rửa chén vào bình 20L để tăng hiệu quả đánh bay lớp sáp phủ bên ngoài (DOC 8). Cũng có thể kết hợp thuốc Lekima để trừ trứng rệp sáp, tưới gốc hoặc rải dạng hạt GR dưới gốc để diệt rệp dưới đất (DOC 11).
+
+Tóm lại, trong ngữ cảnh hiện có:
+
+- Thuốc Binhfos 50EC (Profenofos) có thể dùng đơn độc để trừ rệp sáp trên nhiều cây trồng.
+- Không có thông tin cụ thể về phối trộn Binhfos 50EC với thuốc khác để tăng hiệu quả trừ rệp sáp.
+- Thuốc Biperin 100EC phối trộn với Tosi 30WG được dùng để trừ rệp muội (rầy mềm) và sâu hại trên cây ăn trái, có thể tham khảo nếu cần.
+- Có thể áp dụng kỹ thuật xông hơi và dùng thuốc lưu dẫn như Santoso, Dinotop hoặc thêm chất bám dính để tăng hiệu quả trừ rệp sáp.
+- Dùng Lekima để trừ trứng rệp sáp và xử lý rệp dưới đất bằng cách tưới gốc hoặc rải hạt GR.
+
+Lưu ý khi sử dụng Binhfos 50EC: không phun vào giai đoạn cây ra hoa hoặc thu hoạch, mặc đồ bảo hộ khi pha và phun thuốc, tránh phun vào ngày nắng gắt hoặc mưa to (DOC 4, DOC 6).
+
+Kết luận: Nếu muốn phối trộn thuốc để trừ rệp sáp hiệu quả, có thể cân nhắc phối hợp kỹ thuật xông hơi, thuốc lưu dẫn (Santoso, Dinotop), hoặc thuốc Lekima để trừ trứng, đồng thời tham khảo thuốc Biperin 100EC phối trộn với Tosi 30WG cho các loại rệp mềm, tuy nhiên ngữ cảnh không ghi nhận phối trộn trực tiếp Binhfos 50EC với các thuốc này. Việc phối trộn cần tuân thủ hướng dẫn kỹ thuật và an toàn.",[]
+2026-01-06 18:03:38,RAG,"Công ty có thuốc đặc trị rệp sáp /cà phê từ 2 hoạt chất trở lên ko?,Công ty có thuốc đặc trị rệp sáp/cà phê từ 2 hoạt chất trở lên không?",Công ty có thuốc đặc trị rệp sáp/cà phê từ 2 hoạt chất trở lên không?,RAG_SOFT,0.46768617630004883,0.4586183726787567,0.009067803621292114,0.45619301199913026,220,0.028272576020545635,"Dựa trên NGỮ CẢNH cung cấp, công ty có các thuốc đặc trị rệp sáp trên cây cà phê chứa từ 2 hoạt chất trở lên như sau:
+
+1. **Santoso 100SC**  
+   - Tác dụng: Trừ rệp sáp, kiến và mối trên cây cà phê (DOC 1).  
+   - Đặc điểm: Thuốc giúp kiểm soát hiệu quả nhiều loại côn trùng gây hại khác nhau trên cà phê, tức có khả năng phòng trừ đa dạng sâu bệnh cùng lúc.  
+   - Như vậy, Santoso 100SC có thể coi là thuốc đặc trị rệp sáp trên cà phê với tác động thêm trên kiến và mối, tức có ít nhất 2 hoạt chất hoặc cơ chế tác động đa dạng.
+
+2. **Ledan 4GR (Panda 4GR - Túi đỏ)**  
+   - Hoạt chất chính: Cartap Hydrochloride 4% w/w (DOC 3).  
+   - Tác dụng: Phòng trừ rệp sáp, rệp muội và sâu đục cành trên cà phê.  
+   - Thuốc này có khả năng tác động trên nhiều loại sâu hại, tức có ít nhất 2 hoạt chất hoặc cơ chế tác động đa dạng để phòng trừ các loại rệp và sâu đục cành.
+
+3. **Kajio 5EC (Emasieu hoặc G9 Thánh sâu)**  
+   - Tác dụng: Phòng trừ rệp sáp và mọt đục cành trên cà phê (DOC 4, DOC 8).  
+   - Thuốc có tác dụng đa dạng trên ít nhất 2 loại sâu bệnh nên có thể coi là có từ 2 hoạt chất trở lên hoặc cơ chế đa tác động.
+
+4. **Lekima 100EC**  
+   - Tác dụng: Phòng trừ rệp sáp và rệp vảy trên cà phê và roi (mận) (DOC 7).  
+   - Thuốc này phòng trừ đồng thời 2 loại rệp khác nhau, thể hiện tác động đa dạng.
+
+5. **Chessin 600WP**  
+   - Tác dụng: Phòng trừ rệp sáp, bọ phấn và rầy chổng cánh trên cà phê và hồ tiêu (DOC 6).  
+   - Thuốc có tác động đa dạng trên nhiều loại côn trùng gây hại, trong đó có rệp sáp.
+
+---
+
+**Tổng hợp:**  
+Công ty có nhiều thuốc đặc trị rệp sáp trên cây cà phê có tác động từ 2 hoạt chất trở lên hoặc cơ chế đa tác động, điển hình như Santoso 100SC (trừ rệp sáp, kiến, mối), Ledan 4GR (trừ rệp sáp, rệp muội, sâu đục cành), Kajio 5EC (trừ rệp sáp, mọt đục cành), Lekima 100EC (trừ rệp sáp, rệp vảy), và Chessin 600WP (trừ rệp sáp, bọ phấn, rầy chổng cánh).
+
+Các sản phẩm này không chỉ đặc trị rệp sáp mà còn phòng trừ thêm các loại sâu bệnh khác trên cây cà phê, giúp bảo vệ cây toàn diện hơn.
+
+---
+
+**Lưu ý:**  
+- NGỮ CẢNH không nêu cụ thể từng hoạt chất trong mỗi sản phẩm trừ Ledan 4GR có Cartap Hydrochloride 4% w/w.  
+- Không có thông tin chi tiết về công thức chính xác gồm bao nhiêu hoạt chất hay tên từng hoạt chất trong các sản phẩm khác.  
+- Không có thông tin về liều lượng, cách pha hay thời gian cách ly trong NGỮ CẢNH.
+
+Nếu cần thông tin chi tiết về hoạt chất hoặc hướng dẫn kỹ thuật sử dụng, vui lòng cung cấp thêm tài liệu hoặc yêu cầu cụ thể.",[]
+2026-01-06 18:05:59,RAG,Cách dùng sản phẩm Azinrio/ bắp ?,Cách dùng sản phẩm Azinrio/bắp?,RAG_SOFT,0.32165616750717163,0.5614678859710693,-0.2398117184638977,0.4653188645839691,120,0.0,"Dưới đây là hướng dẫn cách dùng sản phẩm Azin Rio 45SC trên cây bắp (ngô) tổng hợp từ các thông tin trong ngữ cảnh:
+
+1. Đặc tính và phạm vi tác dụng của Azin Rio 45SC trên cây bắp:
+- Azin Rio 45SC là thuốc đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô (bắp), giúp kiểm soát hiệu quả các loại cỏ gây hại trong giai đoạn hậu nảy mầm sớm.
+- Thuốc có tác dụng làm vàng cỏ sau 5-7 ngày và cỏ chết hoàn toàn sau khoảng 10 ngày, giúp làm sạch ruộng nhanh chóng và hiệu quả.
+
+2. Thời điểm và cách phun:
+- Nên phun thuốc khi cỏ đã mọc nhưng còn nhỏ, từ 1-5 lá, tốt nhất khi cây ngô từ 8 lá trở lên.
+- Nên phun khi cỏ ở giai đoạn 2-4 lá để đạt hiệu quả cao, tránh phun khi cỏ đã già vì thuốc sẽ giảm hiệu quả.
+- Có thể phun trùm lên cây ngô nhưng hạn chế phun tập trung vào nõn ngô để tránh làm vàng lá.
+- Đặc biệt với bắp nếp, nên xịt dưới gốc, hạn chế xịt vào lá và nõn để tránh ảnh hưởng đến cây.
+- Không nên phun tập trung thuốc vào nõn ngô vì có thể làm lá bị vàng tạm thời, tuy nhiên cây sẽ phục hồi và lá mới sẽ xanh trở lại.
+
+3. Lưu ý khi sử dụng:
+- Thuốc có thể làm lá vàng tạm thời nhưng cây sẽ phục hồi và lá mới sẽ xanh trở lại.
+- Tránh phun thuốc khi cỏ đã già để không làm giảm hiệu quả của thuốc.
+- Không phun tập trung vào nõn ngô để tránh gây vàng lá.
+
+Tóm lại, khi sử dụng Azin Rio 45SC trên cây bắp, cần phun thuốc đúng thời điểm cỏ còn nhỏ, phun trùm lên cây hoặc xịt dưới gốc, hạn chế phun vào nõn ngô để tránh làm vàng lá, đồng thời chú ý rằng thuốc có thể gây vàng lá tạm thời nhưng cây sẽ phục hồi tốt.",[]
+2026-01-06 18:08:30,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.28867271542549133,0.27705514430999756,0.011617571115493774,0.2744599223136902,120,0.02235783867038895,"Trọn bộ sản phẩm sử dụng cho cây lúa phù hợp theo từng giai đoạn, theo ngữ cảnh tổng hợp từ các tài liệu:
+
+---
+
+**Checklist quy trình sử dụng sản phẩm cho cây lúa theo từng giai đoạn:**
+
+1. **Giai đoạn sau khi sạ 15-20 ngày:**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc để trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ.
+   - Mục đích: Phòng trừ sâu hại giai đoạn đầu, hạn chế mật độ sâu cao.
+   - Tham khảo: [DOC 6]
+
+2. **Giai đoạn từ 8 đến 30 ngày sau khi sạ (đặc biệt khi cây lúa phát triển 4-5 lá, khoảng 12-15 ngày sau sạ):**
+   - Việc cần làm: Phun thuốc Dktazole 480SL (Vamco).
+   - Mục đích: Trừ cỏ hiệu quả, hạn chế ảnh hưởng đến cây lúa.
+   - Tham khảo: [DOC 7]
+
+3. **Giai đoạn phun thuốc trừ sâu cuốn lá, sâu đục thân khi mật độ sâu bình thường:**
+   - Việc cần làm: Phun Ohayo 100SC hoặc Igro Ohayo 240SC pha 24-50ml/25L nước (tuỳ mật độ kháng).
+   - Mục đích: Diệt trừ sâu đục thân và sâu cuốn lá hiệu quả 80-90%.
+   - Tham khảo: [DOC 10]
+
+4. **Giai đoạn phun thuốc trừ sâu cuốn lá, sâu đục thân khi mật độ sâu cao và rất hay kháng thuốc:**
+   - Việc cần làm: Rải hạt GR dưới gốc sau khi sạ 15-20 ngày.
+   - Mục đích: Kiểm soát sâu hại có khả năng kháng thuốc cao.
+   - Tham khảo: [DOC 6]
+
+5. **Giai đoạn phòng trừ bệnh đạo ôn trên lúa (khoảng 7 ngày trước khi lúa trổ và khi lúa trổ đều):**
+   - Việc cần làm: Phun ACO ONE 400EC với liều 1.5 lít/ha (pha 40-50ml/bình 16 lít), phun 2 lần: trước khi trổ 7 ngày và khi lúa trổ đều.
+   - Mục đích: Đặc trị đạo ôn lá, đạo ôn cổ bông, giúp cây lúa khỏe, hạt chắc, tăng năng suất.
+   - Lưu ý: Không phun khi trời sắp mưa to hoặc có gió lớn. Thời gian cách ly 15 ngày.
+   - Tham khảo: [DOC 4]
+
+6. **Giai đoạn phòng trừ bệnh đạo ôn lá, đạo ôn cổ bông (trước và sau khi trổ 7 ngày):**
+   - Việc cần làm: Phun DOWNY 650WP hoặc ĐÙM XPRO 650WP, liều pha 16-20g/bình 16 lít nước hoặc 25-30g/bình 25 lít nước, phun 2-3 bình/1000m2.
+   - Mục đích: Ngăn chặn sự phát triển nấm bệnh, bảo vệ cây lúa, tăng năng suất.
+   - Lưu ý: Không phun khi trời sắp mưa; phun lặp lại sau 5-7 ngày nếu bệnh nặng; thời gian cách ly 14 ngày.
+   - Tham khảo: [DOC 12]
+
+7. **Giai đoạn phòng trừ rầy nâu, rầy lưng trắng và bọ xít:**
+   - Việc cần làm: Phun thuốc Million 50WG khi sâu bệnh mới xuất hiện hoặc mật độ đạt ngưỡng gây hại.
+   - Mục đích: Kiểm soát sâu bệnh gây hại hiệu quả.
+   - Lưu ý: Phun đều trên lá để thuốc tiếp xúc tốt với sâu bệnh.
+   - Tham khảo: [DOC 9]
+
+---
+
+**Kiến thức chung bổ sung:**
+- Việc sử dụng thuốc và phân bón theo từng giai đoạn giúp cây lúa phát triển khỏe mạnh, tăng sức đề kháng, phòng trừ sâu bệnh hiệu quả.
+- Cần lưu ý thời điểm phun thuốc để thuốc phát huy tối đa tác dụng, tránh phun khi trời mưa hoặc có gió lớn để giảm thất thoát thuốc và tăng hiệu quả.
+
+---
+
+Tóm lại, bộ sản phẩm và quy trình sử dụng cho lúa theo giai đoạn gồm:  
+- Rải hạt GR sau sạ 15-20 ngày để trừ sâu cuốn lá, sâu đục thân.  
+- Phun Dktazole 480SL từ 8-30 ngày sau sạ để trừ cỏ.  
+- Phun Ohayo 100SC hoặc Igro Ohayo 240SC khi sâu cuốn lá, đục thân mật độ bình thường.  
+- Phun ACO ONE 400EC và DOWNY 650WP/ĐÙM XPRO 650WP phòng trừ bệnh đạo ôn trước và sau khi lúa trổ.  
+- Phun Million 50WG khi sâu bệnh rầy nâu, rầy lưng trắng xuất hiện.
+
+Đây là quy trình dựa trên các sản phẩm và liều lượng có trong ngữ cảnh, đảm bảo hiệu quả phòng trừ sâu bệnh và chăm sóc cây lúa theo từng giai đoạn phát triển.",[]
+2026-01-06 18:25:38,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.28870418667793274,0.27700692415237427,0.011697262525558472,0.27444523572921753,120,0.022513657758664134,"Dưới đây là trọn bộ sản phẩm sử dụng cho cây lúa phù hợp theo từng giai đoạn, tổng hợp từ NGỮ CẢNH:
+
+---
+
+### Checklist trọn bộ sản phẩm và quy trình sử dụng cho cây lúa theo từng giai đoạn
+
+1. **Giai đoạn sau khi sạ 15-20 ngày:**
+   - **Sản phẩm:** Rải các dạng hạt GR dưới gốc.
+   - **Mục đích:** Trừ ấu trùng sâu cuốn lá, sâu đục thân, trừ trĩ (DOC 6).
+   - **Lưu ý:** Đây là biện pháp xử lý sâu hại ở giai đoạn đầu, giúp kiểm soát sâu bệnh hiệu quả.
+
+2. **Giai đoạn từ 8 đến 30 ngày sau khi sạ (đặc biệt khi cây lúa phát triển 4-5 lá trở lên, khoảng 12-15 ngày sau sạ):**
+   - **Sản phẩm:** Phun Dktazole 480SL (Vamco).
+   - **Mục đích:** Trừ cỏ, giúp cây lúa phát triển tốt (DOC 7).
+   - **Lưu ý:** Phun đúng giai đoạn để thuốc phát huy hiệu quả trừ cỏ tốt nhất, hạn chế ảnh hưởng đến cây lúa.
+
+3. **Giai đoạn chuẩn bị trổ và khi lúa trổ đều:**
+   - **Sản phẩm:** Phun Mi Stop 350SC.
+   - **Mục đích:** Phòng trừ bệnh lem lép hạt và đạo ôn (DOC 3).
+   - **Lưu ý:** Phun đúng giai đoạn để thuốc phát huy tối đa tác dụng.
+
+4. **Giai đoạn khi bệnh đạo ôn mới xuất hiện hoặc chớm xuất hiện:**
+   - **Sản phẩm:** ACO ONE 400EC (Isoprothiolane 400g/lít).
+   - **Liều dùng:** 1,5 lít/ha; pha 40-50ml/bình 16 lít; phun 2-3 bình/1000m2 (DOC 4).
+   - **Mục đích:** Đặc trị bệnh đạo ôn lá, đạo ôn cổ bông, thối cổ gié, giúp cây lúa khỏe, hạt chắc, tăng năng suất.
+   - **Lưu ý:** Phun 7 ngày trước khi trổ, phun lại khi lúa trổ đều; không phun khi trời mưa to hoặc gió lớn; thời gian cách ly 15 ngày; phun lại sau 5-7 ngày nếu bệnh nặng.
+
+5. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ bình thường:**
+   - **Sản phẩm:** Zigen Xpro hoặc Ohayo 100SC, Igro Ohayo 240SC.
+   - **Liều dùng:** Pha 24-50ml/25 lít nước tùy mật độ (DOC 8, DOC 10).
+   - **Mục đích:** Diệt trừ sâu đục thân, sâu cuốn lá hiệu quả 80-90%.
+
+6. **Giai đoạn phòng trừ rầy nâu, rầy lưng trắng, bọ xít:**
+   - **Sản phẩm:** Million 50WG.
+   - **Cách dùng:** Phun khi sâu bệnh mới xuất hiện hoặc mật độ đạt ngưỡng gây hại; phun đều trên lá để thuốc tiếp xúc tốt (DOC 9).
+   - **Lưu ý:** Liều lượng và cách dùng cụ thể tham khảo trên bao bì hoặc tài liệu kỹ thuật nhà sản xuất.
+
+---
+
+### Kiến thức chung bổ sung (không có số liệu định lượng trong ngữ cảnh)
+
+- Việc phun thuốc và bón phân theo từng bước giúp cung cấp dinh dưỡng phù hợp với giai đoạn phát triển của cây, tăng sức đề kháng và phòng trừ sâu bệnh hiệu quả (DOC 2).
+- Không phun thuốc khi trời sắp mưa to hoặc có gió lớn để đảm bảo hiệu quả và an toàn (DOC 4, DOC 5).
+- Thời gian cách ly thuốc cần tuân thủ theo hướng dẫn từng loại thuốc để đảm bảo an toàn thực phẩm và môi trường.
+
+---
+
+Tóm lại, quy trình sử dụng sản phẩm cho lúa theo từng giai đoạn gồm:
+
+- Rải hạt GR sau 15-20 ngày sạ để trừ sâu hại.
+- Phun Dktazole 480SL từ 8-30 ngày sau sạ để trừ cỏ.
+- Phun Mi Stop 350SC giai đoạn chuẩn bị trổ và trổ đều để phòng bệnh đạo ôn.
+- Phun ACO ONE 400EC khi bệnh đạo ôn mới xuất hiện, 7 ngày trước trổ và khi trổ đều.
+- Phun thuốc trừ sâu Zigen Xpro hoặc Ohayo 100SC/Igro Ohayo 240SC khi sâu cuốn lá, sâu đục thân mật độ bình thường.
+- Phun Million 50WG khi sâu bệnh rầy nâu, rầy lưng trắng, bọ xít mới xuất hiện hoặc đạt ngưỡng gây hại.
+
+---
+
+Nếu cần chi tiết về liều lượng, cách pha, thời gian cách ly từng thuốc, vui lòng tham khảo tài liệu kỹ thuật tương ứng trong NGỮ CẢNH.",[]
+2026-01-06 18:27:39,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.29000043869018555,0.2787826359272003,0.01121780276298523,0.2758742868900299,120,0.021687784816037947,"Dưới đây là trọn bộ sản phẩm sử dụng cho cây lúa phù hợp theo từng giai đoạn dựa trên NGỮ CẢNH đã cung cấp, trình bày theo checklist từng bước:
+
+1. **Giai đoạn sau khi sạ 15-20 ngày:**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc để trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ.
+   - Mục đích: Phòng trừ sâu hại ngay từ giai đoạn đầu, hạn chế mật độ sâu tăng cao (DOC 6).
+
+2. **Giai đoạn từ 8 đến 30 ngày sau khi sạ (khoảng cây lúa 4-5 lá trở lên, 12-15 ngày sau sạ):**
+   - Việc cần làm: Phun thuốc Dktazole 480SL (Vamco).
+   - Mục đích: Trừ cỏ hiệu quả, hạn chế ảnh hưởng đến cây lúa (DOC 7).
+
+3. **Giai đoạn chuẩn bị trổ và khi lúa trổ đều:**
+   - Việc cần làm: Phun thuốc Mi Stop 350SC.
+   - Mục đích: Phòng trừ bệnh lem lép hạt và đạo ôn hiệu quả, giúp bảo vệ cây lúa (DOC 3).
+
+4. **Giai đoạn khi bệnh đạo ôn mới xuất hiện hoặc chớm xuất hiện:**
+   - Việc cần làm: Phun ACO ONE 400EC với liều 1.5 lít/ha (pha 40-50ml/bình 16 lít), phun 2 lần: lần 1 là 7 ngày trước khi trổ, lần 2 khi lúa đã trổ đều.
+   - Mục đích: Đặc trị đạo ôn lá, đạo ôn cổ bông, giúp cây lúa phục hồi nhanh, tăng năng suất (DOC 4).
+
+5. **Giai đoạn phòng trừ đạo ôn và các nấm bệnh khác:**
+   - Việc cần làm: Phun DOWNY 650WP hoặc ĐÙM XPRO 650WP.
+   - Liều dùng: Pha 16-20g/bình 16 lít nước phun cho 360m2 hoặc 25-30g/bình 25 lít phun cho 500m2.
+   - Thời điểm: Phun ngừa hoặc khi bệnh mới chớm xuất hiện, trước lúc trổ và sau khi trổ 7 ngày.
+   - Mục đích: Phòng trừ đạo ôn lá, đạo ôn cổ bông, giúp lúa xanh lá, tăng năng suất (DOC 11).
+
+6. **Xử lý sâu cuốn lá, sâu đục thân khi mật độ bình thường:**
+   - Việc cần làm: Phun Ohayo 100SC hoặc Igro Ohayo 240SC pha 24-50ml/25 lít nước (tùy mật độ).
+   - Mục đích: Diệt trừ sâu đục thân hiệu quả 80-90% (DOC 10).
+
+7. **Xử lý sâu cuốn lá, sâu đục thân khi mật độ cao, kháng thuốc:**
+   - Việc cần làm: Sử dụng Zigen Xpro pha 24-50ml/25 lít nước (tùy mật độ kháng).
+   - Mục đích: Diệt trừ sâu đục thân rất tốt, hiệu quả 80-90% (DOC 8).
+
+---
+
+**Kiến thức chung:**
+- Việc phun thuốc đúng giai đoạn giúp thuốc phát huy tối đa hiệu quả phòng trừ sâu bệnh và nấm bệnh, đồng thời bảo vệ cây lúa khỏe mạnh, tăng năng suất.
+- Không phun thuốc khi trời sắp mưa to hoặc có gió lớn để tránh giảm hiệu lực thuốc và gây hại cho cây.
+- Thời gian cách ly sau khi phun thuốc BVTV thường từ 7 đến 15 ngày tùy loại thuốc (tham khảo DOC 4, 5, 11).
+
+---
+
+**Tóm tắt sản phẩm chính theo giai đoạn:**
+
+| Giai đoạn | Sản phẩm | Liều lượng/Cách dùng | Mục đích |
+|-----------|----------|---------------------|----------|
+| Sau khi sạ 15-20 ngày | Các dạng hạt GR | Rải dưới gốc | Trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ |
+| 8-30 ngày sau sạ | Dktazole 480SL (Vamco) | Phun khi cây có 4-5 lá | Trừ cỏ hiệu quả |
+| Chuẩn bị trổ và lúa trổ đều | Mi Stop 350SC | Phun 2 lần (trước trổ và khi trổ đều) | Phòng trừ bệnh lem lép hạt, đạo ôn |
+| Khi bệnh đạo ôn mới xuất hiện | ACO ONE 400EC | 1.5 lít/ha, phun 2 lần | Đặc trị đạo ôn lá, cổ bông |
+| Phòng trừ đạo ôn, nấm bệnh | DOWNY 650WP, ĐÙM XPRO 650WP | 16-30g/bình 16-25 lít | Phòng trừ đạo ôn, tăng năng suất |
+| Sâu cuốn lá, đục thân mật độ bình thường | Ohayo 100SC, Igro Ohayo 240SC | 24-50ml/25 lít nước | Diệt trừ sâu hiệu quả 80-90% |
+| Sâu cuốn lá, đục thân mật độ cao, kháng thuốc | Zigen Xpro | 24-50ml/25 lít nước | Diệt trừ sâu hiệu quả 80-90% |
+
+---
+
+Trên đây là quy trình sử dụng sản phẩm cho cây lúa theo từng giai đoạn phù hợp, dựa hoàn toàn trên thông tin NGỮ CẢNH đã cung cấp.",[]
+2026-01-06 18:29:05,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.28870418667793274,0.27700692415237427,0.011697262525558472,0.27444523572921753,120,0.022513657758664134,"Dưới đây là trọn bộ sản phẩm sử dụng cho cây lúa phù hợp theo từng giai đoạn, tổng hợp từ các NGỮ CẢNH đã cho:
+
+---
+
+### Checklist trọn bộ sản phẩm sử dụng cho lúa theo từng giai đoạn
+
+1. **Giai đoạn sau khi sạ 15-20 ngày:**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc để trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ.
+   - Mục đích: Phòng trừ sâu hại giai đoạn đầu, hạn chế mật độ sâu cao, tránh kháng thuốc (DOC 6).
+
+2. **Giai đoạn từ 8 đến 30 ngày sau khi sạ (khoảng cây lúa 4-5 lá trở lên, 12-15 ngày sau sạ):**
+   - Việc cần làm: Phun thuốc Dktazole 480SL (Vamco).
+   - Mục đích: Trừ cỏ hiệu quả, hạn chế ảnh hưởng đến cây lúa (DOC 7).
+
+3. **Giai đoạn trồng lúa chuẩn bị trổ và khi lúa trổ đều:**
+   - Việc cần làm: Phun thuốc Mi Stop 350SC.
+   - Mục đích: Phòng trừ bệnh lem lép hạt và đạo ôn, giúp bảo vệ cây lúa hiệu quả (DOC 3).
+
+4. **Giai đoạn bệnh đạo ôn mới xuất hiện hoặc chớm xuất hiện:**
+   - Việc cần làm: Phun thuốc ACO ONE 400EC (Isoprothiolane 400g/l).
+     - Liều dùng: 1,5 lít/ha, pha 40-50ml/bình 16 lít, phun 2-3 bình/1000m2.
+     - Phun lần 1: 7 ngày trước khi trổ.
+     - Phun lần 2: Khi lúa đã trổ đều.
+     - Nếu bệnh nặng, phun lại sau 5-7 ngày.
+   - Mục đích: Đặc trị đạo ôn lá, đạo ôn cổ bông, giúp bộ rễ phát triển, cây khỏe, tăng năng suất (DOC 4).
+
+5. **Giai đoạn bệnh đạo ôn mới chớm hoặc cần phòng trừ nấm bệnh:**
+   - Việc cần làm: Phun DOWNY 650WP hoặc ĐÙM XPRO 650WP.
+     - Liều dùng: Pha 16-20g hoặc 20-25g/bình 16 lít, phun 3 bình/1000m2; hoặc 25-30g hoặc 30-35g/bình 25 lít, phun 2 bình/1000m2.
+     - Phun trước lúc trổ và sau khi trổ 7 ngày.
+     - Nếu bệnh nặng, phun lại sau 5-7 ngày.
+   - Mục đích: Phòng trừ đạo ôn lá, đạo ôn cổ bông, làm lúa xanh lá, tăng năng suất (DOC 12).
+
+6. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ bình thường:**
+   - Việc cần làm: Phun thuốc Zigen Xpro hoặc Ohayo 100SC, Igro Ohayo 240SC.
+     - Liều dùng: Pha 24-50ml/25 lít nước tùy mật độ sâu.
+   - Mục đích: Diệt trừ sâu đục thân và sâu cuốn lá hiệu quả 80-90% (DOC 8, DOC 10).
+
+7. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ cao, có kháng thuốc:**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc sau khi sạ 15-20 ngày (như bước 1).
+   - Mục đích: Xử lý sâu hại có mật độ cao và kháng thuốc (DOC 6).
+
+8. **Giai đoạn sâu bệnh mới xuất hiện hoặc mật độ sâu bệnh đạt ngưỡng gây hại:**
+   - Việc cần làm: Phun thuốc Million 50WG.
+     - Cách dùng: Phun đều trên lá để thuốc tiếp xúc tốt với sâu bệnh.
+     - Liều lượng và thời điểm cụ thể theo hướng dẫn trên bao bì hoặc tài liệu kỹ thuật.
+   - Mục đích: Trừ rầy nâu, rầy lưng trắng, bọ xít (DOC 9).
+
+---
+
+### Kiến thức chung bổ sung:
+- Việc phun thuốc đúng giai đoạn giúp thuốc phát huy tối đa hiệu quả, tăng sức đề kháng cây lúa, hạn chế sâu bệnh phát triển mạnh.
+- Không phun thuốc khi trời sắp mưa to hoặc có gió lớn để tránh giảm hiệu lực thuốc và an toàn cho cây trồng.
+- Thời gian cách ly của các thuốc thường từ 7 đến 15 ngày, cần tuân thủ để đảm bảo an toàn khi thu hoạch.
+
+---
+
+Trên đây là tổng hợp trọn bộ sản phẩm và hướng dẫn sử dụng cho cây lúa theo từng giai đoạn dựa trên NGỮ CẢNH đã cung cấp.",[]
+2026-01-06 18:30:40,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.2828693389892578,0.2810169458389282,0.0018523931503295898,0.2320447474718094,120,0.0034932348398797335,"Dưới đây là trọn bộ sản phẩm sử dụng cho cây lúa theo từng giai đoạn phát triển, tổng hợp từ các NGỮ CẢNH đã cho:
+
+---
+
+### Checklist trọn bộ sản phẩm sử dụng cho lúa theo từng giai đoạn
+
+1. **Giai đoạn sau khi sạ 15–20 ngày (lúa con, chuẩn bị phát triển)**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc để trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ.
+   - Mục đích: Phòng trừ sâu hại giai đoạn đầu, giảm mật độ sâu hại.
+   - Tham khảo: [DOC 6]
+
+2. **Giai đoạn 8–30 ngày sau khi sạ (lúa nhỏ, 4–5 lá trở lên)**
+   - Việc cần làm: Phun thuốc trừ cỏ Dktazole 480SL (Vamco).
+   - Mục đích: Diệt cỏ hiệu quả, hạn chế ảnh hưởng đến cây lúa.
+   - Tham khảo: [DOC 7]
+
+3. **Giai đoạn chuẩn bị trổ và trổ đều (bệnh đạo ôn, lem lép hạt)**
+   - Việc cần làm: Phun thuốc Mi Stop 350SC.
+   - Mục đích: Phòng trừ bệnh lem lép hạt và đạo ôn hiệu quả.
+   - Thời điểm: Phun khi lúa chuẩn bị trổ và khi lúa trổ đều.
+   - Tham khảo: [DOC 3]
+
+4. **Giai đoạn bệnh đạo ôn chớm xuất hiện (trước trổ 7 ngày và sau trổ 7 ngày)**
+   - Việc cần làm: Phun ACO ONE 400EC (Isoprothiolane 400g/lít).
+   - Mục đích: Đặc trị đạo ôn lá, đạo ôn cổ bông, giúp cây lúa khỏe, hạt chắc, tăng năng suất.
+   - Liều dùng: 1.5 lít/ha, pha 40-50ml/bình 16 lít nước.
+   - Thời gian cách ly: 15 ngày.
+   - Lưu ý: Không phun khi trời sắp mưa to hoặc có gió lớn.
+   - Tham khảo: [DOC 4]
+
+5. **Giai đoạn bệnh đạo ôn lá, đạo ôn cổ bông (phòng và điều trị)**
+   - Việc cần làm: Phun DOWNY 650WP hoặc ĐÙM XPRO 650WP.
+   - Mục đích: Phòng và trị bệnh đạo ôn, giúp lúa xanh lá, tăng năng suất.
+   - Liều dùng: 16-20g/bình 16 lít nước cho 360m2, hoặc 25-30g/bình 25 lít cho 500m2.
+   - Thời gian cách ly: 14 ngày.
+   - Lưu ý: Không phun khi trời sắp mưa, phun lại sau 5-7 ngày nếu bệnh nặng.
+   - Tham khảo: [DOC 12]
+
+6. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ bình thường**
+   - Việc cần làm: Phun Ohayo 100SC hoặc Igro Ohayo 240SC.
+   - Liều dùng: Pha 24-50ml/25 lít nước tùy mật độ sâu.
+   - Hiệu quả: 80-90% diệt trừ sâu đục thân.
+   - Tham khảo: [DOC 10]
+
+7. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ cao (kháng thuốc)**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc sau khi sạ 15-20 ngày.
+   - Mục đích: Phòng trừ sâu cuốn lá, sâu đục thân, trĩ kháng thuốc hiệu quả.
+   - Tham khảo: [DOC 6]
+
+8. **Giai đoạn sâu cuốn lá, sâu đục thân mật độ bình thường (phun thuốc)**
+   - Việc cần làm: Phun Zigen Xpro.
+   - Liều dùng: Pha 24-50ml/25 lít nước tùy mật độ sâu.
+   - Hiệu quả: 80-90% diệt trừ sâu đục thân.
+   - Tham khảo: [DOC 8]
+
+9. **Giai đoạn sâu bệnh mới xuất hiện hoặc đạt ngưỡng gây hại (rầy nâu, rầy lưng trắng, bọ xít)**
+   - Việc cần làm: Phun thuốc Million 50WG.
+   - Mục đích: Trừ rầy nâu, rầy lưng trắng và bọ xít hiệu quả.
+   - Lưu ý: Phun đều trên lá để thuốc tiếp xúc tốt với sâu bệnh.
+   - Tham khảo: [DOC 9]
+
+10. **Giai đoạn sau khi sạ 20 ngày (kích thích sinh trưởng)**
+    - Việc cần làm: Phun ATOMIN 15WP (Paclobutrazol 15%).
+    - Mục đích: Ức chế sinh tổng hợp gibberellin, kiểm soát thân cây, thúc đẩy ra hoa, ra lá non, phát triển bộ rễ, tăng tỷ lệ đậu trái non.
+    - Liều dùng: 0.5 - 0.6 kg/ha, phun với 400 lít nước/ha.
+    - Lưu ý: Không phun khi có gió lớn hoặc trời sắp mưa to; không dùng cho cây đang bị bệnh hoặc suy.
+    - Thời gian cách ly: 7 ngày.
+    - Tham khảo: [DOC 5]
+
+---
+
+### Kiến thức chung bổ sung:
+- Việc sử dụng thuốc và sản phẩm theo từng giai đoạn giúp cung cấp dinh dưỡng và phòng trừ sâu bệnh phù hợp, tăng sức đề kháng và năng suất cây lúa.
+- Cần phun thuốc đúng thời điểm, đúng liều lượng và đảm bảo điều kiện thời tiết thuận lợi để thuốc phát huy hiệu quả tối đa.
+- Không phun thuốc khi trời mưa to hoặc có gió lớn để tránh giảm hiệu lực và gây hại cho cây trồng.
+
+---
+
+Trên đây là tổng hợp trọn bộ sản phẩm và hướng dẫn sử dụng theo từng giai đoạn phát triển của cây lúa dựa trên NGỮ CẢNH đã cung cấp.",[]
+2026-01-06 18:31:29,RAG,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn ?,Trọn bộ sản phẩm sử dụng cho lúa phù hợp theo từng giai đoạn?,RAG_SOFT,0.1854366511106491,0.43767446279525757,-0.25223781168460846,0.3760943740606308,120,0.0,"Dưới đây là trọn bộ sản phẩm sử dụng cho cây lúa theo từng giai đoạn phát triển dựa trên NGỮ CẢNH đã cho:
+
+-----------------------------------
+**Checklist trọn bộ sản phẩm sử dụng cho lúa theo từng giai đoạn:**
+
+1. **Giai đoạn sau khi sạ 15-20 ngày:**
+   - Việc cần làm: Rải các dạng hạt GR dưới gốc để trừ ấu trùng sâu cuốn lá, sâu đục thân, trĩ.
+   - Mục đích: Phòng trừ sâu hại ngay từ giai đoạn đầu, hạn chế mật độ sâu cao.
+   - Tham khảo: [DOC 6]
+
+2. **Giai đoạn từ 8 đến 30 ngày sau khi sạ (khoảng 4-5 lá trở lên):**
+   - Việc cần làm: Phun thuốc Dktazole 480SL (Vamco).
+   - Mục đích: Trừ cỏ hiệu quả, hạn chế ảnh hưởng đến cây lúa.
+   - Tham khảo: [DOC 7]
+
+3. **Giai đoạn chuẩn bị trổ và trổ đều:**
+   - Việc cần làm: Phun thuốc Mi Stop 350SC.
+   - Mục đích: Phòng trừ bệnh lem lép hạt và đạo ôn hiệu quả.
+   - Tham khảo: [DOC 3]
+
+4. **Giai đoạn bệnh đạo ôn mới xuất hiện hoặc chớm xuất hiện:**
+   - Việc cần làm: Phun ACO ONE 400EC (Isoprothiolane 400g/lít).
+   - Liều dùng: 1.5 lít/ha, pha 40-50ml/bình 16 lít nước.
+   - Phun 2 lần: lần 1 bảy ngày trước khi trổ, lần 2 khi lúa trổ đều.
+   - Mục đích: Đặc trị bệnh đạo ôn lá, đạo ôn cổ bông, giúp cây lúa khỏe, tăng năng suất.
+   - Lưu ý: Không phun khi trời sắp mưa to hoặc gió lớn; thời gian cách ly 15 ngày.
+   - Tham khảo: [DOC 4]
+
+5. **Giai đoạn phòng trừ nấm bệnh đạo ôn lá, đạo ôn cổ bông:**
+   - Việc cần làm: Phun DOWNY 650WP hoặc ĐÙM XPRO 650WP.
+   - Liều dùng: Pha 16-20g/bình 16 lít nước, phun 3 bình cho 1.000m2 hoặc 25-30g/bình 25 lít, phun 2 bình cho 1.000m2.
+   - Phun trước lúc trổ và sau khi trổ 7 ngày.
+   - Mục đích: Ngăn chặn sự tổng hợp Ergosterol, diệt bệnh đạo ôn hiệu quả.
+   - Lưu ý: Không phun khi trời sắp mưa; phun lại sau 5-7 ngày nếu bệnh nặng; thời gian cách ly 14 ngày.
+   - Tham khảo: [DOC 12]
+
+6. **Giai đoạn phòng trừ sâu cuốn lá, sâu đục thân mật độ bình thường:**
+   - Việc cần làm: Phun Zigen Xpro hoặc Ohayo 100SC, Igro Ohayo 240SC.
+   - Liều dùng: Pha 24-50ml/25 lít nước tùy mật độ sâu.
+   - Mục đích: Diệt trừ sâu đục thân, sâu cuốn lá hiệu quả 80-90%.
+   - Tham khảo: [DOC 8], [DOC 10]
+
+7. **Giai đoạn phun thuốc trừ rầy nâu, rầy lưng trắng, bọ xít:**
+   - Việc cần làm: Phun Million 50WG khi sâu bệnh mới xuất hiện hoặc mật độ đạt ngưỡng gây hại.
+   - Mục đích: Đảm bảo thuốc tiếp xúc tốt với sâu bệnh để đạt hiệu quả cao.
+   - Tham khảo: [DOC 9]
+
+-----------------------------------
+**Kiến thức chung:**
+- Việc sử dụng thuốc, phân bón và các biện pháp phòng trừ theo từng giai đoạn giúp cây lúa phát triển khỏe mạnh, tăng sức đề kháng, phòng trừ sâu bệnh hiệu quả, góp phần nâng cao năng suất và chất lượng lúa.
+- Nên tránh phun thuốc khi trời sắp mưa to hoặc có gió lớn để đảm bảo hiệu quả thuốc và an toàn cây trồng.
+
+-----------------------------------
+**Tóm tắt theo thứ tự thời gian:**
+
+| Giai đoạn                     | Sản phẩm/thuốc sử dụng                 | Mục đích chính                              |
+|------------------------------|--------------------------------------|---------------------------------------------|
+| 15-20 ngày sau khi sạ         | Các dạng hạt GR                      | Trừ ấu trùng sâu cuốn lá, đục thân, trĩ    |
+| 8-30 ngày sau khi sạ          | Dktazole 480SL (Vamco)               | Trừ cỏ hiệu quả                             |
+| Chuẩn bị trổ và trổ đều      | Mi Stop 350SC                       | Phòng trừ bệnh lem lép hạt, đạo ôn         |
+| Khi bệnh đạo ôn mới xuất hiện | ACO ONE 400EC                       | Đặc trị đạo ôn, giúp cây khỏe, tăng năng suất |
+| Trước trổ và sau trổ 7 ngày  | DOWNY 650WP hoặc ĐÙM XPRO 650WP    | Ngăn chặn và diệt bệnh đạo ôn               |
+| Mật độ sâu cuốn lá bình thường| Zigen Xpro hoặc Ohayo 100SC, Igro Ohayo 240SC | Diệt sâu cuốn lá, sâu đục thân hiệu quả 80-90% |
+| Khi sâu rầy xuất hiện hoặc đạt ngưỡng | Million 50WG                   | Trừ rầy nâu, rầy lưng trắng, bọ xít        |
+
+-----------------------------------
+Trên đây là bộ sản phẩm và quy trình sử dụng thuốc trừ sâu, nấm bệnh, trừ cỏ cho cây lúa phù hợp theo từng giai đoạn phát triển dựa trên NGỮ CẢNH đã cung cấp.",[]
+2026-01-06 18:32:55,RAG,Kể tên sản phẩm và cách sử dụng để hỗ trợ quá trình rửa vườn trên cây sầu riêng ?,Kể tên sản phẩm và cách sử dụng để hỗ trợ quá trình rửa vườn trên cây sầu riêng?,RAG_SOFT,0.5327250957489014,0.5317002534866333,0.0010248422622680664,0.5289572596549987,300,0.0036397279486285092,"Dưới đây là tổng hợp các sản phẩm và cách sử dụng hỗ trợ quá trình rửa vườn trên cây sầu riêng theo NGỮ CẢNH đã cho:
+
+1. **Sản phẩm Suron 800WP (Durong 800WP)**  
+   - **Cách sử dụng:**  
+     - Phun khi cây sầu riêng đã mọc và cỏ còn nhỏ (tương tự như trên cây mía, từ 1-2 lá cỏ).  
+     - Tránh phun trực tiếp vào ngọn cây để không gây hại.  
+     - Có thể pha cùng Glufosinate để kéo dài hiệu lực diệt cỏ, ngăn cỏ mọc lại từ 45-60 ngày.  
+     - Liều lượng và cách dùng cụ thể cần tuân theo hướng dẫn trên bao bì hoặc khuyến cáo nhà sản xuất.
+
+2. **Thuốc Igro 240SC Xpro (Hoàng Tử Sâu)**  
+   - **Cách sử dụng:**  
+     - Dùng đặc trị bọ trĩ và sâu chích hút trên cây sầu riêng.  
+     - Trước khi phun diện rộng, cần thử nghiệm trên một vài cây nhỏ để đảm bảo an toàn và hiệu quả.  
+     - Thuốc có khả năng lưu dẫn và tiếp xúc mạnh, chú ý khi phun tránh ảnh hưởng không mong muốn.  
+     - Liều lượng và cách dùng theo hướng dẫn trên bao bì hoặc tư vấn chuyên gia.
+
+3. **Atomin 15WP (Bongra Sai 150)**  
+   - **Cách sử dụng:**  
+     - Phun lúc lá non có màu xanh trắng (lá lụa), phun ướt đều tán lá.  
+     - Thuốc giúp kích thích ra hoa trái vụ, hạn chế sượng trái, khô bông, rụng trái non, thúc đẩy phát triển bộ rễ khỏe mạnh.  
+     - Liều dùng và cách pha theo hướng dẫn: ví dụ phun 400-600 lít nước/ha.  
+     - Không phun khi có gió lớn hoặc trời sắp mưa, không dùng khi cây bị bệnh hoặc suy yếu.  
+     - Thời gian cách ly 7 ngày sau khi phun.
+
+4. **Chowon 550SL**  
+   - **Cách sử dụng:**  
+     - Dùng cho cây sầu riêng để làm già nhanh đọt, làm dày và xanh lá, giúp cây tập trung nuôi củ.  
+     - Không dùng khi cây còi cọc hoặc chậm phát triển.  
+     - Không pha trộn với các chất có tính kiềm để tránh giảm hiệu quả và gây hại.
+
+5. **Lưu ý chung khi phun thuốc và bón phân phục hồi làm cơi lá sầu riêng**  
+   - Phun thuốc đều thân và lá, sử dụng đúng liều lượng, pha đúng tỷ lệ nước để tránh cháy lá hoặc thiếu hiệu quả.  
+   - Bón phân đúng thời điểm từng giai đoạn phát triển, không bón thừa dinh dưỡng.  
+   - Đảm bảo cây không bị bệnh trong suốt quá trình phục hồi.
+
+6. **Xử lý nấm bệnh và rong rêu trước khi làm cơi phục hồi**  
+   - Cần xử lý nấm bệnh và rong rêu tồn dư để loại bỏ nguồn bệnh, tránh lây lan, bảo vệ sự phát triển của cây và nâng cao hiệu quả cơi lá.
+
+---
+
+**Tóm tắt:**  
+- Sử dụng Suron 800WP kết hợp Glufosinate để diệt cỏ trước khi phục hồi.  
+- Dùng Igro 240SC Xpro để phòng trừ sâu chích hút, bọ trĩ trên sầu riêng, thử nghiệm trước khi phun diện rộng.  
+- Atomin 15WP giúp kích thích ra hoa, phát triển rễ, hạn chế rụng trái non, phun lúc lá non.  
+- Chowon 550SL giúp làm già đọt, tăng độ dày và xanh lá.  
+- Thực hiện phun thuốc đúng kỹ thuật, bón phân hợp lý, xử lý nấm bệnh và rong rêu trước khi làm cơi lá.
+
+Thông tin chi tiết về liều lượng, cách pha, thời gian cách ly cần tuân theo hướng dẫn trên bao bì từng sản phẩm hoặc tư vấn chuyên gia để đảm bảo hiệu quả và an toàn cho cây sầu riêng.",[]
+2026-01-06 18:37:48,GLOBAL,mancozeb là gì,,GLOBAL/gpt-4.1-mini,0.0,0.0,0.0,0.0,0,0.0,"**Mancozeb là gì?**
+
+1. **Định nghĩa ngắn gọn:**  
+Mancozeb là một loại thuốc bảo vệ thực vật thuộc nhóm thuốc trừ nấm, có phổ tác dụng rộng, được sử dụng để phòng trừ nhiều loại bệnh nấm trên cây trồng.
+
+2. **Tiêu chí nhận biết/đặc điểm chính:**  
+- Mancozeb là hợp chất phối hợp của maneb và zineb, thuộc nhóm dithiocarbamate.  
+- Có tác dụng tiếp xúc, ngăn chặn sự phát triển của nấm bệnh trên bề mặt lá, quả và thân cây.  
+- Không có hoạt tính nội hấp (không thấm sâu vào mô cây).  
+- Thường được sử dụng dưới dạng bột hoặc hạt mịn hòa tan trong nước để phun lên cây trồng.  
+- Hiệu quả phòng bệnh cao, ít gây kháng thuốc do cơ chế tác động đa điểm lên enzyme của nấm.
+
+3. **Phân loại:**  
+- Thuộc nhóm thuốc trừ nấm dithiocarbamate.  
+- Thuộc nhóm thuốc tiếp xúc, không có tác dụng nội hấp.
+
+4. **Ví dụ đại diện thường gặp:**  
+- Mancozeb được sử dụng phổ biến để phòng trừ bệnh sương mai trên khoai tây, bệnh phấn trắng trên lúa mì, bệnh đốm lá trên cà chua, bệnh thán thư trên nhiều loại cây ăn quả và rau màu.
+
+---
+
+**Tóm lại:** Mancozeb là thuốc trừ nấm phổ rộng, thuộc nhóm dithiocarbamate, dùng để phòng ngừa nhiều bệnh nấm trên cây trồng bằng cách tác động tiếp xúc trên bề mặt cây.",[]
+2026-01-06 18:38:44,RAG,Sản phẩm Propicol đặc trị đối tượng dịch hại nào?,Sản phẩm Propicol đặc trị đối tượng dịch hại nào?,RAG_SOFT,0.5588544607162476,0.4978863000869751,0.06096816062927246,0.49861136078834534,50,0.22714885686222414,"Sản phẩm ""Probicol 200WP"" (còn gọi là ""Khuẩn Vương"") là thuốc bảo vệ thực vật đặc trị vi khuẩn, có tác dụng phòng trừ nhiều loại bệnh do vi khuẩn và nấm gây hại trên cây trồng. 
+
+**Đặc tính và thành phần:**
+- Hoạt chất chính: Bismerthiazol 190 g/kg và Kasugamycin 10 g/kg.
+- Thuộc nhóm thuốc: Fungicide (thuốc trừ nấm bệnh).
+- Tác động: Thuốc có tác động nội hấp mạnh, giúp phòng trừ hiệu quả các loại nấm bệnh do vi khuẩn gây hại.
+
+**Đối tượng dịch hại và phạm vi phòng trừ:**
+- Các bệnh do vi khuẩn và nấm như: Bạc lá (cháy bìa lá), vàng lá, loét vi khuẩn, thán thư, đốm nâu, đốm đen, phấn trắng, rỉ sắt, sương mai, héo rủ, thối gốc vi khuẩn, nấm hồng, thối đen, thối nhũn, đốm lá vi khuẩn, héo xanh, xì mủ.
+- Đối tượng cây trồng áp dụng: Lúa, Cam, Bắp cải, Cà chua, Hành, Đậu tương, Khoai lang, Ớt, Hoa hồng, Cà phê, Xoài.
+
+**Lưu ý khi sử dụng:**
+- Phun thuốc khi vết bệnh mới chớm xuất hiện, tỷ lệ bệnh khoảng 5 - 10%.
+- Không phun thuốc khi có gió lớn hoặc trời sắp mưa to.
+- Tuân thủ liều lượng và thời gian cách ly (10 ngày trước khi thu hoạch) để đảm bảo an toàn và hiệu quả.
+
+---
+
+Ngoài Probicol 200WP, trong ngữ cảnh không có sản phẩm nào tên ""Propicol"" được đề cập. Nếu ý bạn là ""Probicol 200WP"", trên đây là thông tin chi tiết về đối tượng dịch hại mà sản phẩm này đặc trị.
+
+Nếu bạn cần thông tin về các sản phẩm khác cũng có tác dụng trừ bệnh trên cây trồng, có thể tham khảo thêm:
+
+- **NAKANO 50WP**: Thuốc trừ bệnh với hoạt chất Dithianon 50%, phòng trừ các bệnh như ghẻ sẹo, sương mai, thán thư, đốm lá trên nhiều loại cây như lạc, rau cải, khoai tây, hoa hồng, cà phê, ớt, dâu tây, cam, quýt, xoài.
+- **SUPERMARIO 70SC**: Thuốc trừ nấm với hoạt chất Fluopicolide 7% và Propamocarb HCl 63%, đặc trị các bệnh do nấm nhóm O như sương mai, thối nhũn, xì mủ, thối rễ, thối trái trên nhiều cây như đậu tương, cà chua, khoai tây, bắp cải, sầu riêng, thuốc lá, lạc.
+- **TOPXIM PRO 30SC**: Thuốc trừ bệnh phổ rộng với hoạt chất Kresoxim-methyl 30%, phòng trừ các bệnh như sương mai, đạo ôn, rỉ sắt, đốm lá, phấn trắng, mốc xám trên nhiều cây trồng như lúa, xoài, ớt, thanh long, nhãn, nho, cà chua, cam, chanh, bưởi.
+
+---
+
+**Tóm lại:**
+
+- Sản phẩm Probicol 200WP đặc trị các bệnh do vi khuẩn và một số nấm gây hại trên nhiều loại cây trồng phổ biến như lúa, cam, bắp cải, cà chua, hành, đậu tương, khoai lang, ớt, hoa hồng, cà phê, xoài.
+- Đối tượng dịch hại chính là các bệnh vi khuẩn như bạc lá, loét vi khuẩn, thối gốc vi khuẩn, héo rũ, đốm lá vi khuẩn và một số bệnh nấm như thán thư, phấn trắng, rỉ sắt, nấm hồng.
+- Thuốc có tác động nội hấp mạnh, giúp phòng trừ hiệu quả các bệnh trên.
+
+Nếu bạn cần thông tin chi tiết về liều lượng, cách pha hoặc lưu ý an toàn khi sử dụng Probicol 200WP, tôi có thể cung cấp thêm theo yêu cầu.",[]
+2026-01-06 18:40:24,RAG,"Kể tên những sản phẩm trị cỏ trên Ngô, Mía?","Kể tên những sản phẩm trị cỏ trên ngô, mía?",RAG_SOFT,0.49968478083610535,0.6519581079483032,-0.15227332711219788,0.5653992593288422,300,0.0,"Dưới đây là danh sách các sản phẩm thuốc trừ cỏ được nêu trong ngữ cảnh, có thể sử dụng để trị cỏ trên cây Ngô và Mía:
+
+1. **Misung 15SC**
+   - Đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô và mía.
+   - Hiệu quả: Tốt với nhóm cỏ lá rộng, khá với cỏ hòa bản, trung bình với nhóm cỏ lác.
+   - Có thể phối hợp với Atrazine để mở rộng phổ diệt cỏ.
+
+2. **Vua Cỏ Ngô (Tembo 8OD)**
+   - Hoạt chất: Tembotrione 8% w/w (80g/kg).
+   - Dùng cho cây ngô và mía.
+   - Diệt hiệu quả cỏ lá rộng và lá hẹp, bao gồm cả các loại cỏ kháng thuốc.
+   - Thuốc an toàn cho ngô và mía khi dùng đúng liều lượng.
+
+3. **GIÁO SƯ CỎ**
+   - Hoạt chất: Mesotrione 15% w/w.
+   - Thuốc trừ cỏ chọn lọc, hậu nảy mầm sớm.
+   - Hiệu quả cao với cỏ hòa bản, lá rộng, cỏ lá hẹp như cỏ chỉ, mần trầu, cỏ gấu, cỏ tức trên ruộng ngô, mía.
+   - Phun khi cỏ còn nhỏ (1-5 lá), cây ngô từ 8 lá trở lên.
+
+4. **Azin Rio 45SC**
+   - Đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô (bắp), mía và quế.
+   - Kiểm soát hiệu quả các loại cỏ gây hại trong giai đoạn hậu nảy mầm sớm.
+
+5. **Modusa 960EC (MoDusa960ECGold)**
+   - Hoạt chất: S-Metolachlor 960 g/L.
+   - Dùng cho ngô, mía, khoai mì, đậu tương, lạc, bông vải, rau muống, rau cải.
+   - Trừ cỏ lá hẹp, chác lác, cỏ lá rộng như cỏ gạo, mần trầu, cỏ túc, cỏ đuôi chồn, đồng tiền, dền gai, nghễ, vi cúc, rau sam, cỏ mực, cỏ chân vịt.
+   - Thuốc trừ cỏ tiền nảy mầm, phun trước hoặc ngay sau khi gieo trồng.
+
+6. **siêu diệt mầm**
+   - Hoạt chất: Acetochlor 500g/lít.
+   - Dùng cho ngô, mía, lạc, sắn, bông vải, đậu tương, khoai lang, hành, tỏi.
+   - Diệt cỏ hòa bản, cỏ chỉ, cỏ lông vực, cỏ túc, mần trầu, cỏ đuôi chồn, cỏ lác, cỏ gấu, dền gai, cỏ rầy, mắc cỡ.
+
+7. **LẠC ĐÀ**
+   - Hoạt chất: Glufosinate amonium 150g/l.
+   - Dùng cho ngô (bắp), cao su, cà phê, hồ tiêu, vườn cây ăn trái.
+   - Diệt cỏ lá rộng và lá hẹp, hằng niên và đa niên, đặc biệt cỏ khó trừ như mần trầu, cỏ tranh, cỏ cú, cỏ ống, cỏ chỉ.
+
+8. **Topmesi 40SC**
+   - Dùng chủ yếu để trừ cỏ trên cây mía và bắp (ngô).
+   - Diệt hiệu quả cả cỏ lá hẹp và cỏ lá rộng.
+
+9. **Anh Hùng cỏ**
+   - Hoạt chất: Atrazine 35% w/w và Mesotrione 10% w/w.
+   - Đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô (bắp), mía, quế.
+   - Sử dụng hậu nảy mầm sớm.
+
+---
+
+**Tổng hợp theo nhóm sản phẩm và đặc tính:**
+
+- **Thuốc trừ cỏ thế hệ mới, chọn lọc, an toàn cho ngô và mía:**
+  - Vua Cỏ Ngô (Tembo 8OD)
+  - GIÁO SƯ CỎ
+  - Anh Hùng cỏ
+
+- **Thuốc trừ cỏ phổ rộng, đặc trị cỏ lá rộng và cỏ hòa thảo:**
+  - Misung 15SC (có thể phối hợp Atrazine)
+  - Azin Rio 45SC
+  - Topmesi 40SC
+
+- **Thuốc trừ cỏ tiền nảy mầm, hiệu quả cao trên nhiều loại cỏ:**
+  - Modusa 960EC
+  - siêu diệt mầm
+
+- **Thuốc trừ cỏ không chọn lọc, diệt nhiều loại cỏ khó trừ:**
+  - LẠC ĐÀ
+
+---
+
+Đây là các sản phẩm thuốc trừ cỏ được ghi nhận trong ngữ cảnh có thể sử dụng cho cây ngô và mía, với phạm vi diệt cỏ đa dạng từ cỏ lá rộng, cỏ hòa thảo đến cỏ lá hẹp, cỏ kháng thuốc.",[]
+2026-01-06 18:41:31,RAG,Các sản phẩm sử dụng cho lúa giai đoạn tiền nảy mầm?,Các sản phẩm sử dụng cho lúa giai đoạn tiền nảy mầm?,RAG_SOFT,0.23410028219223022,0.4880524277687073,-0.25395214557647705,0.42915506958961486,120,0.0,"Dưới đây là tổng hợp các sản phẩm sử dụng cho lúa giai đoạn tiền nảy mầm dựa trên ngữ cảnh đã cung cấp:
+
+1. **Riceup 300EC**  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ, trừ các loại cỏ như cỏ đuôi phụng, cỏ lồng vực, cỏ chỉ, cỏ cháo, cỏ cú trên ruộng lúa. Hiệu quả đặc biệt trong giai đoạn tiền nảy mầm từ 1-4 ngày sau sạ.  
+   - **Cách sử dụng:** Chỉ dùng cho lúa đã ủ nảy mầm và có đủ rễ, không phun khi lúa chưa nảy mầm vì có thể gây hại cây lúa. Trước khi phun cần cày bừa, trục sạch cỏ vụ trước, san phẳng mặt ruộng, không để nước đọng vũng. Phun thuốc bằng béc phun sương phủ đều mặt ruộng. Sau phun 2-3 ngày cho nước vào ruộng, tránh ngập ngọn mạ, giữ ẩm đất 5-10 ngày, không để đất khô nứt.  
+   - **Lưu ý:** Không dùng khi lúa chưa nảy mầm.  
+
+2. **GANGSTER 300EC**  
+   - **Hoạt chất:** Pretilachlor 300 g/l + Fenclorim 100 g/l (chất an toàn).  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ tiền nảy mầm, có tính chọn lọc cao, diệt hầu hết các loại cỏ như cỏ hòa bản (lồng vực, đuôi phụng...), cỏ năng, lác (cháo, chắc, u du...), một số cỏ lá rộng (rau mác, cỏ xà bông, rau ngổ, mã đề), đặc biệt diệt lúa cỏ, lúa nền (lúa rài) trên ruộng lúa. Thuốc có tác động nội hấp, hấp thu vào rễ và mầm cây cỏ, ngăn chặn phân chia tế bào làm cỏ ngừng phát triển và chết.  
+   - **Cách sử dụng:** Phun sau khi gieo sạ 1-4 ngày, sử dụng cho lúa đã ủ nảy mầm, cỏ đủ rễ. Lượng nước phun 400-500 lít/ha. Sau phun 2-3 ngày cho nước vào ruộng, tránh ngập ngọn mạ, giữ ẩm đất 5-10 ngày, không để đất khô nứt.  
+   - **Lưu ý:** Ruộng trước khi phun cần cày bừa, trục sạch cỏ vụ trước, san phẳng mặt ruộng, không để nước đọng.  
+
+3. **Siêu diệt mầm**  
+   - **Hoạt chất:** Acetochlor 500 g/l + phụ gia đặc biệt.  
+   - **Đặc tính – công dụng:** Thuốc diệt cỏ, dùng để diệt các loại cỏ hòa bản, lông vực, cỏ chỉ, cỏ túc, cỏ đuôi chồn, mần trầu, cỏ lác, cỏ gấu, dền gai, cỏ rầy, mắc cỡ... trên nhiều cây trồng (lạc, ngô, mía, sắn, hành, tỏi...).  
+   - **Cách sử dụng:** Phun trước và sau khi tra hạt hoặc đặt hom từ 1-4 ngày. Lượng nước phun 400-500 lít/ha.  
+   - **Lưu ý:** Giữ đủ độ ẩm cho đất, tránh trời mưa to, động nước nhiều.  
+
+---
+
+**Tổng kết:**  
+Các sản phẩm được sử dụng cho lúa giai đoạn tiền nảy mầm (từ 1-4 ngày sau sạ hoặc trước khi lúa nảy mầm) chủ yếu là các thuốc trừ cỏ tiền nảy mầm có tác động nội hấp, diệt nhiều loại cỏ phổ biến trên ruộng lúa như Riceup 300EC, GANGSTER 300EC và siêu diệt mầm. Tuy nhiên, cần lưu ý Riceup 300EC chỉ dùng khi lúa đã ủ nảy mầm và có đủ rễ, không dùng khi lúa chưa nảy mầm để tránh gây hại cho cây lúa. GANGSTER 300EC và siêu diệt mầm có thể phun trong giai đoạn tiền nảy mầm hoặc ngay sau khi gieo sạ, giúp kiểm soát hiệu quả các loại cỏ hại phổ biến.
+
+Các sản phẩm này đều yêu cầu ruộng phải được chuẩn bị kỹ (cày bừa, trục sạch cỏ vụ trước, san phẳng mặt ruộng, không để nước đọng vũng), phun thuốc với lượng nước phù hợp và giữ ẩm đất sau phun để đạt hiệu quả cao.  
+
+---
+
+Nếu cần thêm thông tin về liều lượng, cách pha hoặc thời gian cách ly, vui lòng tham khảo từng sản phẩm cụ thể trong ngữ cảnh.",[]
+2026-01-06 18:42:43,RAG,Trị nhện đỏ trên cây ăn trái dùng sản phẩm nào?,Trị nhện đỏ trên cây ăn trái dùng sản phẩm nào?,RAG_SOFT,0.5693570375442505,0.546527087688446,0.022829949855804443,0.5466294169425965,220,0.08665595078123071,"Dựa trên ngữ cảnh tài liệu, để trị nhện đỏ trên cây ăn trái, có thể sử dụng các sản phẩm sau:
+
+1. **Siêu Diệt Nhện** (DOC 3, DOC 12)
+   - Hoạt chất: Abamectin 1.8% w/w (Avermectin b1).
+   - Đặc tính: Thuốc trừ nhện, hiệu quả trên các loại nhện đỏ, nhện trắng, kể cả nhện đã kháng thuốc mạnh. Có thể phun cho cây ăn trái, hoa hồng (kể cả giai đoạn có hoa).
+   - Phạm vi cây trồng: Cam, quýt, lúa, chè, lạc, cải bắp, đậu tương, dưa hấu, xoài, cà chua, hoa hồng,...
+   - Phạm vi sâu bệnh: Nhện đỏ, nhện trắng, nhện vàng, nhện lông nhung, nhện gié, sâu tơ, sâu xanh, sâu ăn lá, bọ phấn, rệp, rầy xanh, sâu khoang, bọ nhảy.
+   - Lưu ý: Thời gian cách ly 7 ngày.
+
+2. **Kyodo 50WP** (DOC 2, DOC 10)
+   - Đặc tính: Phòng trừ hiệu quả nhện đỏ, bọ trĩ, nhện trắng, rầy xanh, bọ xít, bọ hà.
+   - Phạm vi cây trồng: Cam, quýt, chè, hoa hồng, nho, khoai, các loại rau màu.
+   - Lưu ý: Không dùng trên cây lúa.
+   - Trên rau màu, thuốc cũng phòng trừ sâu xanh, sâu tơ, nhện đỏ và bọ trĩ.
+
+3. **Kyodo 25SC** (DOC 4)
+   - Đặc tính: Phòng trừ bọ trĩ, nhện đỏ, nhện trắng, rầy xanh, bọ xít, bọ hà.
+   - Phạm vi cây trồng: Cam, quýt, chè, hoa hồng, nho, khoai, rau màu.
+   - Hiệu quả đặc biệt trên rầy xanh, bọ trĩ và bọ phấn trên cây chè.
+
+4. **Nhện Kim Cương** (DOC 8)
+   - Hoạt chất: Deltamethrin 2,5% w/v.
+   - Đặc tính: Thuốc trừ sâu tiếp xúc, tác dụng nhanh, hiệu quả kéo dài 7-12 ngày.
+   - Phạm vi cây trồng: Hoa hồng, hoa cúc, dâu tây, cam, bưởi, chanh, ớt, rau củ, các loại đậu.
+   - Phạm vi sâu bệnh: Nhện đỏ, nhện trắng, nhện vàng, nhện lông nhung.
+   - Lưu ý: Phun vào sáng sớm hoặc chiều mát khi nhện mới xuất hiện.
+
+5. **HAIHAMEC 3.6E / Ankamec 3.6EC / Dapharnec 3.6EC** (DOC 9)
+   - Hoạt chất: Abamectin 3.6% w/w.
+   - Đặc tính: Thuốc tiếp xúc, nội hấp lưu dẫn, đặc trị nhiều loại sâu rầy và nhện đỏ, rầy xanh, bọ phấn, ốc bươu vàng.
+   - Phạm vi cây trồng: Dâu tây, dưa chuột, dưa hấu, các loại hoa (hoa cúc, hoa đồng tiền, hoa hồng), rau họ thập tự, táo, thông, tùng, lúa, trà (chè).
+   - Lưu ý: Thời gian cách ly 7 ngày.
+
+**Tổng kết:**
+- Các sản phẩm có hoạt chất Abamectin như Siêu Diệt Nhện, HAIHAMEC 3.6E (Ankamec 3.6EC, Dapharnec 3.6EC) rất phù hợp để trị nhện đỏ trên cây ăn trái nhờ khả năng đặc trị hiệu quả, kể cả nhện đã kháng thuốc.
+- Kyodo 50WP và Kyodo 25SC cũng là lựa chọn tốt cho cây cam, quýt và các cây ăn trái khác, có tác dụng phòng trừ nhện đỏ cùng các loại sâu bệnh khác.
+- Nhện Kim Cương với hoạt chất Deltamethrin là thuốc tiếp xúc có tác dụng nhanh, dùng được cho nhiều loại cây ăn trái như cam, bưởi, chanh, ớt.
+
+Người sử dụng cần lưu ý về liều lượng, cách pha và thời gian cách ly theo hướng dẫn cụ thể từng sản phẩm trong tài liệu để đảm bảo hiệu quả và an toàn.",[]
+2026-01-06 18:43:21,RAG,Hoạt chất mancozeb có trong những sản phẩm nào?,Hoạt chất mancozeb có trong những sản phẩm nào?,RAG_SOFT,0.3465796113014221,0.33600255846977234,0.01057705283164978,0.27412718534469604,300,0.02443860572738525,"Dưới đây là danh sách các sản phẩm chứa hoạt chất Mancozeb được tổng hợp từ NGỮ CẢNH:
+
+1. **Forthane 80WP**  
+   - Hoạt chất: Mancozeb 800g/kg (80% w/w)  
+   - Đặc điểm: Thuốc trừ nấm phổ rộng, phòng trừ nhiều bệnh nấm trên cây trồng như dưa hấu, xoài, cà chua, cam, quýt, lúa, ớt, bắp cải, sầu riêng, nho, chanh dây, hồ tiêu, hành.  
+   - Quy cách đóng gói: Gói 100g, 500g, 1kg.  
+   - Nhà sản xuất: Forward (Beihai) Hepu Pesticide Co., Ltd và Công ty Tỷ Phúc Thịnh (có 2 màu xanh và vàng).  
+   - Đối thủ cạnh tranh: Dithane 80WP (ADC).
+
+2. **Fortazeb 72WP (Rinhdothuysi)**  
+   - Hoạt chất: Mancozeb 640g/kg + Metalaxyl 80g/kg  
+   - Công dụng: Phòng trừ nhiều bệnh trên cây cao su, dưa hấu, xoài, cà chua, cam, quýt, lúa, ớt, bắp cải, sầu riêng, nho, chanh dây, măng tây, điều, hồ tiêu, hành, thanh long, dưa leo, thuốc lá, ngô.  
+   - Quy cách đóng gói: 100g, 500g, 1kg.  
+   - Đối thủ cạnh tranh: Ridomil của Syngenta.
+
+3. **Napoleon - Fortazeb 72WB**  
+   - Hoạt chất: Mancozeb 64% w/w + Metalaxyl 8% w/w + Additives 28% w/w  
+   - Công dụng: Thuốc trừ nấm thấm sâu, lưu dẫn mạnh, phòng trừ bệnh loét sọc mặt cạo, sương mai, rỉ sắt, thán thư, lem lép hạt lúa, phấn trắng, chết nhanh, lở cổ rễ, đốm lá, thối rễ...  
+   - Đối tượng: Cao su, khoai tây, cà phê, điều, hoa hồng, hồ tiêu, vừng, mắc ca, lạc.  
+   - Liều dùng: 25–30g pha với 20L nước.
+
+4. **IC-TOP 28.1SC BOÓCDOR**  
+   - Thành phần hỗn hợp có chứa: Brodeaux mixture (đồng và vôi) 3.7% w/w + Phụ gia 96.3% w/w  
+   - Đặc biệt: Sản phẩm có thể phối trộn với Niko 72WP (chứa Mancozeb 64% w/w + Cymoxanil 8% w/w) để phòng trừ bệnh nấm.  
+   - Lưu ý: Niko 72WP chứa Mancozeb 64% w/w, tuy nhiên Niko 72WP không nằm trong danh sách chính các sản phẩm yêu cầu nhưng được nhắc đến liên quan Mancozeb.
+
+---
+
+**Tóm tắt:**  
+- Các sản phẩm chính chứa hoạt chất Mancozeb là:  
+  - Forthane 80WP (Mancozeb 800g/kg)  
+  - Fortazeb 72WP (Mancozeb 640g/kg + Metalaxyl 80g/kg)  
+  - Napoleon - Fortazeb 72WB (Mancozeb 64% w/w + Metalaxyl 8% w/w)  
+- Ngoài ra, sản phẩm Niko 72WP (Mancozeb 64% w/w + Cymoxanil 8% w/w) được nhắc đến trong phối trộn với IC-TOP 28.1SC BOÓCDOR.
+
+---
+
+**Lưu ý:**  
+- Mancozeb là hoạt chất chính trong các sản phẩm trên, dùng để phòng trừ nhiều bệnh nấm trên đa dạng cây trồng.  
+- Không có thông tin về liều lượng, cách pha hoặc thời gian cách ly ngoài những sản phẩm đã nêu cụ thể trong NGỮ CẢNH.  
+- Các sản phẩm khác như Scortlan 80WP (Thiram 800g/kg) không chứa Mancozeb.  
+
+Nếu cần thêm thông tin về công dụng, liều lượng hoặc cây trồng cụ thể cho từng sản phẩm, có thể hỏi chi tiết thêm.",[]
+2026-01-06 18:43:45,RAG,Trị cỏ cây khoai mì dùng sản phẩm nào?,Trị cỏ cây khoai mì dùng sản phẩm nào?,RAG_SOFT,0.5014591217041016,0.46489474177360535,0.036564379930496216,0.4697593927383423,220,0.12223694563734475,"Dựa trên ngữ cảnh, để trị cỏ trên cây khoai mì (sắn), có thể sử dụng các sản phẩm thuốc trừ cỏ sau:
+
+1. **Maruka 5EC**  
+   - **Hoạt chất:** Quizalofop-P-ethyl 50g/lít  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ chọn lọc, nội hấp, hậu nảy mầm sớm, tác động lên đỉnh sinh trưởng và rễ của cỏ dại, làm cỏ không tổng hợp được acid amin.  
+   - **Phạm vi diệt cỏ:** Diệt các loại cỏ lá hẹp mọc từ hạt thuộc nhóm hòa bản, lúa rài, cỏ đuôi phụng, cỏ chỉ, cỏ mần trầu, cỏ lông công, cỏ lồng vực.  
+   - **Cây trồng sử dụng:** Khoai mì (sắn), khoai tây, khoai lang, lạc, đậu tương, đậu xanh, khoai môn, súp lơ, cải bắp, vừng.  
+   - **Liều dùng – cách pha – lượng nước:** 0.8 - 1.2 lít/ha; pha 35ml/bình 16 lít hoặc 50-70ml/bình 25 lít; phun 400-500 lít nước/ha.  
+   - **Thời điểm phun:** Sau gieo trồng 10-15 ngày khi cỏ 2-3 lá, nếu cỏ 5-6 lá phải tăng liều hoặc dùng thuốc khác.  
+   - **Lưu ý:** Không phun khi có gió to hoặc mưa to; không phun trên cây họ bầu bí dưa dưới 7 lá thật; không dùng trên cây trồng lá hẹp như bắp, lúa, mía.  
+   - **Kinh nghiệm phối trộn:** Có thể phối trộn với Bpsaco 500EC hoặc Whip 6.5EC theo liều lượng hướng dẫn để tăng hiệu quả.
+
+2. **Misung 15SC**  
+   - **Hoạt chất:** Mesotrione 15% w/w  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ chọn lọc, đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô (bắp) và mía, sử dụng hậu nảy mầm sớm để kiểm soát cỏ hiệu quả.  
+   - **Lưu ý:** Không có thông tin cụ thể về sử dụng cho khoai mì trong ngữ cảnh, nhưng sản phẩm này chủ yếu dùng cho ngô và mía.
+
+3. **Azin Rio 45SC**  
+   - **Đặc tính – công dụng:** Đặc trị cỏ lá rộng và cỏ hòa thảo trên ruộng ngô (bắp), mía và quế, kiểm soát hiệu quả các loại cỏ gây hại trong giai đoạn hậu nảy mầm sớm.  
+   - **Lưu ý:** Không có thông tin sử dụng cho khoai mì trong ngữ cảnh.
+
+---
+
+**Tổng kết:**  
+- **Maruka 5EC** là sản phẩm được nêu rõ có thể dùng để trừ cỏ trên cây khoai mì (sắn), với cơ chế nội hấp, hậu nảy mầm sớm, tác động lên đỉnh sinh trưởng và rễ cỏ dại, phù hợp với nhiều loại cỏ lá hẹp và nhóm hòa bản.  
+- Các sản phẩm khác như Misung 15SC và Azin Rio 45SC chủ yếu dùng cho ngô và mía, không có thông tin trong ngữ cảnh về sử dụng cho khoai mì.  
+
+Do đó, để trị cỏ trên cây khoai mì, **Maruka 5EC** là lựa chọn phù hợp và được khuyến cáo trong ngữ cảnh này.",[]
+2026-01-06 18:45:09,RAG,Trị cỏ trên cây rau muống sử dụng sản phẩm nào?,Trị cỏ trên cây rau muống sử dụng sản phẩm nào?,RAG_SOFT,0.5549287796020508,0.550187349319458,0.0047414302825927734,0.5363753914833069,220,0.017541040801916097,"Dựa trên ngữ cảnh có sẵn, các sản phẩm thuốc trừ cỏ có thể sử dụng để trị cỏ trên cây rau muống bao gồm:
+
+1. **Modusa 960EC (MoDusa960ECGold)**  
+   - **Hoạt chất:** S-Metolachlor 960 g/L  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ tiền nảy mầm, hấp thụ qua mạch dẫn lên trên cây cỏ, ức chế sự tăng trưởng của chồi và rễ. Hiệu quả cao trong trừ cỏ lá hẹp, chác lác, cỏ lá rộng như rau sam, cỏ mực, cỏ chân vịt...  
+   - **Phạm vi cây trồng:** Ngô, khoai mì, đậu tương, lạc, mía, bông vải, **rau muống**, rau cải...  
+   - **Phạm vi cỏ hại:** Cỏ gạo, mần trầu, cỏ túc, cỏ đuôi chồn, chác lác, cỏ cháo, cỏ chắc, cỏ lác, cỏ cú, cỏ đồng tiền, dền gai, nghễ, vỉ cúc, rau sam, cỏ mực, cỏ chân vịt...  
+   - **Cách dùng:** Liều 0.8 lít/ha, pha theo hướng dẫn, phun trước hoặc ngay sau khi gieo trồng trên đất ẩm, khi cỏ chưa mọc hoặc còn nhỏ dưới một lá rưỡi.  
+   - **Lưu ý:** Thời gian cách ly không xác định, tránh để thuốc tiếp xúc trực tiếp với hạt giống đang nảy mầm.
+
+2. **PHƯỢNG HOÀNG LỬA**  
+   - **Hoạt chất:** Glufosinate amonium 10% w/w  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ không chọn lọc, diệt các loại cỏ lá rộng và lá hẹp như mần trầu, cỏ tranh, rau sam, cỏ đuôi phụng, cỏ tứt, cỏ đậu...  
+   - **Phạm vi cỏ hại:** Cỏ chỉ, mần trầu, mắc cỡ, đèn gai, cỏ tranh, thài lài, các loại cỏ lá rộng, rau sam...  
+   - **Lưu ý kỹ thuật:** Khi cỏ đã lớn (khoảng 20 cm), nên tăng liều và phun ướt đều thân, lá cỏ để đạt hiệu quả tốt.
+
+3. **Trâu Rừng Mới**  
+   - **Đặc tính – công dụng:** Thuốc trừ cỏ nội hấp, cháy chậm, hiệu quả với các loại cỏ dại khó trị, kể cả cỏ kháng Glyphosate như mần trầu và cỏ tranh.  
+   - **Cách dùng:** Phun ướt đẫm toàn bộ cây cỏ từ gốc đến ngọn, sau 3 ngày lá cỏ bắt đầu vàng, 6-7 ngày sau cỏ chết hoàn toàn.  
+   - **Lưu ý:** Không phun trực tiếp lên cây trồng (theo ngữ cảnh về Trâu đen 150 có lưu ý tương tự, nên thận trọng khi dùng thuốc trừ cỏ không chọn lọc).
+
+---
+
+**Tổng hợp:**  
+Để trị cỏ trên cây rau muống, có thể lựa chọn Modusa 960EC với ưu điểm là thuốc trừ cỏ tiền nảy mầm, an toàn, hiệu quả cao trên nhiều loại cỏ lá rộng và lá hẹp, phun 1 lần cho cả vụ. Nếu cỏ đã lớn hoặc cần thuốc không chọn lọc, PHƯỢNG HOÀNG LỬA và Trâu Rừng Mới cũng là lựa chọn phù hợp, đặc biệt với các loại cỏ khó trị và cỏ kháng thuốc. Tuy nhiên, cần lưu ý kỹ thuật phun thuốc để tránh gây hại cho cây rau muống, vì một số thuốc trừ cỏ không chọn lọc có thể gây stress hoặc tổn thương cây trồng nếu phun không đúng cách.
+
+---
+
+**Lưu ý chung:**  
+- Cần phun thuốc khi cỏ còn nhỏ hoặc đúng theo hướng dẫn kỹ thuật của từng sản phẩm.  
+- Thời gian cách ly với Modusa 960EC không xác định, với PHƯỢNG HOÀNG LỬA và Trâu Rừng Mới không có thông tin thời gian cách ly trong ngữ cảnh.  
+- Tránh phun thuốc trong điều kiện gió mạnh hoặc mưa để tránh thuốc bị trôi hoặc bay hơi.  
+
+Thông tin trên dựa hoàn toàn trên dữ liệu có trong ngữ cảnh được cung cấp.",[]
+2026-01-06 18:47:44,RAG,Liều dùng của sp trị nhện trên cây sầu riêng ?,Liều dùng của sản phẩm trị nhện trên cây sầu riêng?,RAG_SOFT,0.5682086944580078,0.5407370328903198,0.02747166156768799,0.5380607724189759,220,0.10406424635978814,"Checklist liều dùng của sản phẩm trị nhện trên cây sầu riêng theo NGỮ CẢNH:
+
+1. Xác định sản phẩm trị nhện phù hợp cho cây sầu riêng:
+   - Siêu Diệt Nhện (Abamectin 1.8% w/w) [DOC 2]
+   - Buti 43SC (Anh Hùng Nhện) [DOC 4]
+   - Nhện Kim Cương (Deltamethrin 2.5% w/v) [DOC 7]
+
+2. Liều dùng và cách pha cho Siêu Diệt Nhện trên cây sầu riêng:
+   - Vùng nhện kháng thuốc mạnh, mật độ cao: pha 40 ml thuốc với 25 lít nước hoặc 30 ml thuốc với 20 lít nước.
+   - Vùng nhện ít kháng thuốc, mật độ thấp: pha 30 ml thuốc với 25 lít nước hoặc 24 ml thuốc với 20 lít nước.
+   - Phun ướt đều mặt lá cây trồng.
+   - Thời gian cách ly: 7 ngày. [DOC 2]
+
+3. Liều dùng và cách sử dụng Buti 43SC (Anh Hùng Nhện) trên cây sầu riêng:
+   - Không có liều lượng cụ thể trong NGỮ CẢNH.
+   - Nên phun vào sáng sớm hoặc chiều mát khi nhện mới xuất hiện.
+   - Thuốc an toàn với đọt non, hoa và trái non, không gây nóng cây.
+   - Tuân thủ liều lượng và thời điểm phun để tránh ảnh hưởng đến cây trồng. [DOC 4]
+
+4. Liều dùng và cách pha Nhện Kim Cương trên cây sầu riêng:
+   - Pha 20–25 ml thuốc với 20 lít nước.
+   - Mật độ cao: pha 30 ml thuốc với 20 lít nước.
+   - Lượng nước tưới 400–500 lít/ha.
+   - Phun vào sáng sớm hoặc chiều mát khi nhện mới xuất hiện.
+   - Phun ướt đều để đạt hiệu quả tốt nhất. [DOC 7]
+
+5. Lưu ý chung khi phun thuốc trị nhện trên cây sầu riêng:
+   - Phun thuốc đều thân và lá, sử dụng đúng liều lượng và pha đúng tỷ lệ nước để tránh gây cháy lá hoặc thiếu hiệu quả. [DOC 3]
+   - Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. [DOC 7]
+   - Đảm bảo cây không bị bệnh trong suốt quá trình phục hồi để đạt hiệu quả cao nhất. [DOC 3]
+
+Kiến thức chung:
+- Việc lựa chọn sản phẩm và liều lượng phù hợp cần dựa vào mức độ nhiễm nhện và tình trạng cây trồng.
+- Thời điểm phun thuốc tốt nhất là khi nhện mới xuất hiện để đạt hiệu quả cao nhất và hạn chế kháng thuốc.
+
+Tóm lại, liều dùng cụ thể có thể tham khảo như trên với từng sản phẩm Siêu Diệt Nhện, Nhện Kim Cương; với Buti 43SC cần tuân thủ hướng dẫn nhà sản xuất và phun đúng thời điểm.",[]
+2026-01-06 18:48:17,RAG,Modusa cỏ mọc 15 phân phun có chết ko ?,Modusa cỏ mọc 15 phân phun có chết không?,RAG_SOFT,0.4231172800064087,0.4122771620750427,0.010840117931365967,0.4027854144573212,264,0.030577608093788438,"Theo thông tin trong NGỮ CẢNH về sản phẩm Modusa 960EC (còn gọi là MoDusa960ECGold) [DOC 10]:
+
+- Hoạt chất chính: S-Metolachlor 960 g/L.
+- Đặc tính và cơ chế tác động: Modusa 960EC chủ yếu được hấp thụ qua mạch dẫn của cây đi lên trên, ức chế sự tăng trưởng của chồi và rễ. Thuốc có hiệu quả cao trong việc trừ cỏ trên cây trồng cạn, đặc biệt là các loại cỏ lá hẹp như cỏ gạo, mần trầu, cỏ túc, cỏ đuôi chồn, chác lác, cỏ cháo, cỏ chắc, cỏ lác, cỏ cú; cũng có tác dụng trên cỏ lá rộng như đồng tiền, dền gai, nghễ, vi cúc, rau sam, cỏ mực, cỏ chân vịt.
+- Phạm vi sử dụng: Cây trồng như ngô, khoai mì (sắn), đậu tương, lạc, mía, bông vải, rau muống, rau cải...
+- Thời điểm phun: Thuốc trừ cỏ tiền nảy mầm, phun trước hoặc ngay sau khi gieo trồng trên đất ẩm; phun khi cỏ chưa mọc mầm hoặc còn nhỏ dưới một lá rưỡi. Đối với ngô (bắp), nên phun trước khi gieo 3 - 4 ngày.
+- Liều dùng: 0.8 lít/ha, pha 20-25 ml/bình 16 lít hoặc 35-40 ml/bình 25 lít.
+- Không có thông tin trong NGỮ CẢNH về hiệu quả của Modusa 960EC khi cỏ đã mọc cao đến 15 cm.
+
+Thông tin chung: Modusa 960EC là thuốc trừ cỏ tiền nảy mầm, tức là tác động chủ yếu khi cỏ còn nhỏ hoặc chưa mọc mầm. Việc phun khi cỏ đã mọc cao (như 15 cm) không phải là thời điểm khuyến nghị và có thể làm giảm hiệu quả của thuốc.
+
+Kết luận: Không thấy trong ngữ cảnh có thông tin xác nhận Modusa 960EC có thể diệt được cỏ đã mọc cao 15 cm. Thuốc này hiệu quả nhất khi phun trước hoặc ngay sau khi gieo trồng, khi cỏ còn nhỏ dưới một lá rưỡi. Nếu cỏ đã cao 15 cm, hiệu quả diệt cỏ của Modusa 960EC có thể không đạt như mong muốn.
+
+Ngoài ra, nếu cần xử lý cỏ đã lớn, có thể tham khảo các thuốc khác trong ngữ cảnh như PHƯỢNG HOÀNG LỬA (Glufosinate amonium 10% w/w) có thể phun khi cỏ cao khoảng 20 cm và nên tăng liều để đạt hiệu quả [DOC 4]. Tuy nhiên, PHƯỢNG HOÀNG LỬA là thuốc trừ cỏ không chọn lọc, khác với Modusa 960EC.
+
+Tóm lại, Modusa 960EC không phù hợp để phun khi cỏ đã mọc cao 15 cm, hiệu quả tốt nhất khi phun sớm khi cỏ còn nhỏ.",[]
+2026-01-06 18:49:48,RAG,Ecudor và suparep  có thể phối với inmanda hoặc nofara để trừ rệp sáp trên cây sầu riêng ko?,Ecuador và Suparep có thể phối với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng không?,RAG_SOFT,0.5252974629402161,0.5180335640907288,0.007263898849487305,0.49664369225502014,220,0.025438050911266906,"Dựa trên NGỮ CẢNH cung cấp, ta có các thông tin liên quan như sau:
+
+1. Về Ecudor và Suparep:
+- Theo [DOC 5], Suparep và Ecudor được nhắc đến phối hợp với các thuốc toàn bộ lưu dẫn để trừ rệp sáp và rệp vảy. Ví dụ phối hợp Supaprep + Rayanusa được nêu là có hiệu quả cao trong diệt rệp sáp, giúp mát cây.
+- Ecudor và Suparep thuộc nhóm thuốc có tác dụng trừ rệp sáp, rệp vảy, có thể phối hợp với các thuốc có cơ chế lưu dẫn để tăng hiệu quả xử lý.
+
+2. Về Nofara (các dạng 35WG hoặc 350SC):
+- Nofara 35WG (còn gọi Recxona 35WG hoặc Vua Trĩ) chứa hoạt chất Thiamethoxam 35% w/w, có tác dụng trừ các loại sâu chích hút trong đó có rệp sáp trên nhiều loại cây trồng như cà phê, mía, lúa, thuốc lá, điều, khoai tây, hoa cúc ([DOC 2], [DOC 4], [DOC 6], [DOC 10]).
+- Nofara 350SC (Recxona 350SC, Vua Trĩ) chứa Thiamethoxam 350 g/L + phụ gia đặc biệt 650 g/L, có tác động tiếp xúc, vị độc và nội hấp mạnh, ít bị rửa trôi, hiệu lực diệt côn trùng chích hút mạnh và kéo dài. Phổ tác dụng rộng, phòng trừ hiệu quả cao nhiều loại sâu ăn lá và chích hút, trong đó có rệp sáp ([DOC 12]).
+- Liều dùng Nofara 350SC là 0.3 lít/ha, pha 20-24 ml/20 lít nước, phun 320-500 lít nước/ha, phun khi sâu hại mới xuất hiện, thời gian cách ly 14 ngày ([DOC 12]).
+
+3. Về Inmanda:
+- Trong NGỮ CẢNH không có thông tin về sản phẩm Inmanda, thành phần, công dụng hay khả năng phối trộn với Ecudor, Suparep hay Nofara.
+
+4. Về cây sầu riêng:
+- Ecudor, Suparep được nhắc đến trong xử lý rệp sáp, rệp vảy nói chung ([DOC 5]).
+- Binhfos 50EC và Nofara có thể dùng trừ rệp sáp trên nhiều cây, trong đó có sầu riêng (Binhfos 50EC theo [DOC 1]).
+- Tuy nhiên, trong NGỮ CẢNH không có thông tin cụ thể về việc dùng Ecudor, Suparep hoặc Nofara trên cây sầu riêng, cũng như phối trộn các thuốc này trên cây sầu riêng.
+
+Kết luận và khuyến nghị:
+
+- Ecudor và Suparep là thuốc có tác dụng trừ rệp sáp, rệp vảy, có thể phối hợp với các thuốc toàn bộ lưu dẫn để tăng hiệu quả xử lý rệp sáp ([DOC 5]).
+- Nofara (35WG hoặc 350SC) chứa hoạt chất Thiamethoxam có tác dụng trừ rệp sáp trên nhiều cây trồng, nhưng NGỮ CẢNH không nêu rõ dùng trên cây sầu riêng.
+- Không thấy thông tin trong NGỮ CẢNH về sản phẩm Inmanda, do đó không thể khẳng định hoặc phủ nhận khả năng phối trộn với Ecudor, Suparep hay Nofara.
+- Không có dữ liệu cụ thể về việc phối trộn Ecudor, Suparep với Nofara để trừ rệp sáp trên cây sầu riêng trong NGỮ CẢNH.
+- Để đảm bảo an toàn và hiệu quả, cần tham khảo thêm hướng dẫn kỹ thuật từ nhà sản xuất hoặc chuyên gia trước khi phối trộn các thuốc này trên cây sầu riêng.
+
+Tóm lại:  
+- Ecudor và Suparep có thể dùng để trừ rệp sáp và có thể phối hợp với các thuốc lưu dẫn để tăng hiệu quả, tuy nhiên không có thông tin cụ thể về phối trộn với Nofara hay Inmanda.  
+- Nofara có tác dụng trừ rệp sáp trên nhiều cây trồng nhưng không có dữ liệu về cây sầu riêng trong ngữ cảnh.  
+- Không có thông tin về Inmanda trong ngữ cảnh, không thể xác nhận phối trộn.  
+- Cần thận trọng và tuân thủ hướng dẫn kỹ thuật khi phối trộn thuốc, đặc biệt trên cây sầu riêng nhạy cảm.
+
+Nếu cần tư vấn chi tiết hơn, nên liên hệ nhà cung cấp hoặc chuyên gia kỹ thuật để được hướng dẫn cụ thể.",[]
+2026-01-06 18:58:33,RAG,Ecudor và suparep  có thể phối với inmanda hoặc nofara để trừ rệp sáp trên cây sầu riêng ko?,Ecuador và Suparep có thể phối với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng không?,RAG_SOFT,0.5256893038749695,0.5182415843009949,0.007447719573974609,0.49689202904701235,220,0.026101243455324646,"Dựa trên NGỮ CẢNH cung cấp, ta có các thông tin liên quan như sau:
+
+1. Về Ecudor và Suparep:
+- Theo [DOC 5], Suparep và Ecudor là thuốc được dùng kết hợp với các thuốc lưu dẫn để trừ rệp sáp và rệp vảy. Ví dụ phối hợp Supaprep + Rayanusa được ghi nhận hiệu quả cao trong việc diệt rệp sáp, giúp mát cây.
+- Ngoài ra, [DOC 3] cũng nhắc đến việc có thể kết hợp Lekima để trừ toàn bộ trứng rệp sáp, và lưu ý khi dùng các dạng thuốc EC (như Ecudor, Suparep có thể thuộc nhóm này) trên cây hoa, trái non, lá non cần cẩn thận, nên ưu tiên thuốc tiếp xúc dạng SC cho cây nhạy cảm.
+- Tuy nhiên, NGỮ CẢNH không nêu rõ Ecudor hoặc Suparep có thể phối hợp với Inmanda hay Nofara.
+
+2. Về Nofara:
+- Nofara 35WG (còn gọi là Recxona 35WG hoặc Vua Trĩ) chứa hoạt chất Thiamethoxam 35% w/w, có tác dụng trừ các loại sâu chích hút, trong đó có rệp sáp trên nhiều cây trồng, kể cả cà phê, mía, thuốc lá, điều, khoai tây, hoa cúc ([DOC 2], [DOC 4], [DOC 6], [DOC 10]).
+- Nofara 350SC (Vua Trĩ) cũng chứa Thiamethoxam 350 g/L, có tác động tiếp xúc, vị độc và nội hấp mạnh, ít bị rửa trôi, hiệu lực kéo dài, phổ tác dụng rộng trên nhiều loại sâu ăn lá và chích hút, bao gồm rệp sáp ([DOC 12]).
+- Liều dùng Nofara 350SC là 0.3 lít/ha, pha 20-24 ml/20 lít nước, lượng nước phun 320-500 lít/ha, phun khi sâu hại mới xuất hiện, thời gian cách ly 14 ngày ([DOC 12]).
+- Tuy nhiên, NGỮ CẢNH không đề cập đến việc phối hợp Nofara với Ecudor hoặc Suparep.
+
+3. Về cây sầu riêng:
+- Ecudor, Suparep và Nofara đều có tác dụng trừ rệp sáp, nhưng NGỮ CẢNH chỉ ghi rõ Binhfos 50EC dùng trừ rệp sáp trên cây sầu riêng ([DOC 1]).
+- Không có thông tin cụ thể về việc dùng Ecudor, Suparep hay Nofara trên cây sầu riêng trong NGỮ CẢNH.
+- [DOC 11] nhấn mạnh việc xử lý nấm bệnh và rong rêu trước khi làm cơi phục hồi cây sầu riêng để tránh ảnh hưởng xấu đến cây, nhưng không liên quan đến phối thuốc trừ rệp sáp.
+
+4. Về Inmanda:
+- NGỮ CẢNH không đề cập đến sản phẩm Inmanda, nên không có thông tin về đặc tính, công dụng hay khả năng phối hợp với các thuốc khác.
+
+Kết luận và khuyến nghị:
+
+- Ecudor và Suparep là thuốc có thể dùng để trừ rệp sáp, thường phối hợp với các thuốc lưu dẫn để tăng hiệu quả, tuy nhiên NGỮ CẢNH không nêu rõ phối hợp với Inmanda hay Nofara.
+- Nofara (cả 35WG và 350SC) có tác dụng trừ rệp sáp trên nhiều cây trồng, nhưng NGỮ CẢNH không ghi nhận sử dụng trên cây sầu riêng.
+- Không có thông tin về Inmanda trong NGỮ CẢNH, nên không thể xác định được khả năng phối hợp với Ecudor, Suparep hay Nofara.
+- Do vậy, không thể khẳng định Ecudor và Suparep có thể phối hợp với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng dựa trên dữ liệu hiện có.
+
+Thông tin chung: Khi phối hợp thuốc trừ sâu, cần lưu ý tính tương thích hóa học, cơ chế tác động và độ an toàn cho cây trồng, đặc biệt là cây nhạy cảm như sầu riêng. Việc phối hợp thuốc không đúng có thể gây giảm hiệu quả hoặc gây hại cho cây.
+
+---
+
+Tóm tắt cho câu hỏi:
+
+| Thuốc           | Có tác dụng trừ rệp sáp | Dùng trên cây sầu riêng | Thông tin phối hợp với Inmanda/Nofara trên sầu riêng |
+|-----------------|-------------------------|-------------------------|-----------------------------------------------------|
+| Ecudor          | Có (theo [DOC 5])       | Không rõ                | Không thấy trong ngữ cảnh                             |
+| Suparep         | Có (theo [DOC 5])       | Không rõ                | Không thấy trong ngữ cảnh                             |
+| Nofara 35WG/350SC| Có (theo [DOC 2], [DOC 4], [DOC 6], [DOC 10], [DOC 12]) | Không thấy thông tin dùng trên sầu riêng | Không thấy trong ngữ cảnh                             |
+| Inmanda         | Không thấy trong ngữ cảnh| Không thấy trong ngữ cảnh| Không thấy trong ngữ cảnh                             |
+
+Do đó, để phối hợp thuốc trừ rệp sáp trên cây sầu riêng, cần tham khảo thêm tài liệu kỹ thuật hoặc hướng dẫn của nhà sản xuất, cũng như thử nghiệm thực tế để đảm bảo an toàn và hiệu quả.",[]
+2026-01-06 19:06:39,RAG,Ecudor và suparep  có thể phối với inmanda hoặc nofara để trừ rệp sáp trên cây sầu riêng ko?,Ecuador và Suparep có thể phối với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng không?,RAG_SOFT,0.3487853407859802,0.5245093107223511,-0.17572396993637085,0.4759141802787781,220,0.0,"Dựa trên NGỮ CẢNH cung cấp, dưới đây là tổng hợp thông tin về khả năng phối hợp Ecudor và Suparep với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng:
+
+1. **Ecudor**  
+- Theo DOC 7, Ecudor được nhắc đến trong phác đồ xử lý rệp sáp, rệp vảy phối hợp với Suparep và thuốc lưu dẫn mạnh như Rayanusa để tăng hiệu quả diệt rệp.  
+- Tuy nhiên, NGỮ CẢNH không nêu rõ Ecudor có thể phối hợp với Inmanda hay Nofara hay không, cũng không đề cập đến việc dùng Ecudor trên cây sầu riêng cụ thể.
+
+2. **Suparep 22.4SC**  
+- Suparep 22.4SC là thuốc trừ sâu lưu dẫn 2 chiều, hấp thu qua lá, di chuyển trong cây, có tác dụng diệt nhiều loại sâu bệnh trong đó có rệp sáp (DOC 5, DOC 8).  
+- Suparep được sử dụng trên cây sầu riêng (DOC 5, DOC 8).  
+- Suparep có thể phối hợp với các hoạt chất Dinotefuran, Buprofezin và Lekima để tăng hiệu quả phòng trừ sâu bệnh, đặc biệt là rệp và bọ trĩ (DOC 6).  
+- Không có thông tin trong NGỮ CẢNH về việc phối hợp Suparep với Inmanda hoặc Nofara.
+
+3. **Inmanda 100WP**  
+- Inmanda 100WP được sử dụng trên nhiều loại cây trồng như lúa, rau màu, cây ăn trái và cây công nghiệp để phòng trừ các loại sâu hại phổ biến (DOC 9).  
+- NGỮ CẢNH không nêu rõ Inmanda có tác dụng trên rệp sáp hay có thể phối hợp với Suparep hoặc Ecudor.
+
+4. **Nofara 35WG (Recxona 35WG)**  
+- Nofara 35WG có tác dụng trừ các loại sâu chích hút, trong đó có rệp sáp trên nhiều cây trồng như mía, cà phê, thuốc lá, điều, khoai tây, hoa cúc (DOC 2, DOC 3, DOC 10).  
+- Không có thông tin Nofara được sử dụng trên cây sầu riêng.  
+- NGỮ CẢNH không đề cập việc phối hợp Nofara với Suparep hay Ecudor.  
+- Lưu ý Nofara có tính lưu dẫn và cần tuân thủ thời gian cách ly, không phun vượt liều lượng (DOC 12).
 
 **Kết luận:**  
-- Để trừ nhện gié trên cây lúa, sản phẩm **Exami 20WG** là lựa chọn trực tiếp được ghi nhận có tác dụng diệt nhện lông nhung.  
-- Các sản phẩm **TRÙM CHÍCH HÚT - TRĨ** và **RECXONA 35WG (VUA TRĨ)** có thể hỗ trợ phòng trừ các loại sâu chích hút khác, góp phần kiểm soát tổng hợp sâu hại trên lúa.  
-- Người sử dụng cần tuân thủ đúng liều lượng, cách pha và thời gian cách ly theo hướng dẫn để đạt hiệu quả và an toàn.  
+- Suparep 22.4SC có thể dùng trên cây sầu riêng và có thể phối hợp với một số hoạt chất khác để tăng hiệu quả trừ rệp sáp, nhưng NGỮ CẢNH không đề cập phối hợp Suparep với Inmanda hoặc Nofara.  
+- Ecudor được phối hợp với Suparep và thuốc lưu dẫn mạnh khác để xử lý rệp sáp, nhưng không có thông tin phối hợp với Inmanda hoặc Nofara, cũng không nêu rõ dùng trên sầu riêng.  
+- Nofara 35WG không được ghi nhận sử dụng trên cây sầu riêng trong NGỮ CẢNH, và không có thông tin phối hợp với Suparep hoặc Ecudor.  
+- Inmanda 100WP không có thông tin cụ thể về trừ rệp sáp hay phối hợp với Suparep, Ecudor, Nofara trong NGỮ CẢNH.
 
-Nếu cần thêm thông tin chi tiết về liều lượng hoặc hướng dẫn kỹ thuật cho Exami 20WG, nên tham khảo tài liệu kỹ thuật của nhà sản xuất hoặc chuyên gia kỹ thuật nông nghiệp.",[]
-2026-01-05 19:00:54,RAG,tư vấn các sản phẩm trừ nhện gié trên lúa,Tư vấn các sản phẩm trừ nhện gié trên lúa.,RAG_SOFT,0.4722251892089844,0.4642327129840851,0.007992476224899292,0.457149475812912,50,0.025161657317009183,"Dưới đây là tư vấn chi tiết các sản phẩm trừ nhện gié trên cây lúa dựa trên thông tin từ ngữ cảnh:
+**Tóm lại:**  
+- Không có dữ liệu trong NGỮ CẢNH xác nhận việc phối hợp Ecudor và Suparep với Inmanda hoặc Nofara để trừ rệp sáp trên cây sầu riêng.  
+- Suparep có thể dùng trên sầu riêng để trừ rệp sáp và có thể phối hợp với một số hoạt chất khác (Dinotefuran, Buprofezin, Lekima) nhưng không phải Inmanda hay Nofara.  
+- Nofara không được ghi nhận dùng trên sầu riêng trong ngữ cảnh này.  
+- Ecudor phối hợp với Suparep và thuốc lưu dẫn khác để trừ rệp sáp, nhưng không có thông tin phối hợp với Inmanda hoặc Nofara.
 
-1. **LAMA 50EC**
-   - **Hoạt chất:** Hexythiazox 50g/lít.
-   - **Nhóm thuốc:** Thuốc trừ nhện.
-   - **Cơ chế tác động:** Ức chế quá trình lột xác và tác động lên các pha sinh trưởng của nhện như trứng, ấu trùng và nhện trưởng thành.
-   - **Phạm vi tác dụng:** Đặc trị nhện đỏ, nhện gié, nhện lông nhung, nhện trắng trên nhiều cây trồng, trong đó có lúa.
-   - **Liều dùng – cách pha:** Pha 15–20 ml/bình 16–18 lít nước cho lúa.
-   - **Lượng nước phun:** 400 – 800 lít/ha.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý an toàn:** Không phun khi có gió lớn hoặc trời sắp mưa to.
+Nếu cần phối hợp thuốc, nên dựa trên các hoạt chất đã được chứng minh hiệu quả và phù hợp với cây trồng trong NGỮ CẢNH, tránh phối hợp không rõ nguồn gốc để đảm bảo an toàn và hiệu quả.",[]
+2026-01-06 19:09:20,RAG,Lá chuối bị vàng là do đâu? Dùng sản phẩm nào trị vàng lá?,Lá chuối bị vàng là do đâu? Dùng sản phẩm nào trị vàng lá?,RAG_SOFT,0.3723786175251007,0.5119010806083679,-0.1395224630832672,0.46692641973495486,220,0.0,"(1) Tổng quan  
+Lá chuối bị vàng là một trong những triệu chứng bệnh lý thường gặp trên cây chuối, có thể do nhiều nguyên nhân gây ra, trong đó có bệnh do nấm và các yếu tố sinh học khác.
 
-2. **Scorcarb 80WG (Komulunx)**
-   - **Nhóm thuốc:** Thuốc trừ nhện.
-   - **Phạm vi tác dụng:** Dùng cho cây lúa để phòng trừ nhện đỏ, nhện gié, rệp gié và nhện bạc.
-   - **Công dụng:** Giúp bảo vệ cây lúa khỏi các loại nhện gây hại phổ biến.
-   - **Lưu ý:** Không có thông tin chi tiết về liều lượng, cách pha trong ngữ cảnh.
+(2) Hướng xử lý & phòng ngừa  
+- Sản phẩm có hoạt chất Penconazole 10% trong thuốc Toshiro 10EC được sử dụng để phòng trừ các bệnh vàng lá, thối rễ và đốm lá trên cây sầu riêng, có thể tham khảo để xử lý bệnh vàng lá trên cây trồng tương tự.  
+- Thuốc Byphan 800WP chứa hoạt chất Mancozeb (800g/kg) có công dụng phòng trừ bệnh vàng lá trên nhiều loại cây trồng, trong đó có cây chuối, nhờ tác dụng phòng chống các bệnh do nấm gây ra.  
+- Ngoài ra, để bảo vệ toàn diện cây chuối, cần phối hợp sử dụng các nhóm thuốc trừ nấm, trừ sâu và xử lý tuyến trùng, vì cây chuối thường bị tác động đồng thời bởi nhiều loại sâu bệnh khác nhau (theo DOC 6).  
+- Các hoạt chất như Flusilazole 40%EC, Chlorothalonil 50%SC và Mancozeb 80%WP cũng rất hiệu quả trong phòng trừ các bệnh nấm trên lá chuối, giúp hạn chế các triệu chứng vàng lá và đốm lá (theo DOC 3).  
 
-3. **GIÁO SƯ SÂU**
-   - **Hoạt chất:** Avermectin B1a, B1b (Abamectin 36g/l).
-   - **Nhóm thuốc:** Thuốc trừ sâu có tác dụng cả trừ nhện.
-   - **Phạm vi tác dụng:** Đặc trị nhiều loại sâu, nhện trên nhiều cây trồng, trong đó có lúa.
-   - **Đối tượng trên lúa:** Sâu tơ, sâu cuốn lá, nhện gié, nhện đỏ, rệp sáp, sâu hành, rầy mềm.
-   - **Liều dùng – cách pha:** Pha 25-50 ml/bình 20 lít nước.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý an toàn:** Không phun khi trời sắp mưa to hoặc có gió lớn; phun khi sâu tuổi còn nhỏ.
+Thông tin chung:  
+Vàng lá trên cây chuối thường do nấm bệnh gây hại hoặc các tác nhân sinh học khác như tuyến trùng, sâu hại làm suy yếu cây, nên việc sử dụng thuốc trừ nấm kết hợp với quản lý sâu bệnh tổng hợp sẽ giúp hạn chế triệu chứng vàng lá hiệu quả.",[]
+2026-01-06 19:18:09,RAG,"Các sản phẩm trị nhện, bọ trĩ tốt trên chè","Các sản phẩm trị nhện, bọ trĩ tốt trên chè?",RAG_SOFT,0.45958584547042847,0.4511851668357849,0.008400678634643555,0.3913646757602692,220,0.025738886618853485,"Dưới đây là tổng hợp các sản phẩm trị nhện, bọ trĩ tốt trên cây chè dựa trên thông tin từ ngữ cảnh:
 
-4. **KYODO 25SC và KYODO 50WP**
-   - **Hoạt chất:** Diafenthiuron 250g/lít.
-   - **Nhóm thuốc:** Thuốc trừ sâu, có tác dụng diệt nhện.
-   - **Phạm vi tác dụng:** Đặc trị nhện đỏ, nhện trắng, bọ trĩ, rầy xanh, sâu tơ, sâu xanh trên nhiều cây trồng, trong đó có chè, hoa hồng, cam, quýt, khoai, rau màu. Tuy nhiên, không dùng cho lúa do có thể gây ngộ độc cây trồng.
-   - **Lưu ý:** Không xịt cho lúa và các cây trồng khác; không phun khi trời mưa to hoặc có gió lớn.
-   - **Thông tin về liều dùng trên lúa không có vì không được phép sử dụng trên lúa.**
+1. **Kyodo 25SC**
+   - **Đặc tính & công dụng:** Sản phẩm dùng để phòng trừ các loại sâu bệnh như bọ trĩ, rầy xanh, bọ xít, bọ hà, nhện đỏ, nhện trắng.
+   - **Phạm vi trên cây chè:** Đặc biệt hiệu quả trong việc kiểm soát rầy xanh, bọ trĩ và bọ phấn trên cây chè.
+   - **Cây trồng:** Cam, quýt, chè, hoa hồng, nho, khoai, rau màu.
+   - **Ghi chú:** Sản phẩm phù hợp để xử lý các loại nhện và bọ trĩ gây hại trên chè.
 
-5. **Em Oil 99EC Spray**
-   - **Hoạt chất:** Petroleum oil 99% w/w.
-   - **Nhóm thuốc:** Thuốc trừ sâu, đặc trị nhện đỏ.
-   - **Phạm vi tác dụng:** Chỉ ghi nhận dùng cho hoa mai với đối tượng nhện đỏ; không có thông tin dùng cho lúa hoặc nhện gié trên lúa.
-   - **Lưu ý:** Không xịt khi cây có hoa, trái non, lộc non; không xịt khi trời nắng nóng; phun vào chiều mát.
-   - **Thời gian cách ly:** 7 ngày.
+2. **Kyodo 50WP**
+   - **Đặc tính & công dụng:** Phòng trừ bọ trĩ, rầy xanh, bọ xít, bọ hà, nhện đỏ, nhện trắng.
+   - **Phạm vi trên cây chè:** Hiệu quả với bọ trĩ, rầy xanh, nhện đỏ trên cây chè.
+   - **Cây trồng:** Cam, quýt, chè, hoa hồng, nho, khoai, rau màu.
+   - **Lưu ý:** Không được phun thuốc trên cây lúa.
+   - **Ghi chú:** Là lựa chọn tốt để kiểm soát nhện và bọ trĩ trên chè.
 
----
+3. **Siêu Diệt Nhện (Abinsec)**
+   - **Hoạt chất:** Abamectin 1.8% w/w.
+   - **Đặc tính & công dụng:** Thuốc trừ nhện, có hiệu quả trên các vùng nhện đã kháng thuốc mạnh. Công thức cải tiến, an toàn với cây trồng, có thể dùng cho hoa hồng và giai đoạn có hoa của cây ăn trái.
+   - **Phạm vi trên cây chè:** Có hiệu quả với nhện đỏ, nhện lông nhung, sâu tơ, sâu xanh, bọ phấn, rệp, rầy xanh, sâu khoang.
+   - **Cây trồng:** Cam, quýt, lúa, chè, lạc, cải bắp, đậu tương, dưa hấu, xoài, cà chua,...
+   - **Lưu ý:** Thời gian cách ly 7 ngày; pha liều lượng theo mật độ nhện; không có thông tin lưu ý đặc biệt khác.
 
-### Tổng kết và khuyến nghị:
+4. **Nofara 35WG (Vua Trĩ)**
+   - **Đặc tính & công dụng:** Thuốc trừ sâu chuyên trị các loại sâu chích hút.
+   - **Phạm vi trên cây chè:** Không trực tiếp nêu trong ngữ cảnh, nhưng Nofara có tác dụng trừ rệp sáp và các loại sâu chích hút trên nhiều cây trồng, trong đó có cà phê, điều, khoai tây, hoa cúc.
+   - **Ghi chú:** Mặc dù không nêu rõ trên chè, Nofara được biết đến là thuốc trừ sâu chích hút hiệu quả, có thể tham khảo khi cần xử lý sâu chích hút trên cây chè.
 
-- **Sản phẩm ưu tiên cho nhện gié trên lúa:**
-  - **LAMA 50EC:** Thuốc trừ nhện chuyên biệt, có liều lượng và cách pha rõ ràng, hiệu quả trên nhện gié lúa.
-  - **Scorcarb 80WG (Komulunx):** Dùng cho lúa, phòng trừ nhện gié và các loại nhện khác.
-  - **GIÁO SƯ SÂU:** Thuốc trừ sâu có tác dụng trừ nhện gié trên lúa, phù hợp khi sâu, nhện còn nhỏ.
-
-- **Không khuyến cáo dùng KYODO 25SC/50WP trên lúa do nguy cơ gây ngộ độc cây trồng.**
-
-- **Em Oil 99EC Spray:** Không có thông tin sử dụng cho lúa hoặc nhện gié trên lúa, chỉ dùng cho hoa mai.
+5. **Zigen Super và Oxatin**
+   - **Đặc tính & công dụng:** Hai sản phẩm trừ trĩ xuất sắc thuộc nhóm tiếp xúc-lưu dẫn mạnh.
+   - **Phạm vi:** Được dùng để xử lý trĩ rất hay kháng thuốc, có hiệu quả cao (80-90%).
+   - **Ghi chú:** Mặc dù ngữ cảnh không nêu cụ thể trên cây chè, nhưng Zigen Super và Oxatin được khuyến cáo dùng để xử lý trĩ kháng thuốc, có thể áp dụng cho chè nếu gặp trĩ kháng thuốc.
 
 ---
 
-### Lưu ý chung khi sử dụng thuốc trừ nhện gié trên lúa:
-- Phun thuốc khi nhện còn nhỏ hoặc trong giai đoạn sinh trưởng nhạy cảm của nhện.
-- Tránh phun khi trời mưa to hoặc có gió lớn để đảm bảo hiệu quả và an toàn.
-- Tuân thủ liều lượng và cách pha theo hướng dẫn để tránh gây hại cho cây trồng.
-- Đảm bảo thời gian cách ly theo từng sản phẩm để bảo vệ sức khỏe người sử dụng và môi trường.
+**Tóm tắt:**
+
+| Sản phẩm          | Hoạt chất chính / Nhóm thuốc           | Phạm vi trên chè                  | Đặc điểm nổi bật                             |
+|-------------------|---------------------------------------|---------------------------------|---------------------------------------------|
+| Kyodo 25SC        | Không nêu rõ                         | Bọ trĩ, rầy xanh, bọ phấn, nhện đỏ, nhện trắng | Phòng trừ sâu bệnh đa dạng trên chè          |
+| Kyodo 50WP        | Không nêu rõ                         | Bọ trĩ, rầy xanh, nhện đỏ        | Hiệu quả trên sâu bệnh và nhện trên chè      |
+| Siêu Diệt Nhện    | Abamectin 1.8%                      | Nhện đỏ, nhện lông nhung, sâu tơ, sâu xanh, bọ phấn, rệp, rầy xanh | Hiệu quả trên nhện kháng thuốc, an toàn cây |
+| Nofara 35WG       | Không nêu rõ                         | Rệp sáp, sâu chích hút (không nêu rõ chè) | Thuốc trừ sâu chích hút, dùng đa dạng cây   |
+| Zigen Super, Oxatin| Không nêu rõ (tiếp xúc - lưu dẫn)   | Trị trĩ kháng thuốc (không nêu rõ chè) | Hiệu quả cao trên trĩ kháng thuốc             |
 
 ---
 
-Nếu cần tư vấn chi tiết về liều lượng hoặc cách pha cho từng sản phẩm, vui lòng tham khảo nhãn sản phẩm hoặc liên hệ kỹ thuật chuyên môn để đảm bảo sử dụng đúng cách và hiệu quả.",[]
-2026-01-05 19:03:12,RAG,sản phẩm của công ty phúc thịnh,Sản phẩm của công ty Phúc Thịnh.,RAG_SOFT,0.3534427583217621,0.33827394247055054,0.015168815851211548,0.2885263830423355,18,0.03574205409951385,"Dựa trên NGỮ CẢNH từ DOC 1, sản phẩm của công ty Tỷ Phúc Thịnh được đề cập là:
+**Lưu ý chung:**
+- Khi sử dụng các thuốc trên, cần tuân thủ liều lượng, cách pha, thời gian cách ly theo hướng dẫn của từng sản phẩm.
+- Không phun thuốc khi có gió lớn hoặc trời sắp mưa to để đảm bảo hiệu quả và an toàn.
+- Các sản phẩm như Siêu Diệt Nhện và Kyodo có thể dùng hiệu quả cho các vùng nhện kháng thuốc và mật độ cao trên chè.
 
-1. Million 50WG (Vua Rầy):
+---
 
-- Thành phần chính: chứa hoạt chất Flonicamid 50% w/w.
-- Quy cách đóng gói: các gói 20gr và 100gr.
-- Công dụng chính: thuốc trừ sâu chích hút tổng hợp thế hệ mới với lưu dẫn mạnh.
-- Phạm vi tác động: dùng để trừ các loại sâu chích hút trên nhiều cây trồng như:
-   + Cây lúa: rầy nâu, rầy lưng trắng, bọ xít.
-   + Cây sắn: bọ phấn trắng.
-   + Cây ngô: rệp muội, rệp sáp.
-   + Cây xoài và thanh long: rệp sáp, bọ ngâu, rầy xanh, rầy bông.
-   + Cây thuốc lá: bọ phấn.
-   + Hoa cúc và hoa hồng: bọ trĩ, nhện lông nhung.
-   + Rau cải: rầy mềm, rệp sáp, bọ nhảy, bọ phấn.
-   + Cây ăn trái: nhện, rệp sáp, rầy xanh, bọ phấn.
+Nếu cần thông tin chi tiết về liều lượng, cách pha hoặc thời gian cách ly của từng sản phẩm, vui lòng hỏi riêng cho từng sản phẩm để được cung cấp chính xác theo ngữ cảnh.",[]
+2026-01-06 19:19:31,RAG,Nêu công thức và 1 số sản phẩm trị nhện trên cây hoa giai đoạn hoa lá non,Nêu công thức và một số sản phẩm trị nhện trên cây hoa giai đoạn hoa lá non.,RAG_SOFT,0.5264480710029602,0.5087771415710449,0.017670929431915283,0.501910662651062,220,0.06201884474840824,"Dưới đây là tổng hợp công thức và một số sản phẩm thuốc trừ nhện phù hợp dùng trên cây hoa giai đoạn có hoa, lá non, dựa trên thông tin trong ngữ cảnh:
 
-Tóm lại, trong NGỮ CẢNH chỉ có sản phẩm Million 50WG (Vua Rầy) của công ty Tỷ Phúc Thịnh được đề cập với đặc điểm nổi bật là thuốc trừ sâu chích hút thế hệ mới chứa Flonicamid 50%, có phổ tác động rộng trên nhiều loại sâu hại chích hút ở nhiều cây trồng khác nhau. Không có thông tin về các sản phẩm khác của công ty Phúc Thịnh trong NGỮ CẢNH.",[]
-2026-01-05 19:07:46,RAG,tư vấn các sản phẩm trừ nhện gié trên lúa,Tư vấn các sản phẩm trừ nhện gié trên lúa.,RAG_SOFT,0.4642327129840851,0.4521505534648895,0.012082159519195557,0.4364678919315338,32,0.037392891282017615,"Dưới đây là tư vấn chi tiết các sản phẩm thuốc trừ nhện gié trên cây lúa dựa trên thông tin trong ngữ cảnh:
+1. **Siêu Diệt Nhện (Abamectin 1.8% w/w)**  
+   - **Hãng sản xuất:** Shandong Weifang Rainbow Chemical Co., Ltd.  
+   - **Đặc tính - công dụng:** Thuốc trừ nhện nhóm Abamectin, công thức cải tiến, mát với cây trồng, có thể dùng cho hoa hồng và giai đoạn có hoa của cây ăn trái. Hiệu quả trên nhện kháng thuốc mạnh.  
+   - **Phạm vi cây trồng:** Cam, quýt, lúa, chè, lạc, cải bắp, đậu tương, dưa hấu, xoài, cà chua, hoa hồng...  
+   - **Đối tượng sâu hại:** Nhện lông nhung, nhện đỏ, nhện vàng, nhện gié, sâu tơ, sâu xanh, sâu ăn lá, bọ phấn, rệp, rầy xanh, sâu khoang, bọ nhảy.  
+   - **Liều dùng - cách pha:**  
+     - Vùng nhện kháng thuốc mạnh, mật độ cao: 40ml pha với 25L nước hoặc 30ml pha với 20L nước. Tương đương chai 240ml pha với 150L nước phun ướt đều lá.  
+     - Vùng nhện ít kháng thuốc, mật độ thấp: 30ml pha với 25L nước hoặc 24ml pha với 20L nước. Tương đương chai 240ml pha với 200L nước.  
+   - **Thời gian cách ly:** 7 ngày.  
+   - **Lưu ý:** Công thức mát, an toàn cho cây, phù hợp dùng cho hoa hồng và cây ăn trái giai đoạn có hoa.
 
-1. **LAMA 50EC**
-   - **Hoạt chất:** Hexythiazox 50g/lít.
-   - **Nhóm thuốc:** Thuốc trừ nhện, có tính nội hấp.
-   - **Công dụng:** Ức chế quá trình lột xác và tác động lên các pha sinh trưởng của nhện như trứng, ấu trùng và nhện trưởng thành. Hiệu quả cao với nhiều loại nhện hại thực vật, đặc trị nhện đỏ, nhện gié, nhện lông nhung, nhện trắng.
-   - **Phạm vi sử dụng:** Cây có múi, chè, hoa, rau, **lúa**.
-   - **Đối tượng trên lúa:** Nhện đỏ, nhện gié, nhện trắng.
-   - **Liều dùng:** Pha 15–20 ml/bình 16–18 lít nước cho lúa.
-   - **Lượng nước phun:** 400 – 800 lít/ha.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý:** Không phun khi có gió lớn hoặc trời sắp mưa to.
+2. **Buti 43SC (Anh Hùng Nhện)**  
+   - **Đặc tính - công dụng:** Thuốc dạng SC, đặc trị nhện đã kháng thuốc, an toàn với đọt non, hoa và trái non, không gây nóng cây.  
+   - **Phạm vi cây trồng:** Hoa hồng, cam, chanh, dâu tây, cà chua, bơ.  
+   - **Thời điểm phun:** Sáng sớm hoặc chiều mát khi nhện mới xuất hiện để đạt hiệu quả cao nhất.  
+   - **Lưu ý:** Không có lưu ý đặc biệt về giai đoạn không được phun, tuy nhiên cần tuân thủ liều lượng và thời điểm phun để tránh ảnh hưởng đến cây.
 
-2. **Scorcarb 80WG (Komulunx)**
-   - **Nhóm thuốc:** Thuốc trừ nhện.
-   - **Công dụng:** Phòng trừ nhện đỏ, nhện gié, rệp gié, nhện bạc trên cây lúa.
-   - **Phạm vi sử dụng:** Cây lúa.
-   - **Đối tượng:** Nhện đỏ, nhện gié.
-   - **Thông tin liều dùng, cách pha:** Không có trong ngữ cảnh.
-   - **Lưu ý:** Không có thông tin chi tiết về lưu ý an toàn hay thời gian cách ly.
+3. **HAIHAMEC 3.6E, Ankamec 3.6EC, Dapharnec 3.6EC (Abamectin 3.6% w/w)**  
+   - **Hãng sản xuất:** Topsen Biotech Co., Ltd.  
+   - **Đặc tính - công dụng:** Thuốc tiếp xúc, nội hấp lưu dẫn, đặc trị nhiều loại sâu rầy và nhện đỏ trên nhiều cây trồng, trong đó có các loại hoa như hoa cúc, hoa đồng tiền, hoa hồng.  
+   - **Phạm vi cây trồng:** Dâu tây, dưa chuột, dưa hấu, các loại hoa (hoa cúc, hoa đồng tiền, hoa hồng), rau họ thập tự, táo, thông, tùng, lúa, trà (chè).  
+   - **Liều dùng - cách pha:**  
+     - Cây non, cây trồng trong nhà kính: 15-20ml pha với bình 25 lít nước (liều thấp 15ml).  
+     - Lúa và chè: 30-50ml pha với bình 25 lít nước.  
+   - **Thời điểm phun:** Phun ướt đều lá khi sâu mới nở, sâu còn nhỏ (tuổi 1-2).  
+   - **Thời gian cách ly:** 7 ngày.  
+   - **Lưu ý:** Không phun khi có gió lớn hoặc trời sắp mưa to; giảm liều cho cây non.
 
-3. **GIÁO SƯ SÂU**
-   - **Hoạt chất:** Avermectin B1a, B1b (Abamectin 36g/l).
-   - **Nhóm thuốc:** Thuốc trừ sâu tiếp xúc, nội hấp, lưu dẫn.
-   - **Công dụng:** Đặc trị nhiều loại sâu và nhện, trong đó có nhện gié và nhện đỏ.
-   - **Phạm vi sử dụng:** Rau cải, hành lá, **lúa**.
-   - **Đối tượng:** Sâu tơ, sâu hành, sâu cuốn lá, nhện đỏ, nhện gié.
-   - **Liều dùng:** Pha 25-50 ml/bình 20 lít nước.
-   - **Thời gian cách ly:** 7 ngày.
+4. **Diệt Nhện Sấm Sét (Lambda Cyhalothrin 1% w/v)**  
+   - **Hãng sản xuất:** Ascot Pro-G Limited (Anh Quốc).  
+   - **Đặc tính - công dụng:** Thuốc cúc tổng hợp, tác dụng nhanh, diệt nhện đỏ, nhện trắng, nhện lông nhung, nhện vàng. Thuốc làm ngộ độc dạ dày và gây chết ngay sau tiếp xúc.  
+   - **Phạm vi cây trồng:** Hoa hồng, cam, chanh, dâu tây, súp lơ, bắp cải, quýt, đậu cove, hoa ly, hoa đồng tiền, hoa cúc.  
+   - **Liều dùng - cách pha:** 24ml pha với bình 20 lít nước; chai 240ml pha với phuy 200 lít nước.  
+   - **Thời điểm phun:** Sáng sớm hoặc chiều mát khi nhện mới xuất hiện.  
+   - **Thời gian cách ly:** 7-10 ngày.  
    - **Lưu ý:** Không phun khi trời sắp mưa to hoặc có gió lớn.
 
-4. **Takiwa 22SC**
-   - **Hoạt chất:** Meta umizone 22% w/w (240g/L).
-   - **Nhóm thuốc:** Thuốc trừ sâu.
-   - **Công dụng:** Hiệu quả với sâu tơ, sâu xanh, sâu cuốn lá, sâu khoang, nhện đỏ và sâu cuốn lá.
-   - **Phạm vi sử dụng:** Bắp cải, hành, cà chua, đậu tương, **lúa**.
-   - **Đối tượng:** Trong đó có nhện đỏ (không nêu rõ nhện gié).
-   - **Liều dùng:** 0.8 lít/ha; pha 24-30 ml/bình 20 lít nước.
-   - **Lượng nước phun:** 500-600 lít/ha.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý:** Không phun khi trời sắp mưa to hoặc có gió lớn.
+5. **Công thức xử lý nhện kháng thuốc cao (tham khảo từ DOC 5):**  
+   - Abinsec Siêu Diệt Nhện 240ml + Abamectin 3.6 đục 300ml + bám dính 100ml pha với 200L nước.  
+   - Hoặc King Kha 240ml + Abamectin 3.6 đục 300ml + bám dính 100ml/200L nước.  
+   - Hoặc Samsan nhện 240ml + Abamectin 3.6 đục 300ml + bám dính 100ml/200L nước.  
+   Đây là các tổ hợp phối trộn dùng cho vùng nhện kháng thuốc cao, mật độ nhiều, giúp tăng hiệu quả diệt nhện.
 
 ---
 
-### Tổng kết:
-- **LAMA 50EC** và **Scorcarb 80WG (Komulunx)** là hai sản phẩm đặc trị nhện gié trên lúa rõ ràng nhất, trong đó LAMA 50EC có liều lượng, cách pha và lưu ý kỹ thuật cụ thể.
-- **GIÁO SƯ SÂU** có hiệu quả với nhện gié và nhện đỏ trên lúa, đồng thời có hướng dẫn liều dùng cụ thể.
-- **Takiwa 22SC** có hiệu quả với nhện đỏ trên lúa, không nêu rõ nhện gié nhưng có thể xem xét do phạm vi nhện đỏ và sâu hại trên lúa.
-- Các sản phẩm trên đều có lưu ý chung là không phun khi trời sắp mưa to hoặc có gió lớn, thời gian cách ly đều là 7 ngày.
+**Tóm lại:**  
+- Các sản phẩm chứa hoạt chất Abamectin (Siêu Diệt Nhện, HAIHAMEC 3.6E, Ankamec 3.6EC, Dapharnec 3.6EC) được ưu tiên dùng cho cây hoa giai đoạn hoa, lá non vì tính mát, an toàn, hiệu quả trên nhện kháng thuốc.  
+- Buti 43SC (Anh Hùng Nhện) dạng SC an toàn cho đọt non, hoa, trái non, thích hợp cho hoa hồng và các cây ăn trái giai đoạn có hoa.  
+- Diệt Nhện Sấm Sét (Lambda Cyhalothrin) là lựa chọn thuốc cúc tổng hợp tác dụng nhanh, hiệu quả trên nhiều loại nhện hại hoa.  
+- Đối với vùng nhện kháng thuốc cao, có thể sử dụng công thức phối trộn Abinsec Siêu Diệt Nhện + Abamectin 3.6 + bám dính để tăng hiệu quả.
 
----
+Các sản phẩm trên đều có hướng dẫn pha liều lượng rõ ràng, thời gian cách ly từ 7 đến 10 ngày, và lưu ý phun vào sáng sớm hoặc chiều mát khi nhện mới xuất hiện để đạt hiệu quả tối ưu.",[]
+2026-01-06 19:21:13,RAG,Chuối đang ra buồng có phun dòng xông hơi đuổi rầy rệp được không?,Chuối đang ra buồng có phun dòng xông hơi đuổi rầy rệp được không?,RAG_SOFT,0.3405386209487915,0.3356580436229706,0.004880577325820923,0.3528638780117035,264,0.011080167146459985,"Về việc phun dòng thuốc xông hơi để đuổi rầy rệp khi cây chuối đang ra buồng, tổng hợp thông tin từ ngữ cảnh có thể lưu ý như sau:
 
-Nếu cần lựa chọn sản phẩm trừ nhện gié trên lúa, ưu tiên dùng LAMA 50EC và Scorcarb 80WG vì có thông tin rõ ràng về đối tượng và cây trồng. GIÁO SƯ SÂU cũng là lựa chọn tốt cho phòng trừ sâu và nhện trên lúa. Takiwa 22SC có thể được xem xét cho nhện đỏ trên lúa.
+1. Tính chất sâu rầy, rệp trên cây chuối:
+- Chuối thường bị tác động bởi nhiều nhóm sâu hại, trong đó có rầy, rệp, bọ xít, sâu ăn lá, sùng đất, ruồi hại (DOC 6).
+- Các nhóm côn trùng chích hút như bọ xít, rầy, ruồi gây hại trên chuối có thể xử lý bằng thuốc có tác dụng nội hấp, tiếp xúc và lưu dẫn (DOC 6).
 
----
+2. Sản phẩm thuốc xông hơi, tiếp xúc, lưu dẫn có thể dùng để trừ rầy, rệp:
+- BINHFOS 50EC (các tên khác: VUA SÂU, VUA RỆP - SÂU - RẦY, ANH HÙNG SÂU, TRÙM SÂU) là thuốc trừ sâu nhóm lân hữu cơ, tác động xông hơi, tiếp xúc, vị độc, có tác dụng diệt trừ nhóm sâu miệng nhai, gặm nhấm và chích hút, bao gồm rệp sáp, rầy nâu, rầy xanh, rầy phấn, rầy mềm (DOC 1).
+- TRÙM CHÍCH HÚT - TRĨ chứa hoạt chất Pymetrozine, thuốc lưu dẫn, tiếp xúc, vị độc, tác động lên hệ thần kinh làm côn trùng chích hút không thể ăn và chết, phòng trừ hiệu quả các loại rầy nâu, rầy xanh, rầy mềm, rệp sáp, bọ phấn (DOC 12).
+- HAIHAMEC 3.6E, Ankamec 3.6EC, Dapharnec 3.6EC chứa Abamectin, thuốc tiếp xúc, nội hấp lưu dẫn, đặc trị nhiều loại sâu rầy, bọ trĩ, rầy xanh, rầy mềm, bọ phấn (DOC 9).
+- Suparep 400WP chứa Buprofezin và Dinotefuran, thuốc nội hấp cực nhanh, lưu dẫn mạnh, tác động lên rầy nâu (DOC 8).
 
-**Lưu ý:** Thông tin về liều lượng và cách pha của Scorcarb 80WG không được cung cấp trong ngữ cảnh, nên cần tham khảo hướng dẫn trên bao bì hoặc tư vấn kỹ thuật trước khi sử dụng.",[]
-2026-01-05 19:08:05,RAG,các sản phẩm của công ty phúc thịnh,Các sản phẩm của công ty Phúc Thịnh.,NO_HITS,0.0,0.0,0.0,0.0,0,0.0,Không tìm thấy dữ liệu phù hợp.,[]
-2026-01-05 19:31:13,RAG,thuốc trị rầy,Thuốc trị rầy.,RAG_SOFT,0.42891228199005127,0.4150441288948059,0.013868153095245361,0.4081017076969147,3,0.03965480794046054,"Dưới đây là tổng hợp các thuốc trị rầy dựa trên thông tin từ ngữ cảnh đã cho:
+3. Về an toàn và thời điểm phun khi cây chuối ra buồng:
+- Ngữ cảnh không có thông tin cụ thể về việc phun thuốc xông hơi khi chuối đang ra buồng.
+- Tuy nhiên, thông tin chung về thuốc BINHFOS 50EC (DOC 1) và HAIHAMEC 3.6E (DOC 9) khuyến cáo phun khi sâu mới nở, sâu còn nhỏ (tuổi 1-2), phun ướt đều lá, và giảm liều thuốc cho cây non.
+- Không có cảnh báo cụ thể về việc không phun khi cây ra buồng.
+- Thông thường, giai đoạn ra hoa hoặc đậu trái của cây ăn trái như cam quýt rất nhạy cảm với thuốc, đặc biệt thuốc gốc đồng và thuốc oxy hóa cao dễ gây cháy hoa, rụng hoa (DOC 2). Tuy nhiên, chuối ra buồng không được đề cập cụ thể trong ngữ cảnh.
 
-1. Million 50WG (Vua Rầy)  
-- Đặc tính: Thuốc có tính lưu dẫn mạnh, giúp thuốc thấm sâu vào cây và di chuyển trong mô cây để tiêu diệt rầy hiệu quả.  
-- Lưu ý khi sử dụng: Cần tuân thủ đúng liều lượng và thời gian cách ly để tránh gây hại cho cây trồng và môi trường. Không phun quá liều hoặc phun vào giai đoạn cây không thích hợp để tránh ảnh hưởng đến sinh trưởng. Cần đọc kỹ hướng dẫn sử dụng và bắt buộc phải bảo hộ lao động khi phun thuốc nhằm đảm bảo an toàn cho người dùng.  
-- Phạm vi tác động: Chuyên trị rầy, phù hợp với các cây trồng bị rầy gây hại.  
+4. Về cách xử lý rầy rệp mật độ bình thường:
+- Có thể sử dụng thuốc dạng xông hơi, tiếp xúc, lưu dẫn, phối hợp toàn bộ lưu dẫn (DOC 5, DOC 10).
+- Ví dụ thuốc như Santoso, Dinotop có tác dụng lưu dẫn trừ rệp tốt, có thể pha thêm chất bám dính để tăng hiệu quả (DOC 10).
 
-2. Emoil 99EC Spray  
-- Đặc tính: Thuốc dùng để trừ sâu bệnh đa dạng, trong đó có rầy, rệp sáp, rệp mềm, bọ trĩ, nhện đỏ và bọ phấn.  
-- Thời điểm phun: Thích hợp phun sau thu hoạch hoặc trước khi cây ra hoa, đậu trái để kiểm soát sâu bệnh hiệu quả.  
-- Phạm vi tác động: Kiểm soát nhiều loại sâu bệnh trong đó có rầy trên cây trồng.  
+Tổng kết:
+- Các sản phẩm thuốc trừ sâu dạng xông hơi, tiếp xúc, lưu dẫn như BINHFOS 50EC (VUA SÂU, VUA RỆP - SÂU - RẦY, ANH HÙNG SÂU, TRÙM SÂU), TRÙM CHÍCH HÚT - TRĨ (Pymetrozine), HAIHAMEC 3.6E (Abamectin), Suparep 400WP (Buprofezin + Dinotefuran) có thể dùng để trừ rầy rệp trên cây chuối.
+- Tuy nhiên, ngữ cảnh không cung cấp thông tin cụ thể về việc phun xông hơi khi chuối đang ra buồng nên cần thận trọng.
+- Nếu sử dụng, nên phun khi rầy rệp mới xuất hiện, phun ướt đều lá, tránh phun khi có gió lớn hoặc trời sắp mưa to.
+- Có thể phối hợp các thuốc có tính lưu dẫn và xông hơi để tăng hiệu quả đuổi trừ rầy rệp.
+- Nên tham khảo thêm hướng dẫn kỹ thuật cụ thể từ nhà sản xuất hoặc chuyên gia để đảm bảo an toàn cho cây chuối đang ra buồng.
 
-3. Tamatras (Siêu Diệt Sâu)  
-- Đặc tính: Thuốc có tác dụng diệt trừ sâu chích hút tổng hợp trên nhiều loại cây trồng.  
-- Phạm vi tác động: Kiểm soát hiệu quả các loại sâu gây hại như rầy, bọ trĩ, sâu xanh, sâu đục thân và các loại sâu chích hút khác.  
+Nếu cần, có thể lựa chọn một số sản phẩm tiêu biểu sau để xử lý rầy rệp trên chuối:
+- BINHFOS 50EC (VUA SÂU, VUA RỆP - SÂU - RẦY, ANH HÙNG SÂU, TRÙM SÂU): thuốc trừ sâu nhóm lân hữu cơ, tác động xông hơi, tiếp xúc, vị độc, diệt nhiều loại sâu chích hút, gặm nhấm.
+- TRÙM CHÍCH HÚT - TRĨ (Pymetrozine): thuốc lưu dẫn, tiếp xúc, vị độc, tác động lên hệ thần kinh côn trùng chích hút.
+- HAIHAMEC 3.6E (Abamectin): thuốc tiếp xúc, nội hấp lưu dẫn, đặc trị nhiều loại sâu rầy, bọ trĩ, rầy mềm.
+- Suparep 400WP (Buprofezin + Dinotefuran): thuốc nội hấp cực nhanh, lưu dẫn mạnh, tác dụng trên rầy nâu.
 
-Tổng kết:  
-- Nếu cần thuốc có tính lưu dẫn mạnh để trị rầy, Million 50WG là lựa chọn phù hợp, nhưng phải tuân thủ nghiêm ngặt các lưu ý về liều lượng, thời gian cách ly và bảo hộ lao động.  
-- Emoil 99EC Spray và Tamatras đều có tác dụng diệt rầy cùng nhiều loại sâu bệnh khác, thích hợp sử dụng trong các giai đoạn cụ thể của cây trồng để kiểm soát sâu bệnh hiệu quả.  
-
-Thông tin chung: Các thuốc trị rầy thường có cơ chế tác động lên sâu chích hút, giúp ngăn chặn sự phát triển và lây lan của rầy trên cây trồng. Việc tuân thủ kỹ thuật sử dụng thuốc, liều lượng và thời gian cách ly là rất quan trọng để bảo vệ cây trồng và môi trường.",[]
-2026-01-05 19:34:32,RAG,thuốc BYPHAN 800WP,Thuốc BYPHAN 800WP.,RAG_STRICT,0.6995649933815002,0.6425641775131226,0.057000815868377686,0.6227639317512512,50,0.26583850250467833,"Thông tin chi tiết về thuốc BYPHAN 800WP tổng hợp từ các nguồn trong ngữ cảnh như sau:
-
-1. Thành phần và đặc tính sản phẩm:
-- BYPHAN 800WP là thuốc bảo vệ thực vật thuộc nhóm thuốc trừ nấm.
-- Hoạt chất chính: Mancozeb với nồng độ 800g/kg, kết hợp phụ gia 200g/kg.
-- Dạng bột ướt (WP), đóng gói dạng gói 1kg.
-- Hãng sản xuất: Shenzhen Dehao Pesticides Co., Ltd.
-- Đặc tính công dụng: Thuốc có tác dụng trừ nấm bệnh phổ rộng, hoạt động theo cơ chế tiếp xúc trực tiếp với nấm gây bệnh.
-
-2. Phạm vi sử dụng và công dụng:
-- BYPHAN 800WP được sử dụng trên nhiều loại cây trồng như cây ăn trái (cam, nho, táo), lạc, vừng, dưa hấu, hành lá, khoai tây, cà chua, ớt, lúa, cà phê, xoài, vải.
-- Công dụng chính là phòng trừ các bệnh nấm phổ biến như đốm lá, thán thư, thối trái, vàng lá, đạo ôn, mốc sương, rỉ sắt, khô đầu lá, sương mai.
-- Giúp bảo vệ cây trồng khỏe mạnh, nâng cao năng suất.
-
-3. Liều dùng, cách pha và cách sử dụng:
-- Liều lượng pha thuốc:
-  + Pha 50–100g BYPHAN 800WP với bình 20 lít nước cho các cây như lạc, vừng, dưa hấu, hành lá, khoai tây.
-  + Đối với cây ăn trái, pha 500g thuốc với bình 200 lít nước, phun với lượng nước 1.000–2.000 lít/ha.
-  + Cây non pha 50g thuốc với bình 20 lít nước.
-- Thời điểm phun: Phun thuốc khi phát hiện bệnh hoặc phun phòng ngừa theo lịch định kỳ.
-- Có thể phun lặp lại sau 5–7 ngày nếu bệnh nặng.
-- Không phun thuốc khi cây đang ra hoa hoặc chuẩn bị thu hoạch.
-
-4. Lưu ý an toàn và thời gian cách ly:
-- Không phun thuốc khi cây trồng đang có hoa để tránh ảnh hưởng đến chất lượng nông sản.
-- Cần mặc đồ bảo hộ khi phun thuốc, tránh tiếp xúc trực tiếp với thuốc.
-- Không phun thuốc khi trời mưa hoặc nắng gắt để đảm bảo hiệu quả và an toàn cho người sử dụng và môi trường.
-- Thời gian cách ly sau khi phun là 7 ngày trước khi thu hoạch.
-
-5. Tên gọi và nhà phân phối:
-- Thuốc còn có tên gọi: BYPHAN 800WP, BYPHAN 800WP Uni-Man (Ấn Độ).
-- Công ty phân phối: Tỷ Phúc Thịnh (theo một số nguồn).
-- Thuốc có hai màu xanh và vàng.
-
-Tóm lại, BYPHAN 800WP là thuốc trừ nấm phổ rộng chứa hoạt chất Mancozeb 800g/kg, dùng phòng trừ nhiều bệnh nấm trên đa dạng cây trồng như cây ăn trái, lúa, khoai tây, cà chua, ớt, lạc, vừng, dưa hấu,... Liều lượng pha phổ biến là 50-100g/20 lít nước hoặc 500g/200 lít nước tùy cây trồng, phun phòng hoặc khi bệnh xuất hiện, lặp lại sau 5-7 ngày nếu cần. Cần tuân thủ nghiêm ngặt các lưu ý về thời điểm phun, mặc đồ bảo hộ và thời gian cách ly 7 ngày để đảm bảo an toàn và hiệu quả.",[]
-2026-01-05 20:17:33,RAG,các sản phẩm của công ty phúc thịnh,Các sản phẩm của công ty Phúc Thịnh.,RAG_SOFT,0.34234732389450073,0.3419376611709595,0.00040966272354125977,0.33802847266197206,50,0.0009349795806912198,"Không thấy trong ngữ cảnh thông tin về các sản phẩm của công ty Phúc Thịnh. Các sản phẩm và hãng sản xuất được đề cập trong ngữ cảnh gồm:
-
-1. PHONIX DRAGON 20EC
-   - Hãng sản xuất: Shanghai E-Tong Chemical Co.
-   - Hoạt chất: Phoxim 18.5%w/w, Beta-Cypermethrin 1.5%w/w.
-   - Nhóm thuốc: Thuốc diệt côn trùng tổng hợp.
-   - Đặc tính: Tiếp xúc, vị độc, xông hơi, thấm sâu nhanh, ức chế thần kinh côn trùng.
-   - Đối tượng và phạm vi: Lúa, Lạc, Cà phê, Cây ăn trái; diệt rầy lưng trắng, bọ trĩ, sâu cuốn lá, rầy nâu, sâu đục thân, bọ xít, sâu khoang, rệp sáp, ruồi vàng.
-   - Liều dùng: Pha 30-50ml cho bình 20 lít nước.
-   - Lưu ý: Không phun khi trời sắp mưa to hoặc có gió lớn.
-
-2. Trinong 50WP
-   - Hãng sản xuất: Ace Bioscience Pte Ltd (Singapore).
-   - Hoạt chất: Prochloraz-Manganese complex 50% w/w.
-   - Nhóm thuốc: Thuốc trừ bệnh.
-   - Đặc tính: Tạo lớp màng bảo vệ, lưu dẫn mạnh trong cây, ức chế tổng hợp Ergosterol của nấm bệnh.
-   - Đối tượng và phạm vi: Lúa, Hành, Dâu tây, hoa hồng, Chanh dây, Cà Chua, Cam, Hoa cúc; phòng trừ nhiều loại nấm bệnh như đạo ôn, lem lép hạt, khô vằn, thối thân, đốm lá, thán thư, phấn trắng, mốc xám, đốm nâu, thối đầu trái...
-   - Liều dùng: 20 g/bình 16–20 L nước; bệnh nặng 30 g/bình; pha 200 g/phi 200 lít nước.
-   - Lưu ý: Thời gian cách ly 7 ngày; không phun khi cây có hoa/trái non hoặc trời sắp mưa to; có thể phun lại sau 5-7 ngày nếu bệnh nặng.
-
-3. BMC SULFUR 80WG / Komulunx 80WG / SOCCARB 80WG
-   - Hãng sản xuất: M/S Sunrise Agro Industries.
-   - Hoạt chất: Sulfur 80% w/w.
-   - Nhóm thuốc: Thuốc trừ nấm.
-   - Đặc tính: Tiếp xúc và xông hơi, phòng trừ nấm bệnh phổ rộng và nhện hại, bổ sung lưu huỳnh giúp cây phát triển.
-   - Đối tượng và phạm vi: Cây ăn trái, dâu tây, hoa hồng, cà phê, hành hoa, dâu tằm, nho, xoài, đào, nhãn; bệnh ghẻ, nhện đỏ, phấn trắng, rỉ sắt, trắng trái, phồng lá, xoăn lá.
-   - Liều dùng: 50–100g/bình 20 lít cho bưởi, cam, chanh, quất; 200–400g/bình 20 lít cho đào, nhãn.
-   - Lưu ý: Không dùng trong nhà kính; không phun khi có gió lớn hoặc trời sắp mưa to; thời gian cách ly 7 ngày.
-
-4. Tatsu 25WP
-   - Hãng sản xuất: M/s Meenakshi Agro Chemicals (Ấn Độ).
-   - Hoạt chất: Metalaxyl 25% w/w.
-   - Nhóm thuốc: Thuốc trừ bệnh.
-   - Đặc tính: Thuốc trừ bệnh phổ rộng, lưu dẫn 2 chiều, hấp thụ qua lá, thân rễ, phun xịt, quét thân, tưới gốc; hiệu quả với bệnh do nấm Phytophthora.
-   - Đối tượng và phạm vi: Đậu tương, Ca cao, Hồ tiêu, Cao su, Sắn, Khoai tây, Lạc; bệnh phấn trắng, thối thân, vàng rụng lá, sương mai, chết ẻo...
-   - Liều dùng: Tỷ lệ pha tùy cây và mục đích (ví dụ: 40 g/bình 16 lít cho đậu tương, 100 g/100 lít cho cao su).
-   - Lưu ý: Lượng nước phun 500-600 lít/ha; thời gian cách ly 7 ngày.
-
-5. HoangANHVIL 50SC
-   - Hãng sản xuất: Crop Life Science Ltd.
-   - Hoạt chất: Hexaconazole 5% w/w (50g/lít).
-   - Nhóm thuốc: Fungicide.
-   - Đặc tính: Nội hấp lưu dẫn, thấm sâu, làm khô vết bệnh, ngăn ngừa nấm lan rộng, giúp lá xanh.
-   - Đối tượng và phạm vi: Cây ăn trái (dâu tây, nho, táo, xoài), cây công nghiệp (đậu, cao su, chè), rau màu (khoai tây, ớt), lúa; đặc trị nấm hồng, phấn trắng, rỉ sắt, thán thư, khô vằn, lem lép hạt, đốm mắt cua, sương mai, cháy bìa lá.
-   - Liều dùng: 20–50ml/bình 20 lít.
-   - Lưu ý: Không phun khi cây có hoa hoặc trời sắp mưa to; thời gian cách ly 7 ngày trước thu hoạch.
-
-Kết luận: Trong ngữ cảnh không có sản phẩm nào được ghi nhận thuộc công ty Phúc Thịnh. Các sản phẩm nêu trên thuộc các hãng khác nhau như Shanghai E-Tong Chemical Co., Ace Bioscience Pte Ltd, M/S Sunrise Agro Industries, M/s Meenakshi Agro Chemicals, Crop Life Science Ltd. Nếu cần thông tin về sản phẩm của công ty Phúc Thịnh, vui lòng cung cấp thêm dữ liệu hoặc ngữ cảnh liên quan.",[]
-2026-01-05 20:24:37,RAG,sản phẩm của công ty phúc thịnh,Sản phẩm của công ty Phúc Thịnh.,RAG_SOFT,0.3280467092990875,0.3264845907688141,0.0015621185302734375,0.3225996375083923,50,0.003416318955942188,"Không thấy trong ngữ cảnh thông tin về các sản phẩm của công ty Phúc Thịnh hoặc tag nội bộ `brand:PhucThinh`. Vì vậy, không thể cung cấp danh mục sản phẩm hoặc chi tiết kỹ thuật liên quan đến công ty này từ dữ liệu hiện có. Nếu cần, bạn có thể cung cấp thêm tài liệu hoặc ngữ cảnh khác để hỗ trợ.",[]
-2026-01-05 20:27:42,RAG,các sản phẩm của công ty phúc thịnh,Các sản phẩm của công ty Phúc Thịnh.,RAG_SOFT,0.34231090545654297,0.3419337570667267,0.0003771483898162842,0.3380209982395172,50,0.0008606800453965965,"Không thấy trong ngữ cảnh thông tin về các sản phẩm của công ty Phúc Thịnh hoặc tag nội bộ `brand:phuc-thinh`. Do đó, không thể liệt kê các sản phẩm thuộc công ty này từ dữ liệu đã cho.
-
-Nếu anh/chị cần thông tin về các sản phẩm của những hãng khác hoặc sản phẩm cụ thể trong ngữ cảnh hiện có, tôi sẵn sàng hỗ trợ.",[]
-2026-01-05 20:30:21,RAG,tư vấn các sản phẩm trừ nhện gié trên lúa,Tư vấn các sản phẩm trừ nhện gié trên lúa.,RAG_SOFT,0.4642327129840851,0.4521505534648895,0.012082159519195557,0.4364678919315338,32,0.037392891282017615,"Dưới đây là tư vấn chi tiết các sản phẩm trừ nhện gié trên lúa dựa trên ngữ cảnh đã cung cấp:
-
-1. **LAMA 50EC**
-   - **Hoạt chất:** Hexythiazox 50g/lít.
-   - **Nhóm thuốc:** Thuốc trừ nhện.
-   - **Công dụng:** Ức chế quá trình lột xác và tác động lên các pha sinh trưởng của nhện (trứng, ấu trùng, nhện trưởng thành). Hiệu quả cao với nhiều loài nhện hại thực vật, đặc trị nhện đỏ, nhện gié, nhện lông nhung, nhện trắng.
-   - **Đối tượng trừ:** Nhện đỏ, nhện trắng, nhện gié.
-   - **Phạm vi sử dụng:** Cây có múi, chè, hoa, rau, lúa.
-   - **Liều dùng cho lúa:** Pha 15–20 ml/bình 16–18 lít nước.
-   - **Lượng nước phun:** 400 – 800 lít/ha.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý:** Không phun khi có gió lớn hoặc trời sắp mưa to.
-
-2. **Scorcarb 80WG (Komulunx)**
-   - **Nhóm thuốc:** Không nêu rõ hoạt chất nhưng là thuốc trừ sâu, nhện.
-   - **Công dụng:** Phòng trừ nhện đỏ, nhện gié, rệp gié, nhện bạc trên cây lúa.
-   - **Phạm vi sử dụng:** Cây lúa.
-   - **Lưu ý:** Không có thông tin chi tiết về liều lượng, cách pha, thời gian cách ly trong ngữ cảnh.
-
-3. **GIÁO SƯ SÂU**
-   - **Hoạt chất:** Avermectin B1a, B1b (Abamectin 36g/l).
-   - **Nhóm thuốc:** Thuốc trừ sâu tiếp xúc, nội hấp, lưu dẫn.
-   - **Công dụng:** Đặc trị nhiều loại sâu, nhện trên rau cải, hành lá, lúa; trong đó có nhện gié, nhện đỏ.
-   - **Liều dùng:** Pha 25-50 ml/bình 20 lít.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý:** Không phun khi trời sắp mưa to hoặc có gió lớn.
-
-4. **Takiwa 22SC**
-   - **Hoạt chất:** Meta umizone 22% w/w (240g/L).
-   - **Nhóm thuốc:** Thuốc trừ sâu.
-   - **Công dụng:** Hiệu quả với sâu tơ, sâu xanh, sâu khoang, sâu đục quả, sâu xanh da láng, nhện đỏ, sâu cuốn lá.
-   - **Đối tượng:** Cây bắp cải, hành, cà chua, đậu tương, lúa.
-   - **Liều dùng:** 0.8 lít/ha; pha 24-30 ml/bình 20 lít nước.
-   - **Lượng nước phun:** 500-600 lít/ha.
-   - **Thời gian cách ly:** 7 ngày.
-   - **Lưu ý:** Không phun khi trời sắp mưa to hoặc có gió lớn.
-
-5. **Abinsec 1.8EC (Trùm Nhện)**
-   - **Hoạt chất:** Abamectin 1.8% w/v.
-   - **Nhóm thuốc:** Thuốc trừ nhện.
-   - **Công dụng:** Đặc trị nhện đỏ, nhện trắng trên nhiều loại cây trồng, có hiệu lực nhanh (6 giờ bắt đầu chết, 24 giờ chết sạch), hiệu lực kéo dài 3-4 tuần.
-   - **Phạm vi:** Cam, chanh, bưởi, hoa hồng, sầu riêng, bơ, xà lách.
-   - **Lưu ý:** Có thể phun trên hoa hồng và các cây trồng khác có nhện kháng thuốc.
-   - **Lưu ý:** Không có thông tin liều lượng, cách pha, thời gian cách ly cho lúa trong ngữ cảnh.
-
----
-
-**Tổng hợp và lưu ý chung:**
-
-- Các sản phẩm **LAMA 50EC** và **GIÁO SƯ SÂU** có thông tin rõ ràng về liều lượng, cách pha, thời gian cách ly và được khuyến cáo dùng trên lúa để phòng trừ nhện gié.
-- **Scorcarb 80WG (Komulunx)** cũng dùng được cho lúa để phòng trừ nhện gié nhưng không có chi tiết về liều lượng.
-- **Takiwa 22SC** có hiệu quả với nhện đỏ trên lúa, có thể cân nhắc dùng nếu nhện gié cũng là đối tượng cần kiểm soát.
-- **Abinsec 1.8EC** là thuốc trừ nhện hiệu quả, tuy nhiên không có thông tin cụ thể về sử dụng trên lúa trong ngữ cảnh.
-- Tất cả các sản phẩm đều lưu ý không phun khi trời có gió lớn hoặc trời sắp mưa to để đảm bảo hiệu quả và an toàn.
-- Thời gian cách ly phổ biến là 7 ngày sau khi phun.
-
----
-
-**Kết luận:**
-
-Để phòng trừ nhện gié trên lúa, có thể ưu tiên sử dụng các sản phẩm:
-
-- **LAMA 50EC** (Hexythiazox 50g/lít): đặc trị nhện gié, liều dùng 15-20 ml/bình 16-18 lít nước.
-- **GIÁO SƯ SÂU** (Abamectin 36g/l): liều dùng 25-50 ml/bình 20 lít.
-- **Scorcarb 80WG (Komulunx)**: dùng cho lúa phòng trừ nhện gié (không có liều lượng chi tiết).
-- **Takiwa 22SC**: có hiệu quả với nhện đỏ trên lúa, liều dùng 0.8 lít/ha.
-- Có thể cân nhắc thêm **Abinsec 1.8EC** nếu phù hợp với cây trồng khác, tuy nhiên không có thông tin rõ ràng cho lúa.
-
-Người sử dụng cần tuân thủ liều lượng, cách pha và lưu ý an toàn như không phun khi trời mưa hoặc có gió lớn, đồng thời tuân thủ thời gian cách ly 7 ngày để đảm bảo hiệu quả và an toàn cho cây trồng và người tiêu dùng.",[]
-2026-01-05 20:32:03,RAG,sản phẩm trị bọ hút giai đoạn lúa đang trổ,Sản phẩm trị bọ hút giai đoạn lúa đang trổ.,RAG_SOFT,0.396634578704834,0.3961174190044403,0.0005171597003936768,0.3738570690155029,6,0.0013674894659250945,"Dựa trên NGỮ CẢNH từ các DOC 1 đến DOC 5, các sản phẩm thuốc bảo vệ thực vật có thành phần hoạt chất Profenofos 500g/lít, mang tên Binhfos 50EC với các biệt danh như ""Vua rầy rệp"", ""Anh Hùng Sâu"", ""Vua sâu"" đều được sử dụng để trừ các loại sâu bệnh, trong đó có các loại bọ hút trên cây lúa và nhiều cây trồng khác.
-
-**1. Sản phẩm: Binhfos 50EC (Vua rầy rệp)**
-- Thành phần: Profenofos 500g/lít.
-- Quy cách đóng gói: 450ml.
-- Công dụng: Trừ các loại sâu miệng nhai, gặm nhắm và sâu chích hút trên nhiều cây trồng, trong đó có lúa.
-- Trên cây lúa, Binhfos 50EC (Vua rầy rệp) kiểm soát hiệu quả các loại bọ hút như muỗi hành, bọ trĩ, rầy nâu.
-- Ngoài ra còn diệt các sâu bệnh khác như sâu cuốn lá, bọ xít muỗi, sâu đục cành, sâu róm, rệp sáp, ve sầu, nhện, ruồi vàng...
-- Phạm vi sử dụng rộng trên nhiều cây trồng khác như điều, bơ, mía, ngô, cà phê, mãng cầu, đu đủ, khoai lang, đậu phộng, sầu riêng, chè, cải thảo, củ cải, thanh long, cam, quýt, chanh, ổi.
-
-**2. Sản phẩm: Binhfos 50EC (Anh Hùng Sâu)**
-- Thành phần: Profenofos 500g/lít (giống các phiên bản Binhfos 50EC).
-- Công dụng: Diệt trừ sâu miệng nhai, gặm nhắm và sâu chích hút hiệu quả.
-- Trên cây lúa, kiểm soát các loại bọ hút như muỗi hành, bọ trĩ, rầy nâu, cùng sâu cuốn lá.
-- Sử dụng trên nhiều cây trồng tương tự như Binhfos 50EC (Vua rầy rệp).
-
-**3. Sản phẩm: Binhfos 50EC (Vua sâu)**
-- Thành phần: Profenofos 500g/lít.
-- Công dụng: Kiểm soát sâu bệnh trên lúa và nhiều cây trồng khác.
-- Trên cây lúa, kiểm soát các bọ hút như muỗi hành, bọ trĩ, rầy nâu, cùng sâu cuốn lá.
-- Hiệu quả trên các sâu đục cành, sâu róm, rệp sáp, ve sầu, các loại sâu ăn lá và nhện.
-
-**Tổng hợp và lưu ý:**
-- Tất cả các phiên bản Binhfos 50EC đều chứa hoạt chất Profenofos 500g/lít, có tác dụng chính là trừ sâu miệng nhai, sâu gặm nhắm và sâu chích hút, trong đó có các loại bọ hút gây hại trên lúa như muỗi hành, bọ trĩ, rầy nâu.
-- Sản phẩm được sử dụng rộng rãi trên giai đoạn lúa đang trổ để kiểm soát các loại bọ hút hiệu quả.
-- Ngoài lúa, Binhfos 50EC còn dùng cho nhiều loại cây trồng khác, giúp kiểm soát đa dạng sâu bệnh.
-- Quy cách phổ biến của sản phẩm là chai 450ml.
-- NGỮ CẢNH không nêu cụ thể liều lượng, cách pha hay thời gian cách ly cho giai đoạn lúa trổ.
-
-**Kết luận:**
-Để trị bọ hút trên lúa giai đoạn trổ, có thể sử dụng các sản phẩm Binhfos 50EC (Vua rầy rệp), Binhfos 50EC (Anh Hùng Sâu), hoặc Binhfos 50EC (Vua sâu) với thành phần hoạt chất Profenofos 500g/lít. Các sản phẩm này kiểm soát hiệu quả các loại bọ hút như muỗi hành, bọ trĩ, rầy nâu trên lúa và nhiều sâu bệnh khác trên nhiều cây trồng. Quy cách đóng gói phổ biến là chai 450ml.
-
----
-
-Nếu cần hướng dẫn chi tiết về liều lượng, cách pha hay thời gian cách ly, vui lòng tham khảo tài liệu kỹ thuật cụ thể của nhà sản xuất hoặc chuyên gia kỹ thuật vì NGỮ CẢNH hiện không cung cấp các thông tin này.",[]
+Lưu ý: Không có thông tin cụ thể về chống chỉ định phun thuốc xông hơi khi chuối ra buồng trong ngữ cảnh, nên cần thận trọng và tuân thủ hướng dẫn an toàn của từng sản phẩm.",[]
