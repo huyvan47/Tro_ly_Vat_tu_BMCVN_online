@@ -1,24 +1,45 @@
 import numpy as np
 
+import numpy as np
+
 def analyze_hits_fused(hits: list) -> dict:
     """
-    Profile dựa trên fused_score thay vì embedding score.
-    Trả về top1/top2/gap/mean5/conf.
-    conf = top1 * min(1, gap/0.15)  (thưởng gap, phạt trường hợp top1 ~ top2)
+    Profile dựa trên fused_score.
+
+    Fix quan trọng:
+    - KHÔNG lấy top1/top2 theo vị trí hits[0], hits[1] vì hits của bạn đang sort theo
+      (tag_hits, mq_rrf, fused_score) -> có thể làm gap âm.
+    - Thay vào đó: sort scores theo fused_score giảm dần để lấy top1/top2 đúng nghĩa.
+
+    conf:
+      - bonus theo gap (không hard-zero khi gap<=0)
+      - thưởng thêm nếu evidence dày (mean5 gần top1)
     """
     if not hits:
         return {"top1": 0.0, "top2": 0.0, "gap": 0.0, "mean5": 0.0, "n": 0, "conf": 0.0}
 
-    scores = [float(h.get("fused_score", 0.0)) for h in hits]
+    raw_scores = [float(h.get("fused_score", 0.0) or 0.0) for h in hits]
+    scores = sorted(raw_scores, reverse=True)  # FIX: lấy top theo fused_score thật sự
+
     top1 = scores[0]
     top2 = scores[1] if len(scores) > 1 else 0.0
     gap = top1 - top2
     mean5 = float(np.mean(scores[:5])) if len(scores) >= 5 else float(np.mean(scores))
+    n = len(scores)
 
-    # 0.15 là "độ rộng" gap để đạt full bonus (bạn có thể tinh chỉnh theo dataset)
-    conf = top1 * min(1.0, (gap / 0.15) if gap > 0 else 0.0)
+    # 0.15 là "độ rộng" gap để đạt full bonus (có thể tune theo dataset)
+    # FIX: không để conf=0 chỉ vì gap<=0 (do noise/sort mismatch)
+    bonus = min(1.0, max(0.05, gap / 0.15))
 
-    return {"top1": top1, "top2": top2, "gap": gap, "mean5": mean5, "n": len(hits), "conf": conf}
+    # thưởng "độ dày evidence": nếu mean5 gần top1 thì đáng tin hơn
+    density = mean5 / max(top1, 1e-6)
+    density = min(1.0, max(0.0, density))
+
+    conf = top1 * bonus * (0.5 + 0.5 * density)
+
+    return {"top1": top1, "top2": top2, "gap": gap, "mean5": mean5, "n": n, "conf": conf}
+
+
 
 def analyze_hits(hits: list) -> dict:
     """

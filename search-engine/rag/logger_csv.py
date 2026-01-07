@@ -31,7 +31,9 @@ def append_log_to_csv(
         "conf": float(prof.get("conf", 0.0)),
         "answer_text": res.get("text", ""),
         "img_keys": json.dumps(res.get("img_keys", []), ensure_ascii=False),
-
+        "intent_type": str(res.get("intent_type", "")),
+        "missing_slots": json.dumps(res.get("missing_slots", []), ensure_ascii=False),
+        "route": res.get("route", ""),
         # "docs_json": json.dumps(res.get("docs", []), ensure_ascii=False),
     }
 

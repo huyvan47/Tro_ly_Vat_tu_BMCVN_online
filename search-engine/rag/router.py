@@ -21,11 +21,12 @@ def route_query(client, user_query: str) -> str:
         # ---------------------------
         # 1) Mẫu câu hỏi định nghĩa / giáo trình
         # ---------------------------
-        r"\b(là gì|nghĩa là gì|định nghĩa|khái niệm|hiểu là gì)\b",
+        r"(là gì|nghĩa là gì|định nghĩa|khái niệm|hiểu là gì|gì\??)",
         r"\b(bao gồm|gồm những|gồm các|thuộc nhóm nào)\b",
         r"\b(phân biệt|khác nhau|so sánh|giống nhau)\b",
-        r"\b(vì sao|tại sao|nguyên nhân|cơ chế|nguyên lý)\b",
+        r"(vì sao|tại sao|nguyên nhân|cơ chế|nguyên lý|sao?)",
         r"\b(ưu điểm|nhược điểm|lợi ích|rủi ro)\b",
+        r"\b(nên|không nên|phương án)\b",
 
         # ---------------------------
         # 2) Nhận diện – triệu chứng – đặc điểm
@@ -38,6 +39,7 @@ def route_query(client, user_query: str) -> str:
         # ---------------------------
         r"\b(họ|chi|loài|phân loại|taxonomy)\b",
         r"\b(nhóm sâu|nhóm bệnh|nhóm dịch hại)\b",
+        r"\b(thiên địch|môi trường|tồn dư)\b",
 
         # ---------------------------
         # 4) Nông học – canh tác (Agronomy)
