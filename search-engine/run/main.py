@@ -11,6 +11,8 @@ import traceback
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
+KB = "data-kd-1-4-chuan-v2-remove-qa.npz"
+OPENAI_KEY = "..."
 
 def iter_questions(txt_path: str):
     """
@@ -33,15 +35,15 @@ def iter_questions(txt_path: str):
         yield q
 
 
-def run_batch_questions():
+def run_batch_questions(KB, API_KEY):
     # 1) đọc query từ CLI
 
     # 2) init OpenAI client (đặt key theo env là tốt nhất)
-    client = OpenAI(api_key="...")
+    client = OpenAI(api_key=API_KEY)
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kd-1-4-tags-v2-chuan.npz")
+    kb = load_npz(KB)
 
     cfg = RAGConfig()
 
@@ -68,15 +70,15 @@ def run_batch_questions():
 
     print(f"\nHoàn tất. Log đã ghi vào: {CSV_PATH}")
 
-def main():
+def main(KB, API_KEY):
     # 1) đọc query từ CLI
 
     # 2) init OpenAI client (đặt key theo env là tốt nhất)
-    client = OpenAI(api_key="...")
+    client = OpenAI(api_key=API_KEY)
 
     # 3) load KB (1 lần)
     # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz("data-kd-1-4-chuan.npz")
+    kb = load_npz(KB)
 
     cfg = RAGConfig()
 
@@ -161,5 +163,5 @@ if __name__ == "__main__":
     # run_batch_questions()
 
     # Test một câu hỏi
-    main()
+    main(KB, OPENAI_KEY)
 

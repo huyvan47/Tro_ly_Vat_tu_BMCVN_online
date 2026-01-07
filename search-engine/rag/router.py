@@ -26,7 +26,6 @@ def route_query(client, user_query: str) -> str:
         r"\b(phân biệt|khác nhau|so sánh|giống nhau)\b",
         r"\b(vì sao|tại sao|nguyên nhân|cơ chế|nguyên lý)\b",
         r"\b(ưu điểm|nhược điểm|lợi ích|rủi ro)\b",
-        r"\b(quy trình chung|nguyên tắc|hướng dẫn chung|best practice)\b",
 
         # ---------------------------
         # 2) Nhận diện – triệu chứng – đặc điểm

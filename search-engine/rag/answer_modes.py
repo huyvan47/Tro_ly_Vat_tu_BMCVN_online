@@ -112,6 +112,11 @@ def decide_answer_policy(
     3) entity_type của doc (THAY category)
     4) heuristic keywords (fallback)
     """
+    ## check answer mode
+    # print('user_query: ', user_query)
+    # print('primary_doc: ', primary_doc)
+    # print('parsed_intent: ', parsed_intent)
+    # print('force_listing: ', force_listing)
     q = norm(user_query)
     doc_q = norm(primary_doc.get("question"))
     doc_a = norm(primary_doc.get("answer") or primary_doc.get("content") or "")
@@ -148,6 +153,8 @@ def decide_answer_policy(
 
     # Procedure: nếu có dấu bước hoặc từ khóa quy trình
     if STEP_RE.search(text) or has_any_kw(text, KW_PROCEDURE):
+        print(STEP_RE.search(text))
+        print(has_any_kw(text, KW_PROCEDURE))
         return ENTITY_TO_POLICY["procedure"]
 
     # Disease
@@ -160,20 +167,3 @@ def decide_answer_policy(
 
     return DEFAULT_POLICY
 
-
-# -----------------------------
-# Convenience: turn policy into prompt directives (optional)
-# -----------------------------
-
-def policy_to_prompt_directives(policy: AnswerPolicy) -> str:
-    """
-    Dòng hướng dẫn có thể chèn vào system prompt/user prompt.
-    """
-    rules = []
-    rules.append(f"- Answer intent: {policy.intent}")
-    rules.append(f"- Output format: {policy.format}")
-    if policy.require_grounding:
-        rules.append("- Only use information from provided documents. Do not invent details.")
-        rules.append("- If documents are insufficient, say you don't have enough information and ask for missing details.")
-    rules.append(f"- Use at most {policy.max_sources} sources/chunks.")
-    return "\n".join(rules)

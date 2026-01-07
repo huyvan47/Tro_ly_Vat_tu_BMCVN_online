@@ -12,7 +12,7 @@ from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
 from rag.tag_filter import infer_filters_from_query
-from typing import List, Tuple
+from typing import List, Tuple, Dict, Any
 from pathlib import Path
 import re
 import json, hashlib
