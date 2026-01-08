@@ -10,50 +10,38 @@ import json
 # ==============================
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-chuan.csv"
-OUT_FILE = "data-kd-1-4-chuan-v2.npz"
+DATA = ROOT / "data/kb-audit/check-backbone/data-kd-1-4-chuan.xlsx"
+SHEET_NAME = 0  # hoặc "Sheet1"
+OUT_FILE = "data-kd-1-4-chuan-tag-filter-tag.npz"
 
 client = OpenAI(api_key="...")
 
 # ==============================
-#        LOAD CSV
+#        LOAD EXCEL
 # ==============================
 
-df = pd.read_csv(DATA, encoding="utf-8")
+df = pd.read_excel(
+    DATA,
+    sheet_name=SHEET_NAME,   # 0 hoặc tên sheet
+    dtype=str,               # đọc tất cả thành string để tránh Excel tự đổi kiểu
+    engine="openpyxl"
+)
+
+# Chuẩn hóa tên cột: bỏ khoảng trắng thừa
+df.columns = [c.strip() for c in df.columns]
 
 required_cols = ["id", "question", "answer", "category", "tags", "alt_questions", "img_keys", "entity_type", "tags_v2"]
 missing = [c for c in required_cols if c not in df.columns]
 if missing:
-    raise ValueError(f"Thiếu cột trong CSV: {missing}")
+    raise ValueError(f"Thiếu cột trong Excel: {missing}")
 
-df["question"] = df["question"].astype(str)
-df["answer"] = df["answer"].astype(str)
-df["category"] = df["category"].astype(str)
-df["tags"] = df["tags"].fillna("").astype(str)
-df["alt_questions"] = df["alt_questions"].fillna("").astype(str)
-df["img_keys"] = df["img_keys"].fillna("").astype(str)
+# Chuẩn hóa NaN -> ""
+for c in required_cols:
+    df[c] = df[c].fillna("").astype(str)
 
-# NEW
-df["entity_type"] = df["entity_type"].fillna("").astype(str)
-df["tags_v2"] = df["tags_v2"].fillna("").astype(str)
-
-def tags_v2_to_pipe(s: str) -> str:
-    s = (s or "").strip()
-    if not s:
-        return ""
-    if s.startswith("[") and s.endswith("]"):
-        try:
-            arr = json.loads(s)
-            if isinstance(arr, list):
-                arr = [str(x).strip() for x in arr if str(x).strip()]
-                return "|".join(arr)
-        except Exception:
-            pass
-    if "|" in s:
-        return "|".join([p.strip() for p in s.split("|") if p.strip()])
-    return s
-
-df["tags_v2"] = df["tags_v2"].apply(tags_v2_to_pipe)
+# Nếu có dòng rỗng hoàn toàn (id trống) thì loại bỏ
+df = df[df["id"].str.strip().ne("")]
+df = df.reset_index(drop=True)
 
 # ==============================
 #   BUILD INPUT TEXTS FOR EMBED

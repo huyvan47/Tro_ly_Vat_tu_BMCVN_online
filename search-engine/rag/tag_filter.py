@@ -316,7 +316,7 @@ CROP_ALIASES = {
     "apple": ["cay tao", "tao"],
     "avocado": ["qua bo", "cay bo", "trai bo"],
     "banana": ["cay chuoi", "chuoi"],
-    "bap": ["bap", "cay bap"],
+    "bap": ["bap", "cay bap", "corn", "ngo"],
     "bap-cai": ["bap cai", "cay bap cai"],
     "barley": ["cay lua mi", "lua mi"],
     "bean": ["cay dau", "dau"],
@@ -360,7 +360,7 @@ CROP_ALIASES = {
     "coffee": ["ca phe"],
     "common-bean": ["dau", "dau chung"],
     "copper-sensitive-crops": ["cay nhay cam dong"],
-    "corn": ["bap ngo", "ngo"],
+    "corn": ["bap ngo", "ngo", "bap"],
     "cotton": ["bo vai"],
     "crop": ["cay trong"],
     "crop-disease": ["benh cay", "benh cay trong"],
@@ -1007,8 +1007,6 @@ DISEASE_ALIASES = {
     "saprophytic-fungi": ["nam hoai muc", "nam saprophytic"],
     "sau-chich-hut": ["benh sau chich hut", "sau chich hut"],
     "sau-cuon-la": ["benh sau cuon la", "sau cuon la"],
-    "sau-hanh": ["benh sau hanh", "sau hanh"],
-    "sau-hanh-bao-chet": ["benh sau hanh bao chet", "sau hanh bao chet"],
     "sau-sung-trang": ["benh sau sung trang", "sau sung trang"],
     "scab": ["benh vet sat", "benh vet sat tren la"],
     "sclerospora": ["benh nam sclerospora", "nam sclerospora"],
@@ -1373,7 +1371,6 @@ PEST_ALIASES = {
     "nutrient-level": ["muc chat dinh duong", "muc dinh duong"],
     "oc-buu-vang": ["oc buu vang", "oc vang","oc"],
     "olpidium-brassicae": ["nam olpidium", "nam olpidium brassicae"],
-    "onion-maggot": ["sau cu hanh", "sau hanh"],
     "onion-mosquito": ["con muoi hanh", "muoi hanh"],
     "oomycete": ["nam mo", "nam oomycete"],
     "oomycetes": ["nhom nam mo", "nhom nam oomycete"],
@@ -1833,7 +1830,7 @@ PRODUCT_ALIASES = {
     "phuong-hoang-lua": ["thuoc phuong hoang", "thuoc phuong hoang lua", "phuong hoang lua", "phuong hoang"],
     "pilot-15ab": ["thuoc pilot", "thuoc pilot 15ab", "pilot"],
     "pim-pim-75wp": ["thuoc pim pim", "thuoc pim pim 75wp", "pimpim", "pim-pim"],
-    "probicol-200wp": ["thuoc probicol", "thuoc probicol 200wp", "probicol"],
+    "probicol-200wp": ["thuoc probicol", "thuoc probicol 200wp", "probicol", "propicol"],
     "prochloraz-manganese-50-wp": ["thuoc prochloraz mangan 50wp", "thuoc prochloraz manganese", "prochloraz"],
     "pyrolax-250ec": ["thuoc pyrolax", "thuoc pyrolax 250ec", "pyrolax"],
     "ram-te-thien": ["thuoc ram te", "thuoc ram te thien", "te thien"],
@@ -1918,6 +1915,19 @@ BRAND_ALIASES ={
     "phuc-thinh": ["san pham phuc thinh", "cong ty phuc thinh", "cua phuc thinh"],
     "agrishop": ["san pham agrishop", "cong ty agrishop", "cua agrishop"],
     "delta": ["san pham delta", "cong ty delta", "cua delta"],
+}
+
+MECHANISMS_ALIASES ={
+    "luu-dan-manh": ["luu dan manh", "manh", "tot", "nhat"],
+    "luu-dan": ["luu dan", "lu dan"],
+    "tiep-xuc-manh": ["tiep xuc manh", "manh", "tot", "nhat"],
+    "tiep-xuc": ["tiep xuc", "tiep suc"],
+    "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc", "manh"],
+    "tiep-xuc-luu-dan": ["tiep xuc va luu dan", "tiep xuc, luu dan", "luu dan, tiep xuc", "tiep xuc + luu dan", "luu dan + tiep xuc"],
+    "xong-hoi-manh": ["xong hoi manh", "manh", "tot", "nhat"],
+    "xong-hoi": ["xong hoi"],
+    "co-chon-loc": ["co chon loc", "bao trum", "trum", "phu", "lua"],
+    "khong-chon-loc": ["khong chon loc", "k chon loc"],
 }
 
 FORMULA_ALIASES = {
@@ -2329,6 +2339,7 @@ ALIASES_BY_GROUP = {
     "product": PRODUCT_ALIASES,
     "formula": FORMULA_ALIASES,   # NEW
     "brand": BRAND_ALIASES,   # NEW
+    "mechanisms": MECHANISMS_ALIASES,
 }
 
 GROUP_TAG_PREFIX = {
@@ -2340,7 +2351,8 @@ GROUP_TAG_PREFIX = {
     "product_group": "product-group",
     "product": "product",
     "formula": "formula",         # NEW
-    "brand": "brand",         # NEW
+    "brand": "brand",
+    "mechanisms": "mechanisms",         # NEW
 }
 
 # ======================
@@ -2526,6 +2538,7 @@ def enforce_backbone_without_entity(must, anyt):
 
     # Thứ tự ưu tiên "xương sống"
     priority_prefixes = (
+        "mechanisms",
         "formula:",
         "brand:",
         "pest:",
@@ -2574,10 +2587,10 @@ def relax_must_same_group(must, anyt, prefixes=("pest:", "disease:", "weed:", "c
 
     return new_must, anyt
 
-def reorder_any_by_priority(anyt: List[str], priority_prefixes=("formula:", "brand:")) -> List[str]:
+def reorder_any_by_priority(anyt: List[str], priority_prefixes=("mechanisms:", "formula:")) -> List[str]:
     """
     Đưa các tag có prefix ưu tiên lên đầu (giữ thứ tự tương đối).
-    Mặc định: formula:* trước, rồi brand:*, rồi các tag khác.
+    Mặc định: mechanisms:* trước, rồi formula:*, rồi các tag khác.
     """
     hi = []
     lo = []
@@ -2612,12 +2625,12 @@ def infer_filters_from_query(q: str):
 
     # GIỮ SEMANTICS BẢN CŨ:
     # - Không dùng MUST ở downstream (tránh over-filter). Gom toàn bộ MUST sang ANY.
-    # - Sau đó chỉ ưu tiên thứ tự formula/brand trong ANY để tăng khả năng khớp.
+    # - Sau đó chỉ ưu tiên thứ tự mechanisms/brand trong ANY để tăng khả năng khớp.
     anyt = must + anyt
     must = []
 
-    # Ưu tiên formula trước mọi thứ trong ANY (và brand nếu có)
-    anyt = reorder_any_by_priority(anyt, priority_prefixes=("formula:", "brand:"))
+    # Ưu tiên mechanisms trước mọi thứ trong ANY (và brand nếu có)
+    anyt = reorder_any_by_priority(anyt, priority_prefixes=("mechanisms:", "formula:"))
 
     # dedupe giữ thứ tự
     seen = set()
