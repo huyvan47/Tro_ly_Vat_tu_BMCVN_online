@@ -19,6 +19,19 @@ import re
 import json, hashlib
 from typing import Dict, Any
 
+FORCE_MUST_TAGS = {
+    "mechanisms:luu-dan-manh",
+    "mechanisms:luu-dan",
+    "mechanisms:tiep-xuc-manh",
+    "mechanisms:tiep-xuc",
+    "mechanisms:tiep-xuc-luu-dan-manh",
+    "mechanisms:tiep-xuc-luu-dan",
+    "mechanisms:xong-hoi-manh",
+    "mechanisms:xong-hoi",
+    "mechanisms:co-chon-loc",
+    "mechanisms:khong-chon-loc",
+}
+
 _CONCEPTUAL_TRIGGERS = [
     "gần thu hoạch", "cách ly", "thời gian cách ly", "PHI", "mrl", "an toàn",
     "tận gốc", "diệt tận gốc", "chỉ ức chế",
@@ -26,6 +39,18 @@ _CONCEPTUAL_TRIGGERS = [
     "tiếp xúc", "lưu dẫn", "nội hấp",
     "mùi", "hôi", "tuyến trùng",
 ]
+
+def promote_forced_tags(must_tags, any_tags):
+    must = set(must_tags or [])
+    anyt = set(any_tags or [])
+
+    forced = anyt & FORCE_MUST_TAGS
+    if forced:
+        must |= forced
+        anyt -= forced
+
+    return list(must), list(anyt)
+
 
 def _has_product_signal(norm_query: str, any_tags: List[str], code_candidates: List[str]) -> bool:
     q = (norm_query or "").lower()
@@ -499,6 +524,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
 
     has_product_signal = _has_product_signal(norm_query, any_tags, code_candidates)
 
+    must_tags, any_tags = promote_forced_tags(must_tags, any_tags)
     # ---- NEW: intent/slot gate ----
     analysis = {}
     if _need_intent_gate(norm_query, any_tags, code_candidates):
@@ -591,6 +617,9 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     use_mq = _should_use_multi_query(norm_query, any_tags, answer_mode_hint)
 
     if not use_mq:
+        debug_log(
+            f"norm_query: {norm_query}",
+        )
         hits = retrieve_search(
             client=client,
             kb=kb,
