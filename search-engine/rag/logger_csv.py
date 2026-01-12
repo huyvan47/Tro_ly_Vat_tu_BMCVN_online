@@ -2,11 +2,13 @@ import os
 import pandas as pd
 import json
 from datetime import datetime
+from rag.debug_log import debug_log
 
 def append_log_to_csv(
     csv_path: str,
     user_query: str,
     norm_query: str,
+    context_build:str,
     strategy: str,
     prof: dict,
     res: dict,
@@ -16,7 +18,7 @@ def append_log_to_csv(
     Append 1 dòng log vào CSV (an toàn khi file đang được mở để xem).
     """
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
+    debug_log(ts)
     row = {
         "timestamp": ts,
         "route": route,
@@ -30,11 +32,11 @@ def append_log_to_csv(
         "n": int(prof.get("n", 0)),
         "conf": float(prof.get("conf", 0.0)),
         "answer_text": res.get("text", ""),
+        "context_build": context_build,
         "img_keys": json.dumps(res.get("img_keys", []), ensure_ascii=False),
         "intent_type": str(res.get("intent_type", "")),
         "missing_slots": json.dumps(res.get("missing_slots", []), ensure_ascii=False),
         "route": res.get("route", ""),
-        # "docs_json": json.dumps(res.get("docs", []), ensure_ascii=False),
     }
 
     df = pd.DataFrame([row])

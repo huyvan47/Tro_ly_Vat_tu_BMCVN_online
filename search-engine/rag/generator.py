@@ -31,14 +31,21 @@ def call_finetune_with_context(client, user_query, context, answer_mode: str = "
     - Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
     - Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
     """.strip()
-    elif answer_mode == "product":
+    elif answer_mode == "listing":
         mode_requirements = """
-- Trình bày chi tiết, không trả lời quá ngắn gọn.
-- Cố gắng trình bày đầy đủ thông tin sản phẩm, lưu ý, công thức từ các DOC được đề xuất (mục tiêu từ 3 - 5  sản phẩm nếu có).
-- Chỉ đề xuất các sản phẩm liên quan, không đề xuất các sản phẩm không có tác dụng đối với nhu cầu trừ cỏ, sâu, bệnh mà người dùng đang quan tâm.
-- Làm rõ đặc tính sản phẩm, cơ chế (nếu NGỮ CẢNH có), phạm vi tác động.
-- CHỈ sử dụng dữ liệu trong NGỮ CẢNH, không được tự bịa thêm liều lượng, cách pha, thời gian cách ly.
+- Mục tiêu: LIỆT KÊ ĐẦY ĐỦ NHẤT CÓ THỂ tất cả các mục (đặc biệt là TÊN SẢN PHẨM) xuất hiện trong NGỮ CẢNH.
+- Ưu tiên SỐ LƯỢNG hơn tính súc tích. KHÔNG rút gọn, KHÔNG chọn đại diện.
+- Nếu trong NGỮ CẢNH có nhiều sản phẩm, hãy liệt kê TẤT CẢ, tối đa 30 mục nếu có.
+- Mỗi sản phẩm / mục phải nằm trên MỘT DÒNG RIÊNG.
+- KHÔNG gộp nhiều sản phẩm vào một dòng.
+- KHÔNG suy luận thêm ngoài NGỮ CẢNH, KHÔNG thêm sản phẩm không xuất hiện trong NGỮ CẢNH.
+- Cho phép các sản phẩm có cùng hoạt chất hoặc cùng nhóm (không cần loại trùng theo hoạt chất).
+- Nếu cần, có thể chia thành các nhóm nhỏ (ví dụ: theo cơ chế, đối tượng, hoặc nhãn), nhưng VẪN phải liệt kê từng sản phẩm riêng lẻ.
+- Bất kỳ chuỗi nào trong NGỮ CẢNH có dạng TÊN SẢN PHẨM / TÊN THƯƠNG MẠI
+  (ví dụ: có chữ in hoa + số + dạng EC/WG/SC/SL…)
+  đều PHẢI được coi là một mục cần liệt kê.
 """.strip()
+
     elif answer_mode == "procedure":
         mode_requirements = """
 - Trình bày theo checklist từng bước.

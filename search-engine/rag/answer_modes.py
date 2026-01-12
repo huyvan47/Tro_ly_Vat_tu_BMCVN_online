@@ -50,15 +50,15 @@ KW_DISEASE = [
 ]
 KW_PRODUCT = [
     "thuốc", "đặc trị", "tác dụng", "hoạt chất", "thành phần", "công dụng",
-    "chữa", "trị", "trừ", "phòng trừ", "pha", "phun", "tưới"
+    "chữa", "trị", "trừ", "phòng trừ", "pha", "phun", "tưới", "sản phẩm"
 ]
 KW_PROCEDURE = [
     "quy trình", "quy trinh", "các bước", "hướng dẫn", "cách làm",
     "làm thế nào", "phương pháp", "quy cách", "thực hiện"
 ]
 KW_LISTING = [
-    "liệt kê", "danh sách", "tổng hợp", "bao gồm những", "gồm những",
-    "các loại", "những loại", "những sản phẩm", "những thuốc"
+    "liệt kê", "kể tên", "danh sách", "tổng hợp", "bao gồm những", "gồm những",
+    "các loại", "những loại", "những sản phẩm", "những thuốc", "tất cả", "chứa", "các sản phẩm", "các thuốc"
 ]
 
 
@@ -130,7 +130,7 @@ def decide_answer_policy(
         # listing thường cần nhiều nguồn hơn một chút, nhưng vẫn phải khống chế
         return AnswerPolicy(intent="general", format="listing", require_grounding=True, max_sources=15)
 
-    # 1) Parsed intent override (nếu có)
+    # 1) Parsed intent override (ưu tiên cao)
     if parsed_intent:
         pi = norm(parsed_intent)
         if pi in ENTITY_TO_POLICY:
@@ -153,8 +153,6 @@ def decide_answer_policy(
 
     # Procedure: nếu có dấu bước hoặc từ khóa quy trình
     if STEP_RE.search(text) or has_any_kw(text, KW_PROCEDURE):
-        print(STEP_RE.search(text))
-        print(has_any_kw(text, KW_PROCEDURE))
         return ENTITY_TO_POLICY["procedure"]
 
     # Disease

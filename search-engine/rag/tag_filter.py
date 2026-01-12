@@ -193,7 +193,7 @@ CHEMICAL_ALIASES = {
     "lufenuron": ["thuoc tru sau lufenuron"],
     "lysol": ["chat tay trung lysol"],
     "magnesium-sulfate": ["phan magie sunfat", "phan magnesi sunfat"],
-    "mancozeb": ["thuoc tru benh mancozeb"],
+    "mancozeb": ["thuoc tru benh mancozeb", "mancozeb"],
     "mefenoxam": ["thuoc tru benh mefenoxam"],
     "mesotrione": ["thuoc diet co mesotrione"],
     "meta-umizone": ["thuoc tru benh meta umizone"],
@@ -1719,7 +1719,7 @@ PRODUCT_ALIASES = {
     "forsan-horisan": ["thuoc forsan horisan", "forsan horisan", "horisan", "forsan"],
     "fortac-5ec": ["thuoc fortac 5ec", "fortac"],
     "fortazeb-72wp": ["thuoc fortazeb 72wp", "fortazeb"],
-    "forthane-80wp": ["thuoc forthane 80wp", "forthane"],
+    "forthane-80wp": ["thuoc forthane 80wp", "forthane", "forthan"],
     "forwarat-0-005-wax-block": ["thuoc forwarat 0 005 wax block", "forwarat"],
     "forzate-20ec": ["thuoc forzate 20ec", "forzate"],
     "forzate-20ew": ["thuoc forzate 20ew", "forzate"],
@@ -1910,21 +1910,21 @@ PRODUCT_ALIASES = {
     "zigen-xpro": ["thuoc zigen xpro", "zigen"],
 }
 
-BRAND_ALIASES ={
+BRAND_ALIASES = {
     "bmc": ["san pham bmc", "cong ty bmc", "cua bmc"],
     "phuc-thinh": ["san pham phuc thinh", "cong ty phuc thinh", "cua phuc thinh"],
     "agrishop": ["san pham agrishop", "cong ty agrishop", "cua agrishop"],
     "delta": ["san pham delta", "cong ty delta", "cua delta"],
 }
 
-MECHANISMS_ALIASES ={
-    "luu-dan-manh": ["luu dan manh"],
-    "luu-dan": ["luu dan", "lu dan"],
-    "tiep-xuc-manh": ["tiep xuc manh"],
-    "tiep-xuc": ["tiep xuc", "tiep suc"],
-    "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", " tiep xuc luu dan manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc", "manh"],
-    "tiep-xuc-luu-dan": ["tiep xuc va luu dan", "tiep xuc luu dan", "tiep xuc, luu dan", "luu dan, tiep xuc", "tiep xuc + luu dan", "luu dan + tiep xuc"],
-    "xong-hoi-manh": ["xong hoi manh"],
+MECHANISMS_ALIASES = {
+    "luu-dan-manh": ["luu dan manh", "luu dan nao manh"],
+    "luu-dan": ["luu dan", "lu dan", "luu dan nao", "lu dan nao"],
+    "tiep-xuc-manh": ["tiep xuc manh", "tiep xuc nào manh"],
+    "tiep-xuc": ["tiep xuc", "tiep suc", "tiep xuc nao", "tiep suc nao"],
+    "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", " tiep xuc luu dan manh", "tiep xuc, luu dan manh", "tiep xuc va luu dan nao manh", " tiep xuc luu dan nao manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc", "manh"],
+    "tiep-xuc-luu-dan": ["tiep xuc va luu dan", "tiep xuc luu dan", "tiep xuc va luu dan nao", "tiep xuc luu dan nao", "tiep xuc, luu dan", "luu dan, tiep xuc", "tiep xuc + luu dan", "luu dan + tiep xuc nao"],
+    "xong-hoi-manh": ["xong hoi manh", "xong hoi nao manh"],
     "xong-hoi": ["xong hoi"],
     "co-chon-loc": ["co chon loc", "bao trum", "trum", "phu", "lua"],
     "khong-chon-loc": ["khong chon loc", "k chon loc"],
@@ -2601,6 +2601,21 @@ def reorder_any_by_priority(anyt: List[str], priority_prefixes=("mechanisms:", "
             lo.append(t)
     return hi + lo
 
+def infer_answer_intent(q: str, found_groups: Dict[str, List[str]]):
+    qn = _norm(q)
+
+    has_product_term = bool(re.search(r"\b(thuoc|san pham)\b", qn))
+    has_control_term = bool(re.search(r"\b(tri|diet|phong|xu ly|tru)\b", qn))
+    has_symptom_term = bool(re.search(r"\b(trieu chung|benh)\b", qn))
+
+    if has_product_term and has_control_term:
+        return "product"
+
+    if has_symptom_term:
+        return "disease"
+
+    return "general"
+
 
 def infer_filters_from_query(q: str):
     q0 = _norm(q)
@@ -2644,6 +2659,12 @@ def infer_filters_from_query(q: str):
         f"FINAL MUST : {must}",
         f"FINAL ANY  : {anyt2}"
     )
-    return must, anyt2
+    return {
+        "must": must,
+        "any": anyt,
+        "found": found,          # 👈 THÊM
+        "entity_type": et,       # (tuỳ chọn)
+        "entity_score": _score,  # (tuỳ chọn)
+    }
 
 

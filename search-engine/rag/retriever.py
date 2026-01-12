@@ -164,8 +164,9 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
                 score += 1
         return score
 
-    def log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2):
+    def log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2, ENTITY_TYPE):
         debug_log("=== PICKED {} in stage {} ===".format(len(picked_rows), stage_name))
+        debug_log("=== norm_query: {} ===".format(norm_query))
 
         for rank, row in enumerate(picked_rows, 1):
             _, i, sim, tag_score, reason = row
@@ -173,10 +174,11 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
             did = str(IDS[i]) if IDS is not None else ""
             q = str(QUESTIONS[i]) if QUESTIONS is not None else ""
             tags = str(TAGS_V2[i]) if TAGS_V2 is not None else ""
+            entity = str(ENTITY_TYPE[i]) if ENTITY_TYPE is not None else ""
 
             debug_log(
-                "#{:02d} idx={} sim={:.4f} tag_score={} id={}".format(
-                    rank, i, float(sim), int(tag_score), did
+                "#{:02d} idx={} sim={:.4f} tag_score={} id={} entity={}".format(
+                    rank, i, float(sim), int(tag_score), did, entity
                 ),
                 "    Q: " + q,
                 "    reason: " + str(reason),
@@ -212,7 +214,7 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
         picked_rows = scored[:top_k]
 
         if debug:
-            log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2)
+            log_pick(stage_name, picked_rows, IDS, QUESTIONS, TAGS_V2, ENTITY_TYPE)
 
         return [i for _, i, _, _, _ in picked_rows]
 

@@ -162,8 +162,8 @@ class RAGConfig:
 
     📌 Với GPT-4/4o → 12k chars là an toàn.
     """
-    max_ctx_strict: int = 16
-    max_ctx_soft: int = 12
+    max_ctx_strict: int = 32
+    max_ctx_soft: int = 24
 
     """
     🔟 max_ctx_strict: int = 16
@@ -173,8 +173,8 @@ class RAGConfig:
     Số lượng document tối đa được đưa vào prompt:
 
     Mode	Số doc	Ý nghĩa
-    STRICT	16	Tin dữ liệu, cần nhiều nguồn
-    SOFT	12	Ưu tiên trả lời ngắn gọn
+    STRICT	32	Tin dữ liệu, cần nhiều nguồn
+    SOFT	24	Ưu tiên trả lời ngắn gọn
 
     📌 Điều này thể hiện bạn hiểu rõ RAG không phải càng nhiều context càng tốt.
     """

@@ -7,7 +7,7 @@ def build_context_from_hits(hits_for_ctx: list) -> str:
             f"HỎI KHÁC: {h.get('alt_question','')}\n"
             f"NỘI DUNG:\n{h.get('answer','')}"
         )
-        print('block: ', block)
+        # print('block: ', block)
         blocks.append(block)
     return "\n\n--------------------\n\n".join(blocks)
 
@@ -19,16 +19,16 @@ def choose_adaptive_max_ctx(hits_reranked, is_listing: bool = False):
 
     if is_listing:
         if s1 >= 0.75 and s2 >= 0.65 and s3 >= 0.55:
-            return 30
+            return 60
         if s1 >= 0.65 and s2 >= 0.55:
-            return 25
-        return 20
+            return 50
+        return 40
 
     if s1 >= 0.90 and s2 >= 0.80 and s3 >= 0.75 and s4 >= 0.70:
-        return 16
+        return 32
     if s1 >= 0.85 and s2 >= 0.75 and s3 >= 0.70:
-        return 14
+        return 28
     if s1 >= 0.80 and s2 >= 0.65:
-        return 12
+        return 24
 
-    return 12
+    return 24

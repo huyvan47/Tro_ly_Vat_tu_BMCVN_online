@@ -79,29 +79,33 @@ def route_query(client, user_query: str) -> str:
         r"\b(thu hoạch|độ chín|bảo quản|sau thu hoạch)\b",
         r"\b(kho lạnh|chuỗi lạnh|nấm mốc kho)\b",
     ]
-    if any(re.search(p, q) for p in definition_signals):
-        # ngoại lệ: nếu rõ ràng hỏi nội bộ, để heuristic nội bộ bên dưới override
-        pass
-    else:
-        definition_signals = []  # không dùng
 
-    # ---------------------------
-    # 2) Heuristic: tín hiệu nội bộ -> RAG (ưu tiên cao hơn)
-    # ---------------------------
+    # 0) Product / Drug intent -> RAG (ƯU TIÊN CAO NHẤT)
+    product_signals = [
+        r"(?:^|\s)(thuốc|sản phẩm)(?:\s|$)"
+    ]
+
+    for p in product_signals:
+        if re.search(p, q):
+            print("Matched product signal:", p)
+            return "RAG"
+
+    if any(re.search(p, q) for p in product_signals):
+        return "RAG"
+
+    # 1) Internal / KB intent -> RAG
     internal_signals = [
         r"\b(bmcvn|bmcvn\.|bmc)\b",
         r"\b(sop|quy trình nội bộ|tài liệu nội bộ|nội bộ)\b",
         r"\b(kb|knowledge base|vector|embedding|tag|tags_v2)\b",
-        r"\b(phác đồ|công thức)\b",  # nếu bạn coi "công thức" là nội bộ (tuỳ policy)
-        r"\b(thuốc|sản phẩm)\b",
+        r"\b(phác đồ)\b",
         r"\b(mã|code|chunk_|doc\s*\d+)\b",
     ]
-    # Nếu có tín hiệu nội bộ mạnh -> RAG ngay
     if any(re.search(p, q) for p in internal_signals):
         return "RAG"
 
-    # Nếu là intent định nghĩa/khái niệm -> GLOBAL
-    if definition_signals:
+    # 2) Definition / giáo trình -> GLOBAL
+    if any(re.search(p, q) for p in definition_signals):
         return "GLOBAL"
 
     # ---------------------------

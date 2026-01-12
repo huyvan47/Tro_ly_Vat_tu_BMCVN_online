@@ -11,7 +11,7 @@ from rag.answer_modes import decide_answer_policy
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
 from rag.verbatim import verbatim_export
-from rag.tag_filter import infer_filters_from_query
+from rag.tag_filter import infer_filters_from_query, infer_answer_intent
 from rag.debug_log import debug_log
 from typing import List, Tuple, Dict, Any
 from pathlib import Path
@@ -39,6 +39,17 @@ _CONCEPTUAL_TRIGGERS = [
     "tiếp xúc", "lưu dẫn", "nội hấp",
     "mùi", "hôi", "tuyến trùng",
 ]
+
+def _count_tag_hits(h, any_tags, must_tags):
+    tv2 = str(h.get("tags_v2") or "")
+    score = 0
+    for t in (must_tags or []):
+        if t and t in tv2:
+            score += 3
+    for t in (any_tags or []):
+        if t and t in tv2:
+            score += 1
+    return score
 
 def promote_forced_tags(must_tags, any_tags):
     must = set(must_tags or [])
@@ -472,8 +483,18 @@ def choose_top_k(
     return top_k
 
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
-    # 0) Route GLOBAL / RAG
+    # -----------------------------------------------------
+    # 0) ROUTER – QUYỀN CAO NHẤT
+    # -----------------------------------------------------
     route = route_query(client, user_query)
+    print("route:", route)
+
+    # KHÓA ROUTE: nếu router đã chọn RAG thì CẤM quay về GLOBAL
+    route_locked = (route == "RAG")
+
+    # -----------------------------------------------------
+    # 1) NHÁNH GLOBAL NGAY TỪ ĐẦU (chỉ khi router cho phép)
+    # -----------------------------------------------------
     if route == "GLOBAL":
         hard = _is_hard_global(user_query)
         model = "gpt-4.1" if hard else "gpt-4.1-mini"
@@ -487,22 +508,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             ],
         )
         text = resp.choices[0].message.content.strip()
-
-        # (Tuỳ chọn) Escalate lần 2 nếu dùng mini nhưng output thiếu cấu trúc/liệt kê
-        if (not hard) and _is_hard_global(user_query):
-            # nếu router vẫn GLOBAL nhưng mini trả lời quá ngắn/thiếu ý
-            if len(text) < 900 or ("Định nghĩa" not in text and "Phân loại" not in text):
-                resp2 = client.chat.completions.create(
-                    model="gpt-4.1",
-                    temperature=0.2,
-                    max_completion_tokens=3800,
-                    messages=[
-                        {"role": "system", "content": _global_system_prompt()},
-                        {"role": "user", "content": user_query},
-                        {"role": "user", "content": "Hãy mở rộng theo đúng cấu trúc, bổ sung phân loại và ví dụ đại diện nếu câu hỏi yêu cầu liệt kê."},
-                    ],
-                )
-                text = resp2.choices[0].message.content.strip()
         return {
             "text": text,
             "img_keys": [],
@@ -512,69 +517,44 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
 
-    # 1) Normalize query
+    # -----------------------------------------------------
+    # 2) NORMALIZE + TAGS
+    # -----------------------------------------------------
     norm_query = normalize_query(client, user_query)
-
-    # 2) Listing?
     is_list = is_listing_query(norm_query)
 
-    must_tags, any_tags = infer_filters_from_query(norm_query)
+    filters = infer_filters_from_query(norm_query)
+    must_tags = filters.get("must", [])
+    any_tags = filters.get("any", [])
+    found = filters.get("found", [])
 
     code_candidates = extract_codes_from_query(norm_query)
 
-    has_product_signal = _has_product_signal(norm_query, any_tags, code_candidates)
-
-    must_tags, any_tags = promote_forced_tags(must_tags, any_tags)
-    # ---- NEW: intent/slot gate ----
-    analysis = {}
+    # -----------------------------------------------------
+    # 3) INTENT / SLOT ANALYZER (LLM)
+    # -----------------------------------------------------
+    analysis: Dict[str, Any] = {}
     if _need_intent_gate(norm_query, any_tags, code_candidates):
         analysis = analyze_intent_and_slots(
             client=client,
             norm_query=norm_query,
             any_tags=any_tags,
         )
-    # 1) Override route nếu cần (GLOBAL vs RAG)
+
     route_override = (analysis.get("route_override") or "").strip().upper()
 
-    # 2) Nếu global_pure -> có thể ép GLOBAL luôn (tuỳ bạn)
-    if analysis.get("intent_type") == "global_pure" and route_override != "RAG":
-        # Dùng luôn global prompt hiện có của bạn
-        # (Có thể reuse nhánh route == "GLOBAL" ở đầu)
-        route_override = "GLOBAL"
+    # ❗ INTENT CHỈ ĐƯỢC ÉP GLOBAL KHI ROUTER KHÔNG KHÓA
+    if analysis.get("intent_type") == "global_pure":
+        if not route_locked and route_override != "RAG":
+            route_override = "GLOBAL"
 
-    # 3) Nếu global_conditional và thiếu slot:
-    # - Nếu query có dấu hiệu sản phẩm cụ thể (SKU/tag/code) => KHÔNG ask-back sớm, ưu tiên RAG
-    # - Nếu không có product signal => thử quick-retrieve; chỉ ask-back nếu KB không có dấu hiệu slot cần thiết
-    if analysis.get("intent_type") == "global_conditional" and bool(analysis.get("should_ask_back")):
-        if not has_product_signal:
-            quick_hits = retrieve_search(
-                client=client,
-                kb=kb,
-                norm_query=norm_query,
-                top_k=40,
-                must_tags=must_tags,
-                any_tags=any_tags,
-            )
-            if not _hits_have_slot_evidence(quick_hits, analysis.get("missing_slots", [])):
-                text = render_global_bounded(
-                    client=client,
-                    user_query=user_query,
-                    norm_query=norm_query,
-                    analysis=analysis,
-                )
-                return {
-                    "text": text,
-                    "img_keys": [],
-                    "route": "GLOBAL_BOUNDED",
-                    "norm_query": norm_query,
-                    "strategy": "GLOBAL_BOUNDED",
-                    "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
-                    "intent_type": analysis.get("intent_type", ""),
-                    "missing_slots": analysis.get("missing_slots", []),
-                }
-        # nếu có product signal hoặc quick_hits đã có dấu hiệu slot => tiếp tục RAG như bình thường
+    # ❗ GUARD CUỐI: ROUTER LUÔN THẮNG
+    if route_locked:
+        route_override = "RAG"
 
-    # 4) Nếu route_override = GLOBAL mà không cần hỏi -> chạy nhánh GLOBAL
+    # -----------------------------------------------------
+    # 4) NHÁNH GLOBAL SAU INTENT (CHỈ KHI ĐƯỢC PHÉP)
+    # -----------------------------------------------------
     if route_override == "GLOBAL":
         hard = _is_hard_global(user_query)
         model = "gpt-4.1" if hard else "gpt-4.1-mini"
@@ -596,10 +576,11 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "strategy": f"GLOBAL/{model}",
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
             "intent_type": analysis.get("intent_type", ""),
-            "missing_slots": analysis.get("missing_slots", []),
         }
 
-
+    # -----------------------------------------------------
+    # 5) RAG PIPELINE (KHÔNG BAO GIỜ QUAY VỀ GLOBAL)
+    # -----------------------------------------------------
     top_k = choose_top_k(
         is_list=is_list,
         must_tags=must_tags,
@@ -608,86 +589,19 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         base_list=80,
         base_normal=50,
     )
+
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
     print("ANY TAGS   :", any_tags)
 
-    answer_mode_hint = ""  # hoặc bạn tự set theo entity_type/intent upstream nếu đã có
-
-    use_mq = _should_use_multi_query(norm_query, any_tags, answer_mode_hint)
-
-    if not use_mq:
-        debug_log(
-            f"norm_query: {norm_query}",
-        )
-        hits = retrieve_search(
-            client=client,
-            kb=kb,
-            norm_query=norm_query,
-            top_k=top_k,
-            must_tags=must_tags,
-            any_tags=any_tags,
-        )
-    else:
-        # 1) LLM tạo sub-queries
-        variants = llm_build_sub_queries(
-            client=client,
-            norm_query=norm_query,
-            must_tags=must_tags,
-            any_tags=any_tags,
-            answer_mode_hint=answer_mode_hint,
-            max_variants=5,
-        )
-
-        # 2) Luôn include query gốc như 1 "mũi tên" chính
-        queries = [{"purpose": "main", "q": norm_query}] + variants
-
-        print("[MQ] variants:")
-        for i, v in enumerate(queries):
-            print(f"  - #{i} purpose={v['purpose']} q={v['q']}")
-
-        # 3) Retrieve từng sub-query (top_k nhỏ hơn để tránh rác)
-        per_top_k = max(30, int(top_k * 0.45))  # bạn có thể chỉnh
-        results_by_query = []
-        for qi, v in enumerate(queries):
-            qv = v["q"]
-            debug_log(
-                f"Sub question: {qv}",
-            )
-            purpose = v["purpose"]
-            weight = 1.15 if purpose == "main" else _purpose_weight(purpose)
-
-            sub_hits = retrieve_search(
-                client=client,
-                kb=kb,
-                norm_query=qv,
-                top_k=per_top_k,
-                must_tags=must_tags,
-                any_tags=any_tags,
-            )
-            results_by_query.append({
-                "qi": qi,
-                "purpose": purpose,
-                "weight": weight,
-                "hits": sub_hits,
-            })
-
-        # 4) Fuse (Weighted RRF) -> hits cuối
-        hits = _weighted_rrf_fuse(results_by_query, k=60, top_n=top_k)
-
-        # Debug
-        print("[MQ] fused hits:", len(hits))
-        if hits:
-            print("[MQ] top1 id=", hits[0].get("id"), "mq_rrf=", hits[0].get("mq_rrf"), "score=", hits[0].get("score"))
-    # === END MULTI-QUERY RETRIEVAL ===
-    
-    print("[DEBUG] after search: len(results)=", len(hits))
-    if hits:
-        print("[DEBUG] first id=", hits[0].get("id"), "score=", hits[0].get("score"))
-
-    # Nếu có bước lọc/rerank sau đó, log tiếp ngay sau mỗi bước:
-    # results = ...
-    print("[DEBUG] after post-filter: len(results)=", len(hits))
+    hits = retrieve_search(
+        client=client,
+        kb=kb,
+        norm_query=norm_query,
+        top_k=top_k,
+        must_tags=must_tags,
+        any_tags=any_tags,
+    )
 
     if not hits:
         return {
@@ -699,98 +613,37 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
 
-    # 4) Filter by MIN_SCORE_MAIN
-    def _count_tag_hits(h, any_tags, must_tags):
-        tv2 = str(h.get("tags_v2") or "")
-        score = 0
-        # must: ưu tiên cao hơn any
-        for t in (must_tags or []):
-            if t and t in tv2:
-                score += 3
-        for t in (any_tags or []):
-            if t and t in tv2:
-                score += 1
-        return score
-
+    # -----------------------------------------------------
+    # 6) RERANK + STRATEGY
+    # -----------------------------------------------------
     for h in hits:
         h["fused_score"] = fused_score(h)
         h["tag_hits"] = _count_tag_hits(h, any_tags, must_tags)
 
-    # re-rank: tag_hits trước, rồi fused_score
     hits = sorted(
         hits,
         key=lambda x: (
             x.get("tag_hits", 0),
-            x.get("mq_rrf", 0.0),       # NEW: ưu tiên điểm fused từ multi-query
+            x.get("mq_rrf", 0.0),
             x.get("fused_score", 0.0),
         ),
         reverse=True,
     )
 
-    filtered_for_main = [h for h in hits if h["fused_score"] >= policy.min_score_main]
-
-    # NEW: fallback nếu threshold lọc sạch (đặc biệt listing/brand)
-    if not filtered_for_main:
-        fallback_n = min(len(hits), 10 if is_list else 5)
-        filtered_for_main = hits[:fallback_n]
-
-    # 5) Decide strategy (DIRECT_DOC / RAG_STRICT / RAG_SOFT)
-    has_main = len(filtered_for_main) > 0
     prof = analyze_hits_fused(hits)
     strategy = decide_strategy(
         norm_query=norm_query,
         prof=prof,
-        has_main=has_main,
+        has_main=True,
         policy=policy,
         code_boost_direct=cfg.code_boost_direct,
     )
 
-    # 6) Prefer include_in_context if available
-    context_candidates = [h for h in filtered_for_main if h.get("include_in_context", False)]
-    if not context_candidates:
-        context_candidates = filtered_for_main
+    primary_doc = hits[0]
 
-    # NEW: guard cuối
-    if not context_candidates:
-        return {
-            "text": "Không tìm thấy ngữ cảnh phù hợp theo tiêu chí hiện tại.",
-            "img_keys": [],
-            "route": "RAG",
-            "norm_query": norm_query,
-            "strategy": "EMPTY_CONTEXT",
-            "profile": analyze_hits_fused(hits),
-        }
-
-    # 7) Pick primary_doc (prefer code match)
-    primary_doc = None
-    if code_candidates:
-        target = code_candidates[0].lower()
-        for h in context_candidates:
-            if target in h["question"].lower() or target in h["answer"].lower():
-                primary_doc = h
-                break
-    if primary_doc is None:
-        primary_doc = context_candidates[0]
-
-    # 10) Build context and call GPT answer (STRICT/SOFT)
-    policy = decide_answer_policy(user_query, primary_doc, force_listing=is_list)
-    answer_mode = "listing" if policy.format == "listing" else policy.intent
-    # === VERBATIM short-circuit ===
-    if answer_mode == "verbatim":
-        vb = verbatim_export(
-            kb=kb,
-            hits_router=hits,        # dùng hits hiện có (đã sorted/reranked), khỏi retrieve lại
-        )
-        return {
-            "text": vb.get("text", ""),
-            "img_keys": vb.get("img_keys", []),
-            "route": "RAG",
-            "norm_query": norm_query,
-            "strategy": "VERBATIM",
-            "profile": prof,
-        }
-
-    # 9) DIRECT_DOC: KB đủ mạnh -> trả trực tiếp doc (không ép QA)
+    # -----------------------------------------------------
+    # 7) DIRECT DOC
+    # -----------------------------------------------------
     if strategy == "DIRECT_DOC":
         img_keys = extract_img_keys(primary_doc.get("answer", ""))
         text = format_direct_doc_answer(user_query, primary_doc)
@@ -803,40 +656,32 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "profile": prof,
         }
 
-    # adaptive ctx, nhưng giới hạn theo mode
+    # -----------------------------------------------------
+    # 8) BUILD CONTEXT + GENERATE
+    # -----------------------------------------------------
     base_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
-    if strategy == "RAG_SOFT":
-        max_ctx = min(RAGConfig.max_ctx_soft, base_ctx)
-        rag_mode = "SOFT"
-    else:
-        max_ctx = min(RAGConfig.max_ctx_strict, base_ctx)
-        rag_mode = "STRICT"
+    max_ctx = min(RAGConfig.max_ctx_strict, base_ctx)
 
-    main_hits = [primary_doc]
-    for h in context_candidates:
-        if h is not primary_doc and len(main_hits) < max_ctx:
-            main_hits.append(h)
-
-    def _short(x, n=160):
-        x = "" if x is None else str(x)
-        return x if len(x) <= n else x[:n] + "..."
-    
-    # Sau đó build context như bình thường
-    context = build_context_from_hits(main_hits)
+    context = build_context_from_hits(hits[:max_ctx])
 
     Path("debug_ctx").mkdir(exist_ok=True)
     with open("debug_ctx/context_last.txt", "w", encoding="utf-8") as f:
         f.write(context)
+
+    answer_intent = infer_answer_intent(user_query, found)
+    policy = decide_answer_policy(user_query, primary_doc, parsed_intent=answer_intent, force_listing=is_list)
+    answer_mode = "listing" if policy.format == "listing" else policy.intent
 
     final_answer = call_finetune_with_context(
         client=client,
         user_query=user_query,
         context=context,
         answer_mode=answer_mode,
-        rag_mode=rag_mode,  
+        rag_mode="STRICT",
     )
 
     img_keys = extract_img_keys(primary_doc.get("answer", ""))
+
     return {
         "text": final_answer,
         "img_keys": img_keys,
@@ -844,4 +689,5 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         "norm_query": norm_query,
         "strategy": strategy,
         "profile": prof,
+        "context_build": context,
     }
