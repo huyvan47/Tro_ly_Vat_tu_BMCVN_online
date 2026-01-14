@@ -12,7 +12,7 @@ import json
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data/data-kinh-doanh/data-kd-1-4-chuan.csv"
 SHEET_NAME = 0  # hoặc "Sheet1"
-OUT_FILE = "data-kd-1-4-13-1-2026.npz"
+OUT_FILE = "data-kd-1-4-14-1-2026.npz"
 
 client = OpenAI(api_key="...")
 

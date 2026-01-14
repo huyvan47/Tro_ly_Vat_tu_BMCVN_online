@@ -11,7 +11,7 @@ import traceback
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
-KB = "data-kd-1-4-13-1-2026.npz"
+KB = "data-kd-1-4-14-1-2026.npz"
 OPENAI_KEY = "..."
 
 def iter_questions(txt_path: str):
