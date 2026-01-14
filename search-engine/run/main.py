@@ -11,7 +11,7 @@ import traceback
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
-KB = "data-kd-1-4-chuan-tag-filter-tag.npz"
+KB = "data-kd-1-4-13-1-2026.npz"
 OPENAI_KEY = "..."
 
 def iter_questions(txt_path: str):
@@ -82,36 +82,6 @@ def main(KB, API_KEY):
     kb = load_npz(KB)
 
     cfg = RAGConfig()
-
-    # q = input("Query: ").strip()
-      
-    # res = answer_with_suggestions(
-    #     user_query=q,
-    #     kb=kb,
-    #     client=client,
-    #     cfg=cfg,
-    #     policy=policy,
-    # )
-
-    # # 5) log CSV
-    # csv_path = "rag_logs.csv"
-    # append_log_to_csv(
-    #     csv_path=csv_path,
-    #     user_query=q,
-    #     norm_query=res.get("norm_query", ""),
-    #     strategy=res.get("strategy", ""),
-    #     prof=res.get("profile", {}) or {},
-    #     res=res,
-    #     route=res.get("route", "RAG"),
-    #     # bạn có thể thêm policy_version nếu có
-    # )
-
-    # # 6) in kết quả
-    # print("\n===== KẾT QUẢ =====\n")
-    # print(res["text"])
-    # print("\nIMG_KEY:")
-    # print(res["img_keys"])
-    # print("\nSaved log to:", csv_path)
 
     while True:
         try:
