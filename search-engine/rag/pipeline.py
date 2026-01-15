@@ -40,6 +40,14 @@ _CONCEPTUAL_TRIGGERS = [
     "mùi", "hôi", "tuyến trùng",
 ]
 
+def preserve_search_order(hits):
+    """
+    Đánh dấu thứ tự gốc từ search() để pipeline KHÔNG làm xáo trộn.
+    """
+    for idx, h in enumerate(hits):
+        h["_search_rank"] = idx
+    return hits
+
 def _count_tag_hits(h, any_tags, must_tags):
     tv2 = str(h.get("tags_v2") or "")
     score = 0
@@ -603,6 +611,8 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         any_tags=any_tags,
     )
 
+    hits = preserve_search_order(hits)
+
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -613,22 +623,10 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
 
-    # -----------------------------------------------------
-    # 6) RERANK + STRATEGY
-    # -----------------------------------------------------
     for h in hits:
+        # chỉ để phân tích / debug / profile
         h["fused_score"] = fused_score(h)
         h["tag_hits"] = _count_tag_hits(h, any_tags, must_tags)
-
-    hits = sorted(
-        hits,
-        key=lambda x: (
-            x.get("tag_hits", 0),
-            x.get("mq_rrf", 0.0),
-            x.get("fused_score", 0.0),
-        ),
-        reverse=True,
-    )
 
     prof = analyze_hits_fused(hits)
     strategy = decide_strategy(

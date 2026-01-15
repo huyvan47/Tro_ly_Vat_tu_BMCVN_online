@@ -361,7 +361,7 @@ CROP_ALIASES = {
     "dry-field": ["cay mua kho", "lua mua kho"],
     "du-du": ["cay du du", "du du"],
     "dua": ["cay dua", "dua"],
-    "durian": ["cay sau rieng", "sau rieng"],
+    # "durian": ["cay sau rieng", "sau rieng"],
     "early-stage-crop": ["cay con non", "giai doan dau cay"],
     "edible-mushroom": ["nam an duoc", "nam an duoc trong"],
     "edible-mushrooms": ["cac loai nam an duoc", "nam an duoc"],
@@ -389,13 +389,13 @@ CROP_ALIASES = {
     "gung": ["gung"],
     "hanh": ["hanh"],
     "hanh-la": ["hanh la"],
-    "hoa": ["hoa cuc", "hoa dong tien", "hoa hong"],
+    # "hoa": ["hoa cuc", "hoa dong tien", "hoa hong"],
     "harvest-stage": ["giai doan thu hoach"],
     "healthy-crop-area": ["dien tich cay trong khoe manh"],
     "healthy-seedlings": ["moc giong khoe manh"],
     "ho-tieu": ["ho tieu"],
     "hoa-dao": ["hoa dao"],
-    "hoa-hong": ["hoa hong"],
+    # "hoa-hong": ["hoa hong"],
     "hoa-hong-dai-multiflora": ["hoa hong dai"],
     "hoa-ly": ["hoa ly"],
     "hoa-mai": ["hoa mai"],
@@ -474,7 +474,7 @@ CROP_ALIASES = {
     "root-crop": ["cay goc", "cay goc trong"],
     "root-crops": ["cay goc", "cay goc trong"],
     "root-zone": ["vung bo re", "vung re"],
-    "rose": ["cay hoa hong", "hoa hong"],
+    # "rose": ["cay hoa hong", "hoa hong"],
     "rose-bush": ["buom hoa hong", "buom hong"],
     "rubber": ["cao su", "cay cao su"],
     "rubber-tree": ["cay cao su"],
@@ -482,7 +482,7 @@ CROP_ALIASES = {
     "san": ["cay san"],
     "sapodilla": ["cay hong xi", "hong xi"],
     "satsuma-mandarin": ["quyt satsuma", "quyt satsuma nhat"],
-    "sau-rieng": ["cay sau rieng", "sau rieng"],
+    # "sau-rieng": ["cay sau rieng", "sau rieng"],
     "seed": ["hat giong", "hat trong"],
     "seedlings": ["cay con", "giong cay con"],
     "sensitive-plants": ["cay nhay cam"],
@@ -522,11 +522,11 @@ CROP_ALIASES = {
 }
 
 DISEASE_ALIASES = {
-    "nhom-a": ["nhom benh a", "nhom a", "nam nhom a", "nhom nam a", "benh nhom a", "than thu", "dao on", "dom vong", "dom tim", "bi thoi", "chay la", "dom nau", "dom la", "heo ru", "chet cham", "chay day", "thoi re", "lua von", "lem lep hat", "phan trang", "moc xam", "nam long chuot", "ghe la", "ghe trai", "dom den", "thoi than", "thoi hach", "thoi re", "benh thoi canh", "chay canh", "thoi qua", "benh chet canh", "benh scab", "benh ghe", "san vo", "tiem lua", "vang be", "thoi trai", "kho dot", "chet canh", "nut than", "chay nhua", "benh dom nau", "kho"
+    "nhom-a": ["nhom benh a", "nhom a", "nam nhom a", "nhom nam a", "benh nhom a", "than thu", "dao on", "dom vong", "dom tim", "bi thoi", "chay la", "dom nau", "dom la", "heo ru", "chet cham", "chay day", "thoi re", "lua von", "lem lep hat", "phan trang", "moc xam", "nam long chuot", "ghe la", "ghe trai", "dom den", "thoi than", "thoi hach", "thoi re", "benh thoi canh", "chay canh", "thoi qua", "benh chet canh", "benh scab", "benh ghe", "san vo", "tiem lua", "vang be", "thoi trai", "kho dot", "chet canh", "nut than", "chay nhua", "benh dom nau", "kho", "benh thoi"
 ],
-    "nhom-b": ["nhom benh b", "nhom b", "nam nhom b", "nhom nam b", "benh nhom b", "lo co re", "heo cay con", "chay la", "kho van", "nam hong", "heo ru", "moc trang", "co re bi thoi nau", "thoi nau", "thoi nhun", "benh chet rap cay con", "thoi trai", "thoi than", "ri sat", "than hat lua", "benh ri sat dau tuong", "than thu", "dom la lon", "lem lep hat"
+    "nhom-b": ["nhom benh b", "nhom b", "nam nhom b", "nhom nam b", "benh nhom b", "lo co re", "heo cay con", "chay la", "kho van", "nam hong", "heo ru", "moc trang", "co re bi thoi nau", "thoi nau", "thoi nhun", "benh chet rap cay con", "thoi trai", "thoi than", "ri sat", "than hat lua", "benh ri sat dau tuong", "than thu", "dom la lon", "lem lep hat", "benh thoi"
 ],
-    "nhom-o": ["nhom benh o", "nhom o", "nam nhom o", "nhom nam o", "benh nhom o", "suong mai", "benh thoi re", "thoi ngon", "thoi mam", "chet nhanh", "thoi trai", "nut than", "xi mu", "vang la", "chet than", "chet canh", "thoi re", "chet cay con", "moc suong", "gia suong mai", "soc trang", "bach tang", "moc xuong", "ri trang", "nam trang", "phong trang"],
+    "nhom-o": ["nhom benh o", "nhom o", "nam nhom o", "nhom nam o", "benh nhom o", "suong mai", "benh thoi re", "thoi ngon", "thoi mam", "chet nhanh", "thoi trai", "nut than", "xi mu", "vang la", "chet than", "chet canh", "thoi re", "chet cay con", "moc suong", "gia suong mai", "soc trang", "bach tang", "moc xuong", "ri trang", "nam trang", "phong trang", "benh thoi"],
 }
 
 PEST_ALIASES = {
@@ -666,11 +666,6 @@ PEST_ALIASES = {
     "nematode": ["rut gon", "rut gon cay trong"],
     "nematodes": ["rut gon", "rut gon cay trong"],
     "nhen": ["con nhen", "ruoi nhen", "nhen"],
-    "nhen-do": ["nhen do", "ruoi nhen do"],
-    "nhen-khang-thuoc": ["nhen khang thuoc", "ruoi nhen khang thuoc"],
-    "nhen-long-nhung": ["nhen long nhung", "ruoi nhen long nhung"],
-    "nhen-trang": ["nhen trang", "ruoi nhen trang"],
-    "nhen-vang": ["nhen vang", "ruoi nhen vang"],
     "oc-buu-vang": ["oc buu vang", "oc vang","oc"],
     "pesticide": ["thuoc bao ve thuc vat", "thuoc tru sau"],
     "pests": ["sau benh", "sau hai"],
@@ -686,7 +681,6 @@ PEST_ALIASES = {
     "ray-phan": ["ray phan", "ray phan tren cay"],
     "ray-xanh": ["ray xanh", "ray-chong-canh", "ray phan", "ray mem", "bo phan trang", "bo xit"],
     "red-mite": ["ruoi do", "ruoi do tren cay"],
-    "red-spider-mite": ["nhen gie", "nhen do", "nhen long nhung", "nhen trang"],
     "rep": ["rep", "rep tren cay"],
     "rep-bong-xo": ["rep bong xo", "rep bong xo tren cay"],
     "rep-mem": ["rep mem", "rep mem tren cay"],
@@ -716,7 +710,7 @@ PEST_ALIASES = {
     "sau-duc-than": ["sau duc than", "sau duc than lua"],
     "sau-duc-trong": ["sau duc trong", "sau duc trong lua"],
     "sau-hai": ["sau hai", "sau hai lua"],
-    "sau-hanh": ["sau hanh", "sau hanh lua"],
+    "sau-hanh": ["sau hanh", "sau cho hanh", "sau hanh lua"],
     "sau-khoang": ["sau khoang", "sau khoang lua"],
     "sau-mieng-nhai": ["sau mieng nhai", "sau nhai la"],
     "sau-nan": ["sau nan", "sau nan lua"],
@@ -812,7 +806,7 @@ PRODUCT_ALIASES = {
     "trau-rung-2-0": ["thuoc trau rung 2 0", "trau rung"],
     "trau-rung-moi": ["thuoc trau rung moi", "trau rung"],
     "trau-vang-280": ["thuoc trau vang 280", "trau vang"],
-    "trum-nam-benh": ["thuoc trum nam benh", "trum nam benh", "tru nam", "nam benh"],
+    "trum-nam-benh": ["thuoc trum nam benh", "trum nam benh", "nam benh"],
     "trum-sau": ["thuoc trum sau", "trum sau"],
     "truong-doi-ky": ["thuoc truong doi ky", "truong doi ky"],
     "vua-imida": ["thuoc vua imida", "vua imida", "imida"],
@@ -1065,8 +1059,8 @@ PRODUCT_ALIASES = {
     "trum-chich-hut-tri": ["thuoc trum chich hut tri", "trum chich hut", "chich hut"],
     "truong-vo-ky": ["thuoc truong vo ky", "truong vo ky", "yosky"],
     "uchong-40ec": ["thuoc uchong 40ec", "uchong"],
+    "vamco-480sl": ["thuoc vamco 480sl", "vam co", "vamco", "dktazole", "dktazone"],
     "vam-co-dktazole-480sl": ["thuoc vam co dktazole 480sl", "vam co", "dktazole", "vamco"],
-    "vamco-480sl": ["thuoc vamco 480sl", "vam co", "vamco"],
     "vet-xanh": ["thuoc vet xanh", "vetxanh", "vet-xanh", "vet xanh"],
     "voi-rung": ["thuoc voi rung", "voi rung"],
     "voi-thai-3-6ec-gold": ["thuoc voi thai 3 6ec gold", "voi thai"],
@@ -1724,16 +1718,13 @@ def reorder_any_by_priority(anyt: List[str], priority_prefixes=("mechanisms:", "
 def infer_answer_intent(q: str, found_groups: Dict[str, List[str]]):
     qn = _norm(q)
 
-    has_product_term = bool(re.search(r"\b(thuoc|san pham)\b", qn))
-    has_control_term = bool(re.search(r"\b(tri|diet|phong|xu ly|tru)\b", qn))
-    has_symptom_term = bool(re.search(r"\b(trieu chung|benh)\b", qn))
-
-    if has_product_term and has_control_term:
-        return "product"
+    has_product_term = bool(re.search(r"\b(thuoc|thuốc|san pham|sản phẩm)\b", qn))
+    has_symptom_term = bool(re.search(r"\b(trieu chung|triệu chứng|benh|bệnh)\b", qn))
 
     if has_symptom_term:
         return "disease"
-
+    if has_product_term:
+        return "product"
     return "general"
 
 

@@ -8,7 +8,7 @@ def decide_strategy(norm_query: str, prof: dict, has_main: bool, policy, code_bo
 
     has_code = bool(extract_codes_from_query(norm_query))
 
-    if code_boost_direct and has_code and top1 >= 0.55 and gap >= 0.05 and has_main:
+    if code_boost_direct and has_code and top1 >= 0.6 and gap >= 0.1 and has_main:
         return "DIRECT_DOC"
 
     if conf >= policy.direct_conf_min and gap >= policy.direct_gap_min and has_main:
