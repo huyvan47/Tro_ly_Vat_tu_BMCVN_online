@@ -2,7 +2,7 @@ import re
 import json
 import unicodedata
 from pathlib import Path
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Optional
 
 # ===========================
 # 1) PATH & LOAD KNOWLEDGE
@@ -113,7 +113,6 @@ CHEMICAL_ALIASES = {
     "chlorpyrifos-ethyl": ["clorpyrifos etyl", "thuoc diet sau clorpyrifos etyl", "chlorpyrifos"],
     "chlorpyrifos-methyl": ["clorpyrifos metyl", "thuoc diet sau clorpyrifos metyl", "chlorpyrifos", "chlorpyrifos-methyl"],
     "contact-fungicide": ["thuoc diet nam tiep xuc", "thuoc tri nam tiep xuc"],
-    "copper": ["chat dong", "dong"],
     "copper-based-fungicide": ["thuoc diet nam goc dong", "thuoc tri nam goc dong"],
     "copper-based-pesticide": ["thuoc diet sau goc dong", "thuoc tru sau goc dong"],
     "copper-chelate": ["dong chelate", "dong hoa hop chelate"],
@@ -209,7 +208,7 @@ CHEMICAL_ALIASES = {
     "liquid-fertilizer": ["phan bon duong luong", "phan bon loang"],
     "lufenuron": ["thuoc tru sau lufenuron", "lufenuron"],
     "lysol": ["chat tay trung lysol"],
-    "mancozeb": ["thuoc tru benh mancozeb", "mancozeb"],
+    "mancozeb": ["thuoc tru benh mancozeb", "mancozeb", "manco"],
     "mefenoxam": ["thuoc tru benh mefenoxam"],
     "mesotrione": ["thuoc diet co mesotrione", "mesotrione"],
     "metaflumizone": ["thuoc tru sau metaflumizone", "metaflumizone"],
@@ -329,7 +328,7 @@ CROP_ALIASES = {
     "bap-cai": ["bap cai", "cay bap cai"],
     "barley": ["cay lua mi", "lua mi"],
     "bean": ["cay dau", "dau"],
-    "kho-qua": ["kho qua", "qua kho qua"],
+    "kho-qua": ["kho qua", "qua kho qua", "muop dang"],
     "tieu": ["tieu", "tieu den"],
     "bi-dao": ["bi dao", "bi huong"],
     "buoi": ["buoi"],
@@ -343,7 +342,6 @@ CROP_ALIASES = {
     "cai-thao": ["cai thao"],
     "can-nuoc": ["can nuoc"],
     "can-tay": ["can tay"],
-    "ca-phe": ["ca phe"],
     "ca-phao": ["ca phao"],
     "cac-loai-dua": ["cac loai dua"],
     "cac-loai-hoa": ["cac loai hoa"],
@@ -361,14 +359,13 @@ CROP_ALIASES = {
     "dat-trong-cay-cong-nghiep": ["dat trong cay cong nghiep", "cay cong nghiep"],
     "dua-le": ["dua le"],
     "le": ["le"],
-    "dua-leo": ["dua leo"],
+    "dua-leo": ["dua leo", "dua chuot"],
     "dua-luoi": ["dua luoi"],
     "mac-ca": ["mac ca"],
     "mang-tay": ["mang tay"],
     "mong-toi": ["mong toi"],
     "tan-o": ["tan o"],
     "ca-tim": ["ca tim"],
-    "cabbage": ["bap cai", "cai bap"],
     "cacao": ["ca cao"],
     "cam": ["cam"],
     "cay-an-qua": ["cam", "quyt", "buoi", "xoai", "cafe", "ca phe"],
@@ -380,40 +377,15 @@ CROP_ALIASES = {
     "thom": ["thom"],
     "tia-to": ["tia to"],
     "cu-toi": ["cu toi"],
-    "cashew": ["dieu", "hat dieu"],
-    "cassava": ["khoai mia", "khoai san"],
     "cay-an-trai": ["cay an trai"],
     "cay-cam": ["cay cam"],
     "cay-con": ["cay con"],
     "cay-trong": ["cay trong"],
-    "cereal-crops": ["cay lua"],
-    "cereal-grains": ["hat lua"],
     "chanh": ["chanh"],
     "che": ["che"],
-    "chewing-insect-pests": ["sau can", "sau can la"],
-    "chili": ["ca ot", "ot"],
-    "chili-pepper": ["ca ot", "ot"],
-    "chrysanthemum": ["cu cuc"],
-    "citrus": ["cay ho cam", "ho cam"],
-    "cocoa": ["ca cao"],
-    "coffee": ["ca phe"],
-    "common-bean": ["dau", "dau chung"],
-    "copper-sensitive-crops": ["cay nhay cam dong"],
-    "corn": ["bap ngo", "ngo", "bap"],
-    "cotton": ["bo vai"],
-    "crop": ["cay trong"],
-    "crop-disease": ["benh cay", "benh cay trong"],
-    "crop-health": ["suc khoe cay trong", "tinh trang cay trong"],
-    "crop-management": ["ky thuat trong cay", "quan ly cay trong"],
-    "crop-plant": ["cay trong", "cay trong nong nghiep"],
-    "crop-production": ["san luong nong nghiep", "san xuat nong nghiep"],
-    "crop-protection": ["bao ve cay trong", "phong tru sau benh"],
-    "crop-yield": ["nang suat cay trong", "san luong cay trong"],
-    "cruciferous": ["ho ca cai", "ho cai"],
-    "cruciferous-crops": ["cay trong ho cai", "rau ho cai"],
+    "ca-cao": ["ca cao"],
+    "bong-vai": ["bo vai"],
     "cu-dau": ["cu dau", "cu dau nong nghiep"],
-    "cucumber": ["cay dua chuot", "dua chuot"],
-    "cucurbitaceae": ["ho bau bi", "ho bau bi rau qua"],
     "dau-nanh": ["dau nanh", "hat dau nanh"],
     "dau-phong": ["dau phong", "hat dau phong"],
     "dau-tay": ["dau tay", "hat dau tay"],
@@ -421,30 +393,11 @@ CROP_ALIASES = {
     "dau-xanh": ["dau xanh", "hat dau xanh"],
     "dieu": ["cay dieu", "hat dieu"],
     "dragon-fruit": ["cay thanh long", "thanh long"],
-    "dry-field": ["cay mua kho", "lua mua kho"],
     "du-du": ["cay du du", "du du"],
     "dua": ["cay dua", "dua"],
     # "durian": ["cay sau rieng", "sau rieng"],
-    "early-stage-crop": ["cay con non", "giai doan dau cay"],
-    "edible-mushroom": ["nam an duoc", "nam an duoc trong"],
-    "edible-mushrooms": ["cac loai nam an duoc", "nam an duoc"],
-    "eggplant": ["ca tim", "cay ca tim"],
-    "field": ["canh dong", "ruong"],
-    "field-crop": ["cay cong nghiep", "cay nong nghiep"],
-    "field-crops": ["cac loai cay nong nghiep", "cay nong nghiep"],
-    "flowering-crop": ["cay dang ra hoa", "cay ra hoa"],
-    "flowering-plants": ["cay dang ra hoa", "cay ra hoa"],
-    "flowering-stage": ["giai doan ra hoa", "thoi ky ra hoa"],
-    "flowers": ["cay hoa", "hoa"],
-    "general": ["cay trong chung"],
-    "general-crop": ["cay trong chung"],
-    "general-crops": ["cay trong chung"],
-    "ginger": ["gung"],
-    "grape": ["nho"],
-    "grapefruit": ["buoi"],
-    "grapevine": ["cay nho"],
-    "green-bean": ["dau xanh"],
-    "green-beans": ["dau xanh"],
+    "ca-tim": ["ca tim", "cay ca tim"],
+    "hoa": ["cay hoa"],
     "sup-lo": ["sup lo"],
     "gung": ["gung"],
     "hanh": ["hanh"],
@@ -459,56 +412,24 @@ CROP_ALIASES = {
     "hoa-ly": ["hoa ly"],
     "hoa-mai": ["hoa mai"],
     "mai": ["mai"],
-    "industrial-crop": ["cay cong nghiep"],
-    "industrial-crops": ["cay cong nghiep"],
     "jackfruit": ["mit"],
-    "jicama": ["cu su"],
-    "jujube": ["tao ta"],
-    "kenaf": ["bam"],
     "khoai-lang": ["khoai lang"],
     "khoai-tay": ["khoai tay"],
-    "khoai-mi": ["khoai mi"],
+    "khoai-mi": ["khoai mi", "khoai san"],
     "khom": ["khom"],
     "lac": ["dau phong", "lac"],
-    "leaf": ["la cay"],
-    "legume": ["cay dau", "dau"],
-    "legumes": ["cay dau"],
-    "lemon": ["chanh vang"],
-    "lettuce": ["rau xon"],
+    "chanh-vang": ["chanh vang"],
     "lime": ["chanh tay", "lime"],
-    "litchi": ["vai"],
     "longan": ["nhan"],
     "nghe": ["nghe"],
-    "lotus": ["sen"],
-    "lua": ["lua"],
-    "lychee": ["vai"],
+    "lua": ["cay lua", "lua"],
     "mai": ["hoa mai"],
-    "mai-flower": ["hoa mai"],
-    "maize": ["ngo"],
-    "mandarin": ["quyt"],
     "mang-cau": ["mang cau"],
-    "mango": ["xoai"],
     "me-vung": ["me vung"],
     "mia": ["mia"],
-    "millet": ["ke"],
     "mit": ["mit"],
-    "mulberry": ["dau"],
-    "multiple-crops": ["nhieu loai cay trong"],
-    "mung-bean": ["dau xanh"],
-    "mup-bitter-gourd": ["muop dang"],
-    "narrow-leaf-crops": ["cay la hep"],
-    "nematode-resistant-crops": ["cay chong nematode"],
     "ngo": ["ngo"],
-    "nhieu-loai-cay-trong": ["nhieu loai cay trong"],
     "nho": ["nho"],
-    "non-selective": ["khong phan biet"],
-    "nonbearing-citrus": ["cay cam chua cho trai"],
-    "nursery-plants": ["cay uom"],
-    "nut-trees": ["cay hat"],
-    "onion": ["hanh"],
-    "orange": ["cam"],
-    "orchard": ["vuon cay"],
-    "organic-farming": ["canh tac huu co"],
     "ot": ["ot"],
     "pak-choi": ["cai bap"],
     "pea": ["dau ha lan"],
@@ -516,13 +437,10 @@ CROP_ALIASES = {
     "peanut": ["dau phong", "hat dau phong"],
     "pear": ["cay le", "le"],
     "pepper": ["cay tieu", "tieu"],
-    "pineapple": ["dua", "dua hau", "dua tay"],
+    "dua-hau": ["dua hau", "dua tay"],
     "plum": ["cay man", "man"],
     "potato": ["khoai", "khoai tay"],
-    "potted-plants": ["cay trong chau", "cay trong trong chau"],
-    "pre-harvest": ["thoi ky truoc thu hoach", "truoc thu hoach"],
     "quyt": ["cay quyt", "quyt"],
-    "quyt-satsuma": ["quyt satsuma", "quyt satsuma nhat"],
     "ra-hoa": ["ra hoa", "thoi ky ra hoa"],
     "quat": ["quat"],
     "tac": ["tac"],
@@ -539,49 +457,16 @@ CROP_ALIASES = {
     "rau-xa-bong": ["rau xa bong"],
     "rau-chan-vit": ["rau chan vit", "chan vit"],
     "resistant-variety": ["giong chong benh", "giong khang benh"],
-    "rice": ["cay lua", "lua"],
     "lua-sa": ["lua sa"],
-    "rice-husk": ["vo lua", "vo lua sau khi tach"],
-    "roi-man": ["cay roi man", "roi man"],
-    "root": ["bo re", "re cay"],
-    "root-crop": ["cay goc", "cay goc trong"],
-    "root-crops": ["cay goc", "cay goc trong"],
-    "root-zone": ["vung bo re", "vung re"],
     # "rose": ["cay hoa hong", "hoa hong"],
-    "rose-bush": ["buom hoa hong", "buom hong"],
-    "rubber": ["cao su", "cay cao su"],
-    "rubber-tree": ["cay cao su"],
-    "same-variety": ["cung giong", "giong giong nhau"],
     "sam-ngoc-linh": ["sam ngoc linh"],
     "san": ["cay san"],
-    "sapodilla": ["cay hong xi", "hong xi"],
-    "satsuma-mandarin": ["quyt satsuma", "quyt satsuma nhat"],
     "su-hao": ["su hao"],
-    # "sau-rieng": ["cay sau rieng", "sau rieng"],
-    "seed": ["hat giong", "hat trong"],
-    "seedlings": ["cay con", "giong cay con"],
-    "sensitive-plants": ["cay nhay cam"],
-    "sesame": ["hat va"],
-    "short-term-crops": ["cay vu dai han ngan", "cay vu ngan han"],
-    "soil": ["dat trong cay"],
-    "solanaceae": ["ho ca"],
-    "sorghum": ["ngo mi"],
-    "soursop": ["man", "qua man"],
-    "soybean": ["dau nanh", "hat dau nanh"],
-    "squash": ["bi ngo", "qua bi ngo"],
-    "strawberry": ["dau tay", "qua dau tay"],
-    "sugarcane": ["cay mia", "mia"],
+    "sau-rieng": ["cay sau rieng", "sau rieng"],
+    "bau-bi": ["bi ngo", "qua bi ngo"],
     "sweet-orange": ["cam ngot"],
-    "sweet-potato": ["khoai lang"],
-    "tangerine": ["quyt"],
-    "taro": ["khoai mon"],
-    "tea": ["cay tra", "tra"],
     "thanh-long": ["qua thanh long", "thanh long"],
     "thuoc-la": ["cay thuoc la", "thuoc la"],
-    "tobacco": ["cay thuoc la", "thuoc la"],
-    "tomato": ["ca chua", "qua ca chua"],
-    "upland-crops": ["cay vu nui"],
-    "various-crops": ["cac loai cay trong", "cay trong da dang"],
     "vegetable": ["rau an"],
     "vegetable-crops": ["cay rau"],
     "vegetables": ["rau an"],
@@ -589,15 +474,19 @@ CROP_ALIASES = {
     "watermelon": ["dua hau", "qua dua hau"],
     "long-vuc": ["long vuc"],
     "weed": ["co dai", "mac-co", "rau sam", "co cuc", "cho de", "den gai", "co chan vit", "co long vuc", "co man trau"],
-    "weed-control": ["diet co dai", "kiem soat co dai"],
     "wheat": ["lua mi"],
-    "woody-plants": ["cay go"],
     "xoai": ["qua xoai", "xoai"],
-    "young-plant": ["cay con"],
-    "young-plants": ["cay con"],
 }
 
 DISEASE_ALIASES = {
+    "nhom-a": 
+    ["nhom benh a", "nhom a", "nam nhom a", "nhom nam a", "benh nhom a", "than thu", "dao on", "dom vong", "dom tim", "bi thoi", "chay la", "dom nau", "dom la", "heo ru", "chet cham", "chay day", "thoi re", "lua von", "lem lep hat", "phan trang", "moc xam", "nam long chuot", "ghe la", "ghe trai", "dom den", "thoi than", "thoi hach", "thoi re", "benh thoi canh", "chay canh", "thoi qua", "benh chet canh", "benh scab", "benh ghe", "san vo", "tiem lua", "vang be", "thoi trai", "kho dot", "chet canh", "nut than", "chay nhua", "benh dom nau", "kho", "benh thoi"
+    ],
+    "nhom-b": 
+    ["nhom benh b", "nhom b", "nam nhom b", "nhom nam b", "benh nhom b", "lo co re", "heo cay con", "chay la", "kho van", "nam hong", "heo ru", "moc trang", "co re bi thoi nau", "thoi nau", "thoi nhun", "benh chet rap cay con", "thoi trai", "thoi than", "ri sat", "than hat lua", "benh ri sat dau tuong", "than thu", "dom la lon", "lem lep hat", "benh thoi"
+    ],
+    "nhom-o": 
+    ["nhom benh o", "nhom o", "nam nhom o", "nhom nam o", "benh nhom o", "suong mai", "benh thoi re", "thoi ngon", "thoi mam", "chet nhanh", "thoi trai", "nut than", "xi mu", "vang la", "chet than", "chet canh", "thoi re", "chet cay con", "moc suong", "gia suong mai", "soc trang", "bach tang", "moc xuong", "ri trang", "nam trang", "phong trang", "benh thoi"],
     "ba-trau": ["dom ba trau", "dom nau", "ba trau"],
     "bac-la": ["bac la", ],
     "benh-nam-hoa-vang": ["hoa vang",],
@@ -613,6 +502,7 @@ DISEASE_ALIASES = {
     "heo-xanh": ["heo xanh"],
     "lem-lep": ["lem lep"],
     "loet": ["loet"],
+    "rung-la-mai": ["rung la mai"],
     "rung-la": ["rung la"],
     "ghe": ["ghe"],
     "seo": ["seo"],
@@ -632,39 +522,10 @@ DISEASE_ALIASES = {
     "vang-la-chin-som": ["vang la chin som"],
     "vang-rung-la": ["vang rung la"],
     "xoan-la": ["xoan la"],
-    "nhom-a": ["nhom benh a", "nhom a", "nam nhom a", "nhom nam a", "benh nhom a", "than thu", "dao on", "dom vong", "dom tim", "bi thoi", "chay la", "dom nau", "dom la", "heo ru", "chet cham", "chay day", "thoi re", "lua von", "lem lep hat", "phan trang", "moc xam", "nam long chuot", "ghe la", "ghe trai", "dom den", "thoi than", "thoi hach", "thoi re", "benh thoi canh", "chay canh", "thoi qua", "benh chet canh", "benh scab", "benh ghe", "san vo", "tiem lua", "vang be", "thoi trai", "kho dot", "chet canh", "nut than", "chay nhua", "benh dom nau", "kho", "benh thoi"
-],
-    "nhom-b": ["nhom benh b", "nhom b", "nam nhom b", "nhom nam b", "benh nhom b", "lo co re", "heo cay con", "chay la", "kho van", "nam hong", "heo ru", "moc trang", "co re bi thoi nau", "thoi nau", "thoi nhun", "benh chet rap cay con", "thoi trai", "thoi than", "ri sat", "than hat lua", "benh ri sat dau tuong", "than thu", "dom la lon", "lem lep hat", "benh thoi"
-],
-    "nhom-o": ["nhom benh o", "nhom o", "nam nhom o", "nhom nam o", "benh nhom o", "suong mai", "benh thoi re", "thoi ngon", "thoi mam", "chet nhanh", "thoi trai", "nut than", "xi mu", "vang la", "chet than", "chet canh", "thoi re", "chet cay con", "moc suong", "gia suong mai", "soc trang", "bach tang", "moc xuong", "ri trang", "nam trang", "phong trang", "benh thoi"],
+
 }
 
 PEST_ALIASES = {
-    "aflatoxin": ["doc to aflatoxin"],
-    "airborne-pathogen": ["tac nhan gay benh bay qua khong khi"],
-    "albuginaceae": ["nam bao tu"],
-    "alkalinity": ["do kiem dat"],
-    "alternaria-spp": ["nam alternaria"],
-    "annual-sedge": ["co nam"],
-    "annual-weed": ["co nam"],
-    "ant": ["kien"],
-    "aphid": ["ray mem"],
-    "aphids": ["ray mem"],
-    "armillaria-fungi": ["nam vang chan"],
-    "armyworm": ["sau do"],
-    "ascospore": ["bap tu"],
-    "avoid": ["tranh"],
-    "bacteria": ["vi khuan"],
-    "bacterial-disease": ["benh vi khuan"],
-    "bacterial-diseases": ["benh vi khuan"],
-    "bacterial-pathogen": ["tac nhan vi khuan"],
-    "bao-tu": ["bao tu"],
-    "bao-tu-hau": ["bao tu hau"],
-    "bao-tu-suong-mai-gia": ["bao tu suong mai gia"],
-    "beneficial-insects": ["con trung co ich", "con trung huu ich"],
-    "benh-thoi-re": ["benh thoi re", "benh thoi re cay trong"],
-    "benh-thoi-vo": ["benh thoi vo", "benh thoi vo hat"],
-    "bo-canh-to": ["bo canh to", "bo canh to tren cay"],
     "bo-ngau": ["bo ngau", "bo ngau tren cay"],
     "bo-nhay": ["bo nhay", "bo nhay tren cay"],
     "bo-phan": ["bo phan", "bo phan tren cay"],
@@ -682,10 +543,7 @@ PEST_ALIASES = {
     "bo-ha": ["bo ha", "sung dat", "sung"],
     "borer": ["sau duc than", "sau duc trong"],
     "borers": ["sau duc than", "sau duc trong"],
-    "broad-leaf-weed": ["co la rong", "co la rong trong ruong"],
-    "broad-leaf-weeds": ["co la rong", "co la rong trong ruong"],
-    "broadleaf-weed": ["co la rong", "co la rong trong ruong"],
-    "broadleaf-weeds": ["co la rong", "co la rong trong ruong"],
+    "co-la-rong": ["co la rong", "co la rong trong ruong"],
     "co-duoi-chon": ["co duoi chon",],
     "co-dong-tien": ["co dong tien",],
     "co-hoi": ["co hoi",],
@@ -709,106 +567,23 @@ PEST_ALIASES = {
     "man-trau": ["man trau"],
     "co-man-trau": ["co man trau", "co man trau la", "man-trau"],
     "co-tranh": ["co tranh", "co tranh la"],
-    "coffee-mealybug": ["bo trung ban ca phe", "ruoi ban ca phe"],
-    "cold-humid-climate": ["dieu kien lanh am", "khi hau lanh am"],
     "compacted-soil": ["dat nen cat cung", "dat nen cung"],
-    "coniothyrium-spp": ["nam benh coniothyrium", "nam coniothyrium"],
-    "contaminants": ["chat ban", "chat gay o nhiem"],
-    "copper-ion": ["dong ion", "ion dong"],
-    "copper-residue": ["du luong dong", "ton dong tren cay"],
-    "copper-toxicity": ["doc dong", "nguy hiem do dong"],
-    "corn-earworm": ["sau bua", "sau bua bap"],
-    "cyperus-rotundus": ["co co", "co co tron"],
     "dao-on": ["benh dao on", "dao on", "dao on co bong"],
-    "deep-leaf-folder": ["sau gap la", "sau gap la sau"],
-    "disease-control": ["kiem soat benh", "phong chong benh"],
-    "disease-prevention": ["phong benh", "phong ngua benh"],
-    "disease-spot": ["vet benh", "vet benh tren la"],
     "doi-duc-la": ["benh doi duc la", "doi duc la"],
     "duc-than": ["duc than"],
     "duoi-phung": ["duoi phung"],
-    "economic-impact": ["anh huong kinh te", "tac dong kinh te"],
     "eggs": ["trung con trung", "trung sau"],
-    "fruit-borer": ["sau duc qua", "sau duc trai"],
-    "fruit-damage": ["sau hai qua", "sau hai trai"],
-    "fruit-fly": ["ruoi hai qua", "ruoi hai trai"],
-    "fungal-contamination": ["nam nhiem ban", "nam nhiem benh"],
-    "fungal-disease": ["benh nam", "benh nam cay trong"],
-    "fungal-diseases": ["cac benh nam", "cac benh nam cay trong"],
-    "fungal-diseases-group-a": ["nhom benh nam a"],
-    "fungal-infection": ["nam nhiem", "nam nhiem benh"],
-    "fungal-nematodes": ["nam nematod", "nam nematode"],
-    "fungal-pathogen": ["tac nhan gay benh nam", "tac nhan nam"],
-    "fungal-spores": ["bap nam", "bap nam benh"],
-    "fungi": ["nam", "vi nam"],
-    "fungicide": ["thuoc diet nam", "thuoc diet nam benh"],
-    "furry-spider-mite": ["ruoi ve long", "ruoi ve long benh"],
-    "fusarium": ["benh nam fusarium", "nam fusarium"],
     "sieu-nhan": ["sieu nhan"],
-    "tuyen trung": ["tuyen trung"],
+    "tuyen-trung": ["tuyen trung"],
     "glyphosate-resistant-weeds": ["cac loai co khang glyphosate", "co khang", "khang glyphosate"],
-    "golden-apple-snail": ["oc buou", "oc buou vang", "oc vang"],
-    "golden-snail": ["oc vang", "oc vang vang"],
-    "green-bug": ["ran la xanh", "ran lua xanh", "ran xanh"],
-    "green-leaf-bug": ["ran la", "ran la xanh", "ran xanh tren la"],
-    "insect": ["con trung", "sau benh"],
-    "insect-control": ["diet con trung", "kiem soat con trung", "phong tru con trung"],
-    "insect-larvae": ["au con trung", "au trung", "ot con trung"],
-    "insect-pests": ["con trung gay hai", "sau benh"],
-    "insect-vector": ["con trung mang benh", "con trung truyen benh", "con trung truyen virus"],
-    "insect-vectors": ["con trung mang benh", "con trung truyen benh", "con trung truyen virus"],
-    "insects": ["con trung", "sau benh"],
-    "invasive-species": ["loai xam lan", "sinh vat xam lan", "sinh vat xam lan trong nong nghiep"],
-    "khang-thuoc": ["khang thuoc", "khang thuoc con trung", "khang thuoc sau benh"],
-    "kien": ["con kien", "kien", "kien trong nong nghiep"],
-    "larvae": ["au", "au trung", "ot con trung"],
-    "lay-benh": ["lay benh", "lay nhiem benh", "truyen benh"],
-    "leaf-beetle": ["bo an la", "bo la", "bo la cay"],
-    "leaf-burn": ["la bi chay", "la bi dot", "la bi hong do nong do"],
-    "leaf-chewing-insects": ["con trung an la", "con trung gay hai la", "sau an la"],
-    "leaf-damage": ["gay hai tren la", "thiet hai la", "thiet hai tren la"],
-    "leaf-eating-caterpillar": ["sau an la", "sau an la cay"],
-    "leaf-eating-insect": ["coc an la", "coc an la cay"],
-    "leaf-eating-insects": ["coc an la", "coc an la cay"],
-    "leaf-fall": ["la roi", "roi la"],
-    "leaf-folder": ["sau gap la", "sau gap la cay"],
-    "leaf-folder-larvae": ["ot sau gap la", "ot sau gap la cay"],
-    "leaf-miner": ["sau an trong la", "sau an trong la cay"],
-    "leaf-miner-fly": ["ruoi an trong la", "ruoi an trong la cay"],
-    "leaf-miners": ["sau an trong la", "sau an trong la cay"],
-    "leaf-spots": ["dot tren la", "vet dot tren la"],
-    "leafhopper": ["bo tron la", "bo tron la cay"],
-    "microorganisms": ["vi sinh vat", "vi sinh vat gay hai"],
-    "mite": ["bo trung", "bo trung cay trong"],
-    "mites": ["bo trung", "bo trung cay trong"],
-    "mo": ["mo", "mo cay trong"],
-    "moc": ["nam moc", "nam moc cay trong"],
-    "mold": ["nam moc", "nam moc cay trong"],
-    "mold-spores": ["bao tu nam moc", "bao tu nam moc cay trong"],
-    "mosquito": ["muoi", "muoi cay trong"],
-    "mosquito-bug": ["muoi", "muoi cay trong"],
-    "mot-duc-canh": ["mot duc canh", "duc canh", "mot duc canh cay trong"],
-    "motile-spores": ["bao tu co dong", "bao tu co dong cay trong"],
-    "muoi-hanh": ["muoi hanh", "muoi hanh cay trong"],
-    "mycotoxin": ["doc to nam", "doc to nam moc"],
+    "oc-buou-vang": ["oc buou", "oc buou vang", "oc vang"],
     "nam": ["nam", "nam cay trong"],
-    "nam-benh": ["nam benh", "nam benh cay trong"],
-    "nam-fusarium": ["nam benh fusarium", "nam fusarium"],
-    "nam-phytophthora": ["nam benh phytophthora", "nam phytophthora"],
-    "narrow-leaf-weed": ["co hep la", "co hep la cay trong"],
-    "narrow-leaf-weeds": ["co hep la", "co hep la cay trong"],
-    "narrowleaf-weed": ["co hep la", "co hep la cay trong"],
-    "narrowleaf-weeds": ["co hep la", "co hep la cay trong"],
-    "nematode": ["rut gon", "rut gon cay trong"],
-    "nematodes": ["rut gon", "rut gon cay trong"],
     "nhen": ["con nhen", "ruoi nhen", "nhen"],
     "oc-buu-vang": ["oc buu vang", "oc vang","oc"],
-    "pesticide": ["thuoc bao ve thuc vat", "thuoc tru sau"],
     "pests": ["sau benh", "sau hai"],
     "ph": ["do axit kiem", "do ph"],
     "phan-trang": ["benh phan trang", "phan trang"],
-    "rape-sap": ["sau hut mach", "sau hut mach cay"],
-    "rat": ["chuot", "chuot hai cay"],
+    "rat": ["chuot hai cay"],
     "ray": ["ray", "ray tren cay"],
     "ray-bong": ["ray bong", "ray bong tren cay"],
     "lung-trang": ["lung trang",],
@@ -817,23 +592,12 @@ PEST_ALIASES = {
     "ray-nau": ["ray nau", "ray lung trang", "ray nau tren cay"],
     "ray-phan": ["ray phan", "ray phan tren cay"],
     "ray-xanh": ["ray xanh", "ray-chong-canh", "ray phan", "ray mem", "bo phan trang", "bo xit"],
-    "red-mite": ["ruoi do", "ruoi do tren cay"],
     "rep": ["rep", "rep tren cay"],
     "rep-bong-xo": ["rep bong xo", "rep bong xo tren cay"],
     "rep-mem": ["rep mem", "rep mem tren cay"],
     "rep-muoi": ["rep muoi", "rep muoi tren cay"],
     "rep-sap": ["rep sap", "rep vay", "rep sap tren cay"],
     "rep-vay": ["rep vay", "rep sap", "rep vay tren cay"],
-    "resistant-weed": ["co khang thuoc", "co khang thuoc tru sau"],
-    "resistant-weeds": ["co khang thuoc diet co", "co khang thuoc tru sau"],
-    "rice-bug": ["sau com", "sau ruong"],
-    "rice-mite": ["ngua lua", "ngua lua lua"],
-    "rice-spider-mite": ["ngua nhan", "ngua nhan lua"],
-    "rice-stink-bug": ["sau thoi", "sau thoi lua"],
-    "rodent": ["chuot", "chuot lua", "chuot ruong"],
-    "root-knot-nematode": ["ruot tron gay benh re", "ruot tron gay hai"],
-    "root-parasite": ["ky sinh re", "thuc vat ky sinh re"],
-    "root-rot": ["benh thoi re", "thoi re"],
     "ruoi-vang": ["ruoi vang", "ruoi vang lua"],
     "rust-fungus": ["benh nam giang", "nam giang"],
     "sau-benh": ["sau benh", "sau gay benh"],
@@ -870,52 +634,28 @@ PEST_ALIASES = {
     "sau-xam": ["sau xam", "sau xam la"],
     "sau-xanh": ["sau xanh", "sau xanh la"],
     "slug": ["oc ban", "oc ban trong ruong"],
-    "snail": ["oc sen", "oc sen trong ruong"],
-    "snail": ["oc sen", "oc sen trong ruong"],
+    "oc-sen": ["oc sen", "oc sen trong ruong"],
     "oc-nhot": ["oc nhot"],
-    "soil-fungi": ["nam dat", "nam gay benh tren dat"],
-    "soil-fungus": ["nam dat", "nam gay benh tren dat"],
-    "soil-insect": ["sau dat", "sau trong dat"],
-    "soil-insects": ["sau dat", "sau trong dat"],
-    "soil-moisture": ["do am dat", "do am dat trong ruong"],
-    "soil-pathogen": ["benh gay boi tac nhan tren dat", "tac nhan gay benh tren dat"],
-    "soil-pest": ["sau benh dat", "sau benh tren dat"],
-    "soil-pests": ["sau benh dat", "sau benh tren dat"],
-    "spider": ["con nhen", "nhen"],
-    "spider-mite": ["bo trung nhen", "bo trung nhen cay"],
-    "spore": ["bao tu nam", "bao tu nam benh"],
-    "spores": ["bao tu nam", "bao tu nam benh"],
-    "spot": ["vet den", "vet den tren la"],
-    "stem-borer": ["sau duc cot", "sau duc than"],
     "sau-bay": ["sau bay"],
     "xi-mu": ["xi mu"],
     "nut-vo": ["nut vo"],
     "nut-than": ["nut than"],
-    "stem-crack": ["nut cot", "nut than"],
-    "stress-cay": ["cay bi stress", "stress o cay", "stress"],
-    "stress-cay-trong": ["cay trong bi stress", "stress cay trong", "stress"],
-    "sucking-pest": ["sau hut", "sau hut mau"],
     "sung-khoai": ["sung khoai", "sung khoai tay"],
     "suong-mai": ["benh suong mai", "suong mai"],
     "than-thu": ["sau than", "than thu"],
     "thrips": ["bo tri", "tri tren dua non", "tri tren la"],
-    "thuoc-bvtv": ["thuoc bao ve thuc vat", "thuoc tru sau"],
     "ve-sau": ["con ve sau", "ve sau"],
     "weeds": ["co dai", "co tranh", "co dai trong lua", "co dai trong ruong"],
     "mac-co": ["mac co"],
     "mat-cua": ["mat cua"],
     "moi": ["moi"],
-    "mot": ["mot"],
+    "mot-duc-canh": ["mot duc canh", "mot"],
     "muoi-den": ["muoi den"],
     "nam-coc": ["nam coc"],
     "nam-hoa-vang": ["nam hoa vang"],
     "nam-moc-nau": ["nam moc nau"],
     "ray-chong-canh": ["ray chong canh"],
     "tam-bop": ["tam bop"],
-    "wet-soil": ["dat am", "dat am uot", "dat uot"],
-    "white-mite": ["benh ran trang", "ran trang tren cay"],
-    "white-mold": ["benh nam trang", "nam trang"],
-
 }
 
 PRODUCT_ALIASES = {
@@ -1191,7 +931,7 @@ PRODUCT_ALIASES = {
     "showbiz": ["thuoc showbiz", "showbiz"],
     "showbiz-16sc": ["thuoc showbiz 16sc", "showbiz"],
     "sieu-bam-dinh": ["thuoc bam dinh", "thuoc sieu bam dinh", "sieu bam dinh", "bam dinh"],
-    "sieu-diet-chuot": ["thuoc diet chuot", "thuoc sieu diet chuot", "diet chuot", "diet chuot","chuot"],
+    "sieu-diet-chuot": ["thuoc diet chuot", "thuoc sieu diet chuot", "diet chuot"],
     "sieu-diet-mam": ["thuoc diet mam", "thuoc sieu diet mam", "diet mam"],
     "sieu-diet-nhen": ["thuoc diet nhen", "thuoc sieu diet nhen", "diet nhen"],
     "sieu-diet-sau": ["thuoc diet sau", "thuoc sieu diet sau", "diet-sau"],
@@ -1211,7 +951,7 @@ PRODUCT_ALIASES = {
     "tembo-8od-vua-co-ngo": ["thuoc tembo 8od vua co ngo", "tembo", "vua co ngo", "8od"],
     "thalonil-75wp": ["thuoc thalonil 75wp", "thalonil"],
     "thuoc-bilu": ["thuoc bilu"],
-    "thuoc-chuot-forwarat-0-005-wax-block": ["thuoc chuot forwarat 0 005 wax block", "chuot"],
+    "thuoc-chuot-forwarat-0-005-wax-block": ["thuoc chuot forwarat 0 005 wax block"],
     "tomi": ["thuoc tomi", "tomi"],
     "tomi-5ec": ["thuoc tomi 5ec", "tomi"],
     "topmesi-40sc": ["thuoc topmesi 40sc", "topmesi"],
@@ -1256,13 +996,13 @@ BRAND_ALIASES = {
 }
 
 MECHANISMS_ALIASES = {
-    "luu-dan-manh": ["luu dan manh", "luu dan nao manh"],
-    "luu-dan": ["luu dan", "lu dan", "luu dan nao", "lu dan nao"],
-    "tiep-xuc-manh": ["tiep xuc manh", "tiep xuc nào manh"],
-    "tiep-xuc": ["tiep xuc", "tiep suc", "tiep xuc nao", "tiep suc nao"],
     "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", " tiep xuc luu dan manh", "tiep xuc, luu dan manh", "tiep xuc va luu dan nao manh", " tiep xuc luu dan nao manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc", "manh"],
     "tiep-xuc-luu-dan": ["tiep xuc va luu dan", "tiep xuc luu dan", "tiep xuc va luu dan nao", "tiep xuc luu dan nao", "tiep xuc, luu dan", "luu dan, tiep xuc", "tiep xuc + luu dan", "luu dan + tiep xuc nao"],
+    "luu-dan-manh": ["luu dan manh", "luu dan nao manh"],
+    "tiep-xuc-manh": ["tiep xuc manh", "tiep xuc nao manh"],
     "xong-hoi-manh": ["xong hoi manh", "xong hoi nao manh"],
+    "luu-dan": ["luu dan", "lu dan", "luu dan nao", "lu dan nao"],
+    "tiep-xuc": ["tiep xuc", "tiep suc", "tiep xuc nao", "tiep suc nao"],
     "xong-hoi": ["xong hoi"],
     "co-chon-loc": ["co chon loc", "bao trum", "trum", "phu", "lua"],
     "khong-chon-loc": ["khong chon loc", "k chon loc"],
@@ -1541,9 +1281,25 @@ FORMULA_ALIASES = {
     ],
 }
 
+
+INTENT_ALIAS_GROUPS = {
+    "formula": FORMULA_ALIASES,
+    "mechanisms": MECHANISMS_ALIASES,
+    "brand": BRAND_ALIASES,
+    "product": PRODUCT_ALIASES,
+    "chemical": CHEMICAL_ALIASES
+}
+
 # ===========================
 # 4) MATCHING ENGINE
 # ===========================
+
+def match_formula_alias(query: str, alias_dict: Dict[str, List[str]]) -> Optional[str]:
+    for key, patterns in alias_dict.items():
+        for p in patterns:
+            if p in query:
+                return key
+    return None
 
 def match_aliases(text, aliases):
     found = set()
@@ -1555,7 +1311,7 @@ def match_aliases(text, aliases):
             pattern = rf"(?:^|\s){re.escape(alias)}(?:\s|$)"
 
             if re.search(pattern, text):
-                found.add(alias)   # <-- trả về alias text
+                found.add(key)
                 break
 
     return found
@@ -1567,25 +1323,27 @@ def match_aliases(text, aliases):
 
 def infer_chemicals_from_kb(crops: Set[str], diseases: Set[str], pests: Set[str]) -> Set[str]:
     result = set()
-    print("pests:", pests)
+
+    # Normalize input entities để match với KB (KB đang dùng normalize(x) -> space form)
+    crops_n = {normalize(x) for x in crops}
+    diseases_n = {normalize(x) for x in diseases}
+    pests_n = {normalize(x) for x in pests}
+
     for chem, data in CHEMICAL_KB.items():
         kb_crops = set(data.get("crops", []))
         kb_diseases = set(data.get("diseases", []))
         kb_pests = set(data.get("pests", []))
-        # match pest
-        if pests and pests.intersection(kb_pests):
+
+        if pests_n and pests_n.intersection(kb_pests):
             result.add(chem)
 
-        # match crop + disease
-        if crops and diseases and crops.intersection(kb_crops) and diseases.intersection(kb_diseases):
+        if crops_n and diseases_n and crops_n.intersection(kb_crops) and diseases_n.intersection(kb_diseases):
             result.add(chem)
 
-        # match crop only
-        if crops and crops.intersection(kb_crops):
+        if crops_n and crops_n.intersection(kb_crops):
             result.add(chem)
 
-        # match disease only
-        if diseases and diseases.intersection(kb_diseases):
+        if diseases_n and diseases_n.intersection(kb_diseases):
             result.add(chem)
 
     return result
@@ -1603,33 +1361,24 @@ def extract_tags(query: str) -> Dict:
     diseases = match_aliases(norm_query, DISEASE_ALIASES)
     pests = match_aliases(norm_query, PEST_ALIASES)
 
-    # chemical do user gõ trực tiếp
     direct_chems = match_aliases(norm_query, CHEMICAL_ALIASES)
 
-    print("crops:", crops)
-    print("diseases:", diseases)
-    print("pests:", pests)
-    print("direct_chems:", direct_chems)
-    # suy diễn từ KB
-    
     kb_chems = infer_chemicals_from_kb(crops, diseases, pests)
-    print("kb_chems:", kb_chems)
 
     all_chems = direct_chems.union(kb_chems)
-
-    print("all_chems:", all_chems)
 
     must_tags = set()
     any_tags = set()
 
+    # ENTITY chỉ vào ANY
     for c in crops:
-        must_tags.add(f"crop:{c}")
+        any_tags.add(f"crop:{c}")
 
     for d in diseases:
-        must_tags.add(f"disease:{d}")
+        any_tags.add(f"disease:{d}")
 
     for p in pests:
-        must_tags.add(f"pest:{p}")
+        any_tags.add(f"pest:{p}")
 
     for chem in all_chems:
         any_tags.add(f"chemical:{chem}")
@@ -1646,6 +1395,7 @@ def extract_tags(query: str) -> Dict:
         "any": list(any_tags),
         "found": found_entities
     }
+
 
 
 # ===========================
@@ -1685,8 +1435,51 @@ def detect_answer_mode(query: str, tags: Dict) -> str:
 
 def tag_filter_pipeline(query: str) -> Dict:
 
+    norm = normalize(query)
+
+    # 1) Trích xuất entity cơ bản
     tags = extract_tags(query)
-    mode = detect_answer_mode(query, tags)
+
+    detected_intents = []
+
+    # 2) CHỈ các alias đặc biệt mới được vào MUST
+    INTENT_ALIAS_GROUPS = {
+        "formula": FORMULA_ALIASES,
+        "mechanisms": MECHANISMS_ALIASES,
+        "brand": BRAND_ALIASES,
+        "product": PRODUCT_ALIASES,
+        "chemical": CHEMICAL_ALIASES
+    }
+
+    for tag_type, alias_map in INTENT_ALIAS_GROUPS.items():
+
+        matched = match_formula_alias(norm, alias_map)
+
+        if matched:
+            tags["must"].append(f"{tag_type}:{matched}")
+            detected_intents.append(tag_type)
+
+    # 3) Chuyển toàn bộ các tag crop / pest / disease sang ANY (không MUST)
+    # extract_tags hiện đang đưa crop/pest/disease vào MUST → cần chuyển lại
+
+    refined_must = []
+    refined_any = set(tags["any"])
+
+    for t in tags["must"]:
+        if t.startswith("crop:") or t.startswith("pest:") or t.startswith("disease:"):
+            refined_any.add(t)
+        else:
+            refined_must.append(t)
+
+    tags["must"] = refined_must
+    tags["any"] = list(refined_any)
+
+    # 4) Quyết định answer_mode
+
+    if detected_intents:
+        mode = detected_intents[0]
+    else:
+        mode = detect_answer_mode(query, tags)
 
     return {
         "query": query,
@@ -1695,7 +1488,6 @@ def tag_filter_pipeline(query: str) -> Dict:
         "found": tags["found"],
         "answer_mode": mode
     }
-
 
 # ===========================
 # TEST

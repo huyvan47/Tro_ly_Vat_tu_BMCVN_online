@@ -610,7 +610,7 @@
       "bo nhay",
       "bo xit muoi",
       "moi",
-      "mot",
+      "mot duc canh",
       "rep sap",
       "sau cuon la",
       "sau dat",
@@ -644,7 +644,7 @@
       "bo nhay",
       "bo xit muoi",
       "moi",
-      "mot",
+      "mot duc canh",
       "rep sap",
       "sau cuon la",
       "sau dat",
@@ -718,7 +718,7 @@
     "pests": [
       "bo xit muoi",
       "moi",
-      "mot",
+      "mot duc canh",
       "rep sap",
       "sau dat",
       "tuyen trung",
@@ -1044,7 +1044,7 @@
       "duc than",
       "kien",
       "moi",
-      "mot",
+      "mot duc canh",
       "muoi hanh",
       "ray mem",
       "rep muoi",
@@ -3232,7 +3232,7 @@
       "mai"
     ],
     "pests": [],
-    "diseases": [],
+    "diseases": ["rung la mai"],
     "weeds": []
   },
   "bacillus-subtilis": {

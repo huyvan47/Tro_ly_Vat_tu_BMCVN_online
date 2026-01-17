@@ -1,22 +1,79 @@
 import re
+from .chemical_knowledge import CHEMICAL_REGEX
+
 
 def route_query(client, user_query: str) -> str:
     """
-    Trả về:
-    - "RAG"    : ưu tiên dùng tài liệu nội bộ
-    - "GLOBAL" : để model tự trả lời bằng kiến thức nền
+    Router tối ưu cho nghiệp vụ BMCVN:
 
-    Chiến lược:
-    1) Heuristic cứng (ổn định, rẻ, giảm sai)
-    2) Nếu chưa quyết được -> hỏi LLM router
-    3) Parse output theo equality, fallback an toàn
+    - Nhắc đến tên công ty/nhà cung cấp -> RAG
+    - Khi thấy "thuốc" -> hiểu là sản phẩm BMC -> RAG
+    - Nhưng ưu tiên GLOBAL cho các câu hỏi kiến thức hoạt chất
     """
 
     q = (user_query or "").strip().lower()
 
-    # ---------------------------
-    # 1) Heuristic: intent định nghĩa/khái niệm -> GLOBAL
-    # ---------------------------
+    # ============================================
+    # 0) Ưu tiên cao nhất: nếu nhắc đến công ty -> RAG
+    # ============================================
+
+    company_signals = [
+        r"\bbmc\b",
+        r"\bphúc thịnh\b",
+        r"\bphuc thinh\b",
+        r"\bdelta\b",
+        r"\bagrishop\b",
+        r"\bagri shop\b",
+        r"\bcông ty\b",
+        r"\bcty\b"
+    ]
+
+    if any(re.search(p, q) for p in company_signals):
+        return "RAG"
+
+    # ============================================
+    # 1) Ngoại lệ quan trọng:
+    #    Hỏi kiến thức thuần về hoạt chất -> GLOBAL
+    # ============================================
+
+    if CHEMICAL_REGEX.search(q):
+
+        product_intent = re.search(
+            r"\b("
+            r"giá|mua|mã|đại lý|bán ở đâu|"
+            r"có trong sản phẩm|"
+            r"có trong các sản phẩm|"
+            r"sản phẩm nào chứa|"
+            r"thuốc nào chứa|"
+            r"thuốc có chứa|"
+            r"thuốc có|"
+            r"thuốc chứa|"
+            r"sản phẩm chứa|"
+            r"chứa hoạt chất"
+            r")\b",
+            q
+        )
+
+        # Nếu không có dấu hiệu hỏi sản phẩm -> GLOBAL
+        if not product_intent:
+            return "GLOBAL"
+
+    # ============================================
+    # 2) Nếu câu hỏi có từ “thuốc” -> RAG
+    # ============================================
+
+    product_context = re.search(
+        r"\b(thuốc|sản phẩm|mã|giá|đại lý|mua)\b",
+        q
+    )
+
+    if product_context:
+        return "RAG"
+
+    # ============================================
+    # 3) Các câu hỏi mang tính giáo trình -> GLOBAL
+    # ============================================
+
     definition_signals = [
         # ---------------------------
         # 1) Mẫu câu hỏi định nghĩa / giáo trình
@@ -80,65 +137,47 @@ def route_query(client, user_query: str) -> str:
         r"\b(kho lạnh|chuỗi lạnh|nấm mốc kho)\b",
     ]
 
-    # 0) Product / Drug intent -> RAG (ƯU TIÊN CAO NHẤT)
-    product_signals = [
-        r"(?:^|\s)(thuốc|sản phẩm)(?:\s|$)"
-    ]
-
-    for p in product_signals:
-        if re.search(p, q):
-            print("Matched product signal:", p)
-            return "RAG"
-
-    if any(re.search(p, q) for p in product_signals):
-        return "RAG"
-
-    # 1) Internal / KB intent -> RAG
-    internal_signals = [
-        r"\b(bmcvn|bmcvn\.|bmc)\b",
-        r"\b(sop|quy trình nội bộ|tài liệu nội bộ|nội bộ)\b",
-        r"\b(kb|knowledge base|vector|embedding|tag|tags_v2)\b",
-        r"\b(phác đồ)\b",
-        r"\b(mã|code|chunk_|doc\s*\d+)\b",
-    ]
-    if any(re.search(p, q) for p in internal_signals):
-        return "RAG"
-
-    # 2) Definition / giáo trình -> GLOBAL
     if any(re.search(p, q) for p in definition_signals):
         return "GLOBAL"
 
-    # ---------------------------
-    # 3) LLM router (khi heuristic không quyết được)
-    # ---------------------------
+    # ============================================
+    # 4) Nếu chưa quyết được -> hỏi LLM router
+    # ============================================
+
     system_prompt = """
-Bạn là bộ phân luồng câu hỏi cho hệ thống trợ lý nông nghiệp của BMCVN.
+Bạn là bộ phân luồng câu hỏi cho hệ thống trợ lý nông nghiệp BMCVN.
 
 NHIỆM VỤ:
 - Trả lời đúng 1 từ: GLOBAL hoặc RAG.
-- GLOBAL: câu hỏi kiến thức chung/giáo trình (định nghĩa, phân loại, viết tắt, cơ chế chung, khái niệm nông học/BVTV phổ thông).
-- RAG: câu hỏi có khả năng phụ thuộc dữ liệu/tài liệu nội bộ BMCVN (tên sản phẩm nội bộ, SOP/phác đồ nội bộ, dữ liệu KB, tag, tài liệu, chunk, mã, bảng, giá/đại lý nội bộ).
+
+QUY TẮC:
+- GLOBAL: câu hỏi kiến thức chung, giáo trình, định nghĩa, cơ chế, giải thích về hoạt chất, sâu bệnh, cây trồng.
+- RAG: câu hỏi về sản phẩm/thuốc của BMC, giá, mã, đại lý, phác đồ nội bộ, tài liệu nội bộ.
 
 LUẬT:
 - Chỉ trả lời GLOBAL hoặc RAG, không thêm bất kỳ ký tự nào khác.
 """.strip()
 
-    resp = client.chat.completions.create(
-        model="gpt-4o-mini",
-        temperature=0,
-        messages=[
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_query},
-        ],
-    )
+    try:
+        resp = client.chat.completions.create(
+            model="gpt-4o-mini",
+            temperature=0,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_query},
+            ],
+        )
 
-    ans = (resp.choices[0].message.content or "").strip().upper()
+        ans = (resp.choices[0].message.content or "").strip().upper()
 
-    # Parse an toàn: chỉ nhận đúng 1 từ
-    if ans == "GLOBAL":
-        return "GLOBAL"
-    if ans == "RAG":
-        return "RAG"
+        if ans in ["GLOBAL", "RAG"]:
+            return ans
 
-    # Fallback: an toàn theo hướng RAG (tránh bịa khi không chắc)
+    except Exception:
+        pass
+
+    # ============================================
+    # 5) Fallback an toàn
+    # ============================================
+
     return "RAG"

@@ -15,6 +15,7 @@ from rag.tag_filter import tag_filter_pipeline
 # from rag.debug_log import debug_log
 from typing import List, Tuple, Dict, Any
 from pathlib import Path
+import unicodedata
 import re
 import json
 from typing import Dict, Any
@@ -70,23 +71,15 @@ def promote_forced_tags(must_tags, any_tags):
 
     return list(must), list(anyt)
 
+_space_re = re.compile(r"\s+")
 
-def _has_product_signal(norm_query: str, any_tags: List[str], code_candidates: List[str]) -> bool:
-    q = (norm_query or "").lower()
-
-    # 1) Có code/sku
-    if code_candidates:
-        return True
-
-    # 2) Có tag product/entity (tuỳ schema bạn)
-    if any(t.startswith("product:") or t.startswith("entity:product") for t in (any_tags or [])):
-        return True
-
-    # 3) Heuristic SKU phổ biến ngành BVTV
-    if re.search(r"\b\d+(\.\d+)?\s?(ec|sc|wg|wp|sl|od|sp|wdg|gr|cs)\b", q):
-        return True
-
-    return False
+def _norm(s: str) -> str:
+    s = (s or "").lower().strip()
+    s = s.replace("đ", "d") 
+    s = unicodedata.normalize("NFD", s)
+    s = "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
+    s = _space_re.sub(" ", s)
+    return s
 
 
 def _need_intent_gate(norm_query: str, any_tags: List[str], code_candidates: List[str]) -> bool:
@@ -379,6 +372,18 @@ def _weighted_rrf_fuse(
         out.append(h)
     return out
 
+def infer_answer_intent(q: str, found_groups: Dict[str, List[str]]):
+    qn = _norm(q)
+
+    has_product_term = bool(re.search(r"\b(thuoc|thuốc|san pham|sản phẩm)\b", qn))
+    has_symptom_term = bool(re.search(r"\b(trieu chung|triệu chứng|benh|bệnh)\b", qn))
+
+    if has_symptom_term:
+        return "disease"
+    if has_product_term:
+        return "product"
+    return "general"
+
 def render_global_bounded(
     *,
     client,
@@ -536,7 +541,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     must_tags = result.get("must", [])
     any_tags = result.get("any", [])
     found = result.get("found", {})
-    answer_mode = result.get("answer_mode", "")
+    # answer_mode = result.get("answer_mode", "")
 
     code_candidates = extract_codes_from_query(norm_query)
 
@@ -668,8 +673,9 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     with open("debug_ctx/context_last.txt", "w", encoding="utf-8") as f:
         f.write(context)
 
-    answer_intent = answer_mode
+    answer_intent = infer_answer_intent(user_query, found)
     policy = decide_answer_policy(user_query, primary_doc, parsed_intent=answer_intent, force_listing=is_list)
+    answer_mode = "listing" if policy.format == "listing" else policy.intent
     if policy.format == "listing":
         answer_mode_final = "listing"
     else:
