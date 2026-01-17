@@ -10,13 +10,13 @@ from rag.context_builder import choose_adaptive_max_ctx, build_context_from_hits
 from rag.answer_modes import decide_answer_policy
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
-from rag.verbatim import verbatim_export
-from rag.tag_filter import infer_filters_from_query, infer_answer_intent
-from rag.debug_log import debug_log
+# from rag.verbatim import verbatim_export
+from rag.tag_filter import tag_filter_pipeline
+# from rag.debug_log import debug_log
 from typing import List, Tuple, Dict, Any
 from pathlib import Path
 import re
-import json, hashlib
+import json
 from typing import Dict, Any
 
 FORCE_MUST_TAGS = {
@@ -531,10 +531,12 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     norm_query = normalize_query(client, user_query)
     is_list = is_listing_query(norm_query)
 
-    filters = infer_filters_from_query(norm_query)
-    must_tags = filters.get("must", [])
-    any_tags = filters.get("any", [])
-    found = filters.get("found", [])
+    result = tag_filter_pipeline(norm_query)
+
+    must_tags = result.get("must", [])
+    any_tags = result.get("any", [])
+    found = result.get("found", {})
+    answer_mode = result.get("answer_mode", "")
 
     code_candidates = extract_codes_from_query(norm_query)
 
@@ -666,15 +668,17 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     with open("debug_ctx/context_last.txt", "w", encoding="utf-8") as f:
         f.write(context)
 
-    answer_intent = infer_answer_intent(user_query, found)
+    answer_intent = answer_mode
     policy = decide_answer_policy(user_query, primary_doc, parsed_intent=answer_intent, force_listing=is_list)
-    answer_mode = "listing" if policy.format == "listing" else policy.intent
-
+    if policy.format == "listing":
+        answer_mode_final = "listing"
+    else:
+        answer_mode_final = answer_mode
     final_answer = call_finetune_with_context(
         client=client,
         user_query=user_query,
         context=context,
-        answer_mode=answer_mode,
+        answer_mode=answer_mode_final,
         rag_mode="STRICT",
     )
 

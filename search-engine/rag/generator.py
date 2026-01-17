@@ -214,17 +214,17 @@ YÊU CẦU TRÌNH BÀY:
     # -----------------------------
     if answer_mode == "disease":
         mode_requirements = """
-- Cấu trúc ưu tiên:
-  (1) Tổng quan
-  (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong TÀI LIỆU; SOFT có thể bổ sung kiến thức chung)
-  (3) Triệu chứng (chỉ khi có)
-  (4) Hậu quả (chỉ khi có)
-  (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong TÀI LIỆU)
-- Không tạo mục nếu TÀI LIỆU không có dữ liệu cho mục đó.
-- Không bịa thuốc/liều/TGCL.
-- Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
-- Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
-""".strip()
+    - Cấu trúc ưu tiên:
+    (1) Tổng quan
+    (2) Nguyên nhân/điều kiện phát sinh (chỉ khi có trong TÀI LIỆU; SOFT có thể bổ sung kiến thức chung)
+    (3) Triệu chứng (chỉ khi có)
+    (4) Hậu quả (chỉ khi có)
+    (5) Hướng xử lý & phòng ngừa (ưu tiên biện pháp trong TÀI LIỆU)
+    - Không tạo mục nếu TÀI LIỆU không có dữ liệu cho mục đó.
+    - Không bịa thuốc/liều/TGCL.
+    - Nếu chỉ có một số mục được tạo, hãy ĐÁNH SỐ LẠI LIÊN TỤC (1,2,3...) theo thứ tự xuất hiện.
+    - Không giữ số gốc (ví dụ không dùng (5) nếu (2)(3)(4) không tồn tại).
+    """.strip()
 
     elif answer_mode == "product":
         mode_requirements = """
@@ -249,8 +249,9 @@ YÊU CẦU TRÌNH BÀY:
     • Nếu câu hỏi yêu cầu kết hợp (ví dụ: "tiếp xúc, lưu dẫn"):
         - CHỈ chấp nhận sản phẩm mà TÀI LIỆU xác nhận RÕ CẢ HAI cơ chế.
         - Nếu TÀI LIỆU chỉ nêu 1 trong 2 → KHÔNG coi là phù hợp.
+
     - TUYỆT ĐỐI KHÔNG:
-    • Suy diễn mức độ hiệu lực của cơ chế (không dùng các từ như: mạnh, yếu, cao, tốt).
+    • Suy diễn mức độ hiệu lực của cơ chế.
     • Diễn giải lại cơ chế theo ý hiểu nếu TÀI LIỆU không nêu.
     • Mở rộng cơ chế từ "tiếp xúc" sang "lưu dẫn" hoặc ngược lại.
 
@@ -264,6 +265,117 @@ YÊU CẦU TRÌNH BÀY:
 
     - Không tự bịa thêm liều lượng, cách pha, thời gian cách ly.
     - Không tổng hợp hoặc gộp sản phẩm nếu điều kiện sử dụng khác nhau.
+
+    ------------------------------------------------------
+    PHẦN BỔ SUNG – QUY TẮC XỬ LÝ TRÙNG LẶP & CHUẨN HÓA
+    ------------------------------------------------------
+
+    - TRƯỚC KHI trình bày kết quả, BẮT BUỘC thực hiện bước chuẩn hóa danh sách sản phẩm:
+
+    1. PHÁT HIỆN TRÙNG LẶP:
+    - Xem các mục có cùng tên thương mại nhưng khác cách ghi (ví dụ có thêm ghi chú trong ngoặc, khác đơn vị %, g/kg, w/w…)
+    - Xem các phiên bản cùng sản phẩm nhưng khác cách đặt tên phụ (ví dụ bản quốc gia, bản đóng gói khác)
+    → coi là MỘT sản phẩm duy nhất.
+
+    2. GỘP SẢN PHẨM TRÙNG:
+    - Giữ một tên chuẩn ngắn gọn nhất.
+    - Tổng hợp thông tin hoạt chất một cách thống nhất.
+    - Không lặp lại cùng một sản phẩm nhiều lần.
+
+    3. QUY TẮC GỘP:
+    - Chỉ gộp khi chắc chắn cùng một sản phẩm.
+    - Không gộp nếu:
+        • khác cơ chế tác động,
+        • khác cây trồng áp dụng,
+        • hoặc khác mục đích sử dụng.
+
+    4. ƯU TIÊN TRÌNH BÀY:
+    - Nếu query có yêu cầu cụ thể (cây trồng, cơ chế, đối tượng):
+        → ưu tiên trình bày các sản phẩm KHỚP HOÀN TOÀN trước.
+    - Sản phẩm chỉ khớp một phần → để vào mục "Thông tin tham khảo".
+
+    5. HÌNH THỨC TRÌNH BÀY:
+    - Sau khi dedup, mỗi sản phẩm xuất hiện tối đa 1 lần.
+    - Tên sản phẩm viết chuẩn, không kèm các hậu tố dư thừa.
+
+    - TUYỆT ĐỐI KHÔNG:
+    • Tự thêm sản phẩm ngoài danh sách tài liệu.
+    • Tự hợp nhất các sản phẩm khác hoạt chất thành một.
+    • Suy diễn rằng hai mục “gần giống tên” là một nếu tài liệu không xác nhận.
+    """.strip()
+
+    elif answer_mode == "listing":
+        mode_requirements = """
+    - Mục tiêu: LIỆT KÊ các SẢN PHẨM xuất hiện trong TÀI LIỆU.
+    Output phải "SẠCH": chỉ gồm các dòng sản phẩm hợp lệ. KHÔNG có phần giải thích, KHÔNG có tổng kết dạng văn.
+
+    - RÀNG BUỘC THEO CÂU HỎI (QUERY-CONDITIONED – BẮT BUỘC):
+    • Nếu câu hỏi yêu cầu cơ chế tác động (ví dụ: "lưu dẫn", "tiếp xúc", "xông hơi"):
+        - CHỈ liệt kê sản phẩm mà TÀI LIỆU xác nhận ĐÚNG cơ chế đó.
+        - TUYỆT ĐỐI KHÔNG suy diễn hoặc chấp nhận các mô tả như:
+            "lưu dẫn mạnh", "tác động tốt", "hiệu quả cao".
+
+    • Nếu câu hỏi yêu cầu cơ chế kết hợp (ví dụ: "tiếp xúc, lưu dẫn"):
+        - CHỈ liệt kê sản phẩm mà TÀI LIỆU xác nhận RÕ CẢ HAI cơ chế.
+        - Nếu TÀI LIỆU chỉ nêu một cơ chế → LOẠI.
+
+    - ĐIỀU KIỆN BẮT BUỘC (HARD GATE) ĐỂ LIỆT KÊ 1 SẢN PHẨM:
+    (1) Tên thương mại sản phẩm xuất hiện trong TÀI LIỆU.
+    (2) TÀI LIỆU xác nhận cây trồng/phạm vi sử dụng KHỚP với câu hỏi.
+    (3) TÀI LIỆU xác nhận ĐÚNG cơ chế tác động mà câu hỏi yêu cầu (nếu có).
+
+    - CHỐNG SUY DIỄN (RẤT QUAN TRỌNG):
+    • TUYỆT ĐỐI KHÔNG suy luận:
+        - "có hiệu quả cao" → "lưu dẫn"
+        - "diệt nhanh" → "tiếp xúc"
+        - "thấm nhanh" → "lưu dẫn"
+    • Chỉ chấp nhận đúng thuật ngữ cơ chế xuất hiện trong TÀI LIỆU.
+
+    - TUYỆT ĐỐI KHÔNG:
+    • Không liệt kê sản phẩm rồi chú thích "không chắc", "chưa rõ".
+    • Không dùng các cụm từ so sánh mức độ (mạnh/yếu/tốt/kém).
+    • Không có đoạn giải thích hay tổng kết.
+
+    - Định dạng output:
+    • Mỗi sản phẩm 1 dòng.
+    • Dạng: "TÊN SẢN PHẨM – Hoạt chất: ...".
+
+    ------------------------------------------------------
+    PHẦN BỔ SUNG – DEDUP & CHUẨN HÓA CHO LISTING
+    ------------------------------------------------------
+
+    TRƯỚC KHI IN OUTPUT, BẮT BUỘC thực hiện các bước:
+
+    1. LOẠI BỎ TRÙNG LẶP:
+    - Nếu cùng một sản phẩm xuất hiện nhiều cách ghi khác nhau:
+        → chỉ giữ MỘT dòng đại diện.
+    - Ví dụ:
+        • "Tatsu 25WP"
+        • "Tatsu 25WP (m8-singapore)"
+        → coi là MỘT sản phẩm.
+
+    2. QUY TẮC GỘP TRONG LISTING:
+    - Chỉ gộp khi:
+        • cùng tên thương mại gốc,
+        • cùng hoạt chất,
+        • cùng mục đích sử dụng.
+    - Không gộp nếu khác hoạt chất hoặc khác cây trồng áp dụng.
+
+    3. CHUẨN HÓA TÊN:
+    - Bỏ các ghi chú phụ không cần thiết trong ngoặc.
+    - Dùng một định dạng thống nhất cho hoạt chất.
+
+    4. THỨ TỰ LIỆT KÊ:
+    - Ưu tiên các sản phẩm khớp hoàn toàn với query trước.
+    - Sau đó mới tới các sản phẩm khớp một phần (nếu còn phù hợp).
+
+    5. KẾT QUẢ CUỐI CÙNG:
+    - Danh sách sau khi dedup phải là danh sách tối giản nhất có thể.
+    - Mỗi sản phẩm xuất hiện tối đa 1 lần.
+
+    6. TUYỆT ĐỐI KHÔNG:
+    - Không tự thêm hoặc loại bỏ sản phẩm nếu tài liệu không xác nhận.
+    - Không gộp hai sản phẩm khác nhau chỉ vì tên gần giống.
     """.strip()
 
     elif answer_mode == "procedure":
@@ -273,44 +385,7 @@ YÊU CẦU TRÌNH BÀY:
 - Không tự phát minh quy trình mới ngoài TÀI LIỆU (STRICT).
 - Nếu thiếu bước quan trọng, chỉ được bổ sung dưới dạng "Kiến thức chung" (SOFT) và không kèm số liệu định lượng.
 """.strip()
-
-    elif answer_mode == "listing":
-        mode_requirements = """
-- Mục tiêu: LIỆT KÊ các SẢN PHẨM xuất hiện trong TÀI LIỆU.
-Output phải "SẠCH": chỉ gồm các dòng sản phẩm hợp lệ. KHÔNG có phần giải thích, KHÔNG có tổng kết dạng văn.
-
-- RÀNG BUỘC THEO CÂU HỎI (QUERY-CONDITIONED – BẮT BUỘC):
-  • Nếu câu hỏi yêu cầu cơ chế tác động (ví dụ: "lưu dẫn", "tiếp xúc", "xông hơi"):
-      - CHỈ liệt kê sản phẩm mà TÀI LIỆU xác nhận ĐÚNG cơ chế đó.
-      - TUYỆT ĐỐI KHÔNG suy diễn hoặc chấp nhận các mô tả như:
-        "lưu dẫn mạnh", "tác động tốt", "hiệu quả cao", "gần giống lưu dẫn".
-
-  • Nếu câu hỏi yêu cầu cơ chế kết hợp (ví dụ: "tiếp xúc, lưu dẫn"):
-      - CHỈ liệt kê sản phẩm mà TÀI LIỆU xác nhận RÕ CẢ HAI cơ chế.
-      - Nếu TÀI LIỆU chỉ nêu một cơ chế → LOẠI.
-
-- ĐIỀU KIỆN BẮT BUỘC (HARD GATE) ĐỂ LIỆT KÊ 1 SẢN PHẨM:
-  (1) Tên thương mại sản phẩm xuất hiện trong TÀI LIỆU.
-  (2) TÀI LIỆU xác nhận cây trồng/phạm vi sử dụng KHỚP với câu hỏi.
-  (3) TÀI LIỆU xác nhận ĐÚNG cơ chế tác động mà câu hỏi yêu cầu (nếu có).
-
-- CHỐNG SUY DIỄN (RẤT QUAN TRỌNG):
-  • TUYỆT ĐỐI KHÔNG suy luận:
-      - "có hiệu quả cao" → "lưu dẫn"
-      - "diệt nhanh" → "tiếp xúc"
-      - "thấm nhanh" → "lưu dẫn"
-  • Chỉ chấp nhận đúng thuật ngữ cơ chế xuất hiện trong TÀI LIỆU.
-
-- TUYỆT ĐỐI KHÔNG:
-  • Không liệt kê sản phẩm rồi chú thích "không chắc", "chưa rõ".
-  • Không dùng các cụm từ so sánh mức độ (mạnh/yếu/tốt/kém).
-  • Không có đoạn giải thích hay tổng kết.
-
-- Định dạng output:
-  • Mỗi sản phẩm 1 dòng.
-  • Dạng: "TÊN SẢN PHẨM – Hoạt chất: ...".
-""".strip()
-
+        
     else:
         mode_requirements = """
 - Trình bày có cấu trúc theo ý chính.
@@ -366,7 +441,8 @@ CHỈ THỊ RIÊNG THEO MODE:
         any_tags=any_tags,
     )
     debug_log(selected_model)
-
+    #dev
+    selected_model = "gpt-4.1-mini"
     resp = client.chat.completions.create(
         model=selected_model,
         temperature=0.4,

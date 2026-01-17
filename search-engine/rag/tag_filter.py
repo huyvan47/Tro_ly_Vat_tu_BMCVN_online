@@ -1,29 +1,59 @@
 import re
+import json
 import unicodedata
-from rag.debug_log import debug_log
-from typing import Dict, List, Tuple, Set, Any, Union, Optional
+from pathlib import Path
+from typing import Dict, List, Set
 
-# ======================
-# 1) NORMALIZE
-# ======================
+# ===========================
+# 1) PATH & LOAD KNOWLEDGE
+# ===========================
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+KB_PATH = BASE_DIR / "chemical_tags_from_kb.json"
+
+with open(KB_PATH, "r", encoding="utf-8") as f:
+    CHEMICAL_KB = json.load(f)
+
+
+# ===========================
+# 2) NORMALIZATION UTILITIES
+# ===========================
 
 _space_re = re.compile(r"\s+")
+_non_alnum_re = re.compile(r"[^a-z0-9\s]+")
 
-def _norm(s: str) -> str:
-    s = (s or "").lower().strip()
-    s = s.replace("đ", "d") 
-    s = unicodedata.normalize("NFD", s)
-    s = "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
-    s = _space_re.sub(" ", s)
-    return s
+def normalize(text: str) -> str:
+    if not text:
+        return ""
+
+    text = text.lower().strip()
+    text = text.replace("đ", "d")
+
+    text = unicodedata.normalize("NFD", text)
+    text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
+
+    # loại bỏ toàn bộ dấu câu và ký tự đặc biệt
+    text = _non_alnum_re.sub(" ", text)
+
+    text = _space_re.sub(" ", text)
+    return text.strip()
 
 
-# ======================
-# 2) YOUR ALIASES (bổ sung dần)
-# ======================
+# Chuẩn hóa sẵn dữ liệu trong KB
+for k, v in CHEMICAL_KB.items():
+    v["crops"] = [normalize(x) for x in v.get("crops", [])]
+    v["diseases"] = [normalize(x) for x in v.get("diseases", [])]
+    v["pests"] = [normalize(x) for x in v.get("pests", [])]
+    v["weeds"] = [normalize(x) for x in v.get("weeds", [])]
+
+
+# ===========================
+# 3) ALIASES (BẠN TỰ COPY ĐẦY ĐỦ SAU)
+# ===========================
+
 CHEMICAL_ALIASES = {
     "24-epi-brassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "brassinolide"],
-    "24-epibrassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi"],
+    "24-epibrassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "24-epibrassinolide"],
     "abamectin": ["abamectin", "thuoc tru sau abamectin"],
     "chlormequat": ["chat dieu hoa sinh truong chlormequat", "chlormequat"],
     "diuron": ["diuron", "thuoc diet co diuron"],
@@ -44,25 +74,25 @@ CHEMICAL_ALIASES = {
     "agar": ["agar"],
     "agrohigh": ["agrohigh"],
     "aliette": ["aliette"],
-    "alpha-cypermethrin": ["alpha cypermethrin", "alpha xi permethrin", "permethrin", "cypermethrin"],
+    "alpha-cypermethrin": ["alpha cypermethrin", "alpha xi permethrin", "permethrin", "cypermethrin", "alpha-cypermethrin"],
     "ametryn": ["ametrin", "ametryn"],
     "amino": ["amino"],
     "amisulbrom": ["amisulbrom"],
     "amonium-nitrate": ["amonium nitrat", "phot pho amoni"],
     "antibiotic": ["khang sinh"],
     "antibiotics": ["khang sinh"],
-    "atrazine": ["atrazin"],
+    "atrazine": ["atrazin", "atrazine"],
     "avermectin": ["avermectin"],
-    "avermectin-b1a": ["avermectin b1a"],
-    "avermectin-b1b": ["avermectin b1b"],
+    "avermectin-b1a": ["avermectin b1a", "avermectin"],
+    "avermectin-b1b": ["avermectin b1b", "avermectin"],
     "azol-450sc": ["azol 450sc"],
     "azoxystrobin": ["azoxistrobin", "azoxystrobin"],
     "azoxystrobincrop:rice": ["azoxystrobin lua"],
     "azoxytrobin": ["azoxistrobin", "azoxytrobin"],
-    "bacillus-subtilis": ["bacillus subtilis", "vi khuan bacillus subtilis", "bacillus", "subtilis"],
+    "bacillus-subtilis": ["bacillus subtilis", "bacillus-subtilis", "bacillus", "subtilis"],
     "badge-x2": ["badge x2"],
     "bentazone": ["bentazon", "bentazone"],
-    "beta-cypermethrin": ["beta cypermethrin", "beta xi permethrin", "cypermethrin", "permethrin"],
+    "beta-cypermethrin": ["beta cypermethrin", "beta-cypermethrin", "cypermethrin", "permethrin"],
     "bifenazate": ["bifenazat", "bifenazate"],
     "bifenthrin": ["bi fen trin", "bifenthrin"],
     "bismerthiazol": ["bismerthiazol"],
@@ -74,14 +104,14 @@ CHEMICAL_ALIASES = {
     "cabona": ["thuoc diet sau cabona", "thuoc tru sau cabona"],
     "calcium-hydroxide": ["bot canxi", "canxi hydroxit", "thuoc tri benh canxi"],
     "calcium-nitrate": ["canxi nitrat", "phan bon canxi nitrat"],
-    "cartap-hydrochloride": ["cartap hydroclorua", "thuoc diet sau cartap", "cartap", "hydrochloride"],
+    "cartap-hydrochloride": ["cartap hydroclorua", "thuoc diet sau cartap", "cartap", "hydrochloride", "cartap-hydrochloride"],
     "chloramphenicol": ["cloramphenicol", "thuoc khang sinh cloramphenicol"],
     "chlorfenapyr": ["clorfenapyr", "thuoc diet sau clorfenapyr", "chlorfenapyr"],
     "chlorothalonil": ["clorotalonil", "thuoc tri nam clorotalonil", "chlorothalonil"],
     "chlorothalonil-50sc": ["clorotalonil 50sc", "thuoc tri nam clorotalonil 50sc", "chlorothalonil"],
     "chlorothalonil-75wp": ["clorotalonil 75wp", "thuoc tri nam clorotalonil 75wp", "chlorothalonil"],
     "chlorpyrifos-ethyl": ["clorpyrifos etyl", "thuoc diet sau clorpyrifos etyl", "chlorpyrifos"],
-    "chlorpyrifos-methyl": ["clorpyrifos metyl", "thuoc diet sau clorpyrifos metyl", "chlorpyrifos"],
+    "chlorpyrifos-methyl": ["clorpyrifos metyl", "thuoc diet sau clorpyrifos metyl", "chlorpyrifos", "chlorpyrifos-methyl"],
     "contact-fungicide": ["thuoc diet nam tiep xuc", "thuoc tri nam tiep xuc"],
     "copper": ["chat dong", "dong"],
     "copper-based-fungicide": ["thuoc diet nam goc dong", "thuoc tri nam goc dong"],
@@ -101,6 +131,7 @@ CHEMICAL_ALIASES = {
     "cyromazine": ["cyromazine", "thuoc diet sau cyromazine"],
     "daconil": ["daconil", "thuoc tri nam daconil"],
     "dcpa": ["dcpa", "thuoc diet co dcpa"],
+    "dieu-hoa-sinh-truong": ["dieu hoa sinh truong", "dieu hoa", "sinh truong"],
     "decco-salt-no-19": ["decco muoi so 19", "phan bon decco muoi 19"],
     "deltamethrin": ["deltamethrin", "thuoc diet sau deltamethrin"],
     "deoxynivalenol": ["deoxynivalenol", "doc khuan deoxynivalenol"],
@@ -111,12 +142,12 @@ CHEMICAL_ALIASES = {
     "dimethoate": ["dimethoate", "thuoc diet sau dimethoate"],
     "dimethomorph": ["dimethomorph", "thuoc tri nam dimethomorph"],
     "dinotefuran": ["thuoc diet sau dinotefuran", "thuoc tru sau dinotefuran", "dinotefuran"],
-    "diquat-dibromide": ["thuoc diet co diquat", "thuoc diet co diquat dibromide"],
+    "diquat-dibromide": ["thuoc diet co diquat", "thuoc diet co diquat dibromide", "diquat-dibromide"],
     "disease-control-chemical": ["thuoc diet benh", "thuoc phong tru benh"],
     "disease-fungicide-group-a": ["thuoc diet nam nhom a"],
     "disinfectant": ["thuoc khu trung", "thuoc tay trung"],
     "dithianon": ["thuoc diet nam dithianon", "dithianon"],
-    "emamectin-benzoate": ["thuoc diet sau emamectin benzoate", "thuoc tru sau emamectin benzoate", "emamectin", "benzoate"],
+    "emamectin-benzoate": ["thuoc diet sau emamectin benzoate", "thuoc tru sau emamectin benzoate", "emamectin", "benzoate", "emamectin-benzoate"],
     "enable": ["thuoc diet sau enable"],
     "ethanol-70": ["con 70 do", "cuu am 70 do", "ethanol 70 do"],
     "ethephon": ["thuoc kich thich ethephon", "thuoc kich thich ra hoa ethephon", "ethephon"],
@@ -140,12 +171,12 @@ CHEMICAL_ALIASES = {
     "fumonisins": ["doc fumonisin nhieu loai"],
     "fungi-phite": ["phan bo fungi phite", "phan phan bo fungi phite"],
     "gem": ["thuoc diet sau gem"],
-    "gibberellic-acid": ["acid gibberellic", "chat kich thich tang truong gibberellic", "gibberellic"],
-    "glufosinate-amonium": ["thuoc diet co glufosinate amonium", "glu", "glufosinate", "amonium"],
-    "glufosinate-p": ["thuoc diet co glufosinate p"],
+    "gibberellic-acid": ["acid gibberellic", "chat kich thich tang truong gibberellic", "gibberellic", "gibberellic-acid"],
+    "glufosinate-amonium": ["thuoc diet co glufosinate amonium", "glu", "glufosinate", "amonium", "glufosinate-amonium"],
+    "glufosinate-p": ["thuoc diet co glufosinate p", "glufosinate-p"],
     "graduate-a": ["thuoc diet sau graduate a"],
     "growth-inhibitor": ["chat ngan can phat trien cay", "chat ngan can tang truong"],
-    "haloxyfop-p-methyl": ["thuoc diet co haloxyfop p methyl", "haloxyfop"],
+    "haloxyfop-p-methyl": ["thuoc diet co haloxyfop p methyl", "haloxyfop", "haloxyfop-p-methyl"],
     "headline": ["thuoc diet sau headline"],
     "heritage": ["thuoc tru sau heritage"],
     "hexaconazole": ["thuoc tru benh hexaconazole", "thuoc tru nam hexaconazole", "hexaconazole"],
@@ -169,10 +200,10 @@ CHEMICAL_ALIASES = {
     "khpo": ["phan kali photphat"],
     "khpo4": ["phan kali photphat"],
     "kings-b-medium": ["medium kings b"],
-    "kresoxim-methyl": ["thuoc tru benh kresoxim methyl", "kresoxim"],
+    "kresoxim-methyl": ["thuoc tru benh kresoxim methyl", "kresoxim", "kresoxim-methyl"],
     "lactic-acid": ["axit lactic"],
     "lactofen": ["thuoc diet co lactofen", "lactofen"],
-    "lambda-cyhalothrin": ["thuoc tru sau lambda cyhalothrin", "lambda", "cyhalothrin"],
+    "lambda-cyhalothrin": ["thuoc tru sau lambda cyhalothrin", "lambda", "cyhalothrin", "lambda-cyhalothrin"],
     "lan-86": ["thuoc tru benh lan 86"],
     "legion": ["thuoc diet sau legion"],
     "liquid-fertilizer": ["phan bon duong luong", "phan bon loang"],
@@ -180,8 +211,7 @@ CHEMICAL_ALIASES = {
     "lysol": ["chat tay trung lysol"],
     "mancozeb": ["thuoc tru benh mancozeb", "mancozeb"],
     "mefenoxam": ["thuoc tru benh mefenoxam"],
-    "mesotrione": ["thuoc diet co mesotrione", "Mesotrione"],
-    "meta-umizone": ["thuoc tru benh meta umizone"],
+    "mesotrione": ["thuoc diet co mesotrione", "mesotrione"],
     "metaflumizone": ["thuoc tru sau metaflumizone", "metaflumizone"],
     "metalaxyl": ["thuoc tru benh metalaxyl", "metalaxyl"],
     "metaldehyde": ["thuoc diet sau kim loai", "thuoc diet sau metaldehyde", "metaldehyde"],
@@ -210,7 +240,7 @@ CHEMICAL_ALIASES = {
     "peptone": ["chat dinh duong peptone", "chat peptone"],
     "permethrin": ["permethrin", "thuoc diet sau permethrin"],
     "pesticides": ["thuoc diet sau", "thuoc tru sau"],
-    "petroleum-oil": ["dau mo than", "dau mo than trong nong nghiep"],
+    "petroleum-oil": ["dau mo than", "dau mo than trong nong nghiep", "petroleum-oil"],
     "phenthoate": ["phenthoate", "thuoc diet sau phenthoate"],
     "phosphite": ["phan photphit", "phan photphit trong nong nghiep"],
     "phosphonate": ["phan photphonat", "phan photphonat trong nong nghiep"],
@@ -218,7 +248,7 @@ CHEMICAL_ALIASES = {
     "phu-gia": ["chat phu gia", "chat phu gia trong nong nghiep"],
     "phytophthora-selective-medium": ["mo trung chon loc phytophthora", "mo trung phytophthora"],
     "pimaricin": ["khang sinh pimaricin", "pimaricin"],
-    "pirimiphos-methyl": ["pirimiphos methyl", "thuoc diet sau pirimiphos methyl", "pirimiphos"],
+    "pirimiphos-methyl": ["pirimiphos methyl", "thuoc diet sau pirimiphos methyl", "pirimiphos", "pirimiphos-methyl"],
     "polycarbonate": ["nhua polycarbonate", "vat lieu polycarbonate"],
     "potassium-dihydrogen-phosphate": ["phan kali dihydrogen photphat", "phan kali dihydrogen photphat trong nong nghiep"],
     "potassium-nitrate": ["bot kali nitrat", "phan kali nitrat"],
@@ -231,26 +261,26 @@ CHEMICAL_ALIASES = {
     "probiconazole": ["thuoc tru nam probiconazole", "probiconazole"],
     "prochloraz": ["thuoc tru nam prochloraz"],
     "prochloraz-manganese-chloride-complex": ["phuc hop prochloraz mangan clorua"],
-    "prochloraz-manganese-complex": ["phuc hop prochloraz mangan"],
+    "prochloraz-manganese-complex": ["phuc hop prochloraz mangan", "prochloraz"],
     "prochloraz-manganesse-complex": ["phuc hop prochloraz mangan", "prochloraz", "manganesse"],
     "propamocarb": ["thuoc tru nam propamocarb", "propamocarb"],
-    "propamocarb-hcl": ["propamocarb hydrochloride", "propamocarb", "hydrochloride"],
-    "propiconazole": ["thuoc tru nam propiconazole"],
+    "propamocarb-hcl": ["propamocarb hydrochloride", "propamocarb", "hydrochloride", "propamocarb-hcl"],
+    "propiconazole": ["thuoc tru nam propiconazole", "propiconazole"],
     "propoxur": ["thuoc tru sau propoxur", "propoxur"],
     "proteose-peptone": ["proteose pepton"],
     "pymetrozine": ["thuoc tru sau pymetrozine", "pymetrozine"],
     "pyraclostrobin": ["thuoc tru nam pyraclostrobin", "pyraclostrobin"],
-    "pyrethroid": ["phan bo pyrethroid", "thuoc tru sau pyrethroid"],
+    "pyrethroid": ["phan bo pyrethroid", "thuoc tru sau pyrethroid", "pyrethroid", "pyrethroid"],
     "pyridaben": ["thuoc tru sau pyridaben", "pyridaben"],
     "pyriproxyfen": ["thuoc tru sau pyriproxyfen", "pyriproxyfen"],
     "quadris-top": ["thuoc tru nam quadris top"],
     "quicklime": ["voi toi"],
     "quintozene": ["thuoc tru nam quintozene"],
-    "quizalofop-p-ethyl": ["quizalofop p ethyl", "quizalofop"],
+    "quizalofop-p-ethyl": ["quizalofop p ethyl", "quizalofop", "quizalofop-p-ethyl"],
     "r333": ["thuoc tru sau r333"],
     "ridomil": ["thuoc tru nam ridomil"],
     "rose-bengal": ["thuoc nhuom rose bengal"],
-    "s-metolachlor": ["thuoc tru sau s metolachlor", "metolachlor"],
+    "s-metolachlor": ["thuoc tru sau s metolachlor", "metolachlor", "s-metolachlor"],
     "salegold": ["thuoc tru nam salegold"],
     "salt-solution": ["dung dich muoi"],
     "solvent": ["chat giai phan", "dung moi"],
@@ -263,13 +293,13 @@ CHEMICAL_ALIASES = {
     "systemic-fungicide": ["thuoc diet nam toan than", "thuoc tri nam toan than"],
     "tebuconazole": ["thuoc tebuconazole", "thuoc tri nam tebuconazole", "tebuconazole"],
     "tembotrione": ["thuoc diet co tembotrione", "tembotrione"],
-    "terbuthylazine": ["thuoc diet co terbuthylazine"],
+    "terbuthylazine": ["thuoc diet co terbuthylazine", "terbuthylazine"],
     "terrachlor": ["thuoc diet co terrachlor"],
     "than-duoc-sach-benh": ["than duoc sach benh", "thuoc sach benh"],
     "thiabendazole": ["thuoc thiabendazole", "thuoc tri nam thiabendazole"],
     "thiacloprid": ["thuoc diet sau thiacloprid", "thiacloprid"],
     "thiamethoxam": ["thuoc diet sau thiamethoxam", "thiamethoxam"],
-    "thiosultap-sodium": ["thuoc diet sau thiosultap sodium", "thiosultap"],
+    "thiosultap-sodium": ["thuoc diet sau thiosultap sodium", "thiosultap", "thiosultap-sodium"],
     "thiram": ["thuoc thiram", "thuoc tri nam thiram", "thiram"],
     "thuoc-tru-nam": ["thuoc diet nam", "thuoc tri nam"],
     "thuoc-tru-nhen": ["thuoc diet nhen", "thuoc tru nhen"],
@@ -278,35 +308,65 @@ CHEMICAL_ALIASES = {
     "topramezone": ["thuoc diet co topramezone", "thuoc topramezone", "topramezone"],
     "toxic-chemical": ["chat doc", "chat doc hai"],
     "triadimefon": ["thuoc tri nam triadimefon", "thuoc triadimefon", "triadimefon"],
-    "tricyclazole": ["thuoc tri nam tricyclazole", "thuoc tricyclazole"],
+    "tricyclazole": ["thuoc tri nam tricyclazole", "thuoc tricyclazole", "tricyclazole"],
     "tricylazole": ["thuoc tri nam tricylazole", "thuoc tricylazole", "tricylazole"],
     "trifloxystrobin": ["thuoc tri nam trifloxystrobin", "thuoc trifloxystrobin"],
     "trinong-50wp": ["thuoc tri nam trinong 50wp", "thuoc trinong 50wp"],
-    "trioxystrobin": ["thuoc tri nam trioxystrobin", "thuoc trioxystrobin"],
+    "trioxystrobin": ["thuoc tri nam trioxystrobin", "thuoc trioxystrobin", "trioxystrobin"],
     "ultra-flourish": ["thuoc phan bon ultra flourish", "thuoc ultra flourish"],
     "wa-0-05": ["thuoc wa 0 05"],
     "zearalenone": ["chat doc zearalenon", "chat doc zearalenone"],
     "zhongshengmycin": ["thuoc khang sinh zhongshengmycin", "thuoc zhongshengmycin", "zhongshengmycin"],
+    "xu li hat giong": ["xu li hat giong", "hat giong"],
 }
 
 CROP_ALIASES = {
-    "agricultural-products": ["san pham nong nghiep", "san pham nong san"],
     "apple": ["cay tao", "tao"],
     "avocado": ["qua bo", "cay bo", "trai bo"],
+    "bau": ["bau"],
     "banana": ["cay chuoi", "chuoi"],
     "bap": ["bap", "cay bap", "corn", "ngo"],
     "bap-cai": ["bap cai", "cay bap cai"],
     "barley": ["cay lua mi", "lua mi"],
     "bean": ["cay dau", "dau"],
-    "bitter-melon": ["kho qua", "qua kho qua"],
-    "black-pepper": ["tieu", "tieu den"],
-    "bok-choy": ["cai thieu", "cai thieu xanh"],
-    "bottle-gourd": ["bi dao", "bi huong"],
-    "brassicaceae": ["ho ca cai", "ho cai"],
-    "broadleaf-crops": ["cay la rong"],
+    "kho-qua": ["kho qua", "qua kho qua"],
+    "tieu": ["tieu", "tieu den"],
+    "bi-dao": ["bi dao", "bi huong"],
     "buoi": ["buoi"],
+    "bong-vai": ["bong vai"],
     "ca-chua": ["ca chua", "ca chua bi"],
     "ca-phe": ["ca phe"],
+    "rau-cai-thia": ["rau cai thia"],
+    "cai-brussel": ["cai brussel"],
+    "cai": ["cai"],
+    "cai-cu": ["cai cu"],
+    "cai-thao": ["cai thao"],
+    "can-nuoc": ["can nuoc"],
+    "can-tay": ["can tay"],
+    "ca-phe": ["ca phe"],
+    "ca-phao": ["ca phao"],
+    "cac-loai-dua": ["cac loai dua"],
+    "cac-loai-hoa": ["cac loai hoa"],
+    "cay-mo": ["cay mo"],
+    "cay-rung": ["cay rung"],
+    "chanh-day": ["chanh day"],
+    "chanh-quyt": ["chanh quyt"],
+    "che": ["che"],
+    "tra": ["tra"],
+    "cu-cai": ["cu cai"],
+    "dau-cove": ["dau cove"],
+    "dau-den": ["dau den"],
+    "dau-tam": ["dau tam"],
+    "dat-khong-trong-trot": ["dat khong trong trot"],
+    "dat-trong-cay-cong-nghiep": ["dat trong cay cong nghiep", "cay cong nghiep"],
+    "dua-le": ["dua le"],
+    "le": ["le"],
+    "dua-leo": ["dua leo"],
+    "dua-luoi": ["dua luoi"],
+    "mac-ca": ["mac ca"],
+    "mang-tay": ["mang tay"],
+    "mong-toi": ["mong toi"],
+    "tan-o": ["tan o"],
     "ca-tim": ["ca tim"],
     "cabbage": ["bap cai", "cai bap"],
     "cacao": ["ca cao"],
@@ -315,14 +375,17 @@ CROP_ALIASES = {
     "cam-quyt": ["cam quyt"],
     "cao-su": ["cao su"],
     "carrot": ["ca rot"],
+    "san": ["san"],
+    "xa-lach": ["xa lach"],
+    "thom": ["thom"],
+    "tia-to": ["tia to"],
+    "cu-toi": ["cu toi"],
     "cashew": ["dieu", "hat dieu"],
     "cassava": ["khoai mia", "khoai san"],
     "cay-an-trai": ["cay an trai"],
     "cay-cam": ["cay cam"],
     "cay-con": ["cay con"],
     "cay-trong": ["cay trong"],
-    "cay-truong-thanh": ["cay truong thanh"],
-    "central-vietnam-crops": ["cay trung bo"],
     "cereal-crops": ["cay lua"],
     "cereal-grains": ["hat lua"],
     "chanh": ["chanh"],
@@ -382,23 +445,20 @@ CROP_ALIASES = {
     "grapevine": ["cay nho"],
     "green-bean": ["dau xanh"],
     "green-beans": ["dau xanh"],
-    "green-cauliflower": ["sup lo xanh"],
-    "green-mung-bean": ["dau xanh"],
-    "green-onion": ["hanh la"],
-    "greenhouse-crop": ["cay trong nha kinh"],
+    "sup-lo": ["sup lo"],
     "gung": ["gung"],
     "hanh": ["hanh"],
     "hanh-la": ["hanh la"],
-    # "hoa": ["hoa cuc", "hoa dong tien", "hoa hong"],
-    "harvest-stage": ["giai doan thu hoach"],
-    "healthy-crop-area": ["dien tich cay trong khoe manh"],
-    "healthy-seedlings": ["moc giong khoe manh"],
-    "ho-tieu": ["ho tieu"],
+    "hoa-cuc": ["hoa cuc"],
     "hoa-dao": ["hoa dao"],
     # "hoa-hong": ["hoa hong"],
+    "hanh-hoa": ["hanh hoa"],
+    "hanh-tay": ["hanh tay"],
+    "oi": ["oi"],
     "hoa-hong-dai-multiflora": ["hoa hong dai"],
     "hoa-ly": ["hoa ly"],
     "hoa-mai": ["hoa mai"],
+    "mai": ["mai"],
     "industrial-crop": ["cay cong nghiep"],
     "industrial-crops": ["cay cong nghiep"],
     "jackfruit": ["mit"],
@@ -407,16 +467,18 @@ CROP_ALIASES = {
     "kenaf": ["bam"],
     "khoai-lang": ["khoai lang"],
     "khoai-tay": ["khoai tay"],
-    "khom": ["dua hau"],
-    "lac": ["dau phong"],
+    "khoai-mi": ["khoai mi"],
+    "khom": ["khom"],
+    "lac": ["dau phong", "lac"],
     "leaf": ["la cay"],
     "legume": ["cay dau", "dau"],
     "legumes": ["cay dau"],
     "lemon": ["chanh vang"],
     "lettuce": ["rau xon"],
-    "lime": ["chanh tay"],
+    "lime": ["chanh tay", "lime"],
     "litchi": ["vai"],
     "longan": ["nhan"],
+    "nghe": ["nghe"],
     "lotus": ["sen"],
     "lua": ["lua"],
     "lychee": ["vai"],
@@ -462,12 +524,23 @@ CROP_ALIASES = {
     "quyt": ["cay quyt", "quyt"],
     "quyt-satsuma": ["quyt satsuma", "quyt satsuma nhat"],
     "ra-hoa": ["ra hoa", "thoi ky ra hoa"],
-    "rau": ["rau", "rau an","bap cai", "dau tuong", "cai thia", "bap", "ngo", "sup lo", "xu hao", "ca chua", "hanh", "muop"],
+    "quat": ["quat"],
+    "tac": ["tac"],
     "rau-cai": ["rau cai", "rau cai la"],
     "rau-muong": ["rau muong"],
     "rau-mau": ["rau mau", "rau mau an"],
+    "rau-cu": ["rau cu"],
+    "rau-ho-thap-tu": ["rau ho thap tu", "ho thap tu"],
+    "rau-den": ["rau den"],
+    "rau-ngo": ["rau ngo"],
+    "rau-diep": ["rau diep"],
+    "rau-trai": ["rau trai"],
+    "thai-lai": ["thai lai"],
+    "rau-xa-bong": ["rau xa bong"],
+    "rau-chan-vit": ["rau chan vit", "chan vit"],
     "resistant-variety": ["giong chong benh", "giong khang benh"],
     "rice": ["cay lua", "lua"],
+    "lua-sa": ["lua sa"],
     "rice-husk": ["vo lua", "vo lua sau khi tach"],
     "roi-man": ["cay roi man", "roi man"],
     "root": ["bo re", "re cay"],
@@ -479,9 +552,11 @@ CROP_ALIASES = {
     "rubber": ["cao su", "cay cao su"],
     "rubber-tree": ["cay cao su"],
     "same-variety": ["cung giong", "giong giong nhau"],
+    "sam-ngoc-linh": ["sam ngoc linh"],
     "san": ["cay san"],
     "sapodilla": ["cay hong xi", "hong xi"],
     "satsuma-mandarin": ["quyt satsuma", "quyt satsuma nhat"],
+    "su-hao": ["su hao"],
     # "sau-rieng": ["cay sau rieng", "sau rieng"],
     "seed": ["hat giong", "hat trong"],
     "seedlings": ["cay con", "giong cay con"],
@@ -512,6 +587,7 @@ CROP_ALIASES = {
     "vegetables": ["rau an"],
     "vuon-cay-an-trai": ["vuon cay an trai"],
     "watermelon": ["dua hau", "qua dua hau"],
+    "long-vuc": ["long vuc"],
     "weed": ["co dai", "mac-co", "rau sam", "co cuc", "cho de", "den gai", "co chan vit", "co long vuc", "co man trau"],
     "weed-control": ["diet co dai", "kiem soat co dai"],
     "wheat": ["lua mi"],
@@ -522,6 +598,40 @@ CROP_ALIASES = {
 }
 
 DISEASE_ALIASES = {
+    "ba-trau": ["dom ba trau", "dom nau", "ba trau"],
+    "bac-la": ["bac la", ],
+    "benh-nam-hoa-vang": ["hoa vang",],
+    "chay-bia-la": ["chay bia la", ],
+    "chet-day": ["chet day", ],
+    "dom-la": ["dom den la", "den la", "dom la"],
+    "dom-den-la": ["dom den la", "den la", "dom la"],
+    "dom-mat-cua": ["mat cua"],
+    "dom-trai": ["dom trai"],
+    "dom-van": ["dom van"],
+    "dom-vang": ["dom vang"],
+    "heo-vang": ["heo vang"],
+    "heo-xanh": ["heo xanh"],
+    "lem-lep": ["lem lep"],
+    "loet": ["loet"],
+    "rung-la": ["rung la"],
+    "ghe": ["ghe"],
+    "seo": ["seo"],
+    "ghe-khoai": ["ghe khoai"],
+    "ghe-cam": ["ghe cam"],
+    "ghe-seo": ["ghe seo"],
+    "seo-qua": ["seo qua"],
+    "seo-trai": ["seo trai"],
+    "thoi-co-gie": ["thoi co gie"],
+    "thoi-cu": ["thoi cu"],
+    "thoi-dau-trai": ["thoi dau trai"],
+    "rung-trai": ["rung trai"],
+    "thoi-den": ["thoi den"],
+    "thoi-goc": ["thoi goc"],
+    "thoi-than-xi-mu": ["thoi than xi mu"],
+    "u-cuc-re": ["u cuc re"],
+    "vang-la-chin-som": ["vang la chin som"],
+    "vang-rung-la": ["vang rung la"],
+    "xoan-la": ["xoan la"],
     "nhom-a": ["nhom benh a", "nhom a", "nam nhom a", "nhom nam a", "benh nhom a", "than thu", "dao on", "dom vong", "dom tim", "bi thoi", "chay la", "dom nau", "dom la", "heo ru", "chet cham", "chay day", "thoi re", "lua von", "lem lep hat", "phan trang", "moc xam", "nam long chuot", "ghe la", "ghe trai", "dom den", "thoi than", "thoi hach", "thoi re", "benh thoi canh", "chay canh", "thoi qua", "benh chet canh", "benh scab", "benh ghe", "san vo", "tiem lua", "vang be", "thoi trai", "kho dot", "chet canh", "nut than", "chay nhua", "benh dom nau", "kho", "benh thoi"
 ],
     "nhom-b": ["nhom benh b", "nhom b", "nam nhom b", "nhom nam b", "benh nhom b", "lo co re", "heo cay con", "chay la", "kho van", "nam hong", "heo ru", "moc trang", "co re bi thoi nau", "thoi nau", "thoi nhun", "benh chet rap cay con", "thoi trai", "thoi than", "ri sat", "than hat lua", "benh ri sat dau tuong", "than thu", "dom la lon", "lem lep hat", "benh thoi"
@@ -558,6 +668,14 @@ PEST_ALIASES = {
     "bo-ngau": ["bo ngau", "bo ngau tren cay"],
     "bo-nhay": ["bo nhay", "bo nhay tren cay"],
     "bo-phan": ["bo phan", "bo phan tren cay"],
+    "bo-hung": ["bo hung", "bo phan tren cay"],
+    "bo-rua": ["bo rua",],
+    "bo-canh-to": ["bo canh to",],
+    "bu-lach": ["bu lach",],
+    "bo-tri-vang": ["bo tri vang",],
+    "cay-xau-ho": ["cay xau ho"],
+    "chac-lac": ["chac lac"],
+    "buom-trang-hai-cham": ["buom trang hai cham",],
     "bo-phan-trang": ["bo phan trang", "bo phan trang tren cay"],
     "bo-tri": ["bo tri", "xu ly tri", "xu ly bo tri", "bo hut", "bo tri tren cay"],
     "bo-xit": ["bo xit", "bo xit tren cay", "bo xit muoi"],
@@ -568,11 +686,27 @@ PEST_ALIASES = {
     "broad-leaf-weeds": ["co la rong", "co la rong trong ruong"],
     "broadleaf-weed": ["co la rong", "co la rong trong ruong"],
     "broadleaf-weeds": ["co la rong", "co la rong trong ruong"],
+    "co-duoi-chon": ["co duoi chon",],
+    "co-dong-tien": ["co dong tien",],
+    "co-hoi": ["co hoi",],
+    "co-long-hoi": ["co long hoi",],
+    "co-la-tre": ["co la tre",],
+    "co-cu": ["co cu",],
+    "co-lac": ["co lac",],
+    "co-muc": ["co muc",],
+    "co-gao": ["co gao",],
+    "co-ray": ["co ray",],
+    "co-tuc": ["co tuc",],
+    "co-gau": ["co gau",],
+    "co-chac": ["co chac",],
+    "co-hoa-ban": ["co hoa ban",],
+    "co-hoa-thao": ["co hoa thao",],
     "co-chao": ["co chao", "co chao trong ruong"],
     "co-chi": ["co chi", "co chi trong ruong"],
     "co-dai-la-hep": ["co dai la hep", "co dai la nho", "la hep"],
     "co-dai-la-rong": ["co dai la rong", "co dai la to", "la rong"],
     "co-duoi-phung": ["co duoi phung", "co duoi phung la"],
+    "man-trau": ["man trau"],
     "co-man-trau": ["co man trau", "co man trau la", "man-trau"],
     "co-tranh": ["co tranh", "co tranh la"],
     "coffee-mealybug": ["bo trung ban ca phe", "ruoi ban ca phe"],
@@ -585,12 +719,14 @@ PEST_ALIASES = {
     "copper-toxicity": ["doc dong", "nguy hiem do dong"],
     "corn-earworm": ["sau bua", "sau bua bap"],
     "cyperus-rotundus": ["co co", "co co tron"],
-    "dao-on": ["benh dao on", "dao on"],
+    "dao-on": ["benh dao on", "dao on", "dao on co bong"],
     "deep-leaf-folder": ["sau gap la", "sau gap la sau"],
     "disease-control": ["kiem soat benh", "phong chong benh"],
     "disease-prevention": ["phong benh", "phong ngua benh"],
     "disease-spot": ["vet benh", "vet benh tren la"],
     "doi-duc-la": ["benh doi duc la", "doi duc la"],
+    "duc-than": ["duc than"],
+    "duoi-phung": ["duoi phung"],
     "economic-impact": ["anh huong kinh te", "tac dong kinh te"],
     "eggs": ["trung con trung", "trung sau"],
     "fruit-borer": ["sau duc qua", "sau duc trai"],
@@ -608,7 +744,8 @@ PEST_ALIASES = {
     "fungicide": ["thuoc diet nam", "thuoc diet nam benh"],
     "furry-spider-mite": ["ruoi ve long", "ruoi ve long benh"],
     "fusarium": ["benh nam fusarium", "nam fusarium"],
-    "ghe-seo": ["benh ghe seo", "benh ghe seo cay trong"],
+    "sieu-nhan": ["sieu nhan"],
+    "tuyen trung": ["tuyen trung"],
     "glyphosate-resistant-weeds": ["cac loai co khang glyphosate", "co khang", "khang glyphosate"],
     "golden-apple-snail": ["oc buou", "oc buou vang", "oc vang"],
     "golden-snail": ["oc vang", "oc vang vang"],
@@ -639,7 +776,6 @@ PEST_ALIASES = {
     "leaf-miner": ["sau an trong la", "sau an trong la cay"],
     "leaf-miner-fly": ["ruoi an trong la", "ruoi an trong la cay"],
     "leaf-miners": ["sau an trong la", "sau an trong la cay"],
-    "leaf-roller": ["sau cuon la", "sau cuon la cay"],
     "leaf-spots": ["dot tren la", "vet dot tren la"],
     "leafhopper": ["bo tron la", "bo tron la cay"],
     "microorganisms": ["vi sinh vat", "vi sinh vat gay hai"],
@@ -675,6 +811,7 @@ PEST_ALIASES = {
     "rat": ["chuot", "chuot hai cay"],
     "ray": ["ray", "ray tren cay"],
     "ray-bong": ["ray bong", "ray bong tren cay"],
+    "lung-trang": ["lung trang",],
     "ray-lung-trang": ["ray lung trang", "ray lung trang tren cay"],
     "ray-mem": ["ray mem", "ray mem tren cay"],
     "ray-nau": ["ray nau", "ray lung trang", "ray nau tren cay"],
@@ -702,8 +839,19 @@ PEST_ALIASES = {
     "sau-benh": ["sau benh", "sau gay benh"],
     "sau-bo": ["sau bo", "sau bo la"],
     "sau-chich-hut": ["sau chich hut", "sau hut mau"],
-    "sau-cuon-la": ["sau cuon la", "sau cuon la lua"],
+    "sau-cuon-la": ["sau cuon la", "sau cuon la lua", "cuon la"],
+    "sau-duc-hoa": ["sau duc hoa"],
+    "sau-duc-ngon": ["sau duc ngon"],
+    "sau-keo": ["sau keo"],
+    "sau-long": ["sau long"],
     "sau-dat": ["sau dat", "sau dat lua"],
+    "sau-nang": ["sau nang"],
+    "sau-phao": ["sau phao"],
+    "sau-rom": ["sau rom"],
+    "sen-nhot": ["sen nhot"],
+    "sen-vo-mong": ["sen vo mong"],
+    "sung-bo-ha": ["sung bo ha"],
+    "sau-xanh-da-lang": ["sau xanh da lang", "da lang", "sau xanh"],
     "sau-duc-be": ["sau duc be", "sau duc than be"],
     "sau-duc-canh": ["sau duc canh", "sau duc canh lua"],
     "sau-duc-qua": ["sau duc qua", "sau duc qua lua"],
@@ -723,6 +871,8 @@ PEST_ALIASES = {
     "sau-xanh": ["sau xanh", "sau xanh la"],
     "slug": ["oc ban", "oc ban trong ruong"],
     "snail": ["oc sen", "oc sen trong ruong"],
+    "snail": ["oc sen", "oc sen trong ruong"],
+    "oc-nhot": ["oc nhot"],
     "soil-fungi": ["nam dat", "nam gay benh tren dat"],
     "soil-fungus": ["nam dat", "nam gay benh tren dat"],
     "soil-insect": ["sau dat", "sau trong dat"],
@@ -737,6 +887,10 @@ PEST_ALIASES = {
     "spores": ["bao tu nam", "bao tu nam benh"],
     "spot": ["vet den", "vet den tren la"],
     "stem-borer": ["sau duc cot", "sau duc than"],
+    "sau-bay": ["sau bay"],
+    "xi-mu": ["xi mu"],
+    "nut-vo": ["nut vo"],
+    "nut-than": ["nut than"],
     "stem-crack": ["nut cot", "nut than"],
     "stress-cay": ["cay bi stress", "stress o cay", "stress"],
     "stress-cay-trong": ["cay trong bi stress", "stress cay trong", "stress"],
@@ -748,6 +902,16 @@ PEST_ALIASES = {
     "thuoc-bvtv": ["thuoc bao ve thuc vat", "thuoc tru sau"],
     "ve-sau": ["con ve sau", "ve sau"],
     "weeds": ["co dai", "co tranh", "co dai trong lua", "co dai trong ruong"],
+    "mac-co": ["mac co"],
+    "mat-cua": ["mat cua"],
+    "moi": ["moi"],
+    "mot": ["mot"],
+    "muoi-den": ["muoi den"],
+    "nam-coc": ["nam coc"],
+    "nam-hoa-vang": ["nam hoa vang"],
+    "nam-moc-nau": ["nam moc nau"],
+    "ray-chong-canh": ["ray chong canh"],
+    "tam-bop": ["tam bop"],
     "wet-soil": ["dat am", "dat am uot", "dat uot"],
     "white-mite": ["benh ran trang", "ran trang tren cay"],
     "white-mold": ["benh nam trang", "nam trang"],
@@ -755,7 +919,7 @@ PEST_ALIASES = {
 }
 
 PRODUCT_ALIASES = {
-    "afenzole-top-325sc": ["thuoc diet sau afenzole top", "thuoc tru sau afenzole", "afenzoletop"],
+    "afenzole-top-325sc": ["thuoc diet sau afenzole top", "thuoc tru sau afenzole", "afenzoletop", "2 hoat chat", "hai hoat chat"],
     "amamectin-60": ["thuoc diet sau amamectin", "thuoc tru sau amamectin 60", "amamectin"],
     "anh-hung-sau": ["sau anh hung", "sau hai hai", "anh hung sau"],
     "ankamec-3.6ec": ["thuoc diet sau ankamec", "thuoc tru sau ankamec 3 6ec", "ankamec"],
@@ -771,7 +935,7 @@ PRODUCT_ALIASES = {
     "forsan-60ec": ["thuoc diet sau forsan", "thuoc tru sau forsan 60ec", "forsan", "forsan60ec"],
     "g9-thanh-sau": ["thuoc diet sau g9 thanh sau", "thuoc tru sau g9 thanh sau", "thanh sau", "g9"],
     "giao-su-benh-4.0": ["thuoc diet nam giao su benh", "thuoc tru nam giao su benh", "giao su benh"],
-    "gone-super-350ec": ["thuoc diet sau gone super", "thuoc tru sau gone super 350ec", "gon super", "gone super"],
+    "gone-super-350ec": ["thuoc diet sau gone super", "thuoc tru sau gone super 350ec", "gon super", "gone super", "3 hoat chat", "ba hoat chat"],
     "haihamec": ["thuoc diet sau haihamec", "thuoc tru sau haihamec", "haihamec"],
     "haruko-5sc": ["thuoc diet sau haruko", "thuoc tru sau haruko 5sc", "haruko"],
     "haseidn-gold": ["thuoc diet sau haseidn gold", "thuoc tru sau haseidn gold", "haseidn"],
@@ -859,7 +1023,7 @@ PRODUCT_ALIASES = {
     "buti-43sc": ["thuoc diet sau buti 43sc", "buti"],
     "butti-43sc-anh-hung-nhen": ["thuoc diet nhen butti 43sc anh hung", "anh hung nhen", "buti"],
     "byphan-800wp": ["thuoc diet sau byphan 800wp", "byphan"],
-    "chessin-600wp": ["thuoc diet sau chessin 600wp", "chessin"],
+    "chessin-600wp": ["thuoc diet sau chessin 600wp", "chessin", "2 hoat chat", "hai hoat chat"],
     "chitin-daphamec-3-6": ["thuoc diet sau chitin daphamec 3 6", "chitin daphamec", "chitin", "chitin 3.6", "daphamec"],
     "chlorfena-240sc": ["thuoc diet sau chlorfena 240sc", "chlorfena"],
     "chowon-550sl": ["thuoc diet sau chowon 550sl than duoc", "chowon", "than duoc"],
@@ -877,7 +1041,7 @@ PRODUCT_ALIASES = {
     "dusan-240ec": ["thuoc dusan 240ec", "dusan", "dusan-240ec"],
     "ecudor-22-4sc": ["thuoc ecudor 22 4sc", "ecudor"],
     "emoil-99ec-spray": ["thuoc em oil 99ec", "Petrolium", "em oil", "em-oil", "oil"],
-    "emycin-4wp": ["thuoc emycin 4wp", "emycin"],
+    "emycin-4wp": ["thuoc emycin 4wp", "emycin", "2 hoat chat", "hai hoat chat"],
     "exami": ["thuoc exami", "exami"],
     "exami-20wg": ["thuoc exami 20wg", "exami"],
     "exami-20wg-ly-tieu-long": ["thuoc exami 20wg ly tieu long", "exami", "ly tieu long"],
@@ -893,8 +1057,8 @@ PRODUCT_ALIASES = {
     "forwarat-0-005-wax-block": ["thuoc forwarat 0 005 wax block", "forwarat"],
     "forzate-20ec": ["thuoc forzate 20ec", "forzate"],
     "forzate-20ew": ["thuoc forzate 20ew", "forzate"],
-    "fuji-boss-30sc": ["thuoc fuji boss 30sc", "fujiboss", "fuji boss", "boss", "fuji"],
-    "fujiboss-30sc": ["thuoc fuji boss 30sc", "fujiboss", "fuji boss", "boss", "fuji"],
+    "fuji-boss-30sc": ["thuoc fuji boss 30sc", "fujiboss", "fuji boss", "boss", "fuji", "2 hoat chat", "hai hoat chat"],
+    "fujiboss-30sc": ["thuoc fuji boss 30sc", "fujiboss", "fuji boss", "boss", "fuji", "2 hoat chat", "hai hoat chat"],
     "fullkill-50ec": ["thuoc fullkill 50ec", "fullkill", "full kill", "full-kill"],
     "gangter-300ec": ["thuoc gangter 300ec", "gangter"],
     "gardona-250sl": ["thuoc gardona 250sl", "gardona"],
@@ -939,8 +1103,8 @@ PRODUCT_ALIASES = {
     "khai-hoang-g63": ["thuoc bao ve thuc vat khai hoang g63", "thuoc khai hoang g63", "khai hoang g63", "khai hoang"],
     "khai-hoang-q10": ["thuoc bao ve thuc vat khai hoang q10", "thuoc khai hoang q10", "khai hoang q10", "q10"],
     "khai-hoang-q7": ["thuoc bao ve thuc vat khai hoang q7", "thuoc khai hoang q7", "khai hoang q7", "q7"],
-    "khongray-54wp": ["thuoc bao ve thuc vat khongray 54wp", "thuoc khongray 54wp", "khongray", "khongray-54wp"],
-    "king-cide-japan-460sc": ["thuoc bao ve thuc vat king cide japan 460sc", "thuoc king cide japan 460sc", "king cide japan 460sc", "king cide japan", "king cide", "kingcide", "king-cide"],
+    "khongray-54wp": ["thuoc bao ve thuc vat khongray 54wp", "thuoc khongray 54wp", "khongray", "khongray-54wp", "2 hoat chat", "hai hoat chat"],
+    "king-cide-japan-460sc": ["thuoc bao ve thuc vat king cide japan 460sc", "thuoc king cide japan 460sc", "king cide japan 460sc", "king cide japan", "king cide", "kingcide", "king-cide", "3 hoat chat", "ba hoat chat"],
     "king-kha-1ec": ["thuoc bao ve thuc vat king kha 1ec", "thuoc king kha 1ec", "king kha 1ec", "king kha", "kinh kha", "kingkha"],
     "koto-240sc": ["thuoc bao ve thuc vat koto 240sc", "thuoc koto 240sc", "koto"],
     "koto-gold-240sc": ["thuoc bao ve thuc vat koto gold 240sc", "thuoc koto gold 240sc", "koto", "koto-gold", "koto gold", "koto-gold"],
@@ -967,15 +1131,20 @@ PRODUCT_ALIASES = {
     "million-50wg": ["million", "million 50 wg", "thuoc million 50 wg"],
     "miriphos-1gb": ["iriphos", "miriphos 1 gb", "thuoc miriphos 1 gb"],
     "misung-15sc": ["misung", "misung 15 sc", "thuoc misung 15 sc"],
-    "mitop-one-390sc": ["mitop-one", "mitop one", "mitop", "thuoc mitop one 390sc"],
+    "mitop-one-390sc": ["mitop-one", "mitop one", "mitop", "thuoc mitop one 390sc", "3 hoat chat", "ba hoat chat"],
     "modusa-960ec": ["modusa", "modusa 960 ec", "thuoc modusa 960 ec"],
     "modusa-960ec-gold": ["modusa", "modusa 960 ec gold", "thuoc modusa 960 ec gold"],
     "nakano-50wp": ["nakano", "nakano 50 wp", "thuoc nakano 50 wp"],
     "napoleon-fortazeb-72wb": ["napoleon", "fortazeb", "napoleon-fortazeb", "napoleon fortazeb 72 wb", "thuoc napoleon fortazeb 72 wb"],
-    "naticur": ["naticur", "thuoc naticur"],
+    "naticur": ["naticur", "thuoc naticur", "2 hoat chat", "hai hoat chat"],
     "nekko-69wp": ["nekko 69 wp", "thuoc nekko 69 wp", "nekko"],
     "newfosinate-150sl": ["newfosinate 150 sl", "thuoc newfosinate 150 sl", "newfosinate"],
     "nhen-kim-cuong": ["kim cuong", "thuoc diet nhen kim cuong"],
+    "nhen-do": ["nhen do"],
+    "nhen-gie": ["nhen gie"],
+    "nhen-long-nhung": ["nhen long nhung"],
+    "nhen-trang": ["nhen trang"],
+    "nhen-vang": ["nhen vang"],
     "niko": ["niko", "thuoc niko"],
     "niko-72wp": ["niko 72 wp", "thuoc niko 72 wp", "niko"],
     "nofara": ["nofara", "thuoc nofara"],
@@ -1000,7 +1169,7 @@ PRODUCT_ALIASES = {
     "phuong-hoang-lua": ["thuoc phuong hoang", "thuoc phuong hoang lua", "phuong hoang lua", "phuong hoang"],
     "pilot-15ab": ["thuoc pilot", "thuoc pilot 15ab", "pilot", "thuoc oc", "thuoc tru oc", "thuoc diet oc", "thuoc tri oc"],
     "pim-pim-75wp": ["pim pim", "thuoc pim pim 75wp", "pimpim", "pim-pim"],
-    "probicol-200wp": ["thuoc probicol", "thuoc probicol 200wp", "probicol", "propicol"],
+    "probicol-200wp": ["thuoc probicol", "thuoc probicol 200wp", "probicol", "propicol", "2 hoat chat", "hai hoat chat"],
     "prochloraz-manganese-50-wp": ["thuoc prochloraz mangan 50wp", "thuoc prochloraz manganese", "prochloraz"],
     "pyrolax-250ec": ["thuoc pyrolax", "thuoc pyrolax 250ec", "pyrolax"],
     "ram-te-thien": ["thuoc ram te", "thuoc ram te thien", "te thien"],
@@ -1032,7 +1201,7 @@ PRODUCT_ALIASES = {
     "su-tu-do": ["thuoc su tu do", "su tu do"],
     "suparep-22-4sc": ["thuoc suparep 22 4sc", "thuoc suparep", "suparep"],
     "suparep-400wp": ["thuoc suparep 400wp", "suparep"],
-    "supermario-70sc": ["thuoc supermario 70sc", "supermario"],
+    "supermario-70sc": ["thuoc supermario 70sc", "supermario", "2 hoat chat", "hai hoat chat"],
     "suria-10gr": ["thuoc suria 10gr", "suria"],
     "suron-800wp": ["thuoc suron 800wp", "suron"],
     "takiwa-22sc": ["thuoc takiwa 22sc", "takiwa"],
@@ -1372,410 +1541,167 @@ FORMULA_ALIASES = {
     ],
 }
 
+# ===========================
+# 4) MATCHING ENGINE
+# ===========================
 
-# ======================
-# 3) GENERIC EXTRACTOR (rút gọn – thay cho extract_chemicals/extract_pests/...)
-#    - Không tối ưu AC ở đây để tập trung vào "không lặp rules"
-#    - Khi cần tốc độ: thay phần này bằng Aho–Corasick mà không đổi API.
-# ======================
+def match_aliases(text, aliases):
+    found = set()
+    text = normalize(text)
 
-def extract_by_aliases(q: str, aliases_map: Dict[str, List[str]]) -> List[str]:
-    """
-    Match alias theo cụm dài trước (longest-first) và tránh match chồng lấp.
-    aliases_map: {canonical: [alias1, alias2, ...]}
-    return: [canonical...] dedup giữ thứ tự (theo thứ tự match được)
-    """
-    qn = _norm(q)
+    for key, variants in aliases.items():
+        for v in variants:
+            alias = normalize(v)
+            pattern = rf"(?:^|\s){re.escape(alias)}(?:\s|$)"
 
-    # 1) Flatten + normalize alias
-    items: List[Tuple[str, str]] = []  # (alias_norm, canonical)
-    for canonical, aliases in aliases_map.items():
-        for a in aliases:
-            a_n = _norm(a)
-            if a_n:
-                items.append((a_n, canonical))
+            if re.search(pattern, text):
+                found.add(alias)   # <-- trả về alias text
+                break
 
-    # 2) Sort alias theo độ dài giảm dần để match cụm dài trước
-    #    (tie-break: alias text để ổn định)
-    items.sort(key=lambda x: (-len(x[0]), x[0]))
+    return found
 
-    taken_spans: List[Tuple[int, int]] = []   # các đoạn đã “chiếm” trong qn
-    picked: List[str] = []
-    picked_set = set()
 
-    def overlaps(s: int, e: int) -> bool:
-        for s2, e2 in taken_spans:
-            if not (e <= s2 or s >= e2):  # có giao nhau
-                return True
-        return False
+# ===========================
+# 5) INFER CHEMICAL FROM KB
+# ===========================infer_chemicals_from_kb
 
-    for alias_n, canonical in items:
-        # \b... \b để match theo cụm từ (sau khi normalize còn ASCII + space)
-        pat = re.compile(rf"\b{re.escape(alias_n)}\b")
+def infer_chemicals_from_kb(crops: Set[str], diseases: Set[str], pests: Set[str]) -> Set[str]:
+    result = set()
+    print("pests:", pests)
+    for chem, data in CHEMICAL_KB.items():
+        kb_crops = set(data.get("crops", []))
+        kb_diseases = set(data.get("diseases", []))
+        kb_pests = set(data.get("pests", []))
+        # match pest
+        if pests and pests.intersection(kb_pests):
+            result.add(chem)
 
-        for m in pat.finditer(qn):
-            s, e = m.start(), m.end()
-            if overlaps(s, e):
-                continue
+        # match crop + disease
+        if crops and diseases and crops.intersection(kb_crops) and diseases.intersection(kb_diseases):
+            result.add(chem)
 
-            # Nhận match này
-            taken_spans.append((s, e))
+        # match crop only
+        if crops and crops.intersection(kb_crops):
+            result.add(chem)
 
-            # Chỉ add canonical 1 lần, giữ thứ tự theo lần đầu match được
-            if canonical not in picked_set:
-                picked.append(canonical)
-                picked_set.add(canonical)
+        # match disease only
+        if diseases and diseases.intersection(kb_diseases):
+            result.add(chem)
 
-            # Không break ở đây nếu bạn muốn 1 alias “chiếm” nhiều đoạn,
-            # nhưng thường 1 lần là đủ để chặn các alias ngắn hơn.
-            break
-
-    return picked
-
-def extract_all_groups(q: str, aliases_by_group: Dict[str, Dict[str, List[str]]]) -> Dict[str, List[str]]:
-    """
-    aliases_by_group: {group_name: aliases_map}
-    return: {group_name: [canonical...]} (dedup giữ thứ tự)
-    """
-    result: Dict[str, List[str]] = {}
-    for group, amap in aliases_by_group.items():
-        vals = extract_by_aliases(q, amap)
-        if vals:
-            result[group] = vals
     return result
 
 
-ALIASES_BY_GROUP = {
-    "chemical": CHEMICAL_ALIASES,
-    "crop": CROP_ALIASES,
-    "disease": DISEASE_ALIASES,
-    "pest": PEST_ALIASES,
-    "product": PRODUCT_ALIASES,
-    "formula": FORMULA_ALIASES,   # NEW
-    "brand": BRAND_ALIASES,   # NEW
-    "mechanisms": MECHANISMS_ALIASES,
-}
+# ===========================
+# 6) MAIN EXTRACTION
+# ===========================
 
-GROUP_TAG_PREFIX = {
-    "alias": "alias",
-    "chemical": "chemical",
-    "crop": "crop",
-    "disease": "disease",
-    "pest": "pest",
-    "product_group": "product-group",
-    "product": "product",
-    "formula": "formula",         # NEW
-    "brand": "brand",
-    "mechanisms": "mechanisms",         # NEW
-}
+def extract_tags(query: str) -> Dict:
 
-# ======================
-# 4) RULE-DRIVEN TAGGING (đây là phần bạn muốn "không lặp")
-# ======================
+    norm_query = normalize(query)
 
-def _dedup(lst: List[str]) -> List[str]:
-    out: List[str] = []
-    seen: Set[str] = set()
-    for x in lst:
-        if x not in seen:
-            out.append(x)
-            seen.add(x)
-    return out
+    crops = match_aliases(norm_query, CROP_ALIASES)
+    diseases = match_aliases(norm_query, DISEASE_ALIASES)
+    pests = match_aliases(norm_query, PEST_ALIASES)
 
-def apply_group_rules(q0: str, found: Dict[str, List[str]]) -> Tuple[List[str], List[str]]:
-    """
-    Input:
-      q0    : normalized query
-      found : {group: [canonical...]}
-    Output:
-      must, anyt (chưa có entity_type; bạn gắn thêm ở bước sau)
-    """
+    # chemical do user gõ trực tiếp
+    direct_chems = match_aliases(norm_query, CHEMICAL_ALIASES)
 
-    must: List[str] = []
-    anyt: List[str] = []
+    print("crops:", crops)
+    print("diseases:", diseases)
+    print("pests:", pests)
+    print("direct_chems:", direct_chems)
+    # suy diễn từ KB
+    
+    kb_chems = infer_chemicals_from_kb(crops, diseases, pests)
+    print("kb_chems:", kb_chems)
 
-    # ---- Các “intent signal” dùng lại cho nhiều nhóm
-    has_product_term = bool(re.search(r"\b(san pham|thuoc)\b", q0))
-    has_control_term = bool(re.search(r"\b(tri|diet|phong|dac tri|xu ly|tru)\b", q0))
-    has_contains_term = bool(re.search(r"\b(chua|co trong|thanh phan|hoat chat)\b", q0))
+    all_chems = direct_chems.union(kb_chems)
 
-    # ---- RULE CONFIG theo nhóm
-    # action: "must" => đưa tag vào must, "any" => đưa tag vào anyt
-    RULES = {
-        # CHEMICAL: nếu câu hỏi kiểu “sản phẩm chứa hoạt chất” => entity product + chemical vào MUST
-        "chemical": {
-            "if": lambda: (has_product_term and has_contains_term) or
-                          bool(re.search(r"\b(san pham)\b.*\b(chua|co)\b", q0)),
-            "on_true": "must",
-            "on_false": "any",
-            "force_entity_product_on_true": True,
-        },
+    print("all_chems:", all_chems)
 
-        # PEST: nếu mang ý trị/diệt/phòng... => entity product + pest vào MUST
-        "pest": {
-            "if": lambda: has_control_term or
-                          bool(re.search(r"\b(thuoc|san pham)\b.*\b(tri|diet|phong)\b", q0)) or
-                          bool(re.search(r"\b(sau|ray|nhen|bo|rep|kien)\b", q0)),
-            "on_true": "must",
-            "on_false": "any",
-            "force_entity_product_on_true": True,
-        },
+    must_tags = set()
+    any_tags = set()
 
-        # CROP/DISEASE/PRODUCT/PRODUCT_GROUP/ALIAS: mặc định soft (ANY)
-        "crop": {"default": "any"},
-        "disease": {"default": "any"},
-        "product": {"default": "any"},
-        "product_group": {"default": "any"},
-        "alias": {"default": "any"},
-        "formula": {"default": "any"},
+    for c in crops:
+        must_tags.add(f"crop:{c}")
+
+    for d in diseases:
+        must_tags.add(f"disease:{d}")
+
+    for p in pests:
+        must_tags.add(f"pest:{p}")
+
+    for chem in all_chems:
+        any_tags.add(f"chemical:{chem}")
+
+    found_entities = {
+        "crops": list(crops),
+        "diseases": list(diseases),
+        "pests": list(pests),
+        "chemicals": list(all_chems)
     }
 
-    for group, values in found.items():
-        cfg = RULES.get(group, {"default": "any"})
-        prefix = GROUP_TAG_PREFIX.get(group, group)
-
-        if "if" in cfg:
-            cond = bool(cfg["if"]())
-            target = cfg["on_true"] if cond else cfg["on_false"]
-
-            if cond and cfg.get("force_entity_product_on_true"):
-                must.append("entity:product")
-
-            for v in values:
-                tag = f"{prefix}:{v}"
-                (must if target == "must" else anyt).append(tag)
-
-        else:
-            target = cfg.get("default", "any")
-            for v in values:
-                tag = f"{prefix}:{v}"
-                (must if target == "must" else anyt).append(tag)
-
-    return _dedup(must), _dedup(anyt)
-
-
-# ======================
-# 5) ENTITY TYPE INFERENCE (giữ patterns xương sống)
-#    (Bạn có thể dán infer_entity_type cũ của bạn vào đây)
-# ======================
-
-ENTITY_TYPES = ["registry", "product", "disease", "procedure", "pest", "weed", "general"]
-
-def infer_entity_type(q: str):
-    qn = _norm(q)
-
-    patterns = {
-        "procedure": [
-            (r"\b(quy trinh|cac buoc|huong dan|lam the nao|cach)\b", 2),
-            (r"\b(pha|phun|xit|tuoi|bon|rai|tron|xu ly|ngam)\b", 1),
-            (r"\b(lieu|lieu luong|nong do|dinh ky|thoi diem)\b", 1),
-            (r"\b(binh\s*(16|25)l|ml|lit|l|g|kg|ha|%)\b", 1),
-        ],
-        "product": [
-            (r"\b(thuoc|thuoc gi|ten thuoc|san pham|hang|nha san xuat)\b", 2),
-            (r"\b(hoat chat|ai|thanh phan)\b", 2),
-            (r"\b(wp|wg|sc|ec|sl|gr|od|df|sp|cs|fs)\b", 1),
-            (r"\b(gia|mua o dau|dai ly|phan phoi|tuong duong|thay the)\b", 1),
-        ],
-        "disease": [
-            (r"\b(benh|nam benh|trieu chung|phong tri benh)\b", 2),
-            (r"\b(thoi|dom|chay la|vang la|heo|xi mu|moc|ri sat)\b", 1),
-            (r"\b(phytophthora|fusarium|anthracnose)\b", 2),
-        ],
-        "pest": [
-            (r"\b(sau|bo|ray|ruoi|rep|bo tri|nhen|mot|sung|tuyen trung)\b", 2),
-            (r"\b(phong tru sau|diet ray|tru sau)\b", 2),
-        ],
-        "weed": [
-            (r"\b(co dai|co)\b", 2),
-            (r"\b(diet co|tru co)\b", 2),
-            (r"\b(tien nay mam|hau nay mam|la rong|la hep)\b", 1),
-        ],
-        "registry": [
-            (r"\b(dang ky|giay phep|so dang ky|ma so)\b", 2),
-            (r"\b(danh muc|duoc phep|cam|han che)\b", 2),
-            (r"\b(thong tu|nghi dinh|co quan|cuc|gia han|thoi han)\b", 1),
-            (r"\b(tra cuu|verify|hop phap|tem nhan)\b", 1),
-        ],
+    return {
+        "must": list(must_tags),
+        "any": list(any_tags),
+        "found": found_entities
     }
 
-    score = {k: 0 for k in ENTITY_TYPES}
-    for et, rules in patterns.items():
-        for pat, w in rules:
-            if re.search(pat, qn):
-                score[et] += w
 
-    ranked = sorted([(et, sc) for et, sc in score.items() if et != "general"], key=lambda x: x[1], reverse=True)
-    top1, s1 = ranked[0]
-    top2, s2 = ranked[1]
+# ===========================
+# 7) ANSWER MODE DETECTION
+# ===========================
 
-    if s1 <= 0:
-        return "general", score
-    if (s1 - s2) <= 1 and s2 > 0:
-        return (top1, top2), score
-    return top1, score
+PRODUCT_SIGNAL = re.compile(r"(?:^|\s)(thuoc|san pham)(?:\s|$)", re.I)
 
 
-# ======================
-# 6) MAIN API: infer_filters_from_query (pipeline gọi)
-# ======================
+def detect_answer_mode(query: str, tags: Dict) -> str:
 
-def finalize_filters(must: List[str], anyt: List[str]):
-    # 1) bỏ toàn bộ entity:*
-    must = [t for t in must if not t.startswith("entity:")]
-    anyt = [t for t in anyt if not t.startswith("entity:")]
+    q = normalize(query)
 
-    # 2) khử trùng lặp, giữ thứ tự
-    def dedup(xs):
-        seen=set(); out=[]
-        for x in xs:
-            if x not in seen:
-                seen.add(x); out.append(x)
-        return out
+    found = tags.get("found", {})
 
-    return dedup(must), dedup(anyt)
+    if found.get("pests"):
+        return "pest"
 
-def strip_entity_tags(tags):
-    return [t for t in tags if not str(t).startswith("entity:")]
-
-def enforce_backbone_without_entity(must, anyt):
-    """
-    - Không dùng entity:*
-    - Nếu must rỗng, kéo 1 tag cụ thể từ anyt lên must theo thứ tự ưu tiên.
-    """
-    must = strip_entity_tags(must)
-    anyt = strip_entity_tags(anyt)
-
-    # Nếu must đã có tag cụ thể thì OK
-    if must:
-        return must, anyt
-
-    # Thứ tự ưu tiên "xương sống"
-    priority_prefixes = (
-        "mechanisms",
-        "formula:",
-        "brand:",
-        "pest:",
-        "disease:",
-        "weed:",
-        "product:",
-        "chemical:",
-        "procedure:",
-        "registry:",   # nếu anh có nhóm này
-        # "crop:"       # thường KHÔNG nên làm backbone (rộng quá), nhưng có thể thêm nếu muốn
-    )
-
-    for prefix in priority_prefixes:
-        hit_idx = next((i for i, t in enumerate(anyt) if str(t).startswith(prefix)), None)
-        if hit_idx is not None:
-            hit = anyt.pop(hit_idx)
-            must.append(hit)
-            break
-
-    return must, anyt
-
-def relax_must_same_group(must, anyt, prefixes=("pest:", "disease:", "weed:", "chemical:", "product:")):
-    """
-    Nếu MUST có nhiều tag cùng group (vd: pest:*),
-    giữ 1 cái trong MUST, các cái còn lại chuyển sang ANY.
-    """
-    new_must = []
-    moved = []
-
-    for p in prefixes:
-        same = [t for t in must if t.startswith(p)]
-        if len(same) > 1:
-            keep = same[0]          # giữ cái đầu (hoặc chọn theo score nếu có)
-            new_must.append(keep)
-            moved.extend(same[1:])  # phần dư đẩy sang ANY
-        elif len(same) == 1:
-            new_must.append(same[0])
-
-    # giữ lại các must không thuộc group trên
-    others = [t for t in must if not any(t.startswith(p) for p in prefixes)]
-    new_must.extend(others)
-
-    # cập nhật anyt
-    anyt = anyt + moved
-    anyt = list(dict.fromkeys(anyt))  # dedup, giữ thứ tự
-
-    return new_must, anyt
-
-def reorder_any_by_priority(anyt: List[str], priority_prefixes=("mechanisms:", "formula:")) -> List[str]:
-    """
-    Đưa các tag có prefix ưu tiên lên đầu (giữ thứ tự tương đối).
-    Mặc định: mechanisms:* trước, rồi formula:*, rồi các tag khác.
-    """
-    hi = []
-    lo = []
-    for t in anyt:
-        if any(str(t).startswith(p) for p in priority_prefixes):
-            hi.append(t)
-        else:
-            lo.append(t)
-    return hi + lo
-
-def infer_answer_intent(q: str, found_groups: Dict[str, List[str]]):
-    qn = _norm(q)
-
-    has_product_term = bool(re.search(r"\b(thuoc|thuốc|san pham|sản phẩm)\b", qn))
-    has_symptom_term = bool(re.search(r"\b(trieu chung|triệu chứng|benh|bệnh)\b", qn))
-
-    if has_symptom_term:
+    if found.get("diseases"):
         return "disease"
-    if has_product_term:
+
+    if found.get("crops"):
+        return "crop"
+
+    if found.get("chemicals"):
+        return "chemical"
+
+    if PRODUCT_SIGNAL.search(q):
         return "product"
+
     return "general"
 
 
-def infer_filters_from_query(q: str):
-    q0 = _norm(q)
+# ===========================
+# 8) PUBLIC INTERFACE
+# ===========================
 
-    found = extract_all_groups(q0, ALIASES_BY_GROUP)
+def tag_filter_pipeline(query: str) -> Dict:
 
-    must, anyt = apply_group_rules(q0, found)
-    must, anyt = finalize_filters(must, anyt)
+    tags = extract_tags(query)
+    mode = detect_answer_mode(query, tags)
 
-    # entity chỉ để log/debug
-    et, _score = infer_entity_type(q0)
-    debug_log(
-        f"ENTITY TYPE : {et}",
-        f"ENTITY SCORE: {_score}"
-    )
-
-    def strip_entity(tags):
-        return [t for t in tags if not str(t).startswith("entity:")]
-
-    must = strip_entity(must)
-    anyt = strip_entity(anyt)
-
-    # GIỮ SEMANTICS BẢN CŨ:
-    # - Không dùng MUST ở downstream (tránh over-filter). Gom toàn bộ MUST sang ANY.
-    # - Sau đó chỉ ưu tiên thứ tự mechanisms/brand trong ANY để tăng khả năng khớp.
-    anyt = must + anyt
-    must = []
-
-    # Ưu tiên mechanisms trước mọi thứ trong ANY (và brand nếu có)
-    anyt = reorder_any_by_priority(anyt, priority_prefixes=("mechanisms:", "formula:"))
-
-    # dedupe giữ thứ tự
-    seen = set()
-    anyt2 = []
-    for t in anyt:
-        if t not in seen:
-            anyt2.append(t)
-            seen.add(t)
-
-    debug_log(
-        f"FINAL MUST : {must}",
-        f"FINAL ANY  : {anyt2}"
-    )
     return {
-        "must": must,
-        "any": anyt,
-        "found": found,          # 👈 THÊM
-        "entity_type": et,       # (tuỳ chọn)
-        "entity_score": _score,  # (tuỳ chọn)
+        "query": query,
+        "must": tags["must"],
+        "any": tags["any"],
+        "found": tags["found"],
+        "answer_mode": mode
     }
 
 
+# ===========================
+# TEST
+# ===========================
+
+if __name__ == "__main__":
+    q = "Thuốc trị mọt đục cành."
+
+    print(json.dumps(tag_filter_pipeline(q), indent=2, ensure_ascii=False))
