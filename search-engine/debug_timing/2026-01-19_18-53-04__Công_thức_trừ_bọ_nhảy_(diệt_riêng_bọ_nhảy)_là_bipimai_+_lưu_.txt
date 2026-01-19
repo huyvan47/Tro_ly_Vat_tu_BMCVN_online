@@ -1,0 +1,21 @@
+QUERY: Công thức trừ bọ nhảy (diệt riêng bọ nhảy) là bipimai + lưu dẫn + abamectin 3.6. Hãy cho tôi hoạt chất lưu dẫn phù hợp vào công thức trên
+
+- router: 1.866s
+- normalize: 2.173s
+- tag_filter: 0.057s
+- intent_analysis: 3.254s
+- multi_hop_start: 0.000s
+- multi_hop_total: 4.578s
+- multi_hop_total: 0.004s
+- build_context: 0.000s
+- llm_generate: 13.178s
+
+[multi_hop]
+  - hop_1_retrieve: 0.000s
+  - hop_1_analyze: 1.419s
+  - hop_2_retrieve: 0.339s
+  - hop_2_analyze: 1.582s
+  - hop_3_retrieve: 0.507s
+  - hop_3_analyze: 0.000s
+
+TOTAL: 25.110s

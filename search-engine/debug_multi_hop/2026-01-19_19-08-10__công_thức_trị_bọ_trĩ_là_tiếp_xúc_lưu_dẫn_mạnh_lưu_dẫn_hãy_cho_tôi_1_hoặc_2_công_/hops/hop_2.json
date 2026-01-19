@@ -1,0 +1,62 @@
+{
+  "hop": 2,
+  "query": "công thức thuốc trừ bọ trĩ tiếp xúc lưu dẫn mạnh lưu dẫn",
+  "num_hits": 5,
+  "decision": {
+    "need_next_hop": true,
+    "next_query": "công thức thuốc trị bọ trĩ tiếp xúc lưu dẫn mạnh lưu dẫn",
+    "total_unique_hits": 65
+  },
+  "docs": [
+    {
+      "id": "chessin_600wp_chunk_01",
+      "question": "Thuốc Chessin 600WP có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Chessin 600WP dùng để phòng trừ sâu bệnh gì? | Thành phần và công dụng của Chessin 600WP là gì? | Thuốc Chessin 600WP có những lưu ý gì khi sử dụng?",
+      "answer": "Thuốc Chessin 600WP chứa hai hoạt chất chính là dinotefuran 200g/kg và pymetrozine 400g/kg. Sản phẩm được đóng gói dưới dạng gói 30gr và 100gr. Thuốc có đặc tính lưu dẫn mạnh. được sử dụng để phòng trừ các loại sâu hại trên nhiều cây trồng như lúa (rầy nâu, bọ xít), sắn (khoai mì), cà phê, hồ tiêu, phật thủ (rệp sáp, bọ phấn, rầy chổng cánh), hoa hồng, ngô, đậu tương (rệp muội). Thuốc có tính lưu dẫn mạnh, giúp hiệu quả phòng trừ sâu bệnh cao.",
+      "score": 0.4056515097618103,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:chessin-600wp|chemical:dinotefuran|chemical:pymetrozine|crop:lua|crop:khoai-mi|crop:ca-phe|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "daphamec_5ec_n_c_resqansuper_chunk_01",
+      "question": "Thuốc BVTV Daphamec 5EC có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Daphamec 5EC dùng để làm gì? | Thành phần và công dụng của Daphamec 5EC là gì? | Daphamec 5EC có đặc điểm nổi bật nào? | Lưu ý khi sử dụng Daphamec 5EC là gì?",
+      "answer": "Daphamec 5EC (Nước đỏ) của công ty Tỷ Phúc Thịnh chứa hoạt chất abamectin 5% w/w, đóng gói 450ml. Sản phẩm dùng để phòng trừ sâu cuốn lá nhỏ, sâu xanh, bọ trĩ, sâu vẽ bùa, nhện đỏ, rầy xanh, rầy mềm, sâu đục thân, dòi đục quả, ốc bươu vàng, bọ phấn trên nhiều loại cây trồng khác nhau. Thuốc có đặc điểm nổi bật là hoạt chất abamectin vừa trừ sâu hại cắn phá vừa trừ sâu chích hút, đồng thời diệt trừ ốc bươu vàng. Lưu ý khi sử dụng là tránh tiếp xúc trực tiếp với thuốc.",
+      "score": 0.37676897644996643,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:daphamec-5ec|chemical:abamectin|pest:leaf-folder|pest:thrips|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "biperin_100ec_superotox_100ec_chunk_01",
+      "question": "Biperin 100EC (SUPEROTOX 100EC) là thuốc bảo vệ thực vật có đặc điểm gì?",
+      "alt_question": "Biperin 100EC là thuốc gì? | Thuốc Biperin 100EC dùng để trừ sâu nào? | Thành phần và công dụng của Biperin 100EC là gì? | Biperin 100EC có đặc điểm nổi bật gì? | Quy cách đóng gói của Biperin 100EC như thế nào?",
+      "answer": "Biperin 100EC (SUPEROTOX 100EC) là thuốc bảo vệ thực vật chứa hoạt chất cypermethrin với nồng độ 100g/lít, được đóng gói dưới dạng chai 100ml và 450ml. Thuốc có đặc tính xông hơi. Thuốc có công dụng trừ sâu đục thân, sâu cuốn lá, bọ trĩ hại lúa, sâu giòi, sâu đục quả (gây thối quả), sâu đo (sâu que), bọ xít, bọ nhảy hại các loại cây như vải thiều, nhãn, na, hồng, cam, quýt, rau màu và cây ăn trái. Thuốc đặc biệt hiệu quả với các loại sâu miệng nhai và chích hút, đồng thời có khả năng trừ ruồi vàng và kiến. Lưu ý khi sử dụng cần xông hơi để đảm bảo an toàn và hiệu quả.",
+      "score": 0.35804373025894165,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:biperin-100ec|chemical:cypermethrin|pest:stem-borer|pest:leaf-folder|pest:thrips|mechanisms:xong-hoi"
+    },
+    {
+      "id": "khongray_54wp_chunk_02",
+      "question": "Khongray 54WP dùng cho những loại cây trồng và sâu bệnh nào?",
+      "alt_question": "Khongray 54WP có thể dùng cho cây cà phê không? | Các loại sâu bệnh nào bị trừ bởi Khongray 54WP? | Khongray 54WP dùng cho cây đậu tương có hiệu quả không?",
+      "answer": "Khongray 54WP được sử dụng trên nhiều loại cây trồng như lúa, đậu tương, đậu phộng, rau màu và cà phê. Sản phẩm đặc biệt hiệu quả trong việc phòng trừ các loại sâu bệnh chích hút như rầy nâu, rầy xanh, rầy lưng trắng, bọ trĩ trên lúa; sâu xanh, sâu khoang, bọ nhảy, rệp sáp, bọ phấn, rệp muội, nhện trên đậu tương, đậu phộng và rau màu; rệp sáp và rệp vảy trên cà phê.",
+      "score": 0.3513125479221344,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:khongray-54wp|chemical:buprofezin|chemical:dinotefuran|crop:lua|crop:dau-nanh|crop:peanut|crop:vegetables"
+    },
+    {
+      "id": "inmanda_100wp_si_u_imida_100wp_super_chunk_01",
+      "question": "Sản phẩm Inmanda 100WP (Siêu Imida 100WP Super) là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?",
+      "alt_question": "Inmanda 100WP là thuốc gì? | Công dụng chính của Inmanda 100WP là gì? | Inmanda 100WP dùng cho cây trồng nào? | Đặc điểm nổi bật của Inmanda 100WP là gì?",
+      "answer": "Inmanda 100WP (Siêu Imida 100WP Super) chứa hoạt chất Imidacloprid 100g/kg, thuộc nhóm thuốc lưu dẫn thế hệ đầu, có khả năng diệt trừ nhiều loại sâu hại như bọ nhảy, rệp sáp, bọ phấn, bọ trĩ, bọ xít, rầy nâu, rầy xanh, rầy mềm, bọ ngâu trên các loại cây trồng như lúa, rau màu, cây ăn trái và cây công nghiệp. Sản phẩm được đóng gói 100gr, phù hợp dùng làm thuốc nền kết hợp với các thuốc khác, có giá thành bình dân. Thuốc có đặc tính xông hơi.",
+      "score": 0.35127198696136475,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:inmanda-100wp|chemical:imidacloprid|pest:aphid|pest:whitefly|pest:thrips|mechanisms:luu-dan"
+    }
+  ]
+}

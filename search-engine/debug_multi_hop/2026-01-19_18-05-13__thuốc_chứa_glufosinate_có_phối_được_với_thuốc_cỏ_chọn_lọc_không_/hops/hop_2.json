@@ -1,0 +1,32 @@
+{
+  "hop": 2,
+  "query": "tương tác thuốc chứa glufosinate với thuốc cỏ chọn lọc",
+  "num_hits": 2,
+  "decision": {
+    "need_next_hop": true,
+    "next_query": "tương tác thuốc chứa glufosinate với thuốc cỏ chọn lọc",
+    "total_unique_hits": 22
+  },
+  "docs": [
+    {
+      "id": "kenbast_15sl_p_avo_chunk_01",
+      "question": "ĐP. AVO là thuốc gì và có công dụng như thế nào?",
+      "alt_question": "ĐP. AVO dùng để làm gì? | Thuốc ĐP. AVO có tác dụng diệt loại cỏ nào? | ĐP. AVO chứa hoạt chất gì? | Liều lượng và cách dùng ĐP. AVO như thế nào?",
+      "answer": "ĐP. AVO là thuốc bảo vệ thực vật chứa hoạt chất Glufosinate ammonium với nồng độ 150g/l, được sản xuất bởi công ty Tỷ Phúc Thịnh. Thuốc được đóng gói dưới dạng ĐP.AVO với quy cách 800ml hoặc 900ml. ĐP. AVO là thuốc trừ cỏ không chọn lọc, có tác dụng nội hấp và cháy chậm, dùng để diệt trừ các loại cỏ dại lá rộng và lá hẹp, bao gồm cả các loại cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh. Khi phun ướt đẫm từ gốc đến ngọn, sau 3 ngày lá cỏ bắt đầu vàng và sau 6-7 ngày cỏ sẽ chết hoàn toàn.",
+      "score": 0.5327425599098206,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:dp-avo|chemical:glufosinate-ammonium|pest:weeds|pest:co-la-rong|pest:narrowleaf-weed|mechanisms:khong-chon-loc"
+    },
+    {
+      "id": "kenbast_15sl_lyrhoxini_chunk_01",
+      "question": "Lyrhoxini là thuốc gì và có công dụng ra sao?",
+      "alt_question": "Lyrhoxini dùng để làm gì? | Thuốc Lyrhoxini có thành phần gì? | Lyrhoxini trị loại cỏ nào? | Thuốc Lyrhoxini có đặc điểm gì nổi bật?",
+      "answer": "Lyrhoxini là thuốc bảo vệ thực vật chứa hoạt chất Glufosinate ammonium 150g/l, được đóng gói với quy cách 800ml hoặc 900ml. Thuốc có tác dụng trừ cỏ không chọn lọc, nội hấp, cháy chậm, diệt trừ các loại cỏ dại lá rộng và lá hẹp, kể cả cỏ đã kháng Glyphosate như cỏ mần trầu, cỏ tranh. Thuốc được phun ướt đẫm từ gốc đến ngọn, sau 3 ngày lá cỏ bắt đầu vàng và 6-7 ngày sau cỏ mới chết hoàn toàn. Đây là thuốc trừ cỏ không chọn lọc hiệu quả cao.",
+      "score": 0.5221431255340576,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:lyrhoxini|chemical:glufosinate-ammonium|pest:weeds|pest:co-la-rong|pest:narrowleaf-weed|mechanisms:khong-chon-loc"
+    }
+  ]
+}

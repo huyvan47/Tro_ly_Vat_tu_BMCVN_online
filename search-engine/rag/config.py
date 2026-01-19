@@ -3,6 +3,21 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class RAGConfig:
 
+    # ===== MULTI QUERY CONFIG =====
+    use_multi_query: bool = True          # master switch
+    enable_multi_query_log: bool = True
+    enable_timing_log: bool = True
+    max_sub_queries: int = 3               # tối đa số sub query LLM sinh ra
+    multi_query_top_k: int = 80            # top_k cho mỗi sub-query
+    rrf_k: int = 60                        # tham số k cho RRF
+    rrf_top_n: int = 400                   # số doc tối đa sau fuse
+
+    # Multi-hop
+    use_multi_hop = True
+    max_multi_hops = 3
+    multi_hop_top_k = 60
+    multi_hop_stop_threshold = 180
+
     min_score_main: float = 0.35
     """
     1️⃣ min_score_main: float = 0.35
@@ -164,6 +179,16 @@ class RAGConfig:
     """
     max_ctx_strict: int = 32
     max_ctx_soft: int = 24
+
+    # # GIẢM RẤT MẠNH
+    # max_ctx_strict: int = 20
+    # max_ctx_soft: int = 16
+
+    # Dành riêng cho câu hỏi dạng listing
+    max_ctx_listing: int = 12
+
+    # Dành cho câu hỏi hỏi đáp cần reasoning
+    max_ctx_reasoning: int = 24
 
     """
     🔟 max_ctx_strict: int = 16

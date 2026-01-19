@@ -1,0 +1,612 @@
+{
+  "hop": 1,
+  "query": "Công thức trị bọ trĩ là \"Tiếp xúc - lưu dẫn mạnh + Lưu dẫn\". Hãy cho tôi 1 hoặc 2 công thức (các dòng thuốc) cụ thể (thuốc sâu không phải thuốc cỏ).",
+  "num_hits": 60,
+  "decision": {
+    "need_next_hop": true,
+    "next_query": "công thức thuốc trị bọ trĩ tiếp xúc lưu dẫn mạnh lưu dẫn",
+    "total_unique_hits": 60
+  },
+  "docs": [
+    {
+      "id": "sau_hai_05_tri_15__000185",
+      "question": "Xử lý Trĩ - Rất hay kháng thuốc  như thế nào?",
+      "alt_question": "Cách xử lý Trĩ - Rất hay kháng thuốc?|Trĩ - Rất hay kháng thuốc xử lý sao?|Thuốc nào trị Trĩ - Rất hay kháng thuốc?|Phác đồ phòng trừ Trĩ - Rất hay kháng thuốc?|Cách trị Tri - Rat hay khang thuoc?|Trĩ - Rất hay kháng thuốc kháng thuốc nên làm gì?",
+      "answer": "Zigen Super 240ml + Nofara 240ml + bám dính 100ml /200L nước diệt trĩ hiệu quả 80-90% Oxatin 240ml + Nofara 240ml + bám dính 100ml /200L nước diệt trĩ hiệu quả 90% (Với chè thì dùng Igro Xpro rất hiệu quả : đạt từ 80-90%, đã thử nghiệm tại Thái Nguyên, liều 20ml/20L nước)",
+      "score": 0.5530123710632324,
+      "category": "procedure_mixing_formula_thrips",
+      "entity_type": "product",
+      "tags_v2": "process:pesticide-application|pest:bo-tri|formula:cong-thuc-bo-tri|product:zigen-super|product:nofara|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "sau_hai_05_tri_14__000184",
+      "question": "Xử lý Trĩ - Rất hay kháng thuốc khi mật độ cao như thế nào?",
+      "alt_question": "Cách xử lý Trĩ - Rất hay kháng thuốc khi mật độ cao?|Trĩ - Rất hay kháng thuốc cao xử lý sao?|Thuốc nào trị Trĩ - Rất hay kháng thuốc cao?|Phác đồ phòng trừ Trĩ - Rất hay kháng thuốc cao?|Cách trị Tri - Rat hay khang thuoc cao?|Trĩ - Rất hay kháng thuốc kháng thuốc nên làm gì?",
+      "answer": "Tiếp xúc -lưu dẫn mạnh + Lưu dẫn. 2 sản phẩm trừ trĩ xuất sắc nhất hiện nay của nhóm Tiếp xúc-lưu dẫn mạnh: Oxatin; Zigen Super",
+      "score": 0.5385829210281372,
+      "category": "procedure_mixing_formula_thrips",
+      "entity_type": "product",
+      "tags_v2": "process:contact-systemic-action|action:control|object:pesticide|pest:bo-tri|formula:cong-thuc-bo-tri|product:oxatin|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "igro_240sc_xpro_ho_ng_t_s_u_chunk_01",
+      "question": "Igro 240SC Xpro (Hoàng Tử Sâu) là thuốc BVTV có thành phần và công dụng như thế nào?",
+      "alt_question": "Thuốc Igro 240SC Xpro dùng để làm gì? | Thành phần và công dụng của Igro 240SC Xpro là gì? | Igro 240SC Xpro có thể dùng cho cây nào? | Thuốc Igro 240SC Xpro có những đặc điểm nổi bật nào?",
+      "answer": "Igro 240SC Xpro (Hoàng Tử Sâu) chứa hoạt chất Chlorfenapyr với nồng độ 240g/lít. Sản phẩm được đóng gói dưới dạng Delta với các quy cách 20ml, 100ml và 200ml. Thuốc đặc trị bọ trĩ trên cây chè, có khả năng sử dụng cho cây sầu riêng nhưng cần thử nghiệm trên một vài cây trước khi phun diện rộng. Thuốc có tác dụng diệt trừ các loại sâu chích hút trên cây chè và có khả năng lưu dẫn mạnh, tiếp xúc hiệu quả.",
+      "score": 0.43877193331718445,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:igro-240sc-xpro|chemical:chlorfenapyr|pest:thrips|crop:tea|crop:durian|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "OHAYO",
+      "question": "OHAYO 100SC",
+      "alt_question": "[\"Thông tin về OHAYO 100SC\", \"Cách sử dụng OHAYO 100SC\", \"OHAYO 100SC có tác dụng gì?\", \"Liều dùng của OHAYO 100SC là bao nhiêu?\", \"OHAYO 100SC có an toàn cho cây trồng không?\", \"Hãng sản xuất OHAYO 100SC là ai?\", \"OHAYO 100SC diệt loại sâu nào?\", \"Lưu ý khi sử dụng OHAYO 100SC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu thế hệ mới, nhóm pyrazole. Các tên / nhãn tương đương: OHAYO 100SC. Hoạt chất: Chlorfenapyr 100g/lít, Phụ gia đặc biệt 900g/lít. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Fertiagro Pte., Ltd (Singapore). Đặc tính – công dụng: Ohayo 100SC là thuốc trừ sâu thế hệ mới, nhóm pyrazole, an toàn cho cây trồng, hiệu quả kéo dài. Diệt trừ các loại sâu, và nhện hại đã kháng các loại thuốc khác. Đặc trị bọ trĩ trên chè (trà), dưa, hoa, nhện trắng trên cây có múi, hoa, sâu tơ, sâu xanh da láng trên rau. Đối tượng: Cây trồng: Bầu bí, chè, dưa các loại, hoa các loại; Rau các loại; Lúa. Sâu hại: Bọ trĩ, nhện trắng, sâu xanh, sâu tơ, sâu cuốn lá. Liều dùng – cách pha – lượng nước: 15-20ml/bình 16-18 lít. Phun vào mặt sau của lá, nơi nhện đỏ trú ngụ. Phun ướt đẫm cây trồng. Lượng nước phun: 400 - 500 lít/ha. Thời điểm – hiệu lực: Phun thuốc khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2). Thời gian cách ly: 14 ngày sau khi phun. Lưu ý an toàn: Không phun thuốc khi có gió lớn hoặc trời sắp mưa to.",
+      "score": 0.4386295676231384,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:ohayo-100sc|chemical:chlorfenapyr|pest:thrips|pest:white-mite|brand:bmc|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "hoang_tu_sau",
+      "question": "HOÀNG TỬ SÂU",
+      "alt_question": "[\"Thông tin về HOÀNG TỬ SÂU\", \"Cách sử dụng thuốc HOÀNG TỬ SÂU\", \"HOÀNG TỬ SÂU có tác dụng gì?\", \"Liều dùng của HOÀNG TỬ SÂU là gì?\", \"HOÀNG TỬ SÂU có an toàn không?\", \"Hãng sản xuất của HOÀNG TỬ SÂU là ai?\", \"HOÀNG TỬ SÂU dùng cho cây gì?\", \"Cách pha HOÀNG TỬ SÂU như thế nào?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: Igro 240SC Xpro. Hoạt chất: Chlorfenapyr. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Jiangsu Flag Chemical Industry Co., Ltd. Đặc tính – công dụng: Thuốc Igro 240SC Xpro với hoạt chất Chlorfenapyr là thuốc trừ sâu phổ rộng, chuyên dùng để tiêu diệt nhiều loại côn trùng gây hại như sâu, bọ cánh tơ, nhện đỏ… bằng cách tác động lên hệ thần kinh và quá trình trao đổi năng lượng của chúng, khiến côn trùng ngừng ăn và chết. Đối tượng: Cây trồng: Trà, chè; Sâu hại: Bọ cánh tơ (bọ trĩ đen, bọ trĩ vàng), rầy xanh, nhện đỏ, bọ phấn, rầy mềm; Cây trồng: Ngô; Sâu hại: Sâu keo mùa thu. Cỏ hại: Liều dùng – cách pha – lượng nước: Pha 25-30 ml cho bình 18-25 lít nước để phun xịt. Lượng nước phun: 400 - 500 lít/ha. Phun thuốc khi sâu non tuổi nhỏ (tuổi 1-2), mật độ khoảng 1 con/cây. Thời điểm – hiệu lực: N/A. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 14 ngày. Trường hợp cỏ già: N/A. Kinh nghiệm phối trộn: N/A",
+      "score": 0.4737931489944458,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:igro-240sc-xpro|chemical:chlorfenapyr|pest:bo-canh-to|pest:ray-xanh|pest:nhen|brand:delta|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "ohayo_100sc_chunk_01",
+      "question": "Thuốc Ohayo 100SC có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Ohayo 100SC dùng để làm gì? | Thành phần và công dụng của Ohayo 100SC là gì? | Thuốc Ohayo 100SC có những quy cách đóng gói nào?",
+      "answer": "Ohayo 100SC là thuốc bảo vệ thực vật chứa hoạt chất Chlorfenapyr với nồng độ 100g/lít. Sản phẩm được đóng gói dưới dạng chai 22ml trục, 100ml và 240ml. Là thuốc tiếp xúc và lưu dẫn mạnh. Ohayo 100SC chuyên dùng để diệt trừ sâu tơ trên rau màu, sâu hành trên hành lá và sâu cuốn lá trên lúa. Thuốc có đặc điểm nổi bật là khả năng diệt trừ sâu và chích hút tổng hợp, giúp bảo vệ cây trồng hiệu quả.",
+      "score": 0.3997271955013275,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:ohayo-100sc|chemical:chlorfenapyr|pest:lepidopteran-larvae|crop:vegetables|crop:hanh|crop:lua|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "igro_240sc_ohayo_chunk_01",
+      "question": "Igro 240SC (Ohayo) là thuốc bảo vệ thực vật có đặc điểm gì?",
+      "alt_question": "Igro 240SC dùng để diệt sâu gì? | Thuốc Igro 240SC có thành phần hoạt chất nào? | Cách sử dụng Igro 240SC cho cây lúa như thế nào? | Những lưu ý khi dùng Igro 240SC là gì?",
+      "answer": "Igro 240SC (Ohayo) là thuốc bảo vệ thực vật chứa hoạt chất Chlorfenapyr với nồng độ 240g/lít, được sản xuất bởi công ty Tỷ Phúc Thịnh. Sản phẩm được đóng gói dưới dạng chai BMC với các quy cách 20ml, 100ml, 240ml và Phúc Thịnh 18ml, 100ml, 240ml. Là thuốc tiếp xúc và lưu dẫn mạnh. Thuốc có công dụng siêu diệt các loại sâu cuốn lá, sâu đục thân, rầy xanh, bọ cánh tơ (bọ trĩ), nhện, rệp sáp trên nhiều loại cây trồng như lúa, đậu tương, chè, điều, lạc và rau màu. Thuốc đặc biệt hiệu quả trong việc diệt trừ sâu và côn trùng chích hút tổng hợp. Lưu ý khi sử dụng là thuốc có tính tiếp xúc và lưu dẫn mạnh, cần tuân thủ các biện pháp an toàn khi phun.",
+      "score": 0.3609561026096344,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:igro-240sc-ohayo|chemical:chlorfenapyr|pest:leaf-folder|pest:stem-borer|pest:whitefly|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "abinsec_oxatin_1_8ec_chunk_01",
+      "question": "Abinsec Oxatin 1.8EC là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?",
+      "alt_question": "Abinsec Oxatin 1.8EC là thuốc gì? | Thuốc Abinsec Oxatin 1.8EC có đặc điểm nổi bật nào? | Thành phần và công dụng của Abinsec Oxatin 1.8EC là gì?",
+      "answer": "Abinsec Oxatin 1.8EC là thuốc bảo vệ thực vật chứa hoạt chất abamectin với nồng độ 18g/lít, được đóng gói dưới dạng Delta 30ml và 240ml. Sản phẩm đặc trị sâu tơ, sâu xanh trên rau màu, sâu cuốn lá trên lúa, sâu hành trên hành lá và các loại sâu chích hút tổng hợp như bọ trĩ. Thuốc có khả năng tiếp xúc và lưu dẫn mạnh, giúp diệt trừ hiệu quả các loại sâu hại. Đây là sản phẩm cạnh tranh với các thuốc như Incipio (Syngenta), BROFREYA (Cửu Long hợp tác Mitsui) và Gracia (Nissei Nhật).",
+      "score": 0.3538769483566284,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:abinsec-oxatin-1-8ec|chemical:abamectin|pest:sau-to|pest:sau-xanh|pest:sau-cuon-la|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "zigen_super_gi_o_s_tr_15sc_delta_24ml_g_i_100ml_v_ng_240ml_chai_t_m_chunk_01",
+      "question": "Sản phẩm Zigen Super 15SC là thuốc bảo vệ thực vật như thế nào?",
+      "alt_question": "Zigen Super 15SC là thuốc gì? | Thuốc Zigen Super 15SC dùng để diệt sâu bệnh nào? | Thành phần và quy cách đóng gói của Zigen Super 15SC là gì? | Zigen Super 15SC có đặc điểm gì nổi bật?",
+      "answer": "Zigen Super 15SC là thuốc bảo vệ thực vật cao cấp chứa hoạt chất Tolfenpyrad 15% w/w dạng hỗn hợp phân tán nước (SC) kết hợp phụ gia đặc biệt giúp lưu dẫn, được đóng gói dưới dạng Delta 24ml gói, 100ml chai vàng và 240ml chai tím. Sản phẩm chuyên đặc trị các loại sâu chích hút kháng thuốc như rệp sáp (trĩ), rầy xanh, rầy phấn trên nhiều loại cây trồng. Thuốc có khả năng tiếp xúc và lưu dẫn mạnh, giúp tăng hiệu quả diệt trừ sâu bệnh.",
+      "score": 0.34823888540267944,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:zigen-super-15sc|chemical:tolfenpyrad|pest:aphid|pest:whitefly|pest:mealybug|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "igro_240sc_ohayo_chunk_02",
+      "question": "Igro 240SC (Ohayo) dùng cho cây trồng nào và sâu bệnh nào?",
+      "alt_question": "Igro 240SC dùng cho cây gì? | Sâu bệnh nào bị diệt bởi Igro 240SC? | Igro 240SC có hiệu quả trên sâu nào ở cây đậu tương? | Thuốc có dùng được cho rau màu không?",
+      "answer": "Igro 240SC (Ohayo) được sử dụng cho nhiều loại cây trồng như lúa, đậu tương, chè, điều, lạc và rau màu. Trên cây lúa, thuốc diệt các loại sâu như nhện gié, sâu cuốn lá, rầy lưng trắng, sâu đục thân, rầy nâu, sâu năn, sâu đục bẹ và bọ trĩ. Trên đậu tương, thuốc diệt sâu xanh da láng và sâu khoang. Trên chè và điều, thuốc diệt bọ trĩ. Trên lạc, thuốc diệt sâu cuốn lá và sâu xanh da láng. Trên rau màu, thuốc diệt sâu tơ và sâu xanh.",
+      "score": 0.33976536989212036,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:igro-240sc-ohayo|chemical:chlorfenapyr|crop:lua|crop:dau-nanh|crop:tea|crop:dieu|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "KHONGRAY",
+      "question": "KHONGRAY 54WP",
+      "alt_question": "[\"Thông tin về KHONGRAY 54WP\", \"Cách sử dụng KHONGRAY 54WP\", \"KHONGRAY 54WP có tác dụng gì?\", \"Liều dùng của KHONGRAY 54WP là bao nhiêu?\", \"KHONGRAY 54WP có an toàn không?\", \"Hướng dẫn pha chế KHONGRAY 54WP\", \"KHONGRAY 54WP dùng cho cây gì?\", \"Tác dụng của hoạt chất trong KHONGRAY 54WP\"]",
+      "answer": "Nhóm sản phẩm: Thuốc BVTV. Các tên / nhãn tương đương: KHONGRAY 54WP. Hoạt chất: Buprofezin 180g/kg, dinotefuran 120g/kg. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Beta Chemicals Co., Ltd. Đặc tính – công dụng: Sản phẩm là hỗn hợp 2 hoạt chất Acetamiprid + Buprofezin là thuốc tiếp xúc, lưu dẫn cực mạnh, hiệu quả cao, dùng đặc trị bọ trĩ, bọ nhảy, rầy, rệp muội trắng, muỗi đen, bọ phấn trắng, nhện đỏ hại rau màu, hoa, cây cảnh, lúa, đậu, cà phê, cây ăn quả, cây công nghiệp. Đối tượng: Cây trồng: Lúa, Đậu tương, Đậu phộng, Rau màu, Cà phê. Sâu hại: Rầy nâu, rầy xanh, rầy lưng trắng, bọ trĩ, sâu xanh, sâu khoang, bọ nhảy, rệp sáp, bọ phấn, rệp muội, nhện, rệp sáp, rệp vảy. Liều dùng – cách pha – lượng nước: Liều dùng: 0.3 – 0.35 kg/ha. Pha 20gr cho bình 25 lít nước. Thời điểm – hiệu lực: Phun thuốc khi rầy cám ra rộ. Phun ướt đều trên cây, nếu mật độ dịch hại nhiều thì phun lại lần 2 sau 5 – 7 ngày. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Tuyệt đối không sử dụng thuốc này kể từ khi lúa trổ.",
+      "score": 0.4601777195930481,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:khongray-54wp|chemical:buprofezin|chemical:dinotefuran|pest:thrips|brand:agrishop|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "sieu_diet_sau",
+      "question": "Siêu diệt sâu",
+      "alt_question": "[\"Thông tin về Siêu diệt sâu\", \"Cách sử dụng Siêu diệt sâu\", \"Siêu diệt sâu có hiệu quả không?\", \"Liều dùng của Siêu diệt sâu là gì?\", \"Siêu diệt sâu có những hoạt chất nào?\", \"Hãng sản xuất Siêu diệt sâu là ai?\", \"Siêu diệt sâu dùng cho cây trồng nào?\", \"Lưu ý khi sử dụng Siêu diệt sâu\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: Tamatra S 18SC. Hoạt chất: spirotetramat 10%w/w, Tolfenpyrad 8%w/w SC. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Hailir Pesticide and Chemicals Group Co., Ltd. Đặc tính – công dụng: Tamatra S 18SC kết hợp hai hoạt chất spirotetramat và Tolfenpyrad giúp trừ hiệu quả nhiều loại sâu rầy trên cây trồng. spirotetramat thấm sâu và chạy khắp cây, diệt rầy, rệp, bọ phấn từ trong ra ngoài. Tolfenpyrad giúp hạ nhanh sâu ăn lá, bọ trĩ, và các đối tượng khó trị. Hai hoạt chất hỗ trợ nhau, cho hiệu lực mạnh, kéo dài, giúp cây sạch sâu. Đối tượng: Cây trồng: Lúa, Rau cải, Chè, Cà chua, Bắp cải, Cam. Sâu hại: Sâu cuốn lá nhỏ, bọ trĩ, rầy xanh, rệp sáp, bọ cánh tơ, sâu đục quả, bọ phấn, sâu tơ, sâu xanh, sâu khoang, sâu vẽ bùa, rầy chổng cánh. Liều dùng – cách pha – lượng nước: Pha 30ml cho bình 16 - 25 lít. Thời điểm – hiệu lực: Không phun khi có gió lớn hoặc sắp có mưa khoảng 1 giờ. Lưu ý an toàn: Luân phiên với các loại thuốc trừ sâu khác để sâu không kháng thuốc. Thời gian cách ly: 7 ngày.",
+      "score": 0.459347128868103,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:sieu-diet-sau|chemical:spirotetramat|chemical:tolfenpyrad|pest:leaf-folder|pest:thrips|brand:delta"
+    },
+    {
+      "id": "khongray_54wp_chunk_01",
+      "question": "Thuốc Khongray 54WP có thành phần và công dụng chính như thế nào?",
+      "alt_question": "Khongray 54WP dùng để trừ sâu bệnh gì? | Thành phần hoạt chất của Khongray 54WP là gì? | Khongray 54WP có công dụng trên cây nào? | Lưu ý khi sử dụng Khongray 54WP là gì?",
+      "answer": "Khongray 54WP chứa hai hoạt chất chính: Buprofezin …… 180g/kg và dinotefuran …… 120g/kg, được đóng gói dạng bột 100gr. Thuốc có đặc tính lưu dẫn mạnh. Sản phẩm dùng để phòng trừ các loại sâu bệnh chích hút tổng hợp trên nhiều loại cây trồng như lúa (rầy nâu, rầy xanh, rầy lưng trắng, bọ trĩ), đậu tương, đậu phộng, rau màu (sâu xanh, sâu khoang, bọ nhảy, rệp sáp, bọ phấn, rệp muội, nhện) và cà phê (rệp sáp, rệp vảy). Buprofezin có tác dụng trừ con nhỏ và ngăn ngừa lột xác của sâu, trong khi Acetamiprid diệt trừ con lớn. Một số đặc điểm khác nổi bật: Diệt trừ chích hút tổng hợp. Buprofezin trừ con nhỏ, chống lột xác. Acetamiprid trừ con lớn.",
+      "score": 0.4261229336261749,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:khongray-54wp|chemical:buprofezin|chemical:dinotefuran|pest:aphid|pest:thrips|pest:leafhopper|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "nh_m_mi_ng_nhai_chunk_01__000105",
+      "question": "Phác đồ phối hợp thuốc phòng trừ nhóm sâu miệng nhai như thế nào?",
+      "alt_question": "Phác đồ thuốc cho nhóm sâu miệng nhai là gì?|Cách phối hợp Ohayo 100sc và Igro Ohayo 240sc ra sao?|Liều lượng thuốc Ohayo và Igro Ohayo dùng thế nào?|Hiệu quả của công thức phối hợp Ohayo và Igro Ohayo là bao nhiêu?",
+      "answer": "Đối tượng sâu hại là nhóm miệng nhai. Công thức phối hợp khuyến cáo gồm Ohayo 100sc và Igro Ohayo 240sc, pha 24-50ml trên 25L nước tùy theo mật độ sâu và mức độ kháng thuốc. Hiệu quả đạt từ 80-90%. Lưu ý điều chỉnh liều lượng theo mật độ sâu để đạt hiệu quả tối ưu.",
+      "score": 0.4257727861404419,
+      "category": "procedure_mixing_formula_chewing_pests",
+      "entity_type": "product",
+      "tags_v2": "mechanisms:tiep-xuc-luu-dan-manh|action:pesticide-application|object:pesticide-solution|pest:chewing-mouth-insects|product:ohayo-100sc|pest:sau-cuon-la"
+    },
+    {
+      "id": "hosu_10sc_h_ng_h_c_chunk_01",
+      "question": "Sản phẩm Hosu 10SC là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?",
+      "alt_question": "Hosu 10SC là thuốc gì và có công dụng ra sao? | Thành phần và quy cách đóng gói của Hosu 10SC là gì? | Hosu 10SC dùng để diệt sâu bệnh nào trên cây trồng? | Đặc điểm nổi bật của Hosu 10SC là gì?",
+      "answer": "Hosu 10SC (Hồng Hạc) của công ty Tỷ Phúc Thịnh chứa hoạt chất Bifenthrin 10% w/v, được đóng gói dạng chai 240ml. Sản phẩm có công dụng diệt trừ tổng hợp các loại sâu và côn trùng chích hút trên nhiều loại cây trồng như lúa, chè, cà phê, mía, bắp, rau màu và hoa hồng. Đặc biệt, thuốc có khả năng tiếp xúc và lưu dẫn mạnh, giúp kiểm soát hiệu quả các đối tượng sâu bệnh như nhện gié, sâu cuốn lá, rầy nâu, bọ trĩ, rệp sáp, mọt đục cành, sâu đục thân, sâu tơ, sâu xanh và nhện đỏ.",
+      "score": 0.4077960252761841,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "chemical:bifenthrin|product:hosu-10sc|pest:leaf-folder|pest:ray-nau|mechanisms:tiep-xuc-luu-dan-manh"
+    },
+    {
+      "id": "raynanusa_400wp_si_u_r_y_r_p_thay_th_dino_top_chunk_01",
+      "question": "Sản phẩm Raynanusa 400WP là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Raynanusa 400WP dùng để diệt sâu bệnh gì? | Thành phần và công dụng của Raynanusa 400WP là gì? | Raynanusa 400WP có thể dùng cho cây nào? | Lưu ý khi sử dụng Raynanusa 400WP là gì?",
+      "answer": "Raynanusa 400WP là thuốc bảo vệ thực vật chứa hoạt chất Buprofezin 150g/kg và dinotefuran 250g/kg, được đóng gói dưới dạng bột nước (WP) với quy cách bán 20g, 50g, 100g. Sản phẩm dùng để diệt trừ các loại sâu, rệp như bọ nhảy, rệp sáp, bọ phấn, bọ trĩ (bọ cánh tơ), bọ xít, rầy nâu, rầy xanh, rầy mềm, bọ ngâu trên các loại cây trồng như lúa, rau màu, cây ăn trái và cây công nghiệp. Raynanusa 400WP đặc biệt hiệu quả với rệp sáp, bọ trĩ và rầy phấn vì có khả năng diệt cả con non và con lớn. Đối với rệp sáp, có thể kết hợp với profenofos hoặc spirotetramat để tăng hiệu quả. Lưu ý sản phẩm có tính lưu dẫn mạnh nên cần thận trọng khi sử dụng.",
+      "score": 0.3885573148727417,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:raynanusa-400wp|chemical:buprofezin|chemical:dinotefuran|pest:aphids|pest:thrips|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "sau_hai_05_tri_16__000186",
+      "question": "Xử lý Trĩ - Rất hay kháng thuốc  như thế nào?",
+      "alt_question": "Cách xử lý Trĩ - Rất hay kháng thuốc?|Trĩ - Rất hay kháng thuốc xử lý sao?|Thuốc nào trị Trĩ - Rất hay kháng thuốc?|Phác đồ phòng trừ Trĩ - Rất hay kháng thuốc?|Cách trị Tri - Rat hay khang thuoc?|Trĩ - Rất hay kháng thuốc kháng thuốc nên làm gì?",
+      "answer": "Có thể kết hợp Lekima để trừ toàn bộ trứng và con non ",
+      "score": 0.5187584161758423,
+      "category": "procedure_mixing_formula_thrips",
+      "entity_type": "product",
+      "tags_v2": "action:ket-hop|process:tru-toan-bo-trung|object:lekima|pest:bo-tri|formula:cong-thuc-bo-tri"
+    },
+    {
+      "id": "sha_chong_jing",
+      "question": "SHA CHONG JING 95WP",
+      "alt_question": "[\"Thông tin về SHA CHONG JING 95WP\", \"SHA CHONG JING 95WP có tác dụng gì?\", \"Hướng dẫn sử dụng SHA CHONG JING 95WP\", \"SHA CHONG JING 95WP có an toàn không?\", \"Liều dùng của SHA CHONG JING 95WP là gì?\", \"SHA CHONG JING 95WP có thể trộn với thuốc nào?\", \"SHA CHONG JING 95WP dùng cho cây gì?\", \"SHA CHONG JING 95WP có thời gian cách ly bao lâu?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: SHA CHONG JING 95WP. Hoạt chất: Thiosultap-sodium (Nereistoxin) (Monosultap) 95%w/w - Special Additives . 5% w/w. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Liyang Lihua Chemical Co., Ltd. Đặc tính – công dụng: Thiosultap-Sodium có tác dụng tiếp xúc vị độc, cản trở hoạt động của cơ quan cảm nhận trong tế bào thần kinh côn trùng. Thuốc có phổ tác động rộng diệt cả trứng sâu, trừ được nhiều loại sâu rầy chích hút và miệng nhai. Đối tượng: Cây trồng: Lúa, ngô (bắp), mía, lạc, đậu tương, điều, cà phê. Sâu hại: Sâu cuốn lá, sâu đục thân, bọ trĩ (bù lạch), sâu năng (muỗi hành), rệp sáp, bọ xít muỗi, sâu khoang, rầy nâu, sâu đục bẹ. Cây trồng: Hoa hồng Sâu hại: Sâu đục nụ. Cây trồng: Lúa, ngô (bắp), mía, lạc, đậu tương, điều, cà phê, Hoa hồng. Liều dùng – cách pha – lượng nước: - Sử dụng 0.45 - 0.6kg với 400 - 600 lít/ha. - Pha 10 - 14 g thuốc/bình 10 lít nước. - Phun 1.5 bình cho 1 sào Bắc Bộ (360 m²). - Phun 3 bình cho 1 sào Trung Bộ (500 m²). - Phun 6 bình cho 1 công Hoa hồng Sâu đục nụ Nam Bộ (1.000 m²). Thời điểm – hiệu lực: Thời gian cách ly: 14 ngày. Lưu ý an toàn: - Lượng nước phun từ 500 - 600lít/ha. - Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. - Không phun thuốc cho cây dâu nuôi tằm. - Không phun thuốc khi cây có hoa hoặc lá còn ướt hoặc có sương. - Có thể trộn chung với các loại thuốc BVTV khác, trừ thuốc có tính kiềm, pha xong phải phun ngay. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Có thể trộn chung với các loại thuốc BVTV khác, trừ thuốc có tính kiềm.",
+      "score": 0.5175547003746033,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:sha-chong-jing-95wp|chemical:thiosultap-sodium|chemical:monosultap|pest:leaf-folder|pest:stem-borer|brand:agrishop"
+    },
+    {
+      "id": "trum_chich_hut",
+      "question": "TRÙM CHÍCH HÚT - TRĨ",
+      "alt_question": "[\"Thông tin về TRÙM CHÍCH HÚT - TRĨ\", \"Cách sử dụng TRÙM CHÍCH HÚT - TRĨ\", \"TRÙM CHÍCH HÚT - TRĨ có tác dụng gì?\", \"Liều dùng của TRÙM CHÍCH HÚT - TRĨ\", \"TRÙM CHÍCH HÚT - TRĨ có an toàn không?\", \"Hướng dẫn sử dụng TRÙM CHÍCH HÚT - TRĨ\", \"TRÙM CHÍCH HÚT - TRĨ phòng trừ sâu hại nào?\", \"Thông tin sản phẩm TRÙM CHÍCH HÚT - TRĨ\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: TRÙM CHÍCH HÚT - TRĨ. Hoạt chất: pymetrozine. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Biocrop Pte Ltd (Singapore). Đặc tính – công dụng: Hoạt chất pymetrozine là thuốc lưu dẫn, có tác dụng tiếp xúc, vị độc, lưu dẫn nhanh, cơ chế tác động đến tế bào thần kinh làm côn trùng không thể chích hút và chết. Sản phẩm được nhiều công ty đăng ký phòng trừ: Bọ nhảy, rệp sáp, bọ phấn, bọ trĩ (bọ cánh tơ), bọ xít, rầy nâu, rầy xanh, rầy mềm, bọ ngâu. Đối tượng: Cây trồng: Lúa, Mía, Cà phê, hồ tiêu, Điều, Sắn, hoa hồng, Rau màu, cây ăn trái. Sâu hại: Rầy nâu, rầy lưng trắng, bọ xít, Rệp bông xơ, rệp sáp, Rầy xanh, rệp sáp, Bọ xít muỗi, Bọ phấn, rệp muội, Bọ nhảy, bọ phấn, rầy mềm, bọ xít, bọ trĩ, bọ ngâu, rầy xanh. Liều dùng – cách pha – lượng nước: Sử dụng: 0.5 - 1.0 kg/ ha. Pha 10 - 15g/ bình 20 lít phun cho 1 sào Bắc bộ (360m2). Pha 20 - 25g/ bình 25 lít phun 1 - 2 bình/ 1 công Nam Bộ. Thời điểm – hiệu lực: Phun ướt đều tán lá cây trồng khi sâu hại xuất hiện. Lưu ý an toàn: Thời gian cách ly 14 ngày. Lượng nước phun: 400 - 500 lít/ ha.",
+      "score": 0.5066681504249573,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:trum-chich-hut-tri|chemical:pymetrozine|pest:thrips|pest:aphids|crop:cay-an-qua|brand:delta"
+    },
+    {
+      "id": "sau_hai_05_tri_13__000183",
+      "question": "Xử lý Trĩ - Rất hay kháng thuốc khi mật độ bình thường như thế nào?",
+      "alt_question": "Cách xử lý Trĩ - Rất hay kháng thuốc khi mật độ bình thường?|Trĩ - Rất hay kháng thuốc bình thường xử lý sao?|Thuốc nào trị Trĩ - Rất hay kháng thuốc bình thường?|Phác đồ phòng trừ Trĩ - Rất hay kháng thuốc bình thường?|Cách trị Tri - Rat hay khang thuoc bình thường?|Trĩ - Rất hay kháng thuốc kháng thuốc nên làm gì?",
+      "answer": "Zigen, Tamatras + Lưu dẫn.",
+      "score": 0.5044602155685425,
+      "category": "procedure_mixing_formula_thrips",
+      "entity_type": "product",
+      "tags_v2": "process:pest-control|action:chemical-application|object:insecticide|pest:bo-tri|formula:cong-thuc-bo-tri|mechanisms:tiep-xuc-luu-dan"
+    },
+    {
+      "id": "SUPAREP",
+      "question": "SUPAREP 22.4SC",
+      "alt_question": "[\"Thông tin về SUPAREP 22.4SC\", \"Cách sử dụng SUPAREP 22.4SC\", \"SUPAREP 22.4SC có tác dụng gì?\", \"Liều dùng của SUPAREP 22.4SC là bao nhiêu?\", \"SUPAREP 22.4SC có an toàn không?\", \"Hãng sản xuất SUPAREP 22.4SC là ai?\", \"SUPAREP 22.4SC diệt được những loại sâu nào?\", \"Hướng dẫn pha SUPAREP 22.4SC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: SUPAREP 22.4SC. Hoạt chất: spirotetramat 22.4% w/w + Chất phụ gia 77.6% w/w. Nhóm thuốc: Thuốc trừ sâu lưu dẫn. Hãng sản xuất: Qingdao Haina Biotechnology Co., Ltd. Đặc tính – công dụng: Sản phẩm là thuốc trừ sâu lưu dẫn 2 chiều, hấp thu qua lá, di chuyển cả lên và xuống trong cây gây ức chế sinh tổng hợp lipid, làm côn trùng ngừng phát triển, giảm sinh sản và chết, cơ chế hấp thu nhanh nên ít ảnh hưởng đến thiên địch, hiệu quả trên nhiều cây trồng. Sản phẩm diệt trừ tốt: rệp sáp, rệp vảy, rầy xanh, bọ trĩ, nhện đỏ, rầy phấn, sâu tơ, sâu xanh, rầy chổng cánh. Đối tượng: Cây trồng: Khoai tây, cà chua, dưa chuột, thanh long, bưởi, chè, cà chua, vải, xoài, bắp cải, cà phê, cam, bưởi, tiêu, sầu riêng, hoa cúc, hoa hồng. Sâu hại: Bọ phấn, sâu đục quả, bọ trĩ, sâu đục quả, sâu tơ, nhện, rệp sáp, rệp muỗi, rầy chổng cánh, nhện đỏ. Liều dùng – cách pha – lượng nước: 0.3 – 0.5 lít/ha. Pha 18 – 20 ml cho bình 20 lít nước. Lượng nước phun 500 – 600 lít/ha. Thời điểm – hiệu lực: Phun thuốc khi sâu, bọ mới xuất hiện, mật độ khoảng 3 – 5 con/lá hoặc khoảng từ 3 – 6 con/ngọn. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 14 ngày với khoai tây và cà phê, 5 ngày với dưa chuột.",
+      "score": 0.4938035309314728,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:suparep-22-4sc|chemical:spirotetramat|pest:aphid|pest:thrips|brand:bmc|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "BINHFOS_gr",
+      "question": "VUA SÂU, VUA RỆP - SÂU - RẦY, ANH HÙNG SÂU, TRÙM SÂU",
+      "alt_question": "[\"Thông tin về VUA SÂU\", \"Cách sử dụng VUA RỆP - SÂU - RẦY\", \"ANH HÙNG SÂU có tác dụng gì?\", \"TRÙM SÂU có hiệu quả với sâu nào?\", \"Liều dùng của BINHFOS 50EC là gì?\", \"Hãng sản xuất của VUA SÂU là ai?\", \"Đặc tính của VUA RỆP - SÂU - RẦY\", \"Cách pha thuốc ANH HÙNG SÂU\"]",
+      "answer": "Nhóm sản phẩm: BINHFOS 50EC. Các tên / nhãn tương đương: VUA SÂU, VUA RỆP - SÂU - RẦY, ANH HÙNG SÂU, TRÙM SÂU. Hoạt chất: profenofos 500 g/lít + Phụ gia đặc biệt vừa đủ 1 lít. Nhóm thuốc: Thuốc trừ sâu thuộc nhóm lân hữu cơ. Hãng sản xuất: Bailing Agrochemical Co., Ltd. Đặc tính – công dụng: Binhfos 50EC là thuốc trừ sâu tác động xông hơi, tiếp xúc, vị độc. Diệt trừ nhóm sâu miệng nhai, gặm nhấm và chích hút. Đối tượng: Cây trồng: Lúa, Điều, bơ, mía, ngô, Cà phê, Mãng cầu (na), đu đủ, Khoai lang, đậu phộng, Sầu riêng, chè, Cải thảo, củ cải, Thanh long, Cam, quýt, chanh, Ổi. Sâu hại: Muỗi hành (sâu năn), bọ trĩ (bù lạch), rầy nâu, sâu cuốn lá, Bọ xít muỗi, sâu đục cành, sâu đục thân, sâu róm (sâu lông), Mọt đục cành, kiến, rệp sáp, ve sầu, Rệp sáp, Sùng (bọ hà), siêu nhân, sâu ăn lá, Rệp sáp, rầy xanh, rầy phấn, Sâu tơ, sâu bay, sâu khoang, rầy mềm, sâu khoang, Bọ ngâu, Bọ xít, rệp sáp, Ruồi vàng, rệp sáp. Liều dùng – cách pha – lượng nước: Pha 24 ml/bình 20 lít nước. Lượng nước phun từ 400 – 600 lít/ha. Với rệp sáp, sùng, ve sầu: Có thể pha, tưới gốc để diệt trừ hiệu quả hơn. Thời điểm – hiệu lực: Thời gian cách ly: 14 ngày sau khi phun. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc vớt đều lá khi sâu mới nở, sâu còn nhỏ (tuổi 1 – 2), đối với cây non (cây còn nhỏ) giảm thuốc khi pha cho thích hợp. Lưu ý an toàn: Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.49347180128097534,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:vua-sau|product:vua-rep-sau-ray|product:anh-hung-sau|product:trum-sau|product:binhfos-50ec|chemical:profenofos|pest:nhen|pest:bo-tri|mechanisms:xong-hoi-manh|pest:ray-nau|brand:delta"
+    },
+    {
+      "id": "exami_20wg_l_ti_u_long_chunk_01",
+      "question": "Exami 20WG (Lý Tiểu Long) là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Thuốc Exami 20WG dùng để trừ sâu bệnh gì trên cây trồng?|Exami 20WG có thành phần hoạt chất nào?|Cách dùng và liều lượng của Exami 20WG như thế nào?|Những lưu ý khi sử dụng Exami 20WG là gì?",
+      "answer": "Exami 20WG (Lý Tiểu Long) chứa hoạt chất Flonicamid 20% w/w, được đóng gói dưới dạng 25gr và 100gr. Thuốc có công dụng trừ rầy phấn, rầy mềm, rệp sáp, bọ trĩ, bọ xít, bọ nhảy và nhện lông nhung trên nhiều loại cây trồng như lúa, hoa hồng, cam, dâu tây, mãng cầu (na), sầu riêng, xoài, thanh long, chè (trà), xà lách và rau cải thìa. Đây là sản phẩm lưu dẫn thế hệ mới với khả năng lưu dẫn mạnh, giúp thuốc thấm sâu và phát huy hiệu quả lâu dài.",
+      "score": 0.48711103200912476,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:exami-20wg-ly-tieu-long|chemical:flonicamid|pest:whitefly|pest:aphid|pest:thrips|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "bao_den",
+      "question": "BÁO ĐEN",
+      "alt_question": "[\"Thông tin về thuốc BÁO ĐEN\", \"Cách sử dụng thuốc BÁO ĐEN\", \"BÁO ĐEN có tác dụng gì?\", \"Liều dùng của BÁO ĐEN là bao nhiêu?\", \"BÁO ĐEN sản xuất bởi hãng nào?\", \"Những loại sâu hại nào BÁO ĐEN có thể diệt?\", \"Hướng dẫn pha thuốc BÁO ĐEN\", \"Thời gian cách ly sau khi phun BÁO ĐEN là bao lâu?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: BÁO ĐEN. Hoạt chất: Avermectin B1a, B1b (abamectin) : 38g/lít. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Bailing Agrochemical Co., Ltd. Đặc tính – công dụng: Hoạt chất abamectin là thuốc tiếp xúc, nội hấp, lưu dẫn. Đặc trị nhiều loại sâu hại trên nhiều loại cây trồng khác nhau như: Sâu tơ, sâu hành, sâu vẽ bùa, bọ nhảy, sâu xám, sâu keo, bọ nhảy, rầy xanh, rầy phấn, rệp sáp, ốc bươu vàng. Đối tượng: Cây trồng: Bắp cải, Đậu tương, Cải thìa, Bắp (ngô), Lúa, Hành. Sâu hại: Sâu tơ, bọ nhảy, sâu xám, sâu đục quả, sâu vẽ bùa, sâu keo, sâu cuốn lá, đục thân, nhện gié, bọ trĩ, sâu hành. Liều dùng – cách pha – lượng nước: Pha 25ml/bình 20 lít cho các cây trồng: Bắp cải, Đậu tương, Cải thìa, Bắp (ngô), Lúa; Pha 50-100ml cho bình 20 lít đối với sâu hành. Lượng nước: Phun từ 400 - 600 lít/ha. Thời điểm – hiệu lực: Phun khi sâu hại bắt đầu xuất hiện. Thời gian cách ly: 7 ngày sau khi phun. Lưu ý an toàn: Sâu cuốn lá: Phun thuốc khi thấy bướm rộ. Nhện gié: Phun khi nhện xuất hiện tuổi nhỏ.",
+      "score": 0.47932302951812744,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:bao-den|chemical:abamectin|pest:leaf-miner|pest:thrips|pest:sau-ve-bua|pest:sau-hanh|brand:delta"
+    },
+    {
+      "id": "Ecudor",
+      "question": "Ecudor 22.4SC",
+      "alt_question": "[\"Thông tin về Ecudor 22.4SC\", \"Cách sử dụng Ecudor 22.4SC\", \"Ecudor 22.4SC có tác dụng gì?\", \"Liều dùng của Ecudor 22.4SC là bao nhiêu?\", \"Ecudor 22.4SC có an toàn không?\", \"Những cây trồng nào có thể sử dụng Ecudor 22.4SC?\", \"Ecudor 22.4SC diệt được sâu hại nào?\", \"Hãng sản xuất Ecudor 22.4SC là ai?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: Ecudor 22.4SC. Hoạt chất: spirotetramat 22.4% w/w + Chất phụ gia 77.6% w/w. Nhóm thuốc: Thuốc trừ sâu lưu dẫn. Hãng sản xuất: Guilin Jiqi Group., Ltd. Đặc tính – công dụng: Sản phẩm là thuốc trừ sâu lưu dẫn 2 chiều, hấp thu qua lá, di chuyển cả lên và xuống trong cây gây ức chế sinh tổng hợp lipid, làm côn trùng ngừng phát triển, giảm sinh sản và chết, cơ chế hấp thu nhanh nên ít ảnh hưởng đến thiên địch, hiệu quả trên nhiều cây trồng. Sản phẩm diệt trừ tốt: rệp sáp, rệp vảy, rầy xanh, bọ trĩ, nhện đỏ, rầy phấn, sâu tơ, sâu xanh, rầy chổng cánh. Đối tượng: Cây trồng: Khoai tây, cà chua, dưa chuột, thanh long, bưởi, chè, cà chua, vải, xoài, bắp cải, cà phê, cam, bưởi, tiêu, sầu riêng, hoa cúc, hoa hồng. Sâu hại: Bọ phấn, sâu đục quả, bọ trĩ, sâu tơ, nhện, rệp sáp, rệp muỗi, rầy chổng cánh, nhện đỏ. Liều dùng – cách pha – lượng nước: Liều lượng: 0.3 – 0.5 lít/ha. Pha 18 – 20 ml cho bình 20 lít nước. Lượng nước phun 500 – 600 lít/ha. Thời điểm – hiệu lực: Phun thuốc khi sâu, bọ mới xuất hiện, mật độ khoảng 3 – 5 con/lá hoặc khoảng từ 3 – 6 con/ngọn. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 14 ngày với khoai tây và cà phê, 5 ngày với dưa chuột.",
+      "score": 0.47113385796546936,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:ecudor-22-4sc|chemical:spirotetramat|pest:aphids|pest:thrips|brand:delta"
+    },
+    {
+      "id": "Abinsec",
+      "question": "Abinsec 1.8EC, OxaTIr1 1.8EC",
+      "alt_question": "[\"Thông tin về Abinsec 1.8EC\", \"Cách sử dụng OxaTIr1 1.8EC\", \"abamectin 1.8% w/w trong Abinsec 1.8EC\", \"Đặc tính của OxaTIr1 1.8EC\", \"Liều dùng cho Abinsec 1.8EC\", \"Hãng sản xuất OxaTIr1 1.8EC\", \"Công dụng của Abinsec 1.8EC\", \"Sâu hại nào được điều trị bởi OxaTIr1 1.8EC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: OxaTIr1 1.8EC. Hoạt chất: abamectin 1.8% w/w + Phụ gia đặc biệt vừa đủ 1 lít. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Shandong Weifang Rainbow Chemical Co., Ltd. Đặc tính – công dụng: Abinsec 1.8EC chứa hoạt chất Avermectin B1a, B1b (abamectin) là thuốc có cơ chế tiếp xúc, nội hấp và lưu dẫn mạnh. Đặc trị nhiều loại sâu rầy như: Sâu cuốn lá, sâu xanh, bọ trĩ, sâu vẽ bùa, nhện đỏ, rầy xanh, rầy mềm, sâu đục thân, dòi đục quả, ốc bươu vàng, bọ phấn. trên nhiều cây trồng khác nhau. Đối tượng: Cây trồng: Dâu tây, dưa chuột, dưa hấu, hoa cúc, hoa đồng tiền, hoa hồng, rau họ thập tự (bắp cải, súp lơ, su hào), táo, trà (chè), lúa, thông, tùng. Sâu hại: Bọ phấn, bọ trĩ, dòi đục lá, rầy mềm, nhện đỏ, nhện trắng, sâu đục thân, bọ cánh tơ, rầy xanh, sâu cuốn lá, ốc bươu vàng, sâu róm. Liều dùng – cách pha – lượng nước: Pha 15-20ml/bình 25 lít cho cây non, cây trồng trong nhà kính; Pha 30-50ml/bình 25 lít cho lúa. Lượng nước phun từ 400 - 500 lít/ha. Thời điểm – hiệu lực: Phun thuốc ướt đều lá khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2). Lưu ý an toàn: Thời gian cách ly 7 ngày. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Giảm thuốc khi pha cho cây non (cây còn nhỏ). Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.46033018827438354,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:abinsec-1-8ec|chemical:abamectin|pest:leaf-folder|pest:thrips|pest:sau-duc-than|pest:sau-to|crop:vegetable|brand:delta|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "koto_gold_240sc_chunk_01",
+      "question": "Thuốc BVTV Koto Gold 240SC có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Koto Gold 240SC dùng để làm gì? | Thành phần chính của Koto Gold 240SC là gì? | Koto Gold 240SC có tác dụng trên cây trồng nào? | Quy cách đóng gói của Koto Gold 240SC là gì?",
+      "answer": "Koto Gold 240SC là thuốc trừ rầy thế hệ mới chứa hoạt chất Thiacloprid với nồng độ 240g/lít, được đóng gói dạng chai 100ml. Thuốc có tác dụng phòng trừ nhiều loại sâu bệnh trên các cây trồng như bọ phấn, bọ trĩ, rầy mềm trên dâu tây, dưa chuột, dưa hấu, hoa cúc, hoa đồng tiền, hoa hồng, rau họ thập tự, bắp cải, súp lơ, su hào; sâu lá, rầy mềm trên táo; sâu đục quả trên đậu tương; sâu đục thân, cuốn lá, bọ trĩ, rầy nâu trên lúa; bọ xít muỗi, rầy xanh trên trà; bọ róm trên tràm, thông, tùng; rệp sáp, mọt đục cành trên cà phê. Thuốc là lựa chọn thay thế cho sản phẩm Pexena của Syngenta.",
+      "score": 0.450780987739563,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:koto-gold-240sc|chemical:thiacloprid|pest:aphids|pest:thrips"
+    },
+    {
+      "id": "TOSI",
+      "question": "TOSI 30WG, HASEIDN GOLD",
+      "alt_question": "[\"Thông tin về TOSI 30WG và HASEIDN GOLD\", \"Cách sử dụng TOSI 30WG cho cây trồng\", \"TOSI 30WG có tác dụng gì?\", \"Liều dùng của HASEIDN GOLD là bao nhiêu?\", \"TOSI 30WG có an toàn không?\", \"Hướng dẫn pha chế HASEIDN GOLD\", \"TOSI 30WG có thể dùng cho loại cây nào?\", \"Thông tin về hoạt chất Acetamiprid trong TOSI 30WG\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: TOSI 30WG, HASEIDN GOLD. Hoạt chất: Acetamiprid 30% w/w + Phụ gia đặc biệt 70% w/w. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Shandong United Pesticide Industry Co., Ltd. Đặc tính – công dụng: Tosi 30WG chứa hoạt chất Acetamiprid có tác dụng nội hấp cực nhanh, lưu dẫn cực mạnh. Sau khi phun thuốc thấm sâu qua bề mặt lá và lưu dẫn trong toàn bộ cây trồng, tác động lên hệ thần kinh làm côn trùng ngừng ăn và chết. Tosi 30WG đặc trị bọ phấn, rầy mềm trên rau màu: bầu bí, cà chua, dưa, bọ trĩ, rầy nâu trên lúa…. Đối tượng: Cây trồng: Bầu bí, dưa leo, dưa hấu, dưa lê, hoa các loại: Hoa cúc, hoa đồng tiền, hồng… Sâu hại: Bọ phấn, bọ trĩ, rầy mềm… Cây trồng: Rau họ thập tự: Bắp cải, súp lơ, xu hào. Sâu hại: Bọ phấn, rầy mềm. Cây trồng: Ớt các loại. Sâu hại: Bọ trĩ, rầy nâu. Cây trồng: Cây thuốc Cam thảo, tía tô, sâm ngọc linh, thủy bồn thảo. Liều dùng – cách pha – lượng nước: Pha 10g/bình 16 lít, xịt ướt đẫm cây trồng. Cây non, pha 10g/bình 25 lít, xịt ướt đẫm cây trồng. Sâu đục gốc pha 10g/20 lít, đổ 100–200ml nước đã pha/gốc. Thời điểm – hiệu lực: Không phun thuốc khi lúa đã trổ bông. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc khi sâu mới nở, sâu còn nhỏ (tuổi 1–2). Lượng nước phun từ 400–500 lít/ha. Thời gian cách ly: 14 ngày. Đối với cây thuốc nam, chè (trà) cách ly 21 ngày. Lưu ý an toàn: Không phun thuốc khi lúa đã trổ bông, không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.4487009048461914,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:tosi|product:tosi-30wg|product:haseidn-gold|chemical:acetamiprid|pest:thrips|crop:rau|brand:bmc|brand:phuc-thinh|brand:agrishop|mechanisms:luu-dan"
+    },
+    {
+      "id": "FULLKILL",
+      "question": "FULLKILL 50EC, Permethrin 500",
+      "alt_question": "[\"Thông tin về FULLKILL 50EC\", \"Cách sử dụng Permethrin 500\", \"Đặc tính của thuốc FULLKILL 50EC\", \"Liều dùng của Permethrin 500\", \"FULLKILL 50EC có tác dụng gì?\", \"Hướng dẫn sử dụng thuốc Permethrin 500\", \"Thông tin về thuốc trừ sâu FULLKILL 50EC\", \"Cách pha thuốc FULLKILL 50EC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: FULLKILL 50EC, Permethrin 500. Hoạt chất: Permethrin 500g/lít + Phụ gia đặc biệt vừa đủ 1 lít. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Forward International Ltd (Ấn Độ). Đặc tính – công dụng: Hoạt chất Permethrin là thuốc trừ sâu có phổ tác dụng rộng, tiếp xúc, vị độc nên trừ được nhiều loại sâu rầy và côn trùng gây hại cho cây trồng: Sâu cuốn lá, bọ trĩ, sâu xanh, rầy nâu, bọ nhảy, sâu ăn lá, sùng (bọ hà), rệp sáp, sâu đục cành, bọ xít muỗi, sâu khoang…. Đối tượng: Cây trồng: Bông vải, Lúa, Đậu xanh, Rau cải, Khoai lang, Cà phê, Điều. Sâu hại: Sâu khoang, Bọ trĩ, rầy nâu, sâu cuốn lá, Sâu xanh, Sâu khoang, Bọ nhảy, Sâu ăn lá, Rầy mềm, Sùng (bọ hà), Rệp sáp, Sâu đục cành, Bọ xít muỗi. Liều dùng – cách pha – lượng nước: Liều dùng: 0.2 – 0.3 lít/ha. Pha từ 20 – 24 ml/bình 20 lít nước. Thời điểm – hiệu lực: Phun khi sâu, rầy vừa xuất hiện, nên phun lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Thời gian cách ly 10 ngày. Lượng nước phun: Phun từ 400 – 600 lít/ha. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Thuốc độc cao với cá, không sử dụng trong khu vực nuôi trồng thủy sản.",
+      "score": 0.4467747211456299,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:fullkill-50ec|chemical:permethrin|pest:leaf-folder|pest:thrips|pest:rep-sap|crop:cay-an-qua|brand:delta|mechanisms:xong-hoi"
+    },
+    {
+      "id": "JAPASA",
+      "question": "JAPASA 50EC",
+      "alt_question": "[\"Thông tin về JAPASA 50EC\", \"Cách sử dụng JAPASA 50EC\", \"JAPASA 50EC có tác dụng gì?\", \"Liều dùng của JAPASA 50EC là bao nhiêu?\", \"JAPASA 50EC có an toàn không?\", \"Hướng dẫn phun JAPASA 50EC\", \"JAPASA 50EC phòng trừ sâu hại nào?\", \"JAPASA 50EC có những lưu ý gì khi sử dụng?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: JAPASA 50EC. Hoạt chất: Fenobucarb 500g/L - Special additives 500g/L. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Forward International Ltd (Taiwan). Đặc tính – công dụng: Sản phẩm chứa hoạt chất Fenobucarb tác động vào hệ thần kinh côn trùng thông qua tiếp xúc, xông hơi, vị độc gây ức chế hoạt động của enzyme dẫn đến tình trạng giật, tê liệt và chết. Sản phẩm chuyên dùng phòng trừ các loài chích hút, đặc biệt là các loại rầy, rệp, bọ trĩ, bọ xít…. Đối tượng: Cây trồng: Lúa, Bông vải, đậu tương, cà phê, thuốc lá, Hồ tiêu. Sâu hại: Rầy nâu, rầy lưng trắng, sâu keo, Rệp, bọ trĩ, rệp vảy, Bọ xít, rệp sáp…. Liều dùng – cách pha – lượng nước: Liều dùng: 0.8 – 1.0 lít/ha. Pha từ 40 – 60 ml/bình 16 – 20 lít nước. Thời điểm – hiệu lực: Phun khi rầy mới xuất hiện, tuổi nhỏ, mật độ rầy nhiều, lớn cần phun nhắc lại lần 2 sau 5 đến 7 ngày. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 10 ngày sau khi phun.",
+      "score": 0.44593822956085205,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:japasa-50ec|chemical:fenobucarb|chemical:insecticide|pest:planthopper|pest:aphid|brand:agrishop"
+    },
+    {
+      "id": "ram_te_thien",
+      "question": "RAM TỀ THIÊN",
+      "alt_question": "[\"Thông tin về RAM TỀ THIÊN\", \"Cách sử dụng RAM TỀ THIÊN\", \"Hoạt chất trong RAM TỀ THIÊN là gì?\", \"RAM TỀ THIÊN có tác dụng gì?\", \"Liều dùng của RAM TỀ THIÊN là bao nhiêu?\", \"RAM TỀ THIÊN có an toàn không?\", \"Hãng sản xuất RAM TỀ THIÊN là ai?\", \"RAM TỀ THIÊN dùng cho cây gì?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: RAM TỀ THIÊN. Hoạt chất: pymetrozine 600 g/kg, Chất phụ gia 400 g/kg. Nhóm thuốc: Insecticide. Hãng sản xuất: Biocrop Pte., Ltd (Singapore). Đặc tính – công dụng: Ram Tề Thiên chứa hoạt chất pymetrozine là hoạt chất thuộc nhóm pyridine azomethines, có tác dụng diệt các loài chích hút mới nhất hiện nay. Thuốc tác dụng tiếp xúc, lưu dẫn kéo dài, làm cho chích hút ngừng ngay chích hút trong vòng 24 giờ sau phun và chết sau đó. Đối tượng: Cây trồng: Dâu tây, dưa chuột, dưa hấu, chè (trà), thanh long… và Hoa các loại: Hoa cúc, hoa đồng tiền, hoa hồng. Sâu hại: Bọ phấn, bọ trĩ, rầy mềm, rầy xanh, bọ ngâu. Cây trồng: Rau họ thập tự: Bắp cải, súp lơ, xu hào… Sâu hại: Bọ phấn, rầy mềm, Bọ nhảy. Cây trồng: Lúa Sâu hại: Bọ trĩ, rầy nâu, rầy xanh. Mật độ: 75 – 150g/ha. Pha 20 – 25g/bình 25 lít. Cây con, cây trồng trong nhà kính pha liều thấp 15g/bình 25 lít. phun 2 bình cho 1.000m2. Liều dùng – cách pha – lượng nước: Lượng nước phun: 400 – 500 lít/ha. Thời điểm – hiệu lực: Thời gian cách ly: 28 ngày sau khi phun. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2). Lưu ý an toàn: Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.4454007148742676,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:ram-te-thien|chemical:pymetrozine|pest:thrips|pest:whitefly|pest:bo-phan|crop:rau|brand:bmc|brand:phuc-thinh|brand:delta"
+    },
+    {
+      "id": "kyodo_50wp_chunk_01",
+      "question": "Thuốc BVTV Kyodo 50WP có thành phần và công dụng chính là gì?",
+      "alt_question": "Kyodo 50WP là thuốc gì và dùng cho cây trồng nào? | Thành phần và công dụng của Kyodo 50WP là gì? | Thuốc Kyodo 50WP có tác dụng phòng trừ sâu bệnh nào?",
+      "answer": "Kyodo 50WP chứa hoạt chất Diafenthiuron với nồng độ 500g/kg, được đóng gói dạng bột 100gr. Thuốc có tác dụng phòng trừ các loại sâu hại như bọ trĩ, nhện đỏ, nhện trắng, rầy xanh, bọ xít, bọ hà trên các cây trồng như cam, quýt, chè, hoa hồng, nho, khoai và các loại rau màu. Ngoài ra, thuốc còn hiệu quả với nhện đỏ, bọ trĩ trên hoa các loại và sâu xanh, sâu tơ trên rau màu. Lưu ý không phun thuốc trên cây lúa để tránh gây hại.",
+      "score": 0.4414607286453247,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "chemical:diafenthiuron|product:kyodo-50wp|pest:thrips|pest:nhen|pest:white-spider-mite"
+    },
+    {
+      "id": "CHESSIN",
+      "question": "CHESSIN 600WP",
+      "alt_question": "[\"Thông tin về CHESSIN 600WP\", \"Cách sử dụng CHESSIN 600WP\", \"CHESSIN 600WP có tác dụng gì?\", \"Liều dùng của CHESSIN 600WP là bao nhiêu?\", \"CHESSIN 600WP có an toàn không?\", \"Hãng sản xuất CHESSIN 600WP là ai?\", \"CHESSIN 600WP dùng cho cây gì?\", \"Cách pha CHESSIN 600WP như thế nào?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: CHESSIN 600WP. Hoạt chất: dinotefuran .. 200g/kg, pymetrozine .. 400g/kg. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: dinotefuran: Zhejiang Well-done Chemical Co., Ltd, pymetrozine: Shenyang Biochemistry Co., Ltd. Đặc tính – công dụng: Sản phẩm là sự kết hợp hoàn hảo của 2 hoạt chất dinotefuran và pymetrozine. Có cơ chế tác động kép lên hệ thần kinh khi tiếp xúc qua miệng hoặc da côn trùng chích hút, làm tê liệt cơ quan miệng và ngộ độc dạ dày. Thuốc có khả năng thấm thấu nhanh, lưu dẫn mạnh trong cây nên ít bị rửa trôi, ít ảnh hưởng đến thiên địch và môi trường. Đối tượng: Cây trồng: Lúa, Sắn (khoai mì), cà phê, hồ tiêu, phật thủ, Hoa hồng, ngô, đậu tương. Sâu hại: Rầy nâu, bọ xít, Rệp sáp, bọ phấn, rầy chổng cánh, Rệp muội. Liều dùng – cách pha – lượng nước: Liều dùng: 0.3 – 0.35 kg/ha. Pha 20gr cho bình 25 lít nước. Lượng nước phun: 400 – 500 lít/ha. Thời điểm – hiệu lực: Phun thuốc khi rầy tuổi 1 – 2. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 7 ngày sau khi phun.",
+      "score": 0.44065359234809875,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:chessin-600wp|chemical:dinotefuran|chemical:pymetrozine|crop:lua|brand:agrishop|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "CYMKILL",
+      "question": "CYMKILL 25EC",
+      "alt_question": "[\"Thông tin về CYMKILL 25EC\", \"Cách sử dụng CYMKILL 25EC\", \"CYMKILL 25EC có tác dụng gì?\", \"Liều dùng của CYMKILL 25EC là bao nhiêu?\", \"CYMKILL 25EC có an toàn không?\", \"Hướng dẫn pha CYMKILL 25EC\", \"CYMKILL 25EC diệt những loại sâu nào?\", \"CYMKILL 25EC có thời gian cách ly bao lâu?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: CYMKILL 25EC. Hoạt chất: cypermethrin 250g/lít + Phụ gia đặc biệt vừa đủ 1 lít. Nhóm thuốc: Insecticide. Hãng sản xuất: Forward International Ltd (Ấn Độ). Đặc tính – công dụng: Sản phẩm chứa hoạt chất cypermethrin có cơ chế xông hơi, tiếp xúc và vị độc, diệt trừ sâu đục thân, sâu cuốn lá, bọ trĩ hại lúa, sâu (giòi) đục quả (đục cuống gây nên thối quả), sâu đục (sâu que), bọ xít, bọ nhảy hại vải thiều, nhãn, na, hồng, cam, quýt, rau màu và cây ăn trái. Đối tượng: Cây trồng: Bông vải, Lúa, Đậu xanh, Rau cải, Khoai lang, Cà phê, Điều. Sâu hại: Sâu khoang, Bọ trĩ, rầy nâu, sâu cuốn lá, Sâu xanh, sâu khoang, Bọ nhảy, sâu ăn lá, rầy mềm, Sùng (bọ hà), Rệp sáp, sâu đục cành, Bọ xít muỗi. Liều dùng – cách pha – lượng nước: Liều dùng: 0.16 – 0.4 lít/ha. Cách pha: Pha từ 25 – 30ml/bình 20 lít nước. Lượng nước phun: Phun từ 300 – 500 lít/ha. Thời điểm – hiệu lực: Phun khi sâu, rầy vừa xuất hiện, nên phun lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Thời gian cách ly 10 ngày. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to.",
+      "score": 0.4348107576370239,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:cymkill-25ec|chemical:cypermethrin|pest:borers|pest:thrips|pest:rep-sap|crop:cay-an-qua|brand:delta|mechanisms:xong-hoi"
+    },
+    {
+      "id": "binhfos_50ec_vua_s_u_chunk_01",
+      "question": "Thuốc Binhfos 50EC (Vua sâu) có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Binhfos 50EC (Vua sâu) dùng để trừ sâu gì? | Thành phần và công dụng của Binhfos 50EC (Vua sâu) là gì? | Binhfos 50EC (Vua sâu) có tác dụng trên cây trồng nào? | Thuốc Binhfos 50EC (Vua sâu) có những lưu ý gì khi sử dụng?",
+      "answer": "Binhfos 50EC (Vua sâu) chứa hoạt chất profenofos với nồng độ 500g/lít, được đóng gói quy cách 450ml. Thuốc có công dụng trừ các loại sâu miệng nhai, gặm nhắm, chích hút trên nhiều loại cây trồng như lúa, điều, bơ, mía, ngô, cà phê, mãng cầu, đu đủ, khoai lang, đậu phộng, sầu riêng, chè, cải thảo, củ cải, thanh long, cam, quýt, chanh, ổi. Thuốc giúp kiểm soát sâu năng, bọ trĩ, rầy nâu, sâu cuốn lá, bọ xít muỗi, sâu đục cành, sâu róm, mọt đục cành, kiến, rệp sáp, ve sầu, sùng, sâu ăn lá, rầy xanh, sâu tơ, sâu bay, bọ ngâu, nhện, ruồi vàng và nhiều loại sâu bệnh khác.",
+      "score": 0.4340180456638336,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:binhfos-50ec-vua-sau|chemical:profenofos|pest:leaf-eating-insects|pest:thrips|pest:ray-nau"
+    },
+    {
+      "id": "binhfos_50ec_anh_h_ng_s_u_chunk_01",
+      "question": "Thuốc Binhfos 50EC (Anh Hùng Sâu)  có thành phần và công dụng chính là gì?",
+      "alt_question": "Binhfos 50EC (Anh Hùng Sâu) dùng để trừ sâu gì trên cây trồng?|Thành phần và quy cách đóng gói của Binhfos 50EC (Anh Hùng Sâu) là gì?|Binhfos 50EC (Anh Hùng Sâu) có đặc điểm nổi bật nào?|Lưu ý khi sử dụng Binhfos 50EC (Anh Hùng Sâu) là gì?",
+      "answer": "Binhfos 50EC (Anh Hùng Sâu) chứa hoạt chất profenofos với nồng độ 500g/lít, được đóng gói dạng chai 450ml. Thuốc dùng để trừ các loại sâu miệng nhai, gặm nhắm và sâu chích hút trên nhiều loại cây trồng như lúa (muỗi hành, bọ trĩ, rầy nâu, sâu cuốn lá), điều, bơ, mía, ngô (bọ xít muỗi, sâu đục cành, sâu đục thân, sâu róm), cà phê (mọt đục cành, kiến, rệp sáp, ve sầu), mãng cầu, đu đủ (rệp sáp), khoai lang, đậu phộng (sùng, siêu nhân, sâu ăn lá), sầu riêng, chè (rệp sáp, rầy xanh, rầy phấn), cải thảo, củ cải (sâu tơ, sâu bay, sâu khoang, rầy mềm), thanh long (bọ ngâu), cam, quýt, chanh (nhện, sâu vẽ bùa, sâu ăn tạp, rầy xanh, rầy chổng cánh), ổi (ruồi vàng, rệp sáp). Thuốc có tác dụng xông hơi và tiếp xúc với vị độc, hiệu quả cao, hiện được dùng thay thế Chlorpyrifos Ethyl. Lưu ý thuốc có xông hơi mạnh khi sử dụng.",
+      "score": 0.4292641282081604,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:binhfos-anh-hung-sau|chemical:profenofos|pest:leaf-eating-caterpillar|pest:thrips|pest:aphid"
+    },
+    {
+      "id": "SANTOSO",
+      "question": "SANTOSO 100SC CHIM SÂU",
+      "alt_question": "[\"Thông tin về SANTOSO 100SC CHIM SÂU\", \"Cách sử dụng SANTOSO 100SC\", \"SANTOSO 100SC có tác dụng gì?\", \"Liều dùng của SANTOSO 100SC là gì?\", \"SANTOSO 100SC diệt côn trùng nào?\", \"Hãng sản xuất SANTOSO 100SC là ai?\", \"SANTOSO 100SC có an toàn không?\", \"Hướng dẫn pha SANTOSO 100SC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc diệt côn trùng tổng hợp. Các tên / nhãn tương đương: SANTOSO 100SC. Hoạt chất: Alpha cypermethrin 10%w/v - Phụ gia đặc biệt 90%w/v. Nhóm thuốc: Insecticide. Hãng sản xuất: Modern Insecticides Limited (Ấn Độ). Đặc tính – công dụng: SANTOSO 100SC là thuốc diệt côn trùng tổng hợp, có cơ chế tiếp xúc vị độc, xông hơi, thấm sâu nhanh, hoạt chất ức chế thần kinh làm cho côn trùng ngừng thở và chết nhanh, hiệu quả nhanh chóng hiệu lực kéo dài. Diệt trừ các loại côn trùng gây hại. Đối tượng: Cây trồng: Lúa, Cà phê, Hồ tiêu, Sắn, Điều, Lạc, Khoai lang, Đậu tương, Cây ăn trái. Sâu hại: Sâu phao, sâu đục bẹ, bọ trĩ, bọ xít, sâu cuốn lá, sâu đục thân, Rệp sáp, kiến, mối, Bọ phấn trắng, Bọ xít muỗi, Sâu khoang, Sâu đục quả, Ruồi vàng. Liều dùng – cách pha – lượng nước: Pha 10-30ml cho bình 18 lít nước. Thời điểm – hiệu lực: Vào sáng sớm hoặc chiều mát để đạt hiệu quả cao. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn.",
+      "score": 0.4238129258155823,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "chemical:alpha-cypermethrin|chemical:insecticide|product:santoso-100sc|pest:insect-pests|brand:bmc|brand:phuc-thinh|mechanisms:xong-hoi"
+    },
+    {
+      "id": "suparep_22_4sc_chunk_01",
+      "question": "Suparep 22.4SC là thuốc bảo vệ thực vật có thành phần gì và công dụng ra sao?",
+      "alt_question": "Thuốc Suparep 22.4SC có thành phần gì và công dụng chính? | Suparep 22.4SC dùng để diệt sâu bệnh nào trên cây trồng? | Thành phần và công dụng của Suparep 22.4SC là gì?",
+      "answer": "Suparep 22.4SC của công ty Tỷ Phúc Thịnh chứa hoạt chất spirotetramat 22.4% w/w, đóng gói dạng Delta 240ml. Thuốc có tác dụng diệt các loại sâu bệnh như bọ phấn, sâu đục quả trên khoai tây, cà chua; bọ trĩ, sâu đục quả, sâu tơ, nhện trên dưa chuột, thanh long, bưởi, chè, cà chua, vải, xoài, bắp cải; rệp sáp, rệp muội, rầy chổng cánh trên cà phê, cam, bưởi, tiêu, sầu riêng; và nhện đỏ trên hoa cúc, hoa hồng. Thuốc có đặc điểm lưu dẫn 2 chiều (trên xuống và dưới lên), diệt được rệp sâu trong lá, dưới mặt lá và trong chồi non, đặc trị rệp sáp, rệp vảy, bọ phấn, bọ trĩ, rệp sáp rễ. Có thể phun kết hợp với dinotefuran, Buprofezin và Lekima để tăng hiệu quả. Thuốc đối thủ là Movento 150 (Bayer).",
+      "score": 0.4221007525920868,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:suparep-22-4sc|chemical:spirotetramat|pest:aphid|pest:thrips|pest:mite|mechanisms:luu-dan"
+    },
+    {
+      "id": "tamatras_si_u_di_t_s_u_chunk_01",
+      "question": "Thuốc BVTV Tamatras (Siêu Diệt Sâu) có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Tamatras dùng để diệt sâu chích hút như thế nào?|Thành phần và công dụng của thuốc Tamatras là gì?|Tamatras có những quy cách đóng gói nào?|Thuốc Tamatras có điểm gì nổi bật so với sản phẩm khác?",
+      "answer": "Thuốc Tamatras (Siêu Diệt Sâu) của công ty Tỷ Phúc Thịnh chứa hoạt chất spirotetramat 10% và Tolfenpyrad 8%. Sản phẩm được đóng gói dưới dạng chai Delta 30ml, chai tròn trắng 100ml và 240ml. Tamatras có tác dụng diệt trừ sâu chích hút tổng hợp, là sản phẩm thay thế cho Emaben Siêu Diệt Sâu, với công thức hỗn hợp duy nhất tại Việt Nam. Thuốc có khả năng tiếp xúc và lưu dẫn sâu bệnh.",
+      "score": 0.42064130306243896,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:tamatras|chemical:tolfenpyrad|chemical:spirotetramat|action:insecticide|pest:sucking-insects|mechanisms:tiep-xuc-luu-dan"
+    },
+    {
+      "id": "kajio_5wg_anh_h_ng_di_t_s_u_chunk_01",
+      "question": "Thuốc BVTV Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) có thành phần gì và dùng để diệt sâu nào? | Thuốc Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) dùng cho cây trồng nào? | Liều lượng và quy cách đóng gói của Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) ra sao? | Có lưu ý gì khi sử dụng thuốc Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) không?",
+      "answer": "Thuốc BVTV Kajio 5WG (Anh hùng diệt sâu) là thuốc bảo vệ thực vật chứa hoạt chất Emamectin benzoate với nồng độ 50g/kg. Sản phẩm được đóng gói dưới nhiều quy cách như Delta: 20gr, 100gr; Agrishop: 25gr, 100gr; BMC: 8gr, 15gr, 100gr; Phúc Thịnh: 15gr, 100gr. Thuốc có tác dụng diệt trừ nhiều loại sâu hại và côn trùng chích hút như bọ cánh tơ (bọ trĩ), rầy xanh, rệp sáp, mọt đục cành trên cây chè, xoài, cà phê, sầu riêng; muỗi hành, sâu đục bẹ, sâu cuốn lá, sâu đục thân, nhện gié trên lúa; sâu xanh, sâu tơ, bọ nhảy, bọ trĩ, sâu keo, sâu xám, rệp sáp trên bắp, cây ăn trái và rau màu. Đặc biệt, sản phẩm phù hợp với các cây nhỏ, mẫn cảm hoặc đang có hoa, trái non nên dùng dạng WG để đảm bảo an toàn. Lưu ý khi sử dụng cần tránh tiếp xúc trực tiếp với thuốc.",
+      "score": 0.42001718282699585,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:kajio-5wg|chemical:emamectin-benzoate|pet:muoi-hanh|pest:leaf-miner|pest:thrips|pest:aphid|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "kyodo_25sc_i_b_ng_kydo_chunk_01",
+      "question": "Sản phẩm Kyodo 25SC có thành phần và công dụng chính là gì?",
+      "alt_question": "Kyodo 25SC là thuốc gì và dùng cho cây trồng nào? | Thành phần và công dụng của Kyodo 25SC là gì? | Kyodo 25SC có tác dụng diệt sâu bệnh nào? | Quy cách đóng gói của Kyodo 25SC như thế nào?",
+      "answer": "Kyodo 25SC (Đại bàng Kydo) chứa hoạt chất Diafenthiuron với nồng độ 250g/lít. Sản phẩm được đóng gói dưới nhiều quy cách như Delta: 240ml, 450ml; BMC: 100ml, 240ml, 450ml; Phúc Thịnh: 240ml, 480ml. Kyodo 25SC có tác dụng diệt trừ bọ trĩ, nhện đỏ, nhện trắng, rầy xanh, bọ xít, bọ hà trên các cây trồng như cam, quýt, chè, hoa hồng, nho, khoai; đồng thời diệt nhện đỏ, bọ trĩ trên các loại hoa và sâu xanh, sâu tơ trên rau màu. Sản phẩm không được phun trên lúa và cần lưu ý khi tiếp xúc trực tiếp.",
+      "score": 0.41592758893966675,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:kyodo-25sc|chemical:diafenthiuron|pest:thrips|pest:nhen|pest:white-spider-mite|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "sha_chong_jing_100gr_padan_nh_t_chunk_01",
+      "question": "Sản phẩm Sha Chong Jing 100gr (Padan Nhật) có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Sha Chong Jing 100gr dùng để làm gì? | Thành phần và công dụng của Sha Chong Jing 100gr là gì? | Thuốc Sha Chong Jing có đặc điểm nổi bật gì?",
+      "answer": "Sản phẩm Sha Chong Jing 100gr (Padan Nhật) của công ty Tỷ Phúc Thịnh chứa hoạt chất Thiosultap-sodium 95% w/w, được đóng gói dạng 100gr. Thuốc có đặc tính tiếp xúc. Thuốc dùng để trừ sâu cuốn lá, sâu đục thân, bọ trĩ, muỗi hành trên cây lúa, ngô, mía và sâu đục nụ trên hoa hồng. Thuốc có thể phối trộn với các thuốc BVTV có tính kiềm và các dòng thuốc trừ sâu vẽ bùa, giúp tăng hiệu quả phòng trừ sâu bệnh. Một số đặc điểm khác nổi bật: Trừ tốt sâu cuốn lá, đục thân, sâu đục quả, đục hoa.  Có thể phun cùng các dòng thuốc trừ sâu vẽ bùa; rất tốt.",
+      "score": 0.41520220041275024,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:sha-chong-jing|pet:muoi-hanh|chemical:thiosultap-sodium|pest:sau-cuon-la|pest:stem-borer|pest:thrips|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "binhfos_50ec_tr_m_s_u_chunk_01",
+      "question": "Thuốc Binhfos 50EC có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Binhfos 50EC dùng để làm gì? | Thành phần chính của Binhfos 50EC là gì? | Binhfos 50EC có tác dụng trên những loại sâu bệnh nào? | Quy cách đóng gói của Binhfos 50EC như thế nào?",
+      "answer": "Binhfos 50EC là thuốc bảo vệ thực vật chứa hoạt chất profenofos với nồng độ 500g/lít, được đóng gói dưới dạng chai 20ml, 100ml và 450ml. Thuốc có tác dụng trừ các loại sâu miệng nhai, gặm nhắm, chích hút trên nhiều loại cây trồng như lúa, điều, bơ, mía, ngô, cà phê, mãng cầu, đu đủ, khoai lang, đậu phộng, sầu riêng, chè, cải thảo, củ cải, thanh long, cam, quýt, chanh và ổi. Các đối tượng sâu bệnh được kiểm soát gồm sâu năng, bọ trĩ, rầy nâu, sâu cuốn lá, bọ xít muỗi, sâu đục cành, sâu róm, mọt đục cành, kiến, rệp sáp, ve sầu, sùng, siêu nhân, sâu ăn lá, rầy xanh, rầy phấn, sâu tơ, sâu bay, sâu khoang, bọ ngâu, nhện, sâu vẽ bùa, ruồi vàng. Thuốc cần được sử dụng đúng liều lượng và theo hướng dẫn để đảm bảo hiệu quả và an toàn cho cây trồng.",
+      "score": 0.4151342809200287,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:binhfos-50ec|chemical:profenofos|pest:leaf-eating-insects|pest:thrips|pest:ray-nau"
+    },
+    {
+      "id": "oscare_600wg_ram_th_i_chunk_01",
+      "question": "Oscare 600WG (Ram Thái) là thuốc bảo vệ thực vật có thành phần hoạt chất nào và công dụng ra sao?",
+      "alt_question": "Thuốc Oscare 600WG có thành phần gì và công dụng thế nào? | Thuốc Oscare 600WG dùng để diệt sâu bệnh nào? | Oscare 600WG dùng cho cây trồng nào? | Thuốc Oscare 600WG có lưu ý gì khi sử dụng?",
+      "answer": "Oscare 600WG (Ram Thái) chứa hoạt chất pymetrozine với nồng độ 600g/kg. Sản phẩm được đóng gói dưới dạng BMC với các quy cách 20gr, 25gr (của Tỷ Phúc Thịnh) và 25gr, 100gr (của Phúc Thịnh). Thuốc có công dụng diệt trừ các loại côn trùng chích hút như bọ phấn, bọ trĩ, rầy mềm, rầy xanh, bọ ngâu trên nhiều loại cây trồng như dâu tây, dưa chuột, dưa hấu, chè (trà), thanh long, các loại hoa như hoa cúc, hoa đồng tiền, hoa hồng; cũng như bọ phấn, rầy mềm, bọ nhảy trên rau họ thập tự như bắp cải, súp lơ, xu hào; và bọ trĩ, rầy nâu, rầy xanh trên lúa. Thuốc nổi bật với khả năng diệt trừ các loại côn trùng chích hút hiệu quả. Sản phẩm có đối thủ cạnh tranh là Chess 50WG của Syngenta. Lưu ý khi sử dụng cần lưu dẫn theo hướng dẫn.",
+      "score": 0.41458815336227417,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:oscare-600wg|chemical:pymetrozine|pest:thrips|pest:whitefly|pest:aphid|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "KAJIO-al-gold",
+      "question": "KAJIO 1GR ALPHA, KAJIO 1GR GOLD",
+      "alt_question": "[\"Thông tin về KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có công dụng gì?\", \"Hướng dẫn sử dụng KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có chứa hoạt chất gì?\", \"Liều dùng của KAJIO 1GR ALPHA là bao nhiêu?\", \"KAJIO 1GR GOLD có hiệu lực trong bao lâu?\", \"Lưu ý khi sử dụng KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có thể dùng cho cây nào?\"]",
+      "answer": "Nhóm sản phẩm: KAJIO 1GR ALPHA, KAJIO 1GR GOLD. Các tên / nhãn tương đương: KAJIO 1GR ALPHA, KAJIO 1GR GOLD. Hoạt chất: Avermectin B1a 90% + Avermectin B1b 10% (Emamectin benzoate). Nhóm thuốc: Insecticide. Hãng sản xuất: Ace Bioscience Pte Ltd (Singapore). Đặc tính – công dụng: Kajio 1GR chứa hoạt chất Avermectin B1a 90% + Avermectin B1b 10% (Emamectin benzoate) là chất trừ sâu sinh học được sử dụng rộng rãi trong nông nghiệp, thuốc có nguồn gốc từ vi sinh vật, phổ tác dụng rộng, diệt được rất nhiều côn trùng miệng nhai và chích hút. Đối tượng: Cây trồng: Lúa, mía, ngô, khoai lang, khoai môn, khoai tây, hành, lạc, cà phê, hồ tiêu, rau ăn lá, hoa ly, hoa cúc, hoa hồng, cam, củ cải trắng, cà chua, cà rốt, thanh long, sầu riêng, xoài,. Sâu hại: Tuyến trùng (u cục rễ), sâu đục thân, sâu cuốn lá, sùng khoai, sùng đất, ve sầu, siêu nhân, sâu đất, sâu xám, bọ trĩ (bù lạch), bọ nhảy, muỗi hành (sâu năng),. Mật độ: 10 - 20 kg/ha (10.000m²). Liều dùng – cách pha – lượng nước: Rải gốc khi sâu mới chớm xuất hiện. Có thể tăng liều khi sâu, sùng nhiều. Thời điểm – hiệu lực: Với ruộng lúa: Cần giữ nước trong ruộng từ 7 - 10 ngày để thuốc phát huy hiệu quả sau khi rải. Các cây trồng khác: Sau khi rải, tưới nước gốc cây để thuốc đạt hiệu quả tốt. Thời gian cách ly: 7 ngày sau khi sử dụng.",
+      "score": 0.4117080569267273,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:kajio-1gr|product:kajio-1gr-alpha|product:kajio-1gr-gold|chemical:emamectin-benzoate|chemical:avermectin-b1a|chemical:avermectin-b1b|brand:delta"
+    },
+    {
+      "id": "nofara_35wg_vua_tr_chunk_01",
+      "question": "Nofara 35WG (Vua Trĩ) là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Nofara 35WG (Vua Trĩ) dùng để trừ sâu gì trên cây lúa?|Thành phần chính của Nofara 35WG (Vua Trĩ) là gì?|Nofara 35WG (Vua Trĩ) có công dụng trên cây cà phê như thế nào?|Nofara 35WG (Vua Trĩ) được đóng gói với quy cách nào?",
+      "answer": "Nofara 35WG (Vua Trĩ) là thuốc bảo vệ thực vật của công ty Tỷ Phúc Thịnh, chứa hoạt chất Thiamethoxam 35% w/w. Sản phẩm được đóng gói dưới dạng Delta với quy cách 25gr và 100gr. Thuốc có đặc tính lưu dẫn. Thuốc có tác dụng trừ các loại sâu chích hút tổng hợp trên nhiều loại cây trồng như lúa (bọ trĩ, rầy nâu, bọ xít), mía (rệp bông xơ, rệp sáp), cà phê (rệp sáp, rệp muội, sâu đục cành), thuốc lá (rệp sáp), điều (bọ xít, bọ trĩ), khoai tây (rệp đào) và hoa cúc (bọ trĩ). Sản phẩm có lưu dẫn khi sử dụng và là đối thủ cạnh tranh với Actara 25% WG của Syngenta.",
+      "score": 0.4091683030128479,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:nofara-35wg|chemical:thiamethoxam|pest:thrips|pest:ray-nau|mechanisms:luu-dan"
+    },
+    {
+      "id": "voi_thai_3_6ec_gold_chunk_02",
+      "question": "Sản phẩm Voi Thai 3.6EC Gold có những lưu ý gì khi sử dụng?",
+      "alt_question": "Khi dùng Voi Thai 3.6EC Gold cần lưu ý gì? | Có nên dùng Voi Thai 3.6EC Gold để trị sâu cuốn lá không? | Voi Thai 3.6EC Gold có thể dùng cho cây nào? | Những điều cần biết khi sử dụng Voi Thai 3.6EC Gold?",
+      "answer": "Voi Thai 3.6EC Gold chuyên dùng để đặc trị sâu tơ và sâu hành, không hiệu quả với sâu cuốn lá. Khi sử dụng cần lưu ý chỉ phun trên các đối tượng sâu tơ, sâu hành, bo trĩ, bọ phấn trắng, rầy mềm trên rau màu và hành lá. Không nên phun thuốc lên cây trồng khác hoặc sâu bệnh không nằm trong danh mục trên để tránh lãng phí và gây hại cho cây. Sản phẩm có thể được xem là đối thủ cạnh tranh của Incipio (Syngenta), BROFREYA (Cửu Long hợp tác Mitsui) và Gracia (Nissei Nhật).",
+      "score": 0.40886610746383667,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:voi-thai-3-6ec-gold|chemical:abamectin|pest:sau-to|pest:sau-hanh|pest:bo-tri|pest:bo-phan-trang"
+    },
+    {
+      "id": "oscare_600wg_ram_th_i_chunk_02",
+      "question": "Oscare 600WG (Ram Thái) được sử dụng cho những loại cây trồng và sâu bệnh nào?",
+      "alt_question": "Oscare 600WG dùng cho cây trồng nào? | Thuốc Oscare 600WG có tác dụng diệt sâu bệnh nào? | Oscare 600WG có dùng được cho rau họ thập tự không?",
+      "answer": "Oscare 600WG (Ram Thái) được sử dụng để phòng trừ các loại sâu bệnh chích hút như bọ phấn, bọ trĩ, rầy mềm, rầy xanh, bọ ngâu trên cây dâu tây, dưa chuột, dưa hấu, chè (trà), thanh long, các loại hoa như hoa cúc, hoa đồng tiền, hoa hồng. Ngoài ra, thuốc còn diệt trừ bọ phấn, rầy mềm, bọ nhảy trên rau họ thập tự như bắp cải, súp lơ, xu hào và bọ trĩ, rầy nâu, rầy xanh trên cây lúa.",
+      "score": 0.40501487255096436,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:oscare-600wg|chemical:pymetrozine|pest:bo-phan|pest:bo-tri|pest:ray-mem|pest:ray-xanh|brand:phuc-thinh"
+    },
+    {
+      "id": "kajio_1gr_gold_tr_m_s_ng_chunk_02",
+      "question": "Liều lượng và cách dùng thuốc Kajio 1GR Gold như thế nào? Có lưu ý gì khi sử dụng?",
+      "alt_question": "Cách dùng thuốc Kajio 1GR Gold cho cây lúa như thế nào? | Liều lượng phun thuốc Kajio 1GR Gold ra sao? | Có lưu ý gì khi sử dụng Kajio 1GR Gold? | Thuốc Kajio 1GR Gold có thể phun vào giai đoạn nào của cây trồng? | An toàn khi sử dụng Kajio 1GR Gold cần chú ý điều gì?",
+      "answer": "Thuốc Kajio 1GR Gold được sử dụng theo hướng dẫn của nhà sản xuất, thường pha chế theo liều lượng phù hợp với từng loại cây trồng và đối tượng sâu bệnh cần phòng trừ. Sản phẩm được dùng để phun trực tiếp lên cây trồng nhằm kiểm soát sâu cuốn lá, sâu đục thân, bọ trĩ, muỗi hành, sùng khoai, sùng đất, ve sầu và tuyến trùng gây hại. Khi sử dụng cần lưu ý không phun thuốc lên các cây không được phép, tránh phun vào giai đoạn cây đang ra hoa hoặc thu hoạch để đảm bảo an toàn thực phẩm và bảo vệ môi trường. Ngoài ra, cần tuân thủ các biện pháp an toàn lao động khi pha chế và phun thuốc.",
+      "score": 0.40481165051460266,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:kajio-1gr-gold|chemical:emamectin-benzoate|pest:sau-cuon-la|pest:sau-duc-than|pest:bo-tri|pest:muoi-hanh"
+    },
+    {
+      "id": "kyodo_50wp_chunk_02",
+      "question": "Kyodo 50WP dùng để phòng trừ sâu bệnh trên những loại cây nào?",
+      "alt_question": "Kyodo 50WP dùng cho cây gì? | Thuốc Kyodo 50WP có phòng trừ sâu bệnh nào trên hoa? | Có thể dùng Kyodo 50WP trên cây lúa không?",
+      "answer": "Kyodo 50WP được sử dụng để phòng trừ bọ trĩ, nhện đỏ, nhện trắng, rầy xanh, bọ xít, bọ hà trên các cây cam, quýt, chè, hoa hồng, nho, khoai và các loại rau màu. Thuốc cũng hiệu quả với nhện đỏ, bọ trĩ trên hoa các loại và sâu xanh, sâu tơ trên rau màu. Tuy nhiên, không được phun thuốc trên cây lúa.",
+      "score": 0.4014851748943329,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "chemical:diafenthiuron|product:kyodo-50wp|pest:bo-tri|pest:nhen|pest:ray-xanh"
+    },
+    {
+      "id": "Topxapy",
+      "question": "Topxapy 30SC",
+      "alt_question": "[\"Thông tin về Topxapy 30SC\", \"Cách sử dụng Topxapy 30SC\", \"Topxapy 30SC có tác dụng gì?\", \"Liều dùng của Topxapy 30SC là gì?\", \"Topxapy 30SC diệt những loại sâu nào?\", \"Hãng sản xuất Topxapy 30SC là ai?\", \"Topxapy 30SC có an toàn không?\", \"Cách pha Topxapy 30SC như thế nào?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc diệt côn trùng tổng hợp. Các tên / nhãn tương đương: Topxapy 30SC. Hoạt chất: Chlorfenapyr 20%w/v, Pyriproxyfen 10%w/v. Nhóm thuốc: Diệt côn trùng. Hãng sản xuất: Shanghai E-Tong Chemical Co., Ltd. Đặc tính – công dụng: Topxapy 30SC là thuốc diệt trừ côn trùng tổng hợp, có cơ chế tiếp xúc mạnh, vị độc, diệt trứng (làm cho trứng côn trùng không nở được), tiêu diệt cả con non và côn trùng lớn. Hiệu lực kéo dài. Đối tượng: Cây trồng: Lúa, Đậu tương, Lạc, đậu xanh, Hoa hồng, Hoa mai, Rau màu. Sâu hại: Nhện gié, sâu cuốn lá, rầy nâu, sâu đục thân, bọ trĩ, sâu đục bẹ, sâu xanh, sâu xanh da láng, nhện đỏ. Liều dùng – cách pha – lượng nước: Pha 24ml cho bình 20 lít nước hoặc 30ml cho bình 25 lít nước. Phun xịt ướt đều. Thời điểm – hiệu lực: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn.",
+      "score": 0.4006597399711609,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:topxapy-30sc|chemical:chlorfenapyr|chemical:pyriproxyfen|pest:leaf-folder|brand:bmc|brand:phuc-thinh|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "chessin_600wp_chunk_02",
+      "question": "Cách sử dụng và lưu ý khi dùng thuốc Chessin 600WP trên cây trồng?",
+      "alt_question": "Cách dùng thuốc Chessin 600WP cho cây lúa như thế nào? | Những lưu ý quan trọng khi sử dụng Chessin 600WP? | Có cần chú ý gì khi phun thuốc Chessin 600WP?",
+      "answer": "Thuốc Chessin 600WP được sử dụng phun trực tiếp lên các cây trồng bị sâu hại như lúa, sắn, cà phê, hồ tiêu, phật thủ, hoa hồng, ngô, đậu tương với liều lượng phù hợp theo hướng dẫn trên bao bì. Thuốc có tính lưu dẫn mạnh nên cần lưu ý không phun vào những giai đoạn cây không thích hợp hoặc cây không được phép phun để tránh gây hại. Nên tuân thủ đúng liều lượng và thời gian cách ly để đảm bảo an toàn cho cây trồng và người sử dụng.",
+      "score": 0.39971432089805603,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:chessin-600wp|chemical:dinotefuran|chemical:pymetrozine|crop:lua|crop:khoai-mi|crop:ca-phe|crop:black-pepper"
+    },
+    {
+      "id": "igro_240sc_xpro_ho_ng_t_s_u_chunk_02",
+      "question": "Cách sử dụng và lưu ý khi dùng thuốc Igro 240SC Xpro cho cây chè và sầu riêng?",
+      "alt_question": "Cách dùng thuốc Igro 240SC Xpro cho cây chè như thế nào? | Có thể phun Igro 240SC Xpro cho cây sầu riêng không? | Những lưu ý quan trọng khi sử dụng Igro 240SC Xpro là gì?",
+      "answer": "Igro 240SC Xpro chuyên dùng cho cây chè để đặc trị bọ trĩ và các sâu chích hút. Khi sử dụng cho cây sầu riêng cần thử nghiệm trên một vài cây nhỏ trước khi phun diện rộng để đảm bảo an toàn và hiệu quả. Thuốc có khả năng lưu dẫn và tiếp xúc mạnh, do đó cần chú ý khi phun để tránh ảnh hưởng không mong muốn. Liều lượng và cách dùng cụ thể nên tuân theo hướng dẫn trên bao bì hoặc tư vấn chuyên gia.",
+      "score": 0.3987995684146881,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:igro-240sc-xpro|chemical:chlorfenapyr|crop:tea|crop:durian|pest:thrips|pest:sucking-insects"
+    },
+    {
+      "id": "bpalatox_100ec_chunk_01",
+      "question": "Thuốc Bpalatox 100EC có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Bpalatox 100EC dùng để trừ sâu gì? | Thành phần và công dụng của Bpalatox 100EC là gì? | Bpalatox 100EC có tác dụng trên cây nào? | Thuốc Bpalatox 100EC có những đặc điểm nổi bật nào?",
+      "answer": "Bpalatox 100EC chứa hoạt chất Alpha-cypermethrin với nồng độ 100g/lít, được đóng gói dưới dạng chai 100ml và 450ml. Thuốc có đặc tính xông hơi. Sản phẩm dùng để trừ sâu đục thân, sâu cuốn lá, bọ trĩ hại lúa, sâu giòi, sâu đục quả (gây thối quả), sâu đo (sâu que), bọ xít, bọ nhảy hại trên các loại cây như vải thiều, nhãn, na, hồng, cam, quýt, rau màu và cây ăn trái. Thuốc đặc biệt hiệu quả với các loại sâu miệng nhai và chích hút, đồng thời có tác dụng trừ ruồi vàng và kiến.",
+      "score": 0.39569881558418274,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "chemical:alpha-cypermethrin|product:bpalatox-100ec|pest:stem-borer|pest:leaf-folder|pest:thrips|mechanisms:xong-hoi"
+    },
+    {
+      "id": "Suparep",
+      "question": "Suparep 400WP",
+      "alt_question": "[\"Thông tin về Suparep 400WP\", \"Cách sử dụng Suparep 400WP\", \"Suparep 400WP có tác dụng gì?\", \"Liều dùng Suparep 400WP cho lúa\", \"Suparep 400WP có an toàn không?\", \"Hãng sản xuất Suparep 400WP là ai?\", \"Suparep 400WP có tác dụng với rầy nâu không?\", \"Hướng dẫn pha Suparep 400WP\"]",
+      "answer": "Nhóm sản phẩm: Thuốc BVTV. Các tên / nhãn tương đương: Suparep 400WP. Hoạt chất: Buprofezin …… 150g/kg, dinotefuran …… 250g/kg. Nhóm thuốc: Insecticide. Hãng sản xuất: Buprofezin: Hebei Veyong Bio-Chemical Co., Ltd., dinotefuran: Shandong Shengnong Chemical Co., Ltd. Đặc tính – công dụng: Suparep 400WP có tác dụng nội hấp cực nhanh, lưu dẫn cực mạnh. Sau khi phun thuốc thấm sâu qua bề mặt lá và lưu dẫn trong toàn bộ cây trồng, tác động lên hệ thần kinh làm côn trùng ngừng ăn và chết. Đối tượng: Cây trồng: Lúa; Sâu hại: Rầy nâu. Mật độ: Liều lượng 80g/ha. Liều dùng – cách pha – lượng nước: Pha 2,5–3 g thuốc/bình 16 lít nước. Phun 3 bình/công (1.000 m²). Lượng nước dùng 400-500 lít/ha. Thời điểm – hiệu lực: Thời gian cách ly 7 ngày. Lưu ý an toàn: Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc khi lúa bị nhiễm rầy cám (tuổi 1 - 2).",
+      "score": 0.389607697725296,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:suparep-400wp|chemical:buprofezin|chemical:dinotefuran|pest:ray-nau|crop:lua|brand:bmc|brand:phuc-thinh|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "ZIGEN",
+      "question": "ZIGEN 15SC A3, Zigen 15SC Xpro Thánh sâu, Zig Super 15SC Giáo Sư Trĩ",
+      "alt_question": "[\"Thông tin về ZIGEN 15SC A3 là gì?\", \"Zigen 15SC Xpro Thánh sâu có công dụng gì?\", \"Zig Super 15SC Giáo Sư Trĩ có chứa hoạt chất nào?\", \"Cách sử dụng ZIGEN 15SC A3 như thế nào?\", \"Liều dùng của Zigen 15SC Xpro Thánh sâu là gì?\", \"Zig Super 15SC Giáo Sư Trĩ có những đối tượng nào?\", \"Lưu ý an toàn khi sử dụng ZIGEN 15SC A3 là gì?\", \"Zigen 15SC Xpro Thánh sâu có thời gian cách ly bao lâu?\"]",
+      "answer": "Nhóm sản phẩm: ZIGEN. Các tên / nhãn tương đương: ZIGEN 15SC A3, Zigen 15SC Xpro Thánh sâu, Zig Super 15SC Giáo Sư Trĩ. Hoạt chất: Tolfenpyrad 15% w/w. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Liuzhvou Huinong Chemical Co., Ltd. Đặc tính – công dụng: Zigen 15SC là thuốc trừ sâu tổng hợp, chứa hoạt chất trừ sâu gốc Pyrazole thế hệ mới nhất, phát minh từ Nhật Bản, diệt trừ sâu bọ tổng hợp phổ rộng. Thuốc có cơ chế tiếp xúc, vị độc, hiệu lực nhanh, mạnh ngay cả với côn trùng đã kháng. Sâu hại: Rầy nâu, bọ trĩ (bọ cánh tơ, bù lạch), bọ phấn trắng, sâu tơ, sâu cuốn lá, rầy xanh, sâu hành, sâu đục quả, sâu đục thân, sâu vẽ bùa, dòi đục lá, nhện đỏ, bọ xít muỗi, rệp, ruồi vàng. Liều dùng – cách pha – lượng nước: Pha 24 - 30ml/20 lít nước. Thời điểm – hiệu lực: N/A. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 7 ngày. Trường hợp cỏ già: N/A. Kinh nghiệm phối trộn: N/A.",
+      "score": 0.38517528772354126,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:zigen-15sc|chemical:tolfenpyrad|pest:ray-nau|pest:bo-tri|pest:bo-phan-trang|brand:delta"
+    },
+    {
+      "id": "PHONIX_DRAGON",
+      "question": "PHONIX DRAGON 20EC",
+      "alt_question": "[\"Thông tin về PHONIX DRAGON 20EC\", \"Cách sử dụng PHONIX DRAGON 20EC\", \"PHONIX DRAGON 20EC có tác dụng gì?\", \"Liều dùng của PHONIX DRAGON 20EC là gì?\", \"PHONIX DRAGON 20EC có an toàn không?\", \"Hướng dẫn sử dụng PHONIX DRAGON 20EC\", \"PHONIX DRAGON 20EC có hiệu quả với sâu nào?\", \"PHONIX DRAGON 20EC được sản xuất bởi hãng nào?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc diệt côn trùng tổng hợp. Các tên / nhãn tương đương: PHONIX DRAGON 20EC. Hoạt chất: Phoxim 18.5%w/w - Beta-cypermethrin 1.5%w/w. Nhóm thuốc: Insecticide. Hãng sản xuất: Shanghai E-Tong Chemical Co. Đặc tính – công dụng: Phonix Dragon 20EC là thuốc diệt côn trùng tổng hợp có cơ chế tiếp xúc, vị độc, xông hơi, thấm sâu nhanh, hoạt chất ức chế thần kinh làm cho côn trùng ngạt, ngừng thở và chết nhanh. Đối tượng: Cây trồng: Lúa, Lạc, Cà phê, Cây ăn trái. Sâu hại: Rầy lưng trắng, bọ trĩ, sâu cuốn lá, rầy nâu, sâu đục thân, bọ xít, sâu khoang, rệp sáp, ruồi vàng. Liều dùng – cách pha – lượng nước: Pha 30-50ml cho bình 20 lít. Thời điểm – hiệu lực: Phun xịt ướt đều hoặc tưới để đạt hiệu quả cao. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn.",
+      "score": 0.38400864601135254,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:phonix-dragon-20ec|chemical:phoxim|chemical:beta-cypermethrin|crop:lua|brand:bmc|brand:phuc-thinh|mechanisms:xong-hoi"
+    },
+    {
+      "id": "topxapy_30sc_chunk_01",
+      "question": "Topxapy 30SC là thuốc bảo vệ thực vật có thành phần gì và công dụng ra sao?",
+      "alt_question": "Topxapy 30SC có thành phần gì và dùng để trừ sâu bệnh nào? | Thuốc Topxapy 30SC dùng cho cây trồng nào? | Liều lượng và quy cách đóng gói của Topxapy 30SC là gì? | Những lưu ý an toàn khi sử dụng Topxapy 30SC?",
+      "answer": "Topxapy 30SC là thuốc diệt côn trùng chứa hoạt chất Chlorfenapyr 20% w/v và Pyriproxyfen 10% w/v. Sản phẩm được đóng gói dưới dạng chai 100ml và 240ml. Thuốc có đặc tính tiếp xúc. Thuốc dùng để trừ nhiều loại sâu bệnh trên các cây trồng như: lúa (nhện gié, sâu cuốn lá, rầy nâu, sâu đục thân, bọ trĩ, sâu đục bẹ), đậu tương (sâu xanh), lạc và đậu xanh (sâu xanh da láng), hoa hồng (nhện đỏ), hoa mai (bọ trĩ), rau màu (sâu xanh, sâu tơ). Lưu ý khi sử dụng thuốc cần tránh tiếp xúc trực tiếp để đảm bảo an toàn.",
+      "score": 0.3826036751270294,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:topxapy-30sc|chemical:chlorfenapyr|chemical:pyriproxyfen|action:insecticide|crop:lua|mechanisms:tiep-xuc"
+    },
+    {
+      "id": "tosi_30wg_di_t_ch_ch_h_t_chunk_01",
+      "question": "Sản phẩm Tosi 30WG là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Tosi 30WG dùng để diệt sâu gì trên cây lúa? | Thành phần chính của Tosi 30WG là gì? | Tosi 30WG có những quy cách đóng gói nào? | Sản phẩm Tosi 30WG có công dụng gì? | Lưu ý khi sử dụng Tosi 30WG là gì?",
+      "answer": "Tosi 30WG là thuốc bảo vệ thực vật chứa hoạt chất Acetamiprid 30% w/w, được sản xuất bởi công ty Tỷ Phúc Thịnh. Sản phẩm có quy cách bán đa dạng như Agrishop: 18gr, 100gr; BMC: 10g, 20g, 50g, 100g; Phúc Thịnh: 15g, 50g, 100g. Tosi 30WG chuyên dùng để diệt trừ các loại sâu chích hút như rầy nâu trên lúa, bọ trĩ trên điều, rệp sáp cà phê, bọ phấn, bướm trắng,. Sản phẩm nổi bật với khả năng diệt trừ hiệu quả các loại sâu chích hút. Lưu ý khi sử dụng sản phẩm cần tuân thủ các hướng dẫn về lưu dẫn để đảm bảo an toàn và hiệu quả.",
+      "score": 0.3819446563720703,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:tosi-30wg|chemical:acetamiprid|pest:rice-brown-planthopper|pest:thrips|pest:ca-phe-mealybug|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "DAPHAMEC",
+      "question": "DAPHAMEC 5.0EC",
+      "alt_question": "[\"Thông tin về DAPHAMEC 5.0EC\", \"Cách sử dụng DAPHAMEC 5.0EC\", \"DAPHAMEC 5.0EC có tác dụng gì?\", \"Liều dùng của DAPHAMEC 5.0EC là bao nhiêu?\", \"DAPHAMEC 5.0EC có an toàn không?\", \"Hãng sản xuất DAPHAMEC 5.0EC là ai?\", \"DAPHAMEC 5.0EC dùng cho cây gì?\", \"Lưu ý khi sử dụng DAPHAMEC 5.0EC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: DAPHAMEC 5.0EC. Hoạt chất: abamectin 50g/lít. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Zhejiang Xianma Chemical Co., Ltd. Đặc tính – công dụng: Daphamec 5.0EC chứa hoạt chất abamectin là thuốc có cơ chế tiếp xúc, nội hấp và lưu dẫn. Đặc trị nhiều loại sâu rầy như: Sâu cuốn lá, sâu xanh, bọ trĩ, sâu vẽ bùa, nhện đỏ, rầy xanh, rầy mềm, sâu đục thân, dòi đục quả, ốc bươu vàng, bọ phấn,. trên nhiều cây trồng khác nhau. Đối tượng: Cây trồng: Dâu tây, dưa chuột, dưa hấu, hoa cúc, hoa đồng tiền, hoa hồng, bắp cải, súp lơ, su hào, táo, thông, tùng, lúa, chè (trà). Phạm vi: Nhiều loại cây trồng. Liều dùng – cách pha – lượng nước: Pha 20-50ml/bình 25 lít. Cây non, cây trồng trong nhà kính pha liều thấp (25ml/bình 25 lít). Thời điểm – hiệu lực: Phun thuốc ướt đều lá khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2), đối với cây non, cây trong nhà kính, giảm thuốc khi pha cho thích hợp. Lưu ý an toàn: Thời gian cách ly 7 ngày. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin",
+      "score": 0.38151031732559204,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:daphamec-5-0ec|chemical:abamectin|pest:leaf-folder|pest:thrips|brand:bmc|brand:phuc-thinh"
+    }
+  ]
+}

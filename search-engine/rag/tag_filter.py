@@ -51,6 +51,19 @@ for k, v in CHEMICAL_KB.items():
 # 3) ALIASES (BẠN TỰ COPY ĐẦY ĐỦ SAU)
 # ===========================
 
+MECHANISM_KEYWORDS = {
+    "tiep-xuc-luu-dan-manh",
+    "tiep-xuc-luu-dan",
+    "luu-dan-manh",
+    "tiep-xuc-manh",
+    "xong-hoi-manh",
+    "luu-dan",
+    "tiep-xuc",
+    "xong-hoi",
+    "co-chon-loc",
+    "khong-chon-loc"
+}
+
 CHEMICAL_ALIASES = {
     "24-epi-brassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "brassinolide"],
     "24-epibrassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "24-epibrassinolide"],
@@ -1433,6 +1446,17 @@ def detect_answer_mode(query: str, tags: Dict) -> str:
 # 8) PUBLIC INTERFACE
 # ===========================
 
+
+def merge_intent_as_or(must_tags: List[str]) -> List[str]:
+    """
+    Gom các must tag thành OR thay vì AND.
+    Cách đơn giản: chuyển toàn bộ sang ANY,
+    chỉ giữ lại tối đa 1 core must (nếu có).
+    """
+    # Nếu có nhiều hơn 1 must → chuyển hết sang ANY logic
+    # Ở đây ta return rỗng để pipeline chuyển chúng sang ANY
+    return []
+
 def tag_filter_pipeline(query: str) -> Dict:
 
     norm = normalize(query)
@@ -1442,7 +1466,7 @@ def tag_filter_pipeline(query: str) -> Dict:
 
     detected_intents = []
 
-    # 2) CHỈ các alias đặc biệt mới được vào MUST
+    # 2) Các nhóm alias đặc biệt có thể thành intent
     INTENT_ALIAS_GROUPS = {
         "formula": FORMULA_ALIASES,
         "mechanisms": MECHANISMS_ALIASES,
@@ -1451,30 +1475,46 @@ def tag_filter_pipeline(query: str) -> Dict:
         "chemical": CHEMICAL_ALIASES
     }
 
+    intent_must_candidates = []
+
     for tag_type, alias_map in INTENT_ALIAS_GROUPS.items():
 
         matched = match_formula_alias(norm, alias_map)
 
         if matched:
-            tags["must"].append(f"{tag_type}:{matched}")
+            intent_must_candidates.append(f"{tag_type}:{matched}")
             detected_intents.append(tag_type)
 
-    # 3) Chuyển toàn bộ các tag crop / pest / disease sang ANY (không MUST)
-    # extract_tags hiện đang đưa crop/pest/disease vào MUST → cần chuyển lại
+    # ----------------------------------------------
+    # 3) Xử lý OR logic nhưng GIỮ MECHANISMS LÀ MUST
+    # ----------------------------------------------
 
-    refined_must = []
     refined_any = set(tags["any"])
+    refined_must = []
 
-    for t in tags["must"]:
-        if t.startswith("crop:") or t.startswith("pest:") or t.startswith("disease:"):
-            refined_any.add(t)
-        else:
+    for t in intent_must_candidates:
+
+        # Nếu là mechanisms → luôn giữ lại trong MUST
+        if t.startswith("mechanisms:"):
             refined_must.append(t)
+            continue
+
+        # Các loại khác (formula/product/chemical/brand) → OR
+        refined_any.add(t)
+
+
+    # Crop/pest/disease luôn là ANY
+    for t in tags["must"]:
+        if t.startswith(("crop:", "pest:", "disease:")):
+            refined_any.add(t)
+
 
     tags["must"] = refined_must
     tags["any"] = list(refined_any)
 
+    # --------------------------------------------------------
     # 4) Quyết định answer_mode
+    # --------------------------------------------------------
 
     if detected_intents:
         mode = detected_intents[0]

@@ -3,7 +3,7 @@ import json
 import numpy as np
 from rag.config import RAGConfig
 from rag.reranker import llm_rerank
-from rag.debug_log import debug_log
+from rag.logging.debug_log import debug_log
 
 
 def embed_query(client, text: str):

@@ -1,0 +1,22 @@
+{
+  "hop": 2,
+  "query": "hoạt chất lưu dẫn phù hợp để trừ bọ nhảy",
+  "num_hits": 1,
+  "decision": {
+    "need_next_hop": true,
+    "next_query": "hoạt chất lưu dẫn diệt bọ nhảy",
+    "total_unique_hits": 21
+  },
+  "docs": [
+    {
+      "id": "vua_imida",
+      "question": "VUA IMIDA, PHƯỢNG HOÀNG LỬA",
+      "alt_question": "[\"Thông tin về VUA IMIDA\", \"Cách sử dụng PHƯỢNG HOÀNG LỬA\", \"VUA IMIDA có tác dụng gì?\", \"PHƯỢNG HOÀNG LỬA dùng cho cây nào?\", \"Liều dùng của VUA IMIDA là gì?\", \"PHƯỢNG HOÀNG LỬA có an toàn không?\", \"Hướng dẫn sử dụng VUA IMIDA\", \"Thông tin về hoạt chất trong PHƯỢNG HOÀNG LỬA\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: VUA IMIDA, PHƯỢNG HOÀNG LỬA. Hoạt chất: Imidacloprid 100 g/kg + Phụ gia đặc biệt vừa đủ 1 kg. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Shenzhen Dehao Pesticides Co., Ltd. Đặc tính – công dụng: Hoạt chất Imidacloprid có cơ chế lưu dẫn, thấm sâu nhanh vào cây trồng; tiêu diệt các loài chích hút gây hại như bọ nhảy, rệp sáp, bọ phấn, bọ trĩ, bọ xít, rầy nâu, rầy xanh, rầy mềm, bọ ngâu. Đối tượng: Cây trồng: Lúa, Cà phê, Điều, Cam quýt, Bưởi, Sầu riêng, Lạc, Sắn, Ngô, Rau cải, Thanh long, Hồ tiêu. Sâu hại: Rầy nâu, nhện gié, bọ trĩ, sâu cuốn lá, rệp sáp, rệp vảy, bọ xít muỗi, bọ phấn, rầy xanh, bọ nhảy, rầy mềm, bọ ngâu, sâu xám. Liều dùng – cách pha – lượng nước: 0.5 kg/ha; Pha 10 – 15 g/bình 20 lít, phun cho 1 sào Bắc bộ (360m2); Pha 20 – 25 g/bình 25 lít, phun 1 – 2 bình/1000 m²; Lượng nước phun: 400 – 500 lít/ha. Thời điểm – hiệu lực: Phun vớt đều tán lá cây trồng khi sâu hại vừa mới xuất hiện; Thời gian cách ly: 14 ngày sau khi phun. Lưu ý an toàn: Có thể phối hợp với các loại thuốc BVTV khác trừ chích hút có tính kiềm. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.4815288782119751,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:vua-mida-phuong-hoang-lua|product:vua-imida|product:phuong-hoang-lua|chemical:imidacloprid|pest:bo-nhay|crop:potato|crop:cay-an-qua|brand:bmc|brand:phuc-thinh|brand:agrishop"
+    }
+  ]
+}

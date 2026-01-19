@@ -1,5 +1,5 @@
 import re
-from rag.debug_log import debug_log
+from rag.logging.debug_log import debug_log
 
 # -----------------------------
 # Listing post-filter constants
@@ -506,11 +506,18 @@ CHỈ THỊ RIÊNG THEO MODE:
         any_tags=any_tags,
     )
     debug_log(selected_model)
+    # if answer_mode == "listing":
+    #     max_out = 800
+    # elif answer_mode in ["reasoning", "disease", "product"]:
+    #     max_out = 1200
+    # else:
+    #     max_out = 2000
     # #dev
     # selected_model = "gpt-4.1-mini"
     resp = client.chat.completions.create(
         model=selected_model,
         temperature=0.4,
+        # max_completion_tokens=max_out,
         max_completion_tokens=3500,
         messages=[
             {"role": "system", "content": system_prompt},

@@ -1,0 +1,3 @@
+[0] purpose=active_ingredient | hits=80
+[1] purpose=product | hits=80
+[2] purpose=synonym | hits=80

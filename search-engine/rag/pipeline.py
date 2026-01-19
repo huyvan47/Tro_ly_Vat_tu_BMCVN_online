@@ -10,15 +10,18 @@ from rag.context_builder import choose_adaptive_max_ctx, build_context_from_hits
 from rag.answer_modes import decide_answer_policy
 from rag.formatter import format_direct_doc_answer
 from rag.generator import call_finetune_with_context
+from rag.logging.multi_query_logger import write_multi_query_logs
 # from rag.verbatim import verbatim_export
 from rag.tag_filter import tag_filter_pipeline
-# from rag.debug_log import debug_log
+from rag.logging.timing_logger import TimingLog
+from rag.reasoning.multi_hop import multi_hop_controller
 from typing import List, Tuple, Dict, Any
 from pathlib import Path
 import unicodedata
 import re
 import json
 from typing import Dict, Any
+
 
 FORCE_MUST_TAGS = {
     "mechanisms:luu-dan-manh",
@@ -33,6 +36,20 @@ FORCE_MUST_TAGS = {
     "mechanisms:khong-chon-loc",
 }
 
+FORMULA_TRIGGERS = [
+    "công thức",
+    "phối trộn",
+    "phối hợp thuốc",
+    "pha thuốc",
+    "công thức trị",
+    "công thức trừ",
+    "công thức diệt",
+    "phác đồ",
+    "liều phối",
+    "kết hợp thuốc",
+    "hoạt chất lưu dẫn phù hợp",
+]
+
 _CONCEPTUAL_TRIGGERS = [
     "gần thu hoạch", "cách ly", "thời gian cách ly", "PHI", "mrl", "an toàn",
     "tận gốc", "diệt tận gốc", "chỉ ức chế",
@@ -40,6 +57,77 @@ _CONCEPTUAL_TRIGGERS = [
     "tiếp xúc", "lưu dẫn", "nội hấp",
     "mùi", "hôi", "tuyến trùng",
 ]
+
+def multi_query_retrieve(
+    *,
+    client,
+    kb,
+    norm_query: str,
+    must_tags: List[str],
+    any_tags: List[str],
+    answer_mode_hint: str,
+    timer=None,
+):
+    """
+    Thực hiện:
+      llm_build_sub_queries →
+      retrieve từng sub →
+      weighted_rrf_fuse
+    """
+
+    subs = llm_build_sub_queries(
+        client=client,
+        norm_query=norm_query,
+        must_tags=must_tags,
+        any_tags=any_tags,
+        answer_mode_hint=answer_mode_hint,
+        max_variants=RAGConfig.max_sub_queries,
+    )
+
+    if not subs:
+        return None
+
+    results_by_query = []
+
+    for qi, sub in enumerate(subs):
+        q = sub["q"]
+        purpose = sub.get("purpose", "general")
+
+        hits_i = retrieve_search(
+            client=client,
+            kb=kb,
+            norm_query=q,
+            top_k=RAGConfig.multi_query_top_k,
+            must_tags=must_tags,
+            any_tags=any_tags,
+        )
+
+        timer = TimingLog(norm_query)
+        # Ghi log thời gian từng sub-query
+        timer.mark("tag_filter")
+
+        results_by_query.append({
+            "purpose": purpose,
+            "qi": qi,
+            "weight": _purpose_weight(purpose),
+            "hits": hits_i or [],
+        })
+
+    fused = _weighted_rrf_fuse(
+        results_by_query,
+        k=RAGConfig.rrf_k,
+        top_n=RAGConfig.rrf_top_n,
+    )
+
+    if RAGConfig.enable_multi_query_log:
+        write_multi_query_logs(
+            original_query=norm_query,
+            subs=subs,
+            results_by_query=results_by_query,
+            fused_hits=fused,
+        )
+
+    return fused
 
 def preserve_search_order(hits):
     """
@@ -94,43 +182,6 @@ def _need_intent_gate(norm_query: str, any_tags: List[str], code_candidates: Lis
     # Nếu conceptual nhưng có product signal -> gate = True (để lấy slots), nhưng tuyệt đối không auto GLOBAL
     return True
 
-
-
-def _hits_have_slot_evidence(hits: List[dict], missing_slots: List[str]) -> bool:
-    """Heuristic: nếu trong top hits đã có dấu hiệu thông tin cho các slot đang thiếu,
-    thì không cần ask-back sớm."""
-    if not hits:
-        return False
-    miss = set((missing_slots or []))
-    if not miss:
-        return True
-
-    # map slot -> keywords (lower)
-    slot_kw = {
-        "phi_label": ["cách ly", "thời gian cách ly", "phi"],
-        "days_to_harvest": ["thu hoạch", "gần thu hoạch", "trước thu hoạch"],
-        "crop": ["cây", "trồng", "cây có múi", "cam", "quýt", "bưởi", "chanh"],
-        "product_or_ai": ["hoạt chất", "thuốc", "sản phẩm"],
-        "application_method": ["phun", "tưới", "rải", "xử lý đất", "tưới gốc"],
-        "pest_or_disease": ["sâu", "bệnh", "tuyến trùng", "nấm", "rầy", "bọ trĩ"],
-    }
-
-    # build keyword list for missing slots
-    kws = []
-    for s in miss:
-        kws.extend(slot_kw.get(s, []))
-    kws = [k.lower() for k in kws if k]
-
-    if not kws:
-        return False
-
-    # check top few docs for any keyword
-    for h in hits[:6]:
-        blob = f"{h.get('question','')}\n{h.get('answer','')}".lower()
-        if any(k in blob for k in kws):
-            return True
-    return False
-# --------- 2) LLM phân loại intent + slots ----------
 def analyze_intent_and_slots(
     *,
     client,
@@ -210,24 +261,6 @@ def analyze_intent_and_slots(
     except Exception:
         return {}
 
-def _should_use_multi_query(norm_query: str, any_tags: List[str], answer_mode_hint: str = "") -> bool:
-    """
-    Heuristic bật multi-query:
-    - Câu hỏi dạng liệt kê / taxonomy / "hoạt chất" / "nhóm" / "phân loại"
-    - Hoặc có pest/crop nhưng query vẫn khó match (thường xảy ra)
-    """
-    q = (norm_query or "").lower()
-    if any(k in q for k in ["hoạt chất", "active ingredient", "nhóm", "phân loại", "gồm những", "bao gồm", "so sánh", "phân biệt"]):
-        return True
-    # Nếu có pest/crop thì multi-query thường giúp recall tốt hơn
-    if any(t.startswith("pest:") for t in (any_tags or [])) and any(t.startswith("crop:") for t in (any_tags or [])):
-        return True
-    # Nếu upstream đã hint answer_mode
-    if answer_mode_hint in ("active_ingredient", "listing"):
-        return True
-    return False
-
-
 def llm_build_sub_queries(
     *,
     client,
@@ -247,7 +280,8 @@ def llm_build_sub_queries(
         "Nhiệm vụ: sinh các câu truy vấn ngắn, dễ match tài liệu, KHÔNG trả lời người dùng.\n"
         "Yêu cầu:\n"
         "- Chỉ trả về JSON hợp lệ.\n"
-        "- Mỗi sub-query phải đánh vào một góc khác nhau: hoạt chất / sản phẩm / giai đoạn / từ đồng nghĩa / nhóm cây / (tuỳ chọn) tiếng Anh.\n"
+        "- Mỗi sub-query 100% là tiếng Việt (trừ tên hoạt chất)."
+        "- Mỗi sub-query phải đánh vào một góc khác nhau: hoạt chất / sản phẩm / giai đoạn / từ đồng nghĩa / nhóm cây.\n"
         "- Tránh paraphrase đơn thuần. Không tạo câu quá dài.\n"
         "- Không bịa tags. Không thêm ký tự lạ.\n"
     )
@@ -496,11 +530,22 @@ def choose_top_k(
     return top_k
 
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
+    timer = TimingLog(user_query)
     # -----------------------------------------------------
     # 0) ROUTER – QUYỀN CAO NHẤT
     # -----------------------------------------------------
     route = route_query(client, user_query)
+
+    norm_query = normalize_query(client, user_query)
+    norm_lower = norm_query.lower()
+
+    force_rag = any(k in norm_lower for k in FORMULA_TRIGGERS)
+
+    if force_rag:
+        route = "RAG"
+
     print("route:", route)
+    timer.mark("router")
 
     # KHÓA ROUTE: nếu router đã chọn RAG thì CẤM quay về GLOBAL
     route_locked = (route == "RAG")
@@ -534,9 +579,26 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 2) NORMALIZE + TAGS
     # -----------------------------------------------------
     norm_query = normalize_query(client, user_query)
-    is_list = is_listing_query(norm_query)
+    norm_lower = norm_query.lower()
 
-    result = tag_filter_pipeline(norm_query)
+    force_rag = False
+
+    if any(k in norm_lower for k in FORMULA_TRIGGERS):
+        force_rag = True
+
+    if re.search(r"hoạt chất.*lưu dẫn", norm_lower):
+        force_rag = True
+
+    if force_rag:
+        route = "RAG"
+        route_locked = True
+
+        timer.mark("normalize")
+        is_list = is_listing_query(norm_query)
+
+        result = tag_filter_pipeline(norm_query)
+        timer.mark("tag_filter")
+
 
     must_tags = result.get("must", [])
     any_tags = result.get("any", [])
@@ -555,6 +617,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             norm_query=norm_query,
             any_tags=any_tags,
         )
+        timer.mark("intent_analysis")
 
     route_override = (analysis.get("route_override") or "").strip().upper()
 
@@ -570,7 +633,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # -----------------------------------------------------
     # 4) NHÁNH GLOBAL SAU INTENT (CHỈ KHI ĐƯỢC PHÉP)
     # -----------------------------------------------------
-    if route_override == "GLOBAL":
+    if route_override == "GLOBAL" and not force_rag:
         hard = _is_hard_global(user_query)
         model = "gpt-4.1" if hard else "gpt-4.1-mini"
         resp = client.chat.completions.create(
@@ -609,14 +672,52 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     print("MUST TAGS  :", must_tags)
     print("ANY TAGS   :", any_tags)
 
-    hits = retrieve_search(
-        client=client,
-        kb=kb,
-        norm_query=norm_query,
-        top_k=top_k,
-        must_tags=must_tags,
-        any_tags=any_tags,
-    )
+    # -----------------------------------------------------
+    # 5) RAG PIPELINE – SINGLE hoặc MULTI QUERY
+    # -----------------------------------------------------
+
+    hits = None
+
+    if RAGConfig.use_multi_hop:
+        # Multi-hop controller sẽ tự làm:
+        # - hop1: multi-query (giới hạn 2 sub + 1 query gốc)
+        # - hop>=2: single-query
+        hits = multi_hop_controller(
+            client=client,
+            kb=kb,
+            base_query=norm_query,
+            must_tags=must_tags,
+            any_tags=any_tags,
+            timer=timer,
+        )
+        timer.mark("multi_hop_total")
+
+    else:
+        # Không dùng multi-hop -> giữ nguyên hành vi cũ:
+        # (tuỳ bạn: single-query hoặc multi-query nếu bật)
+        if RAGConfig.use_multi_query:
+            fused_hits = multi_query_retrieve(
+                client=client,
+                kb=kb,
+                norm_query=norm_query,
+                must_tags=must_tags,
+                any_tags=any_tags,
+                answer_mode_hint="listing" if is_list else "",
+                timer=timer,
+            )
+            timer.mark("multi_query_total")
+            if fused_hits:
+                hits = fused_hits
+
+        if hits is None:
+            hits = retrieve_search(
+                client=client,
+                kb=kb,
+                norm_query=norm_query,
+                top_k=top_k,
+                must_tags=must_tags,
+                any_tags=any_tags,
+            )
 
     hits = preserve_search_order(hits)
 
@@ -667,11 +768,27 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     base_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
     max_ctx = min(RAGConfig.max_ctx_strict, base_ctx)
 
-    context = build_context_from_hits(hits[:max_ctx])
+    # # QUYẾT ĐỊNH SỐ DOC THEO LOẠI CÂU HỎI
+    # if is_list:
+    #     max_ctx = min(RAGConfig.max_ctx_listing, base_ctx)
+    # else:
+    #     max_ctx = min(RAGConfig.max_ctx_reasoning, base_ctx)
 
-    Path("debug_ctx").mkdir(exist_ok=True)
-    with open("debug_ctx/context_last.txt", "w", encoding="utf-8") as f:
-        f.write(context)
+    # def slim_doc_for_llm(doc: dict) -> dict:
+    #     """
+    #     Chỉ giữ những trường cần thiết nhất cho LLM
+    #     """
+    #     return {
+    #         "id": doc.get("id"),
+    #         "question": doc.get("question", ""),
+    #         "answer": doc.get("answer", "")[:1200],   # cắt tối đa 1200 ký tự
+    #         "tags": doc.get("tags_v2", ""),
+    #     }
+
+    # hits_for_llm = [slim_doc_for_llm(h) for h in hits[:max_ctx]]
+    # context = build_context_from_hits(hits_for_llm)
+    context = build_context_from_hits(hits[:max_ctx])
+    timer.mark("build_context")
 
     answer_intent = infer_answer_intent(user_query, found)
     policy = decide_answer_policy(user_query, primary_doc, parsed_intent=answer_intent, force_listing=is_list)
@@ -687,9 +804,11 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         answer_mode=answer_mode_final,
         rag_mode="STRICT",
     )
+    timer.mark("llm_generate")
 
     img_keys = extract_img_keys(primary_doc.get("answer", ""))
 
+    timer.finish(RAGConfig.enable_timing_log)
     return {
         "text": final_answer,
         "img_keys": img_keys,

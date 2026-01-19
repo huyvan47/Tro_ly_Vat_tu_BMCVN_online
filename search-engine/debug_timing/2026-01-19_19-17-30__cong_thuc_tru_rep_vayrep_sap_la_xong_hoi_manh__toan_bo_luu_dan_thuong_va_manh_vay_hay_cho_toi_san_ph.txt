@@ -1,0 +1,17 @@
+QUERY: công thức trừ rệp vảy/rệp sáp là "xông hơi mạnh + toàn bộ lưu dẫn (thường và mạnh). vậy hãy cho tôi sản phẩm cụ thể phù hợp với công thức trên
+
+- router: 1.408s
+- normalize: 1.246s
+- tag_filter: 0.077s
+- intent_analysis: 2.173s
+- multi_hop_start: 0.000s
+- multi_hop_total: 3.483s
+- multi_hop_total: 0.005s
+- build_context: 0.000s
+- llm_generate: 22.892s
+
+[multi_hop]
+  - hop_1_retrieve: 0.000s
+  - hop_1_analyze: 3.073s
+
+TOTAL: 31.284s

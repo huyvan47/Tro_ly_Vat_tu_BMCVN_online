@@ -1,17 +1,17 @@
 from openai import OpenAI
 from rag.config import RAGConfig
 from rag.kb_loader import load_npz
-from rag.logger_csv import append_log_to_csv
+from rag.logging.logger_csv import append_log_to_csv
 from rag.pipeline import answer_with_suggestions
 from policies.v7_policy import PolicyV7 as policy
 from pathlib import Path
-from rag.debug_log import debug_log
+from rag.logging.debug_log import debug_log
 import traceback
 
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
-KB = "data-kd-1-4-17-1-2026.npz"
+KB = "data-kd-1-4-19-1-2026.npz"
 OPENAI_KEY = "..."
 
 def iter_questions(txt_path: str):

@@ -1,0 +1,22 @@
+[
+  {
+    "hop": 1,
+    "query": "Công thức trừ bọ nhảy (diệt riêng bọ nhảy) là bipimai + lưu dẫn + abamectin 3.6. Hãy cho tôi hoạt chất lưu dẫn phù hợp vào công thức trên.",
+    "num_hits": 20,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "hoạt chất lưu dẫn diệt bọ nhảy",
+      "total_unique_hits": 20
+    }
+  },
+  {
+    "hop": 2,
+    "query": "hoạt chất lưu dẫn diệt bọ nhảy",
+    "num_hits": 1,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "hoạt chất lưu dẫn diệt bọ nhảy",
+      "total_unique_hits": 21
+    }
+  }
+]

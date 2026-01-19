@@ -69,6 +69,14 @@ def route_query(client, user_query: str) -> str:
 
     if product_context:
         return "RAG"
+    
+    treatment_intent = re.search(
+        r"\b(công thức trị|công thức trừ|công thức diệt|phác đồ|quy trình trị|cách trị|biện pháp trị|diệt|phòng trừ|xử lý|đặc trị)\b",
+        q
+    )
+
+    if treatment_intent:
+        return "RAG"
 
     # ============================================
     # 3) Các câu hỏi mang tính giáo trình -> GLOBAL

@@ -1,0 +1,22 @@
+[
+  {
+    "hop": 1,
+    "query": "Công thức trừ rệp vảy/rệp sáp là xông hơi mạnh + lưu dẫn. Vậy hãy cho tôi sản phẩm cụ thể phù hợp với công thức trên.",
+    "num_hits": 60,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "sản phẩm thuốc trừ rệp vảy rệp sáp xông hơi mạnh lưu dẫn",
+      "total_unique_hits": 60
+    }
+  },
+  {
+    "hop": 2,
+    "query": "sản phẩm thuốc trừ rệp vảy rệp sáp xông hơi mạnh lưu dẫn",
+    "num_hits": 4,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "sản phẩm thuốc trừ rệp vảy rệp sáp xông hơi mạnh lưu dẫn",
+      "total_unique_hits": 64
+    }
+  }
+]

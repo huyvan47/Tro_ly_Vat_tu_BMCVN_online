@@ -1,0 +1,212 @@
+{
+  "hop": 1,
+  "query": "Công thức trừ bọ nhảy (diệt riêng bọ nhảy) là bipimai + lưu dẫn + abamectin 3.6. Hãy cho tôi hoạt chất lưu dẫn phù hợp vào công thức trên.",
+  "num_hits": 20,
+  "decision": {
+    "need_next_hop": true,
+    "next_query": "hoạt chất lưu dẫn phù hợp để trừ bọ nhảy",
+    "total_unique_hits": 20
+  },
+  "docs": [
+    {
+      "id": "oscare_600wg_ram_th_i_chunk_01",
+      "question": "Oscare 600WG (Ram Thái) là thuốc bảo vệ thực vật có thành phần hoạt chất nào và công dụng ra sao?",
+      "alt_question": "Thuốc Oscare 600WG có thành phần gì và công dụng thế nào? | Thuốc Oscare 600WG dùng để diệt sâu bệnh nào? | Oscare 600WG dùng cho cây trồng nào? | Thuốc Oscare 600WG có lưu ý gì khi sử dụng?",
+      "answer": "Oscare 600WG (Ram Thái) chứa hoạt chất pymetrozine với nồng độ 600g/kg. Sản phẩm được đóng gói dưới dạng BMC với các quy cách 20gr, 25gr (của Tỷ Phúc Thịnh) và 25gr, 100gr (của Phúc Thịnh). Thuốc có công dụng diệt trừ các loại côn trùng chích hút như bọ phấn, bọ trĩ, rầy mềm, rầy xanh, bọ ngâu trên nhiều loại cây trồng như dâu tây, dưa chuột, dưa hấu, chè (trà), thanh long, các loại hoa như hoa cúc, hoa đồng tiền, hoa hồng; cũng như bọ phấn, rầy mềm, bọ nhảy trên rau họ thập tự như bắp cải, súp lơ, xu hào; và bọ trĩ, rầy nâu, rầy xanh trên lúa. Thuốc nổi bật với khả năng diệt trừ các loại côn trùng chích hút hiệu quả. Sản phẩm có đối thủ cạnh tranh là Chess 50WG của Syngenta. Lưu ý khi sử dụng cần lưu dẫn theo hướng dẫn.",
+      "score": 0.4458845555782318,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:oscare-600wg|chemical:pymetrozine|pest:thrips|pest:whitefly|pest:aphid|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "inmanda_100wp_si_u_imida_100wp_super_chunk_01",
+      "question": "Sản phẩm Inmanda 100WP (Siêu Imida 100WP Super) là thuốc bảo vệ thực vật có đặc điểm gì nổi bật?",
+      "alt_question": "Inmanda 100WP là thuốc gì? | Công dụng chính của Inmanda 100WP là gì? | Inmanda 100WP dùng cho cây trồng nào? | Đặc điểm nổi bật của Inmanda 100WP là gì?",
+      "answer": "Inmanda 100WP (Siêu Imida 100WP Super) chứa hoạt chất Imidacloprid 100g/kg, thuộc nhóm thuốc lưu dẫn thế hệ đầu, có khả năng diệt trừ nhiều loại sâu hại như bọ nhảy, rệp sáp, bọ phấn, bọ trĩ, bọ xít, rầy nâu, rầy xanh, rầy mềm, bọ ngâu trên các loại cây trồng như lúa, rau màu, cây ăn trái và cây công nghiệp. Sản phẩm được đóng gói 100gr, phù hợp dùng làm thuốc nền kết hợp với các thuốc khác, có giá thành bình dân. Thuốc có đặc tính xông hơi.",
+      "score": 0.4290784001350403,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:inmanda-100wp|chemical:imidacloprid|pest:aphid|pest:whitefly|pest:thrips|mechanisms:luu-dan"
+    },
+    {
+      "id": "oscare_100wp_tr_m_ch_ch_h_t_tr_chunk_01",
+      "question": "Oscare 100WP là thuốc bảo vệ thực vật có thành phần hoạt chất gì và công dụng ra sao?",
+      "alt_question": "Thuốc Oscare 100WP có thành phần gì và công dụng ra sao? | Oscare 100WP dùng để phòng trừ sâu bệnh nào trên cây trồng? | Thuốc Oscare 100WP có điểm gì nổi bật? | Liều dùng và lưu ý khi sử dụng Oscare 100WP là gì?",
+      "answer": "Oscare 100WP chứa hoạt chất pymetrozine với nồng độ 100g/kg, được đóng gói dạng Delta 100gr. Thuốc có đặc tính lưu dẫn. Thuốc chuyên dùng để phòng trừ các loại sâu trùng chích hút như rầy nâu, rầy lưng trắng, bọ xít trên lúa; rệp bông xơ, rệp sáp trên mía; rầy xanh, rệp sáp trên cà phê và hồ tiêu; bọ xít muỗi trên điều; bọ phấn, rệp muội trên sắn và hoa hồng; cùng nhiều loại sâu chích hút khác trên rau màu và cây ăn trái như bọ nhảy, bọ phấn, rầy mềm, bọ xít, bọ trĩ, bọ ngâu, rầy xanh. Sản phẩm nổi bật vì là thuốc duy nhất có dạng pymetrozine 100WP trên thị trường. Lưu ý khi sử dụng cần tuân thủ hướng dẫn để tránh lưu dẫn thuốc.",
+      "score": 0.4253298342227936,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:oscare-100wp|chemical:pymetrozine|pest:ray-nau|pest:white-backed-planthopper|pest:aphid|mechanisms:luu-dan"
+    },
+    {
+      "id": "oscare_100wp_tr_m_ch_ch_h_t_tr_chunk_02",
+      "question": "Oscare 100WP dùng để phòng trừ sâu bệnh trên những cây trồng nào?",
+      "alt_question": "Oscare 100WP dùng cho cây trồng nào? | Thuốc Oscare 100WP có tác dụng trên sâu bệnh nào? | Oscare 100WP có thể dùng cho cây cà phê không?",
+      "answer": "Oscare 100WP được sử dụng để phòng trừ các loại sâu chích hút trên nhiều loại cây trồng như: lúa (rầy nâu, rầy lưng trắng, bọ xít), mía (rệp bông xơ, rệp sáp), cà phê và hồ tiêu (rầy xanh, rệp sáp), điều (bọ xít muỗi), sắn và hoa hồng (bọ phấn, rệp muội), rau màu và cây ăn trái (bọ nhảy, bọ phấn, rầy mềm, bọ xít, bọ trĩ, bọ ngâu, rầy xanh).",
+      "score": 0.3771764934062958,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:oscare-100wp|chemical:pymetrozine|pest:ray-nau|pest:ray-lung-trang|pest:bo-xit|mechanisms:luu-dan"
+    },
+    {
+      "id": "SUPAREP",
+      "question": "SUPAREP 22.4SC",
+      "alt_question": "[\"Thông tin về SUPAREP 22.4SC\", \"Cách sử dụng SUPAREP 22.4SC\", \"SUPAREP 22.4SC có tác dụng gì?\", \"Liều dùng của SUPAREP 22.4SC là bao nhiêu?\", \"SUPAREP 22.4SC có an toàn không?\", \"Hãng sản xuất SUPAREP 22.4SC là ai?\", \"SUPAREP 22.4SC diệt được những loại sâu nào?\", \"Hướng dẫn pha SUPAREP 22.4SC\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: SUPAREP 22.4SC. Hoạt chất: spirotetramat 22.4% w/w + Chất phụ gia 77.6% w/w. Nhóm thuốc: Thuốc trừ sâu lưu dẫn. Hãng sản xuất: Qingdao Haina Biotechnology Co., Ltd. Đặc tính – công dụng: Sản phẩm là thuốc trừ sâu lưu dẫn 2 chiều, hấp thu qua lá, di chuyển cả lên và xuống trong cây gây ức chế sinh tổng hợp lipid, làm côn trùng ngừng phát triển, giảm sinh sản và chết, cơ chế hấp thu nhanh nên ít ảnh hưởng đến thiên địch, hiệu quả trên nhiều cây trồng. Sản phẩm diệt trừ tốt: rệp sáp, rệp vảy, rầy xanh, bọ trĩ, nhện đỏ, rầy phấn, sâu tơ, sâu xanh, rầy chổng cánh. Đối tượng: Cây trồng: Khoai tây, cà chua, dưa chuột, thanh long, bưởi, chè, cà chua, vải, xoài, bắp cải, cà phê, cam, bưởi, tiêu, sầu riêng, hoa cúc, hoa hồng. Sâu hại: Bọ phấn, sâu đục quả, bọ trĩ, sâu đục quả, sâu tơ, nhện, rệp sáp, rệp muỗi, rầy chổng cánh, nhện đỏ. Liều dùng – cách pha – lượng nước: 0.3 – 0.5 lít/ha. Pha 18 – 20 ml cho bình 20 lít nước. Lượng nước phun 500 – 600 lít/ha. Thời điểm – hiệu lực: Phun thuốc khi sâu, bọ mới xuất hiện, mật độ khoảng 3 – 5 con/lá hoặc khoảng từ 3 – 6 con/ngọn. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Thời gian cách ly: 14 ngày với khoai tây và cà phê, 5 ngày với dưa chuột.",
+      "score": 0.5139114260673523,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:suparep-22-4sc|chemical:spirotetramat|pest:aphid|pest:thrips|brand:bmc|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "TOSI",
+      "question": "TOSI 30WG, HASEIDN GOLD",
+      "alt_question": "[\"Thông tin về TOSI 30WG và HASEIDN GOLD\", \"Cách sử dụng TOSI 30WG cho cây trồng\", \"TOSI 30WG có tác dụng gì?\", \"Liều dùng của HASEIDN GOLD là bao nhiêu?\", \"TOSI 30WG có an toàn không?\", \"Hướng dẫn pha chế HASEIDN GOLD\", \"TOSI 30WG có thể dùng cho loại cây nào?\", \"Thông tin về hoạt chất Acetamiprid trong TOSI 30WG\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: TOSI 30WG, HASEIDN GOLD. Hoạt chất: Acetamiprid 30% w/w + Phụ gia đặc biệt 70% w/w. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Shandong United Pesticide Industry Co., Ltd. Đặc tính – công dụng: Tosi 30WG chứa hoạt chất Acetamiprid có tác dụng nội hấp cực nhanh, lưu dẫn cực mạnh. Sau khi phun thuốc thấm sâu qua bề mặt lá và lưu dẫn trong toàn bộ cây trồng, tác động lên hệ thần kinh làm côn trùng ngừng ăn và chết. Tosi 30WG đặc trị bọ phấn, rầy mềm trên rau màu: bầu bí, cà chua, dưa, bọ trĩ, rầy nâu trên lúa…. Đối tượng: Cây trồng: Bầu bí, dưa leo, dưa hấu, dưa lê, hoa các loại: Hoa cúc, hoa đồng tiền, hồng… Sâu hại: Bọ phấn, bọ trĩ, rầy mềm… Cây trồng: Rau họ thập tự: Bắp cải, súp lơ, xu hào. Sâu hại: Bọ phấn, rầy mềm. Cây trồng: Ớt các loại. Sâu hại: Bọ trĩ, rầy nâu. Cây trồng: Cây thuốc Cam thảo, tía tô, sâm ngọc linh, thủy bồn thảo. Liều dùng – cách pha – lượng nước: Pha 10g/bình 16 lít, xịt ướt đẫm cây trồng. Cây non, pha 10g/bình 25 lít, xịt ướt đẫm cây trồng. Sâu đục gốc pha 10g/20 lít, đổ 100–200ml nước đã pha/gốc. Thời điểm – hiệu lực: Không phun thuốc khi lúa đã trổ bông. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc khi sâu mới nở, sâu còn nhỏ (tuổi 1–2). Lượng nước phun từ 400–500 lít/ha. Thời gian cách ly: 14 ngày. Đối với cây thuốc nam, chè (trà) cách ly 21 ngày. Lưu ý an toàn: Không phun thuốc khi lúa đã trổ bông, không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Trường hợp cỏ già: Không có thông tin. Kinh nghiệm phối trộn: Không có thông tin.",
+      "score": 0.4873582124710083,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:tosi|product:tosi-30wg|product:haseidn-gold|chemical:acetamiprid|pest:thrips|crop:rau|brand:bmc|brand:phuc-thinh|brand:agrishop|mechanisms:luu-dan"
+    },
+    {
+      "id": "suparep_22_4sc_chunk_01",
+      "question": "Suparep 22.4SC là thuốc bảo vệ thực vật có thành phần gì và công dụng ra sao?",
+      "alt_question": "Thuốc Suparep 22.4SC có thành phần gì và công dụng chính? | Suparep 22.4SC dùng để diệt sâu bệnh nào trên cây trồng? | Thành phần và công dụng của Suparep 22.4SC là gì?",
+      "answer": "Suparep 22.4SC của công ty Tỷ Phúc Thịnh chứa hoạt chất spirotetramat 22.4% w/w, đóng gói dạng Delta 240ml. Thuốc có tác dụng diệt các loại sâu bệnh như bọ phấn, sâu đục quả trên khoai tây, cà chua; bọ trĩ, sâu đục quả, sâu tơ, nhện trên dưa chuột, thanh long, bưởi, chè, cà chua, vải, xoài, bắp cải; rệp sáp, rệp muội, rầy chổng cánh trên cà phê, cam, bưởi, tiêu, sầu riêng; và nhện đỏ trên hoa cúc, hoa hồng. Thuốc có đặc điểm lưu dẫn 2 chiều (trên xuống và dưới lên), diệt được rệp sâu trong lá, dưới mặt lá và trong chồi non, đặc trị rệp sáp, rệp vảy, bọ phấn, bọ trĩ, rệp sáp rễ. Có thể phun kết hợp với dinotefuran, Buprofezin và Lekima để tăng hiệu quả. Thuốc đối thủ là Movento 150 (Bayer).",
+      "score": 0.4781065583229065,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:suparep-22-4sc|chemical:spirotetramat|pest:aphid|pest:thrips|pest:mite|mechanisms:luu-dan"
+    },
+    {
+      "id": "nofara_35wg_vua_tr_chunk_01",
+      "question": "Nofara 35WG (Vua Trĩ) là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Nofara 35WG (Vua Trĩ) dùng để trừ sâu gì trên cây lúa?|Thành phần chính của Nofara 35WG (Vua Trĩ) là gì?|Nofara 35WG (Vua Trĩ) có công dụng trên cây cà phê như thế nào?|Nofara 35WG (Vua Trĩ) được đóng gói với quy cách nào?",
+      "answer": "Nofara 35WG (Vua Trĩ) là thuốc bảo vệ thực vật của công ty Tỷ Phúc Thịnh, chứa hoạt chất Thiamethoxam 35% w/w. Sản phẩm được đóng gói dưới dạng Delta với quy cách 25gr và 100gr. Thuốc có đặc tính lưu dẫn. Thuốc có tác dụng trừ các loại sâu chích hút tổng hợp trên nhiều loại cây trồng như lúa (bọ trĩ, rầy nâu, bọ xít), mía (rệp bông xơ, rệp sáp), cà phê (rệp sáp, rệp muội, sâu đục cành), thuốc lá (rệp sáp), điều (bọ xít, bọ trĩ), khoai tây (rệp đào) và hoa cúc (bọ trĩ). Sản phẩm có lưu dẫn khi sử dụng và là đối thủ cạnh tranh với Actara 25% WG của Syngenta.",
+      "score": 0.44586387276649475,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:nofara-35wg|chemical:thiamethoxam|pest:thrips|pest:ray-nau|mechanisms:luu-dan"
+    },
+    {
+      "id": "tosi_30wg_di_t_ch_ch_h_t_chunk_01",
+      "question": "Sản phẩm Tosi 30WG là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Tosi 30WG dùng để diệt sâu gì trên cây lúa? | Thành phần chính của Tosi 30WG là gì? | Tosi 30WG có những quy cách đóng gói nào? | Sản phẩm Tosi 30WG có công dụng gì? | Lưu ý khi sử dụng Tosi 30WG là gì?",
+      "answer": "Tosi 30WG là thuốc bảo vệ thực vật chứa hoạt chất Acetamiprid 30% w/w, được sản xuất bởi công ty Tỷ Phúc Thịnh. Sản phẩm có quy cách bán đa dạng như Agrishop: 18gr, 100gr; BMC: 10g, 20g, 50g, 100g; Phúc Thịnh: 15g, 50g, 100g. Tosi 30WG chuyên dùng để diệt trừ các loại sâu chích hút như rầy nâu trên lúa, bọ trĩ trên điều, rệp sáp cà phê, bọ phấn, bướm trắng,. Sản phẩm nổi bật với khả năng diệt trừ hiệu quả các loại sâu chích hút. Lưu ý khi sử dụng sản phẩm cần tuân thủ các hướng dẫn về lưu dẫn để đảm bảo an toàn và hiệu quả.",
+      "score": 0.43460530042648315,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:tosi-30wg|chemical:acetamiprid|pest:rice-brown-planthopper|pest:thrips|pest:ca-phe-mealybug|brand:phuc-thinh|mechanisms:luu-dan"
+    },
+    {
+      "id": "nofara_35wg_rec_chunk_01",
+      "question": "Nofara 35WG (Recxona 35WG) là thuốc bảo vệ thực vật có thành phần và công dụng như thế nào?",
+      "alt_question": "Nofara 35WG (Recxona 35WG) dùng để trừ sâu gì trên cây lúa?|Thành phần chính của Nofara 35WG (Recxona 35WG) là gì?|Nofara 35WG (Recxona 35WG) có công dụng trên cây cà phê như thế nào?|Nofara 35WG (Recxona 35WG) được đóng gói với quy cách nào?",
+      "answer": "Nofara 35WG (Recxona 35WG) là thuốc bảo vệ thực vật của công ty Tỷ Phúc Thịnh, chứa hoạt chất Thiamethoxam 35% w/w. Sản phẩm được đóng gói dưới dạng Delta với quy cách 25gr và 100gr. Thuốc có tác dụng trừ các loại sâu chích hút tổng hợp trên nhiều loại cây trồng như lúa (bọ trĩ, rầy nâu, bọ xít), mía (rệp bông xơ, rệp sáp), cà phê (rệp sáp, rệp muội, sâu đục cành), thuốc lá (rệp sáp), điều (bọ xít, bọ trĩ), khoai tây (rệp đào) và hoa cúc (bọ trĩ). Sản phẩm có lưu dẫn khi sử dụng và là đối thủ cạnh tranh với Actara 25% WG của Syngenta.",
+      "score": 0.4253104031085968,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:nofara-35wg|product:Recxona-35WG|chemical:thiamethoxam|pest:thrips|pest:ray-nau|mechanisms:luu-dan"
+    },
+    {
+      "id": "KAJIO-al-gold",
+      "question": "KAJIO 1GR ALPHA, KAJIO 1GR GOLD",
+      "alt_question": "[\"Thông tin về KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có công dụng gì?\", \"Hướng dẫn sử dụng KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có chứa hoạt chất gì?\", \"Liều dùng của KAJIO 1GR ALPHA là bao nhiêu?\", \"KAJIO 1GR GOLD có hiệu lực trong bao lâu?\", \"Lưu ý khi sử dụng KAJIO 1GR ALPHA\", \"KAJIO 1GR GOLD có thể dùng cho cây nào?\"]",
+      "answer": "Nhóm sản phẩm: KAJIO 1GR ALPHA, KAJIO 1GR GOLD. Các tên / nhãn tương đương: KAJIO 1GR ALPHA, KAJIO 1GR GOLD. Hoạt chất: Avermectin B1a 90% + Avermectin B1b 10% (Emamectin benzoate). Nhóm thuốc: Insecticide. Hãng sản xuất: Ace Bioscience Pte Ltd (Singapore). Đặc tính – công dụng: Kajio 1GR chứa hoạt chất Avermectin B1a 90% + Avermectin B1b 10% (Emamectin benzoate) là chất trừ sâu sinh học được sử dụng rộng rãi trong nông nghiệp, thuốc có nguồn gốc từ vi sinh vật, phổ tác dụng rộng, diệt được rất nhiều côn trùng miệng nhai và chích hút. Đối tượng: Cây trồng: Lúa, mía, ngô, khoai lang, khoai môn, khoai tây, hành, lạc, cà phê, hồ tiêu, rau ăn lá, hoa ly, hoa cúc, hoa hồng, cam, củ cải trắng, cà chua, cà rốt, thanh long, sầu riêng, xoài,. Sâu hại: Tuyến trùng (u cục rễ), sâu đục thân, sâu cuốn lá, sùng khoai, sùng đất, ve sầu, siêu nhân, sâu đất, sâu xám, bọ trĩ (bù lạch), bọ nhảy, muỗi hành (sâu năng),. Mật độ: 10 - 20 kg/ha (10.000m²). Liều dùng – cách pha – lượng nước: Rải gốc khi sâu mới chớm xuất hiện. Có thể tăng liều khi sâu, sùng nhiều. Thời điểm – hiệu lực: Với ruộng lúa: Cần giữ nước trong ruộng từ 7 - 10 ngày để thuốc phát huy hiệu quả sau khi rải. Các cây trồng khác: Sau khi rải, tưới nước gốc cây để thuốc đạt hiệu quả tốt. Thời gian cách ly: 7 ngày sau khi sử dụng.",
+      "score": 0.42135271430015564,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:kajio-1gr|product:kajio-1gr-alpha|product:kajio-1gr-gold|chemical:emamectin-benzoate|chemical:avermectin-b1a|chemical:avermectin-b1b|brand:delta"
+    },
+    {
+      "id": "KOTO",
+      "question": "KOTO 240SC, BENXANA 240SC, KOTO 240SC GOLD",
+      "alt_question": "[\"Thông tin về KOTO 240SC\", \"Cách sử dụng BENXANA 240SC\", \"KOTO 240SC GOLD có tác dụng gì?\", \"Liều dùng của KOTO 240SC là bao nhiêu?\", \"KOTO 240SC có hiệu quả với sâu nào?\", \"Hãng sản xuất của BENXANA 240SC là ai?\", \"Lưu ý khi sử dụng KOTO 240SC GOLD\", \"KOTO 240SC có thời gian cách ly bao lâu?\"]",
+      "answer": "Nhóm sản phẩm: KOTO 240SC, BENXANA 240SC, KOTO 240SC GOLD. Các tên / nhãn tương đương: KOTO 240SC, BENXANA 240SC, KOTO 240SC GOLD. Hoạt chất: Thiacloprid 240g/lít + Phụ gia đặc biệt 760g/lít. Nhóm thuốc: Insecticide. Hãng sản xuất: Fertiagro Pte., Ltd (Singapore). Đặc tính – công dụng: Koto chứa hoạt chất Thiacloprid lưu dẫn thế hệ mới, đối kháng với thụ thể Acetylcholine nicotinic trong hệ thần kinh. Nó làm rối loạn tế bào thần kinh dẫn đến cái chết của côn trùng. Thiacloprid có phổ tác động rất rộng, hiệu quả với sâu miệng nhai và chích hút như: Rầy nâu, bọ trĩ, rệp sáp, rầy mềm, bọ nhảy, sâu đục quả, sâu đục cuống, sâu đục thân. Đối tượng: Cây trồng: Dâu tây, dưa chuột, dưa hấu, các loại hoa như Hoa cúc, hoa đồng tiền, hoa hồng, Rau họ thập tự: Bắp cải, súp lơ, su hào, táo, lúa, trà, cây rừng, cà phê. Sâu hại: Bọ phấn, bọ trĩ, rầy mềm, sâu lá, sâu đục thân, cuốn lá, bọ xít muỗi, rầy xanh, rệp sáp, mọt đục cành. Liều dùng – cách pha – lượng nước: Pha 25-50ml/bình 25 lít. Cây non, cây trồng trong nhà kính pha liều thấp (25ml/bình 25 lít). Lưu ý an toàn: Thời gian cách ly 7 ngày. Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Lượng nước phun từ 400 lít/ha. Phun thuốc ướt đều lá khi sâu mới nở, sâu còn nhỏ (tuổi 1 - 2), đối với cây non (cây còn nhỏ), cây trong nhà kính, giảm thuốc khi pha cho thích hợp.",
+      "score": 0.40723076462745667,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:koto-240sc|product:benxana-240sc|product:koto-240sc|product:koto-240sc-gold|chemical:thiacloprid|pest:rep-sap|pest:bo-xit-muoi|crop:hoa|crop:rau|brand:bmc|mechanisms:luu-dan"
+    },
+    {
+      "id": "nh_m_ch_ch_h_t_chunk_01__000045",
+      "question": "Phác đồ phối hợp thuốc phòng trừ nhóm sâu chích hút là gì?",
+      "alt_question": "Phác đồ phòng trừ sâu chích hút gồm những thuốc nào?|Cách phối hợp Suparep, Ecudor, Tamatras với thuốc lưu dẫn ra sao?|Lưu ý khi dùng thuốc lưu dẫn trong phác đồ sâu chích hút",
+      "answer": "Đối tượng sâu hại là nhóm chích hút. Công thức phối hợp khuyến cáo gồm Suparep, Ecudor hoặc Tamatras kết hợp với toàn bộ thuốc lưu dẫn (bao gồm loại thường và mạnh). Việc phối hợp này giúp tăng hiệu quả phòng trừ sâu hại nhờ tác động kép vừa tiếp xúc vừa lưu dẫn. Lưu ý khi sử dụng cần tuân thủ đúng liều lượng và điều kiện áp dụng của từng loại thuốc để tránh gây hại cho cây trồng và môi trường.",
+      "score": 0.3947006165981293,
+      "category": "procedure_mixing_formula_sucking_pests",
+      "entity_type": "product",
+      "tags_v2": "process:chemical-combination|mechanisms:luu-dan|pest:sucking-insects|product:suparep|product:ecudor"
+    },
+    {
+      "id": "koto_240sc_th_ng_nh_n_m_chunk_01",
+      "question": "Thuốc BVTV Koto 240SC thường (Nhân Mã) có thành phần và công dụng chính là gì?",
+      "alt_question": "Thuốc Koto 240SC dùng để làm gì? | Thành phần và công dụng của Koto 240SC là gì? | Koto 240SC có tác dụng trên sâu bệnh nào? | Thuốc Koto 240SC có đặc điểm gì nổi bật?",
+      "answer": "Koto 240SC thường (Nhân Mã) là thuốc bảo vệ thực vật chứa hoạt chất Thiacloprid với nồng độ 240g/lít, được đóng gói dưới dạng chai 25ml và 200ml. Thuốc có tác dụng đặc hiệu trên các đối tượng sâu cuốn lá, sâu đục thân, rầy nâu trên cây lúa; rệp sáp trên cây cà phê; và sâu đục quả trên cây đậu tương. Thuốc thuộc dòng hoạt chất lưu dẫn, giúp thuốc thấm sâu và phát huy hiệu quả lâu dài trong cây trồng. Đây là dòng hoạt chất ít công ty sản xuất, mang lại hiệu quả cao trong phòng trừ sâu hại.",
+      "score": 0.37440189719200134,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:koto-240sc|chemical:thiacloprid|pest:leaf-folder|pest:stem-borer|pest:ray-nau|mechanisms:luu-dan"
+    },
+    {
+      "id": "sau_hai_05_ray_chong_canh_04__000174",
+      "question": "Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ bình thường như thế nào?",
+      "alt_question": "Cách xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn khi mật độ bình thường?|Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn bình thường xử lý sao?|Thuốc nào trị Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn bình thường?|Phác đồ phòng trừ Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn bình thường?|Cách trị Ray xanh; ray chong canh; ray phan; ray mem, bo phan bình thường?|Xử lý Rầy xanh; rầy chổng cánh; rầy phấn; rầy mềm, bọ phấn như thế nào?",
+      "answer": "Xông hơi hoặc Tiếp xúc  hoặc Tiếp xúc-lưu dẫn  + Toàn bộ Lưu dẫn (Thường và mạnh). Ví dụ:  Tamastras + Tosi; Santoso + Nofara; Zigen + Inmanda;",
+      "score": 0.37269607186317444,
+      "category": "Sâu hại cây trồng",
+      "entity_type": "product",
+      "tags_v2": "process:fumigation|mechanisms:luu-dan|pest:ray-xanh|formula:cong-thuc-ray-xanh|formula:cong-thuc-ray-chong-canh|formula:cong-thuc-ray-phan|formula:cong-thuc-ray-mem|formula:cong-thuc-bo-phan-trang|formula:cong-thuc-bo-xit"
+    },
+    {
+      "id": "sau_hai_05_rep_sap_12__000181",
+      "question": "Xử lý Rệp sáp; rệp vảy  như thế nào?",
+      "alt_question": "Cách xử lý Rệp sáp; rệp vảy?|Rệp sáp; rệp vảyxử lý sao?|Thuốc nào trị Rệp sáp; rệp vảy?|Phác đồ phòng trừ Rệp sáp; rệp vảy?|Cách trị Rep sap; rep vay?|Xử lý Rệp sáp; rệp vảy như thế nào?",
+      "answer": "Suparep/Ecudor/ Tamatras +  Toàn bộ Lưu dẫn (thường và mạnh).Ví dụ: Supaprep + Rayanusa (Vô địch rệp ráp, mát cây).",
+      "score": 0.35950714349746704,
+      "category": "procedure_mixing_formula_scale_mealybugs",
+      "entity_type": "product",
+      "tags_v2": "action:xu-ly|mechanisms:luu-dan|pest:rep-sap|pest:rep-vay|disease:rep-sap|disease:rep-vay|product:suparep|formula:cong-thuc-rep-sap|formula:cong-thuc-rep-vay"
+    },
+    {
+      "id": "nofara_35wg_vua_tr_chunk_02",
+      "question": "Sản phẩm Nofara 35WG (Vua Trĩ) có những lưu ý quan trọng khi sử dụng không?",
+      "alt_question": "Lưu ý khi sử dụng Nofara 35WG (Vua Trĩ) là gì?|Có cần lưu dẫn khi dùng Nofara 35WG (Vua Trĩ) không?|Nofara 35WG (Vua Trĩ) có an toàn cho tất cả các loại cây trồng không?",
+      "answer": "Khi sử dụng Nofara 35WG (Vua Trĩ), người dùng cần lưu ý thuốc có lưu dẫn, tức là cần tuân thủ các hướng dẫn về thời gian cách ly trước khi thu hoạch và không phun thuốc vượt quá liều lượng khuyến cáo để đảm bảo an toàn cho cây trồng và người tiêu dùng. Ngoài ra, cần tránh phun thuốc lên các cây không nằm trong danh sách đối tượng sử dụng để tránh gây hại không mong muốn.",
+      "score": 0.3511177897453308,
+      "category": "product_profile",
+      "entity_type": "product",
+      "tags_v2": "product:nofara-35wg|chemical:thiamethoxam|action:application|process:pre-harvest-interval|crop:general-crops|mechanisms:luu-dan"
+    },
+    {
+      "id": "sau_hai_07_bo_nhay__000190",
+      "question": "Xử lý Bọ nhảy như thế nào?",
+      "alt_question": "Cách xử lý Bọ nhảy?|Thuốc nào trị Bọ nhảy?|Công thức diệt Bọ nhảy hiệu quả?|Bọ nhảy xử lý sao cho dứt điểm?",
+      "answer": "Bọ nhảy có thể xử lý theo công thức giống sâu tơ kết hợp thêm thuốc lưu dẫn nếu vừa muốn diệt sâu tơ và bọ nhảy cùng lúc. Trường hợp chỉ cần diệt riêng bọ nhảy, có thể sử dụng Bipimai kết hợp thuốc lưu dẫn và abamectin 3.6 (dạng đục hoặc trong) để tăng hiệu quả tiếp xúc và lưu dẫn. Phun khi bọ nhảy hoạt động mạnh (thường sáng sớm hoặc chiều mát).",
+      "score": 0.6607670783996582,
+      "category": "procedure_mixing_formula_Flea_Beetle",
+      "entity_type": "product",
+      "tags_v2": "process:pest-control|action:apply-chemical|pest:bo-nhay|formula:cong-thuc-bo-nhay|product:binhtox-gold|product:kajio-5ec|product:tomi|additive:chat-bam-dinh"
+    },
+    {
+      "id": "KHONGRAY",
+      "question": "KHONGRAY 54WP",
+      "alt_question": "[\"Thông tin về KHONGRAY 54WP\", \"Cách sử dụng KHONGRAY 54WP\", \"KHONGRAY 54WP có tác dụng gì?\", \"Liều dùng của KHONGRAY 54WP là bao nhiêu?\", \"KHONGRAY 54WP có an toàn không?\", \"Hướng dẫn pha chế KHONGRAY 54WP\", \"KHONGRAY 54WP dùng cho cây gì?\", \"Tác dụng của hoạt chất trong KHONGRAY 54WP\"]",
+      "answer": "Nhóm sản phẩm: Thuốc BVTV. Các tên / nhãn tương đương: KHONGRAY 54WP. Hoạt chất: Buprofezin 180g/kg, dinotefuran 120g/kg. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Beta Chemicals Co., Ltd. Đặc tính – công dụng: Sản phẩm là hỗn hợp 2 hoạt chất Acetamiprid + Buprofezin là thuốc tiếp xúc, lưu dẫn cực mạnh, hiệu quả cao, dùng đặc trị bọ trĩ, bọ nhảy, rầy, rệp muội trắng, muỗi đen, bọ phấn trắng, nhện đỏ hại rau màu, hoa, cây cảnh, lúa, đậu, cà phê, cây ăn quả, cây công nghiệp. Đối tượng: Cây trồng: Lúa, Đậu tương, Đậu phộng, Rau màu, Cà phê. Sâu hại: Rầy nâu, rầy xanh, rầy lưng trắng, bọ trĩ, sâu xanh, sâu khoang, bọ nhảy, rệp sáp, bọ phấn, rệp muội, nhện, rệp sáp, rệp vảy. Liều dùng – cách pha – lượng nước: Liều dùng: 0.3 – 0.35 kg/ha. Pha 20gr cho bình 25 lít nước. Thời điểm – hiệu lực: Phun thuốc khi rầy cám ra rộ. Phun ướt đều trên cây, nếu mật độ dịch hại nhiều thì phun lại lần 2 sau 5 – 7 ngày. Nên phun vào lúc sáng sớm hoặc chiều mát để đạt hiệu quả cao nhất. Lưu ý an toàn: Không phun khi trời sắp mưa to hoặc khi có gió lớn. Tuyệt đối không sử dụng thuốc này kể từ khi lúa trổ.",
+      "score": 0.524548351764679,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:khongray-54wp|chemical:buprofezin|chemical:dinotefuran|pest:thrips|brand:agrishop|mechanisms:luu-dan-manh"
+    },
+    {
+      "id": "EXAMI",
+      "question": "EXAMI 20WG",
+      "alt_question": "[\"Thông tin về EXAMI 20WG\", \"Cách sử dụng EXAMI 20WG\", \"EXAMI 20WG có tác dụng gì?\", \"Liều dùng của EXAMI 20WG là bao nhiêu?\", \"EXAMI 20WG có an toàn không?\", \"Hãng sản xuất EXAMI 20WG là ai?\", \"EXAMI 20WG dùng cho cây gì?\", \"EXAMI 20WG có những lưu ý gì khi sử dụng?\"]",
+      "answer": "Nhóm sản phẩm: Thuốc trừ sâu. Các tên / nhãn tương đương: EXAMI 20WG. Hoạt chất: Flonicamid 20% w/w, Special Additives 80% w/w. Nhóm thuốc: Thuốc trừ sâu. Hãng sản xuất: Yancheng Limin Chemical Co., Ltd. Đặc tính – công dụng: Thuốc Exami 20WG là thuốc dạng cốm cao cấp, chứa hoạt chất lưu dẫn Flonicamid, thế hệ mới nhất tại Việt Nam hiện nay! Flonicamid diệt sạch hữu hiệu các loài chích hút: rầy, rệp, bọ nhảy, rầy nâu hại lúa, nhện lông nhung, bọ trĩ, bọ phấn, bọ ngựa, rầy chổng cánh. Thuốc lưu dẫn, thấm sâu, chuyển vị và làm côn trùng ngừng chích hút tức thì. Đối tượng: Cây trồng: Lúa, hoa hồng, cam, dâu tây, măng cầu (na), sầu riêng, xoài, thanh long, chè (trà), xà lách, rau cải thìa. Sâu hại: Rầy xanh, rầy nâu, rầy phấn, rầy mềm, rệp sáp, bọ trĩ, bọ xít, bọ nhảy, nhện lông nhung. Liều dùng – cách pha – lượng nước: Liều dùng: 0.5 kg/ha. Pha 25g/bình 25 lít. Lượng nước phun từ 500 – 600 lít/ha. Thời điểm – hiệu lực: Phun khi rầy rệp xuất hiện, mật độ từ 20-40 con/khóm hoặc từ 2-5 con/dảnh. Lưu ý an toàn: Không phun thuốc khi có gió lớn hoặc trời sắp mưa to. Phun thuốc vào lúc sáng sớm hoặc chiều mát để đạt kết quả cao nhất. Thời gian cách ly 7 ngày.",
+      "score": 0.5048722624778748,
+      "category": "product_catalog",
+      "entity_type": "product",
+      "tags_v2": "product:exami-20wg|chemical:flonicamid|pest:bo-nhay|pest:nhen|crop:cay-an-qua|brand:delta|mechanisms:luu-dan-manh"
+    }
+  ]
+}

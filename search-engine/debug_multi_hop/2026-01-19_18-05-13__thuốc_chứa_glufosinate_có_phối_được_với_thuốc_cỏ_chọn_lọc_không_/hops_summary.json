@@ -1,0 +1,22 @@
+[
+  {
+    "hop": 1,
+    "query": "Thuốc chứa glufosinate có phối được với thuốc cỏ chọn lọc không?",
+    "num_hits": 20,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "tương tác thuốc chứa glufosinate với thuốc cỏ chọn lọc",
+      "total_unique_hits": 20
+    }
+  },
+  {
+    "hop": 2,
+    "query": "tương tác thuốc chứa glufosinate với thuốc cỏ chọn lọc",
+    "num_hits": 2,
+    "decision": {
+      "need_next_hop": true,
+      "next_query": "tương tác thuốc chứa glufosinate với thuốc cỏ chọn lọc",
+      "total_unique_hits": 22
+    }
+  }
+]

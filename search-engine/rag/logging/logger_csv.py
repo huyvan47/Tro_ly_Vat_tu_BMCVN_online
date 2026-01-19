@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import json
 from datetime import datetime
-from rag.debug_log import debug_log
+from rag.logging.debug_log import debug_log
 
 def append_log_to_csv(
     csv_path: str,

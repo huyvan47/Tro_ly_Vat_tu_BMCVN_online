@@ -1,0 +1,21 @@
+QUERY: công thức trị bọ trĩ là "Tiếp xúc -lưu dẫn mạnh + Lưu dẫn". hãy cho tôi 1 hoặc 2 cồng thức (các dòng thuốc) cụ thể. (thuốc sâu không phải thuốc cỏ)
+
+- router: 2.084s
+- normalize: 1.530s
+- tag_filter: 0.046s
+- intent_analysis: 2.487s
+- multi_hop_start: 0.006s
+- multi_hop_total: 5.716s
+- multi_hop_total: 0.007s
+- build_context: 0.000s
+- llm_generate: 31.031s
+
+[multi_hop]
+  - hop_1_retrieve: 0.000s
+  - hop_1_analyze: 2.657s
+  - hop_2_retrieve: 0.517s
+  - hop_2_analyze: 1.718s
+  - hop_3_retrieve: 0.296s
+  - hop_3_analyze: 0.000s
+
+TOTAL: 42.906s
