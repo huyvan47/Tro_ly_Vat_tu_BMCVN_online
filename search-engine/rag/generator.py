@@ -505,6 +505,7 @@ CHỈ THỊ RIÊNG THEO MODE:
         answer_mode=answer_mode,
         any_tags=any_tags,
     )
+    selected_model = "gpt-4.1"
     debug_log(selected_model)
     # if answer_mode == "listing":
     #     max_out = 800

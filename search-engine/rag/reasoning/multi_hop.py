@@ -105,108 +105,106 @@ def multi_hop_controller(
     timer=None,
 ) -> List[dict]:
 
-    MAX_HOPS = RAGConfig.max_multi_hops
+    """
+    Multi-hop theo thiết kế mới:
 
-    # FIX 1: dùng đúng top_k cho multi-hop
+    - Hop 1: chỉ dùng must_tags (vai trò chính)
+    - Hop 2: chỉ dùng any_tags (vai trò phụ)
+    - Nếu hop 1 không có kết quả -> dừng luôn
+    - Không sử dụng analyze_need_next_hop cho formula query
+    - Giữ nguyên logging và timer
+    """
+
     top_k = getattr(RAGConfig, "multi_hop_top_k", RAGConfig.multi_query_top_k)
 
-    current_query = base_query
-    visited_queries = set([base_query.strip().lower()])
-
     all_hits: List[dict] = []
-    seen_ids = set()  # FIX 2: dedupe theo id
+    seen_ids = set()
     hops_data = []
 
     if timer:
         timer.mark("multi_hop_start")
 
-    for hop in range(1, MAX_HOPS + 1):
+    # ====== HOP 1: tìm theo MUST ======
+    hits1 = retrieve_search(
+        client=client,
+        kb=kb,
+        norm_query=base_query,
+        top_k=top_k,
+        must_tags=must_tags,
+        any_tags=[],
+    )
 
-        hits = retrieve_search(
+    if timer:
+        timer.mark_sub("multi_hop", "hop_1_retrieve")
+
+    unique_hits1 = []
+    for h in (hits1 or []):
+        hid = h.get("id")
+        if not hid or hid in seen_ids:
+            continue
+        seen_ids.add(hid)
+        unique_hits1.append(h)
+
+    hop1_record = {
+        "hop": 1,
+        "query": base_query,
+        "num_hits": len(unique_hits1),
+        "hits": unique_hits1,
+        "decision": {},
+    }
+
+    hops_data.append(hop1_record)
+
+    if unique_hits1:
+        all_hits.extend(unique_hits1)
+
+    # Nếu hop 1 không có kết quả -> dừng toàn bộ
+    if not unique_hits1:
+        hop1_record["decision"] = {"stop_reason": "no_hits_in_hop1"}
+        if RAGConfig.enable_multi_query_log:
+            write_multi_hop_logs(
+                original_query=base_query,
+                hops_data=hops_data,
+                final_hits=all_hits,
+            )
+        return all_hits
+
+    # ====== HOP 2: tìm theo SOFT (any_tags) ======
+    if any_tags:
+        next_query = f"sản phẩm có cơ chế {any_tags[0].replace('mechanisms:', '')}"
+
+        hits2 = retrieve_search(
             client=client,
             kb=kb,
-            norm_query=current_query,
+            norm_query=next_query,
             top_k=top_k,
-            must_tags=must_tags,
+            must_tags=[],
             any_tags=any_tags,
         )
 
         if timer:
-            timer.mark_sub("multi_hop", f"hop_{hop}_retrieve")
+            timer.mark_sub("multi_hop", "hop_2_retrieve")
 
-        # Dedupe hits ngay tại hop
-        unique_hits = []
-        for h in (hits or []):
+        unique_hits2 = []
+        for h in (hits2 or []):
             hid = h.get("id")
-            if not hid:
-                continue
-            if hid in seen_ids:
+            if not hid or hid in seen_ids:
                 continue
             seen_ids.add(hid)
-            unique_hits.append(h)
+            unique_hits2.append(h)
 
-        # Ghi dữ liệu hop
-        hop_record = {
-            "hop": hop,
-            "query": current_query,
-            "num_hits": len(unique_hits),
-            "hits": unique_hits,
-            "decision": {},
+        hop2_record = {
+            "hop": 2,
+            "query": next_query,
+            "num_hits": len(unique_hits2),
+            "hits": unique_hits2,
+            "decision": {"stop_reason": "completed_soft_search"},
         }
 
-        if unique_hits:
-            all_hits.extend(unique_hits)
+        hops_data.append(hop2_record)
 
-        if not unique_hits:
-            hop_record["decision"] = {"stop_reason": "no_hits"}
-            hops_data.append(hop_record)
-            break
-
-        # FIX 3: hỏi LLM trước, không stop do threshold quá sớm
-        need_next_hop, next_query = analyze_need_next_hop(
-            client=client,
-            # dùng base_query để LLM quyết định theo câu hỏi gốc (ổn định hơn)
-            query=base_query,
-            # đưa vào all_hits (đã dedupe) để LLM thấy bức tranh tổng thể
-            hits=all_hits,
-            hop=hop,
-            max_hops=MAX_HOPS,
-        )
-
-        if timer:
-            timer.mark_sub("multi_hop", f"hop_{hop}_analyze")
-
-        hop_record["decision"] = {
-            "need_next_hop": need_next_hop,
-            "next_query": next_query,
-            "total_unique_hits": len(all_hits),
-        }
-
-        # threshold chỉ là “phanh an toàn” sau khi LLM muốn đi tiếp
-        if need_next_hop and len(all_hits) >= RAGConfig.multi_hop_stop_threshold:
-            hop_record["decision"]["stop_reason"] = "threshold_reached_after_analyze"
-            hops_data.append(hop_record)
-            break
-
-        hops_data.append(hop_record)
-
-        if not need_next_hop:
-            break
-
-        nq = (next_query or "").strip()
-        if not nq:
-            break
-
-        nq_norm = nq.lower().strip()
-
-        if nq_norm == current_query.strip().lower():
-            break
-
-        if nq_norm in visited_queries:
-            break
-
-        visited_queries.add(nq_norm)
-        current_query = nq
+        if unique_hits2:
+            all_hits.extend(unique_hits2)
 
     if timer:
         timer.mark("multi_hop_total")
@@ -219,3 +217,4 @@ def multi_hop_controller(
         )
 
     return all_hits
+

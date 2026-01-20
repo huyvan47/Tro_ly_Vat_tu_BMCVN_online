@@ -16,7 +16,7 @@ from rag.tag_filter import tag_filter_pipeline
 from rag.logging.timing_logger import TimingLog
 from rag.reasoning.multi_hop import multi_hop_controller
 from typing import List, Tuple, Dict, Any
-from pathlib import Path
+from rag.logging.debug_log import debug_log
 import unicodedata
 import re
 import json
@@ -57,6 +57,78 @@ _CONCEPTUAL_TRIGGERS = [
     "tiếp xúc", "lưu dẫn", "nội hấp",
     "mùi", "hôi", "tuyến trùng",
 ]
+
+
+def is_formula_query(query: str, tags: dict) -> bool:
+    """
+    Nhận diện truy vấn dạng phối công thức.
+    """
+
+    has_plus = "+" in query
+    has_mechanisms = any(
+        t.startswith("mechanisms:")
+        for t in tags.get("must", []) + tags.get("soft", [])
+    )
+
+    # Nếu có nhiều hơn 1 mechanism tag -> gần như chắc chắn là phối
+    num_mechs = sum(
+        1 for t in tags.get("must", []) + tags.get("soft", [])
+        if t.startswith("mechanisms:")
+    )
+
+    if has_mechanisms and (has_plus or num_mechs >= 2):
+        return True
+
+    return False
+
+
+def formula_mode_search(
+    *,
+    client,
+    kb,
+    norm_query: str,
+    must_tags: List[str],
+    soft_tags: List[str],
+    top_k: int
+):
+    """
+    Tìm kiếm theo chế độ công thức (không dùng multi-hop).
+    """
+
+    all_results = []
+
+    # ---- ROLE 1: MUST TAG ----
+    for m in must_tags:
+        hits = retrieve_search(
+            client=client,
+            kb=kb,
+            norm_query=norm_query,
+            top_k=top_k,
+            must_tags=[m],
+            any_tags=[]
+        )
+        all_results.extend(hits)
+
+    # ---- ROLE 2: SOFT TAG ----
+    for s in soft_tags:
+        hits = retrieve_search(
+            client=client,
+            kb=kb,
+            norm_query=norm_query,
+            top_k=top_k,
+            must_tags=[s],
+            any_tags=[]
+        )
+        all_results.extend(hits)
+
+    # Dedupe theo id
+    unique = {}
+    for h in all_results:
+        hid = h.get("id")
+        if hid:
+            unique[hid] = h
+
+    return list(unique.values())
 
 def multi_query_retrieve(
     *,
@@ -589,20 +661,51 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     if re.search(r"hoạt chất.*lưu dẫn", norm_lower):
         force_rag = True
 
+    timer.mark("normalize")
+    is_list = is_listing_query(norm_query)
+
+    # LUÔN chạy tag_filter_pipeline để đảm bảo có result
+    result = tag_filter_pipeline(norm_query)
+    timer.mark("tag_filter")
+
     if force_rag:
         route = "RAG"
         route_locked = True
 
-        timer.mark("normalize")
-        is_list = is_listing_query(norm_query)
-
-        result = tag_filter_pipeline(norm_query)
-        timer.mark("tag_filter")
-
 
     must_tags = result.get("must", [])
+    soft_tags = result.get("soft", [])
     any_tags = result.get("any", [])
     found = result.get("found", {})
+
+    if is_formula_query(norm_query, result):
+
+        print("[MODE] Formula-based retrieval")
+
+        hits = formula_mode_search(
+            client=client,
+            kb=kb,
+            norm_query=norm_query,
+            must_tags=must_tags,
+            soft_tags=soft_tags,
+            top_k=RAGConfig.multi_query_top_k
+        )
+
+    else:
+
+        print("[MODE] Knowledge multi-hop retrieval")
+
+        hits = multi_hop_controller(
+            client=client,
+            kb=kb,
+            base_query=norm_query,
+            must_tags=must_tags,
+            any_tags=any_tags,
+            timer=timer,
+        )
+
+    effective_any = any_tags + soft_tags
+    print("effective_any: ", effective_any)
     # answer_mode = result.get("answer_mode", "")
 
     code_candidates = extract_codes_from_query(norm_query)
@@ -671,6 +774,10 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
     print("ANY TAGS   :", any_tags)
+    print("SOFT TAGS   :", soft_tags)
+    debug_log("QUERY      :", norm_query)
+    debug_log("MUST TAGS  :", must_tags)
+    debug_log("SOFT TAGS   :", soft_tags)
 
     # -----------------------------------------------------
     # 5) RAG PIPELINE – SINGLE hoặc MULTI QUERY
@@ -678,46 +785,40 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
 
     hits = None
 
-    if RAGConfig.use_multi_hop:
-        # Multi-hop controller sẽ tự làm:
-        # - hop1: multi-query (giới hạn 2 sub + 1 query gốc)
-        # - hop>=2: single-query
+    # ===== FORMULA QUERY: dùng multi-hop mới =====
+    # ===== FORMULA QUERY: LUÔN dùng multi-hop =====
+    if is_formula_query(user_query, result):
+
+        print("[MODE] Formula-based retrieval")
+
         hits = multi_hop_controller(
             client=client,
             kb=kb,
             base_query=norm_query,
             must_tags=must_tags,
-            any_tags=any_tags,
+            any_tags=soft_tags,
             timer=timer,
         )
+
+        timer.mark("multi_hop_total")
+        hits = preserve_search_order(hits)
+
+    # ===== NON-FORMULA QUERY =====
+    elif RAGConfig.use_multi_hop:
+
+        print("[MODE] Knowledge multi-hop retrieval")
+
+        hits = multi_hop_controller(
+            client=client,
+            kb=kb,
+            base_query=norm_query,
+            must_tags=must_tags,
+            any_tags=effective_any,
+            timer=timer,
+        )
+
         timer.mark("multi_hop_total")
 
-    else:
-        # Không dùng multi-hop -> giữ nguyên hành vi cũ:
-        # (tuỳ bạn: single-query hoặc multi-query nếu bật)
-        if RAGConfig.use_multi_query:
-            fused_hits = multi_query_retrieve(
-                client=client,
-                kb=kb,
-                norm_query=norm_query,
-                must_tags=must_tags,
-                any_tags=any_tags,
-                answer_mode_hint="listing" if is_list else "",
-                timer=timer,
-            )
-            timer.mark("multi_query_total")
-            if fused_hits:
-                hits = fused_hits
-
-        if hits is None:
-            hits = retrieve_search(
-                client=client,
-                kb=kb,
-                norm_query=norm_query,
-                top_k=top_k,
-                must_tags=must_tags,
-                any_tags=any_tags,
-            )
 
     hits = preserve_search_order(hits)
 
@@ -768,25 +869,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     base_ctx = choose_adaptive_max_ctx(hits, is_listing=is_list)
     max_ctx = min(RAGConfig.max_ctx_strict, base_ctx)
 
-    # # QUYẾT ĐỊNH SỐ DOC THEO LOẠI CÂU HỎI
-    # if is_list:
-    #     max_ctx = min(RAGConfig.max_ctx_listing, base_ctx)
-    # else:
-    #     max_ctx = min(RAGConfig.max_ctx_reasoning, base_ctx)
-
-    # def slim_doc_for_llm(doc: dict) -> dict:
-    #     """
-    #     Chỉ giữ những trường cần thiết nhất cho LLM
-    #     """
-    #     return {
-    #         "id": doc.get("id"),
-    #         "question": doc.get("question", ""),
-    #         "answer": doc.get("answer", "")[:1200],   # cắt tối đa 1200 ký tự
-    #         "tags": doc.get("tags_v2", ""),
-    #     }
-
-    # hits_for_llm = [slim_doc_for_llm(h) for h in hits[:max_ctx]]
-    # context = build_context_from_hits(hits_for_llm)
     context = build_context_from_hits(hits[:max_ctx])
     timer.mark("build_context")
 

@@ -2,7 +2,7 @@ import re
 import json
 import unicodedata
 from pathlib import Path
-from typing import Dict, List, Set, Optional
+from typing import Dict, List, Set, Tuple, Optional
 
 # ===========================
 # 1) PATH & LOAD KNOWLEDGE
@@ -20,11 +20,20 @@ with open(KB_PATH, "r", encoding="utf-8") as f:
 # ===========================
 
 _space_re = re.compile(r"\s+")
-_non_alnum_re = re.compile(r"[^a-z0-9\s]+")
+_non_alnum_re = re.compile(r"[^a-z0-9\s\+\-\/]+")
+
+_SPLIT_PARTS_RE = re.compile(r"\s*(?:\+)\s*")  # tier split theo '+'
+_OR_RE = re.compile(r"(?:^|\s)(?:hoac|hoặc|or)(?:\s|$)")
+_AND_SPLIT_RE = re.compile(r"\s*(?:va|và|,|;)\s*")
 
 def normalize(text: str) -> str:
     if not text:
         return ""
+
+    text = text.replace("\u00A0", " ")
+    text = text.replace("\u200b", " ")
+    text = text.replace("\t", " ")
+    text = text.replace("\n", " ")
 
     text = text.lower().strip()
     text = text.replace("đ", "d")
@@ -32,10 +41,11 @@ def normalize(text: str) -> str:
     text = unicodedata.normalize("NFD", text)
     text = "".join(ch for ch in text if unicodedata.category(ch) != "Mn")
 
-    # loại bỏ toàn bộ dấu câu và ký tự đặc biệt
+    # chỉ xóa các ký tự không cần thiết, GIỮ + - /
     text = _non_alnum_re.sub(" ", text)
 
     text = _space_re.sub(" ", text)
+
     return text.strip()
 
 
@@ -45,7 +55,6 @@ for k, v in CHEMICAL_KB.items():
     v["diseases"] = [normalize(x) for x in v.get("diseases", [])]
     v["pests"] = [normalize(x) for x in v.get("pests", [])]
     v["weeds"] = [normalize(x) for x in v.get("weeds", [])]
-
 
 # ===========================
 # 3) ALIASES (BẠN TỰ COPY ĐẦY ĐỦ SAU)
@@ -417,7 +426,7 @@ CROP_ALIASES = {
     "hanh-la": ["hanh la"],
     "hoa-cuc": ["hoa cuc"],
     "hoa-dao": ["hoa dao"],
-    # "hoa-hong": ["hoa hong"],
+    "hoa-hong": ["hoa hong"],
     "hanh-hoa": ["hanh hoa"],
     "hanh-tay": ["hanh tay"],
     "oi": ["oi"],
@@ -1009,7 +1018,7 @@ BRAND_ALIASES = {
 }
 
 MECHANISMS_ALIASES = {
-    "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", " tiep xuc luu dan manh", "tiep xuc, luu dan manh", "tiep xuc va luu dan nao manh", " tiep xuc luu dan nao manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc", "manh"],
+    "tiep-xuc-luu-dan-manh": ["tiep xuc va luu dan manh", " tiep xuc luu dan manh", "tiep xuc, luu dan manh", "tiep xuc va luu dan nao manh", " tiep xuc luu dan nao manh", "tiep xuc, luu dan manh", "luu dan manh, tiep xuc", "tiep xuc + luu dan manh", "luu dan manh + tiep xuc"],
     "tiep-xuc-luu-dan": ["tiep xuc va luu dan", "tiep xuc luu dan", "tiep xuc va luu dan nao", "tiep xuc luu dan nao", "tiep xuc, luu dan", "luu dan, tiep xuc", "tiep xuc + luu dan", "luu dan + tiep xuc nao"],
     "luu-dan-manh": ["luu dan manh", "luu dan nao manh"],
     "tiep-xuc-manh": ["tiep xuc manh", "tiep xuc nao manh"],
@@ -1017,7 +1026,7 @@ MECHANISMS_ALIASES = {
     "luu-dan": ["luu dan", "lu dan", "luu dan nao", "lu dan nao"],
     "tiep-xuc": ["tiep xuc", "tiep suc", "tiep xuc nao", "tiep suc nao"],
     "xong-hoi": ["xong hoi"],
-    "co-chon-loc": ["co chon loc", "bao trum", "trum", "phu", "lua"],
+    "co-chon-loc": ["co chon loc", "bao trum", "trum", "lua"],
     "khong-chon-loc": ["khong chon loc", "k chon loc"],
 }
 
@@ -1294,7 +1303,6 @@ FORMULA_ALIASES = {
     ],
 }
 
-
 INTENT_ALIAS_GROUPS = {
     "formula": FORMULA_ALIASES,
     "mechanisms": MECHANISMS_ALIASES,
@@ -1304,17 +1312,10 @@ INTENT_ALIAS_GROUPS = {
 }
 
 # ===========================
-# 4) MATCHING ENGINE
+# 4) MATCHING UTILITIES
 # ===========================
 
-def match_formula_alias(query: str, alias_dict: Dict[str, List[str]]) -> Optional[str]:
-    for key, patterns in alias_dict.items():
-        for p in patterns:
-            if p in query:
-                return key
-    return None
-
-def match_aliases(text, aliases):
+def match_aliases(text: str, aliases: Dict[str, List[str]]) -> set:
     found = set()
     text = normalize(text)
 
@@ -1331,209 +1332,238 @@ def match_aliases(text, aliases):
 
 
 # ===========================
-# 5) INFER CHEMICAL FROM KB
-# ===========================infer_chemicals_from_kb
-
-def infer_chemicals_from_kb(crops: Set[str], diseases: Set[str], pests: Set[str]) -> Set[str]:
-    result = set()
-
-    # Normalize input entities để match với KB (KB đang dùng normalize(x) -> space form)
-    crops_n = {normalize(x) for x in crops}
-    diseases_n = {normalize(x) for x in diseases}
-    pests_n = {normalize(x) for x in pests}
-
-    for chem, data in CHEMICAL_KB.items():
-        kb_crops = set(data.get("crops", []))
-        kb_diseases = set(data.get("diseases", []))
-        kb_pests = set(data.get("pests", []))
-
-        if pests_n and pests_n.intersection(kb_pests):
-            result.add(chem)
-
-        if crops_n and diseases_n and crops_n.intersection(kb_crops) and diseases_n.intersection(kb_diseases):
-            result.add(chem)
-
-        if crops_n and crops_n.intersection(kb_crops):
-            result.add(chem)
-
-        if diseases_n and diseases_n.intersection(kb_diseases):
-            result.add(chem)
-
-    return result
-
-
-# ===========================
-# 6) MAIN EXTRACTION
+# 5) MECHANISM MATCHING LOGIC
 # ===========================
 
-def extract_tags(query: str) -> Dict:
-
-    norm_query = normalize(query)
-
-    crops = match_aliases(norm_query, CROP_ALIASES)
-    diseases = match_aliases(norm_query, DISEASE_ALIASES)
-    pests = match_aliases(norm_query, PEST_ALIASES)
-
-    direct_chems = match_aliases(norm_query, CHEMICAL_ALIASES)
-
-    kb_chems = infer_chemicals_from_kb(crops, diseases, pests)
-
-    all_chems = direct_chems.union(kb_chems)
-
-    must_tags = set()
-    any_tags = set()
-
-    # ENTITY chỉ vào ANY
-    for c in crops:
-        any_tags.add(f"crop:{c}")
-
-    for d in diseases:
-        any_tags.add(f"disease:{d}")
-
-    for p in pests:
-        any_tags.add(f"pest:{p}")
-
-    for chem in all_chems:
-        any_tags.add(f"chemical:{chem}")
-
-    found_entities = {
-        "crops": list(crops),
-        "diseases": list(diseases),
-        "pests": list(pests),
-        "chemicals": list(all_chems)
-    }
-
-    return {
-        "must": list(must_tags),
-        "any": list(any_tags),
-        "found": found_entities
-    }
+_SPLIT_PLUS = re.compile(r"\s*\+\s*")
+_SPLIT_AND = re.compile(r"\s*(?:va|và|,|;)\s*")
+_OR_RE = re.compile(r"(?:^|\s)(?:hoac|hoặc|or)(?:\s|$)")
 
 
+def _compile_mech_patterns():
+    compiled = {}
+    for key, variants in MECHANISMS_ALIASES.items():
+        pats = []
+        for v in variants:
+            alias = normalize(v)
+            pats.append(re.compile(rf"(?:^|\s){re.escape(alias)}(?:\s|$)"))
+        compiled[key] = pats
+    return compiled
+
+
+_MECH_PATTERNS = _compile_mech_patterns()
+
+
+def _match_mech_in_text(text: str) -> List[str]:
+    norm = f" {normalize(text)} "
+    found = []
+
+    for key, patterns in _MECH_PATTERNS.items():
+        for p in patterns:
+            if p.search(norm):
+                found.append(key)
+                break
+
+    return found
+
+
+def _pick_core(keys: List[str]) -> Optional[str]:
+    if not keys:
+        return None
+
+    ranked = sorted(
+        keys,
+        key=lambda x: (
+            0 if "tiep-xuc-luu-dan" in x else 1,
+            0 if x.endswith("-manh") else 1,
+            -len(x)
+        )
+    )
+    return ranked[0]
+
+
+def _prune(keys: List[str]) -> List[str]:
+    s = set(keys)
+    out = []
+
+    for k in keys:
+        if k == "xong-hoi" and "xong-hoi-manh" in s:
+            continue
+        if k == "tiep-xuc" and (
+            "tiep-xuc-manh" in s or
+            any(x.startswith("tiep-xuc-luu-dan") for x in s)
+        ):
+            continue
+        out.append(k)
+
+    seen = set()
+    final = []
+    for k in out:
+        if k not in seen:
+            final.append(k)
+            seen.add(k)
+
+    return final
+
+
+def extract_mechanism_tiers(query: str) -> Tuple[List[str], List[str]]:
+    norm = normalize(query)
+
+    # Trường hợp đặc biệt: không có '+', nhưng có 'và'
+    if "+" not in norm and re.search(r"\s+va\s+", norm):
+        subs = [x.strip() for x in re.split(r"\s+va\s+", norm) if x.strip()]
+
+        all_matches = []
+        for sp in subs:
+            all_matches.extend(_match_mech_in_text(sp))
+
+        all_matches = list(dict.fromkeys(all_matches))
+
+        if all_matches:
+            core = _pick_core(all_matches)
+
+            must = [core] if core else []
+            soft = [m for m in all_matches if m != core]
+
+            return must, _prune(soft)
+
+    # ===== Logic chuẩn theo dấu + =====
+    parts = [p.strip() for p in _SPLIT_PLUS.split(norm) if p.strip()]
+
+    must: List[str] = []
+    soft: List[str] = []
+
+    if not parts:
+        return must, soft
+
+    # ---- vế 0: MUST core ----
+    local0 = _match_mech_in_text(parts[0])
+    core0 = _pick_core(local0)
+    if core0:
+        must = [core0]
+
+    soft_set = set()
+
+    for part in parts[1:]:
+        subs = [x.strip() for x in _SPLIT_AND.split(part) if x.strip()]
+        local = []
+        for sp in subs:
+            local.extend(_match_mech_in_text(sp))
+
+        if _OR_RE.search(part):
+            for m in local:
+                soft_set.add(m)
+            continue
+
+        has_luu_dan = bool(re.search(r"(?:^|\s)luu\s+dan(?:\s|$)", f" {part} "))
+        has_thuong_manh = bool(re.search(r"(thuong\s+va\s+manh|toan\s+bo)", part))
+
+        if has_luu_dan and has_thuong_manh:
+            soft_set.add("luu-dan")
+            soft_set.add("luu-dan-manh")
+            continue
+
+        uniq = list(dict.fromkeys(local))
+
+        if len(uniq) == 1:
+            soft_set.add(uniq[0])
+            continue
+
+        if len(uniq) >= 2:
+            core = _pick_core(uniq)
+            if core:
+                soft_set.add(core)
+            for m in uniq:
+                soft_set.add(m)
+
+    ordered = []
+    for part in parts[1:]:
+        for m in _match_mech_in_text(part):
+            if m in soft_set and m not in ordered:
+                ordered.append(m)
+
+    for m in ["luu-dan-manh", "luu-dan"]:
+        if m in soft_set and m not in ordered:
+            ordered.append(m)
+
+    return must, _prune(ordered)
 
 # ===========================
-# 7) ANSWER MODE DETECTION
+# 6) MAIN PIPELINE
 # ===========================
-
-PRODUCT_SIGNAL = re.compile(r"(?:^|\s)(thuoc|san pham)(?:\s|$)", re.I)
-
-
-def detect_answer_mode(query: str, tags: Dict) -> str:
-
-    q = normalize(query)
-
-    found = tags.get("found", {})
-
-    if found.get("pests"):
-        return "pest"
-
-    if found.get("diseases"):
-        return "disease"
-
-    if found.get("crops"):
-        return "crop"
-
-    if found.get("chemicals"):
-        return "chemical"
-
-    if PRODUCT_SIGNAL.search(q):
-        return "product"
-
-    return "general"
-
-
-# ===========================
-# 8) PUBLIC INTERFACE
-# ===========================
-
-
-def merge_intent_as_or(must_tags: List[str]) -> List[str]:
-    """
-    Gom các must tag thành OR thay vì AND.
-    Cách đơn giản: chuyển toàn bộ sang ANY,
-    chỉ giữ lại tối đa 1 core must (nếu có).
-    """
-    # Nếu có nhiều hơn 1 must → chuyển hết sang ANY logic
-    # Ở đây ta return rỗng để pipeline chuyển chúng sang ANY
-    return []
 
 def tag_filter_pipeline(query: str) -> Dict:
 
     norm = normalize(query)
 
-    # 1) Trích xuất entity cơ bản
-    tags = extract_tags(query)
+    # --- Mechanism tiers ---
+    mech_must, mech_soft = extract_mechanism_tiers(query)
 
-    detected_intents = []
+    must_tags = [f"mechanisms:{m}" for m in mech_must]
+    soft_tags = [f"mechanisms:{m}" for m in mech_soft]
 
-    # 2) Các nhóm alias đặc biệt có thể thành intent
+    detected_any = set()
+
     INTENT_ALIAS_GROUPS = {
         "formula": FORMULA_ALIASES,
-        "mechanisms": MECHANISMS_ALIASES,
         "brand": BRAND_ALIASES,
         "product": PRODUCT_ALIASES,
         "chemical": CHEMICAL_ALIASES
     }
 
-    intent_must_candidates = []
-
     for tag_type, alias_map in INTENT_ALIAS_GROUPS.items():
+        for m in match_aliases(norm, alias_map):
+            detected_any.add(f"{tag_type}:{m}")
 
-        matched = match_formula_alias(norm, alias_map)
+    crops = match_aliases(norm, CROP_ALIASES)
+    diseases = match_aliases(norm, DISEASE_ALIASES)
+    pests = match_aliases(norm, PEST_ALIASES)
 
-        if matched:
-            intent_must_candidates.append(f"{tag_type}:{matched}")
-            detected_intents.append(tag_type)
+    for c in crops:
+        detected_any.add(f"crop:{c}")
 
-    # ----------------------------------------------
-    # 3) Xử lý OR logic nhưng GIỮ MECHANISMS LÀ MUST
-    # ----------------------------------------------
+    for d in diseases:
+        detected_any.add(f"disease:{d}")
 
-    refined_any = set(tags["any"])
-    refined_must = []
+    for p in pests:
+        detected_any.add(f"pest:{p}")
 
-    for t in intent_must_candidates:
-
-        # Nếu là mechanisms → luôn giữ lại trong MUST
-        if t.startswith("mechanisms:"):
-            refined_must.append(t)
-            continue
-
-        # Các loại khác (formula/product/chemical/brand) → OR
-        refined_any.add(t)
-
-
-    # Crop/pest/disease luôn là ANY
-    for t in tags["must"]:
-        if t.startswith(("crop:", "pest:", "disease:")):
-            refined_any.add(t)
-
-
-    tags["must"] = refined_must
-    tags["any"] = list(refined_any)
-
-    # --------------------------------------------------------
-    # 4) Quyết định answer_mode
-    # --------------------------------------------------------
-
-    if detected_intents:
-        mode = detected_intents[0]
-    else:
-        mode = detect_answer_mode(query, tags)
+    found = {
+        "mechanisms_must": mech_must,
+        "mechanisms_soft": mech_soft,
+        "products": list(match_aliases(norm, PRODUCT_ALIASES)),
+        "chemicals": list(match_aliases(norm, CHEMICAL_ALIASES)),
+        "brands": list(match_aliases(norm, BRAND_ALIASES)),
+        "formulas": list(match_aliases(norm, FORMULA_ALIASES)),
+        "crops": list(crops),
+        "diseases": list(diseases),
+        "pests": list(pests)
+    }
 
     return {
         "query": query,
-        "must": tags["must"],
-        "any": tags["any"],
-        "found": tags["found"],
-        "answer_mode": mode
+        "must": must_tags,
+        "soft": soft_tags,
+        "any": list(detected_any),
+        "found": found
     }
 
+
 # ===========================
-# TEST
+# 7) TEST HARNESS
 # ===========================
 
 if __name__ == "__main__":
-    q = "Thuốc trị mọt đục cành."
 
-    print(json.dumps(tag_filter_pipeline(q), indent=2, ensure_ascii=False))
+    tests = [
+        # "Tìm cho tôi sản phẩm phù hợp với công thức xông hơi mạnh + lưu dẫn hoặc lưu dẫn mạnh",
+        # "xông hơi mạnh và lưu dẫn",
+        # "thuốc trị bọ trĩ",
+        # "tiếp xúc + lưu dẫn mạnh"
+        "Tìm cho tôi sản phẩm phù hợp với công thức xông hơi mạnh và lưu dẫn",
+    ]
+
+    for q in tests:
+        print("\n==============================")
+        print("QUERY:", q)
+        print(json.dumps(tag_filter_pipeline(q), indent=2, ensure_ascii=False))

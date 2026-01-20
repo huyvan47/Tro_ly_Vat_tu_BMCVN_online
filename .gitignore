@@ -27,7 +27,9 @@ dist/
 # LOG FILES
 # =========================
 # *.log
-
+debug_multi/
+debug_multi_hop/
+debug_timing/
 # =========================
 # JUPYTER
 # =========================

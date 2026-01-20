@@ -15,8 +15,8 @@ class RAGConfig:
     # Multi-hop
     use_multi_hop = True
     max_multi_hops = 3
-    multi_hop_top_k = 60
-    multi_hop_stop_threshold = 180
+    multi_hop_top_k = 20
+    multi_hop_stop_threshold = 80
 
     min_score_main: float = 0.35
     """
