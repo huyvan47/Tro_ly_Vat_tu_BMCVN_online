@@ -60,19 +60,6 @@ for k, v in CHEMICAL_KB.items():
 # 3) ALIASES (BẠN TỰ COPY ĐẦY ĐỦ SAU)
 # ===========================
 
-MECHANISM_KEYWORDS = {
-    "tiep-xuc-luu-dan-manh",
-    "tiep-xuc-luu-dan",
-    "luu-dan-manh",
-    "tiep-xuc-manh",
-    "xong-hoi-manh",
-    "luu-dan",
-    "tiep-xuc",
-    "xong-hoi",
-    "co-chon-loc",
-    "khong-chon-loc"
-}
-
 CHEMICAL_ALIASES = {
     "24-epi-brassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "brassinolide"],
     "24-epibrassinolide": ["brassinolid 24-epi", "hooc mon brassinolide 24-epi", "24-epibrassinolide"],
@@ -589,6 +576,7 @@ PEST_ALIASES = {
     "man-trau": ["man trau"],
     "co-man-trau": ["co man trau", "co man trau la", "man-trau"],
     "co-tranh": ["co tranh", "co tranh la"],
+    "con-trung": ["con trung"],
     "compacted-soil": ["dat nen cat cung", "dat nen cung"],
     "dao-on": ["benh dao on", "dao on", "dao on co bong"],
     "doi-duc-la": ["benh doi duc la", "doi duc la"],
@@ -670,7 +658,7 @@ PEST_ALIASES = {
     "weeds": ["co dai", "co tranh", "co dai trong lua", "co dai trong ruong"],
     "mac-co": ["mac co"],
     "mat-cua": ["mat cua"],
-    "moi": ["moi"],
+    "moi": ["diet moi", "tru moi", "moi mot"],
     "mot-duc-canh": ["mot duc canh", "mot"],
     "muoi-den": ["muoi den"],
     "nam-coc": ["nam coc"],
@@ -1358,13 +1346,29 @@ def _match_mech_in_text(text: str) -> List[str]:
     norm = f" {normalize(text)} "
     found = []
 
-    for key, patterns in _MECH_PATTERNS.items():
+    # sort alias theo độ dài giảm dần
+    sorted_keys = sorted(
+        _MECH_PATTERNS.items(),
+        key=lambda x: max(len(p.pattern) for p in x[1]),
+        reverse=True
+    )
+
+    used_spans = []
+
+    for key, patterns in sorted_keys:
         for p in patterns:
-            if p.search(norm):
+            m = p.search(norm)
+            if m:
+                span = m.span()
+                # check overlap
+                if any(not (span[1] <= s[0] or span[0] >= s[1]) for s in used_spans):
+                    continue
                 found.append(key)
+                used_spans.append(span)
                 break
 
     return found
+
 
 
 def _pick_core(keys: List[str]) -> Optional[str]:
@@ -1488,6 +1492,102 @@ def extract_mechanism_tiers(query: str) -> Tuple[List[str], List[str]]:
 
     return must, _prune(ordered)
 
+def infer_chemicals_from_kb(crops: Set[str], diseases: Set[str], pests: Set[str]) -> Set[str]:
+    result = set()
+
+    # Normalize input entities để match với KB (KB đang dùng normalize(x) -> space form)
+    crops_n = {normalize(x) for x in crops}
+    diseases_n = {normalize(x) for x in diseases}
+    pests_n = {normalize(x) for x in pests}
+
+    for chem, data in CHEMICAL_KB.items():
+        kb_crops = set(data.get("crops", []))
+        kb_diseases = set(data.get("diseases", []))
+        kb_pests = set(data.get("pests", []))
+
+        if pests_n and pests_n.intersection(kb_pests):
+            result.add(chem)
+
+        if crops_n and diseases_n and crops_n.intersection(kb_crops) and diseases_n.intersection(kb_diseases):
+            result.add(chem)
+
+        if crops_n and crops_n.intersection(kb_crops):
+            result.add(chem)
+
+        if diseases_n and diseases_n.intersection(kb_diseases):
+            result.add(chem)
+
+    return result
+
+def extract_tags(norm_query: str) -> Dict:
+
+    crops = match_aliases(norm_query, CROP_ALIASES)
+    diseases = match_aliases(norm_query, DISEASE_ALIASES)
+    pests = match_aliases(norm_query, PEST_ALIASES)
+
+    products = match_aliases(norm_query, PRODUCT_ALIASES)
+
+    brands = match_aliases(norm_query, BRAND_ALIASES)
+
+    # mechanisms = match_aliases(norm_query, MECHANISMS_ALIASES)
+
+    formulas = match_aliases(norm_query, FORMULA_ALIASES)
+
+    direct_chems = match_aliases(norm_query, CHEMICAL_ALIASES)
+
+    kb_chems = infer_chemicals_from_kb(crops, diseases, pests)
+
+    all_chems = direct_chems.union(kb_chems)
+
+    must_tags = set()
+    any_tags = set()
+
+    # ENTITY chỉ vào ANY
+    for chem in all_chems:
+        must_tags.add(f"chemical:{chem}")
+        
+    for c in crops:
+        any_tags.add(f"crop:{c}")
+
+    for d in diseases:
+        must_tags.add(f"disease:{d}")
+
+    for p in pests:
+        any_tags.add(f"pest:{p}")
+
+    for p in products:
+        must_tags.add(f"product:{p}")
+
+    for p in brands:
+        must_tags.add(f"brand:{p}")
+
+    # for p in mechanisms:
+    #     must_tags.add(f"mechanisms:{p}")
+
+    for p in formulas:
+        must_tags.add(f"formula:{p}")
+
+
+    found_entities = {
+        "crops": list(crops),
+        "diseases": list(diseases),
+        "pests": list(pests),
+        "chemicals": list(all_chems)
+    }
+
+    return {
+        "must": list(must_tags),
+        "any": list(any_tags),
+        "found": found_entities
+    }
+
+def match_formula_alias(query: str, alias_dict: Dict[str, List[str]]) -> Optional[str]:
+    for key, patterns in alias_dict.items():
+        for p in patterns:
+            if p in query:
+                return key
+    return None
+
 # ===========================
 # 6) MAIN PIPELINE
 # ===========================
@@ -1496,55 +1596,64 @@ def tag_filter_pipeline(query: str) -> Dict:
 
     norm = normalize(query)
 
-    # --- Mechanism tiers ---
+    # 1) Lấy entity từ extract_tags (ONTOLOGY CORE)
+    tags = extract_tags(norm)
+
+    # 2) Mechanism tiers
     mech_must, mech_soft = extract_mechanism_tiers(query)
 
-    must_tags = [f"mechanisms:{m}" for m in mech_must]
+    # ===== MUST = ontology MUST + mechanisms MUST =====
+    must_tags = set(tags["must"])
+    for m in mech_must:
+        must_tags.add(f"mechanisms:{m}")
+
+    # ===== SOFT = mechanisms soft =====
     soft_tags = [f"mechanisms:{m}" for m in mech_soft]
 
-    detected_any = set()
+    # ===== ANY = chỉ crop + pest (semantic noisy) =====
+    detected_any = set(tags["any"])
 
+    # Alias intents (chỉ crop/pest)
     INTENT_ALIAS_GROUPS = {
-        "formula": FORMULA_ALIASES,
-        "brand": BRAND_ALIASES,
-        "product": PRODUCT_ALIASES,
-        "chemical": CHEMICAL_ALIASES
+        "crop": CROP_ALIASES,
+        "pest": PEST_ALIASES,
     }
 
     for tag_type, alias_map in INTENT_ALIAS_GROUPS.items():
         for m in match_aliases(norm, alias_map):
             detected_any.add(f"{tag_type}:{m}")
 
+    # 3) Fallback semantic entities (chỉ crop/pest)
     crops = match_aliases(norm, CROP_ALIASES)
-    diseases = match_aliases(norm, DISEASE_ALIASES)
     pests = match_aliases(norm, PEST_ALIASES)
 
     for c in crops:
         detected_any.add(f"crop:{c}")
 
-    for d in diseases:
-        detected_any.add(f"disease:{d}")
-
     for p in pests:
         detected_any.add(f"pest:{p}")
 
+    # 4) Report (debug / explain only)
     found = {
         "mechanisms_must": mech_must,
         "mechanisms_soft": mech_soft,
+
         "products": list(match_aliases(norm, PRODUCT_ALIASES)),
         "chemicals": list(match_aliases(norm, CHEMICAL_ALIASES)),
         "brands": list(match_aliases(norm, BRAND_ALIASES)),
         "formulas": list(match_aliases(norm, FORMULA_ALIASES)),
-        "crops": list(crops),
-        "diseases": list(diseases),
-        "pests": list(pests)
+
+        "crops": tags["found"]["crops"],
+        "diseases": tags["found"]["diseases"],
+        "pests": tags["found"]["pests"],
+        "chemicals_inferred": tags["found"]["chemicals"]
     }
 
     return {
         "query": query,
-        "must": must_tags,
+        "must": sorted(must_tags),
         "soft": soft_tags,
-        "any": list(detected_any),
+        "any": sorted(detected_any),
         "found": found
     }
 
@@ -1560,7 +1669,8 @@ if __name__ == "__main__":
         # "xông hơi mạnh và lưu dẫn",
         # "thuốc trị bọ trĩ",
         # "tiếp xúc + lưu dẫn mạnh"
-        "Tìm cho tôi sản phẩm phù hợp với công thức xông hơi mạnh và lưu dẫn",
+        # "Tìm cho tôi sản phẩm phù hợp với công thức xông hơi mạnh và lưu dẫn",
+        "Tất cả các sản phẩm trừ nấm nhóm O,"
     ]
 
     for q in tests:

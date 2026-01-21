@@ -241,6 +241,58 @@ YÊU CẦU TRÌNH BÀY:
     - Nội dung bổ sung (SOFT) phải ghi chú rõ là “Kiến thức chung”.
     """.strip()
 
+    if answer_mode == "formula":
+        mode_requirements = """
+    MODE: FORMULA (MULTI-PRODUCT COMPOSITION, EVIDENCE-ONLY)
+
+    MỤC TIÊU:
+    - Hiểu rằng "CÔNG THỨC" = sự KẾT HỢP của TỪ 2 SẢN PHẨM TRỞ LÊN.
+    - MỖI sản phẩm trong công thức đảm nhiệm MỘT VAI TRÒ RIÊNG.
+
+    NGUYÊN TẮC DIỄN GIẢI CÂU HỎI:
+    - Nếu câu hỏi chứa các từ: "công thức", "phối hợp", "kết hợp", "combo", "phác đồ phối"
+    → TUYỆT ĐỐI KHÔNG hiểu là tìm 1 sản phẩm duy nhất.
+
+    - Cấu trúc:
+    "A + B" hoặc "A kết hợp B"
+    → hiểu là:
+        • Sản phẩm 1 thỏa A
+        • Sản phẩm 2 thỏa B
+        • KHÔNG yêu cầu 1 sản phẩm thỏa cả A và B
+
+    QUY TẮC CƠ CHẾ (RẤT QUAN TRỌNG):
+    - MỖI sản phẩm chỉ cần thỏa ĐÚNG VAI TRÒ ĐƯỢC GÁN:
+    • SP vai trò "xông hơi mạnh" → chỉ cần tài liệu xác nhận xông hơi
+    • SP vai trò "lưu dẫn" → chỉ cần tài liệu xác nhận lưu dẫn / nội hấp
+
+    - TUYỆT ĐỐI KHÔNG:
+    • Yêu cầu 1 sản phẩm đồng thời có nhiều cơ chế nếu không được nêu rõ.
+    • Suy diễn rằng 1 sản phẩm “gánh” toàn bộ công thức.
+
+    CÁCH TRÌNH BÀY KẾT QUẢ (BẮT BUỘC):
+    - Mỗi công thức là MỘT ĐƠN VỊ ĐỘC LẬP.
+
+    Ví dụ:
+
+    CÔNG THỨC 1:
+    - Sản phẩm A (vai trò: xông hơi mạnh)
+    - Sản phẩm B (vai trò: lưu dẫn)
+
+    CÔNG THỨC 2:
+    - Sản phẩm C (vai trò: xông hơi mạnh)
+    - Sản phẩm D (vai trò: lưu dẫn mạnh)
+
+    - Nếu KHÔNG thể tạo đủ 2 vai trò từ tài liệu:
+    → ghi rõ: "Chưa đủ dữ liệu để hình thành công thức hoàn chỉnh".
+
+    YÊU CẦU EVIDENCE:
+    - Mỗi sản phẩm PHẢI có trích dẫn rõ từ tài liệu xác nhận vai trò.
+    - Nếu vai trò chưa được xác nhận → KHÔNG đưa vào công thức.
+
+    KHÔNG:
+    - Gộp 2 vai trò vào 1 sản phẩm.
+    - Biến danh sách sản phẩm thành công thức.
+    """.strip()
 
     elif answer_mode == "product":
         mode_requirements = """

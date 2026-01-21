@@ -48,6 +48,10 @@ KW_REGISTRY = [
 KW_DISEASE = [
     "bệnh", "triệu chứng", "dấu hiệu", "xì mủ", "thối rễ", "cháy lá", "nhóm a", "nhóm b", "nhóm o", "thán thư", "ghẻ", "nứt thân", "đốm lá", "thối trái", "tảo đỏ", "rong rêu"
 ]
+KW_FORMULA = [
+    "phối", "phối hợp", "phối trộn", "kết hợp", "combo",
+    "phác đồ phối", "phối thuốc", "kết hợp thuốc"
+]
 KW_PRODUCT = [
     "thuốc", "đặc trị", "tác dụng", "hoạt chất", "thành phần", "công dụng",
     "chữa", "trị", "trừ", "phòng trừ", "pha", "phun", "tưới", "sản phẩm"
@@ -61,6 +65,9 @@ KW_LISTING = [
     "các loại", "những loại", "những sản phẩm", "những thuốc", "tất cả", "chứa", "các sản phẩm", "các thuốc"
 ]
 
+def detect_formula(user_query: str) -> bool:
+    q = norm(user_query)
+    return has_any_kw(q, KW_FORMULA)
 
 def has_any_kw(text: str, kws: List[str]) -> bool:
     return any(kw in text for kw in kws)
@@ -117,7 +124,17 @@ def decide_answer_policy(
     # print('primary_doc: ', primary_doc)
     # print('parsed_intent: ', parsed_intent)
     # print('force_listing: ', force_listing)
+
     q = norm(user_query)
+
+    if detect_formula(q):
+        return AnswerPolicy(
+            intent="formula",
+            format="structured",
+            require_grounding=True,
+            max_sources=15
+        )
+    
     doc_q = norm(primary_doc.get("question"))
     doc_a = norm(primary_doc.get("answer") or primary_doc.get("content") or "")
     ent = norm(primary_doc.get("entity_type"))

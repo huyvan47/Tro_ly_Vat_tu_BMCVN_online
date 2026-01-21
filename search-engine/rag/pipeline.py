@@ -17,6 +17,7 @@ from rag.logging.timing_logger import TimingLog
 from rag.reasoning.multi_hop import multi_hop_controller
 from typing import List, Tuple, Dict, Any
 from rag.logging.debug_log import debug_log
+from rag.post_answer.enricher import enrich_answer_if_needed
 import unicodedata
 import re
 import json
@@ -703,7 +704,8 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             any_tags=any_tags,
             timer=timer,
         )
-
+    effective_must = must_tags
+    print("effective_must: ", effective_must)
     effective_any = any_tags + soft_tags
     print("effective_any: ", effective_any)
     # answer_mode = result.get("answer_mode", "")
@@ -887,6 +889,17 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
         rag_mode="STRICT",
     )
     timer.mark("llm_generate")
+
+    final_answer = enrich_answer_if_needed(
+        client=client,
+        user_query=user_query,
+        answer_text=final_answer,
+        answer_mode=answer_mode_final,
+        any_tags=effective_any,
+        must_tags=effective_must,
+        route="RAG",
+    )
+    timer.mark("enrich_answer_if_needed")
 
     img_keys = extract_img_keys(primary_doc.get("answer", ""))
 

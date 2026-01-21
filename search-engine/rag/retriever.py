@@ -137,21 +137,27 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
 
 
     def explain_doc_tags(doc_tags, must_tags, any_tags):
-        # No filters => PASS, no bonus notion here (bonus handled by compute_tag_score)
+        # No filters
         if not must_tags and not any_tags:
             return True, "PASS: no must/any provided"
 
-        missing_must = [t for t in must_tags if t not in doc_tags]
-        if missing_must:
-            return False, f"FAIL: missing must_tags={missing_must}"
+        # ===== MUST = OR =====
+        if must_tags:
+            hit_must = [t for t in must_tags if t in doc_tags]
+            if not hit_must:
+                return False, f"FAIL: none of must_tags matched (need one of {must_tags})"
+            must_reason = f"PASS: matched must_tags={hit_must}"
+        else:
+            must_reason = "PASS: no must"
 
+        # ===== ANY = OR =====
         if any_tags:
             hit_any = [t for t in any_tags if t in doc_tags]
             if not hit_any:
                 return False, f"FAIL: none of any_tags matched (need one of {any_tags})"
-            return True, f"PASS: matched any_tags={hit_any}"
+            return True, must_reason + f", matched any_tags={hit_any}"
 
-        return True, "PASS: matched all must_tags"
+        return True, must_reason
 
 
     def compute_tag_score(doc_tags, must_tags, any_tags):

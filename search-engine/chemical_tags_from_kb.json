@@ -609,6 +609,7 @@
       "bo ha",
       "bo nhay",
       "bo xit muoi",
+      "con trung",
       "moi",
       "mot duc canh",
       "rep sap",
@@ -643,6 +644,7 @@
       "bo ha",
       "bo nhay",
       "bo xit muoi",
+      "con trung",
       "moi",
       "mot duc canh",
       "rep sap",
@@ -682,6 +684,7 @@
       "bo phan",
       "bo tri",
       "bo tri vang",
+      "con trung",
       "nhen do",
       "nhen gie",
       "nhen trang",
@@ -1041,6 +1044,7 @@
       "bo xit",
       "bo xit muoi",
       "buom trang hai cham",
+      "con trung",
       "duc than",
       "kien",
       "moi",
@@ -1149,6 +1153,7 @@
       "bo nhay",
       "bo tri",
       "bo xit muoi",
+      "con trung",
       "doi duc la",
       "mot duc canh",
       "ray mem",
@@ -1704,6 +1709,7 @@
       "rau cu"
     ],
     "pests": [
+      "con trung",
       "nhen do",
       "nhen trang",
       "nhen vang",
@@ -3059,6 +3065,7 @@
     "pests": [
       "bo tri",
       "bo xit",
+      "con trung",
       "ray lung trang",
       "ray nau",
       "rep sap",
@@ -3105,6 +3112,7 @@
     ],
     "pests": [
       "bo ha",
+      "con trung",
       "muoi hanh",
       "ray nau",
       "rep muoi",
