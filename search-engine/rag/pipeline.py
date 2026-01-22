@@ -18,10 +18,10 @@ from rag.reasoning.multi_hop import multi_hop_controller
 from typing import List, Tuple, Dict, Any
 from rag.logging.debug_log import debug_log
 from rag.post_answer.enricher import enrich_answer_if_needed
-from typing import Optional
 import unicodedata
 import re
 import json
+from typing import Dict, Any
 
 
 FORCE_MUST_TAGS = {
@@ -39,19 +39,15 @@ FORCE_MUST_TAGS = {
 
 FORMULA_TRIGGERS = [
     "công thức",
-    "phối ",
     "phối trộn",
     "phối hợp thuốc",
     "pha thuốc",
-    "phối hợp",
-    "kết hợp", "combo",
-    "phối thuốc", 
-    "kết hợp thuốc",
     "công thức trị",
     "công thức trừ",
     "công thức diệt",
     "phác đồ",
     "liều phối",
+    "kết hợp thuốc",
     "hoạt chất lưu dẫn phù hợp",
 ]
 
@@ -63,41 +59,25 @@ _CONCEPTUAL_TRIGGERS = [
     "mùi", "hôi", "tuyến trùng",
 ]
 
-FORMULA_KEYWORDS = [
-        "phối", "trộn", "pha", "kết hợp", "mix",
-        "phối hợp", "pha chung", "dùng chung",
-        "xài chung", "kết hợp thuốc",
-        "phối thuốc", "trộn thuốc",
-    ]
-
 
 def is_formula_query(query: str, tags: dict) -> bool:
     """
     Nhận diện truy vấn dạng phối công thức.
     """
 
-    q = (query or "").lower()
+    has_plus = "+" in query
+    has_mechanisms = any(
+        t.startswith("mechanisms:")
+        for t in tags.get("must", []) + tags.get("soft", [])
+    )
 
-    # 1. Cú pháp
-    has_plus = "+" in q
-
-    # 2. Tag semantics
-    all_tags = (tags.get("must", []) or []) + (tags.get("soft", []) or [])
-    mech_tags = [t for t in all_tags if t.startswith("mechanisms:")]
-    has_mechanisms = len(mech_tags) > 0
-    num_mechs = len(mech_tags)
-
-    # 3. Ngôn ngữ tự nhiên
-    has_formula_keywords = any(k in q for k in FORMULA_KEYWORDS)
-
-    # Heuristic quyết định
-    if has_formula_keywords:
-        return True
+    # Nếu có nhiều hơn 1 mechanism tag -> gần như chắc chắn là phối
+    num_mechs = sum(
+        1 for t in tags.get("must", []) + tags.get("soft", [])
+        if t.startswith("mechanisms:")
+    )
 
     if has_mechanisms and (has_plus or num_mechs >= 2):
-        return True
-
-    if has_plus and len(all_tags) >= 2:
         return True
 
     return False
@@ -151,6 +131,77 @@ def formula_mode_search(
 
     return list(unique.values())
 
+def multi_query_retrieve(
+    *,
+    client,
+    kb,
+    norm_query: str,
+    must_tags: List[str],
+    any_tags: List[str],
+    answer_mode_hint: str,
+    timer=None,
+):
+    """
+    Thực hiện:
+      llm_build_sub_queries →
+      retrieve từng sub →
+      weighted_rrf_fuse
+    """
+
+    subs = llm_build_sub_queries(
+        client=client,
+        norm_query=norm_query,
+        must_tags=must_tags,
+        any_tags=any_tags,
+        answer_mode_hint=answer_mode_hint,
+        max_variants=RAGConfig.max_sub_queries,
+    )
+
+    if not subs:
+        return None
+
+    results_by_query = []
+
+    for qi, sub in enumerate(subs):
+        q = sub["q"]
+        purpose = sub.get("purpose", "general")
+
+        hits_i = retrieve_search(
+            client=client,
+            kb=kb,
+            norm_query=q,
+            top_k=RAGConfig.multi_query_top_k,
+            must_tags=must_tags,
+            any_tags=any_tags,
+        )
+
+        timer = TimingLog(norm_query)
+        # Ghi log thời gian từng sub-query
+        timer.mark("tag_filter")
+
+        results_by_query.append({
+            "purpose": purpose,
+            "qi": qi,
+            "weight": _purpose_weight(purpose),
+            "hits": hits_i or [],
+        })
+
+    fused = _weighted_rrf_fuse(
+        results_by_query,
+        k=RAGConfig.rrf_k,
+        top_n=RAGConfig.rrf_top_n,
+    )
+
+    if RAGConfig.enable_multi_query_log:
+        write_multi_query_logs(
+            original_query=norm_query,
+            subs=subs,
+            results_by_query=results_by_query,
+            fused_hits=fused,
+        )
+
+    return fused
+
 def preserve_search_order(hits):
     """
     Đánh dấu thứ tự gốc từ search() để pipeline KHÔNG làm xáo trộn.
@@ -170,6 +221,17 @@ def _count_tag_hits(h, any_tags, must_tags):
             score += 1
     return score
 
+def promote_forced_tags(must_tags, any_tags):
+    must = set(must_tags or [])
+    anyt = set(any_tags or [])
+
+    forced = anyt & FORCE_MUST_TAGS
+    if forced:
+        must |= forced
+        anyt -= forced
+
+    return list(must), list(anyt)
+
 _space_re = re.compile(r"\s+")
 
 def _norm(s: str) -> str:
@@ -181,7 +243,7 @@ def _norm(s: str) -> str:
     return s
 
 
-def _need_intent_gate(norm_query: str) -> bool:
+def _need_intent_gate(norm_query: str, any_tags: List[str], code_candidates: List[str]) -> bool:
     # Có product signal thì vẫn có thể gate, nhưng mục tiêu là slots (không phải route)
     q = (norm_query or "").lower()
     conceptual = any(k in q for k in _CONCEPTUAL_TRIGGERS)
@@ -540,88 +602,6 @@ def choose_top_k(
 
     return top_k
 
-def extract_products_from_tags(tags):
-    products = []
-    for t in tags:
-        if t.startswith("product:"):
-            products.append(t.split(":", 1)[1])
-    return products
-
-def extract_primary_chemical_from_docs(docs):
-    seen = set()
-    chemicals = []
-
-    for doc in docs:
-        tv2 = doc.get("tags_v2") or ""          # tags_v2 là string
-        if not tv2:
-            continue
-
-        tags = tv2.split("|")                  # <<< QUAN TRỌNG
-
-        for t in tags:
-            t = (t or "").strip()
-            if t.startswith("chemical:"):
-                chem = t.split(":", 1)[1].strip()
-                if chem and chem not in seen:
-                    seen.add(chem)
-                    chemicals.append(chem)
-
-    if not chemicals:
-        return None
-
-    # chỉ lấy 1 hoạt chất đầu tiên
-    return chemicals[0]
-
-
-def build_soft_tags(primary_chemical):
-    tags = []
-    if primary_chemical:
-        tags.append(f"chemical:{primary_chemical}")
-    return tags
-
-def retrieve_product_docs(*, client, kb, norm_query, product_slug, top_k=50):
-    raw = retrieve_search(
-        client=client,
-        kb=kb,
-        norm_query=norm_query,
-        top_k=top_k,
-        must_tags=[product_slug],
-    )
-    return [
-        d for d in raw
-        if f"product:{product_slug}" in (d.get("tags_v2") or "")
-    ]
-
-def build_soft_tags_from_chemicals(chemicals: List[str], max_chemicals: int = 2) -> List[str]:
-    out = []
-    seen = set()
-    for c in chemicals:
-        c = (c or "").strip()
-        if not c or c in seen:
-            continue
-        seen.add(c)
-        out.append(f"chemical:{c}")
-        if len(out) >= max_chemicals:
-            break
-    return out
-
-def infer_primary_chemical_for_product(*, client, kb, norm_query: str, product_slug: str) -> Optional[str]:
-    docs_raw = retrieve_search(
-        client=client,
-        kb=kb,
-        norm_query=norm_query,
-        top_k=80,                 # lấy rộng để không miss
-        must_tags=[product_slug], # giữ contract must_tags list
-    )
-
-    # filter cứng đúng product
-    docs = [
-        d for d in (docs_raw or [])
-        if f"product:{product_slug}" in (d.get("tags_v2") or "")
-    ]
-
-    return extract_primary_chemical_from_docs(docs)
-
 def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     timer = TimingLog(user_query)
     # -----------------------------------------------------
@@ -699,72 +679,23 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     any_tags = result.get("any", [])
     found = result.get("found", {})
 
-    products = extract_products_from_tags(must_tags)
-    print("extract_products_from_tags:", products)
-
     if is_formula_query(norm_query, result):
 
-        # CASE 1: Product + Chemical (giữ như bạn đang làm)
-        if len(products) == 1:
-            product_slug = products[0]
-
-            docs_raw = retrieve_search(
-                client=client,
-                kb=kb,
-                norm_query=norm_query,
-                top_k=80,
-                must_tags=[product_slug],
-            )
-
-            docs = [
-                d for d in (docs_raw or [])
-                if f"product:{product_slug}" in (d.get("tags_v2") or "")
-            ]
-
-            primary_chemical = extract_primary_chemical_from_docs(docs)
-            soft_tags = build_soft_tags(primary_chemical)
-
-            print("primary_chemical:", primary_chemical)
-            print("soft_tags (chemical-only):", soft_tags)
-
-        # CASE 2: Product + Product (NÂNG CẤP: suy chemical cho từng product)
-        elif len(products) >= 2:
-            p1, p2 = products[0], products[1]
-
-            c1 = infer_primary_chemical_for_product(
-                client=client, kb=kb, norm_query=norm_query, product_slug=p1
-            )
-            c2 = infer_primary_chemical_for_product(
-                client=client, kb=kb, norm_query=norm_query, product_slug=p2
-            )
-
-            print("p1,c1:", p1, c1)
-            print("p2,c2:", p2, c2)
-
-            chemicals = [c for c in [c1, c2] if c]
-            soft_tags = build_soft_tags_from_chemicals(chemicals, max_chemicals=2)
-
-            # OPTIONAL (nếu muốn tăng recall evidence theo sản phẩm):
-            # soft_tags += [f"product:{p1}", f"product:{p2}"]
-
-            print("soft_tags (chemical-first):", soft_tags)
-
-        else:
-            soft_tags = []
-            print("[WARN] Formula query but no product resolved")
-
         print("[MODE] Formula-based retrieval")
+
         hits = formula_mode_search(
             client=client,
             kb=kb,
             norm_query=norm_query,
-            must_tags=[],          # formula path: không dùng must cũ để tránh ép sai
-            soft_tags=soft_tags,   # chemical-only (hoặc chemical-first)
+            must_tags=must_tags,
+            soft_tags=soft_tags,
             top_k=RAGConfig.multi_query_top_k
         )
 
     else:
+
         print("[MODE] Knowledge multi-hop retrieval")
+
         hits = multi_hop_controller(
             client=client,
             kb=kb,
@@ -773,8 +704,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             any_tags=any_tags,
             timer=timer,
         )
-
-
     effective_must = must_tags
     print("effective_must: ", effective_must)
     effective_any = any_tags + soft_tags
@@ -787,7 +716,7 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 3) INTENT / SLOT ANALYZER (LLM)
     # -----------------------------------------------------
     analysis: Dict[str, Any] = {}
-    if _need_intent_gate(norm_query):
+    if _need_intent_gate(norm_query, any_tags, code_candidates):
         analysis = analyze_intent_and_slots(
             client=client,
             norm_query=norm_query,
@@ -834,7 +763,15 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
 
     # -----------------------------------------------------
     # 5) RAG PIPELINE (KHÔNG BAO GIỜ QUAY VỀ GLOBAL)
-    # ----------------------------------------------------
+    # -----------------------------------------------------
+    top_k = choose_top_k(
+        is_list=is_list,
+        must_tags=must_tags,
+        any_tags=any_tags,
+        norm_query=norm_query,
+        base_list=80,
+        base_normal=50,
+    )
 
     print("QUERY      :", norm_query)
     print("MUST TAGS  :", must_tags)
@@ -848,6 +785,45 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
     # 5) RAG PIPELINE – SINGLE hoặc MULTI QUERY
     # -----------------------------------------------------
 
+    hits = None
+
+    # ===== FORMULA QUERY: dùng multi-hop mới =====
+    # ===== FORMULA QUERY: LUÔN dùng multi-hop =====
+    if is_formula_query(user_query, result):
+
+        print("[MODE] Formula-based retrieval")
+
+        hits = multi_hop_controller(
+            client=client,
+            kb=kb,
+            base_query=norm_query,
+            must_tags=must_tags,
+            any_tags=soft_tags,
+            timer=timer,
+        )
+
+        timer.mark("multi_hop_total")
+        hits = preserve_search_order(hits)
+
+    # ===== NON-FORMULA QUERY =====
+    elif RAGConfig.use_multi_hop:
+
+        print("[MODE] Knowledge multi-hop retrieval")
+
+        hits = multi_hop_controller(
+            client=client,
+            kb=kb,
+            base_query=norm_query,
+            must_tags=must_tags,
+            any_tags=effective_any,
+            timer=timer,
+        )
+
+        timer.mark("multi_hop_total")
+
+
+    hits = preserve_search_order(hits)
+
     if not hits:
         return {
             "text": "Không tìm thấy dữ liệu phù hợp.",
@@ -857,8 +833,6 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "strategy": "NO_HITS",
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
-
-    hits = preserve_search_order(hits)
 
     for h in hits:
         # chỉ để phân tích / debug / profile

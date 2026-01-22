@@ -49,7 +49,7 @@ KW_DISEASE = [
     "bệnh", "triệu chứng", "dấu hiệu", "xì mủ", "thối rễ", "cháy lá", "nhóm a", "nhóm b", "nhóm o", "thán thư", "ghẻ", "nứt thân", "đốm lá", "thối trái", "tảo đỏ", "rong rêu"
 ]
 KW_FORMULA = [
-    "phối", "phối hợp", "phối trộn", "kết hợp", "combo",
+    "công thức", "phối", "phối hợp", "phối trộn", "kết hợp", "combo",
     "phác đồ phối", "phối thuốc", "kết hợp thuốc"
 ]
 KW_PRODUCT = [

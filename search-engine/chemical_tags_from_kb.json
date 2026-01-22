@@ -77,7 +77,7 @@
       "co chi",
       "co la tre",
       "co long vuc",
-      "co man trau",
+      "man trau",
       "co muc",
       "co tranh",
       "den gai",
@@ -312,7 +312,7 @@
     "weeds": [
       "co chac lac",
       "co duoi chon",
-      "co man trau",
+      "man trau",
       "den gai",
       "duoi phung",
       "long vuc",
@@ -353,7 +353,7 @@
       "co chan vit",
       "co chi",
       "co long vuc",
-      "co man trau",
+      "man trau",
       "co muc",
       "den gai",
       "rau sam"
@@ -1562,7 +1562,6 @@
   "acetamiprid": {
     "crops": [
       "bau bi",
-      "bo tri",
       "dua hau",
       "dua le",
       "dua leo",
