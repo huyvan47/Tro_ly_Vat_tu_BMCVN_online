@@ -67,7 +67,7 @@ CHEMICAL_ALIASES = {
     "chlormequat": ["chat dieu hoa sinh truong chlormequat", "chlormequat"],
     "diuron": ["diuron", "thuoc diet co diuron"],
     "fomesafen": ["fomesafen", "thuoc diet co fomesafen"],
-    "fosthiazate": ["fosthiazate", "thuoc diet sau fosthiazate"],
+    "fosthiazate": ["fosthiazate", "thuoc diet sau fosthiazate", "gr", "rai goc", "rai goc"],
     "paclobutrazol": ["chat dieu hoa sinh truong paclobutrazol", "thuoc dieu hoa sinh truong paclobutrazol", "paclobutrazol"],
     "profenofos": ["profenofos", "thuoc tru sau profenofos"],
     "spirotetramat": ["spirotetramat", "thuoc tru sau spirotetramat"],
@@ -256,7 +256,7 @@ CHEMICAL_ALIASES = {
     "phu-gia": ["chat phu gia", "chat phu gia trong nong nghiep"],
     "phytophthora-selective-medium": ["mo trung chon loc phytophthora", "mo trung phytophthora"],
     "pimaricin": ["khang sinh pimaricin", "pimaricin"],
-    "pirimiphos-methyl": ["pirimiphos methyl", "thuoc diet sau pirimiphos methyl", "pirimiphos", "pirimiphos-methyl"],
+    "pirimiphos-methyl": ["pirimiphos methyl", "thuoc diet sau pirimiphos methyl", "pirimiphos", "pirimiphos-methyl", "gb", "ba moi", "oc rai", "rai goc"],
     "polycarbonate": ["nhua polycarbonate", "vat lieu polycarbonate"],
     "potassium-dihydrogen-phosphate": ["phan kali dihydrogen photphat", "phan kali dihydrogen photphat trong nong nghiep"],
     "potassium-nitrate": ["bot kali nitrat", "phan kali nitrat"],
@@ -274,7 +274,7 @@ CHEMICAL_ALIASES = {
     "propamocarb": ["thuoc tru nam propamocarb", "propamocarb"],
     "propamocarb-hcl": ["propamocarb hydrochloride", "propamocarb", "hydrochloride", "propamocarb-hcl"],
     "propiconazole": ["thuoc tru nam propiconazole", "propiconazole"],
-    "propoxur": ["thuoc tru sau propoxur", "propoxur"],
+    "propoxur": ["thuoc tru sau propoxur", "propoxur", "gb", "ba moi", "oc rai", "rai goc"],
     "proteose-peptone": ["proteose pepton"],
     "pymetrozine": ["thuoc tru sau pymetrozine", "pymetrozine"],
     "pyraclostrobin": ["thuoc tru nam pyraclostrobin", "pyraclostrobin"],
@@ -307,7 +307,7 @@ CHEMICAL_ALIASES = {
     "thiabendazole": ["thuoc thiabendazole", "thuoc tri nam thiabendazole"],
     "thiacloprid": ["thuoc diet sau thiacloprid", "thiacloprid"],
     "thiamethoxam": ["thuoc diet sau thiamethoxam", "thiamethoxam"],
-    "thiosultap-sodium": ["thuoc diet sau thiosultap sodium", "thiosultap", "thiosultap-sodium"],
+    "thiosultap-sodium": ["thuoc diet sau thiosultap sodium", "thiosultap", "thiosultap-sodium", "gr", "rai goc", "rai goc"],
     "thiram": ["thuoc thiram", "thuoc tri nam thiram", "thiram"],
     "thuoc-tru-nam": ["thuoc diet nam", "thuoc tri nam"],
     "thuoc-tru-nhen": ["thuoc diet nhen", "thuoc tru nhen"],
@@ -693,10 +693,10 @@ PRODUCT_ALIASES = {
     "kaijo-5.0wg": ["thuoc diet nam kaijo", "thuoc tru nam kaijo 5 0wg", "kaijo"],
     "kajio-1gr-alpha": ["thuoc diet sau kajio 1gr alpha", "thuoc diet sau kajio alpha", "kaijo"],
     "kajio-1gr-gold": ["thuoc diet sau kajio 1gr gold", "thuoc diet sau kajio gold", "kaijo"],
-    "khai-hoang-g63": ["thuoc diet sau khai hoang", "thuoc diet sau khai hoang g63", "khai-hoang", "g63"],
-    "khai-hoang-p7": ["thuoc diet sau khai hoang", "thuoc diet sau khai hoang p7", "khai-hoang"],
-    "khai-hoang-q10": ["thuoc diet sau khai hoang", "thuoc diet sau khai hoang q10", "khai-hoang"],
-    "khai-hoang-q7": ["thuoc diet sau khai hoang", "thuoc diet sau khai hoang q7", "khai-hoang"],
+    "khai-hoang-g63": ["g63"],
+    "khai-hoang-q7": ["q7"],
+    "khai-hoang-q10": ["q10"],
+    "khai-hoang-p7": ["p7"],
     "komulunx-80wg": ["thuoc diet nam komulunx", "thuoc tru nam komulunx 80wg", "komulunx"],
     "koto-240sc": ["thuoc diet sau koto", "thuoc tru sau koto 240sc", "koto"],
     "koto-240sc-gold": ["thuoc diet sau koto gold", "thuoc tru sau koto 240sc gold", "koto gold"],
@@ -850,9 +850,6 @@ PRODUCT_ALIASES = {
     "kasugamycin": ["thuoc kasugamycin", "thuoc khang sinh kasugamycin", "kasugamycin"],
     "kasuhan-4wp": ["thuoc bao ve thuc vat kasuhan 4wp", "thuoc kasuhan 4wp", "kasuhan 4wp", "kasuhan-4wp", "kasuhan"],
     "kenbast-15sl": ["thuoc bao ve thuc vat kenbast 15sl", "kenbast", "kenbast-15sl"],
-    "khai-hoang-g63": ["thuoc bao ve thuc vat khai hoang g63", "thuoc khai hoang g63", "khai hoang g63", "khai hoang"],
-    "khai-hoang-q10": ["thuoc bao ve thuc vat khai hoang q10", "thuoc khai hoang q10", "khai hoang q10", "q10"],
-    "khai-hoang-q7": ["thuoc bao ve thuc vat khai hoang q7", "thuoc khai hoang q7", "khai hoang q7", "q7"],
     "khongray-54wp": ["thuoc bao ve thuc vat khongray 54wp", "thuoc khongray 54wp", "khongray", "khongray-54wp", "2 hoat chat", "hai hoat chat"],
     "king-cide-japan-460sc": ["thuoc bao ve thuc vat king cide japan 460sc", "thuoc king cide japan 460sc", "king cide japan 460sc", "king cide japan", "king cide", "kingcide", "king-cide", "3 hoat chat", "ba hoat chat"],
     "king-kha-1ec": ["thuoc bao ve thuc vat king kha 1ec", "thuoc king kha 1ec", "king kha 1ec", "king kha", "kinh kha", "kingkha"],
@@ -1291,6 +1288,19 @@ FORMULA_ALIASES = {
     ],
 }
 
+FORMULATION_ALIASES = {
+    "ab": ["ab"],
+    "sc": ["sc"],
+    "ec": ["ec"],
+    "sl": ["sl"],
+    "wp": ["wp"],
+    "wg": ["wg"],
+    "od": ["od"],
+    "sp": ["sp"],
+    "gb": ["gb", "ba moi", "oc rai", "rai goc"],
+    "gr": ["gr", "rai goc", "rai goc"],
+}
+
 INTENT_ALIAS_GROUPS = {
     "formula": FORMULA_ALIASES,
     "mechanisms": MECHANISMS_ALIASES,
@@ -1519,6 +1529,21 @@ def infer_chemicals_from_kb(crops: Set[str], diseases: Set[str], pests: Set[str]
 
     return result
 
+def filter_chemicals_by_formulation(chems: set, forms: set) -> set:
+    if not forms:
+        return chems  # user không yêu cầu dạng → giữ nguyên
+
+    out = set()
+    for c in chems:
+        kb = CHEMICAL_KB.get(c, {})
+        kb_forms = set(x.lower() for x in kb.get("formulation", []))
+
+        # có ít nhất 1 dạng trùng
+        if kb_forms.intersection(forms):
+            out.add(c)
+
+    return out
+
 def extract_tags(norm_query: str) -> Dict:
 
     crops = match_aliases(norm_query, CROP_ALIASES)
@@ -1533,11 +1558,16 @@ def extract_tags(norm_query: str) -> Dict:
 
     formulas = match_aliases(norm_query, FORMULA_ALIASES)
 
+    forms = match_aliases(norm_query, FORMULATION_ALIASES)
+
     direct_chems = match_aliases(norm_query, CHEMICAL_ALIASES)
 
     kb_chems = infer_chemicals_from_kb(crops, diseases, pests)
 
     all_chems = direct_chems.union(kb_chems)
+
+    # FILTER theo formulation
+    all_chems = filter_chemicals_by_formulation(all_chems, forms)
 
     must_tags = set()
     any_tags = set()
@@ -1560,6 +1590,9 @@ def extract_tags(norm_query: str) -> Dict:
 
     for p in brands:
         must_tags.add(f"brand:{p}")
+
+    for p in forms:
+        must_tags.add(f"formulation:{p}")
 
     # for p in mechanisms:
     #     must_tags.add(f"mechanisms:{p}")

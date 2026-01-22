@@ -32,7 +32,10 @@
       "rau sam",
       "rau trai",
       "thai lai"
-    ]
+    ],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "glufosinate-p": {
     "crops": [
@@ -55,7 +58,10 @@
       "den gai",
       "man trau",
       "thai lai"
-    ]
+    ],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "diquat-dibromide": {
     "crops": [
@@ -78,7 +84,10 @@
       "rau sam",
       "rau trai",
       "thai lai"
-    ]
+    ],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "pretilachlor": {
     "crops": [
@@ -99,7 +108,10 @@
       "rau dua nuoc",
       "rau ngo",
       "rau xa bong"
-    ]
+    ],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "bentazone": {
     "crops": [
@@ -112,7 +124,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "mesotrione": {
     "crops": [
@@ -122,7 +137,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "acetochlor": {
     "crops": [
@@ -149,7 +167,10 @@
       "den gai",
       "mac co",
       "man trau"
-    ]
+    ],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "s-metolachlor": {
     "crops": [
@@ -182,7 +203,10 @@
       "nghe",
       "rau sam",
       "vi cuc"
-    ]
+    ],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "quizalofop-p-ethyl": {
     "crops": [
@@ -200,7 +224,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "haloxyfop-p-methyl": {
     "crops": [
@@ -216,7 +243,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "fomesafen": {
     "crops": [
@@ -240,7 +270,10 @@
       "mac co cay xau ho",
       "rau sam",
       "tam bop"
-    ]
+    ],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "lactofen": {
     "crops": [
@@ -265,7 +298,10 @@
       "cay xau ho",
       "rau sam",
       "tam bop"
-    ]
+    ],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "ametryn": {
     "crops": [
@@ -281,7 +317,10 @@
       "duoi phung",
       "long vuc",
       "rau sam"
-    ]
+    ],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "diuron": {
     "crops": [
@@ -294,7 +333,10 @@
     "weeds": [
       "co hoa thao",
       "co la rong"
-    ]
+    ],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "atrazine": {
     "crops": [
@@ -315,7 +357,10 @@
       "co muc",
       "den gai",
       "rau sam"
-    ]
+    ],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "tembotrione": {
     "crops": [
@@ -326,7 +371,10 @@
     "diseases": [],
     "weeds": [
       "co dai"
-    ]
+    ],
+    "formulation": ["od"],
+    "color": "",
+    "heat": ""
   },
   "topramezone": {
     "crops": [
@@ -337,7 +385,10 @@
     "diseases": [],
     "weeds": [
       "co dai"
-    ]
+    ],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "terbuthylazine": {
     "crops": [
@@ -348,7 +399,10 @@
     "diseases": [],
     "weeds": [
       "co dai"
-    ]
+    ],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "abamectin": {
     "crops": [
@@ -415,7 +469,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": "red"
   },
   "emamectin-benzoate": {
     "crops": [
@@ -469,7 +526,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "avermectin-b1a": {
     "crops": [
@@ -512,7 +572,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "avermectin-b1b": {
     "crops": [
@@ -556,7 +619,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "cartap-hydrochloride": {
     "crops": [
@@ -587,7 +653,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sp"],
+    "color": "",
+    "heat": ""
   },
   "propoxur": {
     "crops": [
@@ -622,7 +691,10 @@
       "tuyen trung"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["gb"],
+    "color": "",
+    "heat": ""
   },
   "pirimiphos-methyl": {
     "crops": [
@@ -657,7 +729,10 @@
       "tuyen trung"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["gb"],
+    "color": "",
+    "heat": ""
   },
   "chlorfenapyr": {
     "crops": [
@@ -704,7 +779,10 @@
       "sau xanh da lang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "fosthiazate": {
     "crops": [
@@ -729,7 +807,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["gr", "ew"],
+    "color": "",
+    "heat": ""
   },
   "nitenpyram": {
     "crops": [
@@ -739,7 +820,10 @@
       "ray nau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "pymetrozine": {
     "crops": [
@@ -781,7 +865,10 @@
       "rep sap"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "spirotetramat": {
     "crops": [
@@ -821,7 +908,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "tolfenpyrad": {
     "crops": [
@@ -859,7 +949,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "petroleum-oil": {
     "crops": [
@@ -869,7 +962,10 @@
       "nhen do"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "thiosultap-sodium": {
     "crops": [
@@ -895,7 +991,10 @@
       "muoi hanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["gr"],
+    "color": "",
+    "heat": ""
   },
   "monosultap": {
     "crops": [
@@ -921,7 +1020,10 @@
       "muoi hanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "lufenuron": {
     "crops": [
@@ -948,7 +1050,10 @@
       "sau xanh da lang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "metaflumizone": {
     "crops": [
@@ -969,7 +1074,10 @@
       "sau xanh da lang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "pyriproxyfen": {
     "crops": [
@@ -1006,7 +1114,10 @@
       "tuyen trung"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "alpha-cypermethrin": {
     "crops": [
@@ -1068,7 +1179,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "cypermethrin": {
     "crops": [
@@ -1104,7 +1218,10 @@
       "sung bo ha"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "pyrethroid": {
     "crops": [
@@ -1132,7 +1249,10 @@
       "sau ve bua"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "permethrin": {
     "crops": [
@@ -1173,7 +1293,10 @@
       "sung bo ha"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "dimethoate": {
     "crops": [
@@ -1216,7 +1339,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "fenobucarb": {
     "crops": [
@@ -1238,7 +1364,10 @@
       "sau keo"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "insecticide": {
     "crops": [
@@ -1277,7 +1406,10 @@
       "sau phao"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "profenofos": {
     "crops": [
@@ -1331,7 +1463,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "phenthoate": {
     "crops": [
@@ -1356,7 +1491,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "imidacloprid": {
     "crops": [
@@ -1389,7 +1527,10 @@
       "sau xam"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "thiamethoxam": {
     "crops": [
@@ -1413,7 +1554,10 @@
       "sau duc canh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "acetamiprid": {
     "crops": [
@@ -1437,7 +1581,10 @@
       "xu hao"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wg"],
+    "color": "",
+    "heat": ""
   },
   "buprofezin": {
     "crops": [
@@ -1462,7 +1609,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "dinotefuran": {
     "crops": [
@@ -1495,7 +1645,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "flonicamid": {
     "crops": [
@@ -1537,7 +1690,10 @@
       "rep sap"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wg"],
+    "color": "",
+    "heat": ""
   },
   "thiacloprid": {
     "crops": [
@@ -1569,7 +1725,10 @@
       "sau la"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "avermectin": {
     "crops": [
@@ -1583,7 +1742,10 @@
       "sau to"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "diafenthiuron": {
     "crops": [
@@ -1621,7 +1783,10 @@
       "sau xanh"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "hexythiazox": {
     "crops": [],
@@ -1631,7 +1796,10 @@
       "nhen trang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "pyridaben": {
     "crops": [
@@ -1657,7 +1825,10 @@
       "bo phan"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "spirodiclofen": {
     "crops": [
@@ -1674,7 +1845,10 @@
       "nhen trang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "bifenazate": {
     "crops": [
@@ -1694,7 +1868,10 @@
       "rep sap"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "deltamethrin": {
     "crops": [
@@ -1716,7 +1893,10 @@
       "nhen long nhung"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "lambda-cyhalothrin": {
     "crops": [
@@ -1739,7 +1919,10 @@
       "nhen vang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "mancozeb": {
     "crops": [
@@ -1790,7 +1973,10 @@
       "thoi trai",
       "vang la chin som"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "thiram": {
     "crops": [
@@ -1824,7 +2010,10 @@
       "than thu",
       "thoi nhun"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "cymoxanil": {
     "crops": [
@@ -1846,7 +2035,10 @@
       "suong mai",
       "vang la chin som"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "chlorothalonil": {
     "crops": [
@@ -1890,7 +2082,10 @@
       "thoi than",
       "vang la chin som"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "amisulbrom": {
     "crops": [
@@ -1912,7 +2107,10 @@
       "suong mai",
       "vang la chin som"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec", "wp"],
+    "color": "",
+    "heat": ""
   },
   "dimethomorph": {
     "crops": [
@@ -1937,10 +2135,13 @@
       "suong mai",
       "than thu",
       "thoi than xi mu",
-      "nut than", 
+      "nut than",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "metalaxyl": {
     "crops": [
@@ -1977,7 +2178,10 @@
       "vang la",
       "vang rung la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "prochloraz-manganese-complex": {
     "crops": [
@@ -2007,7 +2211,10 @@
       "rung trai",
       "thoi than"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "sulfur": {
     "crops": [
@@ -2041,7 +2248,10 @@
       "trang trai",
       "xoan la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wg"],
+    "color": "",
+    "heat": ""
   },
   "hexaconazole": {
     "crops": [
@@ -2091,7 +2301,10 @@
       "than thu",
       "vang la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "hymexazol": {
     "crops": [
@@ -2129,7 +2342,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "penconazole": {
     "crops": [
@@ -2180,7 +2396,10 @@
       "thoi than",
       "vang la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "fluazinam": {
     "crops": [
@@ -2202,29 +2421,10 @@
       "phan trang",
       "sung re"
     ],
-    "weeds": []
-  },
-  "special-additives": {
-    "crops": [
-      "bap cai",
-      "dua hau",
-      "khoai tay",
-      "lac",
-      "dau phong",
-      "lua",
-      "nho"
-    ],
-    "pests": [],
-    "diseases": [
-      "dao on",
-      "dom la",
-      "gia suong mai",
-      "kho van",
-      "moc suong",
-      "phan trang",
-      "sung re"
-    ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "pyraclostrobin": {
     "crops": [
@@ -2247,7 +2447,10 @@
       "than thu",
       "xu li hat giong"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc", "ec"],
+    "color": "",
+    "heat": ""
   },
   "kresoxim-methyl": {
     "crops": [
@@ -2290,66 +2493,10 @@
       "suong mai",
       "than thu"
     ],
-    "weeds": []
-  },
-  "copper": {
-    "crops": [
-      "bap",
-      "buoi",
-      "ca chua",
-      "ca phe",
-      "ca rot",
-      "cai",
-      "cam",
-      "cao su",
-      "cay dao",
-      "cay mo",
-      "dau tay",
-      "dua hau",
-      "hanh",
-      "hoa",
-      "khoai mon",
-      "khoai tay",
-      "lua",
-      "mang tay",
-      "nhan",
-      "nho",
-      "quyt",
-      "rau cai",
-      "thanh long",
-      "cu toi",
-      "tra che",
-      "vai",
-      "xoai"
-    ],
-    "pests": [],
-    "diseases": [
-      "bac la",
-      "chay la",
-      "dao on",
-      "dom la",
-      "dom mat cua",
-      "dom nau",
-      "ghe seo",
-      "heo ru",
-      "kho van",
-      "lo co re",
-      "loet",
-      "moc suong",
-      "moc xam",
-      "nam hong",
-      "nut than",
-      "phan trang",
-      "ri sat",
-      "sen nhot",
-      "sen vo mong",
-      "suong mai",
-      "than thu",
-      "thoi cu",
-      "thoi nhun",
-      "xi mu"
-    ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "lime": {
     "crops": [
@@ -2408,7 +2555,10 @@
       "thoi nhun",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "azoxystrobin": {
     "crops": [
@@ -2464,7 +2614,10 @@
       "thoi goc",
       "vang la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "difenoconazole": {
     "crops": [
@@ -2527,7 +2680,10 @@
       "tiem lua",
       "vang la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "tebuconazole": {
     "crops": [
@@ -2563,7 +2719,10 @@
       "ri sat",
       "than thu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "trioxystrobin": {
     "crops": [
@@ -2581,7 +2740,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "tricyclazole": {
     "crops": [
@@ -2620,7 +2782,10 @@
       "than thu",
       "vang la"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "flusilazole": {
     "crops": [
@@ -2656,7 +2821,10 @@
       "ri sat",
       "than thu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "propiconazole": {
     "crops": [
@@ -2693,7 +2861,10 @@
       "thoi goc",
       "tiem lua"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "isoprothiolane": {
     "crops": [
@@ -2708,7 +2879,10 @@
       "dom nau",
       "thoi co gie"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "kasugamycin": {
     "crops": [
@@ -2778,7 +2952,10 @@
       "vi khuan",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "boscalid": {
     "crops": [
@@ -2790,7 +2967,10 @@
       "phan trang",
       "suong mai"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "cyazofamid": {
     "crops": [
@@ -2811,7 +2991,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "fluopicolide": {
     "crops": [
@@ -2847,7 +3030,10 @@
       "vang rung la",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "propamocarb-hcl": {
     "crops": [
@@ -2884,7 +3070,10 @@
       "vang rung la",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "bismerthiazol": {
     "crops": [
@@ -2925,7 +3114,10 @@
       "thoi nhun",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "zhongshengmycin": {
     "crops": [
@@ -2957,7 +3149,10 @@
       "thoi nhun",
       "xi mu"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "triadimefon": {
     "crops": [
@@ -2992,7 +3187,10 @@
       "thoi nhun",
       "thoi re"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "jingangmycin": {
     "crops": [
@@ -3027,7 +3225,10 @@
       "thoi nhun",
       "thoi re"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "dithianon": {
     "crops": [
@@ -3053,7 +3254,10 @@
       "nam qua",
       "suong mai"
     ],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "phoxim": {
     "crops": [
@@ -3075,7 +3279,10 @@
       "sau khoang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "beta-cypermethrin": {
     "crops": [
@@ -3096,7 +3303,10 @@
       "sau khoang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "chlorpyrifos-methyl": {
     "crops": [
@@ -3124,7 +3334,10 @@
       "ve sau"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ec"],
+    "color": "",
+    "heat": ""
   },
   "cyromazine": {
     "crops": [
@@ -3150,9 +3363,12 @@
       "sau ve bua"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sp"],
+    "color": "",
+    "heat": ""
   },
-  "Paclobutrazol": {
+  "paclobutrazol": {
     "crops": [
       "khoai lang",
       "lac",
@@ -3163,7 +3379,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["wp"],
+    "color": "",
+    "heat": ""
   },
   "gibberellic-acid": {
     "crops": [
@@ -3184,7 +3403,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sc"],
+    "color": "",
+    "heat": ""
   },
   "24-epibrassinolide": {
     "crops": [
@@ -3198,7 +3420,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "chlormequat": {
     "crops": [
@@ -3225,23 +3450,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
-  },
-  "ethephon": {
-    "crops": [
-      "cam",
-      "cao su",
-      "chuoi",
-      "dau tay",
-      "khom",
-      "mit",
-      "sau rieng",
-      "xoai",
-      "mai"
-    ],
-    "pests": [],
-    "diseases": ["rung la mai"],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["sl"],
+    "color": "",
+    "heat": ""
   },
   "bacillus-subtilis": {
     "crops": [
@@ -3260,7 +3472,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["suv"],
+    "color": "",
+    "heat": ""
   },
   "c10-alcohol-ethoxylate": {
     "crops": [
@@ -3270,7 +3485,10 @@
     ],
     "pests": [],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "niclosamide": {
     "crops": [
@@ -3280,7 +3498,10 @@
       "oc buou vang"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": [],
+    "color": "",
+    "heat": ""
   },
   "metaldehyde": {
     "crops": [
@@ -3298,6 +3519,9 @@
       "oc sen"
     ],
     "diseases": [],
-    "weeds": []
+    "weeds": [],
+    "formulation": ["ab"],
+    "color": "",
+    "heat": ""
   }
 }
