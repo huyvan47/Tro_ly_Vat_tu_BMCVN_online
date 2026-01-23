@@ -292,6 +292,31 @@ YÊU CẦU TRÌNH BÀY:
     KHÔNG:
     - Gộp 2 vai trò vào 1 sản phẩm.
     - Biến danh sách sản phẩm thành công thức.
+    QUY TẮC PHÂN TÍCH NGÔN NGỮ (LANGUAGE PARSING RULE – BẮT BUỘC):
+
+    - Mọi biểu thức có dấu "+" LUÔN được hiểu là:
+    → NHIỀU VAI TRÒ RIÊNG BIỆT
+    → tương ứng với NHIỀU SẢN PHẨM RIÊNG BIỆT.
+
+    - Kể cả khi tài liệu dùng các cụm như:
+    • "xông hơi mạnh + tiếp xúc"
+    • "lưu dẫn + tiếp xúc mạnh"
+    • "tiếp xúc-lưu dẫn mạnh + lưu dẫn"
+    • "xông hơi + lưu dẫn"
+
+    → VẪN PHẢI TÁCH thành:
+        - Vai trò 1 = xông hơi mạnh
+        - Vai trò 2 = tiếp xúc
+        - Vai trò 3 = lưu dẫn (nếu có)
+
+    - TUYỆT ĐỐI KHÔNG được hiểu các cụm trên là:
+    "một cơ chế phức hợp của một sản phẩm duy nhất"
+    nếu có dấu "+" trong biểu thức.
+
+    - Chỉ khi tài liệu ghi rõ:
+    "Sản phẩm X có cơ chế: tiếp xúc-lưu dẫn"
+    (KHÔNG có dấu "+", gạch nối trong 1 nhãn)
+    → mới được coi là 1 sản phẩm đa cơ chế.
     """.strip()
 
     elif answer_mode == "product":
