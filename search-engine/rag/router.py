@@ -1,6 +1,33 @@
 import re
 from .chemical_knowledge import CHEMICAL_REGEX
+from rag.tag_filter import tag_filter_pipeline
 
+RAG_TAG_PREFIXES = (
+    "brand:",
+    "product:",
+)
+
+def force_rag_by_tags(must_tags=None, soft_tags=None, any_tags=None) -> bool:
+    """
+    Trả về True nếu bắt buộc đi RAG do phát hiện tag liên quan sản phẩm / công thức / hoạt chất.
+    """
+
+    all_tags = []
+    if must_tags:
+        all_tags.extend(must_tags)
+    if soft_tags:
+        all_tags.extend(soft_tags)
+    if any_tags:
+        all_tags.extend(any_tags)
+
+    for tag in all_tags:
+        if not isinstance(tag, str):
+            continue
+        tag = tag.lower().strip()
+        if tag.startswith(RAG_TAG_PREFIXES):
+            return True
+
+    return False
 
 def route_query(client, user_query: str) -> str:
     """
@@ -32,7 +59,35 @@ def route_query(client, user_query: str) -> str:
         return "RAG"
 
     # ============================================
-    # 1) Ngoại lệ quan trọng:
+    # 1) Nếu câu hỏi có từ “thuốc” -> RAG
+    # ============================================
+
+    product_context = re.search(
+        r"\b(thuốc|sản phẩm|mã|giá|đại lý|mua)\b",
+        q
+    )
+    
+    if product_context:
+        return "RAG"
+
+    treatment_intent = re.search(
+        r"\b(công thức trị|công thức trừ|công thức diệt|phác đồ|quy trình trị|cách trị|biện pháp trị|diệt|phòng trừ|xử lý|đặc trị)\b",
+        q
+    )
+
+    if treatment_intent:
+        return "RAG"
+
+    result = tag_filter_pipeline(q)
+    must_tags = result.get("must", [])
+    soft_tags = result.get("soft", [])
+    any_tags = result.get("any", [])
+
+    if force_rag_by_tags(must_tags, soft_tags, any_tags):
+            return "RAG"
+
+    # ============================================
+    # ) Ngoại lệ quan trọng:
     #    Hỏi kiến thức thuần về hoạt chất -> GLOBAL
     # ============================================
 
@@ -57,26 +112,6 @@ def route_query(client, user_query: str) -> str:
         # Nếu không có dấu hiệu hỏi sản phẩm -> GLOBAL
         if not product_intent:
             return "GLOBAL"
-
-    # ============================================
-    # 2) Nếu câu hỏi có từ “thuốc” -> RAG
-    # ============================================
-
-    product_context = re.search(
-        r"\b(thuốc|sản phẩm|mã|giá|đại lý|mua)\b",
-        q
-    )
-
-    if product_context:
-        return "RAG"
-    
-    treatment_intent = re.search(
-        r"\b(công thức trị|công thức trừ|công thức diệt|phác đồ|quy trình trị|cách trị|biện pháp trị|diệt|phòng trừ|xử lý|đặc trị)\b",
-        q
-    )
-
-    if treatment_intent:
-        return "RAG"
 
     # ============================================
     # 3) Các câu hỏi mang tính giáo trình -> GLOBAL
@@ -147,45 +182,5 @@ def route_query(client, user_query: str) -> str:
 
     if any(re.search(p, q) for p in definition_signals):
         return "GLOBAL"
-
-    # ============================================
-    # 4) Nếu chưa quyết được -> hỏi LLM router
-    # ============================================
-
-    system_prompt = """
-Bạn là bộ phân luồng câu hỏi cho hệ thống trợ lý nông nghiệp BMCVN.
-
-NHIỆM VỤ:
-- Trả lời đúng 1 từ: GLOBAL hoặc RAG.
-
-QUY TẮC:
-- GLOBAL: câu hỏi kiến thức chung, giáo trình, định nghĩa, cơ chế, giải thích về hoạt chất, sâu bệnh, cây trồng.
-- RAG: câu hỏi về sản phẩm/thuốc của BMC, giá, mã, đại lý, phác đồ nội bộ, tài liệu nội bộ.
-
-LUẬT:
-- Chỉ trả lời GLOBAL hoặc RAG, không thêm bất kỳ ký tự nào khác.
-""".strip()
-
-    try:
-        resp = client.chat.completions.create(
-            model="gpt-4o-mini",
-            temperature=0,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_query},
-            ],
-        )
-
-        ans = (resp.choices[0].message.content or "").strip().upper()
-
-        if ans in ["GLOBAL", "RAG"]:
-            return ans
-
-    except Exception:
-        pass
-
-    # ============================================
-    # 5) Fallback an toàn
-    # ============================================
 
     return "RAG"

@@ -43,7 +43,7 @@ def should_enrich_post_answer(
         return False
 
     # has_risk_intent = _match_any(_RISK_INTENT_PATTERNS, user_query)
-    has_risk_intent = True
+    has_risk_intent = False
     missing_doc_evidence = _match_any(_MISSING_EVIDENCE_PATTERNS, answer_text)
 
     print('has_risk_intent:', has_risk_intent)

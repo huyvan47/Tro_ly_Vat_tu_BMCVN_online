@@ -109,7 +109,6 @@ def decide_answer_policy(
     user_query: str,
     primary_doc: Dict,
     *,
-    parsed_intent: Optional[str] = None,   # nếu bạn đã phân tích intent từ query
     force_listing: Optional[bool] = None,  # bạn có thể truyền is_listing ở ngoài
 ) -> AnswerPolicy:
     """
@@ -119,11 +118,6 @@ def decide_answer_policy(
     3) entity_type của doc (THAY category)
     4) heuristic keywords (fallback)
     """
-    ## check answer mode
-    # print('user_query: ', user_query)
-    # print('primary_doc: ', primary_doc)
-    # print('parsed_intent: ', parsed_intent)
-    # print('force_listing: ', force_listing)
 
     q = norm(user_query)
 
@@ -146,18 +140,6 @@ def decide_answer_policy(
     if is_listing:
         # listing thường cần nhiều nguồn hơn một chút, nhưng vẫn phải khống chế
         return AnswerPolicy(intent="general", format="listing", require_grounding=True, max_sources=15)
-
-    # 1) Parsed intent override (ưu tiên cao)
-    if parsed_intent:
-        pi = norm(parsed_intent)
-        if pi in ENTITY_TO_POLICY:
-            return ENTITY_TO_POLICY[pi]
-        # cho phép pi là intent chuẩn
-        if pi in {"procedure", "disease", "product", "registry", "general"}:
-            # gán policy mặc định theo intent
-            for k, v in ENTITY_TO_POLICY.items():
-                if v.intent == pi:
-                    return v
 
     # 2) Entity_type is the new "category"
     if ent and ent in ENTITY_TO_POLICY:

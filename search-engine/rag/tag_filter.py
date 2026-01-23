@@ -521,7 +521,6 @@ CROP_ALIASES = {
     "vuon-cay-an-trai": ["vuon cay an trai"],
     "watermelon": ["dua hau", "qua dua hau"],
     "long-vuc": ["long vuc"],
-    "weed": ["co dai", "mac-co", "rau sam", "co cuc", "cho de", "den gai", "co chan vit", "co long vuc", "co man trau"],
     "wheat": ["lua mi"],
     "xoai": ["qua xoai", "xoai"],
 }
@@ -693,7 +692,7 @@ PEST_ALIASES = {
     "suong-mai": ["benh suong mai", "suong mai"],
     "than-thu": ["sau than", "than thu"],
     "ve-sau": ["con ve sau", "ve sau"],
-    "weeds": ["co dai", "co tranh", "co dai trong lua", "co dai trong ruong"],
+    "weeds": ["co dai", "mac-co", "rau sam", "co cuc", "cho de", "den gai", "co chan vit", "co long vuc", "co man trau"],
     "mac-co": ["mac co"],
     "mat-cua": ["mat cua"],
     "moi": ["diet moi", "tru moi", "moi mot"],
@@ -1435,108 +1434,6 @@ def _pick_core(keys: List[str]) -> Optional[str]:
     )
     return ranked[0]
 
-
-def _prune(keys: List[str]) -> List[str]:
-    s = set(keys)
-    out = []
-    for k in keys:
-        if k == "xong-hoi" and "xong-hoi-manh" in s:
-            continue
-        if k == "tiep-xuc" and (
-            "tiep-xuc-manh" in s or
-            any(x.startswith("tiep-xuc-luu-dan") for x in s)
-        ):
-            continue
-        out.append(k)
-
-    seen = set()
-    final = []
-    for k in out:
-        if k not in seen:
-            final.append(k)
-            seen.add(k)
-    return final
-
-
-def extract_mechanism_tiers(query: str) -> Tuple[List[str], List[str]]:
-    norm = normalize_entity(query)
-
-    # Trường hợp đặc biệt: không có '+', nhưng có 'và'
-    if "+" not in norm and re.search(r"\s+va\s+", norm):
-        subs = [x.strip() for x in re.split(r"\s+va\s+", norm) if x.strip()]
-        all_matches: List[str] = []
-        for sp in subs:
-            all_matches.extend(_match_mech_in_text(sp))
-
-        all_matches = list(dict.fromkeys(all_matches))
-        if all_matches:
-            core = _pick_core(all_matches)
-            must = [core] if core else []
-            soft = [m for m in all_matches if m != core]
-            return must, _prune(soft)
-
-    # ===== Logic chuẩn theo dấu + =====
-    parts = [p.strip() for p in _SPLIT_PLUS.split(norm) if p.strip()]
-
-    must: List[str] = []
-    soft: List[str] = []
-    if not parts:
-        return must, soft
-
-    # ---- vế 0: MUST core ----
-    local0 = _match_mech_in_text(parts[0])
-    core0 = _pick_core(local0)
-    if core0:
-        must = [core0]
-
-    soft_set = set()
-
-    for part in parts[1:]:
-        subs = [x.strip() for x in _SPLIT_AND.split(part) if x.strip()]
-        local: List[str] = []
-        for sp in subs:
-            local.extend(_match_mech_in_text(sp))
-
-        # OR: tất cả vào soft
-        if _OR_TOKEN_RE.search(f" {part} "):
-            for m in local:
-                soft_set.add(m)
-            continue
-
-        has_luu_dan = bool(re.search(r"(?:^|\s)luu\s+dan(?:\s|$)", f" {part} "))
-        has_thuong_manh = bool(re.search(r"(thuong\s+va\s+manh|toan\s+bo)", part))
-
-        if has_luu_dan and has_thuong_manh:
-            soft_set.add("luu-dan")
-            soft_set.add("luu-dan-manh")
-            continue
-
-        uniq = list(dict.fromkeys(local))
-
-        if len(uniq) == 1:
-            soft_set.add(uniq[0])
-            continue
-
-        if len(uniq) >= 2:
-            core = _pick_core(uniq)
-            if core:
-                soft_set.add(core)
-            for m in uniq:
-                soft_set.add(m)
-
-    ordered = []
-    for part in parts[1:]:
-        for m in _match_mech_in_text(part):
-            if m in soft_set and m not in ordered:
-                ordered.append(m)
-
-    for m in ["luu-dan-manh", "luu-dan"]:
-        if m in soft_set and m not in ordered:
-            ordered.append(m)
-
-    return must, _prune(ordered)
-
-
 # ===========================
 # 6) UNIFIED KB INFERENCE (TARGET-FIRST + CROP-FALLBACK)
 # ===========================
@@ -1640,6 +1537,7 @@ def extract_tags(norm_query_raw: str) -> Dict:
     brands = match_aliases(norm_query_raw, BRAND_ALIASES, normalize_entity)
     formulas = match_aliases(norm_query_raw, FORMULA_ALIASES, normalize_entity)
     forms = match_aliases(norm_query_raw, FORMULATION_ALIASES, normalize_entity)
+    mechanisms = match_aliases(norm_query_raw, MECHANISMS_ALIASES, normalize_entity)
 
     # Chemical match: dùng normalize() để giữ tên có dấu '-'
     direct_chems = match_aliases(norm_query_raw, CHEMICAL_ALIASES, normalize)
@@ -1669,7 +1567,7 @@ def extract_tags(norm_query_raw: str) -> Dict:
 
     # Disease thường khá "hard" -> MUST
     for d in diseases:
-        must_tags.add(f"disease:{d}")
+        any_tags.add(f"disease:{d}")
 
     # Product/Brand/Formulation/Formula: MUST
     for p in products:
@@ -1680,6 +1578,8 @@ def extract_tags(norm_query_raw: str) -> Dict:
         must_tags.add(f"formulation:{f}")
     for fm in formulas:
         must_tags.add(f"formula:{fm}")
+    for mec in mechanisms:
+        must_tags.add(f"mechanisms:{mec}")
 
     # Chemicals:
     # - direct_chems (người dùng nói thẳng) -> MUST
@@ -1717,16 +1617,8 @@ def tag_filter_pipeline(query: str) -> Dict:
     # 1) Ontology core
     tags = extract_tags(norm_raw)
 
-    # 2) Mechanism tiers
-    mech_must, mech_soft = extract_mechanism_tiers(query)
-
     # MUST = ontology MUST + mechanisms MUST
     must_tags = set(tags["must"])
-    for m in mech_must:
-        must_tags.add(f"mechanisms:{m}")
-
-    # SOFT = mechanisms soft
-    soft_tags = [f"mechanisms:{m}" for m in mech_soft]
 
     # ANY = ontology ANY (crop/pest/weed + inferred chems) + fallback intent aliases
     detected_any = set(tags["any"])
@@ -1741,8 +1633,6 @@ def tag_filter_pipeline(query: str) -> Dict:
 
     # 3) Report (debug/explain)
     found = {
-        "mechanisms_must": mech_must,
-        "mechanisms_soft": mech_soft,
 
         "products": sorted(list(match_aliases(norm_raw, PRODUCT_ALIASES, normalize_entity))),
         "brands": sorted(list(match_aliases(norm_raw, BRAND_ALIASES, normalize_entity))),
@@ -1763,7 +1653,6 @@ def tag_filter_pipeline(query: str) -> Dict:
     return {
         "query": query,
         "must": sorted(list(must_tags)),
-        "soft": soft_tags,
         "any": sorted(list(detected_any)),
         "found": found
     }
