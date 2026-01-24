@@ -260,10 +260,34 @@ YÊU CẦU TRÌNH BÀY:
         • Sản phẩm 2 thỏa B
         • KHÔNG yêu cầu 1 sản phẩm thỏa cả A và B
 
+    QUY TẮC GÁN VAI TRÒ TỪ CÂU HỎI (ROLE BINDING – BẮT BUỘC):
+
+    - TẤT CẢ vai trò trong công thức PHẢI được trích trực tiếp từ câu hỏi người dùng.
+    - TUYỆT ĐỐI KHÔNG được:
+    • Thay vai trò trong câu hỏi bằng vai trò “quen thuộc hơn”.
+    • Mặc định vai trò số 1 là "xông hơi mạnh" nếu câu hỏi KHÔNG nhắc tới xông hơi.
+
+    Ví dụ:
+    - Câu hỏi: "tiếp xúc + lưu dẫn"
+    → Vai trò 1 = tiếp xúc
+    → Vai trò 2 = lưu dẫn
+
+    - Câu hỏi: "tiếp xúc mạnh + lưu dẫn"
+    → Vai trò 1 = tiếp xúc mạnh
+    → Vai trò 2 = lưu dẫn
+
+    - Câu hỏi: "xông hơi + lưu dẫn"
+    → Vai trò 1 = xông hơi
+    → Vai trò 2 = lưu dẫn
+
+    Nếu tài liệu KHÔNG có sản phẩm thỏa đúng vai trò trong câu hỏi:
+    → ghi rõ: "Chưa đủ dữ liệu để tìm sản phẩm cho vai trò X".
+
+
     QUY TẮC CƠ CHẾ (RẤT QUAN TRỌNG):
     - MỖI sản phẩm chỉ cần thỏa ĐÚNG VAI TRÒ ĐƯỢC GÁN:
-    • SP vai trò "xông hơi mạnh" → chỉ cần tài liệu xác nhận xông hơi
-    • SP vai trò "lưu dẫn" → chỉ cần tài liệu xác nhận lưu dẫn / nội hấp
+    • SP vai trò "xông hơi mạnh" → phải cần tài liệu xác nhận xông hơi mạnh
+    • SP vai trò "lưu dẫn" → phải cần tài liệu xác nhận lưu dẫn
 
     - TUYỆT ĐỐI KHÔNG:
     • Yêu cầu 1 sản phẩm đồng thời có nhiều cơ chế nếu không được nêu rõ.
@@ -582,7 +606,7 @@ CHỈ THỊ RIÊNG THEO MODE:
         answer_mode=answer_mode,
         any_tags=any_tags,
     )
-    selected_model = "gpt-4.1-mini"
+    selected_model = "gpt-4.1"
     debug_log(selected_model)
     # if answer_mode == "listing":
     #     max_out = 800

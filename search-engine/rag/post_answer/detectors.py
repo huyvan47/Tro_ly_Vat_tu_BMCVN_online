@@ -16,6 +16,8 @@ _MISSING_EVIDENCE_PATTERNS = [
     r"không đề cập trực tiếp",
     r"chưa có thông tin",
     r"không có dữ liệu",
+    r"KHÔNG có sản phẩm nào",
+    r"Không có sản phẩm nào",
 ]
 
 def _match_any(patterns, text: str) -> bool:
@@ -35,7 +37,7 @@ def should_enrich_post_answer(
     - query mang tính risk/safety/ảnh hưởng
     - answer RAG xác nhận thiếu bằng chứng trong tài liệu
     """
-    if answer_mode != "product" and answer_mode != "formula":
+    if answer_mode not in ("product", "formula"):
         return False
 
     # Route không bắt buộc, nhưng giữ để debug/audit
@@ -43,7 +45,7 @@ def should_enrich_post_answer(
         return False
 
     # has_risk_intent = _match_any(_RISK_INTENT_PATTERNS, user_query)
-    has_risk_intent = False
+    has_risk_intent = True
     missing_doc_evidence = _match_any(_MISSING_EVIDENCE_PATTERNS, answer_text)
 
     print('has_risk_intent:', has_risk_intent)

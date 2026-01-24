@@ -1369,48 +1369,6 @@
     "color": "",
     "heat": ""
   },
-  "insecticide": {
-    "crops": [
-      "bong vai",
-      "ca phe",
-      "cay an trai",
-      "dau tuong",
-      "dieu",
-      "tieu",
-      "khoai lang",
-      "lac",
-      "lua",
-      "san",
-      "thuoc la"
-    ],
-    "pests": [
-      "bo phan trang",
-      "bo tri",
-      "bo xit",
-      "bo xit muoi",
-      "kien",
-      "moi",
-      "ray lung trang",
-      "ray nau",
-      "rep",
-      "rep sap",
-      "rep sap...",
-      "rep vay",
-      "ruoi vang",
-      "sau cuon la",
-      "sau duc be",
-      "sau duc qua",
-      "sau duc than",
-      "sau keo",
-      "sau khoang",
-      "sau phao"
-    ],
-    "diseases": [],
-    "weeds": [],
-    "formulation": [],
-    "color": "",
-    "heat": ""
-  },
   "profenofos": {
     "crops": [
       "bo",

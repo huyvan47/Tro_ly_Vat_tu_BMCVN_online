@@ -214,7 +214,8 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
                 tag_score = compute_tag_score(doc_tags, must_local, any_local)
 
             key = (1 if ok else 0, int(tag_score), sim)
-            scored.append((key, i, sim, int(tag_score), reason))
+            if ok:
+                scored.append((key, i, sim, tag_score, reason))
 
         scored.sort(key=lambda x: x[0], reverse=True)
         picked_rows = scored[:top_k]
@@ -250,13 +251,13 @@ def search(client, kb, norm_query: str, top_k: int, must_tags=None, any_tags=Non
         if len(picked) > before:
             final_stage = "STRICT+FALLBACK1"
 
-    # Fallback 2: full recall by sim
-    if len(picked) < top_k:
-        picked_fb2 = pick_indices("FALLBACK2_SIM_FULL_RECALL", [], [], top_k)
-        before = len(picked)
-        picked = merge_fill(picked, picked_fb2, top_k)
-        if len(picked) > before:
-            final_stage = (final_stage + "+FALLBACK2") if final_stage else "FALLBACK2"
+    # # Fallback 2: full recall by sim
+    # if len(picked) < top_k:
+    #     picked_fb2 = pick_indices("FALLBACK2_SIM_FULL_RECALL", [], [], top_k)
+    #     before = len(picked)
+    #     picked = merge_fill(picked, picked_fb2, top_k)
+    #     if len(picked) > before:
+    #         final_stage = (final_stage + "+FALLBACK2") if final_stage else "FALLBACK2"
 
     if debug:
         debug_log(

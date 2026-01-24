@@ -4,18 +4,14 @@ from dataclasses import dataclass
 class RAGConfig:
 
     # ===== MULTI QUERY CONFIG =====
-    use_multi_query: bool = True          # master switch
     enable_multi_query_log: bool = True
-    enable_timing_log: bool = True
-    max_sub_queries: int = 3               # tối đa số sub query LLM sinh ra
-    multi_query_top_k: int = 80            # top_k cho mỗi sub-query
-    rrf_k: int = 60                        # tham số k cho RRF
-    rrf_top_n: int = 400                   # số doc tối đa sau fuse
+    enable_timing_log: bool = True               # số doc tối đa sau fuse
 
     # Multi-hop
-    use_multi_hop = True
-    max_multi_hops = 3
     multi_hop_top_k = 20
+    max_multi_hops = 3
+    min_docs_for_answer = 25
+    enable_multi_query_log = True
     multi_hop_stop_threshold = 80
 
     min_score_main: float = 0.35
@@ -177,8 +173,8 @@ class RAGConfig:
 
     📌 Với GPT-4/4o → 12k chars là an toàn.
     """
-    max_ctx_strict: int = 32
-    max_ctx_soft: int = 24
+    max_ctx_strict: int = 40
+    max_ctx_soft: int = 32
 
     # # GIẢM RẤT MẠNH
     # max_ctx_strict: int = 20

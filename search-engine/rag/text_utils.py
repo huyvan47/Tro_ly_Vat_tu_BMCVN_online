@@ -9,7 +9,3 @@ def is_listing_query(q: str) -> bool:
         "kể tên", "tổng", "có bao nhiêu", "gồm",
         "các bệnh", "những bệnh", "bệnh nào", "gồm những bệnh nào"
     ])
-
-def extract_codes_from_query(text: str):
-    # ví dụ: cha240-06, 450-02, cha240-asmil-01...
-    return re.findall(r'\b[\w]*\d[\w-]*-\d[\w-]*\b', text or "")

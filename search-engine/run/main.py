@@ -11,7 +11,7 @@ import traceback
 BASE_DIR = Path(__file__).resolve().parent
 QUESTIONS_TXT = BASE_DIR / "questions.txt"
 CSV_PATH = "rag_logs.csv"
-KB = "data-kd-1-4-23-1-2026.npz"
+KB = "data-kd-1-4-25-1-2026.npz"
 OPENAI_KEY = "..."
 
 def iter_questions(txt_path: str):
@@ -33,44 +33,7 @@ def iter_questions(txt_path: str):
         if q.startswith("#"):
             continue
         yield q
-
-
-def run_batch_questions(KB, API_KEY):
-    # 1) đọc query từ CLI
-
-    # 2) init OpenAI client (đặt key theo env là tốt nhất)
-    client = OpenAI(api_key=API_KEY)
-
-    # 3) load KB (1 lần)
-    # kb = load_npz("data-kd-nam-benh-full-fix-noise.npz")
-    kb = load_npz(KB)
-
-    cfg = RAGConfig()
-
-    for i, q in enumerate(iter_questions(QUESTIONS_TXT), start=1):
-        debug_log(f"[{i}] Q: {q}")
-
-        res = answer_with_suggestions(
-            user_query=q,
-            kb=kb,
-            client=client,
-            cfg=cfg,
-            policy=policy,
-        )
-
-        append_log_to_csv(
-            csv_path=CSV_PATH,
-            user_query=q,
-            norm_query=res.get("norm_query", ""),
-            context_build=res.get("context", ""),
-            strategy=res.get("strategy", ""),
-            prof=res.get("profile", {}) or {},
-            res=res,
-            route=res.get("route", "RAG"),
-        )
-
-    print(f"\nHoàn tất. Log đã ghi vào: {CSV_PATH}")
-
+        
 def main(KB, API_KEY):
     # 1) đọc query từ CLI
 
