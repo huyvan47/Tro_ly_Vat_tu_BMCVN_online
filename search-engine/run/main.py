@@ -63,7 +63,6 @@ def main(KB, API_KEY):
                 user_query=q,
                 kb=kb,
                 client=client,
-                cfg=cfg,
                 policy=policy,
             )
 

@@ -14,19 +14,6 @@ from typing import List, Tuple, Dict, Any
 from rag.logging.debug_log import debug_log
 from rag.post_answer.enricher import enrich_answer_if_needed
 
-FORCE_MUST_TAGS = {
-    "mechanisms:luu-dan-manh",
-    "mechanisms:luu-dan",
-    "mechanisms:tiep-xuc-manh",
-    "mechanisms:tiep-xuc",
-    "mechanisms:tiep-xuc-luu-dan-manh",
-    "mechanisms:tiep-xuc-luu-dan",
-    "mechanisms:xong-hoi-manh",
-    "mechanisms:xong-hoi",
-    "mechanisms:co-chon-loc",
-    "mechanisms:khong-chon-loc",
-}
-
 FORMULA_TRIGGERS = [
     
     "công thức",
@@ -42,7 +29,6 @@ FORMULA_TRIGGERS = [
     "kết hợp thuốc",
     "hoạt chất lưu dẫn phù hợp",
 ]
-
 
 def is_formula_query(query: str, tags: dict) -> bool:
     """
@@ -188,7 +174,7 @@ QUY TẮC TRẢ LỜI:
 - Văn phong chuyên nghiệp, dễ hiểu; ưu tiên ví dụ và tiêu chí phân biệt hơn là lý thuyết dài dòng.
 """.strip()
 
-def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
+def answer_with_suggestions(*, user_query, kb, client, policy):
     timer = TimingLog(user_query)
     # -----------------------------------------------------
     # 0) ROUTER – QUYỀN CAO NHẤT
@@ -295,10 +281,10 @@ def answer_with_suggestions(*, user_query, kb, client, cfg, policy):
             "profile": {"top1": 0, "top2": 0, "gap": 0, "mean5": 0, "n": 0, "conf": 0},
         }
 
-    for h in hits:
-        # chỉ để phân tích / debug / profile
-        h["fused_score"] = fused_score(h)
-        h["tag_hits"] = _count_tag_hits(h, any_tags, must_tags)
+    # for h in hits:
+    #     # chỉ để phân tích / debug / profile
+    #     h["fused_score"] = fused_score(h)
+    #     h["tag_hits"] = _count_tag_hits(h, any_tags, must_tags)
 
     primary_doc = hits[0]
 
